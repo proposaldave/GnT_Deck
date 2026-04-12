@@ -4584,13 +4584,20 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(245,158,11,0.5);z-index:5;">Give 'n Take</div>
 <div class="s on">
     <div class="stg">
-      <svg viewBox="0 0 120 80" width="100" height="66" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:32px;">
-        <text x="10" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="#60a5fa" opacity="0.9">G</text>
-        <text x="42" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="url(#logoGradTitle)">N</text>
-        <path d="M58 16 L58 8 L54 12 L58 8 L62 12" stroke="#60a5fa" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-        <path d="M68 6 L68 14 L64 10 L68 14 L72 10" stroke="#fb7185" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-        <text x="78" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="#fb7185" opacity="0.9">T</text>
-        <defs><linearGradient id="logoGradTitle" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#fb7185"/></linearGradient></defs>
+      <svg width="120" height="90" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:28px;">
+        <defs>
+          <radialGradient id="lg-atmo" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#D4A843" stop-opacity="0.06"/><stop offset="50%" stop-color="#D46B7E" stop-opacity="0.03"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+          <linearGradient id="lg-flap" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E8CC60"/><stop offset="50%" stop-color="#D4A843"/><stop offset="100%" stop-color="#B8882E"/></linearGradient>
+          <linearGradient id="lg-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a30"/><stop offset="100%" stop-color="#101024"/></linearGradient>
+          <filter id="lg-shd"><feDropShadow dx="0" dy="5" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/></filter>
+          <filter id="lg-fg"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#D4A843" flood-opacity="0.2"/></filter>
+        </defs>
+        <rect width="320" height="240" fill="url(#lg-atmo)"/>
+        <g filter="url(#lg-shd)"><rect x="40" y="30" width="240" height="180" rx="14" fill="url(#lg-body)" stroke="#252542" stroke-width="1.5"/></g>
+        <g filter="url(#lg-fg)"><path d="M40 30 L160 140 L280 30 Z" fill="url(#lg-flap)"/><path d="M46 33 L160 134 L274 33" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.1"/></g>
+        <circle cx="40" cy="30" r="14" fill="#D4A843"/><circle cx="280" cy="30" r="14" fill="#D46B7E"/>
+        <circle cx="40" cy="210" r="14" fill="#43B8A0"/><circle cx="280" cy="210" r="14" fill="#5B8FD4"/>
+        <circle cx="36" cy="26" r="4.5" fill="#fff" opacity="0.35"/><circle cx="276" cy="26" r="4.5" fill="#fff" opacity="0.28"/>
       </svg>
 
       <div class="h" style="font-size:clamp(22px,4vw,36px); max-width:860px;">Get <span class="ember">the most out of your community,</span><br>while your community gets <span class="ember">the most out of you.</span></div>
@@ -4790,7 +4797,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 8 -->
 <div class="casey-slide ds-intro" id="cs-8">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,#caa54a);z-index:10;">The Rise of the Personalized Invitation-Feed</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,#caa54a);z-index:10;">The Rise of the Invitation-Feed</div>
 
   <div class="graph-slide">
     <div class="graph-top-text">
@@ -4856,9 +4863,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">Human Value Marketplace</div>
 <div class="s" data-i="3">
     <div class="stg">
-      <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you measure what we mean to each other, you can <span class="ember">sell it.</span></div>
+      <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you digitize what we mean to each other, you can <span class="ember">sell it.</span></div>
       <div style="display:flex; align-items:center; justify-content:center; gap:40px; margin-top:32px; flex-wrap:wrap;">
-        <svg viewBox="0 0 260 200" width="280" height="215" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 260 240" width="280" height="255" xmlns="http://www.w3.org/2000/svg">
           <rect x="14" y="14" width="240" height="178" rx="14" fill="rgba(245,158,11,0.03)"/>
           <rect x="10" y="10" width="240" height="178" rx="14" fill="rgba(255,255,255,0.035)" stroke="rgba(245,158,11,0.18)" stroke-width="1"/>
           <rect x="10" y="10" width="240" height="34" rx="14" fill="rgba(245,158,11,0.07)"/>
@@ -4894,6 +4901,12 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <rect x="204" y="145" width="34" height="22" rx="6" fill="rgba(251,113,133,0.06)" stroke="#fb7185" stroke-width="0.6" opacity="0.3"/>
           <text x="221" y="160" font-family="Outfit" font-size="10" fill="#fb7185" opacity="0.4" text-anchor="middle">No</text>
           <rect x="157" y="142" width="44" height="28" rx="8" fill="none" stroke="#2dd4bf" stroke-width="0.6" opacity="0.1"><animate attributeName="opacity" values="0.05;0.25;0.05" dur="2s" repeatCount="indefinite"/></rect>
+          <!-- Envelope flap at top -->
+          <path d="M10 10 L130 -18 L250 10" fill="rgba(212,168,83,0.05)" stroke="rgba(212,168,83,0.15)" stroke-width="0.8" stroke-linejoin="round"/>
+          <circle cx="130" cy="-18" r="4" fill="rgba(212,168,83,0.12)" stroke="rgba(212,168,83,0.25)" stroke-width="0.6"/>
+          <!-- Envelope bottom -->
+          <path d="M10 188 L130 210 L250 188" fill="none" stroke="rgba(212,168,83,0.08)" stroke-width="0.6"/>
+          <text x="130" y="225" font-family="Outfit" font-size="8" fill="rgba(212,168,83,0.35)" text-anchor="middle" letter-spacing="3" font-weight="600">YOU'RE INVITED</text>
         </svg>
         <div style="text-align:center; max-width:220px;">
           <div style="font-family:'Playfair Display',serif; font-size:clamp(20px,3.5vw,28px); font-weight:700; color:var(--warm); line-height:1.3;">The right people.<br>The right time.</div>
@@ -5291,192 +5304,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   
 </div>
 
-<!-- SLIDE 18 -->
-<div class="casey-slide ds-main" id="cs-18">
-<div class="slide" data-slide="0" data-section="main">
-  <div class="section-label anim-up">Give &lsquo;n Take</div>
-  <h1 class="hero-title anim-up-d1">AI scheduling that captures <span style="color:var(--accent);">every social signal</span> as it fills the court.</h1>
-  <p class="subtitle anim-up-d2" style="white-space: nowrap;">3x your club&rsquo;s profit. Built on the social data no rating system touches.</p>
-  <!-- Week by Week: More scheduling = richer graph = better matches -->
-  <div class="anim-up-d3" style="width:100%; max-width:560px; margin:0 auto;">
-    <svg viewBox="0 0 420 160" width="100%" style="height:auto;">
-
-      <!-- PHASE 1: Week 1 — sparse -->
-      <g class="phase-week phase-week-1" transform="translate(5,15)">
-        <text x="55" y="0" text-anchor="middle" font-size="6" fill="rgba(232,224,212,0.4)" letter-spacing="1.5" font-weight="500">WEEK 1</text>
-
-        <!-- Mini calendar — mostly empty -->
-        <rect x="5" y="8" width="48" height="42" rx="4" fill="rgba(91,159,196,0.03)" stroke="rgba(91,159,196,0.15)" stroke-width="0.7"/>
-        <rect x="9" y="14" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.1)" stroke="rgba(91,159,196,0.15)" stroke-width="0.4"/>
-        <rect x="21" y="14" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="33" y="14" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="9" y="24" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="21" y="24" width="9" height="7" rx="1.5" fill="rgba(107,207,142,0.08)" stroke="rgba(107,207,142,0.12)" stroke-width="0.4"/>
-        <rect x="33" y="24" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="9" y="34" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="21" y="34" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-        <rect x="33" y="34" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.08)" stroke-width="0.3"/>
-
-        <!-- Mini arrow -->
-        <text x="57" y="33" font-size="10" fill="rgba(232,224,212,0.15)">&#8594;</text>
-
-        <!-- Sparse graph -->
-        <line x1="72" y1="18" x2="95" y2="30" stroke="rgba(91,159,196,0.15)" stroke-width="0.8"/>
-        <line x1="95" y1="30" x2="82" y2="44" stroke="rgba(200,200,200,0.08)" stroke-width="0.6"/>
-        <circle cx="72" cy="18" r="4" fill="rgba(91,159,196,0.06)" stroke="var(--blue)" stroke-width="0.8"/>
-        <circle cx="95" cy="30" r="4" fill="rgba(224,92,92,0.04)" stroke="var(--accent)" stroke-width="0.8"/>
-        <circle cx="82" cy="44" r="3.5" fill="rgba(107,207,142,0.04)" stroke="#6bcf8e" stroke-width="0.7"/>
-        <!-- Disconnected nodes -->
-        <circle cx="105" cy="15" r="3" fill="rgba(200,200,200,0.03)" stroke="rgba(200,200,200,0.12)" stroke-width="0.5"/>
-        <circle cx="100" cy="48" r="3" fill="rgba(200,200,200,0.03)" stroke="rgba(200,200,200,0.12)" stroke-width="0.5"/>
-      </g>
-
-      <!-- Arrow between phases -->
-      <g class="phase-week phase-arrow-1" transform="translate(115,50)">
-        <line x1="0" y1="0" x2="25" y2="0" stroke="rgba(232,224,212,0.15)" stroke-width="1" stroke-dasharray="3,3"/>
-        <path d="M22 -3 L28 0 L22 3" fill="rgba(232,224,212,0.15)"/>
-      </g>
-
-      <!-- PHASE 2: Week 4 — moderate -->
-      <g class="phase-week phase-week-2" transform="translate(145,15)">
-        <text x="55" y="0" text-anchor="middle" font-size="6" fill="rgba(232,224,212,0.4)" letter-spacing="1.5" font-weight="500">WEEK 4</text>
-
-        <!-- Calendar — more filled -->
-        <rect x="5" y="8" width="48" height="42" rx="4" fill="rgba(91,159,196,0.03)" stroke="rgba(91,159,196,0.2)" stroke-width="0.8"/>
-        <rect x="9" y="14" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.12)" stroke="rgba(91,159,196,0.2)" stroke-width="0.5"/>
-        <rect x="21" y="14" width="9" height="7" rx="1.5" fill="rgba(107,207,142,0.12)" stroke="rgba(107,207,142,0.2)" stroke-width="0.5"/>
-        <rect x="33" y="14" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.08)" stroke="rgba(91,159,196,0.15)" stroke-width="0.4"/>
-        <rect x="9" y="24" width="9" height="7" rx="1.5" fill="rgba(224,92,92,0.08)" stroke="rgba(224,92,92,0.15)" stroke-width="0.4"/>
-        <rect x="21" y="24" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.15)" stroke="rgba(91,159,196,0.25)" stroke-width="0.5"/>
-        <rect x="33" y="24" width="9" height="7" rx="1.5" fill="rgba(107,207,142,0.1)" stroke="rgba(107,207,142,0.18)" stroke-width="0.4"/>
-        <rect x="9" y="34" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.06)" stroke="rgba(91,159,196,0.12)" stroke-width="0.4"/>
-        <rect x="21" y="34" width="9" height="7" rx="1.5" fill="rgba(192,132,252,0.1)" stroke="rgba(192,132,252,0.18)" stroke-width="0.5"/>
-        <rect x="33" y="34" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.1)" stroke="rgba(91,159,196,0.18)" stroke-width="0.5"/>
-
-        <text x="57" y="33" font-size="10" fill="rgba(232,224,212,0.2)">&#8594;</text>
-
-        <!-- Denser graph -->
-        <line x1="72" y1="18" x2="98" y2="28" stroke="rgba(91,159,196,0.18)" stroke-width="1.2"/>
-        <line x1="72" y1="18" x2="82" y2="42" stroke="rgba(107,207,142,0.15)" stroke-width="1.2"/>
-        <line x1="98" y1="28" x2="82" y2="42" stroke="rgba(224,92,92,0.12)" stroke-width="1"/>
-        <line x1="98" y1="28" x2="108" y2="15" stroke="rgba(200,200,200,0.1)" stroke-width="0.8"/>
-        <line x1="82" y1="42" x2="102" y2="48" stroke="rgba(192,132,252,0.12)" stroke-width="0.9"/>
-        <circle cx="72" cy="18" r="5" fill="rgba(91,159,196,0.06)" stroke="var(--blue)" stroke-width="1"/>
-        <circle cx="98" cy="28" r="5" fill="rgba(224,92,92,0.05)" stroke="var(--accent)" stroke-width="1"/>
-        <circle cx="82" cy="42" r="5.5" fill="rgba(107,207,142,0.05)" stroke="#6bcf8e" stroke-width="1"/>
-        <circle cx="108" cy="15" r="4" fill="rgba(240,192,96,0.05)" stroke="#f0c060" stroke-width="0.8"/>
-        <circle cx="102" cy="48" r="4" fill="rgba(192,132,252,0.05)" stroke="#c084fc" stroke-width="0.8"/>
-      </g>
-
-      <!-- Arrow between phases -->
-      <g class="phase-week phase-arrow-2" transform="translate(255,50)">
-        <line x1="0" y1="0" x2="25" y2="0" stroke="rgba(232,224,212,0.15)" stroke-width="1" stroke-dasharray="3,3"/>
-        <path d="M22 -3 L28 0 L22 3" fill="rgba(232,224,212,0.15)"/>
-      </g>
-
-      <!-- PHASE 3: Week 12 — rich -->
-      <g class="phase-week phase-week-3" transform="translate(285,8)">
-        <text x="65" y="7" text-anchor="middle" font-size="6" fill="#6bcf8e" letter-spacing="1.5" font-weight="600">WEEK 12</text>
-
-        <!-- Calendar — very full, glowing -->
-        <rect x="5" y="15" width="48" height="42" rx="4" fill="rgba(91,159,196,0.04)" stroke="rgba(91,159,196,0.25)" stroke-width="1"/>
-        <rect x="9" y="21" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.2)" stroke="rgba(91,159,196,0.3)" stroke-width="0.6"/>
-        <rect x="21" y="21" width="9" height="7" rx="1.5" fill="rgba(107,207,142,0.2)" stroke="rgba(107,207,142,0.3)" stroke-width="0.6"/>
-        <rect x="33" y="21" width="9" height="7" rx="1.5" fill="rgba(224,92,92,0.15)" stroke="rgba(224,92,92,0.25)" stroke-width="0.5"/>
-        <rect x="9" y="31" width="9" height="7" rx="1.5" fill="rgba(192,132,252,0.15)" stroke="rgba(192,132,252,0.25)" stroke-width="0.5"/>
-        <rect x="21" y="31" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.2)" stroke="rgba(91,159,196,0.3)" stroke-width="0.6"/>
-        <rect x="33" y="31" width="9" height="7" rx="1.5" fill="rgba(240,192,96,0.15)" stroke="rgba(240,192,96,0.25)" stroke-width="0.5"/>
-        <rect x="9" y="41" width="9" height="7" rx="1.5" fill="rgba(107,207,142,0.15)" stroke="rgba(107,207,142,0.25)" stroke-width="0.5"/>
-        <rect x="21" y="41" width="9" height="7" rx="1.5" fill="rgba(91,159,196,0.18)" stroke="rgba(91,159,196,0.28)" stroke-width="0.6"/>
-        <rect x="33" y="41" width="9" height="7" rx="1.5" fill="rgba(224,92,92,0.15)" stroke="rgba(224,92,92,0.25)" stroke-width="0.5"/>
-
-        <text x="57" y="40" font-size="11" fill="rgba(107,207,142,0.3)">&#8594;</text>
-
-        <!-- Dense, alive graph -->
-        <line x1="72" y1="20" x2="105" y2="30" stroke="rgba(91,159,196,0.25)" stroke-width="2">
-          <animate attributeName="stroke-width" values="2;2.5;2" dur="4s" repeatCount="indefinite"/>
-        </line>
-        <line x1="72" y1="20" x2="85" y2="48" stroke="rgba(107,207,142,0.22)" stroke-width="2.2"/>
-        <line x1="72" y1="20" x2="115" y2="52" stroke="rgba(200,200,200,0.1)" stroke-width="1"/>
-        <line x1="72" y1="20" x2="100" y2="60" stroke="rgba(192,132,252,0.12)" stroke-width="1.2"/>
-        <line x1="105" y1="30" x2="85" y2="48" stroke="rgba(224,92,92,0.18)" stroke-width="1.8">
-          <animate attributeName="stroke-width" values="1.8;2.3;1.8" dur="3.5s" repeatCount="indefinite"/>
-        </line>
-        <line x1="105" y1="30" x2="115" y2="52" stroke="rgba(240,192,96,0.15)" stroke-width="1.3"/>
-        <line x1="105" y1="30" x2="130" y2="22" stroke="rgba(200,200,200,0.12)" stroke-width="1.2"/>
-        <line x1="85" y1="48" x2="115" y2="52" stroke="rgba(200,200,200,0.12)" stroke-width="1.3"/>
-        <line x1="85" y1="48" x2="100" y2="60" stroke="rgba(107,207,142,0.15)" stroke-width="1.2"/>
-        <line x1="115" y1="52" x2="100" y2="60" stroke="rgba(224,92,92,0.1)" stroke-width="1"/>
-        <line x1="115" y1="52" x2="130" y2="22" stroke="rgba(91,159,196,0.15)" stroke-width="1.2"/>
-        <line x1="100" y1="60" x2="130" y2="22" stroke="rgba(240,192,96,0.12)" stroke-width="1"/>
-
-        <!-- Nodes — bigger, more alive -->
-        <circle cx="72" cy="20" r="7" fill="rgba(91,159,196,0.08)" stroke="var(--blue)" stroke-width="1.5">
-          <animate attributeName="r" values="7;8;7" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="105" cy="30" r="6.5" fill="rgba(224,92,92,0.06)" stroke="var(--accent)" stroke-width="1.3"/>
-        <circle cx="85" cy="48" r="7.5" fill="rgba(107,207,142,0.06)" stroke="#6bcf8e" stroke-width="1.5">
-          <animate attributeName="r" values="7.5;8.5;7.5" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="115" cy="52" r="5.5" fill="rgba(240,192,96,0.05)" stroke="#f0c060" stroke-width="1.2"/>
-        <circle cx="100" cy="60" r="5" fill="rgba(192,132,252,0.05)" stroke="#c084fc" stroke-width="1"/>
-        <circle cx="130" cy="22" r="5" fill="rgba(200,200,200,0.04)" stroke="rgba(200,200,200,0.25)" stroke-width="0.8"/>
-
-        <!-- Pulse showing the graph is alive -->
-        <circle cx="85" cy="48" r="4" fill="#6bcf8e" opacity="0">
-          <animate attributeName="r" values="3;12;3" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-
-      <!-- (progression bars removed) -->
-
-    </svg>
-  </div>
-  <div class="stat-bar anim-up-d4">
-    <div class="stat-item">
-      <span class="num count-up" data-target="20000" data-suffix="+" data-format="comma">0+</span>
-      <span class="label">Accepted Invitations</span>
-    </div>
-    <div class="stat-item">
-      <span class="num count-up" data-target="482989" data-suffix="+" data-format="comma">0+</span>
-      <span class="label">Signals Captured</span>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- SLIDE 19 -->
-<div class="casey-slide ds-focus" id="cs-19">
-<section id="s5b">
-<div class="inner" style="text-align:center">
-  <div class="tag" style="color:var(--gold);position:absolute;top:28px;left:48px;">The exchange</div>
-  <div class="display">The more you share,<br>the more <em>everyone</em> gets.</div>
-  <div style="display:flex;justify-content:center;gap:40px;margin-top:16px">
-    <div style="font-family:var(--text);font-size:.82rem;color:rgba(237,233,224,.45)"><em style="color:var(--gold)">You</em> get better matches.</div>
-    <div style="font-family:var(--text);font-size:.82rem;color:rgba(237,233,224,.45)"><em style="color:var(--mint)">Your entire community</em> gets better matches.</div>
-  </div>
-  <div style="position:relative;width:100%;height:350px;margin-top:12px">
-    <canvas id="flywheel" style="position:absolute;top:0;left:0;width:100%;height:100%"></canvas>
-  </div>
-  <div style="display:flex;justify-content:center;gap:52px;margin-top:4px">
-    <div style="text-align:center"><div style="font-size:.48rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blush);margin-bottom:2px">You share</div><div style="font-family:var(--text);font-size:.68rem;color:rgba(237,233,224,.35)">Thoughts pour into your wallet</div></div>
-    <div style="text-align:center"><div style="font-size:.48rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);margin-bottom:2px">Matches improve</div><div style="font-family:var(--text);font-size:.68rem;color:rgba(237,233,224,.35)">Your groups get better every week</div></div>
-    <div style="text-align:center"><div style="font-size:.48rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2px">Graph grows</div><div style="font-family:var(--text);font-size:.68rem;color:rgba(237,233,224,.35)">The whole community gets smarter</div></div>
-  </div>
-  <div style="margin-top:28px;font-family:'Manrope',sans-serif;font-size:.72rem;color:rgba(237,233,224,.35);letter-spacing:.08em">dave@gnt.ai &nbsp;&middot;&nbsp; 978-604-0223</div>
-</div>
-</section>
-</div>
-
-<!-- SLIDE 20: The Next Great Network -->
-<div class="casey-slide ds-focus" id="cs-20">
+<!-- SLIDE 18: The Next Great Network -->
+<div class="casey-slide ds-focus" id="cs-18">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Opportunity</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
 <div class="orb orb-g" style="width:500px;height:500px;top:-5%;left:-15%"></div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:900px">
 
-  <div class="display" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:36px">The next great network</div>
+  <div class="display" style="font-size:clamp(1.8rem,4vw,3rem);margin-bottom:36px">Real connection is the biggest new network opportunity, ever</div>
 
   <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:36px">
     <!-- Platform era stack -->
@@ -5517,13 +5352,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     </div>
   </div>
 
-  <p style="margin-top:20px;font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(237,233,224,.25);max-width:500px;margin-left:auto;margin-right:auto">The mission: coordinate all of us into abundant connection</p>
+  <p style="margin-top:24px;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.3rem);color:rgba(245,242,236,.85);max-width:600px;margin-left:auto;margin-right:auto">The mission: coordinate all of us into abundant connection</p>
 </div>
 </section>
 </div>
 
-<!-- SLIDE 21: Brain-Expansion Why -->
-<div class="casey-slide ds-focus" id="cs-21">
+<!-- SLIDE 19: Brain-Expansion Why -->
+<div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
@@ -5554,7 +5389,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     </div>
   </div>
 
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.3);letter-spacing:.08em">dave@gnt.ai &nbsp;&middot;&nbsp; 978-604-0223</div>
+  <svg width="48" height="36" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:20px;opacity:0.5">
+    <rect x="40" y="30" width="240" height="180" rx="14" fill="#101024" stroke="#252542" stroke-width="1.5"/>
+    <path d="M40 30 L160 140 L280 30 Z" fill="#D4A843" opacity="0.7"/>
+    <circle cx="40" cy="30" r="14" fill="#D4A843"/><circle cx="280" cy="30" r="14" fill="#D46B7E"/>
+    <circle cx="40" cy="210" r="14" fill="#43B8A0"/><circle cx="280" cy="210" r="14" fill="#5B8FD4"/>
+  </svg>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.3);letter-spacing:.08em;margin-top:8px">dave@gnt.ai &nbsp;&middot;&nbsp; 978-604-0223</div>
 </div>
 </section>
 </div>
@@ -5566,7 +5407,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Market Size</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
-  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:36px">Two sides, one graph</div>
+  <div class="display" style="font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:36px">Pickleball: two sides, one graph</div>
   <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:32px">
     <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.15);border-radius:12px;padding:24px 32px;min-width:260px">
       <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:8px">Direct-to-Players</div>
@@ -5651,61 +5492,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="font-size:0.55rem;color:rgba(237,233,224,.25);margin-top:4px">AI flywheel</div>
     </div>
   </div>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:0.65rem;color:rgba(237,233,224,.3)">
-    <span>membership value &#8593;</span>
-    <span>&middot;</span>
-    <span>membership sales &#8593;</span>
-    <span>&middot;</span>
-    <span>beyond pickleball &#8593;</span>
-  </div>
 </div>
 </section>
 </div>
 
-<!-- APPENDIX SLIDE 4: ASC Architecture -->
+<!-- APPENDIX SLIDE 4: The Perfect Wedge (8 reasons) -->
 <div class="casey-slide ds-focus appendix-slide" id="cs-a4" style="display:none">
-<section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">ASC Engine</div>
-<div class="inner" style="padding-top:56px;text-align:center;max-width:860px">
-  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:28px">Autonomous social coordination</div>
-  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:24px">Optimizes the club end-to-end &mdash; at AI speed</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:720px;margin:0 auto">
-    <div style="background:rgba(73,180,160,.06);border:1px solid rgba(73,180,160,.12);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint,#49b4a0);margin-bottom:6px">True Social Matchmaking</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35)">RSVPs, partners, opponents &mdash; personalized &amp; sequential</div>
-    </div>
-    <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.12);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:6px">Group Formation</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35)">Create events, membership mix optimized, engagement up</div>
-    </div>
-    <div style="background:rgba(196,107,120,.06);border:1px solid rgba(196,107,120,.12);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blush,#c46b78);margin-bottom:6px">Compounding Value</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.35)">More play = better data = stronger network effects</div>
-    </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.5);margin-bottom:6px">P2P Chat</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25)">Feedback, wishlist, AI follow-up questions</div>
-    </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.5);margin-bottom:6px">Trusted Referrals</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25)">P2P initiated groups, networked reciprocity</div>
-    </div>
-    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:16px 12px">
-      <div style="font-size:0.55rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(237,233,224,.5);margin-bottom:6px">Filled Courts</div>
-      <div style="font-size:0.6rem;color:rgba(237,233,224,.25)">Better matches, AI relationships coach</div>
-    </div>
-  </div>
-  <div style="margin-top:20px;font-family:'Playfair Display',serif;font-style:italic;font-size:0.72rem;color:rgba(237,233,224,.25)">Historical community data solves the cold start problem</div>
-</div>
-</section>
-</div>
-
-<!-- APPENDIX SLIDE 5: The Perfect Wedge (8 reasons) -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-a5" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Why Pickleball</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
-  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:28px">The perfect wedge into the next graph</div>
+  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:28px">The perfect wedge into the real world social graph</div>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:680px;margin:0 auto;text-align:left">
     <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:8px;padding:12px 16px;display:flex;gap:10px;align-items:flex-start">
       <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold,#caa54a);min-width:18px">1</div>
@@ -5744,8 +5540,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- APPENDIX SLIDE 6: Summary / Why Now -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-a6" style="display:none">
+<!-- APPENDIX SLIDE 5: Summary / Why Now -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a5" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Why Now</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
@@ -5776,8 +5572,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- APPENDIX SLIDE 7: Team -->
-<div class="casey-slide ds-focus appendix-slide" id="cs-a7" style="display:none">
+<!-- APPENDIX SLIDE 6: Team -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a6" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Team</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:700px">
@@ -5798,10 +5594,69 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
+<!-- APPENDIX SLIDE 7: Founder Journey -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a7" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder</div>
+<div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
+  <div class="display" style="font-size:clamp(1.2rem,2.5vw,1.8rem);margin-bottom:8px">I turned down an acquisition because I knew the answer wasn&rsquo;t another skill rating system.</div>
+  <div style="font-size:0.72rem;color:rgba(237,233,224,.35);margin-bottom:28px">Years of watching who people choose, who they avoid, and what no software has ever captured.</div>
+
+  <!-- Timeline -->
+  <div style="display:flex;align-items:flex-start;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:28px;position:relative">
+    <div style="position:absolute;top:12px;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,.2),rgba(212,168,83,.2),transparent)"></div>
+    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px;box-shadow:0 0 8px rgba(212,168,83,.3)"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2020</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">#27 ranked<br>pro tour</div>
+    </div>
+    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2021</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">DUPR acquisition<br>offer declined</div>
+    </div>
+    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2022</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Built NEPC to<br>live the problem</div>
+    </div>
+    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--gold,#caa54a);margin:7px auto 8px"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--gold,#caa54a)">2024</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Bet on the<br>invitation feed</div>
+    </div>
+    <div style="text-align:center;min-width:100px;position:relative;z-index:1">
+      <div style="width:10px;height:10px;border-radius:50%;background:var(--mint,#49b4a0);margin:7px auto 8px;box-shadow:0 0 8px rgba(73,180,160,.3)"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--mint,#49b4a0)">2025</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.35);margin-top:2px">Steve (CTO) joins<br>System goes live</div>
+    </div>
+  </div>
+
+  <!-- Key stats -->
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">$2M+</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">ARR testbed communities</div>
+    </div>
+    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">6 years</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">building GnT</div>
+    </div>
+    <div style="background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.1);border-radius:10px;padding:14px 20px;text-align:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold,#caa54a)">Self-funded</div>
+      <div style="font-size:0.55rem;color:rgba(237,233,224,.3);margin-top:2px">from day one</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;font-size:0.72rem;color:rgba(237,233,224,.3);letter-spacing:.08em">dave@gnt.ai &nbsp;&middot;&nbsp; 978-604-0223</div>
+</div>
+</section>
+</div>
+
 <nav class="casey-nav" id="cnav"></nav>
 
 <script>
-const TOTAL = 21;
+const TOTAL = 19;
 const APPENDIX_TOTAL = 7;
 let current = 1;
 let inAppendix = false;
