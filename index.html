@@ -4890,16 +4890,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div class="s" data-i="3">
     <div class="stg">
       <div class="h" style="font-size:clamp(22px,3.8vw,36px);max-width:1000px;">When you digitize what we mean to each other, you can:</div>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-        <span style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:var(--teal,#5bc4c0)">graph it</span>
-        <span style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:var(--warm,#f59e0b)">orchestrate it</span>
-        <span style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:var(--warm,#f59e0b)">sell it</span>
-        <span style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:var(--teal,#5bc4c0)">automate it</span>
-        <span style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
-        <span class="ember" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700">make it abundant</span>
+      <div id="digitizeList" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:20px">
+        <span class="digi-item" data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">graph it</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-item" data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">orchestrate it</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-item" data-color="#f59e0b" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#f59e0b;transition:all 0.4s ease">sell it</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-item" data-color="#5bc4c0" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#5bc4c0;transition:all 0.4s ease">automate it</span>
+        <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
+        <span class="digi-item" data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#e04040;transition:all 0.4s ease">make it abundant</span>
       </div>
       <!-- Abstract network graph -->
       <div style="margin-top:28px">
@@ -5774,6 +5774,7 @@ function caseyGo(n) {
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
   if (n === 7) startMagic(); else stopMagic();
+  if (n === 9) startDigiCycle(); else stopDigiCycle();
   if (n === 10) animateIntroTimeline();
   if (n === 11) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
@@ -5820,13 +5821,49 @@ function appendixGo(n) {
   appendixCurrent = n;
 }
 
+// Slide labels for tooltips
+const slideLabels = [
+  '', // 0 placeholder
+  "Give 'n Take",
+  'The Next Frontier',
+  'Real-World Communities',
+  'Social Sports',
+  'The Data Exists',
+  'The Cost of Honesty',
+  'The Future',
+  'Invitation-Feed',
+  'Human Value Marketplace',
+  'Wrong Paradigm',
+  'The Teaser',
+  'How It Starts',
+  'Human-in-the-Loop',
+  'The Leap',
+  'Ground Zero',
+  'The Perfect Outlier Wedge',
+  'Understand',
+  'Opportunity Size',
+  'Brian Chesky',
+  'Founder Journey',
+  'Give \'n Take'
+];
+
 // Build nav dots
 const nav = document.getElementById('cnav');
 for (let i = 1; i <= TOTAL; i++) {
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:relative;display:inline-block';
   const d = document.createElement('button');
   d.className = 'casey-dot' + (i === 1 ? ' on' : '');
   d.onclick = () => caseyGo(i);
-  nav.appendChild(d);
+  // Tooltip
+  const tip = document.createElement('div');
+  tip.textContent = slideLabels[i] || ('Slide ' + i);
+  tip.style.cssText = 'position:absolute;bottom:28px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:Manrope,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.5px;color:#f5f2ec;background:rgba(20,20,30,0.9);border:1px solid rgba(212,168,83,0.2);padding:4px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity 0.2s;z-index:1000';
+  wrap.onmouseenter = () => { tip.style.opacity = '1'; };
+  wrap.onmouseleave = () => { tip.style.opacity = '0'; };
+  wrap.appendChild(d);
+  wrap.appendChild(tip);
+  nav.appendChild(wrap);
 }
 // Add appendix button
 const abtn = document.createElement('button');
@@ -5967,6 +6004,41 @@ function animateIntroOrbit() {
 }
 window.addEventListener('resize', () => { if (current === 8) animateIntroOrbit(); });
 
+// ===== DIGITIZE CYCLE (slide 9) =====
+let digiTimer = null;
+function startDigiCycle() {
+  stopDigiCycle();
+  const items = document.querySelectorAll('.digi-item');
+  if (!items.length) return;
+  let idx = -1;
+  // Start: all dimmed
+  items.forEach(el => { el.style.opacity = '0.25'; el.style.transform = 'scale(1)'; el.style.textShadow = 'none'; });
+  function step() {
+    items.forEach(el => { el.style.opacity = '0.25'; el.style.transform = 'scale(1)'; el.style.textShadow = 'none'; });
+    idx = (idx + 1) % items.length;
+    const active = items[idx];
+    const c = active.dataset.color;
+    active.style.opacity = '1';
+    active.style.transform = 'scale(1.15)';
+    active.style.textShadow = '0 0 20px ' + c + ', 0 0 40px ' + c + '60';
+    // After last item, pause longer then show all lit
+    if (idx === items.length - 1) {
+      digiTimer = setTimeout(() => {
+        items.forEach(el => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; el.style.textShadow = '0 0 12px ' + el.dataset.color + '40'; });
+        digiTimer = setTimeout(() => {
+          items.forEach(el => { el.style.opacity = '0.25'; el.style.transform = 'scale(1)'; el.style.textShadow = 'none'; });
+          idx = -1;
+          digiTimer = setTimeout(step, 600);
+        }, 2000);
+      }, 1200);
+    } else {
+      digiTimer = setTimeout(step, 700);
+    }
+  }
+  digiTimer = setTimeout(step, 400);
+}
+function stopDigiCycle() { if (digiTimer) { clearTimeout(digiTimer); digiTimer = null; } }
+
 // ===== MAGIC BACKGROUND (slide 7) =====
 let magicRunning = false;
 function startMagic() {
@@ -5981,58 +6053,81 @@ function startMagic() {
   const W = () => c.offsetWidth, H = () => c.offsetHeight;
   const particles = [];
   const colors = ['#D4A843','#E8CC60','#43B8A0','#D46B7E','#5B8FD4','#fff'];
-  for (let i = 0; i < 60; i++) {
+  // Fine dust particles
+  for (let i = 0; i < 45; i++) {
     particles.push({
       x: Math.random() * W(), y: Math.random() * H(),
-      vx: (Math.random() - 0.5) * 0.3, vy: -Math.random() * 0.4 - 0.1,
-      r: Math.random() * 2.5 + 0.5,
+      vx: (Math.random() - 0.5) * 0.2, vy: -Math.random() * 0.3 - 0.05,
+      r: Math.random() * 1.5 + 0.3,
       color: colors[Math.floor(Math.random() * colors.length)],
-      alpha: Math.random() * 0.5 + 0.1,
+      alpha: Math.random() * 0.4 + 0.05,
       pulse: Math.random() * Math.PI * 2,
-      pulseSpeed: Math.random() * 0.02 + 0.008
+      pulseSpeed: Math.random() * 0.015 + 0.005,
+      type: 'dust'
     });
   }
-  // Soft glowing orbs
+  // Crisp twinkle stars
+  for (let i = 0; i < 12; i++) {
+    particles.push({
+      x: Math.random() * W(), y: Math.random() * H(),
+      vx: 0, vy: 0,
+      r: Math.random() * 1.2 + 0.8,
+      color: '#fff',
+      alpha: 0,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: Math.random() * 0.03 + 0.01,
+      type: 'twinkle',
+      life: Math.random() * 300 + 100
+    });
+  }
   const orbs = [
-    { x: 0.3, y: 0.4, r: 120, color: 'rgba(212,168,83,', speed: 0.003, phase: 0 },
-    { x: 0.7, y: 0.6, r: 100, color: 'rgba(67,184,160,', speed: 0.004, phase: 2 },
-    { x: 0.5, y: 0.3, r: 80, color: 'rgba(212,107,126,', speed: 0.005, phase: 4 },
+    { x: 0.25, y: 0.35, r: 100, color: 'rgba(212,168,83,', speed: 0.002, phase: 0 },
+    { x: 0.75, y: 0.55, r: 80, color: 'rgba(67,184,160,', speed: 0.003, phase: 2 },
+    { x: 0.55, y: 0.25, r: 60, color: 'rgba(212,107,126,', speed: 0.004, phase: 4 },
   ];
   let frame = 0;
   function draw() {
     if (!magicRunning) return;
     ctx.clearRect(0, 0, W(), H());
     frame++;
-    // Draw orbs
+    // Orbs — tighter, subtler
     orbs.forEach(o => {
       o.phase += o.speed;
-      const pulse = Math.sin(o.phase) * 0.3 + 0.7;
+      const pulse = Math.sin(o.phase) * 0.2 + 0.8;
       const grd = ctx.createRadialGradient(o.x * W(), o.y * H(), 0, o.x * W(), o.y * H(), o.r * pulse);
-      grd.addColorStop(0, o.color + (0.06 * pulse) + ')');
+      grd.addColorStop(0, o.color + (0.05 * pulse) + ')');
+      grd.addColorStop(0.6, o.color + '0.02)');
       grd.addColorStop(1, o.color + '0)');
       ctx.fillStyle = grd;
       ctx.fillRect(0, 0, W(), H());
     });
-    // Draw particles
     particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
       p.pulse += p.pulseSpeed;
-      const a = p.alpha * (Math.sin(p.pulse) * 0.5 + 0.5);
-      if (p.y < -10) { p.y = H() + 10; p.x = Math.random() * W(); }
-      if (p.x < -10) p.x = W() + 10;
-      if (p.x > W() + 10) p.x = -10;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
-      ctx.globalAlpha = a;
-      ctx.fill();
-      // Sparkle cross on brighter particles
-      if (a > 0.3 && p.r > 1.5) {
-        ctx.strokeStyle = p.color;
-        ctx.lineWidth = 0.5;
-        ctx.globalAlpha = a * 0.5;
-        ctx.beginPath(); ctx.moveTo(p.x - p.r * 2, p.y); ctx.lineTo(p.x + p.r * 2, p.y); ctx.stroke();
-        ctx.beginPath(); ctx.moveTo(p.x, p.y - p.r * 2); ctx.lineTo(p.x, p.y + p.r * 2); ctx.stroke();
+      if (p.type === 'dust') {
+        p.x += p.vx; p.y += p.vy;
+        const a = p.alpha * (Math.sin(p.pulse) * 0.5 + 0.5);
+        if (p.y < -10) { p.y = H() + 10; p.x = Math.random() * W(); }
+        if (p.x < -10) p.x = W() + 10;
+        if (p.x > W() + 10) p.x = -10;
+        ctx.globalAlpha = a;
+        ctx.fillStyle = p.color;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+      } else {
+        // Twinkle: sharp 4-point star that flashes
+        p.life--;
+        if (p.life <= 0) { p.x = Math.random() * W(); p.y = Math.random() * H(); p.life = Math.random() * 400 + 150; p.pulse = 0; }
+        const t = Math.sin(p.pulse);
+        const a = t > 0 ? t * 0.7 : 0;
+        if (a > 0.05) {
+          const s = p.r * (1 + t * 2);
+          ctx.globalAlpha = a;
+          ctx.strokeStyle = '#fff';
+          ctx.lineWidth = 0.6;
+          ctx.beginPath(); ctx.moveTo(p.x - s * 3, p.y); ctx.lineTo(p.x + s * 3, p.y); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(p.x, p.y - s * 3); ctx.lineTo(p.x, p.y + s * 3); ctx.stroke();
+          ctx.fillStyle = '#fff';
+          ctx.beginPath(); ctx.arc(p.x, p.y, s * 0.4, 0, Math.PI * 2); ctx.fill();
+        }
       }
       ctx.globalAlpha = 1;
     });
