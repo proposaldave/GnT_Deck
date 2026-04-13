@@ -5007,18 +5007,65 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
         <!-- Central person being digitized -->
         <svg id="dataDripSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Central person (YOU — larger, glowing gold) -->
-          <circle cx="220" cy="120" r="14" fill="none" stroke="#D4A843" stroke-width="2.5"/>
-          <line x1="220" y1="134" x2="220" y2="175" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
-          <line x1="200" y1="152" x2="240" y2="152" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
-          <line x1="220" y1="175" x2="204" y2="200" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
-          <line x1="220" y1="175" x2="236" y2="200" stroke="#D4A843" stroke-width="2" stroke-linecap="round"/>
-          <text x="220" y="218" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" font-weight="700" opacity="0.8">YOU</text>
-          <!-- Glow -->
-          <circle cx="220" cy="150" r="40" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.12">
-            <animate attributeName="r" values="38;48;38" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.12;0.04;0.12" dur="3s" repeatCount="indefinite"/>
+          <!-- Central person (YOU — digitized, futuristic) -->
+          <defs>
+            <linearGradient id="digiGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8CC60"/><stop offset="50%" stop-color="#D4A843"/><stop offset="100%" stop-color="#B8882E"/></linearGradient>
+            <filter id="digiGlow"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#D4A843" flood-opacity="0.4"/></filter>
+          </defs>
+          <!-- Outer scanning rings -->
+          <circle cx="220" cy="150" r="55" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.08" stroke-dasharray="3 5">
+            <animateTransform attributeName="transform" type="rotate" from="0 220 150" to="360 220 150" dur="12s" repeatCount="indefinite"/>
           </circle>
+          <circle cx="220" cy="150" r="42" fill="none" stroke="#D4A843" stroke-width="0.4" opacity="0.06" stroke-dasharray="2 4">
+            <animateTransform attributeName="transform" type="rotate" from="360 220 150" to="0 220 150" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Glow backdrop -->
+          <circle cx="220" cy="150" r="35" fill="rgba(212,168,83,0.04)"/>
+          <circle cx="220" cy="150" r="35" fill="none" stroke="#D4A843" stroke-width="0.6" opacity="0.1">
+            <animate attributeName="r" values="33;40;33" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Person body — glowing wireframe style -->
+          <g filter="url(#digiGlow)">
+            <!-- Head — hexagonal/digital -->
+            <polygon points="220,106 228,112 228,122 220,128 212,122 212,112" fill="rgba(212,168,83,0.08)" stroke="url(#digiGrad)" stroke-width="1.5"/>
+            <!-- Face data points -->
+            <circle cx="216" cy="116" r="1.5" fill="#E8CC60" opacity="0.8"/>
+            <circle cx="224" cy="116" r="1.5" fill="#E8CC60" opacity="0.8"/>
+            <path d="M216 121 Q220 124 224 121" stroke="#E8CC60" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <!-- Spine — segmented digital -->
+            <line x1="220" y1="128" x2="220" y2="138" stroke="#D4A843" stroke-width="1.8"/>
+            <line x1="220" y1="140" x2="220" y2="150" stroke="#D4A843" stroke-width="1.5"/>
+            <line x1="220" y1="152" x2="220" y2="162" stroke="#D4A843" stroke-width="1.2"/>
+            <line x1="220" y1="164" x2="220" y2="174" stroke="#D4A843" stroke-width="1"/>
+            <!-- Joint nodes -->
+            <circle cx="220" cy="138" r="2" fill="#D4A843" opacity="0.6"/>
+            <circle cx="220" cy="150" r="2.5" fill="#D4A843" opacity="0.7"/>
+            <circle cx="220" cy="174" r="2" fill="#D4A843" opacity="0.5"/>
+            <!-- Arms — angular/digital -->
+            <polyline points="196,142 205,148 220,150" fill="none" stroke="#D4A843" stroke-width="1.5"/>
+            <polyline points="244,142 235,148 220,150" fill="none" stroke="#D4A843" stroke-width="1.5"/>
+            <circle cx="196" cy="142" r="2" fill="#E8CC60" opacity="0.5"/>
+            <circle cx="244" cy="142" r="2" fill="#E8CC60" opacity="0.5"/>
+            <!-- Legs — angular -->
+            <polyline points="220,174 210,190 200,204" fill="none" stroke="#D4A843" stroke-width="1.3"/>
+            <polyline points="220,174 230,190 240,204" fill="none" stroke="#D4A843" stroke-width="1.3"/>
+            <circle cx="210" cy="190" r="1.5" fill="#D4A843" opacity="0.4"/>
+            <circle cx="230" cy="190" r="1.5" fill="#D4A843" opacity="0.4"/>
+          </g>
+          <!-- Scan line sweeping over the figure -->
+          <line x1="200" y1="110" x2="240" y2="110" stroke="#3dff7a" stroke-width="1" opacity="0">
+            <animate attributeName="y1" values="106;204;106" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="y2" values="106;204;106" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
+          </line>
+          <!-- Data points appearing on body -->
+          <circle cx="214" cy="145" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="226" cy="155" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/></circle>
+          <circle cx="218" cy="168" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.8s" repeatCount="indefinite" begin="1s"/></circle>
+          <circle cx="208" cy="135" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
+          <!-- YOU label -->
+          <text x="220" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="#D4A843" font-weight="700" letter-spacing="2" opacity="0.8">YOU</text>
 
           <!-- Person 1: top-left (teal) -->
           <g>
@@ -5160,14 +5207,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   <div class="chat" style="display:flex;flex-direction:column;max-width:560px;margin-top:32px;gap:12px">
     <div class="msg msg-ai" style="max-width:100%">
       <div class="msg-label">GnT Agent</div>
-      Wed 2pm — 3 courts built. Competitive on 1. New members with welcomers on 3. Janet inactive 3 weeks — paired with her favorites. Approve?
+      Janet cancelled Wed 2pm. Sub found: Lisa (similar style, available, welcomed by the group). Dave M. hasn&rsquo;t played in 3 weeks &mdash; slotted him Thu with his favorites. 3 courts ready. Approve?
     </div>
     <div class="msg msg-k" style="max-width:40%;align-self:flex-end">
       <div class="msg-label">Krista</div>
       approved
     </div>
   </div>
-  <div style="font-family:var(--ui);font-size:.7rem;font-weight:300;color:rgba(237,233,224,.25);margin-top:16px;letter-spacing:.04em">That's it. That's the whole job now.</div>
 </div>
 <div class="mark">Give 'n Take</div><div class="conf">Privileged & Confidential</div>
 </section>
