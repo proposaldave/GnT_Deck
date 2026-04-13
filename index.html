@@ -4981,7 +4981,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     <div style="display:flex;align-items:stretch;gap:24px;justify-content:center;flex-wrap:wrap">
 
       <!-- LEFT: One number -->
-      <div style="flex:1;min-width:200px;max-width:340px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+      <div style="flex:1;min-width:200px;max-width:340px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.15);border-radius:16px;padding:32px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden">
+        <!-- INCORRECT PARADIGM stamp -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-18deg);z-index:5;pointer-events:none;white-space:nowrap;border:3px solid rgba(224,64,64,0.7);padding:6px 28px;font-family:'DM Sans',sans-serif;font-size:clamp(12px,1.8vw,18px);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red,#e04040);background:rgba(224,64,64,0.08);box-shadow:0 0 30px rgba(224,64,64,0.15),inset 0 0 20px rgba(224,64,64,0.05)">INCORRECT PARADIGM</div>
         <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red,#e04040);margin-bottom:16px">The Old Way</div>
         <!-- Person with number -->
         <svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5025,33 +5027,70 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <animate attributeName="r" values="33;40;33" dur="3s" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3s" repeatCount="indefinite"/>
           </circle>
-          <!-- Person body — glowing wireframe style -->
+          <!-- Person body — PARTICLE CLOUD (dots forming a human shape) -->
           <g filter="url(#digiGlow)">
-            <!-- Head — hexagonal/digital -->
-            <polygon points="220,106 228,112 228,122 220,128 212,122 212,112" fill="rgba(212,168,83,0.08)" stroke="url(#digiGrad)" stroke-width="1.5"/>
-            <!-- Face data points -->
-            <circle cx="216" cy="116" r="1.5" fill="#E8CC60" opacity="0.8"/>
-            <circle cx="224" cy="116" r="1.5" fill="#E8CC60" opacity="0.8"/>
-            <path d="M216 121 Q220 124 224 121" stroke="#E8CC60" stroke-width="0.8" fill="none" opacity="0.5"/>
-            <!-- Spine — segmented digital -->
-            <line x1="220" y1="128" x2="220" y2="138" stroke="#D4A843" stroke-width="1.8"/>
-            <line x1="220" y1="140" x2="220" y2="150" stroke="#D4A843" stroke-width="1.5"/>
-            <line x1="220" y1="152" x2="220" y2="162" stroke="#D4A843" stroke-width="1.2"/>
-            <line x1="220" y1="164" x2="220" y2="174" stroke="#D4A843" stroke-width="1"/>
-            <!-- Joint nodes -->
-            <circle cx="220" cy="138" r="2" fill="#D4A843" opacity="0.6"/>
-            <circle cx="220" cy="150" r="2.5" fill="#D4A843" opacity="0.7"/>
-            <circle cx="220" cy="174" r="2" fill="#D4A843" opacity="0.5"/>
-            <!-- Arms — angular/digital -->
-            <polyline points="196,142 205,148 220,150" fill="none" stroke="#D4A843" stroke-width="1.5"/>
-            <polyline points="244,142 235,148 220,150" fill="none" stroke="#D4A843" stroke-width="1.5"/>
-            <circle cx="196" cy="142" r="2" fill="#E8CC60" opacity="0.5"/>
-            <circle cx="244" cy="142" r="2" fill="#E8CC60" opacity="0.5"/>
-            <!-- Legs — angular -->
-            <polyline points="220,174 210,190 200,204" fill="none" stroke="#D4A843" stroke-width="1.3"/>
-            <polyline points="220,174 230,190 240,204" fill="none" stroke="#D4A843" stroke-width="1.3"/>
-            <circle cx="210" cy="190" r="1.5" fill="#D4A843" opacity="0.4"/>
-            <circle cx="230" cy="190" r="1.5" fill="#D4A843" opacity="0.4"/>
+            <!-- Head — cluster of dots in circle shape -->
+            <circle cx="220" cy="110" r="1.8" fill="#E8CC60" opacity="0.9"/>
+            <circle cx="216" cy="108" r="1.3" fill="#D4A843" opacity="0.7"/>
+            <circle cx="224" cy="108" r="1.3" fill="#D4A843" opacity="0.7"/>
+            <circle cx="214" cy="112" r="1.5" fill="#E8CC60" opacity="0.6"/>
+            <circle cx="226" cy="112" r="1.5" fill="#E8CC60" opacity="0.6"/>
+            <circle cx="218" cy="105" r="1" fill="#D4A843" opacity="0.5"/>
+            <circle cx="222" cy="105" r="1" fill="#D4A843" opacity="0.5"/>
+            <circle cx="220" cy="115" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <circle cx="216" cy="116" r="1" fill="#E8CC60" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="224" cy="116" r="1" fill="#E8CC60" opacity="0.7"><animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite" begin="0.3s"/></circle>
+            <!-- Neck -->
+            <circle cx="220" cy="120" r="1" fill="#D4A843" opacity="0.6"/>
+            <circle cx="220" cy="123" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <!-- Torso — column of dots -->
+            <circle cx="220" cy="127" r="1.5" fill="#D4A843" opacity="0.7"/>
+            <circle cx="218" cy="131" r="1.2" fill="#E8CC60" opacity="0.5"/>
+            <circle cx="222" cy="131" r="1.2" fill="#E8CC60" opacity="0.5"/>
+            <circle cx="220" cy="135" r="1.8" fill="#D4A843" opacity="0.7"/>
+            <circle cx="216" cy="138" r="1" fill="#D4A843" opacity="0.4"/>
+            <circle cx="224" cy="138" r="1" fill="#D4A843" opacity="0.4"/>
+            <circle cx="220" cy="141" r="1.5" fill="#E8CC60" opacity="0.6"/>
+            <circle cx="220" cy="146" r="1.8" fill="#D4A843" opacity="0.7"/>
+            <circle cx="217" cy="150" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <circle cx="223" cy="150" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <circle cx="220" cy="154" r="1.5" fill="#E8CC60" opacity="0.6"/>
+            <circle cx="220" cy="159" r="1.3" fill="#D4A843" opacity="0.5"/>
+            <circle cx="220" cy="164" r="1.5" fill="#D4A843" opacity="0.6"/>
+            <circle cx="220" cy="169" r="1.8" fill="#E8CC60" opacity="0.7"/>
+            <!-- Left arm — dots trailing left -->
+            <circle cx="216" cy="133" r="1" fill="#D4A843" opacity="0.5"/>
+            <circle cx="212" cy="136" r="1.2" fill="#D4A843" opacity="0.45"/>
+            <circle cx="208" cy="139" r="1" fill="#E8CC60" opacity="0.4"/>
+            <circle cx="204" cy="141" r="1.3" fill="#D4A843" opacity="0.4"/>
+            <circle cx="200" cy="143" r="1" fill="#D4A843" opacity="0.35"/>
+            <circle cx="196" cy="144" r="1.5" fill="#E8CC60" opacity="0.3"/>
+            <!-- Right arm — dots trailing right -->
+            <circle cx="224" cy="133" r="1" fill="#D4A843" opacity="0.5"/>
+            <circle cx="228" cy="136" r="1.2" fill="#D4A843" opacity="0.45"/>
+            <circle cx="232" cy="139" r="1" fill="#E8CC60" opacity="0.4"/>
+            <circle cx="236" cy="141" r="1.3" fill="#D4A843" opacity="0.4"/>
+            <circle cx="240" cy="143" r="1" fill="#D4A843" opacity="0.35"/>
+            <circle cx="244" cy="144" r="1.5" fill="#E8CC60" opacity="0.3"/>
+            <!-- Left leg — dots trailing down-left -->
+            <circle cx="218" cy="173" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <circle cx="215" cy="178" r="1" fill="#E8CC60" opacity="0.45"/>
+            <circle cx="212" cy="183" r="1.3" fill="#D4A843" opacity="0.4"/>
+            <circle cx="209" cy="188" r="1" fill="#D4A843" opacity="0.35"/>
+            <circle cx="206" cy="193" r="1.2" fill="#E8CC60" opacity="0.3"/>
+            <circle cx="203" cy="198" r="1.5" fill="#D4A843" opacity="0.25"/>
+            <!-- Right leg — dots trailing down-right -->
+            <circle cx="222" cy="173" r="1.2" fill="#D4A843" opacity="0.5"/>
+            <circle cx="225" cy="178" r="1" fill="#E8CC60" opacity="0.45"/>
+            <circle cx="228" cy="183" r="1.3" fill="#D4A843" opacity="0.4"/>
+            <circle cx="231" cy="188" r="1" fill="#D4A843" opacity="0.35"/>
+            <circle cx="234" cy="193" r="1.2" fill="#E8CC60" opacity="0.3"/>
+            <circle cx="237" cy="198" r="1.5" fill="#D4A843" opacity="0.25"/>
+            <!-- Floating ambient particles around the figure -->
+            <circle cx="210" cy="125" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite"/></circle>
+            <circle cx="232" cy="148" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="3s" repeatCount="indefinite" begin="0.8s"/></circle>
+            <circle cx="208" cy="155" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.2s" repeatCount="indefinite" begin="1.5s"/></circle>
+            <circle cx="230" cy="125" r="0.8" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.6;0" dur="2.8s" repeatCount="indefinite" begin="0.4s"/></circle>
           </g>
           <!-- Scan line sweeping over the figure -->
           <line x1="200" y1="110" x2="240" y2="110" stroke="#3dff7a" stroke-width="1" opacity="0">
@@ -5136,8 +5175,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <text x="340" y="280" font-family="Manrope,sans-serif" font-size="7" fill="#4ae8c1" opacity="0.6" text-anchor="middle">says &quot;best group&quot;</text>
         </svg>
 
-        <div style="font-size:0.72rem;color:rgba(232,224,208,0.5);margin-top:4px">Who you are, digitized by the people who experience you.</div>
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:6px">100&times; more data. From the people who know.</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">Digitized by the people who know you.</div>
       </div>
     </div>
   </div>
