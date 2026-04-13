@@ -4756,7 +4756,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(232,224,208,0.7)">True Social<br>Matchmaking</div>
-      <div style="font-size:0.6rem;color:rgba(232,224,208,0.25);margin-top:6px">Still done by gut feel</div>
     </div>
     <!-- Card 2 -->
     <div style="flex:1;min-width:180px;max-width:240px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.12);border-radius:14px;padding:28px 20px;text-align:center">
@@ -4771,7 +4770,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(232,224,208,0.7)">Group-Experience<br>Formation</div>
-      <div style="font-size:0.6rem;color:rgba(232,224,208,0.25);margin-top:6px">Texts, spreadsheets, one person&rsquo;s memory</div>
     </div>
     <!-- Card 3 -->
     <div style="flex:1;min-width:180px;max-width:240px;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.12);border-radius:14px;padding:28px 20px;text-align:center">
@@ -4781,7 +4779,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <line x1="10" y1="10" x2="38" y2="38" stroke="var(--red,#e04040)" stroke-width="1.5" opacity="0.5"/>
       </svg>
       <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:700;color:rgba(232,224,208,0.7)">Compounding<br>Community Value</div>
-      <div style="font-size:0.6rem;color:rgba(232,224,208,0.25);margin-top:6px">Communities plateau &amp; fragment</div>
     </div>
   </div>
 
@@ -4881,7 +4878,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 8 -->
 <div class="casey-slide ds-intro" id="cs-8">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,#caa54a);z-index:10;">The Rise of the Invitation-Feed</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,#caa54a);z-index:10;">The Invitation-Feed</div>
 
   <div class="graph-slide">
     <div class="graph-top-text">
@@ -5842,7 +5839,7 @@ function caseyGo(n) {
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
-  if (n === 7) startMagic(); else stopMagic();
+  // magic background disabled
   if (n === 10) animateIntroTeaser();
   if (n === 8) animateIntroOrbit();
   if (n === 14) animateIntroExpansion();
