@@ -376,6 +376,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060609;color:#f5f2e
     color: #f5f2ec;
     text-align: center;
     line-height: 1.4;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .graph-top-text.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .graph-container {
@@ -4739,8 +4746,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   /* ===== Facebook comparison ===== */
   [style*="pickleball communities"] { font-size: 10px !important; }
 
-  /* ===== Founder journey ===== */
-  #cs-19 .inner, [id="cs-19"] .inner { padding: 20px 0 !important; }
+  /* ===== Founder journey (nav pos 16) ===== */
+  #cs-16 .inner, [id="cs-16"] .inner { padding: 20px 0 !important; }
 
   /* ===== Human Value Marketplace — canvas is 800x340, widen on mobile to maximize ===== */
   #cs-9 canvas { width: 100vw !important; max-width: 100vw !important; height: auto !important; margin-left: calc(-50vw + 50%) !important; margin-right: calc(-50vw + 50%) !important; }
@@ -4749,9 +4756,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   /* ===== Self-improving intelligence SVG ===== */
   #cs-14 .inner > div:last-child { width: min(92vw, 360px) !important; height: min(92vw, 360px) !important; }
 
-  /* ===== "The Insight" two-column ===== */
-  #cs-17 [style*="display:flex"][style*="gap:48px"],
-  #cs-17 [style*="display: flex"][style*="gap: 48px"] {
+  /* ===== "The Insight" two-column (Understand — nav pos 19) ===== */
+  #cs-19 [style*="display:flex"][style*="gap:48px"],
+  #cs-19 [style*="display: flex"][style*="gap: 48px"] {
     flex-direction: column !important;
     gap: 20px !important;
   }
@@ -5555,8 +5562,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           label.setAttribute('font-size', '8');
           label.setAttribute('font-weight', '700');
           label.setAttribute('letter-spacing', '4');
-          label.setAttribute('fill', '#D4A843');
-          label.setAttribute('opacity', '0.75');
+          label.setAttribute('fill', '#3dff7a');
+          label.setAttribute('opacity', '0.9');
           label.textContent = 'YOU';
           fig.appendChild(label);
         })();
@@ -5873,8 +5880,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 
-<!-- SLIDE 16 -->
-<div class="casey-slide ds-main" id="cs-16">
+<!-- Perfect Outlier Wedge — nav pos 18 -->
+<div class="casey-slide ds-main" id="cs-18">
 <div class="slide" data-slide="9" data-section="main">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Perfect Outlier Wedge</div>
   <h1 class="slide-title anim-up-d1">Pickleball is the lowest-risk wedge.</h1>
@@ -5918,8 +5925,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 </div>
 
-<!-- SLIDE 17 -->
-<div class="casey-slide ds-measure" id="cs-17">
+<!-- Understand — nav pos 19 -->
+<div class="casey-slide ds-measure" id="cs-19">
 <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">The Insight</div>
 <div class="stg">
       <div class="h" style="font-size:clamp(24px,5vw,42px);">For the first time, we can <em class="ember">understand</em></div>
@@ -5978,8 +5985,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   
 </div>
 
-<!-- SLIDE 18: The Next Great Network -->
-<div class="casey-slide ds-focus" id="cs-18">
+<!-- Opportunity Size — nav pos 20 -->
+<div class="casey-slide ds-focus" id="cs-20">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Opportunity Size</div>
 <div class="orb orb-g" style="width:500px;height:500px;top:-5%;left:-15%"></div>
@@ -6030,8 +6037,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 19: Brain-Expansion Why (Chesky) — ID cs-20 so Founder shows first -->
-<div class="casey-slide ds-focus" id="cs-20">
+<!-- Brian Chesky — nav pos 21 -->
+<div class="casey-slide ds-focus" id="cs-21">
 <section style="position:relative;min-height:100%;width:100%">
 <div class="orb orb-g" style="width:600px;height:600px;top:10%;right:-20%;opacity:0.3"></div>
 <div class="inner" style="text-align:center;max-width:760px">
@@ -6073,8 +6080,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 20: Founder Journey — ID cs-19 so it shows before Chesky -->
-<div class="casey-slide ds-focus" id="cs-19">
+<!-- Founder Journey (Dave Velardo) — nav pos 16 (moved earlier per April feedback) -->
+<div class="casey-slide ds-focus" id="cs-16">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Founder Dave Velardo</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:800px">
@@ -6134,8 +6141,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </section>
 </div>
 
-<!-- SLIDE 21: Club Impact — 3x Net Profit Impact with bar chart -->
-<div class="casey-slide ds-focus" id="cs-21">
+<!-- Club Impact / 3× Net Profit — nav pos 17 (moved earlier per April feedback) -->
+<div class="casey-slide ds-focus" id="cs-17">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red,#e04040);z-index:10;">Impact</div>
 <div class="inner" style="padding-top:56px;text-align:center;max-width:960px">
@@ -6778,12 +6785,12 @@ const slideLabels = [
   'The Leap',
   'The Intelligence',
   'Ground Zero',
+  'Founder Journey',
+  'Club Impact',
   'The Perfect Outlier Wedge',
   'Understand',
   'Opportunity Size',
   'Brian Chesky',
-  'Founder Journey',
-  'Club Impact',
   'The Promise',
   'Give \'n Take'
 ];
@@ -6915,13 +6922,10 @@ function animateIntroOrbit() {
   const cx = w / 2, cy = h / 2, radius = w * 0.38;
   const positions = [];
 
-  // STAGE 1: Hide everything except the center "You get magic" node.
-  // Center node is inside .graph-container, already visible.
-  if (topText) {
-    topText.style.opacity = '0';
-    topText.style.transform = 'translateY(-8px)';
-    topText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-  }
+  // STAGE 1: Hide everything except the center "Magic happens" node.
+  // Top text is hidden by default via CSS (.graph-top-text { opacity: 0 })
+  // and revealed by adding .revealed class.
+  if (topText) topText.classList.remove('revealed');
   nodes.forEach(n => n.classList.remove('show'));
   svg.innerHTML = '';
   svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
@@ -6940,10 +6944,7 @@ function animateIntroOrbit() {
 
   // Top text fades in first
   setTimeout(() => {
-    if (topText) {
-      topText.style.opacity = '1';
-      topText.style.transform = 'translateY(0)';
-    }
+    if (topText) topText.classList.add('revealed');
   }, HOLD);
 
   // Orbit nodes cascade in
@@ -6987,53 +6988,64 @@ function startCourtForm() {
   const ctx = c.getContext('2d');
   const W = c.width, H = c.height;
 
-  const pColors = ['#D4A843','#D46B7E','#43B8A0','#5B8FD4','#E8CC60','#c76bdb','#4ae8c1','#e85a7a',
-                   '#f0c040','#ff8a65','#81c784','#64b5f6','#ce93d8','#a5d6a7','#f48fb1','#4fc3f7'];
-  const pNames = ['Alex','Sam','Jordan','Pat','Chris','Morgan','Taylor','Riley',
-                  'Casey','Jamie','Quinn','Avery','Drew','Blake','Sage','Reese'];
+  const pColorsBase = ['#D4A843','#D46B7E','#43B8A0','#5B8FD4','#E8CC60','#c76bdb','#4ae8c1','#e85a7a',
+                       '#f0c040','#ff8a65','#81c784','#64b5f6','#ce93d8','#a5d6a7','#f48fb1','#4fc3f7'];
+  const pNamesBase = ['Alex','Sam','Jordan','Pat','Chris','Morgan','Taylor','Riley',
+                      'Casey','Jamie','Quinn','Avery','Drew','Blake','Sage','Reese'];
+  const TOTAL_PEOPLE = 40;
+  const pColors = []; const pNames = [];
+  for (let k = 0; k < TOTAL_PEOPLE; k++) {
+    pColors.push(pColorsBase[k % pColorsBase.length]);
+    pNames.push(pNamesBase[k % pNamesBase.length]);
+  }
   const people = [];
-  const gcx = 120, gcy = 170;
-  // CLUSTER-BASED social graph: 4 overlapping clusters of people who play together a lot
+  const gcx = 118, gcy = 170;
+  // Density anchors, not tight pods. People are scattered across a community disk and only weakly pulled toward their cluster center — so clusters read as subtle density, not obvious pods.
   const clusters = [
-    { cx: gcx - 55, cy: gcy - 55, size: 4 },  // top-left cluster
-    { cx: gcx + 50, cy: gcy - 40, size: 4 },  // top-right cluster
-    { cx: gcx - 40, cy: gcy + 55, size: 5 },  // bottom-left cluster (larger)
-    { cx: gcx + 45, cy: gcy + 50, size: 3 }   // bottom-right cluster
+    { cx: gcx - 55, cy: gcy - 55, size: 8 },  // upper-left pocket
+    { cx: gcx + 55, cy: gcy - 50, size: 8 },  // upper-right pocket
+    { cx: gcx - 60, cy: gcy + 25, size: 8 },  // mid-left pocket
+    { cx: gcx + 58, cy: gcy + 35, size: 8 },  // mid-right pocket
+    { cx: gcx - 5,  cy: gcy + 80, size: 8 }   // lower-center pocket
   ];
   const clusterAssignment = []; // track which cluster each person belongs to
+  const communityRadius = 108;  // overall community disk — slightly taller than wide
   let personIdx = 0;
   clusters.forEach((cluster, ci) => {
     for (let k = 0; k < cluster.size; k++) {
-      // Place people tightly within the cluster center (small radius + jitter)
-      const ang = (k / cluster.size) * Math.PI * 2 + Math.random()*0.4;
-      const rad = 10 + Math.random() * 18;
-      const jx = (Math.random()-0.5)*6;
-      const jy = (Math.random()-0.5)*6;
-      const hx = cluster.cx + Math.cos(ang)*rad + jx;
-      const hy = cluster.cy + Math.sin(ang)*rad + jy;
+      // Broad disk scatter first (sqrt gives uniform-area distribution, not ring-weighted)
+      const gAng = Math.random() * Math.PI * 2;
+      const gR = Math.sqrt(Math.random()) * communityRadius;
+      const scatterX = gcx + Math.cos(gAng) * gR;
+      const scatterY = gcy + Math.sin(gAng) * gR * 1.05;
+      // Then pull PART-WAY toward the cluster center so density pockets form without becoming rosettes
+      const pull = 0.32 + Math.random() * 0.32;  // 32–64% of the way
+      const hx = scatterX + (cluster.cx - scatterX) * pull + (Math.random()-0.5)*8;
+      const hy = scatterY + (cluster.cy - scatterY) * pull + (Math.random()-0.5)*8;
       people.push({
         hx, hy, x: hx, y: hy,
         color: pColors[personIdx],
         name: pNames[personIdx],
-        r: 6, status: 'home', cluster: ci
+        r: 5, status: 'home', cluster: ci
       });
       clusterAssignment.push(ci);
       personIdx++;
     }
   });
 
-  // Edges: dense WITHIN clusters (they play together a lot), sparse BETWEEN clusters (occasional bridges)
+  // Edges: distance-based. Close neighbors connect often, far ones rarely. Same-cluster bonus adds subtle structure without obvious pod boundaries.
   const edges = [];
-  for (let i = 0; i < 16; i++) {
-    for (let j = i+1; j < 16; j++) {
+  const maxEdgeDist = 95;
+  for (let i = 0; i < people.length; i++) {
+    for (let j = i+1; j < people.length; j++) {
+      const dx = people[i].hx - people[j].hx;
+      const dy = people[i].hy - people[j].hy;
+      const d2 = dx*dx + dy*dy;
+      if (d2 > maxEdgeDist*maxEdgeDist) continue;
+      const closeness = 1 - Math.sqrt(d2) / maxEdgeDist;
       const sameCluster = clusterAssignment[i] === clusterAssignment[j];
-      if (sameCluster) {
-        // Dense connections within cluster (70% chance)
-        if (Math.random() < 0.70) edges.push([i, j]);
-      } else {
-        // Sparse bridges between clusters (8% chance)
-        if (Math.random() < 0.08) edges.push([i, j]);
-      }
+      const prob = (sameCluster ? 0.45 : 0.16) * closeness;
+      if (Math.random() < prob) edges.push([i, j]);
     }
   }
 
@@ -7053,8 +7065,9 @@ function startCourtForm() {
       [c.x + c.w*0.72, c.y + c.h*0.70]
     ],
     phase: 'idle', phaseFrame: 0, selected: [], targetScore: 0, displayedScore: 0,
-    startDelay: i * 40
+    startDelay: i * 55
   }));
+  let lastPromotionFrame = -200; // cooldown so queued greens don't stampede into the court back-to-back
 
   const winCourt = { x: 470, y: 65, w: 310, h: 210 };
   const winSlots = [
@@ -7127,7 +7140,7 @@ function startCourtForm() {
 
   function pickFourFromCommunity() {
     const pool = [];
-    for (let i = 0; i < 16; i++) if (people[i].status === 'home') pool.push(i);
+    for (let i = 0; i < people.length; i++) if (people[i].status === 'home') pool.push(i);
     if (pool.length < 4) return null;
     const picked = [];
     for (let i = 0; i < 4; i++) {
@@ -7158,20 +7171,23 @@ function startCourtForm() {
       });
       if (sim.phaseFrame >= 30) { sim.phase = 'simulating'; sim.phaseFrame = 0; }
     } else if (sim.phase === 'simulating') {
-      sim.displayedScore = lerp(sim.displayedScore, sim.targetScore, 0.04);
-      if (sim.phaseFrame >= 70) { sim.phase = 'resolved'; sim.phaseFrame = 0; }
+      sim.displayedScore = lerp(sim.displayedScore, sim.targetScore, 0.035);
+      if (sim.phaseFrame >= 90) { sim.phase = 'resolved'; sim.phaseFrame = 0; }
     } else if (sim.phase === 'resolved') {
       sim.displayedScore = sim.targetScore;
-      if (sim.phaseFrame >= 20) {
-        if (sim.targetScore >= 75 && winState.phase === 'empty') {
-          sim.phase = 'promoting'; sim.phaseFrame = 0;
-          winState.phase = 'arriving'; winState.phaseFrame = 0;
-          winState.group = sim.selected.slice();
-          winState.incomingFrom = simIndex;
-          winState.quality = sim.targetScore;
-          sim.selected.forEach(i => { people[i].status = 'winning'; });
-        } else if (sim.targetScore >= 75) {
-          if (sim.phaseFrame >= 60) { sim.phase = 'rejecting'; sim.phaseFrame = 0; }
+      if (sim.phaseFrame >= 24) {
+        if (sim.targetScore >= 75) {
+          // Every green group gets the court. If the court is busy OR a recent promotion is still cooling down, wait.
+          if (winState.phase === 'empty' && (courtFormFrame - lastPromotionFrame) >= 50) {
+            sim.phase = 'promoting'; sim.phaseFrame = 0;
+            winState.phase = 'arriving'; winState.phaseFrame = 0;
+            winState.group = sim.selected.slice();
+            winState.incomingFrom = simIndex;
+            winState.quality = sim.targetScore;
+            sim.selected.forEach(i => { people[i].status = 'winning'; });
+            lastPromotionFrame = courtFormFrame;
+          }
+          // else: stay in 'resolved' with the green bar showing — queued for the next open slot
         } else {
           sim.phase = 'rejecting'; sim.phaseFrame = 0;
         }
@@ -7187,7 +7203,7 @@ function startCourtForm() {
       if (sim.phaseFrame >= 35) {
         sim.phase = 'idle'; sim.phaseFrame = 0;
         sim.selected = []; sim.targetScore = 0; sim.displayedScore = 0;
-        sim.startDelay = 25 + Math.random()*25;
+        sim.startDelay = 65 + Math.random()*40;
       }
     } else if (sim.phase === 'rejecting') {
       const t = sim.phaseFrame / 25;
@@ -7199,7 +7215,7 @@ function startCourtForm() {
         sim.selected.forEach(i => { people[i].status = 'home'; });
         sim.phase = 'idle'; sim.phaseFrame = 0;
         sim.selected = []; sim.targetScore = 0; sim.displayedScore = 0;
-        sim.startDelay = 20 + Math.random()*25;
+        sim.startDelay = 55 + Math.random()*35;
       }
     }
     sim.phaseFrame++;
@@ -7246,7 +7262,7 @@ function startCourtForm() {
     ctx.fillText('YOUR COMMUNITY', gcx, 22);
     ctx.fillStyle = 'rgba(232,224,208,0.3)';
     ctx.font = '500 7px Manrope, sans-serif';
-    ctx.fillText('16 people', gcx, 32);
+    ctx.fillText(people.length + ' people', gcx, 32);
 
     sims.forEach((sim, i) => stepSim(sim, i));
     stepWinning();
@@ -7319,11 +7335,6 @@ function startCourtForm() {
       else if (p.status === 'winning') { r = 7; alpha = 1; }
       drawPerson(p.x, p.y, p.color, r, { alpha, lw: alpha > 0.8 ? 1.8 : 1 });
     });
-
-    ctx.fillStyle = 'rgba(232,224,208,0.45)';
-    ctx.font = '700 9px Manrope, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('AI SIMULATIONS', simCourtX + simCourtW/2, 8);
 
     requestAnimationFrame(draw);
   }
