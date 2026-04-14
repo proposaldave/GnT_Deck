@@ -4631,6 +4631,187 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   .graph-container { width:min(300px,85vw) !important; height:min(300px,85vw) !important; }
   .wedge-grid { grid-template-columns:1fr !important; }
 }
+
+/* ======== COMPREHENSIVE MOBILE OVERRIDES ======== */
+@media (max-width: 768px) {
+  /* Allow vertical scrolling within slides on mobile, keep content centered */
+  .casey-slide {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 52px 14px 70px !important;
+    justify-content: center !important;
+  }
+  /* When content is taller than viewport, let it scroll from top */
+  .casey-slide > * {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+  .casey-slide > * {
+    max-width: 100% !important;
+  }
+  /* Top-left section labels — tighten */
+  .casey-slide > div[style*="top:28px"],
+  .casey-slide > div[style*="top: 28px"] {
+    top: 12px !important;
+    left: 14px !important;
+    font-size: 9px !important;
+    letter-spacing: 0.15em !important;
+  }
+  /* Navigation — bigger for touch, repositioned */
+  .casey-nav {
+    bottom: 10px !important;
+    padding: 8px 12px !important;
+    gap: 5px !important;
+    max-width: 92vw !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+  }
+  .casey-dot { width: 10px !important; height: 10px !important; min-width: 10px !important; }
+  .casey-dot.on { width: 20px !important; }
+  .casey-count { top: 8px !important; right: 12px !important; font-size: 10px !important; }
+
+  /* ===== GLOBAL TEXT SIZING ===== */
+  .h, .display {
+    font-size: clamp(18px, 5.5vw, 28px) !important;
+    line-height: 1.25 !important;
+    max-width: 100% !important;
+    padding: 0 4px !important;
+  }
+  .inner, .stg, .s {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .slide-title { font-size: clamp(20px, 5.5vw, 30px) !important; }
+  .subtitle { font-size: clamp(12px, 3.2vw, 15px) !important; }
+
+  /* ===== DECORATIVE ORBS — shrink so they don't bleed ===== */
+  .orb, .orb-g, .orb-b, .orb-m, .orb-1, .orb-2 {
+    transform: scale(0.5) !important;
+    transform-origin: center !important;
+  }
+
+  /* ===== FLEX LAYOUTS — stack on mobile ===== */
+  .casey-slide [style*="display:flex"][style*="gap:48px"],
+  .casey-slide [style*="display: flex"][style*="gap: 48px"],
+  .casey-slide [style*="display:flex"][style*="gap:24px"],
+  .casey-slide [style*="display: flex"][style*="gap: 24px"] {
+    gap: 16px !important;
+  }
+
+  /* ===== SVG GRAPHICS — scale down ===== */
+  svg { max-width: 100% !important; height: auto !important; }
+
+  /* ===== CONFIDENTIALITY / MARK WATERMARKS ===== */
+  .mark, .conf { font-size: 9px !important; }
+
+  /* ===== CARDS / METRIC BOXES ===== */
+  .card, .metric-box, .m-card {
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+  }
+
+  /* ===== DIVIDERS ===== */
+  .divider { margin: 16px auto 12px !important; }
+
+  /* ===== SLIDE 1: Title slide ===== */
+  #cs-1 .h { font-size: clamp(22px, 7vw, 36px) !important; }
+
+  /* ===== Graph slide (You get magic) ===== */
+  .graph-slide { width: 100% !important; }
+  .graph-container { width: min(320px,92vw) !important; height: min(320px,92vw) !important; }
+  .graph-center-node { width: 72px !important; height: 72px !important; font-size: 10px !important; }
+  .graph-center-label { font-size: 11px !important; }
+  .node-label { font-size: 9px !important; white-space: nowrap; }
+  .node-dot { width: 26px !important; height: 26px !important; }
+
+  /* ===== Flywheel slide — smaller SVG with padding so labels fit ===== */
+  #cs-14 { padding-top: 40px !important; }
+  #cs-14 svg { max-width: 100vw !important; overflow: visible !important; }
+  #cs-14 .inner > div:last-child { width: min(78vw, 300px) !important; height: min(78vw, 300px) !important; margin: 0 auto !important; overflow: visible !important; }
+  #cs-14 svg text { font-size: 9px !important; }
+
+  /* ===== Teaser slide (3.0 vs Correct Way) ===== */
+  #cs-10 .teaser-container > div:first-child { flex-direction: column !important; align-items: center !important; }
+
+  /* ===== Facebook comparison ===== */
+  [style*="pickleball communities"] { font-size: 10px !important; }
+
+  /* ===== Founder journey ===== */
+  #cs-19 .inner, [id="cs-19"] .inner { padding: 20px 0 !important; }
+
+  /* ===== Human Value Marketplace — canvas is 800x340, widen on mobile to maximize ===== */
+  #cs-9 canvas { width: 100vw !important; max-width: 100vw !important; height: auto !important; margin-left: calc(-50vw + 50%) !important; margin-right: calc(-50vw + 50%) !important; }
+  #cs-9 .h, #cs-9 #digitizeList { padding: 0 14px !important; }
+
+  /* ===== Self-improving intelligence SVG ===== */
+  #cs-14 .inner > div:last-child { width: min(92vw, 360px) !important; height: min(92vw, 360px) !important; }
+
+  /* ===== "The Insight" two-column ===== */
+  #cs-17 [style*="display:flex"][style*="gap:48px"],
+  #cs-17 [style*="display: flex"][style*="gap: 48px"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* ===== Founder cards ===== */
+  .founder-grid, .founder-cards { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* ===== Appendix nav button ===== */
+  #appendixBtn { font-size: 9px !important; padding: 4px 8px !important; top: 6px !important; }
+
+  /* ===== Back buttons on sub-panels ===== */
+  .back-btn { font-size: 11px !important; top: 6px !important; left: 10px !important; padding: 4px 8px !important; }
+
+  /* ===== Node overlays (tap-to-open panels on graph slide) ===== */
+  .node-overlay { padding: 16px !important; }
+  .node-overlay h3 { font-size: 18px !important; }
+  .node-overlay p { font-size: 13px !important; }
+
+  /* ===== Crypto/blockchain/sources grids ===== */
+  .sources, .wedge-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+
+  /* ===== Community cards (slide 2 or similar) ===== */
+  .community-grid, .community-card {
+    flex-direction: column !important;
+    max-width: 100% !important;
+  }
+
+  /* ===== Teaser question sizing ===== */
+  .teaser-question { font-size: clamp(18px, 5.5vw, 28px) !important; }
+
+  /* ===== Appendix slides ===== */
+  .appendix-slide { padding: 12px !important; }
+
+  /* ===== Generic HR-like elements ===== */
+  hr { margin: 12px 0 !important; }
+
+  /* ===== Tables ===== */
+  table { font-size: 11px !important; }
+  th, td { padding: 4px 6px !important; }
+
+  /* ===== Ember / accent text ===== */
+  .ember { font-weight: 700 !important; }
+
+  /* ===== SM slide container (slide 2) ===== */
+  .sm-slide-container { padding: 0 !important; }
+  .sm-headline-big { font-size: clamp(18px, 5.2vw, 28px) !important; line-height: 1.3 !important; }
+
+  /* ===== Closing logo slide ===== */
+  #cs-22 #gntLogoAnim img { height: 80px !important; }
+}
+
+/* ======== EXTRA-SMALL PHONES ======== */
+@media (max-width: 380px) {
+  .casey-slide { padding: 10px 12px !important; padding-top: 48px !important; padding-bottom: 64px !important; }
+  .h, .display { font-size: clamp(16px, 5vw, 22px) !important; }
+  .casey-nav { padding: 6px 10px !important; gap: 4px !important; }
+  .casey-dot { width: 8px !important; height: 8px !important; min-width: 8px !important; }
+  .casey-dot.on { width: 16px !important; }
+  .teaser-question { font-size: 18px !important; }
+  .sm-headline-big { font-size: 18px !important; }
+}
 </style>
 </head>
 <body>
@@ -4895,28 +5076,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- Center node -->
       <div class="graph-center-node">
-        <svg width="44" height="36" viewBox="0 0 44 36" fill="none" style="margin-bottom:4px">
-          <!-- Envelope body -->
-          <rect x="2" y="10" width="40" height="24" rx="3" fill="rgba(45,90,61,0.6)" stroke="var(--green-glow)" stroke-width="1.2"/>
-          <!-- Flap -->
-          <path d="M2 10 L22 24 L42 10" fill="none" stroke="var(--green-glow)" stroke-width="1.2" stroke-linejoin="round"/>
-          <!-- Small heart/connection icon peeking out -->
-          <circle cx="22" cy="6" r="5" fill="rgba(212,168,83,0.8)" stroke="var(--gold)" stroke-width="0.8"/>
-          <text x="22" y="9" text-anchor="middle" font-size="7" fill="#0a0f0d" font-weight="700">G·T</text>
-        </svg>
-        <div class="graph-center-label">Give 'n Take<br>Graph</div>
+        <div class="graph-center-label">You get<br>magic</div>
       </div>
 
       <!-- Orbit concept nodes — clickable -->
-      <div class="graph-node first-node" data-angle="0" data-color="#f0c040" data-panel="connection" onclick="openPanel('connection',event)">
-        <div class="node-pulse-ring"></div>
-        <div class="node-dot" style="background:#f0c040"></div>
-        <div class="node-label">Human<br>Connection</div>
-        <div class="node-tap-hint">tap ↑</div>
-      </div>
-      <div class="graph-node" data-angle="51" data-color="#e88a4a" data-panel="uniqueness" onclick="openPanel('uniqueness',event)">
+      <div class="graph-node first-node" data-angle="51" data-color="#e88a4a" data-panel="uniqueness" onclick="openPanel('uniqueness',event)">
         <div class="node-dot" style="background:#e88a4a"></div>
-        <div class="node-label">Uniqueness<br>& Giving</div>
+        <div class="node-label">Our Uniqueness<br>To Others</div>
       </div>
       <div class="graph-node" data-angle="103" data-color="#4a9de8" data-panel="matchmaking" onclick="openPanel('matchmaking',event)">
         <div class="node-dot" style="background:#4a9de8"></div>
@@ -5436,7 +5602,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <!-- 3. Cancellations (right) -->
       <g>
         <circle cx="350" cy="220" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="375" y="215" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">cancellations</text>
+        <text x="375" y="215" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8">cancels</text>
         <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.3s" repeatCount="indefinite" path="M340,220 L262,220"/></circle>
       </g>
       <!-- 4. Referrals (bottom-right) -->
@@ -5460,7 +5626,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <!-- 7. Repeat requests (left) -->
       <g>
         <circle cx="90" cy="220" r="10" fill="rgba(73,180,160,0.08)" stroke="#43B8A0" stroke-width="1.2"/>
-        <text x="65" y="215" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8" text-anchor="end">repeat requests</text>
+        <text x="65" y="235" font-family="Manrope,sans-serif" font-size="9" fill="#43B8A0" opacity="0.8" text-anchor="end">repeat requests</text>
         <circle r="2.5" fill="#43B8A0" opacity="0.7"><animateMotion dur="2.2s" repeatCount="indefinite" path="M100,220 L178,220"/></circle>
       </g>
       <!-- 8. Expert overrides (top-left) — Krista is ONE of many, same visual weight -->
@@ -5495,10 +5661,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </line>
       <text x="270" y="282" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">better groups out</text>
 
-      <line x1="178" y1="220" x2="148" y2="220" stroke="#3dff7a" stroke-width="1" opacity="0.25" stroke-dasharray="3 3">
+      <line x1="200" y1="258" x2="180" y2="290" stroke="#3dff7a" stroke-width="1" opacity="0.25" stroke-dasharray="3 3">
         <animate attributeName="stroke-dashoffset" from="-12" to="0" dur="1.8s" repeatCount="indefinite"/>
       </line>
-      <text x="132" y="215" text-anchor="end" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">smarter matches</text>
+      <text x="160" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" fill="#3dff7a" opacity="0.6">smarter matches</text>
     </svg>
   </div>
 
