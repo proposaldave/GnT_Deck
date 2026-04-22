@@ -5305,7 +5305,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       Every tech wave unleashed <em style="font-style:italic">one resource.</em>
     </div>
     <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.3rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1.1;letter-spacing:-0.01em;margin-bottom:60px">
-      Ours unleashes the one that actually matters.
+      Ours unleashes the one that's most important to us.
     </div>
 
     <!-- TECH WAVES STACK -->
@@ -5773,12 +5773,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
 <div class="inner" style="padding-top:18px;text-align:center;max-width:1180px">
-  <style>
-    @keyframes liveDot {
-      0%,100% { opacity:1; transform:scale(1); }
-      50%     { opacity:0.35; transform:scale(0.75); }
-    }
-  </style>
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:8px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
     <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own social experiment.</em>
   </div>
@@ -6033,69 +6027,52 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     return svg;
   }
 
-  // ========== HER REALITY — DIGITIZED ==========
-  // 3 stacked sparklines = telemetry of the round. No labels. Each trace is
-  // a unique waveform derived from the court seed — "signal being captured."
+  // ========== HER REALITY — ONE WAVEFORM PER ROUND ==========
+  // Single filled-area sparkline. Unique per court. No labels, no stack, no LIVE badge.
+  // Just one elegant signal trace: "this round produced this signature."
   function buildExperienceBars(seed){
-    const W = 46, H = 12, N = 26;
+    const rand = mulberry(seed + 4001);
+    const W = 38, H = 30, N = 28;
     const panel = document.createElement('div');
-    panel.style.cssText = 'width:50px;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:3px 3px 3px 1px;flex-shrink:0';
-    // Top status mark: tiny blinking green dot suggesting "live capture"
-    const mark = document.createElement('div');
-    mark.style.cssText = 'display:flex;align-items:center;gap:3px;margin-bottom:1px';
-    const dot = document.createElement('span');
-    dot.style.cssText = 'width:3px;height:3px;background:#3dff7a;border-radius:50%;box-shadow:0 0 4px #3dff7a;animation:liveDot 1.4s ease-in-out infinite';
-    mark.appendChild(dot);
-    const tick = document.createElement('span');
-    tick.style.cssText = 'font-family:Manrope,sans-serif;font-size:5.5px;font-weight:700;letter-spacing:0.8px;color:rgba(61,255,122,0.72);text-transform:uppercase;line-height:1';
-    tick.textContent = 'LIVE';
-    mark.appendChild(tick);
-    panel.appendChild(mark);
-    // Build 3 sparkline traces, each with its own seed offset so they differ per court AND between rows
-    for (let row = 0; row < 3; row++){
-      const rand = mulberry(seed + 4001 + row * 1279);
-      const svg = document.createElementNS(NS,'svg');
-      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-      svg.setAttribute('preserveAspectRatio','none');
-      svg.style.cssText = 'display:block;width:100%;height:11px';
-      // Base line (dim)
-      const base = document.createElementNS(NS,'line');
-      base.setAttribute('x1', 0); base.setAttribute('x2', W);
-      base.setAttribute('y1', H/2); base.setAttribute('y2', H/2);
-      base.setAttribute('stroke', 'rgba(237,233,224,0.08)');
-      base.setAttribute('stroke-width', '0.3');
-      svg.appendChild(base);
-      // Waveform
-      const pts = [];
-      let prev = H/2;
-      for (let i = 0; i < N; i++){
-        const x = (i / (N-1)) * W;
-        // Smooth random walk so it looks like real telemetry
-        const delta = (rand() - 0.5) * H * 0.5;
-        let y = prev + delta;
-        y = Math.max(H * 0.1, Math.min(H * 0.9, y));
-        prev = y;
-        pts.push(x.toFixed(1) + ',' + y.toFixed(1));
-      }
-      const poly = document.createElementNS(NS,'polyline');
-      poly.setAttribute('points', pts.join(' '));
-      poly.setAttribute('fill', 'none');
-      poly.setAttribute('stroke', '#3dff7a');
-      poly.setAttribute('stroke-width', '0.7');
-      poly.setAttribute('stroke-linecap', 'round');
-      poly.setAttribute('stroke-linejoin', 'round');
-      poly.setAttribute('opacity', '0.82');
-      svg.appendChild(poly);
-      // Cursor dot at the end of each trace (live-capture feel)
-      const lastY = pts[pts.length - 1].split(',')[1];
-      const cursor = document.createElementNS(NS,'circle');
-      cursor.setAttribute('cx', W - 0.5); cursor.setAttribute('cy', lastY);
-      cursor.setAttribute('r', '0.9');
-      cursor.setAttribute('fill', '#3dff7a');
-      cursor.setAttribute('opacity', '0.95');
-      svg.appendChild(cursor);
-      panel.appendChild(svg);
+    panel.style.cssText = 'width:42px;display:flex;align-items:center;justify-content:center;padding:2px 2px 2px 0;flex-shrink:0';
+    const svg = document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.style.cssText = 'display:block;width:100%;height:100%';
+
+    // Generate a smooth random-walk waveform
+    const pts = [];
+    let prev = H / 2;
+    for (let i = 0; i < N; i++){
+      const x = (i / (N-1)) * W;
+      const delta = (rand() - 0.5) * H * 0.42;
+      let y = prev + delta;
+      y = Math.max(H * 0.12, Math.min(H * 0.88, y));
+      prev = y;
+      pts.push({x: x, y: y});
     }
+
+    // Area fill path: waveform on top, baseline on bottom
+    const areaPts = pts.map(pt => pt.x.toFixed(1) + ',' + pt.y.toFixed(1)).join(' L ');
+    const areaPath = 'M 0,' + H + ' L ' + areaPts + ' L ' + W + ',' + H + ' Z';
+    const area = document.createElementNS(NS,'path');
+    area.setAttribute('d', areaPath);
+    area.setAttribute('fill', 'rgba(61,255,122,0.14)');
+    svg.appendChild(area);
+
+    // Top stroke line
+    const linePts = pts.map(pt => pt.x.toFixed(1) + ',' + pt.y.toFixed(1)).join(' ');
+    const line = document.createElementNS(NS,'polyline');
+    line.setAttribute('points', linePts);
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', '#3dff7a');
+    line.setAttribute('stroke-width', '0.85');
+    line.setAttribute('stroke-linecap', 'round');
+    line.setAttribute('stroke-linejoin', 'round');
+    line.setAttribute('opacity', '0.9');
+    svg.appendChild(line);
+
+    panel.appendChild(svg);
     return panel;
   }
 
