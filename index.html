@@ -23,7 +23,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060609;color:#f5f2e
 .casey-dot:hover{background:rgba(255,255,255,0.35);transform:scale(1.2)}
 .casey-dot.on{background:#d4a853;box-shadow:0 0 12px rgba(212,168,83,0.6);width:24px;border-radius:5px}
 .casey-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#d4a853,#e04040,#3dff7a);z-index:999;transition:width 0.5s ease}
-.casey-count{position:fixed;top:12px;right:20px;font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;z-index:999;font-family:'DM Sans',sans-serif}
+.casey-count{position:fixed;top:12px;right:20px;font-size:12px;font-weight:600;color:rgba(232,224,208,0.7);letter-spacing:1.5px;z-index:999;font-family:'DM Sans',sans-serif}
 
 /* ======== DS-INTRO SCOPE ======== */
 
@@ -1192,7 +1192,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#060609;color:#f5f2e
     bottom: 28px;
     right: 24px;
     font-size: 11px;
-    color: rgba(255,255,255,0.25);
+    color: rgba(232,224,208,0.65);
     cursor: pointer;
     letter-spacing: 1px;
     padding: 6px 14px;
@@ -2268,7 +2268,7 @@ h1 {
 }
 .nav-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  background: transparent; border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+  background: transparent; border: 1px solid rgba(232,224,208,0.65); cursor: pointer;
   transition: background 0.3s, transform 0.3s, border-color 0.3s;
 }
 .nav-dot.active {
@@ -3325,7 +3325,7 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
 .light-nav .nav { background: rgba(250,246,240,0.5); border-color: rgba(0,0,0,0.04); }
 .nav-dot {
   width: 6px; height: 6px; border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.25);
+  border: 1.5px solid rgba(232,224,208,0.65);
   background: transparent; cursor: pointer;
   transition: all 0.3s ease; padding: 0;
 }
@@ -4107,15 +4107,19 @@ em, i { font-family: 'DM Serif Display', Georgia, serif; font-style: italic; }
    The ONLY difference: Present mode animates content in.
    Read mode shows everything instantly. Never hide content by mode. */
 
-/* Mode indicator — single element, top right corner */
+/* Mode indicator — HIDDEN by default (was conflicting with slide counter + GnT brand mark).
+   Only shows when body has .show-mode-indicator class. Present-mode rule preserved for future use. */
 body::after {
-  content: 'READ'; white-space: pre;
+  content: ''; display: none;
+}
+body.show-mode-indicator::after {
+  content: 'READ'; display: block; white-space: pre;
   position: fixed; top: 8px; right: 20px; z-index: 1200;
   font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; font-weight: 700;
   letter-spacing: 0.15em; color: var(--blue); opacity: 0.5;
   text-align: right; line-height: 1.6;
 }
-body.present-mode::after {
+body.present-mode.show-mode-indicator::after {
   content: 'PRESENT'; color: var(--accent);
 }
 
@@ -4880,16 +4884,17 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(245,158,11,0.5);z-index:5;">Give 'n Take</div>
 <div class="s on">
     <div class="stg">
-      <svg viewBox="0 0 120 80" width="100" height="66" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:32px;">
-        <text x="10" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="#60a5fa" opacity="0.9">G</text>
-        <text x="42" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="url(#logoGradTitle)">N</text>
-        <path d="M58 16 L58 8 L54 12 L58 8 L62 12" stroke="#60a5fa" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-        <path d="M68 6 L68 14 L64 10 L68 14 L72 10" stroke="#fb7185" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-        <text x="78" y="58" font-family="Playfair Display, serif" font-size="52" font-weight="700" fill="#fb7185" opacity="0.9">T</text>
-        <defs><linearGradient id="logoGradTitle" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#fb7185"/></linearGradient></defs>
+      <svg viewBox="0 0 52 48" width="220" height="203" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:32px;">
+        <g opacity="0.95">
+          <path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>
+          <path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>
+        </g>
+        <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
+        <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
+        <text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
       </svg>
 
-      <div class="h" style="font-size:clamp(28px,5vw,48px); max-width:860px;font-style:italic;">Autonomous human connection.</div>
+      <div class="h" style="font-size:clamp(28px,5vw,48px); max-width:860px;font-style:italic;">Autonomous human connection</div>
       <div class="divider" style="margin:28px auto 20px;"></div>
       <div style="font-size:15px; color:var(--text-mid); font-weight:400; letter-spacing:0.3px;">Proving at founder-owned social communities. <span style="color:var(--warm);">Autonomous late 2026.</span></div>
     </div>
@@ -4898,18 +4903,18 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <!-- SLIDE 2 -->
 <div class="casey-slide ds-intro" id="cs-2">
-<div style="position:absolute;top:24px;left:80px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25)">The Next Frontier</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Previous Era</div>
 
   <div class="sm-slide-container">
     <div class="sm-headline-big">
-      Social media is a very narrow view of<br>
+      And, social media is a very narrow view of<br>
       <strong style="font-weight:700;font-size:clamp(28px,5vw,48px)">human connection technology.</strong>
     </div>
 
     <div class="sm-shift">
       <div class="sm-from">
         <div class="sm-circle sm-old" style="padding:0;overflow:visible">
-          <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <svg width="110" height="110" viewBox="0 0 52 52" fill="none">
             <!-- Lonely person -->
             <circle cx="26" cy="14" r="5" fill="rgba(232,224,208,0.35)"/>
             <path d="M26 20 L26 34" stroke="rgba(232,224,208,0.3)" stroke-width="2" stroke-linecap="round"/>
@@ -4924,10 +4929,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         </div>
         <div class="sm-label" style="color:rgba(232,224,208,0.4)">Scroll alone</div>
       </div>
-      <div class="sm-arrow">→</div>
+      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:44px !important;opacity:0.7;font-weight:300">→</div>
       <div class="sm-to">
         <div class="sm-circle sm-new" style="padding:0;overflow:visible">
-          <svg width="72" height="72" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="140" height="140" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Envelope -->
             <rect x="12" y="22" width="56" height="40" rx="4" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" opacity="0.9"/>
             <path d="M12 22 L40 48 L68 22" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.8" stroke-linejoin="round"/>
@@ -4980,7 +4985,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 <!-- Social Sports — nav pos 6 (bumped from 5 for Matchmaking move to pos 5) -->
-<div class="casey-slide ds-focus" id="cs-5">
+<!-- Moved to appendix 2026-04-22 (was cs-5 main flow) — felt out of place per Dave -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a16" style="display:none">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red,#e04040);z-index:10;">The Bottleneck</div>
 <div class="inner" style="text-align:center;max-width:860px;padding-top:48px">
 
@@ -5148,7 +5154,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 
 <div class="inner">
-  <div class="display">You'd never<br><em>say it out loud.</em></div>
+  <div class="display">But you'd never<br><em>say it out loud.</em></div>
   <div class="whispers">
     <span class="whisper" style="top:6%;left:4%;font-size:1.3rem;opacity:.7;animation-delay:0s">"I don't want to play with Mike."</span>
     <span class="whisper" style="top:26%;left:36%;font-size:1.05rem;opacity:.7;animation-delay:1.5s">"That group makes me dread Wednesday."</span>
@@ -5218,7 +5224,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <circle cx="170" cy="115" r="5" fill="#fbbf24" opacity="0"><animate attributeName="r" values="3;12;3" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0.05;0.4" dur="5s" repeatCount="indefinite"/></circle>
         </svg>
       </div>
-      <div class="h">What happens when <span class="ember">the human connection data within all of us is digitized?</span></div>
+      <div class="h">What happens when <span class="ember">that data within all of us gets digitized?</span></div>
     </div>
   </div>
 </div>
@@ -5271,6 +5277,33 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 </div>
 
+<!-- cs-8c: THESIS - Scheduling IS measuring (inserted 2026-04-22 per Dave flow review) -->
+<div class="casey-slide ds-focus" id="cs-8c">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10">How we capture it</div>
+  <div style="padding:72px 48px;text-align:center;max-width:1040px;margin:0 auto;width:100%">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;color:#e8e0d0;line-height:1.05;letter-spacing:-0.015em;margin-bottom:22px">
+      Scheduling <em style="font-style:italic;color:#3dff7a">is</em> measuring.
+    </div>
+    <div style="font-family:'DM Sans',sans-serif;font-size:clamp(1rem,1.6vw,1.3rem);color:rgba(232,224,208,0.75);max-width:54ch;margin:0 auto;line-height:1.45">
+      Not surveys. <em style="color:#e8e0d0;font-style:italic">Revealed</em> choices. Every invitation is a data point.
+    </div>
+    <div style="display:flex;justify-content:center;gap:28px;margin-top:52px;max-width:900px;margin-left:auto;margin-right:auto;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px;max-width:400px;padding:28px 32px;border:1px solid rgba(224,64,64,0.3);border-radius:10px;background:rgba(224,64,64,0.04);text-align:left">
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#e04040;margin-bottom:12px">Old paradigm</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#e8e0d0;line-height:1.3;margin-bottom:10px">What people <em style="color:#e04040">say</em>.</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:.88rem;color:rgba(232,224,208,0.6);line-height:1.4">Surveys. Self-report. 85 years of Harvard.</div>
+      </div>
+      <div style="flex:1;min-width:280px;max-width:400px;padding:28px 32px;border:1px solid rgba(61,255,122,0.35);border-radius:10px;background:rgba(61,255,122,0.05);text-align:left;box-shadow:0 0 30px rgba(61,255,122,0.12)">
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#3dff7a;margin-bottom:12px">The leap</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#e8e0d0;line-height:1.3;margin-bottom:10px">What people <em style="color:#3dff7a">do</em>.</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:.88rem;color:rgba(232,224,208,0.6);line-height:1.4">Who they invite. Who accepts. Who shows up.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
 <!-- Human Value Marketplace — nav pos 11 -->
 <div class="casey-slide ds-measure" id="cs-10">
 <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10;">Human Value Marketplace</div>
@@ -5289,6 +5322,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <span data-color="#3dff7a" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#3dff7a;transition:all 0.4s ease">incentivize it</span>
         <span class="digi-sep" style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,0.15)">&middot;</span>
         <span data-color="#e04040" style="font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,24px);font-weight:700;color:#e04040;transition:all 0.4s ease">make it abundant</span>
+      </div>
+      <!-- Callback to cs-1b "humans feel insanely good through each other" thesis -->
+      <div style="margin-top:22px;padding:14px 24px;border-top:1px solid rgba(212,168,83,0.22);border-bottom:1px solid rgba(212,168,83,0.22);display:inline-block;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.2vw,24px);color:#e8e0d0">
+        &rarr; <span style="color:#d4a853">All of humanity feels insanely good.</span> Everywhere. Always.
       </div>
       <!-- Community-to-Court animation -->
       <div style="margin-top:20px;position:relative">
@@ -5338,334 +5375,213 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="flex:1;min-width:280px;max-width:420px;background:rgba(61,255,122,0.02);border:1px solid rgba(61,255,122,0.1);border-radius:16px;padding:24px;text-align:center;position:relative;overflow:hidden">
         <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">Data From The Players</div>
 
-        <!-- Central person being digitized -->
-        <svg id="dataDripSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Central person (YOU — digitized, futuristic) -->
-          <defs>
-            <linearGradient id="digiGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E8CC60"/><stop offset="50%" stop-color="#D4A843"/><stop offset="100%" stop-color="#B8882E"/></linearGradient>
-            <filter id="digiGlow"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#D4A843" flood-opacity="0.4"/></filter>
-          </defs>
-          <!-- Outer scanning rings -->
-          <circle cx="220" cy="150" r="55" fill="none" stroke="#D4A843" stroke-width="0.5" opacity="0.08" stroke-dasharray="3 5">
-            <animateTransform attributeName="transform" type="rotate" from="0 220 150" to="360 220 150" dur="12s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="220" cy="150" r="42" fill="none" stroke="#D4A843" stroke-width="0.4" opacity="0.06" stroke-dasharray="2 4">
-            <animateTransform attributeName="transform" type="rotate" from="360 220 150" to="0 220 150" dur="8s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Glow backdrop -->
-          <circle cx="220" cy="150" r="35" fill="rgba(212,168,83,0.04)"/>
-          <circle cx="220" cy="150" r="35" fill="none" stroke="#D4A843" stroke-width="0.6" opacity="0.1">
-            <animate attributeName="r" values="33;40;33" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Person body — JS-generated dense multi-color particle cloud -->
-          <g id="digiFigure" filter="url(#digiGlow)" transform="translate(220,150) scale(1.9) translate(-220,-150)"></g>
-          <!-- Scan line sweeping over the figure -->
-          <line x1="195" y1="110" x2="245" y2="110" stroke="#3dff7a" stroke-width="2" opacity="0" filter="url(#digiGlow)">
-            <animate attributeName="y1" values="106;204;106" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="y2" values="106;204;106" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
-          </line>
-          <!-- Secondary glow line for emphasis -->
-          <line x1="190" y1="110" x2="250" y2="110" stroke="#3dff7a" stroke-width="4" opacity="0">
-            <animate attributeName="y1" values="106;204;106" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="y2" values="106;204;106" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.35;0.1;0.35" dur="3s" repeatCount="indefinite"/>
-          </line>
-          <!-- Data points appearing on body -->
-          <circle cx="214" cy="145" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/></circle>
-          <circle cx="226" cy="155" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite" begin="0.5s"/></circle>
-          <circle cx="218" cy="168" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="1.8s" repeatCount="indefinite" begin="1s"/></circle>
-          <circle cx="208" cy="135" r="1" fill="#3dff7a" opacity="0"><animate attributeName="opacity" values="0;0.8;0" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
-          <!-- Downward data trail: dots flowing toward bottom text -->
-          <circle cx="220" cy="230" r="1.5" fill="#3dff7a" opacity="0.5"><animate attributeName="opacity" values="0.5;0.15;0.5" dur="2s" repeatCount="indefinite"/></circle>
-          <circle cx="220" cy="240" r="1.2" fill="#3dff7a" opacity="0.35"><animate attributeName="opacity" values="0.35;0.1;0.35" dur="2s" repeatCount="indefinite" begin="0.3s"/></circle>
-          <circle cx="220" cy="249" r="1" fill="#3dff7a" opacity="0.25"><animate attributeName="opacity" values="0.25;0.08;0.25" dur="2s" repeatCount="indefinite" begin="0.6s"/></circle>
-          <circle cx="220" cy="257" r="0.8" fill="#3dff7a" opacity="0.15"><animate attributeName="opacity" values="0.15;0.05;0.15" dur="2s" repeatCount="indefinite" begin="0.9s"/></circle>
-          <!-- Subtle bracket/arrow pointing down -->
-          <path d="M210 224 L220 232 L230 224" stroke="#3dff7a" stroke-width="0.8" fill="none" opacity="0.3"/>
-
-          <!-- Person 1: top-left (teal) — digitized via JS buildMiniDigiPerson below -->
-          <line x1="80" y1="50" x2="200" y2="125" stroke="#43B8A0" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#43B8A0" opacity="0.8"><animateMotion dur="1.8s" repeatCount="indefinite" path="M80,50 L200,125"/></circle>
-
-          <!-- Person 2: top-right (pink) — digitized via JS -->
-          <line x1="360" y1="50" x2="240" y2="125" stroke="#D46B7E" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.8s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#D46B7E" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M360,50 L240,125"/></circle>
-
-          <!-- Person 3: left (blue) — digitized via JS -->
-          <line x1="38" y1="155" x2="200" y2="140" stroke="#5B8FD4" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2.2s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#5B8FD4" opacity="0.8"><animateMotion dur="2.2s" repeatCount="indefinite" path="M38,155 L200,140"/></circle>
-
-          <!-- Person 4: right (yellow) — digitized via JS -->
-          <line x1="402" y1="155" x2="240" y2="140" stroke="#E8CC60" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#E8CC60" opacity="0.8"><animateMotion dur="1.6s" repeatCount="indefinite" path="M402,155 L240,140"/></circle>
-
-          <!-- Person 5: bottom-left (purple) — digitized via JS -->
-          <line x1="112" y1="238" x2="210" y2="175" stroke="#c76bdb" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#c76bdb" opacity="0.8"><animateMotion dur="2s" repeatCount="indefinite" path="M112,238 L210,175"/></circle>
-
-          <!-- Person 6: bottom-right (mint) — digitized via JS -->
-          <line x1="328" y1="238" x2="230" y2="175" stroke="#4ae8c1" stroke-width="1" opacity="0.2" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/></line>
-          <circle r="2.5" fill="#4ae8c1" opacity="0.8"><animateMotion dur="1.4s" repeatCount="indefinite" path="M328,238 L230,175"/></circle>
+        <!-- Single pickleball court: zoom-in of one round from the 24-court grid on the previous slide.
+             YOU (coral-shirt silhouette) at top-left, 3 rotating pickleball partners at the other 3 quadrants,
+             bidirectional data flow: gold outbound ("how you experience them"), each partner's color inbound. -->
+        <svg id="cs4CourtSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- JS-populated court, YOU (coral silhouette), 3 partners, bidirectional data dots -->
+          <g id="cs4CourtGroup"></g>
         </svg>
         <script>
-        (function populateDigiFigure(){
-          const fig = document.getElementById('digiFigure');
-          if (!fig) return;
+        // Builds the cs-4 single-court zoom-in. Same visual DNA as the 24-court mini-courts on cs-3.
+        // YOU (coral silhouette) takes top-left quadrant at ~4x the mini scale. Three partners occupy
+        // the other quadrants. Between YOU and each partner: two-way data flow — gold outbound,
+        // partner's color inbound — conveying "how you experience them / how they experience you."
+        // Re-runs on every entry to cs-4 via animateCs4Court() called from caseyGo.
+        window.animateCs4Court = function(){
+          const group = document.getElementById('cs4CourtGroup');
+          if (!group) return;
+          group.innerHTML = '';
           const NS = 'http://www.w3.org/2000/svg';
-          const colors = [
-            '#43B8A0','#4ae8c1',
-            '#D46B7E','#e85a7a',
-            '#5B8FD4','#64b5f6','#4a9de8',
-            '#c76bdb','#ce93d8',
-            '#3dff7a','#5ae87a',
-            '#f0c040','#D4A843'
-          ];
-
-          // Structured grid-based figure. Build a set of points, then connect adjacent ones with thin wireframe lines.
-          const points = [];
-
-          // HEAD — hexagonal grid points inside a circle
-          const headCx = 220, headCy = 107, headR = 8.5;
-          const hexSpacing = 2.4;
-          for (let row = -5; row <= 5; row++) {
-            for (let col = -5; col <= 5; col++) {
-              const x = headCx + col*hexSpacing + (row%2 ? hexSpacing/2 : 0);
-              const y = headCy + row*hexSpacing*0.866;
-              const dx = x-headCx, dy = y-headCy;
-              if (dx*dx + dy*dy <= headR*headR) points.push({x, y, part:'head'});
-            }
-          }
-
-          // NECK — 2 columns, 3 rows
-          for (let r=0; r<3; r++) {
-            const y = 118 + r*2;
-            points.push({x:219, y:y, part:'neck'});
-            points.push({x:221, y:y, part:'neck'});
-          }
-
-          // TORSO — 3 columns × 10 rows, regular grid
-          const torsoCols = [-3, 0, 3];
-          for (let r=0; r<11; r++) {
-            const y = 124 + r*4.4;
-            torsoCols.forEach(dx => {
-              points.push({x:220+dx, y, part:'torso'});
-            });
-          }
-
-          // LEFT ARM — points along diagonal with 2 tracks
-          for (let i=0; i<10; i++) {
-            const t = i/9;
-            const cx = 218 + t*(198-218);
-            const cy = 128 + t*(145-128);
-            points.push({x:cx, y:cy, part:'arm-l'});
-            // perpendicular offset (widens at shoulder, thins at wrist)
-            const width = 2.0 - t*1.2;
-            points.push({x:cx - width*0.85, y:cy + width*0.5, part:'arm-l'});
-          }
-
-          // RIGHT ARM — mirror
-          for (let i=0; i<10; i++) {
-            const t = i/9;
-            const cx = 222 + t*(242-222);
-            const cy = 128 + t*(145-128);
-            points.push({x:cx, y:cy, part:'arm-r'});
-            const width = 2.0 - t*1.2;
-            points.push({x:cx + width*0.85, y:cy + width*0.5, part:'arm-r'});
-          }
-
-          // LEFT LEG — 2 columns going down-left
-          for (let i=0; i<16; i++) {
-            const t = i/15;
-            const cx = 217 + t*(207-217);
-            const cy = 168 + t*(205-168);
-            points.push({x:cx-1.3, y:cy, part:'leg-l'});
-            points.push({x:cx+1.3, y:cy, part:'leg-l'});
-          }
-
-          // RIGHT LEG
-          for (let i=0; i<16; i++) {
-            const t = i/15;
-            const cx = 223 + t*(233-223);
-            const cy = 168 + t*(205-168);
-            points.push({x:cx-1.3, y:cy, part:'leg-r'});
-            points.push({x:cx+1.3, y:cy, part:'leg-r'});
-          }
-
-          // Draw wireframe LINES between nearby points first (behind dots)
-          const MAX_DIST = 3.6;
-          for (let i=0; i<points.length; i++) {
-            for (let j=i+1; j<points.length; j++) {
-              const a = points[i], b = points[j];
-              // Only connect within same body part (keeps it structured)
-              if (a.part !== b.part) continue;
-              const dx = a.x-b.x, dy = a.y-b.y;
-              const d = Math.sqrt(dx*dx + dy*dy);
-              if (d > 0 && d < MAX_DIST) {
-                const line = document.createElementNS(NS,'line');
-                line.setAttribute('x1', a.x.toFixed(1));
-                line.setAttribute('y1', a.y.toFixed(1));
-                line.setAttribute('x2', b.x.toFixed(1));
-                line.setAttribute('y2', b.y.toFixed(1));
-                line.setAttribute('stroke', 'rgba(212,168,83,0.22)');
-                line.setAttribute('stroke-width', '0.3');
-                fig.appendChild(line);
-              }
-            }
-          }
-
-          // Draw dots on top — uniform small size for most, with occasional "data nodes"
-          points.forEach((p, i) => {
-            const isNode = Math.random() < 0.15; // 15% chance of being a brighter "data node"
-            const radius = isNode ? (1.4 + Math.random()*0.6) : (0.9 + Math.random()*0.3);
-            const color = colors[Math.floor(Math.random()*colors.length)];
-            const dur = (1.8 + Math.random()*1.6).toFixed(2);
-            const delay = (Math.random()*2.5).toFixed(2);
-            const maxOp = isNode ? (0.85 + Math.random()*0.15).toFixed(2) : (0.55 + Math.random()*0.25).toFixed(2);
-            const minOp = (0.15 + Math.random()*0.15).toFixed(2);
-            const c = document.createElementNS(NS,'circle');
-            c.setAttribute('cx', p.x.toFixed(1));
-            c.setAttribute('cy', p.y.toFixed(1));
-            c.setAttribute('r', radius.toFixed(2));
-            c.setAttribute('fill', color);
-            const a = document.createElementNS(NS,'animate');
-            a.setAttribute('attributeName','opacity');
-            a.setAttribute('values', minOp+';'+maxOp+';'+minOp);
-            a.setAttribute('dur', dur+'s');
-            a.setAttribute('repeatCount','indefinite');
-            a.setAttribute('begin', delay+'s');
-            c.appendChild(a);
-            fig.appendChild(c);
+          const COURT = { x: 30, y: 30, w: 380, h: 220 };
+          // --- Court frame + lines ---
+          const frame = document.createElementNS(NS,'rect');
+          frame.setAttribute('x',COURT.x); frame.setAttribute('y',COURT.y);
+          frame.setAttribute('width',COURT.w); frame.setAttribute('height',COURT.h);
+          frame.setAttribute('rx','6');
+          frame.setAttribute('fill','rgba(61,255,122,0.025)');
+          frame.setAttribute('stroke','rgba(61,255,122,0.26)');
+          frame.setAttribute('stroke-width','1.1');
+          group.appendChild(frame);
+          const netX = COURT.x + COURT.w/2;
+          const net = document.createElementNS(NS,'line');
+          net.setAttribute('x1',netX); net.setAttribute('x2',netX);
+          net.setAttribute('y1',COURT.y); net.setAttribute('y2',COURT.y+COURT.h);
+          net.setAttribute('stroke','rgba(237,233,224,0.22)');
+          net.setAttribute('stroke-width','1');
+          net.setAttribute('stroke-dasharray','3 3');
+          group.appendChild(net);
+          const kOff = COURT.w * 0.17;
+          [netX-kOff, netX+kOff].forEach(kx => {
+            const k = document.createElementNS(NS,'line');
+            k.setAttribute('x1',kx); k.setAttribute('x2',kx);
+            k.setAttribute('y1',COURT.y); k.setAttribute('y2',COURT.y+COURT.h);
+            k.setAttribute('stroke','rgba(237,233,224,0.14)');
+            k.setAttribute('stroke-width','0.7');
+            group.appendChild(k);
           });
 
-          // "you" label below the figure
-          const label = document.createElementNS(NS,'text');
-          label.setAttribute('x', '220');
-          label.setAttribute('y', '218');
-          label.setAttribute('text-anchor', 'middle');
-          label.setAttribute('font-family', 'Manrope, sans-serif');
-          label.setAttribute('font-size', '8');
-          label.setAttribute('font-weight', '700');
-          label.setAttribute('letter-spacing', '4');
-          label.setAttribute('fill', '#3dff7a');
-          label.setAttribute('opacity', '0.9');
-          label.textContent = 'YOU';
-          fig.appendChild(label);
-
-          // ======= OUTER DIGITIZED PEOPLE + BIDIRECTIONAL FLOW =======
-          // Each outer person is also digitized (not a stick figure) — that's Give 'n Take:
-          // how you experience them (gold dots flowing outward) AND
-          // how they experience you (their-color dots flowing inward, existing HTML animations).
-          const svg = fig.ownerSVGElement;
-          if (svg) {
-            function buildMiniDigiPerson(parent, cx, cy, primaryColor) {
-              const accents = [primaryColor, primaryColor, primaryColor, primaryColor, '#D4A843', '#3dff7a', '#f0c040', '#ce93d8'];
-              const pts = [];
-              // HEAD — hex grid in small circle
-              const hSpacing = 1.4, headR = 3.0;
-              for (let r = -2; r <= 2; r++) {
-                for (let col = -2; col <= 2; col++) {
-                  const x = cx + col*hSpacing + (r%2 ? hSpacing/2 : 0);
-                  const y = (cy-16) + r*hSpacing*0.866;
-                  const dx = x-cx, dy = y-(cy-16);
-                  if (dx*dx + dy*dy <= headR*headR) pts.push({x, y, part:'head'});
-                }
-              }
-              // NECK
-              pts.push({x: cx-0.7, y: cy-11, part:'neck'});
-              pts.push({x: cx+0.7, y: cy-11, part:'neck'});
-              // TORSO — 3 cols × 3 rows
-              for (let r = 0; r < 3; r++) {
-                [-1.6, 0, 1.6].forEach(dx => pts.push({x: cx+dx, y: cy-9 + r*2.2, part:'torso'}));
-              }
-              // ARMS — 3 segments each
-              for (let i = 0; i < 3; i++) {
-                const t = i / 2;
-                pts.push({x: cx - 2 - t*5, y: cy-7 + t*3, part:'arm-l'});
-                pts.push({x: cx + 2 + t*5, y: cy-7 + t*3, part:'arm-r'});
-              }
-              // LEGS — 4 segments each
-              for (let i = 0; i < 4; i++) {
-                const t = i / 3;
-                pts.push({x: cx - 1.2 - t*1.5, y: cy-2 + t*10, part:'leg-l'});
-                pts.push({x: cx + 1.2 + t*1.5, y: cy-2 + t*10, part:'leg-r'});
-              }
-              // Wireframe lines between nearby same-part points
-              const MAX_D2 = 2.5 * 2.5;
-              for (let i = 0; i < pts.length; i++) {
-                for (let j = i+1; j < pts.length; j++) {
-                  const a = pts[i], b = pts[j];
-                  if (a.part !== b.part) continue;
-                  const dx = a.x - b.x, dy = a.y - b.y;
-                  const d2 = dx*dx + dy*dy;
-                  if (d2 > 0 && d2 < MAX_D2) {
-                    const ln = document.createElementNS(NS, 'line');
-                    ln.setAttribute('x1', a.x.toFixed(1));
-                    ln.setAttribute('y1', a.y.toFixed(1));
-                    ln.setAttribute('x2', b.x.toFixed(1));
-                    ln.setAttribute('y2', b.y.toFixed(1));
-                    ln.setAttribute('stroke', primaryColor);
-                    ln.setAttribute('stroke-width', '0.25');
-                    ln.setAttribute('opacity', '0.22');
-                    parent.appendChild(ln);
-                  }
-                }
-              }
-              // Dots (multi-color biased toward primary)
-              pts.forEach(p => {
-                const isNode = Math.random() < 0.2;
-                const radius = isNode ? (0.75 + Math.random()*0.25) : (0.5 + Math.random()*0.2);
-                const color = accents[Math.floor(Math.random()*accents.length)];
-                const dur = (1.6 + Math.random()*1.6).toFixed(2);
-                const delay = (Math.random()*2.5).toFixed(2);
-                const maxOp = isNode ? (0.8 + Math.random()*0.2).toFixed(2) : (0.5 + Math.random()*0.25).toFixed(2);
-                const minOp = (0.15 + Math.random()*0.15).toFixed(2);
-                const c = document.createElementNS(NS, 'circle');
-                c.setAttribute('cx', p.x.toFixed(1));
-                c.setAttribute('cy', p.y.toFixed(1));
-                c.setAttribute('r', radius.toFixed(2));
-                c.setAttribute('fill', color);
-                const an = document.createElementNS(NS, 'animate');
-                an.setAttribute('attributeName', 'opacity');
-                an.setAttribute('values', minOp + ';' + maxOp + ';' + minOp);
-                an.setAttribute('dur', dur + 's');
-                an.setAttribute('repeatCount', 'indefinite');
-                an.setAttribute('begin', delay + 's');
-                c.appendChild(an);
-                parent.appendChild(c);
-              });
-            }
-
-            const outerPeople = [
-              { cx: 65,  cy: 50,  color: '#43B8A0', linePath: 'M80,50 L200,125',   dur: 1.8 },
-              { cx: 375, cy: 50,  color: '#D46B7E', linePath: 'M360,50 L240,125',  dur: 2.0 },
-              { cx: 22,  cy: 168, color: '#5B8FD4', linePath: 'M38,155 L200,140',  dur: 2.2 },
-              { cx: 418, cy: 168, color: '#E8CC60', linePath: 'M402,155 L240,140', dur: 1.6 },
-              { cx: 100, cy: 250, color: '#c76bdb', linePath: 'M112,238 L210,175', dur: 2.0 },
-              { cx: 340, cy: 250, color: '#4ae8c1', linePath: 'M328,238 L230,175', dur: 1.4 }
-            ];
-
-            outerPeople.forEach(person => {
-              buildMiniDigiPerson(svg, person.cx, person.cy, person.color);
-              // Outbound flow dot: center → outer ("how YOU experience THEM", gold = the YOU figure's aura leaving)
-              const coords = person.linePath.match(/[\d.]+,[\d.]+/g);
-              if (!coords || coords.length < 2) return;
-              const revPath = 'M' + coords[1] + ' L' + coords[0];
-              const outDot = document.createElementNS(NS, 'circle');
-              outDot.setAttribute('r', '1.9');
-              outDot.setAttribute('fill', '#D4A843');
-              outDot.setAttribute('opacity', '0.7');
-              const motion = document.createElementNS(NS, 'animateMotion');
-              motion.setAttribute('dur', person.dur + 's');
-              motion.setAttribute('repeatCount', 'indefinite');
-              motion.setAttribute('path', revPath);
-              motion.setAttribute('begin', (person.dur * 0.5).toFixed(2) + 's');
-              outDot.appendChild(motion);
-              svg.appendChild(outDot);
-            });
+          // --- 4 player entities at the 4 quadrants ---
+          // YOU sits top-left. 3 partners around her. Every pair gets a two-way data channel.
+          const entities = [
+            { id:'you', pos:{x:COURT.x+COURT.w*0.22, y:COURT.y+COURT.h*0.33}, color:'#D4A843', sprite:'you',    dur:1.9 },
+            { id:'tr',  pos:{x:COURT.x+COURT.w*0.78, y:COURT.y+COURT.h*0.33}, color:'#f0c040', sprite:'ball',   dur:1.9 },
+            { id:'bl',  pos:{x:COURT.x+COURT.w*0.22, y:COURT.y+COURT.h*0.72}, color:'#5B8FD4', sprite:'ball',   dur:2.2 },
+            { id:'br',  pos:{x:COURT.x+COURT.w*0.78, y:COURT.y+COURT.h*0.72}, color:'#D46B7E', sprite:'ball',   dur:1.6 }
+          ];
+          const R_PAD = 16;
+          function shortPath(from, to, startPad, endPad){
+            const dx=to.x-from.x, dy=to.y-from.y; const d=Math.sqrt(dx*dx+dy*dy);
+            const ux=dx/d, uy=dy/d;
+            const sx=from.x+ux*startPad, sy=from.y+uy*startPad;
+            const ex=to.x-ux*endPad,     ey=to.y-uy*endPad;
+            return 'M'+sx.toFixed(1)+','+sy.toFixed(1)+' L'+ex.toFixed(1)+','+ey.toFixed(1);
           }
-        })();
+
+          // --- Draw every edge (6 total) behind sprites ---
+          const edges = [];
+          for (let i=0;i<entities.length;i++){
+            for (let j=i+1;j<entities.length;j++){
+              edges.push([entities[i], entities[j]]);
+            }
+          }
+          edges.forEach(([a,b], idx) => {
+            // Dashed connection line in midpoint-blended tone
+            const line = document.createElementNS(NS,'line');
+            line.setAttribute('x1',a.pos.x); line.setAttribute('y1',a.pos.y);
+            line.setAttribute('x2',b.pos.x); line.setAttribute('y2',b.pos.y);
+            line.setAttribute('stroke', a.id==='you' ? b.color : 'rgba(212,168,83,0.45)');
+            line.setAttribute('stroke-width', a.id==='you' ? '1' : '0.7');
+            line.setAttribute('opacity', a.id==='you' ? '0.28' : '0.22');
+            line.setAttribute('stroke-dasharray','4 4');
+            const off = document.createElementNS(NS,'animate');
+            off.setAttribute('attributeName','stroke-dashoffset');
+            off.setAttribute('from','0'); off.setAttribute('to','-16');
+            off.setAttribute('dur', (1.8 + idx*0.15).toFixed(2)+'s');
+            off.setAttribute('repeatCount','indefinite');
+            line.appendChild(off);
+            group.appendChild(line);
+          });
+
+          // --- Bidirectional data dots on EVERY edge ---
+          edges.forEach(([a,b], idx) => {
+            const dur = 1.8 + idx*0.18;
+            // a -> b (a's color)
+            for (let k=0;k<3;k++){
+              const path = shortPath(a.pos, b.pos, a.id==='you'?24:R_PAD, R_PAD);
+              const dot = document.createElementNS(NS,'circle');
+              dot.setAttribute('r', a.id==='you'?'2.4':'1.9');
+              dot.setAttribute('fill', a.color);
+              dot.setAttribute('opacity', a.id==='you'?'0.9':'0.8');
+              const m = document.createElementNS(NS,'animateMotion');
+              m.setAttribute('dur', dur+'s');
+              m.setAttribute('repeatCount','indefinite');
+              m.setAttribute('path', path);
+              m.setAttribute('begin', (k*dur/3).toFixed(2)+'s');
+              dot.appendChild(m);
+              group.appendChild(dot);
+            }
+            // b -> a (b's color)
+            for (let k=0;k<3;k++){
+              const path = shortPath(b.pos, a.pos, R_PAD, a.id==='you'?24:R_PAD);
+              const dot = document.createElementNS(NS,'circle');
+              dot.setAttribute('r','2.0');
+              dot.setAttribute('fill', b.color);
+              dot.setAttribute('opacity','0.85');
+              const m = document.createElementNS(NS,'animateMotion');
+              m.setAttribute('dur', (dur+0.25).toFixed(2)+'s');
+              m.setAttribute('repeatCount','indefinite');
+              m.setAttribute('path', path);
+              m.setAttribute('begin', (k*(dur+0.25)/3 + dur/6).toFixed(2)+'s');
+              dot.appendChild(m);
+              group.appendChild(dot);
+            }
+          });
+
+          // --- Render sprites (on top) ---
+          entities.forEach(e => {
+            if (e.sprite === 'you'){
+              // Coral-shirt silhouette
+              const S = 7.4, cx = e.pos.x, headCy = e.pos.y - 10;
+              const pony = document.createElementNS(NS,'path');
+              pony.setAttribute('d','M '+(cx+0.9*S)+' '+(headCy-2.3*S)+
+                ' Q '+(cx+1.6*S)+' '+(headCy-1.8*S)+' '+(cx+1.5*S)+' '+(headCy-1*S)+
+                ' Q '+(cx+1*S)+' '+(headCy-1.5*S)+' '+(cx+0.6*S)+' '+(headCy-2*S)+' Z');
+              pony.setAttribute('fill','#2a1e16'); group.appendChild(pony);
+              const head = document.createElementNS(NS,'circle');
+              head.setAttribute('cx',cx); head.setAttribute('cy', headCy-1.6*S);
+              head.setAttribute('r',1.35*S); head.setAttribute('fill','#f4c5a0');
+              head.setAttribute('stroke','#a07848'); head.setAttribute('stroke-width',0.22*S);
+              group.appendChild(head);
+              const hair = document.createElementNS(NS,'path');
+              hair.setAttribute('d','M '+(cx-1.3*S)+' '+(headCy-1.9*S)+
+                ' Q '+cx+' '+(headCy-3.4*S)+' '+(cx+1.3*S)+' '+(headCy-1.9*S)+
+                ' L '+(cx+1.1*S)+' '+(headCy-1.4*S)+
+                ' Q '+cx+' '+(headCy-2.4*S)+' '+(cx-1.1*S)+' '+(headCy-1.4*S)+' Z');
+              hair.setAttribute('fill','#2a1e16'); group.appendChild(hair);
+              const bodyTopY = headCy-0.2*S;
+              const body = document.createElementNS(NS,'path');
+              body.setAttribute('d','M '+(cx-1.6*S)+' '+bodyTopY+
+                ' Q '+(cx-1.6*S)+' '+(bodyTopY-0.3*S)+' '+(cx-1.2*S)+' '+(bodyTopY-0.3*S)+
+                ' L '+(cx-0.4*S)+' '+(bodyTopY-0.3*S)+
+                ' L '+cx+' '+(bodyTopY+0.1*S)+
+                ' L '+(cx+0.4*S)+' '+(bodyTopY-0.3*S)+
+                ' L '+(cx+1.2*S)+' '+(bodyTopY-0.3*S)+
+                ' Q '+(cx+1.6*S)+' '+(bodyTopY-0.3*S)+' '+(cx+1.6*S)+' '+bodyTopY+
+                ' L '+(cx+1.8*S)+' '+(bodyTopY+2.6*S)+
+                ' L '+(cx-1.8*S)+' '+(bodyTopY+2.6*S)+' Z');
+              body.setAttribute('fill','#e88a4a'); body.setAttribute('opacity','0.94');
+              group.appendChild(body);
+              const label = document.createElementNS(NS,'text');
+              label.setAttribute('x',cx); label.setAttribute('y', bodyTopY+2.6*S+11);
+              label.setAttribute('text-anchor','middle');
+              label.setAttribute('font-family','Manrope, sans-serif');
+              label.setAttribute('font-size','8');
+              label.setAttribute('font-weight','700');
+              label.setAttribute('letter-spacing','3');
+              label.setAttribute('fill','#3dff7a');
+              label.setAttribute('opacity','0.75');
+              label.textContent = 'YOU';
+              group.appendChild(label);
+            } else {
+              // Pickleball
+              const R = 13;
+              const ball = document.createElementNS(NS,'circle');
+              ball.setAttribute('cx',e.pos.x); ball.setAttribute('cy',e.pos.y);
+              ball.setAttribute('r',R); ball.setAttribute('fill',e.color);
+              ball.setAttribute('stroke','rgba(10,15,13,0.35)');
+              ball.setAttribute('stroke-width','0.5');
+              group.appendChild(ball);
+              [[0,-4.8],[-4.6,2.2],[4.6,2.2]].forEach(([dx,dy])=>{
+                const h = document.createElementNS(NS,'circle');
+                h.setAttribute('cx',e.pos.x+dx); h.setAttribute('cy',e.pos.y+dy);
+                h.setAttribute('r','1.9');
+                h.setAttribute('fill','rgba(10,15,13,0.78)');
+                group.appendChild(h);
+              });
+              const glow = document.createElementNS(NS,'circle');
+              glow.setAttribute('cx',e.pos.x); glow.setAttribute('cy',e.pos.y);
+              glow.setAttribute('r',R+3); glow.setAttribute('fill','none');
+              glow.setAttribute('stroke',e.color); glow.setAttribute('stroke-width','0.6');
+              glow.setAttribute('opacity','0.22');
+              const gA = document.createElementNS(NS,'animate');
+              gA.setAttribute('attributeName','r');
+              gA.setAttribute('values',(R+2)+';'+(R+6)+';'+(R+2));
+              gA.setAttribute('dur',e.dur+'s');
+              gA.setAttribute('repeatCount','indefinite');
+              glow.appendChild(gA);
+              const gO = document.createElementNS(NS,'animate');
+              gO.setAttribute('attributeName','opacity');
+              gO.setAttribute('values','0.35;0.05;0.35');
+              gO.setAttribute('dur',e.dur+'s');
+              gO.setAttribute('repeatCount','indefinite');
+              glow.appendChild(gO);
+              group.appendChild(glow);
+            }
+          });
+        };
+        // Run once on first load so the court appears even if the slide is visited before caseyGo registers.
+        animateCs4Court();
         </script>
 
         <div style="font-size:0.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-top:8px">How you experience them.<br>How they experience you.</div>
@@ -5677,7 +5593,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- Two Products · Invitations + Rounds — nav pos 13 -->
 <div class="casey-slide ds-focus" id="cs-11">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">How it works</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">How: Core Product</div>
 
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.5rem);color:var(--cream,#e8e0d0);line-height:1.15;margin-bottom:6px;font-weight:700">
@@ -5701,13 +5617,10 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <path d="M36 31 L39.5 34.5 L44 29" stroke="#3dff7a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">Before the event</div>
+      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">Before the session</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:12px">Invitation Feed</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.35;margin-bottom:8px">
-        The right people<br>to the right event.
-      </div>
-      <div style="font-size:0.7rem;color:rgba(237,233,224,.55);line-height:1.5;font-style:italic">
-        Personalized invites.
+        In the future, everyone will have a <em style="color:var(--gold,#caa54a);font-style:italic">personalized invitation feed.</em>
       </div>
     </div>
 
@@ -5754,21 +5667,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           </g>
         </svg>
       </div>
-      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">During the event</div>
+      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">During the session</div>
       <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">Social Rounds</div>
       <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.35;margin-bottom:8px">
-        Partners rotate<br>every 15 minutes.
-      </div>
-      <div style="font-size:0.7rem;color:rgba(237,233,224,.55);line-height:1.5;font-style:italic">
-        Every combo captured. Every signal measured.
+        ~8 rounds per <em style="color:var(--green-glow,#3dff7a);font-style:italic">session.</em>
       </div>
     </div>
   </div>
 
-  <div style="max-width:780px;margin:0 auto;padding:18px 28px;border-top:1px solid rgba(212,168,83,0.22);border-bottom:1px solid rgba(212,168,83,0.22);font-family:'Playfair Display',serif;font-size:clamp(0.95rem,1.8vw,1.2rem);color:rgba(245,242,236,0.82);font-style:italic;line-height:1.5">
-    Every round sharpens the next invitation.<br>
-    <span style="color:var(--gold,#caa54a);font-weight:700">Every invitation sharpens the next round.</span>
-  </div>
 </div>
 </section>
 </div>
@@ -5778,191 +5684,221 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
-<div class="inner" style="padding-top:40px;text-align:center;max-width:1080px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.75vw,2rem);color:var(--cream,#e8e0d0);line-height:1.22;margin-bottom:18px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--green-glow,#3dff7a);font-weight:900;font-size:1.45em;letter-spacing:-0.02em">24</span> measurable social experiments per week, per player.
-  </div>
-
-  <!-- Female player silhouette — simplified bust, proportions now fixed (head r=10, body ~1.2x head height, hair cap sits on head not above it). Matches the 24 in-court mini silhouettes exactly. -->
-  <div style="display:flex;justify-content:center;margin-bottom:12px;opacity:0.95">
-    <svg viewBox="0 0 80 58" width="82" height="60" aria-label="pickleball player">
-      <!-- Ponytail (behind head, right side, shortened to fit proportion) -->
+<div class="inner" style="padding-top:40px;text-align:center;max-width:1100px">
+  <!-- Female player silhouette — one player, her week. Radar shapes below are the 24 rounds of THAT player. -->
+  <div style="display:flex;justify-content:center;margin-bottom:8px;opacity:0.95">
+    <svg viewBox="0 0 80 58" width="62" height="46" aria-label="pickleball player">
       <path d="M 48 20 Q 57 24 55 34 Q 51 28 46 25" fill="#2a1e16"/>
-      <!-- Head (peach) -->
       <circle cx="40" cy="20" r="10" fill="#f4c5a0" stroke="#a07848" stroke-width="0.55"/>
-      <!-- Hair crown — sits ON the head like a cap, not above like a hat -->
       <path d="M 30 18 Q 40 9 50 18 L 48.5 22 Q 40 13 31.5 22 Z" fill="#2a1e16"/>
-      <!-- Body: CORAL shirt — bust proportions, tapered trapezoid with neckline -->
       <path d="M 28 28 Q 28 26 30 26 L 34 26 L 37 27 L 40 30 L 43 27 L 46 26 L 50 26 Q 52 26 52 28 L 54 50 L 26 50 Z" fill="#e88a4a" opacity="0.94"/>
-      <!-- Collar V accent -->
       <path d="M 37 27 L 40 30 L 43 27" stroke="#b06020" stroke-width="0.7" fill="none" stroke-linecap="round"/>
     </svg>
   </div>
-  <div style="font-size:0.6rem;color:rgba(237,233,224,.42);letter-spacing:0.16em;text-transform:uppercase;font-weight:600;margin-bottom:22px">Her reality</div>
-
-  <div style="display:flex;gap:10px;justify-content:center;align-items:flex-start;max-width:960px;margin:0 auto 14px auto">
-    <div style="flex:1;max-width:46px;min-width:32px;padding-top:22px;text-align:center">
-      <div style="font-size:8.5px;letter-spacing:1.4px;color:rgba(237,233,224,.3);text-transform:uppercase;margin-bottom:6px;font-weight:600">Mon</div>
-      <div style="height:4px;background:rgba(255,255,255,0.04);border-radius:2px"></div>
-    </div>
-    <div style="flex:2;max-width:110px;min-width:76px;text-align:center">
-      <div style="font-size:10px;letter-spacing:1.6px;color:var(--green-glow,#3dff7a);text-transform:uppercase;margin-bottom:4px;font-weight:800">Tue</div>
-      <div style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.38);border-radius:8px;padding:6px 6px 5px;box-shadow:0 0 22px rgba(61,255,122,0.06)">
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-bottom:5px;border-bottom:1px dashed rgba(212,168,83,0.22);margin-bottom:5px">10 AM</div>
-        <div id="wp-day-tue"></div>
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-top:5px;border-top:1px dashed rgba(212,168,83,0.22);margin-top:5px">NOON</div>
-      </div>
-      <div style="font-size:7.5px;letter-spacing:1.4px;color:rgba(237,233,224,.45);margin-top:6px;font-weight:600;text-transform:uppercase">2 HR &middot; 8 GAMES</div>
-    </div>
-    <div style="flex:1;max-width:46px;min-width:32px;padding-top:22px;text-align:center">
-      <div style="font-size:8.5px;letter-spacing:1.4px;color:rgba(237,233,224,.3);text-transform:uppercase;margin-bottom:6px;font-weight:600">Wed</div>
-      <div style="height:4px;background:rgba(255,255,255,0.04);border-radius:2px"></div>
-    </div>
-    <div style="flex:2;max-width:110px;min-width:76px;text-align:center">
-      <div style="font-size:10px;letter-spacing:1.6px;color:var(--green-glow,#3dff7a);text-transform:uppercase;margin-bottom:4px;font-weight:800">Thu</div>
-      <div style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.38);border-radius:8px;padding:6px 6px 5px;box-shadow:0 0 22px rgba(61,255,122,0.06)">
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-bottom:5px;border-bottom:1px dashed rgba(212,168,83,0.22);margin-bottom:5px">10 AM</div>
-        <div id="wp-day-thu"></div>
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-top:5px;border-top:1px dashed rgba(212,168,83,0.22);margin-top:5px">NOON</div>
-      </div>
-      <div style="font-size:7.5px;letter-spacing:1.4px;color:rgba(237,233,224,.45);margin-top:6px;font-weight:600;text-transform:uppercase">2 HR &middot; 8 GAMES</div>
-    </div>
-    <div style="flex:1;max-width:46px;min-width:32px;padding-top:22px;text-align:center">
-      <div style="font-size:8.5px;letter-spacing:1.4px;color:rgba(237,233,224,.3);text-transform:uppercase;margin-bottom:6px;font-weight:600">Fri</div>
-      <div style="height:4px;background:rgba(255,255,255,0.04);border-radius:2px"></div>
-    </div>
-    <div style="flex:2;max-width:110px;min-width:76px;text-align:center">
-      <div style="font-size:10px;letter-spacing:1.6px;color:var(--green-glow,#3dff7a);text-transform:uppercase;margin-bottom:4px;font-weight:800">Sat</div>
-      <div style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.38);border-radius:8px;padding:6px 6px 5px;box-shadow:0 0 22px rgba(61,255,122,0.06)">
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-bottom:5px;border-bottom:1px dashed rgba(212,168,83,0.22);margin-bottom:5px">10 AM</div>
-        <div id="wp-day-sat"></div>
-        <div style="font-size:8.5px;letter-spacing:1.2px;color:var(--gold,#caa54a);font-weight:700;padding-top:5px;border-top:1px dashed rgba(212,168,83,0.22);margin-top:5px">NOON</div>
-      </div>
-      <div style="font-size:7.5px;letter-spacing:1.4px;color:rgba(237,233,224,.45);margin-top:6px;font-weight:600;text-transform:uppercase">2 HR &middot; 8 GAMES</div>
-    </div>
-    <div style="flex:1;max-width:46px;min-width:32px;padding-top:22px;text-align:center">
-      <div style="font-size:8.5px;letter-spacing:1.4px;color:rgba(237,233,224,.3);text-transform:uppercase;margin-bottom:6px;font-weight:600">Sun</div>
-      <div style="height:4px;background:rgba(255,255,255,0.04);border-radius:2px"></div>
-    </div>
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.55vw,1.85rem);color:var(--cream,#e8e0d0);line-height:1.22;margin-bottom:6px;font-weight:700;max-width:960px;margin-left:auto;margin-right:auto">
+    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds a week. Each one isn't a data point <span style="color:var(--green-glow,#3dff7a);font-weight:900">&mdash; it's a shape.</span>
   </div>
+  <div style="font-size:0.6rem;color:rgba(237,233,224,.5);letter-spacing:0.16em;text-transform:uppercase;font-weight:600;margin-bottom:16px">Tue &middot; Thu &middot; Sat &nbsp;&middot;&nbsp; 2 hr &nbsp;&middot;&nbsp; 8 rounds each &nbsp;&middot;&nbsp; 6 dimensions &times; 3 partners captured per round &nbsp;&middot;&nbsp; <span style="color:var(--gold,#caa54a)">144 shapes / week</span></div>
+
+  <div id="cs3-shape-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:980px;margin:0 auto 14px auto"></div>
+
+  <div style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(237,233,224,.48);font-weight:600;margin-top:10px">
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e88a4a;margin-right:5px;vertical-align:-1px"></span>Skill match</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#5B8FD4;margin-right:5px;vertical-align:-1px"></span>Social match</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#c76bdb;margin-right:5px;vertical-align:-1px"></span>Pace</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4ae8c1;margin-right:5px;vertical-align:-1px"></span>Communication</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f0c040;margin-right:5px;vertical-align:-1px"></span>Competitive feel</span>
+    <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3dff7a;margin-right:5px;vertical-align:-1px"></span>Post-game</span>
+  </div>
+
 </div>
 
 <script>
-(function buildWhyPickleballRoundsMain(){
-  const days = ['tue', 'thu', 'sat'];
-  const PALETTE = ['#f0c040','#5B8FD4','#D46B7E','#c76bdb','#4ae8c1','#e04040','#E8CC60','#ce93d8','#64b5f6'];
+(function buildCs3ShapeGrid(){
+  const grid = document.getElementById('cs3-shape-grid');
+  if (!grid) return;
   const NS = 'http://www.w3.org/2000/svg';
-  function shuffled(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+  const DIM_COLORS = ['#e88a4a','#5B8FD4','#c76bdb','#4ae8c1','#f0c040','#3dff7a'];
+  function mulberry(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  for (let i=0;i<24;i++){
+    const rand = mulberry(i*101 + 7);
+    const svg = document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox','0 0 60 50');
+    svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+    svg.style.display='block'; svg.style.width='100%';
+    const rect=document.createElementNS(NS,'rect');
+    rect.setAttribute('x','2'); rect.setAttribute('y','2');
+    rect.setAttribute('width','56'); rect.setAttribute('height','46');
+    rect.setAttribute('rx','2');
+    rect.setAttribute('fill','rgba(61,255,122,0.025)');
+    rect.setAttribute('stroke','rgba(61,255,122,0.2)');
+    rect.setAttribute('stroke-width','0.5');
+    svg.appendChild(rect);
+    const net=document.createElementNS(NS,'line');
+    net.setAttribute('x1','30'); net.setAttribute('y1','2');
+    net.setAttribute('x2','30'); net.setAttribute('y2','48');
+    net.setAttribute('stroke','rgba(237,233,224,0.14)');
+    net.setAttribute('stroke-width','0.4');
+    net.setAttribute('stroke-dasharray','1.2 1.2');
+    svg.appendChild(net);
+    [22,38].forEach(kx=>{
+      const k=document.createElementNS(NS,'line');
+      k.setAttribute('x1',kx); k.setAttribute('y1','2');
+      k.setAttribute('x2',kx); k.setAttribute('y2','48');
+      k.setAttribute('stroke','rgba(237,233,224,0.09)');
+      k.setAttribute('stroke-width','0.3');
+      svg.appendChild(k);
+    });
+    const cx=30, cy=25, R=14;
+    for (let a=0;a<6;a++){
+      const theta = (a/6)*Math.PI*2 - Math.PI/2;
+      const ex = cx + R*Math.cos(theta), ey = cy + R*Math.sin(theta);
+      const ax = document.createElementNS(NS,'line');
+      ax.setAttribute('x1',cx); ax.setAttribute('y1',cy);
+      ax.setAttribute('x2',ex.toFixed(2)); ax.setAttribute('y2',ey.toFixed(2));
+      ax.setAttribute('stroke','rgba(212,168,83,0.18)');
+      ax.setAttribute('stroke-width','0.25');
+      svg.appendChild(ax);
     }
-    return a;
+    let refPts='';
+    for (let a=0;a<6;a++){
+      const theta=(a/6)*Math.PI*2-Math.PI/2;
+      refPts += (cx+R*Math.cos(theta)).toFixed(2)+','+(cy+R*Math.sin(theta)).toFixed(2)+' ';
+    }
+    const refPoly=document.createElementNS(NS,'polygon');
+    refPoly.setAttribute('points',refPts.trim());
+    refPoly.setAttribute('fill','none');
+    refPoly.setAttribute('stroke','rgba(212,168,83,0.18)');
+    refPoly.setAttribute('stroke-width','0.3');
+    refPoly.setAttribute('stroke-dasharray','0.8 0.8');
+    svg.appendChild(refPoly);
+    let dataPts=''; const vals=[];
+    for (let a=0;a<6;a++){
+      const v = 0.35 + rand()*0.6;
+      vals.push(v);
+      const theta=(a/6)*Math.PI*2-Math.PI/2;
+      dataPts += (cx+R*v*Math.cos(theta)).toFixed(2)+','+(cy+R*v*Math.sin(theta)).toFixed(2)+' ';
+    }
+    const dataPoly=document.createElementNS(NS,'polygon');
+    dataPoly.setAttribute('points',dataPts.trim());
+    dataPoly.setAttribute('fill','rgba(61,255,122,0.22)');
+    dataPoly.setAttribute('stroke','#3dff7a');
+    dataPoly.setAttribute('stroke-width','0.5');
+    dataPoly.setAttribute('opacity','0.82');
+    svg.appendChild(dataPoly);
+    for (let a=0;a<6;a++){
+      const theta=(a/6)*Math.PI*2-Math.PI/2;
+      const x=cx+R*vals[a]*Math.cos(theta), y=cy+R*vals[a]*Math.sin(theta);
+      const dot=document.createElementNS(NS,'circle');
+      dot.setAttribute('cx',x.toFixed(2)); dot.setAttribute('cy',y.toFixed(2));
+      dot.setAttribute('r','0.85');
+      dot.setAttribute('fill',DIM_COLORS[a]);
+      dot.setAttribute('opacity','0.95');
+      svg.appendChild(dot);
+    }
+    grid.appendChild(svg);
   }
-  days.forEach(day => {
-    const container = document.getElementById('wp-day-' + day);
-    if (!container) return;
-    for (let r = 0; r < 8; r++) {
-      const svg = document.createElementNS(NS, 'svg');
-      svg.setAttribute('viewBox', '0 0 40 22');
-      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-      svg.style.display = 'block';
-      svg.style.width = '100%';
-      svg.style.marginBottom = r === 7 ? '0' : '3px';
-      const rect = document.createElementNS(NS, 'rect');
-      rect.setAttribute('x', '2'); rect.setAttribute('y', '2');
-      rect.setAttribute('width', '36'); rect.setAttribute('height', '18');
-      rect.setAttribute('rx', '2');
-      rect.setAttribute('fill', 'rgba(61,255,122,0.025)');
-      rect.setAttribute('stroke', 'rgba(61,255,122,0.22)');
-      rect.setAttribute('stroke-width', '0.5');
-      svg.appendChild(rect);
-      const line = document.createElementNS(NS, 'line');
-      line.setAttribute('x1', '20'); line.setAttribute('y1', '2');
-      line.setAttribute('x2', '20'); line.setAttribute('y2', '20');
-      line.setAttribute('stroke', 'rgba(237,233,224,0.14)');
-      line.setAttribute('stroke-width', '0.4');
-      line.setAttribute('stroke-dasharray', '1.2 1.2');
-      svg.appendChild(line);
-      // Pickleball kitchen (non-volley zone) lines — subtle cue that each court is a pickleball court
-      [14, 26].forEach(kx => {
-        const kline = document.createElementNS(NS, 'line');
-        kline.setAttribute('x1', kx); kline.setAttribute('y1', '2');
-        kline.setAttribute('x2', kx); kline.setAttribute('y2', '20');
-        kline.setAttribute('stroke', 'rgba(237,233,224,0.09)');
-        kline.setAttribute('stroke-width', '0.3');
-        svg.appendChild(kline);
-      });
-      const slots = [[10, 8], [30, 8], [10, 15], [30, 15]];
-      const others = shuffled(PALETTE).slice(0, 3);
-      const colors = ['#3dff7a', others[0], others[1], others[2]];
-      // i===0 slot (the "you" anchor, top-left) is rendered as a mini face — ties to the silhouette above the grid.
-      // Other 3 slots remain pickleballs, colored uniquely per round, so the viewer sees HER × 24 rounds of new partners/opponents.
-      slots.forEach((s, i) => {
-        if (i === 0) {
-          // Mini version of the full silhouette — HER on every one of the 24 courts
-          const cx = s[0], cy = s[1];
-          // Ponytail (behind head, above)
-          const pony = document.createElementNS(NS, 'path');
-          pony.setAttribute('d', 'M ' + (cx+0.9) + ' ' + (cy-2.3) + ' Q ' + (cx+1.6) + ' ' + (cy-1.8) + ' ' + (cx+1.5) + ' ' + (cy-1) + ' Q ' + (cx+1) + ' ' + (cy-1.5) + ' ' + (cx+0.6) + ' ' + (cy-2) + ' Z');
-          pony.setAttribute('fill', '#2a1e16');
-          svg.appendChild(pony);
-          // Head (peach)
-          const head = document.createElementNS(NS, 'circle');
-          head.setAttribute('cx', cx); head.setAttribute('cy', cy - 1.6);
-          head.setAttribute('r', '1.35');
-          head.setAttribute('fill', '#f4c5a0');
-          head.setAttribute('stroke', '#a07848');
-          head.setAttribute('stroke-width', '0.18');
-          svg.appendChild(head);
-          // Hair crown on top
-          const hair = document.createElementNS(NS, 'path');
-          hair.setAttribute('d', 'M ' + (cx-1.3) + ' ' + (cy-1.9) + ' Q ' + cx + ' ' + (cy-3.4) + ' ' + (cx+1.3) + ' ' + (cy-1.9) + ' L ' + (cx+1.1) + ' ' + (cy-1.4) + ' Q ' + cx + ' ' + (cy-2.4) + ' ' + (cx-1.1) + ' ' + (cy-1.4) + ' Z');
-          hair.setAttribute('fill', '#2a1e16');
-          svg.appendChild(hair);
-          // Body (coral shirt) — slight hourglass via two trapezoid paths
-          const body = document.createElementNS(NS, 'path');
-          body.setAttribute('d', 'M ' + (cx-1.6) + ' ' + (cy-0.2) + ' Q ' + (cx-1.6) + ' ' + (cy-0.5) + ' ' + (cx-1.2) + ' ' + (cy-0.5) + ' L ' + (cx-0.4) + ' ' + (cy-0.5) + ' L ' + cx + ' ' + (cy-0.1) + ' L ' + (cx+0.4) + ' ' + (cy-0.5) + ' L ' + (cx+1.2) + ' ' + (cy-0.5) + ' Q ' + (cx+1.6) + ' ' + (cy-0.5) + ' ' + (cx+1.6) + ' ' + (cy-0.2) + ' L ' + (cx+1.8) + ' ' + (cy+2.4) + ' L ' + (cx-1.8) + ' ' + (cy+2.4) + ' Z');
-          body.setAttribute('fill', '#e88a4a');
-          body.setAttribute('opacity', '0.94');
-          svg.appendChild(body);
-          // Collar V
-          const collar = document.createElementNS(NS, 'path');
-          collar.setAttribute('d', 'M ' + (cx-0.4) + ' ' + (cy-0.5) + ' L ' + cx + ' ' + (cy-0.1) + ' L ' + (cx+0.4) + ' ' + (cy-0.5));
-          collar.setAttribute('stroke', '#b06020');
-          collar.setAttribute('stroke-width', '0.18');
-          collar.setAttribute('fill', 'none');
-          svg.appendChild(collar);
-          return;
-        }
-        // Other slots: distinctly-colored pickleballs (ball + visible holes)
-        const ball = document.createElementNS(NS, 'circle');
-        ball.setAttribute('cx', s[0]); ball.setAttribute('cy', s[1]);
-        ball.setAttribute('r', '2.1');
-        ball.setAttribute('fill', colors[i]);
-        svg.appendChild(ball);
-        const holes = [[0, -0.75], [-0.75, 0.35], [0.75, 0.35]];
-        holes.forEach(([dx, dy]) => {
-          const hole = document.createElementNS(NS, 'circle');
-          hole.setAttribute('cx', s[0] + dx);
-          hole.setAttribute('cy', s[1] + dy);
-          hole.setAttribute('r', '0.32');
-          hole.setAttribute('fill', 'rgba(10,15,13,0.75)');
-          svg.appendChild(hole);
-        });
-      });
-      container.appendChild(svg);
-    }
-  });
 })();
 </script>
 </section>
 </div>
 
+<!-- ============================================================ -->
+<!-- 24 COURTS VARIANTS (A-E) — DATA-VIZ SHOTGUN                  -->
+<!-- Five distinct visual approaches to show that each round      -->
+<!-- captures multi-dimensional social signal. Dave picks one,    -->
+<!-- deletes the rest. Inserted at nav positions 4-8.             -->
+<!-- ============================================================ -->
+
+<!-- cs-3a (Variant A · Radar per court) REMOVED — merged into cs-3 -->
+<div class="casey-slide ds-focus" id="cs-3b">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Each person &middot; her experience of them</div>
+<div style="position:absolute;top:28px;right:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,233,224,.28);z-index:10;">Illustrative</div>
+
+<div class="inner" style="padding-top:48px;text-align:center;max-width:1120px">
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.4vw,1.75rem);color:var(--cream,#e8e0d0);line-height:1.22;margin-bottom:6px;font-weight:700">
+    She met <span style="color:var(--green-glow,#3dff7a)">18 people</span> this week. <span style="color:var(--cream)">We know them all.</span>
+  </div>
+  <div style="font-size:0.62rem;color:rgba(237,233,224,.5);letter-spacing:0.16em;text-transform:uppercase;font-weight:600;margin-bottom:20px">Each card: one partner · 8 dimensions of her experience of them</div>
+
+  <div id="variantB-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:1020px;margin:0 auto"></div>
+</div>
+
+<script>
+(function buildVariantB(){
+  const grid = document.getElementById('variantB-grid');
+  if (!grid) return;
+  const PALETTE = ['#f0c040','#5B8FD4','#D46B7E','#c76bdb','#4ae8c1','#e04040','#E8CC60','#ce93d8','#64b5f6','#3dff7a','#e88a4a','#D4A843'];
+  const DIMS = ['Skill','Social','Pace','Comm','Compete','Chemistry','Energy','Replay'];
+  function mulberry(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  for (let i=0;i<18;i++){
+    const rand = mulberry(i*37+3);
+    const card = document.createElement('div');
+    card.style.cssText = 'border:1px solid rgba(212,168,83,0.18);background:rgba(20,20,28,0.35);border-radius:7px;padding:8px 8px 7px;text-align:left;min-height:130px';
+    const color = PALETTE[i % PALETTE.length];
+    // header
+    const head = document.createElement('div');
+    head.style.cssText='display:flex;align-items:center;gap:6px;margin-bottom:7px;padding-bottom:5px;border-bottom:1px dashed rgba(212,168,83,0.18)';
+    head.innerHTML = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+color+'"></span>'
+      + '<span style="font-family:Manrope,sans-serif;font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;color:'+color+';font-weight:700">Player '+(i+1)+'</span>'
+      + '<span style="flex:1"></span>'
+      + '<span style="font-family:Manrope,sans-serif;font-size:7px;color:rgba(237,233,224,.38);font-weight:600">'+(1+Math.floor(rand()*4))+' rounds</span>';
+    card.appendChild(head);
+    // 8 mini bar rows
+    DIMS.forEach((label, j)=>{
+      const row = document.createElement('div');
+      row.style.cssText='display:flex;align-items:center;gap:4px;margin-bottom:2px';
+      const lbl = document.createElement('span');
+      lbl.style.cssText='font-family:Manrope,sans-serif;font-size:6.5px;letter-spacing:0.05em;color:rgba(237,233,224,.45);width:34px;font-weight:600;text-transform:uppercase;flex-shrink:0';
+      lbl.textContent = label;
+      row.appendChild(lbl);
+      const barWrap = document.createElement('div');
+      barWrap.style.cssText='flex:1;height:4px;background:rgba(237,233,224,0.06);border-radius:2px;overflow:hidden';
+      const bar = document.createElement('div');
+      const v = 0.25 + rand()*0.72;
+      bar.style.cssText='height:100%;width:'+(v*100).toFixed(0)+'%;background:linear-gradient(90deg,'+color+'66,'+color+');border-radius:2px';
+      barWrap.appendChild(bar);
+      row.appendChild(barWrap);
+      card.appendChild(row);
+    });
+    grid.appendChild(card);
+  }
+})();
+</script>
+</section>
+</div>
+
+<!-- cs-3c / cs-3d / cs-3e (Variants C/D/E) REMOVED — only cs-3a merged into cs-3 and cs-3b kept -->
+
+<!-- cs-11b: NEPC PROOF · Already running — 60 courts/wk · $215K ARR · +5% utilization -->
+<div class="casey-slide ds-focus" id="cs-11b">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">Proof &middot; the living lab</div>
+  <div class="ps-wrap" style="max-width:1100px">
+    <div class="ps-title">Already running at <em>New England Pickleball Club</em>.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:980px;margin:48px auto 0">
+      <div style="text-align:center;padding:32px 20px;border:1px solid rgba(212,168,83,0.2);border-radius:12px;background:rgba(212,168,83,0.03)">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.8vw,4.5rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1;margin-bottom:10px">60</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:0.88rem;color:#e8e0d0;line-height:1.4">GnT invitation courts &middot; per week</div>
+      </div>
+      <div style="text-align:center;padding:32px 20px;border:1px solid rgba(61,255,122,0.22);border-radius:12px;background:rgba(61,255,122,0.03)">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.8vw,4.5rem);font-weight:700;font-style:italic;color:#3dff7a;line-height:1;margin-bottom:10px">$215K</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:0.88rem;color:#e8e0d0;line-height:1.4">ARR in court fees &middot; powered by GnT</div>
+      </div>
+      <div style="text-align:center;padding:32px 20px;border:1px solid rgba(127,184,168,0.24);border-radius:12px;background:rgba(127,184,168,0.03)">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.8vw,4.5rem);font-weight:700;font-style:italic;color:#7fb8a8;line-height:1;margin-bottom:10px">+5%</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:0.88rem;color:#e8e0d0;line-height:1.4">court utilization lift</div>
+      </div>
+    </div>
+    <div class="ps-cite" style="margin-top:36px">NEPC &middot; 2 locations &middot; ~500 members &middot; the operating lab</div>
+  </div>
+</section>
+</div>
+
 <!-- How it Started at NEPC — nav pos 14 -->
 <div class="casey-slide ds-focus" id="cs-12">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">How it Started at New England Pickleball Club</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Our Moat &middot; Krista's judgment, digitized</div>
 <section id="s3b">
 <div class="orb orb-m" style="width:500px;height:500px;top:-10%;left:20%"></div>
 <div class="inner">
@@ -6688,29 +6624,22 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
 <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
   <div id="gntLogoAnim">
-    <svg viewBox="0 0 280 180" width="280" height="180" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logoGradClosing" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#60a5fa"/>
-          <stop offset="100%" stop-color="#fb7185"/>
-        </linearGradient>
-      </defs>
-      <!-- G letter -->
-      <text x="20" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="#60a5fa" opacity="0.95">G</text>
-      <!-- N letter (gradient) -->
-      <text x="98" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="url(#logoGradClosing)">N</text>
-      <!-- Give arrow (up) -->
-      <path d="M141 37 L141 18 L131 26 L141 18 L151 26" stroke="#60a5fa" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      <!-- Take arrow (down) -->
-      <path d="M165 15 L165 34 L155 25 L165 34 L175 25" stroke="#fb7185" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      <!-- T letter -->
-      <text x="186" y="138" font-family="Playfair Display, serif" font-size="128" font-weight="700" fill="#fb7185" opacity="0.95">T</text>
+    <svg viewBox="0 0 52 48" width="340" height="314" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.95">
+        <!-- Give arrow (blue, up) -->
+        <path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>
+        <!-- Take arrow (red, down) -->
+        <path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>
+      </g>
+      <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
+      <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
+      <text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
     </svg>
   </div>
   <div class="ga-text" style="text-align:center;margin-top:24px;opacity:0" id="gntLogoText">
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(237,233,224,.85);letter-spacing:0.02em">Give &lsquo;n Take</div>
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:700;font-style:italic;color:var(--gold,#caa54a);margin-top:18px;letter-spacing:0.03em;opacity:0.95">Free to give.</div>
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(0.78rem,1.25vw,1rem);font-weight:500;font-style:italic;color:rgba(237,233,224,.48);margin-top:14px;letter-spacing:0.05em">Autonomous human connection.</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(0.78rem,1.25vw,1rem);font-weight:500;font-style:italic;color:rgba(237,233,224,.48);margin-top:14px;letter-spacing:0.05em">Autonomous human connection</div>
     <div style="font-size:0.72rem;color:rgba(237,233,224,.55);margin-top:14px;letter-spacing:.08em">dave@gnt.ai</div>
   </div>
 </div>
@@ -6872,7 +6801,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
   <div style="margin-top:28px;background:rgba(212,168,83,.04);border:1px solid rgba(212,168,83,.12);border-radius:10px;padding:14px 24px;max-width:720px;margin-left:auto;margin-right:auto">
     <div style="font-size:0.55rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold,#caa54a);margin-bottom:4px">Why this team</div>
-    <div style="font-size:0.72rem;color:rgba(237,233,224,.7);line-height:1.5">Domain + tech + lived experience running a real community. First team ever positioned to solve autonomous human connection.</div>
+    <div style="font-size:0.72rem;color:rgba(237,233,224,.7);line-height:1.5">Domain + tech + lived experience running a real community. First team ever positioned to solve autonomous human connection</div>
   </div>
 </div>
 </section>
@@ -7104,11 +7033,244 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 </div>
 
+<!-- ==================================================================== -->
+<!-- ===== PITCH SPINE SLIDES (added 2026-04-22 for Casey review)    ===== -->
+<!-- ===== cs-a13..cs-a18 — pink dot = new/for-review                ===== -->
+<!-- ==================================================================== -->
+<style>
+  .pink-dot-wrap{position:absolute;top:26px;right:28px;display:flex;align-items:center;gap:10px;z-index:20}
+  .pink-dot{width:10px;height:10px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 18px rgba(255,77,143,0.85);animation:pinkPulse 2.2s ease-in-out infinite}
+  .pink-dot-label{font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#ff4d8f}
+  @keyframes pinkPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.2)}}
+  .ps-kicker{position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,168,83,0.85);z-index:10}
+  .ps-wrap{padding:64px 48px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%}
+  .ps-title{font-family:'Playfair Display',serif;font-size:clamp(1.55rem,3.2vw,2.5rem);font-weight:700;color:#e8e0d0;line-height:1.2;margin:0 auto 12px;max-width:24ch}
+  .ps-title em{font-style:italic;color:#d4a853}
+  .ps-sub{font-family:'DM Sans',sans-serif;font-size:clamp(0.82rem,1.3vw,1rem);color:rgba(232,224,208,0.7);max-width:60ch;margin:0 auto;line-height:1.55}
+  .ps-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,#d4a853,transparent);margin:24px auto}
+  .ps-footer{font-family:'Playfair Display',serif;font-size:clamp(0.95rem,1.5vw,1.2rem);font-style:italic;color:#e8e0d0;margin-top:24px;line-height:1.45;max-width:62ch;margin-left:auto;margin-right:auto}
+  .ps-footer strong{color:#d4a853;font-weight:700;font-style:normal}
+  .ps-pillar{padding:18px 10px;border:1px solid rgba(255,255,255,0.08);border-radius:8px;background:rgba(255,255,255,0.02);display:flex;flex-direction:column;justify-content:space-between;min-height:158px}
+  .ps-pillar-label{font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;color:#e8e0d0;margin-bottom:6px}
+  .ps-pillar-sub{font-family:'Manrope',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,224,208,0.5);line-height:1.6}
+  .ps-pillar-tech{font-family:'Manrope',sans-serif;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:#7fb8a8;margin-top:10px;line-height:1.7}
+  .ps-pillar.hero{border:1.5px dashed #d4a853;background:rgba(212,168,83,0.08);box-shadow:0 0 28px rgba(212,168,83,0.18)}
+  .ps-pillar.hero .ps-pillar-label{color:#d4a853}
+  .ps-pillar.hero .ps-pillar-tech{color:#d4a853;font-style:italic;letter-spacing:.24em}
+  .ps-study{padding:18px 20px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:8px;display:flex;flex-direction:column;text-align:left}
+  .ps-study:hover{border-color:#d4a853;background:rgba(212,168,83,0.04)}
+  .ps-study-idx{font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:#d4a853;font-weight:700;margin-bottom:8px}
+  .ps-study-stat{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1;margin-bottom:8px}
+  .ps-study-finding{font-family:'DM Sans',sans-serif;font-size:clamp(.78rem,1.02vw,.9rem);color:#e8e0d0;line-height:1.45;margin-bottom:10px;flex:1}
+  .ps-study-cite{font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.06em;color:rgba(232,224,208,0.55);line-height:1.55;padding-top:8px;border-top:1px solid rgba(255,255,255,0.06)}
+  .ps-study-cite .j{color:#e8e0d0;font-style:italic}
+  .ps-study-cite a{color:#7fb8a8;text-decoration:none;border-bottom:1px solid rgba(127,184,168,0.3)}
+  .ps-study-cite a:hover{color:#d4a853;border-color:#d4a853}
+  .ps-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin:20px auto 0}
+  .ps-col{padding:22px 24px;border:1px solid rgba(255,255,255,0.1);border-radius:8px;text-align:left}
+  .ps-col.new{background:rgba(212,168,83,0.07);border-color:#d4a853;box-shadow:0 0 24px rgba(212,168,83,0.12)}
+  .ps-col-tag{font-family:'Manrope',sans-serif;font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,224,208,0.5);margin-bottom:12px;font-weight:700}
+  .ps-col.new .ps-col-tag{color:#d4a853}
+  .ps-col-body{font-family:'Playfair Display',serif;font-size:clamp(1rem,1.6vw,1.3rem);font-style:italic;color:#e8e0d0;line-height:1.35}
+  .ps-col-body em{color:#d4a853;font-style:italic}
+  .ps-col-meta{font-family:'DM Sans',sans-serif;font-size:.78rem;color:rgba(232,224,208,0.6);margin-top:14px;line-height:1.5}
+  .ps-col.new .ps-col-meta{color:#d4a853}
+  .ps-3up{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:880px;margin:28px auto 0}
+  .ps-3up .cell{padding:18px 12px;text-align:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:8px}
+  .ps-3up .cell-big{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.4vw,1.8rem);font-style:italic;color:#d4a853;margin-bottom:8px}
+  .ps-3up .cell-sm{font-family:'DM Sans',sans-serif;font-size:.82rem;color:rgba(232,224,208,0.7);line-height:1.4}
+  .ps-stat-lg{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1;letter-spacing:-0.02em}
+  .ps-stat-label{font-family:'DM Sans',sans-serif;font-size:clamp(.9rem,1.4vw,1.1rem);color:#e8e0d0;max-width:36ch;margin:18px auto 0;line-height:1.45}
+  .ps-cite{font-family:'Manrope',sans-serif;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,224,208,0.5);margin-top:18px}
+  .ps-cite.gold{color:#d4a853;font-weight:700;letter-spacing:.22em}
+</style>
+
+<!-- cs-1b (was a13): THE MISSING CATEGORY — promoted to front, between cs-1a and cs-2 -->
+<div class="casey-slide ds-focus" id="cs-1b">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">What actually matters</div>
+  <div class="pink-dot-wrap"><span class="pink-dot-label">New · Review</span><span class="pink-dot"></span></div>
+  <div class="ps-wrap">
+    <div class="ps-title" style="max-width:42ch"><em>Every field of science agrees:</em><br>human connection decides your life.</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(232,224,208,0.6);margin-top:14px">Neuroscience &middot; Epidemiology &middot; Public health &middot; Longitudinal &mdash; <em style="color:#d4a853;font-style:italic;letter-spacing:.1em">one conclusion</em></div>
+    <div style="max-width:960px;margin:56px auto 0">
+      <!-- HERO ROW: Relationships — huge, hollow, pulsing gold -->
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:28px">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.2rem,2.1vw,1.7rem);color:#d4a853;text-align:right;font-weight:700">Human connection</div>
+        <div style="position:relative;height:56px">
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,#d4a853,#e88a4a,#d4a853);border-radius:6px;box-shadow:0 0 44px rgba(212,168,83,0.55),inset 0 0 24px rgba(255,220,150,0.35);animation:pinkPulse 3s ease-in-out infinite"></div>
+        </div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#d4a853;line-height:1.5">#1 predictor<br><span style="color:#e8e0d0;font-size:.55rem;letter-spacing:.18em;font-weight:500">of a good life</span></div>
+      </div>
+      <!-- MINOR ROWS: Money / Fame / Fitness — what people THINK matters (Waldinger's contrast) -->
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px;margin-top:8px">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Money</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:10%;height:100%;background:#5B8FD4;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)">What we think matters</div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Fame</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:7%;height:100%;background:#c76bdb;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Fitness</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:12%;height:100%;background:#7fb8a8;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+    </div>
+    <div style="margin-top:44px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-family:'Manrope',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,224,208,0.55)">
+      <span style="letter-spacing:.22em">Sources:</span>
+      <a href="#" onclick="openStudyModal('harvard');return false;" class="ps-study-link">Harvard Grant Study</a>
+      <a href="#" onclick="openStudyModal('holtlunstad');return false;" class="ps-study-link">Holt-Lunstad (PLoS)</a>
+      <a href="#" onclick="openStudyModal('kim');return false;" class="ps-study-link">Kim (Harvard)</a>
+      <a href="#" onclick="openStudyModal('chen');return false;" class="ps-study-link">Chen (PNAS)</a>
+      <span style="color:rgba(232,224,208,0.35);font-style:italic;text-transform:none;letter-spacing:.04em">click any to expand</span>
+    </div>
+    <style>
+      .ps-study-link{color:#7fb8a8;text-decoration:none;border-bottom:1px solid rgba(127,184,168,0.3);padding-bottom:1px;cursor:pointer;transition:color 0.2s,border-color 0.2s}
+      .ps-study-link:hover{color:#d4a853;border-color:#d4a853}
+      #studyModal{display:none;position:fixed;inset:0;background:rgba(6,6,9,0.92);backdrop-filter:blur(8px);z-index:500;align-items:center;justify-content:center;padding:40px}
+      #studyModal.open{display:flex}
+      #studyModalContent{max-width:720px;background:rgba(20,20,28,0.98);border:1px solid rgba(212,168,83,0.35);border-radius:14px;padding:40px 44px;box-shadow:0 0 80px rgba(212,168,83,0.22);color:#e8e0d0;font-family:'DM Sans',sans-serif}
+      #studyModalContent .close-btn{margin-top:28px;background:transparent;border:1px solid rgba(212,168,83,0.4);border-radius:8px;color:#d4a853;padding:10px 22px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:all 0.2s}
+      #studyModalContent .close-btn:hover{background:rgba(212,168,83,0.12);border-color:#d4a853}
+    </style>
+    <div id="studyModal" onclick="if(event.target===this)closeStudyModal()">
+      <div id="studyModalContent">
+        <div id="studyModalBody"></div>
+        <button class="close-btn" onclick="closeStudyModal()">Close &times;</button>
+      </div>
+    </div>
+    <script>
+      window.STUDY_DATA = {
+        harvard: {thesis:'Human connection predicts a good life more than anything else.', stat:'#1 predictor', title:'Harvard Study of Adult Development', meta:'1938-present &middot; Waldinger et al. &middot; 85 years &middot; 700+ participants', body:'The longest continuous study of adult happiness and health ever conducted. The single biggest predictor of health and happiness at age 80 is not cholesterol, wealth, or career achievement - it is the quality of your close relationships at age 50.', link:'https://www.adultdevelopmentstudy.org/', linkText:'adultdevelopmentstudy.org'},
+        holtlunstad: {thesis:'Disconnection is literally deadly.', stat:'15 cigarettes / day', title:'Holt-Lunstad et al. (2010)', meta:'PLoS Medicine &middot; Meta-analysis of 148 studies &middot; 308,849 participants', body:'Chronic social isolation carries the mortality risk of smoking 15 cigarettes a day - a higher risk factor than obesity or physical inactivity. Cited by the US Surgeon General in declaring loneliness a public health epidemic (2023).', link:'https://doi.org/10.1371/journal.pmed.1000316', linkText:'doi.org/10.1371/journal.pmed.1000316'},
+        kim: {thesis:'Giving time to other humans literally extends your life.', stat:'44% lower mortality', title:'Kim et al. (2020)', meta:'American Journal of Preventive Medicine &middot; Harvard T.H. Chan School of Public Health', body:'Adults over 50 who volunteered just 2 hours a week had 44% lower four-year mortality than non-volunteers. The act of giving time to others is one of the largest documented lifestyle effects on human longevity.', link:'https://doi.org/10.1016/j.amepre.2020.03.004', linkText:'doi.org/10.1016/j.amepre.2020.03.004'},
+        chen: {thesis:'Balanced give-and-take extends life. Our company name is peer-reviewed science.', stat:'Balanced support wins', title:'Chen et al. (2021) &middot; PNAS', meta:'Northwestern University &middot; 6,325 adults &middot; 23-year mortality follow-up', body:'People with balanced give-and-take in social support had the lowest all-cause mortality. Over-givers had elevated mortality. Over-receivers had elevated mortality. Reciprocity is the protective factor. The peer-reviewed validation of Give n Take\'s company name.', link:'https://www.pnas.org/doi/10.1073/pnas.2024770118', linkText:'pnas.org/doi/10.1073/pnas.2024770118'}
+      };
+      window.openStudyModal = function(id){
+        const d = window.STUDY_DATA[id]; if(!d) return;
+        document.getElementById('studyModalBody').innerHTML =
+          '<div style="font-family:Manrope,sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#d4a853;margin-bottom:14px">The point</div>'
+          +'<div style="font-family:Playfair Display,serif;font-style:italic;font-size:1.7rem;font-weight:700;color:#e8e0d0;line-height:1.22;margin-bottom:24px;letter-spacing:-0.01em">'+d.thesis+'</div>'
+          +'<div style="display:flex;align-items:baseline;gap:16px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.08);margin-bottom:14px">'
+            +'<div style="font-family:Playfair Display,serif;font-style:italic;font-size:1.25rem;font-weight:700;color:#d4a853;line-height:1">'+d.stat+'</div>'
+            +'<div style="font-family:Manrope,sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,224,208,0.5)">the finding</div>'
+          +'</div>'
+          +'<div style="font-family:Playfair Display,serif;font-size:1rem;color:#e8e0d0;margin-bottom:4px">'+d.title+'</div>'
+          +'<div style="font-family:Manrope,sans-serif;font-size:.64rem;letter-spacing:.08em;color:rgba(232,224,208,0.55);margin-bottom:20px">'+d.meta+'</div>'
+          +'<div style="font-size:.88rem;line-height:1.55;color:rgba(232,224,208,0.82);margin-bottom:22px">'+d.body+'</div>'
+          +'<a href="'+d.link+'" target="_blank" style="font-family:Manrope,sans-serif;font-size:.66rem;letter-spacing:.08em;color:#7fb8a8;text-decoration:none;border-bottom:1px solid rgba(127,184,168,0.4);padding-bottom:2px">'+d.linkText+' &rarr;</a>';
+        document.getElementById('studyModal').classList.add('open');
+      };
+      window.closeStudyModal = function(){ document.getElementById('studyModal').classList.remove('open'); };
+      document.addEventListener('keydown', e => { if(e.key === 'Escape') window.closeStudyModal(); });
+    </script>
+  </div>
+</section>
+</div>
+
+<!-- cs-1a (Science) MERGED into cs-1b 2026-04-22 and removed. -->
+<!-- cs-a17 (was cs-8b): MEASUREMENT LEAP — moved back to appendix 2026-04-22. Dave: "Harvard/say-vs-do is already the point up front; don't restate it here." -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a17" style="display:none">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">The measurement leap</div>
+  <div class="pink-dot-wrap"><span class="pink-dot-label">New · Review</span><span class="pink-dot"></span></div>
+  <div class="ps-wrap">
+    <div class="ps-title">For <em>85 years</em>, Harvard measured what people <em>said</em> about their friendships.</div>
+    <div class="ps-title" style="font-size:clamp(1.3rem,2.6vw,2rem);margin-top:6px;color:#d4a853">Give 'n Take measures what they <em style="color:#e8e0d0">do</em>.</div>
+    <div class="ps-pair">
+      <div class="ps-col">
+        <div class="ps-col-tag">Old paradigm</div>
+        <div class="ps-col-body">What you <em>say</em> about your friendships.</div>
+        <div class="ps-col-meta">Surveys. Self-report. Bias.</div>
+      </div>
+      <div class="ps-col new">
+        <div class="ps-col-tag">The leap</div>
+        <div class="ps-col-body">What you <em>do</em> about your friendships.</div>
+        <div class="ps-col-meta">Invitations. Revealed preference. Truth.</div>
+      </div>
+    </div>
+    <div class="ps-footer" style="margin-top:22px">Stated preference is what the wellness industry has. <strong>Revealed preference is what we&rsquo;re building.</strong></div>
+  </div>
+</section>
+</div>
+
+<!-- APPENDIX 13 (was 16): THE NAME, VALIDATED BY SCIENCE -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a13" style="display:none">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">PNAS 2021 &middot; Chen et al. &middot; Northwestern</div>
+  <div class="pink-dot-wrap"><span class="pink-dot-label">New · Review</span><span class="pink-dot"></span></div>
+  <div class="ps-wrap">
+    <div class="ps-title"><em>Balanced</em> give-and-take has the lowest mortality.</div>
+    <div class="ps-sub">Over-give &mdash; shorter life. Over-take &mdash; shorter life. Balance wins.</div>
+    <div style="display:flex;justify-content:center;align-items:baseline;gap:24px;flex-wrap:wrap;margin:28px auto 0;max-width:780px">
+      <div style="text-align:center"><div class="ps-stat-lg" style="color:rgba(232,224,208,0.4)">&minus;</div><div class="ps-cite">Over-give<br>elevated mortality</div></div>
+      <div style="text-align:center"><div class="ps-stat-lg">&#10003;</div><div class="ps-cite gold">Balanced<br>lowest mortality</div></div>
+      <div style="text-align:center"><div class="ps-stat-lg" style="color:rgba(232,224,208,0.4)">&minus;</div><div class="ps-cite">Over-receive<br>elevated mortality</div></div>
+    </div>
+    <div class="ps-divider"></div>
+    <div class="ps-footer">Our <strong>company name</strong>. Validated by peer-reviewed science before we knew the study existed.</div>
+    <div class="ps-cite" style="margin-top:12px">6,325 US adults &middot; 23-year mortality follow-up &middot; <a href="https://www.pnas.org/doi/10.1073/pnas.2024770118" target="_blank" style="color:#7fb8a8">pnas.org/doi/10.1073/pnas.2024770118</a></div>
+  </div>
+</section>
+</div>
+
+<!-- APPENDIX 14 (was 17): THE MECHANISM (Accept / Decline / Re-invite) -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a14" style="display:none">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">The mechanism</div>
+  <div class="pink-dot-wrap"><span class="pink-dot-label">New · Review</span><span class="pink-dot"></span></div>
+  <div class="ps-wrap">
+    <div class="ps-title">Every invitation is a <em>data point</em>.</div>
+    <div class="ps-sub">An invitation is the purest unit of human value &mdash; someone choosing to spend their most finite resource, time, on you.</div>
+    <div class="ps-3up">
+      <div class="cell"><div class="cell-big">Accept</div><div class="cell-sm">&ldquo;I&rsquo;d choose to spend time with you.&rdquo;</div></div>
+      <div class="cell"><div class="cell-big">Decline</div><div class="cell-sm">Signal about fit, timing, social layer.</div></div>
+      <div class="cell"><div class="cell-big">Re-invite</div><div class="cell-sm">Deep tie. Compounding trust.</div></div>
+    </div>
+    <div class="ps-divider"></div>
+    <div class="ps-footer">The <strong>Invitation Graph</strong> &mdash; the first real-time map of chosen human time.</div>
+  </div>
+</section>
+</div>
+
+<!-- APPENDIX 15 (was 18): KEEP GOING (internal / team / conviction) -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-a15" style="display:none">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center">
+  <div class="ps-kicker">For the team &middot; internal conviction</div>
+  <div class="pink-dot-wrap"><span class="pink-dot-label">New · Review</span><span class="pink-dot"></span></div>
+  <div class="ps-wrap">
+    <div class="ps-title">Pickleball isn&rsquo;t the destination. It&rsquo;s the <em>density lab</em>.</div>
+    <div class="ps-sub" style="margin-top:16px">Every week at NEPC, thousands of invitations go out. Players accept, decline, show up, return, re-invite. Every week the graph compounds. Nobody else has this density. Nobody else has a Krista. Nobody else has the founder-market fit.</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:820px;margin:26px auto 0">
+      <div class="ps-3up" style="display:block;margin:0"><div class="cell"><div class="cell-big">$2M+</div><div class="cell-sm">ARR at NEPC &mdash; the operating lab</div></div></div>
+      <div class="ps-3up" style="display:block;margin:0"><div class="cell"><div class="cell-big">91%</div><div class="cell-sm">Monthly retention &mdash; community stickiness</div></div></div>
+      <div class="ps-3up" style="display:block;margin:0"><div class="cell"><div class="cell-big">100% / 5&nbsp;min</div><div class="cell-sm">Krista&rsquo;s curated invitational acceptance</div></div></div>
+    </div>
+    <div class="ps-divider"></div>
+    <div class="ps-footer">We are building the measurement infrastructure for the <strong>most valuable and most ignored resource on earth</strong> &mdash; time deliberately given from one human to another. <strong>Keep going.</strong></div>
+  </div>
+</section>
+</div>
+
 <nav class="casey-nav" id="cnav"></nav>
 
 <script>
-const TOTAL = 26;
-const APPENDIX_TOTAL = 12;
+// Slide nav order.
+// ACT 1 (universal truth + gap): cs-1 Title → cs-1a Science → cs-1b Missing Category → cs-2 Previous Era
+// ACT 2 (enter pickleball): cs-3 24 Rounds → cs-3b Each person → cs-4 Matchmaking → cs-5 Social Sports
+// ACT 3 (golden data): cs-6 Data Exists → cs-7 Cost of Honesty → cs-8 Cultural Shift → cs-8b Measurement Leap → cs-9 Invitation Feed
+// ACT 4+: cs-10 through cs-26 unchanged
+const SLIDE_ORDER = [
+  'cs-1','cs-1b','cs-2','cs-3','cs-3b',
+  'cs-4','cs-6','cs-7','cs-8','cs-8c','cs-10','cs-11','cs-11b','cs-12','cs-13',
+  'cs-14','cs-9','cs-15','cs-16','cs-17','cs-18','cs-19','cs-20','cs-21','cs-22','cs-23',
+  'cs-24','cs-25','cs-26'
+];
+const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
+const APPENDIX_TOTAL = 17;
 let current = 1;
 let inAppendix = false;
 let appendixCurrent = 1;
@@ -7119,30 +7281,34 @@ function caseyGo(n) {
   if (n < 1 || n > TOTAL) return;
   document.querySelectorAll('.casey-slide').forEach(s => { s.classList.remove('active'); });
   document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = 'none'; });
-  const target = document.getElementById('cs-' + n);
+  const targetId = SLIDE_ORDER[n - 1];
+  const target = document.getElementById(targetId);
   if (target) target.classList.add('active');
   document.querySelectorAll('.casey-dot').forEach((d, i) => d.classList.toggle('on', i === n - 1));
   document.getElementById('cbar').style.width = ((n / TOTAL) * 100) + '%';
   document.getElementById('ccount').textContent = n + ' / ' + TOTAL;
   current = n;
-  if (n === 10) startCourtForm(); else stopCourtForm();
-  // magic background disabled
-  if (n === 4) animateIntroTeaser();
-  if (n === 9) animateIntroOrbit();
-  if (n === 17) animateIntroExpansion();
-  if (n === 26) replayGntLogo();
+  // Position-indexed triggers. Triggers are keyed by targetId so variant removal doesn't break them.
+  if (targetId === 'cs-10') startCourtForm(); else stopCourtForm();
+  if (targetId === 'cs-4') animateIntroTeaser();
+  if (targetId === 'cs-9') animateIntroOrbit();
+  if (targetId === 'cs-17') animateIntroExpansion();
+  if (targetId === 'cs-26') replayGntLogo();
+  if (targetId === 'cs-4') animateCs4Court();
 }
 
 function enterAppendix() {
   inAppendix = true;
-  appendixCurrent = 1;
+  // Jump to the first remaining pink-dot appendix slide (cs-a13 = Name Validated, was a16).
+  // Arrow-left walks back to cs-a1..cs-a12 legacy appendix.
+  appendixCurrent = 13;
   document.querySelectorAll('.casey-slide').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.appendix-slide').forEach(s => { s.style.display = ''; });
-  const target = document.getElementById('cs-a2');
+  const target = document.getElementById('cs-a13');
   if (target) target.classList.add('active');
-  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#caa54a,#49b4a0)';
-  document.getElementById('cbar').style.width = ((1 / APPENDIX_TOTAL) * 100) + '%';
-  document.getElementById('ccount').textContent = 'A1 / ' + APPENDIX_TOTAL;
+  document.getElementById('cbar').style.background = 'linear-gradient(90deg,#caa54a,#ff4d8f)';
+  document.getElementById('cbar').style.width = ((13 / APPENDIX_TOTAL) * 100) + '%';
+  document.getElementById('ccount').textContent = 'A13 / ' + APPENDIX_TOTAL;
   // Update dots
   const nav = document.getElementById('cnav');
   nav.querySelectorAll('.casey-dot').forEach(d => d.style.display = 'none');
@@ -7172,35 +7338,38 @@ function appendixGo(n) {
   appendixCurrent = n;
 }
 
-// Slide labels for tooltips
+// Slide labels for tooltips. Must mirror SLIDE_ORDER.length + 1 (index 0 placeholder).
 const slideLabels = [
   '', // 0 placeholder
-  "Give 'n Take",
-  'The Next Frontier',
-  'Why Pickleball',
-  'Matchmaking in Social Sports Communities',
-  'Social Sports',
-  'The Data Exists',
-  'The Cost of Honesty',
-  'The Uncomfortable Cultural Shift',
-  'Invitation-Feed',
-  'Human Value Marketplace',
-  'How it works',
-  'How it Started at NEPC',
-  'Current Phase: HITL',
-  'Radical Change in Player Behavior',
-  'The Leap',
-  'The Intelligence',
-  'Ground Zero',
-  'Founder Journey',
-  'Club Impact',
-  'The Perfect Outlier Wedge',
-  'Understand',
-  'Opportunity Size',
-  'Brian Chesky',
-  'The Ask',
-  'The Promise',
-  'Give \'n Take'
+  "Give 'n Take",                                    //  1 cs-1
+  'The Gap · relationships, uninfrastructured',      //  2 cs-1b
+  'The Previous Era · social media narrow view',     //  3 cs-2
+  '24 Rounds · Each one is a shape',                 //  4 cs-3
+  'Each person · her experience of them',            //  5 cs-3b
+  'Matchmaking in Social Sports Communities',        //  6 cs-4
+  'The Data Exists',                                 //  7 cs-6
+  'The Cost of Honesty',                             //  8 cs-7
+  'The Uncomfortable Cultural Shift',                //  9 cs-8
+  'Scheduling IS measuring',                         // 10 cs-8c  [NEW]
+  'Human Value Marketplace',                         // 11 cs-10
+  'How · Core Product',                              // 11 cs-11
+  'Proof · Already running at NEPC',                 // 12 cs-11b  [NEW]
+  'How it Started at NEPC',                          // 13 cs-12
+  'Current Phase: HITL',                             // 14 cs-13
+  'Radical Change in Player Behavior',               // 15 cs-14
+  'Invitation-Feed · the orbital payoff',            // 16 cs-9   (moved to vision crescendo)
+  'The Leap',                                        // 17 cs-15
+  'The Intelligence',                                // 18 cs-16
+  'Ground Zero',                                     // 19 cs-17
+  'Founder Journey',                                 // 20 cs-18
+  'Club Impact',                                     // 21 cs-19
+  'The Perfect Outlier Wedge',                       // 22 cs-20
+  'Understand',                                      // 23 cs-21
+  'Opportunity Size',                                // 24 cs-22
+  'Brian Chesky',                                    // 25 cs-23
+  'The Ask',                                         // 26 cs-24
+  'The Promise',                                     // 27 cs-25
+  "Give 'n Take"                                     // 28 cs-26
 ];
 
 // Build nav dots
@@ -7224,7 +7393,7 @@ for (let i = 1; i <= TOTAL; i++) {
 // Add appendix button
 const abtn = document.createElement('button');
 abtn.id = 'appendixBtn';
-abtn.textContent = 'Appendix';
+abtn.innerHTML = 'Appendix <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d8f;box-shadow:0 0 10px rgba(255,77,143,0.85);margin-left:6px;vertical-align:middle;animation:pinkPulse 2.2s ease-in-out infinite" title="5 bonus slides to review (Name Validated · Mechanism · Keep Going · Bottleneck · Measurement Leap)"></span>';
 abtn.style.cssText = 'font-family:var(--ui,"Manrope",sans-serif);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:5px 14px;cursor:pointer;margin-left:8px;transition:all 0.3s';
 abtn.onmouseenter = () => { abtn.style.color = 'rgba(255,255,255,0.6)'; abtn.style.borderColor = 'rgba(255,255,255,0.15)'; };
 abtn.onmouseleave = () => { abtn.style.color = 'rgba(255,255,255,0.35)'; abtn.style.borderColor = 'rgba(255,255,255,0.08)'; };
@@ -7320,9 +7489,11 @@ function animateIntroTeaser() {
 }
 
 function animateIntroOrbit() {
-  const slide = document.getElementById('cs-8');
+  // FIX 2026-04-22: was looking for graph in #cs-7 and topText in #cs-8 (stale pre-reorder refs).
+  // The orbit graph lives in cs-9 — target it directly.
+  const slide = document.getElementById('cs-9');
   const topText = slide ? slide.querySelector('.graph-top-text') : null;
-  const container = document.querySelector('#cs-7 .graph-container');
+  const container = document.querySelector('#cs-9 .graph-container');
   if (!container) return;
   const nodes = container.querySelectorAll('.graph-node');
   const svg = container.querySelector('.graph-svg');
@@ -8995,5 +9166,37 @@ window.addEventListener('resize',drawLoop);
 })();
 
 </script>
+
+<!-- GnT brand mark: injected into top-right of every slide -->
+<script>
+(function injectGntBrand(){
+  const svg = '<svg width="52" height="48" viewBox="0 0 52 48" xmlns="http://www.w3.org/2000/svg" style="display:block">'
+    + '<g opacity="0.9">'
+    // Up arrow (left, near G) — blue = "give"
+    + '<path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>'
+    // Down arrow (right, near T) — red = "take"
+    + '<path d="M 42 16 L 46 9 L 43.5 9 L 43.5 4 L 40.5 4 L 40.5 9 L 38 9 Z" fill="#e04040"/>'
+    + '</g>'
+    // GnT wordmark
+    + '<text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>'
+    + '<text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.8">n</text>'
+    + '<text x="34" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>'
+    + '</svg>';
+  function add(){
+    document.querySelectorAll('.casey-slide').forEach(slide => {
+      if (slide.querySelector('.gnt-brand')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'gnt-brand';
+      // top:38px puts GnT brand BELOW the slide counter at top:12px (counter is ~18px tall + 8px gap)
+      wrap.style.cssText = 'position:absolute;top:38px;right:18px;z-index:15;pointer-events:none;opacity:0.9;filter:drop-shadow(0 0 8px rgba(0,0,0,0.5))';
+      wrap.innerHTML = svg;
+      slide.appendChild(wrap);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add);
+  else add();
+})();
+</script>
+
 </body>
 </html>
