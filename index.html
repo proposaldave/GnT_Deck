@@ -6436,6 +6436,117 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 </div>
 
 <!-- Ground Zero — nav pos 19 -->
+<!-- cs-16b: Autonomous social coordination — the two-loop engine -->
+<div class="casey-slide ds-focus" id="cs-16b">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Autonomous social coordination</div>
+  <div style="padding:48px 40px;text-align:center;max-width:1280px;margin:0 auto;width:100%">
+
+    <!-- HEADLINE -->
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#e8e0d0;line-height:1.1;letter-spacing:-0.01em;margin-bottom:8px">
+      Two loops. <em style="font-style:italic;color:#d4a853">One engine.</em>
+    </div>
+    <div style="font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:rgba(232,224,208,0.55);margin-bottom:38px">
+      The club optimizes itself &middot; at AI speed
+    </div>
+
+    <!-- DIAGRAM -->
+    <svg viewBox="0 0 1200 440" style="width:100%;max-width:1180px;display:block;margin:0 auto" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="aCoordEngineGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#d4a853" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
+        </radialGradient>
+        <marker id="aCoordArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4a853"/>
+        </marker>
+        <marker id="aCoordArrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#5B8FD4"/>
+        </marker>
+        <marker id="aCoordArrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#3dff7a"/>
+        </marker>
+      </defs>
+
+      <!-- ============ LEFT LOOP: INPUT / MATCHMAKING ============ -->
+      <!-- Center: (300, 220), R: 145 -->
+      <circle cx="300" cy="220" r="145" fill="none" stroke="rgba(91,143,212,0.28)" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <text x="300" y="220" text-anchor="middle" dominant-baseline="middle" font-family="Playfair Display, serif" font-style="italic" font-size="20" fill="rgba(91,143,212,0.82)">Matchmaking</text>
+      <text x="300" y="242" text-anchor="middle" dominant-baseline="middle" font-family="Playfair Display, serif" font-style="italic" font-size="20" fill="rgba(91,143,212,0.82)">loop</text>
+
+      <!-- 3 nodes around left loop: 12, 4:30, 7:30 o'clock -->
+      <!-- Node A: top -->
+      <g transform="translate(300, 75)">
+        <rect x="-92" y="-22" width="184" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#5B8FD4" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#5B8FD4" text-transform="uppercase">INVITATIONS</text>
+      </g>
+      <!-- Node B: bottom-right -->
+      <g transform="translate(425, 295)">
+        <rect x="-72" y="-22" width="144" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#5B8FD4" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#5B8FD4">RSVPs</text>
+      </g>
+      <!-- Node C: bottom-left -->
+      <g transform="translate(175, 295)">
+        <rect x="-82" y="-22" width="164" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#5B8FD4" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#5B8FD4">ROUNDS PLAYED</text>
+      </g>
+
+      <!-- Arrows around left loop (clockwise) -->
+      <path d="M 380 95 A 145 145 0 0 1 420 270" stroke="#5B8FD4" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowBlue)"/>
+      <path d="M 408 310 A 145 145 0 0 1 192 310" stroke="#5B8FD4" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowBlue)"/>
+      <path d="M 175 268 A 145 145 0 0 1 220 98" stroke="#5B8FD4" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowBlue)"/>
+
+      <!-- ============ CENTER ENGINE ============ -->
+      <circle cx="600" cy="220" r="110" fill="url(#aCoordEngineGlow)"/>
+      <rect x="510" y="180" width="180" height="80" rx="18" fill="rgba(20,15,8,0.96)" stroke="#d4a853" stroke-width="2" filter="drop-shadow(0 0 18px rgba(212,168,83,0.4))"/>
+      <text x="600" y="208" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(232,224,208,0.62)">THE ENGINE</text>
+      <text x="600" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
+      <text x="618" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="18" font-weight="900" font-style="italic" fill="#e8e0d0">n</text>
+      <text x="636" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#e04040">T</text>
+      <text x="600" y="252" text-anchor="middle" font-family="Manrope, sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#d4a853">LEARNS · MAXIMIZES RECIPROCITY</text>
+
+      <!-- Input arrow (left loop -> engine) -->
+      <path d="M 445 220 L 510 220" stroke="#d4a853" stroke-width="2.2" fill="none" marker-end="url(#aCoordArrow)"/>
+      <!-- Output arrow (engine -> right loop) -->
+      <path d="M 690 220 L 755 220" stroke="#d4a853" stroke-width="2.2" fill="none" marker-end="url(#aCoordArrow)"/>
+
+      <!-- ============ RIGHT LOOP: VALUE / COMPOUNDING ============ -->
+      <circle cx="900" cy="220" r="145" fill="none" stroke="rgba(61,255,122,0.26)" stroke-width="1.2" stroke-dasharray="4 4"/>
+      <text x="900" y="220" text-anchor="middle" dominant-baseline="middle" font-family="Playfair Display, serif" font-style="italic" font-size="20" fill="rgba(61,255,122,0.8)">Value</text>
+      <text x="900" y="242" text-anchor="middle" dominant-baseline="middle" font-family="Playfair Display, serif" font-style="italic" font-size="20" fill="rgba(61,255,122,0.8)">loop</text>
+
+      <!-- 3 nodes around right loop -->
+      <g transform="translate(900, 75)">
+        <rect x="-92" y="-22" width="184" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#3dff7a" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#3dff7a">BETTER MATCHES</text>
+      </g>
+      <g transform="translate(1025, 295)">
+        <rect x="-72" y="-22" width="144" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#3dff7a" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#3dff7a">RETENTION</text>
+      </g>
+      <g transform="translate(775, 295)">
+        <rect x="-72" y="-22" width="144" height="44" rx="22" fill="rgba(10,15,25,0.92)" stroke="#3dff7a" stroke-width="1.4"/>
+        <text text-anchor="middle" dominant-baseline="middle" font-family="Manrope, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#3dff7a">REVENUE</text>
+      </g>
+
+      <!-- Arrows around right loop (clockwise) -->
+      <path d="M 980 95 A 145 145 0 0 1 1020 270" stroke="#3dff7a" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowGreen)"/>
+      <path d="M 1008 310 A 145 145 0 0 1 792 310" stroke="#3dff7a" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowGreen)"/>
+      <path d="M 775 268 A 145 145 0 0 1 820 98" stroke="#3dff7a" stroke-width="1.6" fill="none" opacity="0.7" marker-end="url(#aCoordArrowGreen)"/>
+
+      <!-- Feedback loop arrow: right bottom back to left bottom -->
+      <path d="M 870 370 Q 600 420 330 370" stroke="rgba(212,168,83,0.55)" stroke-width="1.6" fill="none" stroke-dasharray="4 4" marker-end="url(#aCoordArrow)"/>
+      <text x="600" y="408" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5" fill="rgba(212,168,83,0.7)">EVERY OUTCOME TRAINS THE NEXT INVITATION</text>
+    </svg>
+
+    <!-- FOOTER -->
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,224,208,0.48);margin-top:32px;line-height:1.7">
+      Historical community data <span style="color:#d4a853">solves the cold-start problem.</span>
+    </div>
+  </div>
+</section>
+</div>
+
 <div class="casey-slide ds-intro" id="cs-17">
 <div class="back-btn" onclick="goTo(8)">← Ground Zero</div>
 
@@ -7596,7 +7707,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 const SLIDE_ORDER = [
   'cs-1','cs-1b','cs-2','cs-3',
   'cs-4','cs-6','cs-7','cs-8','cs-8b','cs-10','cs-11','cs-11b','cs-19','cs-12','cs-13',
-  'cs-14','cs-9','cs-15','cs-16','cs-17','cs-18','cs-20','cs-21','cs-23',
+  'cs-14','cs-9','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-26'
 ];
 const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
@@ -7698,7 +7809,8 @@ const slideLabels = [
   'Invitation-Feed · the orbital payoff',            // 17 cs-9   (moved to vision crescendo)
   'The Leap',                                        // 18 cs-15
   'The Intelligence',                                // 19 cs-16
-  'Ground Zero',                                     // 20 cs-17
+  'Autonomous social coordination',                  // 20 cs-16b  [NEW]
+  'Ground Zero',                                     // 21 cs-17
   'Founder Journey',                                 // 21 cs-18
   'The Perfect Outlier Wedge',                       // 22 cs-20
   'Understand',                                      // 23 cs-21
