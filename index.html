@@ -4913,8 +4913,8 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
     <div class="sm-shift">
       <div class="sm-from" style="gap:18px">
-        <div class="sm-circle sm-old" style="padding:0;overflow:visible;width:180px;height:180px">
-          <svg width="180" height="180" viewBox="0 0 52 52" fill="none">
+        <div class="sm-circle sm-old" style="padding:0;overflow:visible;width:148px;height:148px">
+          <svg width="148" height="148" viewBox="0 0 52 52" fill="none">
             <!-- Lonely person -->
             <circle cx="26" cy="14" r="5" fill="rgba(232,224,208,0.35)"/>
             <path d="M26 20 L26 34" stroke="rgba(232,224,208,0.3)" stroke-width="2" stroke-linecap="round"/>
@@ -4927,9 +4927,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <circle cx="33.5" cy="27" r="8" fill="rgba(100,140,255,0.06)"/>
           </svg>
         </div>
-        <div class="sm-label" style="color:rgba(232,224,208,0.4);font-size:1.7rem">Scroll alone</div>
+        <div class="sm-label" style="color:rgba(232,224,208,0.4);font-size:1.45rem">Scroll alone</div>
       </div>
-      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:76px !important;opacity:0.7;font-weight:300">→</div>
+      <div class="sm-arrow" style="color:#9aa0a6 !important;font-size:62px !important;opacity:0.7;font-weight:300">→</div>
       <div class="sm-to" style="gap:18px">
         <style>
           @keyframes liveItHeartbeat {
@@ -4941,13 +4941,16 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             100% { transform: scale(1);    }
           }
           .sm-live-it-heart {
-            animation: liveItHeartbeat 1.4s ease-in-out infinite;
+            animation: liveItHeartbeat 1.4s ease-in-out 1 both;
             transform-origin: 50% 50%;
             will-change: transform;
           }
+          .sm-live-it-heart.beat-again {
+            animation: liveItHeartbeat 1.4s ease-in-out 1 both;
+          }
         </style>
-        <div class="sm-circle sm-new sm-live-it-heart" style="padding:0;overflow:visible;width:230px;height:230px">
-          <svg width="230" height="230" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="sm-circle sm-new sm-live-it-heart" style="padding:0;overflow:visible;width:188px;height:188px">
+          <svg width="188" height="188" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Envelope -->
             <rect x="12" y="22" width="56" height="40" rx="4" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="2" opacity="0.9"/>
             <path d="M12 22 L40 48 L68 22" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0.8" stroke-linejoin="round"/>
@@ -4963,7 +4966,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             <path d="M52 42 L52 52 M48 46 L56 46" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
           </svg>
         </div>
-        <div class="sm-label" style="color:var(--gold);font-style:italic;font-size:1.7rem">Feel good together</div>
+        <div class="sm-label" style="color:var(--gold);font-style:italic;font-size:1.45rem">Feel good together</div>
       </div>
     </div>
   </div>
@@ -5295,14 +5298,14 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <!-- cs-8b: THE UNLEASHING — mission-scale claim, tech-waves visualization -->
 <div class="casey-slide ds-focus" id="cs-8b">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">The Unleashing</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Our most important revolution</div>
   <div style="padding:60px 48px;text-align:center;max-width:1120px;margin:0 auto;width:100%">
     <!-- HEADLINE -->
     <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.3rem);font-weight:700;color:#e8e0d0;line-height:1.1;letter-spacing:-0.01em;margin-bottom:12px">
       Every tech wave unleashed <em style="font-style:italic">one resource.</em>
     </div>
     <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4.2vw,3.3rem);font-weight:700;font-style:italic;color:#d4a853;line-height:1.1;letter-spacing:-0.01em;margin-bottom:60px">
-      Ours unleashes the one that actually matters.
+      Ours only shows the one that matters most to each of us.
     </div>
 
     <!-- TECH WAVES STACK -->
@@ -5396,9 +5399,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       </div>
     </div>
 
-    <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,224,208,0.45);margin-top:48px;line-height:1.7">
-      Biggest resource humans have. <span style="color:#d4a853">First one to ever be measured.</span>
-    </div>
   </div>
 </section>
 </div>
@@ -5663,18 +5663,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
               paddle.setAttribute('opacity','0.95');
               paddle.setAttribute('transform','rotate(25 '+(cx+20*SCALE)+' '+(cy-20*SCALE)+')');
               group.appendChild(paddle);
-              const lbl = document.createElementNS(NS,'text');
-              lbl.setAttribute('x', cx); lbl.setAttribute('y', cy + 38);
-              lbl.setAttribute('text-anchor','middle');
-              lbl.setAttribute('font-family','Manrope, sans-serif');
-              lbl.setAttribute('font-size','9');
-              lbl.setAttribute('font-weight','700');
-              lbl.setAttribute('letter-spacing','3');
-              lbl.setAttribute('fill','#3dff7a');
-              lbl.setAttribute('opacity','0.8');
-              lbl.textContent = 'YOU';
-              group.appendChild(lbl);
-
             }
           });
         };
@@ -5785,13 +5773,13 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
-<div class="inner" style="padding-top:32px;text-align:center;max-width:1180px">
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
+<div class="inner" style="padding-top:18px;text-align:center;max-width:1180px">
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:8px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
     <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own social experiment.</em>
   </div>
 
   <!-- 7-column week grid; MON/WED/FRI/SUN dim. TUE/THU/SAT active with 8 rounds each. -->
-  <div id="cs3-week-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;max-width:1140px;margin:0 auto;align-items:start"></div>
+  <div id="cs3-week-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;max-width:1140px;margin:0 auto;align-items:start"></div>
 </div>
 
 <script>
@@ -5834,7 +5822,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   function makeMiniCourt(seed){
     const rand = mulberry(seed);
     const palette = pickPalette(rand);
-    const W=110, H=62;
+    const W=110, H=58;
     const svg = document.createElementNS(NS,'svg');
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
     svg.setAttribute('preserveAspectRatio','xMidYMid meet');
@@ -6037,26 +6025,36 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     return svg;
   }
 
-  // ========== HER EXPERIENCE BARS — 4 factors, monochrome, Sequoia-grade ==========
-  // No gradients. No cheesy colors. Single green-accent fill on a dim track.
-  // Tight letter-spaced 3-char labels. Values deterministic from the court seed.
+  // ========== HER EXPERIENCE BARS — 3 factors, traffic-light coloring ==========
+  // Layout: SIDEBAR (right of court) so card height stays compact.
+  // Story-accurate dims: VIBE (did it feel good) / BOND (did she connect) / FIT (right matchup)
+  // Traffic-light: green >= 0.68, orange 0.40 - 0.68, red < 0.40
   function buildExperienceBars(seed){
     const rand = mulberry(seed + 777);
-    const DIMS = ['VIB','LGH','BND','FLW'];   // Vibe / Laughs / Bond / Flow
+    const DIMS = [
+      { label: 'VIBE' },
+      { label: 'BOND' },
+      { label: 'FIT'  }
+    ];
+    function colorFor(v){
+      if (v >= 0.68) return '#3dff7a';   // green -- good
+      if (v >= 0.40) return '#f0a060';   // orange -- medium
+      return '#e04040';                   // red -- low
+    }
     const panel = document.createElement('div');
-    panel.style.cssText = 'padding:5px 2px 2px;display:flex;flex-direction:column;gap:2.2px;border-top:1px solid rgba(212,168,83,0.10);margin-top:4px';
-    DIMS.forEach(label => {
+    panel.style.cssText = 'width:52px;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:4px 4px 4px 2px;flex-shrink:0';
+    DIMS.forEach(d => {
       const row = document.createElement('div');
-      row.style.cssText = 'display:flex;align-items:center;gap:4px';
+      row.style.cssText = 'display:flex;flex-direction:column;gap:2px';
       const lbl = document.createElement('span');
-      lbl.style.cssText = 'font-family:Manrope,sans-serif;font-size:5.2px;font-weight:700;letter-spacing:0.8px;color:rgba(237,233,224,0.45);width:13px;text-transform:uppercase;flex-shrink:0';
-      lbl.textContent = label;
+      lbl.style.cssText = 'font-family:Manrope,sans-serif;font-size:7.5px;font-weight:700;letter-spacing:1.2px;color:rgba(237,233,224,0.82);text-transform:uppercase;line-height:1';
+      lbl.textContent = d.label;
       row.appendChild(lbl);
       const track = document.createElement('div');
-      track.style.cssText = 'flex:1;height:1.6px;background:rgba(237,233,224,0.08);border-radius:0;overflow:hidden;position:relative';
+      track.style.cssText = 'width:100%;height:3.5px;background:rgba(237,233,224,0.08);border-radius:1.5px;overflow:hidden';
       const fill = document.createElement('div');
-      const v = 0.35 + rand() * 0.6;
-      fill.style.cssText = 'height:100%;width:' + (v*100).toFixed(0) + '%;background:#3dff7a;opacity:0.82';
+      const v = 0.22 + rand() * 0.76;  // 0.22 - 0.98 range so traffic lights actually vary
+      fill.style.cssText = 'height:100%;width:' + (v*100).toFixed(0) + '%;background:' + colorFor(v) + ';border-radius:1.5px;box-shadow:0 0 4px ' + colorFor(v) + '66';
       track.appendChild(fill);
       row.appendChild(track);
       panel.appendChild(row);
@@ -6086,11 +6084,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       col.appendChild(t1);
       for (let i=0;i<8;i++){
         const cardWrap = document.createElement('div');
-        cardWrap.style.cssText='background:rgba(10,15,13,0.35);border:1px solid rgba(212,168,83,0.18);border-radius:3px;padding:3px 3px 3px';
+        cardWrap.style.cssText='background:rgba(10,15,13,0.35);border:1px solid rgba(212,168,83,0.18);border-radius:3px;padding:3px;display:flex;align-items:center;gap:3px';
         // Unique seed per court so every court has its own palette + timing
         const seed = courtIdx*9301 + 49297 + (courtIdx<<5) + (day.charCodeAt(0)*courtIdx);
-        cardWrap.appendChild(makeMiniCourt(seed));
-        // 4-factor experience panel: HER vibe/laugh/bond/flow for this round (unique per court)
+        // Court takes the main area; bars sit to the right
+        const courtWrap = document.createElement('div');
+        courtWrap.style.cssText = 'flex:1;min-width:0;display:flex;align-items:center';
+        courtWrap.appendChild(makeMiniCourt(seed));
+        cardWrap.appendChild(courtWrap);
+        // 3-factor experience sidebar: VIBE / BOND / FIT, traffic-light colored
         cardWrap.appendChild(buildExperienceBars(seed));
         col.appendChild(cardWrap);
         courtIdx++;
@@ -7361,9 +7363,24 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:7%;height:100%;background:#c76bdb;border-radius:3px;opacity:0.55"></div></div>
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
       </div>
-      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center">
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
         <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Fitness</div>
         <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:12%;height:100%;background:#7fb8a8;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Work</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:14%;height:100%;background:#D46B7E;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Success</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:9%;height:100%;background:#6c7bb5;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Status</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:8%;height:100%;background:#b39374;border-radius:3px;opacity:0.55"></div></div>
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
       </div>
     </div>
@@ -7624,6 +7641,14 @@ function caseyGo(n) {
   if (targetId === 'cs-17') animateIntroExpansion();
   if (targetId === 'cs-26') replayGntLogo();
   if (targetId === 'cs-4') animateCs4Court();
+  if (targetId === 'cs-2') {
+    const el = document.querySelector('#cs-2 .sm-live-it-heart');
+    if (el) {
+      el.classList.remove('beat-again');
+      void el.offsetWidth;  // force reflow
+      el.classList.add('beat-again');
+    }
+  }
 }
 
 function enterAppendix() {
@@ -7678,7 +7703,7 @@ const slideLabels = [
   'The Data Exists',                                 //  7 cs-6
   'The Cost of Honesty',                             //  8 cs-7
   'The Uncomfortable Cultural Shift',                //  9 cs-8
-  'The Unleashing · mission-scale',                 // 10 cs-8b  [NEW]
+  'Our most important revolution',                   // 10 cs-8b  [NEW]
   'Human Value Marketplace',                         // 11 cs-10
   'How · Core Product · Scheduling is measuring',  // 11 cs-11
   'Proof · Already running at NEPC',                 // 12 cs-11b  [NEW]
