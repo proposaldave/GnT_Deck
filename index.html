@@ -6028,9 +6028,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   function buildExperienceBars(seed){
     const rand = mulberry(seed + 777);
     const DIMS = [
-      { label: 'GAME' },  // quality of the pickleball itself (right challenge / right pace)
-      { label: 'BOND' },  // social chemistry with the 3 partners
-      { label: 'JOY'  }   // her net emotional takeaway
+      { label: 'CHALLENGE' },  // right difficulty / skill match — the game dimension
+      { label: 'BOND'      },  // social chemistry with the 3 partners
+      { label: 'JOY'       }   // her net emotional takeaway
     ];
     function colorFor(v){
       if (v >= 0.68) return '#3dff7a';   // green -- good
@@ -6043,7 +6043,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;flex-direction:column;gap:2px';
       const lbl = document.createElement('span');
-      lbl.style.cssText = 'font-family:Manrope,sans-serif;font-size:7.5px;font-weight:700;letter-spacing:1.2px;color:rgba(237,233,224,0.82);text-transform:uppercase;line-height:1';
+      lbl.style.cssText = 'font-family:Manrope,sans-serif;font-size:7px;font-weight:700;letter-spacing:0.5px;color:rgba(237,233,224,0.82);text-transform:uppercase;line-height:1';
       lbl.textContent = d.label;
       row.appendChild(lbl);
       const track = document.createElement('div');
@@ -7367,6 +7367,11 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
       <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center;margin-bottom:12px">
         <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Work</div>
         <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:14%;height:100%;background:#D46B7E;border-radius:3px;opacity:0.55"></div></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:170px 1fr 150px;gap:18px;align-items:center">
+        <div style="font-family:'DM Sans',sans-serif;font-size:1rem;color:rgba(232,224,208,0.7);text-align:right">Nutrition</div>
+        <div style="position:relative;height:14px;background:rgba(255,255,255,0.04);border-radius:3px"><div style="width:9%;height:100%;background:#869b5a;border-radius:3px;opacity:0.55"></div></div>
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,224,208,0.45)"></div>
       </div>
     </div>
