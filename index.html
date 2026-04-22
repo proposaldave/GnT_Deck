@@ -4890,7 +4890,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>
         </g>
         <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
-        <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
+        <text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
         <text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
       </svg>
 
@@ -5471,85 +5471,60 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
             }
           });
 
-          // --- Render sprites (on top) ---
+          // --- Render sprites (on top) — stick figures, one per player ---
           entities.forEach(e => {
-            if (e.sprite === 'you'){
-              // Coral-shirt silhouette
-              const S = 7.4, cx = e.pos.x, headCy = e.pos.y - 10;
-              const pony = document.createElementNS(NS,'path');
-              pony.setAttribute('d','M '+(cx+0.9*S)+' '+(headCy-2.3*S)+
-                ' Q '+(cx+1.6*S)+' '+(headCy-1.8*S)+' '+(cx+1.5*S)+' '+(headCy-1*S)+
-                ' Q '+(cx+1*S)+' '+(headCy-1.5*S)+' '+(cx+0.6*S)+' '+(headCy-2*S)+' Z');
-              pony.setAttribute('fill','#2a1e16'); group.appendChild(pony);
-              const head = document.createElementNS(NS,'circle');
-              head.setAttribute('cx',cx); head.setAttribute('cy', headCy-1.6*S);
-              head.setAttribute('r',1.35*S); head.setAttribute('fill','#f4c5a0');
-              head.setAttribute('stroke','#a07848'); head.setAttribute('stroke-width',0.22*S);
-              group.appendChild(head);
-              const hair = document.createElementNS(NS,'path');
-              hair.setAttribute('d','M '+(cx-1.3*S)+' '+(headCy-1.9*S)+
-                ' Q '+cx+' '+(headCy-3.4*S)+' '+(cx+1.3*S)+' '+(headCy-1.9*S)+
-                ' L '+(cx+1.1*S)+' '+(headCy-1.4*S)+
-                ' Q '+cx+' '+(headCy-2.4*S)+' '+(cx-1.1*S)+' '+(headCy-1.4*S)+' Z');
-              hair.setAttribute('fill','#2a1e16'); group.appendChild(hair);
-              const bodyTopY = headCy-0.2*S;
-              const body = document.createElementNS(NS,'path');
-              body.setAttribute('d','M '+(cx-1.6*S)+' '+bodyTopY+
-                ' Q '+(cx-1.6*S)+' '+(bodyTopY-0.3*S)+' '+(cx-1.2*S)+' '+(bodyTopY-0.3*S)+
-                ' L '+(cx-0.4*S)+' '+(bodyTopY-0.3*S)+
-                ' L '+cx+' '+(bodyTopY+0.1*S)+
-                ' L '+(cx+0.4*S)+' '+(bodyTopY-0.3*S)+
-                ' L '+(cx+1.2*S)+' '+(bodyTopY-0.3*S)+
-                ' Q '+(cx+1.6*S)+' '+(bodyTopY-0.3*S)+' '+(cx+1.6*S)+' '+bodyTopY+
-                ' L '+(cx+1.8*S)+' '+(bodyTopY+2.6*S)+
-                ' L '+(cx-1.8*S)+' '+(bodyTopY+2.6*S)+' Z');
-              body.setAttribute('fill','#e88a4a'); body.setAttribute('opacity','0.94');
-              group.appendChild(body);
-              const label = document.createElementNS(NS,'text');
-              label.setAttribute('x',cx); label.setAttribute('y', bodyTopY+2.6*S+11);
-              label.setAttribute('text-anchor','middle');
-              label.setAttribute('font-family','Manrope, sans-serif');
-              label.setAttribute('font-size','8');
-              label.setAttribute('font-weight','700');
-              label.setAttribute('letter-spacing','3');
-              label.setAttribute('fill','#3dff7a');
-              label.setAttribute('opacity','0.75');
-              label.textContent = 'YOU';
-              group.appendChild(label);
-            } else {
-              // Pickleball
-              const R = 13;
-              const ball = document.createElementNS(NS,'circle');
-              ball.setAttribute('cx',e.pos.x); ball.setAttribute('cy',e.pos.y);
-              ball.setAttribute('r',R); ball.setAttribute('fill',e.color);
-              ball.setAttribute('stroke','rgba(10,15,13,0.35)');
-              ball.setAttribute('stroke-width','0.5');
-              group.appendChild(ball);
-              [[0,-4.8],[-4.6,2.2],[4.6,2.2]].forEach(([dx,dy])=>{
-                const h = document.createElementNS(NS,'circle');
-                h.setAttribute('cx',e.pos.x+dx); h.setAttribute('cy',e.pos.y+dy);
-                h.setAttribute('r','1.9');
-                h.setAttribute('fill','rgba(10,15,13,0.78)');
-                group.appendChild(h);
-              });
-              const glow = document.createElementNS(NS,'circle');
-              glow.setAttribute('cx',e.pos.x); glow.setAttribute('cy',e.pos.y);
-              glow.setAttribute('r',R+3); glow.setAttribute('fill','none');
-              glow.setAttribute('stroke',e.color); glow.setAttribute('stroke-width','0.6');
-              glow.setAttribute('opacity','0.22');
-              const gA = document.createElementNS(NS,'animate');
-              gA.setAttribute('attributeName','r');
-              gA.setAttribute('values',(R+2)+';'+(R+6)+';'+(R+2));
-              gA.setAttribute('dur',e.dur+'s');
-              gA.setAttribute('repeatCount','indefinite');
-              glow.appendChild(gA);
-              const gO = document.createElementNS(NS,'animate');
-              gO.setAttribute('attributeName','opacity');
-              gO.setAttribute('values','0.35;0.05;0.35');
-              gO.setAttribute('dur',e.dur+'s');
-              gO.setAttribute('repeatCount','indefinite');
-              glow.appendChild(gO);
-              group.appendChild(glow);
+            const cx = e.pos.x, cy = e.pos.y;
+            const col = e.id === 'you' ? '#e88a4a' : e.color;
+            const isYou = e.id === 'you';
+            const SCALE = isYou ? 1.15 : 1.0;
+            // Head
+            const head = document.createElementNS(NS,'circle');
+            head.setAttribute('cx', cx); head.setAttribute('cy', cy - 22*SCALE);
+            head.setAttribute('r', 9*SCALE);
+            head.setAttribute('fill','none');
+            head.setAttribute('stroke', col);
+            head.setAttribute('stroke-width', (isYou?2.8:2.4).toFixed(1));
+            group.appendChild(head);
+            // Torso
+            const torso = document.createElementNS(NS,'line');
+            torso.setAttribute('x1', cx); torso.setAttribute('x2', cx);
+            torso.setAttribute('y1', cy - 13*SCALE); torso.setAttribute('y2', cy + 10*SCALE);
+            torso.setAttribute('stroke', col); torso.setAttribute('stroke-width', (isYou?2.8:2.4).toFixed(1));
+            torso.setAttribute('stroke-linecap','round');
+            group.appendChild(torso);
+            // Arms
+            const arms = document.createElementNS(NS,'line');
+            arms.setAttribute('x1', cx - 12*SCALE); arms.setAttribute('x2', cx + 12*SCALE);
+            arms.setAttribute('y1', cy - 5*SCALE); arms.setAttribute('y2', cy - 5*SCALE);
+            arms.setAttribute('stroke', col); arms.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
+            arms.setAttribute('stroke-linecap','round');
+            group.appendChild(arms);
+            // Legs
+            const legL = document.createElementNS(NS,'line');
+            legL.setAttribute('x1', cx); legL.setAttribute('x2', cx - 8*SCALE);
+            legL.setAttribute('y1', cy + 10*SCALE); legL.setAttribute('y2', cy + 23*SCALE);
+            legL.setAttribute('stroke', col); legL.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
+            legL.setAttribute('stroke-linecap','round');
+            group.appendChild(legL);
+            const legR = document.createElementNS(NS,'line');
+            legR.setAttribute('x1', cx); legR.setAttribute('x2', cx + 8*SCALE);
+            legR.setAttribute('y1', cy + 10*SCALE); legR.setAttribute('y2', cy + 23*SCALE);
+            legR.setAttribute('stroke', col); legR.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
+            legR.setAttribute('stroke-linecap','round');
+            group.appendChild(legR);
+            // YOU label below
+            if (isYou){
+              const lbl = document.createElementNS(NS,'text');
+              lbl.setAttribute('x', cx); lbl.setAttribute('y', cy + 38);
+              lbl.setAttribute('text-anchor','middle');
+              lbl.setAttribute('font-family','Manrope, sans-serif');
+              lbl.setAttribute('font-size','9');
+              lbl.setAttribute('font-weight','700');
+              lbl.setAttribute('letter-spacing','3');
+              lbl.setAttribute('fill','#3dff7a');
+              lbl.setAttribute('opacity','0.8');
+              lbl.textContent = 'YOU';
+              group.appendChild(lbl);
             }
           });
         };
@@ -5731,17 +5706,40 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     f.setAttribute('width', W-4); f.setAttribute('height', H-4);
     f.setAttribute('rx','2');
     f.setAttribute('fill','rgba(61,255,122,0.03)');
-    f.setAttribute('stroke','rgba(61,255,122,0.28)');
-    f.setAttribute('stroke-width','0.5');
+    f.setAttribute('stroke','rgba(61,255,122,0.42)');
+    f.setAttribute('stroke-width','0.6');
     svg.appendChild(f);
-    // Net
+    // Net (vertical, center) — brighter so the court reads clearly
     const net = document.createElementNS(NS,'line');
     net.setAttribute('x1', W/2); net.setAttribute('x2', W/2);
     net.setAttribute('y1','2'); net.setAttribute('y2', H-2);
-    net.setAttribute('stroke','rgba(237,233,224,0.2)');
-    net.setAttribute('stroke-width','0.4');
-    net.setAttribute('stroke-dasharray','1.2 1.2');
+    net.setAttribute('stroke','rgba(237,233,224,0.55)');
+    net.setAttribute('stroke-width','0.6');
+    net.setAttribute('stroke-dasharray','1.4 1.2');
     svg.appendChild(net);
+
+    // Kitchen lines (non-volley zone) — 7ft from net on each side ~ 16% of court length
+    const kOff = W * 0.16;
+    [W/2 - kOff, W/2 + kOff].forEach(kx => {
+      const k = document.createElementNS(NS,'line');
+      k.setAttribute('x1', kx); k.setAttribute('x2', kx);
+      k.setAttribute('y1', 2); k.setAttribute('y2', H-2);
+      k.setAttribute('stroke','rgba(237,233,224,0.5)');
+      k.setAttribute('stroke-width','0.5');
+      svg.appendChild(k);
+    });
+
+    // Center service lines (horizontal) — split each service court into deuce/ad,
+    // run from the kitchen line out to the baseline on each side.
+    const cy = H/2;
+    [[2, W/2 - kOff], [W/2 + kOff, W - 2]].forEach(seg => {
+      const c = document.createElementNS(NS,'line');
+      c.setAttribute('x1', seg[0]); c.setAttribute('x2', seg[1]);
+      c.setAttribute('y1', cy); c.setAttribute('y2', cy);
+      c.setAttribute('stroke','rgba(237,233,224,0.42)');
+      c.setAttribute('stroke-width','0.45');
+      svg.appendChild(c);
+    });
 
     // YOU always top-left (coral). Partners at the other 3 quadrants with colors unique to this court.
     const entities = [
@@ -5807,46 +5805,79 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     // Sprites on top
     entities.forEach(e=>{
       if (e.id==='you'){
-        const S = 1.6, cx = e.pos.x, cy = e.pos.y;
+        // YOU as stick figure in coral/orange (matches the other 3 stick figures)
+        const cx = e.pos.x, cy = e.pos.y;
+        const col = '#e88a4a';
         const head = document.createElementNS(NS,'circle');
-        head.setAttribute('cx', cx); head.setAttribute('cy', cy-S*1.4);
-        head.setAttribute('r', S);
-        head.setAttribute('fill','#f4c5a0');
-        head.setAttribute('stroke','#a07848');
-        head.setAttribute('stroke-width','0.18');
+        head.setAttribute('cx', cx); head.setAttribute('cy', cy-3.1);
+        head.setAttribute('r', '1.35');
+        head.setAttribute('fill','none');
+        head.setAttribute('stroke', col);
+        head.setAttribute('stroke-width','0.7');
         svg.appendChild(head);
-        const hair = document.createElementNS(NS,'path');
-        hair.setAttribute('d','M '+(cx-S)+' '+(cy-S*1.7)+
-          ' Q '+cx+' '+(cy-S*2.8)+' '+(cx+S)+' '+(cy-S*1.7)+
-          ' L '+(cx+S*0.85)+' '+(cy-S*1.3)+
-          ' Q '+cx+' '+(cy-S*2)+' '+(cx-S*0.85)+' '+(cy-S*1.3)+' Z');
-        hair.setAttribute('fill','#2a1e16');
-        svg.appendChild(hair);
-        const body = document.createElementNS(NS,'path');
-        const byt = cy - S*0.1;
-        body.setAttribute('d','M '+(cx-S*1.2)+' '+byt+
-          ' L '+(cx+S*1.2)+' '+byt+
-          ' L '+(cx+S*1.4)+' '+(byt+S*2.1)+
-          ' L '+(cx-S*1.4)+' '+(byt+S*2.1)+' Z');
-        body.setAttribute('fill','#e88a4a');
-        body.setAttribute('opacity','0.94');
-        svg.appendChild(body);
+        const torso = document.createElementNS(NS,'line');
+        torso.setAttribute('x1', cx); torso.setAttribute('x2', cx);
+        torso.setAttribute('y1', cy-1.75); torso.setAttribute('y2', cy+1.4);
+        torso.setAttribute('stroke', col); torso.setAttribute('stroke-width','0.7');
+        torso.setAttribute('stroke-linecap','round');
+        svg.appendChild(torso);
+        const arms = document.createElementNS(NS,'line');
+        arms.setAttribute('x1', cx-1.7); arms.setAttribute('x2', cx+1.7);
+        arms.setAttribute('y1', cy-0.7); arms.setAttribute('y2', cy-0.7);
+        arms.setAttribute('stroke', col); arms.setAttribute('stroke-width','0.65');
+        arms.setAttribute('stroke-linecap','round');
+        svg.appendChild(arms);
+        const legL = document.createElementNS(NS,'line');
+        legL.setAttribute('x1', cx); legL.setAttribute('x2', cx-1.2);
+        legL.setAttribute('y1', cy+1.4); legL.setAttribute('y2', cy+3.3);
+        legL.setAttribute('stroke', col); legL.setAttribute('stroke-width','0.65');
+        legL.setAttribute('stroke-linecap','round');
+        svg.appendChild(legL);
+        const legR = document.createElementNS(NS,'line');
+        legR.setAttribute('x1', cx); legR.setAttribute('x2', cx+1.2);
+        legR.setAttribute('y1', cy+1.4); legR.setAttribute('y2', cy+3.3);
+        legR.setAttribute('stroke', col); legR.setAttribute('stroke-width','0.65');
+        legR.setAttribute('stroke-linecap','round');
+        svg.appendChild(legR);
       } else {
-        const R = 2.2;
-        const ball = document.createElementNS(NS,'circle');
-        ball.setAttribute('cx',e.pos.x); ball.setAttribute('cy',e.pos.y);
-        ball.setAttribute('r',R);
-        ball.setAttribute('fill',e.color);
-        ball.setAttribute('stroke','rgba(10,15,13,0.4)');
-        ball.setAttribute('stroke-width','0.15');
-        svg.appendChild(ball);
-        [[0,-0.9],[-0.85,0.45],[0.85,0.45]].forEach(([dx,dy])=>{
-          const h = document.createElementNS(NS,'circle');
-          h.setAttribute('cx', e.pos.x+dx); h.setAttribute('cy', e.pos.y+dy);
-          h.setAttribute('r','0.35');
-          h.setAttribute('fill','rgba(10,15,13,0.8)');
-          svg.appendChild(h);
-        });
+        // Stick figure: head circle + torso + arms + legs. Partner's color on stroke.
+        const cx = e.pos.x, cy = e.pos.y;
+        const col = e.color;
+        // Head
+        const head = document.createElementNS(NS,'circle');
+        head.setAttribute('cx', cx); head.setAttribute('cy', cy-3.1);
+        head.setAttribute('r', '1.25');
+        head.setAttribute('fill','none');
+        head.setAttribute('stroke', col);
+        head.setAttribute('stroke-width','0.6');
+        svg.appendChild(head);
+        // Torso
+        const torso = document.createElementNS(NS,'line');
+        torso.setAttribute('x1', cx); torso.setAttribute('x2', cx);
+        torso.setAttribute('y1', cy-1.85); torso.setAttribute('y2', cy+1.4);
+        torso.setAttribute('stroke', col); torso.setAttribute('stroke-width','0.6');
+        torso.setAttribute('stroke-linecap','round');
+        svg.appendChild(torso);
+        // Arms
+        const arms = document.createElementNS(NS,'line');
+        arms.setAttribute('x1', cx-1.6); arms.setAttribute('x2', cx+1.6);
+        arms.setAttribute('y1', cy-0.7); arms.setAttribute('y2', cy-0.7);
+        arms.setAttribute('stroke', col); arms.setAttribute('stroke-width','0.55');
+        arms.setAttribute('stroke-linecap','round');
+        svg.appendChild(arms);
+        // Legs (two diverging lines)
+        const legL = document.createElementNS(NS,'line');
+        legL.setAttribute('x1', cx); legL.setAttribute('x2', cx-1.1);
+        legL.setAttribute('y1', cy+1.4); legL.setAttribute('y2', cy+3.2);
+        legL.setAttribute('stroke', col); legL.setAttribute('stroke-width','0.55');
+        legL.setAttribute('stroke-linecap','round');
+        svg.appendChild(legL);
+        const legR = document.createElementNS(NS,'line');
+        legR.setAttribute('x1', cx); legR.setAttribute('x2', cx+1.1);
+        legR.setAttribute('y1', cy+1.4); legR.setAttribute('y2', cy+3.2);
+        legR.setAttribute('stroke', col); legR.setAttribute('stroke-width','0.55');
+        legR.setAttribute('stroke-linecap','round');
+        svg.appendChild(legR);
       }
     });
     return svg;
@@ -6726,7 +6757,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>
       </g>
       <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
+      <text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
       <text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
     </svg>
   </div>
@@ -9272,7 +9303,7 @@ window.addEventListener('resize',drawLoop);
     + '</g>'
     // GnT wordmark — n at x=20 sits halfway between G (x=2) and T (x=38)
     + '<text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>'
-    + '<text x="20" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.8">n</text>'
+    + '<text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.8">n</text>'
     + '<text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>'
     + '</svg>';
   function add(){
