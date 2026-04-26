@@ -5463,201 +5463,152 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- RIGHT: Data drip digitization -->
       <div style="flex:1;min-width:280px;max-width:420px;background:rgba(61,255,122,0.02);border:1px solid rgba(61,255,122,0.1);border-radius:16px;padding:24px;text-align:center;position:relative;overflow:hidden">
-        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">Data From The Players</div>
+        <div style="font-size:0.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:12px">Data From The Players About Each Other</div>
 
-        <!-- Single pickleball court: zoom-in of one round from the 24-court grid on the previous slide.
-             YOU (coral-shirt silhouette) at top-left, 3 rotating pickleball partners at the other 3 quadrants,
-             bidirectional data flow: gold outbound ("how you experience them"), each partner's color inbound. -->
+        <!-- ONE PERSON'S BRAIN: a single human head, with thoughts of other players inside.
+             The new data is not the court — it's the impression each player carries of each
+             other player. Four thought-bubbles inside the head, each a different palette
+             color, each pulsing gently to suggest active impression-forming. -->
         <svg id="cs4CourtSvg" width="100%" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- JS-populated court, YOU (coral silhouette), 3 partners, bidirectional data dots -->
+          <!-- JS-populated head silhouette + 4 thought-bubbles (other players inside the mind) -->
           <g id="cs4CourtGroup"></g>
         </svg>
-        <script>
-        // Builds the cs-4 single-court zoom-in. Same visual DNA as the 24-court mini-courts on cs-3.
-        // YOU (coral silhouette) takes top-left quadrant at ~4x the mini scale. Three partners occupy
-        // the other quadrants. Between YOU and each partner: two-way data flow — gold outbound,
-        // partner's color inbound — conveying "how you experience them / how they experience you."
+                <script>
+        // Renders cs-4: ONE person's head (front view) with 4 thought-bubbles inside
+        // representing other players she's been on court with. Each bubble = a different
+        // palette color, with a tiny silhouette inside and an outward-pulsing data ring,
+        // suggesting active impression-forming. Replaces the prior 4-on-a-court visual.
         // Re-runs on every entry to cs-4 via animateCs4Court() called from caseyGo.
         window.animateCs4Court = function(){
           const group = document.getElementById('cs4CourtGroup');
           if (!group) return;
           group.innerHTML = '';
           const NS = 'http://www.w3.org/2000/svg';
-          const COURT = { x: 30, y: 30, w: 380, h: 220 };
-          // --- Court frame + lines ---
-          const frame = document.createElementNS(NS,'rect');
-          frame.setAttribute('x',COURT.x); frame.setAttribute('y',COURT.y);
-          frame.setAttribute('width',COURT.w); frame.setAttribute('height',COURT.h);
-          frame.setAttribute('rx','6');
-          frame.setAttribute('fill','rgba(61,255,122,0.025)');
-          frame.setAttribute('stroke','rgba(61,255,122,0.26)');
-          frame.setAttribute('stroke-width','1.1');
-          group.appendChild(frame);
-          const netX = COURT.x + COURT.w/2;
-          const net = document.createElementNS(NS,'line');
-          net.setAttribute('x1',netX); net.setAttribute('x2',netX);
-          net.setAttribute('y1',COURT.y); net.setAttribute('y2',COURT.y+COURT.h);
-          net.setAttribute('stroke','rgba(237,233,224,0.22)');
-          net.setAttribute('stroke-width','1');
-          net.setAttribute('stroke-dasharray','3 3');
-          group.appendChild(net);
-          const kOff = COURT.w * 0.17;
-          [netX-kOff, netX+kOff].forEach(kx => {
-            const k = document.createElementNS(NS,'line');
-            k.setAttribute('x1',kx); k.setAttribute('x2',kx);
-            k.setAttribute('y1',COURT.y); k.setAttribute('y2',COURT.y+COURT.h);
-            k.setAttribute('stroke','rgba(237,233,224,0.14)');
-            k.setAttribute('stroke-width','0.7');
-            group.appendChild(k);
-          });
 
-          // --- 4 player entities at the 4 quadrants ---
-          // YOU sits top-left. 3 partners around her. Every pair gets a two-way data channel.
-          const entities = [
-            { id:'you', pos:{x:COURT.x+COURT.w*0.22, y:COURT.y+COURT.h*0.33}, color:'#D4A843', sprite:'you',    dur:1.9 },
-            { id:'tr',  pos:{x:COURT.x+COURT.w*0.78, y:COURT.y+COURT.h*0.33}, color:'#f0c040', sprite:'ball',   dur:1.9 },
-            { id:'bl',  pos:{x:COURT.x+COURT.w*0.22, y:COURT.y+COURT.h*0.72}, color:'#5B8FD4', sprite:'ball',   dur:2.2 },
-            { id:'br',  pos:{x:COURT.x+COURT.w*0.78, y:COURT.y+COURT.h*0.72}, color:'#D46B7E', sprite:'ball',   dur:1.6 }
+          // --- Shoulders (subtle, behind neck) ---
+          const shoulders = document.createElementNS(NS,'path');
+          shoulders.setAttribute('d', 'M 110 272 Q 110 240 178 230 L 262 230 Q 330 240 330 272 Z');
+          shoulders.setAttribute('fill','rgba(232,224,208,0.04)');
+          shoulders.setAttribute('stroke','rgba(232,224,208,0.32)');
+          shoulders.setAttribute('stroke-width','1.4');
+          shoulders.setAttribute('stroke-linejoin','round');
+          group.appendChild(shoulders);
+
+          // --- Neck ---
+          const neck = document.createElementNS(NS,'path');
+          neck.setAttribute('d','M 198 200 L 198 232 L 242 232 L 242 200 Q 220 212 198 200 Z');
+          neck.setAttribute('fill','rgba(232,224,208,0.04)');
+          neck.setAttribute('stroke','rgba(232,224,208,0.4)');
+          neck.setAttribute('stroke-width','1.4');
+          neck.setAttribute('stroke-linejoin','round');
+          group.appendChild(neck);
+
+          // --- Head (oval, front view) ---
+          const head = document.createElementNS(NS,'ellipse');
+          head.setAttribute('cx','220'); head.setAttribute('cy','118');
+          head.setAttribute('rx','96'); head.setAttribute('ry','88');
+          head.setAttribute('fill','rgba(232,224,208,0.05)');
+          head.setAttribute('stroke','rgba(232,224,208,0.55)');
+          head.setAttribute('stroke-width','1.8');
+          group.appendChild(head);
+
+          // Subtle inner brain contour — soft dashed arc on the left side of the head,
+          // hints "this is the mind region" without competing with the thought bubbles.
+          const brain = document.createElementNS(NS,'path');
+          brain.setAttribute('d', 'M 168 70 Q 138 110 152 170');
+          brain.setAttribute('fill','none');
+          brain.setAttribute('stroke','rgba(212,168,83,0.18)');
+          brain.setAttribute('stroke-width','1');
+          brain.setAttribute('stroke-dasharray','2 4');
+          group.appendChild(brain);
+          const brain2 = document.createElementNS(NS,'path');
+          brain2.setAttribute('d', 'M 272 70 Q 302 110 288 170');
+          brain2.setAttribute('fill','none');
+          brain2.setAttribute('stroke','rgba(212,168,83,0.18)');
+          brain2.setAttribute('stroke-width','1');
+          brain2.setAttribute('stroke-dasharray','2 4');
+          group.appendChild(brain2);
+
+          // --- 4 thought-bubbles inside the head (other players in her mind) ---
+          // Each bubble: outer color ring + tiny silhouette + outward data-pulse ring.
+          const thoughts = [
+            { cx: 175, cy: 92,  color: '#f0c040', begin: 0.0 },   // gold (top-left)
+            { cx: 268, cy: 86,  color: '#5B8FD4', begin: 0.55 },  // blue (top-right)
+            { cx: 168, cy: 160, color: '#D46B7E', begin: 1.10 },  // pink (bottom-left)
+            { cx: 268, cy: 156, color: '#c76bdb', begin: 1.65 }   // purple (bottom-right)
           ];
-          const R_PAD = 16;
-          function shortPath(from, to, startPad, endPad){
-            const dx=to.x-from.x, dy=to.y-from.y; const d=Math.sqrt(dx*dx+dy*dy);
-            const ux=dx/d, uy=dy/d;
-            const sx=from.x+ux*startPad, sy=from.y+uy*startPad;
-            const ex=to.x-ux*endPad,     ey=to.y-uy*endPad;
-            return 'M'+sx.toFixed(1)+','+sy.toFixed(1)+' L'+ex.toFixed(1)+','+ey.toFixed(1);
-          }
+          const R = 19;
 
-          // --- Build edges list (6 total) — the animated lines below replace static lines ---
-          const edges = [];
-          for (let i=0;i<entities.length;i++){
-            for (let j=i+1;j<entities.length;j++){
-              edges.push([entities[i], entities[j]]);
-            }
-          }
+          thoughts.forEach(t => {
+            // Outward-pulsing data ring (signal escaping the impression)
+            const glow = document.createElementNS(NS,'circle');
+            glow.setAttribute('cx', t.cx); glow.setAttribute('cy', t.cy);
+            glow.setAttribute('r', R);
+            glow.setAttribute('fill','none');
+            glow.setAttribute('stroke', t.color);
+            glow.setAttribute('stroke-width','1');
+            glow.setAttribute('opacity','0');
+            const glowR = document.createElementNS(NS,'animate');
+            glowR.setAttribute('attributeName','r');
+            glowR.setAttribute('values', R+';'+(R+12)+';'+(R+22));
+            glowR.setAttribute('dur','2.8s');
+            glowR.setAttribute('repeatCount','indefinite');
+            glowR.setAttribute('begin', t.begin+'s');
+            glow.appendChild(glowR);
+            const glowO = document.createElementNS(NS,'animate');
+            glowO.setAttribute('attributeName','opacity');
+            glowO.setAttribute('values','0.55;0.22;0');
+            glowO.setAttribute('dur','2.8s');
+            glowO.setAttribute('repeatCount','indefinite');
+            glowO.setAttribute('begin', t.begin+'s');
+            glow.appendChild(glowO);
+            group.appendChild(glow);
 
-          // --- Animated DRAWING LINES on every edge (cs-8 style: lines appear, sweep across, fade out) ---
-          // This is the visual language of "human connection" — clean, bright, non-gameplay.
-          // Each edge: 2 parallel animated lines (gold outbound + partner-color inbound), staggered.
-          edges.forEach(([a,b], idx) => {
-            const dx = b.pos.x - a.pos.x, dy = b.pos.y - a.pos.y;
-            const len = Math.sqrt(dx*dx + dy*dy);
-            const dur = 4.2 + idx * 0.25;
-            // Outbound line (a's color if YOU, else gold)
-            const outColor = a.id === 'you' ? '#D4A843' : a.color;
-            const l1 = document.createElementNS(NS,'line');
-            l1.setAttribute('x1', a.pos.x); l1.setAttribute('y1', a.pos.y);
-            l1.setAttribute('x2', b.pos.x); l1.setAttribute('y2', b.pos.y);
-            l1.setAttribute('stroke', outColor);
-            l1.setAttribute('stroke-width', '1.4');
-            l1.setAttribute('stroke-linecap','round');
-            l1.setAttribute('opacity', '0');
-            const op1 = document.createElementNS(NS,'animate');
-            op1.setAttribute('attributeName','opacity');
-            op1.setAttribute('values','0;0.7;0.7;0');
-            op1.setAttribute('dur', dur+'s');
-            op1.setAttribute('repeatCount','indefinite');
-            op1.setAttribute('begin', (idx*0.35).toFixed(2)+'s');
-            l1.appendChild(op1);
-            const da1 = document.createElementNS(NS,'animate');
-            da1.setAttribute('attributeName','stroke-dasharray');
-            da1.setAttribute('values','0 '+len+';'+(len*0.3).toFixed(1)+' '+(len*0.7).toFixed(1)+';'+(len*0.7).toFixed(1)+' '+(len*0.3).toFixed(1)+';'+len+' 0');
-            da1.setAttribute('dur', dur+'s');
-            da1.setAttribute('repeatCount','indefinite');
-            da1.setAttribute('begin', (idx*0.35).toFixed(2)+'s');
-            l1.appendChild(da1);
-            group.appendChild(l1);
-            // Inbound line (b's color) — offset timing so they don't look identical
-            const l2 = document.createElementNS(NS,'line');
-            l2.setAttribute('x1', a.pos.x); l2.setAttribute('y1', a.pos.y);
-            l2.setAttribute('x2', b.pos.x); l2.setAttribute('y2', b.pos.y);
-            l2.setAttribute('stroke', b.color);
-            l2.setAttribute('stroke-width', '1.1');
-            l2.setAttribute('stroke-linecap','round');
-            l2.setAttribute('opacity', '0');
-            const op2 = document.createElementNS(NS,'animate');
-            op2.setAttribute('attributeName','opacity');
-            op2.setAttribute('values','0;0;0.55;0.55;0');
-            op2.setAttribute('dur', dur+'s');
-            op2.setAttribute('repeatCount','indefinite');
-            op2.setAttribute('begin', (idx*0.35 + 0.3).toFixed(2)+'s');
-            l2.appendChild(op2);
-            const da2 = document.createElementNS(NS,'animate');
-            da2.setAttribute('attributeName','stroke-dasharray');
-            da2.setAttribute('values','0 '+len+';0 '+len+';'+(len*0.4).toFixed(1)+' '+(len*0.6).toFixed(1)+';'+(len*0.8).toFixed(1)+' '+(len*0.2).toFixed(1)+';'+len+' 0');
-            da2.setAttribute('dur', dur+'s');
-            da2.setAttribute('repeatCount','indefinite');
-            da2.setAttribute('begin', (idx*0.35 + 0.3).toFixed(2)+'s');
-            l2.appendChild(da2);
-            group.appendChild(l2);
+            // Outer ring (the bubble itself, gently pulsing in opacity)
+            const ring = document.createElementNS(NS,'circle');
+            ring.setAttribute('cx', t.cx); ring.setAttribute('cy', t.cy); ring.setAttribute('r', R);
+            ring.setAttribute('fill','rgba(6,6,9,0.55)');
+            ring.setAttribute('stroke', t.color);
+            ring.setAttribute('stroke-width','1.7');
+            const ringAnim = document.createElementNS(NS,'animate');
+            ringAnim.setAttribute('attributeName','opacity');
+            ringAnim.setAttribute('values','0.6;1;0.6');
+            ringAnim.setAttribute('dur','2.8s');
+            ringAnim.setAttribute('repeatCount','indefinite');
+            ringAnim.setAttribute('begin', t.begin+'s');
+            ring.appendChild(ringAnim);
+            group.appendChild(ring);
+
+            // Tiny silhouette inside the bubble: head + shoulder line, in the bubble's color.
+            const sHead = document.createElementNS(NS,'circle');
+            sHead.setAttribute('cx', t.cx); sHead.setAttribute('cy', t.cy - 4);
+            sHead.setAttribute('r', 4.3);
+            sHead.setAttribute('fill', t.color);
+            sHead.setAttribute('opacity','0.95');
+            group.appendChild(sHead);
+            const sBody = document.createElementNS(NS,'path');
+            sBody.setAttribute('d', 'M '+(t.cx-7)+' '+(t.cy+9)+' Q '+t.cx+' '+(t.cy+1.5)+' '+(t.cx+7)+' '+(t.cy+9));
+            sBody.setAttribute('fill','none');
+            sBody.setAttribute('stroke', t.color);
+            sBody.setAttribute('stroke-width','1.7');
+            sBody.setAttribute('stroke-linecap','round');
+            sBody.setAttribute('opacity','0.92');
+            group.appendChild(sBody);
           });
 
-          // --- Render sprites (on top) — stick figures, one per player ---
-          entities.forEach(e => {
-            const cx = e.pos.x, cy = e.pos.y;
-            const col = e.id === 'you' ? '#e88a4a' : e.color;
-            const isYou = e.id === 'you';
-            const SCALE = isYou ? 1.15 : 1.0;
-            // Head
-            const head = document.createElementNS(NS,'circle');
-            head.setAttribute('cx', cx); head.setAttribute('cy', cy - 22*SCALE);
-            head.setAttribute('r', 9*SCALE);
-            head.setAttribute('fill','none');
-            head.setAttribute('stroke', col);
-            head.setAttribute('stroke-width', (isYou?2.8:2.4).toFixed(1));
-            group.appendChild(head);
-            // Torso
-            const torso = document.createElementNS(NS,'line');
-            torso.setAttribute('x1', cx); torso.setAttribute('x2', cx);
-            torso.setAttribute('y1', cy - 13*SCALE); torso.setAttribute('y2', cy + 10*SCALE);
-            torso.setAttribute('stroke', col); torso.setAttribute('stroke-width', (isYou?2.8:2.4).toFixed(1));
-            torso.setAttribute('stroke-linecap','round');
-            group.appendChild(torso);
-            // Arms
-            const arms = document.createElementNS(NS,'line');
-            arms.setAttribute('x1', cx - 12*SCALE); arms.setAttribute('x2', cx + 12*SCALE);
-            arms.setAttribute('y1', cy - 5*SCALE); arms.setAttribute('y2', cy - 5*SCALE);
-            arms.setAttribute('stroke', col); arms.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
-            arms.setAttribute('stroke-linecap','round');
-            group.appendChild(arms);
-            // Legs
-            const legL = document.createElementNS(NS,'line');
-            legL.setAttribute('x1', cx); legL.setAttribute('x2', cx - 8*SCALE);
-            legL.setAttribute('y1', cy + 10*SCALE); legL.setAttribute('y2', cy + 23*SCALE);
-            legL.setAttribute('stroke', col); legL.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
-            legL.setAttribute('stroke-linecap','round');
-            group.appendChild(legL);
-            const legR = document.createElementNS(NS,'line');
-            legR.setAttribute('x1', cx); legR.setAttribute('x2', cx + 8*SCALE);
-            legR.setAttribute('y1', cy + 10*SCALE); legR.setAttribute('y2', cy + 23*SCALE);
-            legR.setAttribute('stroke', col); legR.setAttribute('stroke-width', (isYou?2.6:2.2).toFixed(1));
-            legR.setAttribute('stroke-linecap','round');
-            group.appendChild(legR);
-            // YOU label below
-            if (isYou){
-              // Paddle in right hand (scaled for big court)
-              const ph = document.createElementNS(NS,'line');
-              ph.setAttribute('x1', cx); ph.setAttribute('y1', cy - 5*SCALE);
-              ph.setAttribute('x2', cx + 18*SCALE); ph.setAttribute('y2', cy - 16*SCALE);
-              ph.setAttribute('stroke', col); ph.setAttribute('stroke-width','2.8');
-              ph.setAttribute('stroke-linecap','round');
-              group.appendChild(ph);
-              const paddle = document.createElementNS(NS,'rect');
-              paddle.setAttribute('x', cx + 16*SCALE);
-              paddle.setAttribute('y', cy - 26*SCALE);
-              paddle.setAttribute('width', 10*SCALE);
-              paddle.setAttribute('height', 12*SCALE);
-              paddle.setAttribute('rx', 3*SCALE);
-              paddle.setAttribute('fill', col);
-              paddle.setAttribute('stroke', '#6b3e1a');
-              paddle.setAttribute('stroke-width','0.8');
-              paddle.setAttribute('opacity','0.95');
-              paddle.setAttribute('transform','rotate(25 '+(cx+20*SCALE)+' '+(cy-20*SCALE)+')');
-              group.appendChild(paddle);
-            }
-          });
+          // YOU label below the head — the brain belongs to one player ("you").
+          const youLabel = document.createElementNS(NS,'text');
+          youLabel.setAttribute('x','220'); youLabel.setAttribute('y','266');
+          youLabel.setAttribute('text-anchor','middle');
+          youLabel.setAttribute('font-family','Manrope, sans-serif');
+          youLabel.setAttribute('font-size','9');
+          youLabel.setAttribute('font-weight','700');
+          youLabel.setAttribute('letter-spacing','0.22em');
+          youLabel.setAttribute('fill','rgba(232,138,74,0.85)');
+          youLabel.textContent = 'YOU';
+          group.appendChild(youLabel);
         };
-        // Run once on first load so the court appears even if the slide is visited before caseyGo registers.
+        // Run once on first load so the visual appears even if the slide is visited before caseyGo registers.
         animateCs4Court();
         </script>
 
