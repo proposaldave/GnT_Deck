@@ -5874,23 +5874,25 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold,rgba(212,168,83,0.85));z-index:10;">Enter Pickleball</div>
 
 <div class="inner" style="padding-top:14px;text-align:center;max-width:1180px">
-  <!-- Large hero stick figure (matches the YOU on every mini-court) -->
-  <div style="display:flex;justify-content:center;margin-bottom:10px">
-    <svg viewBox="0 0 60 110" width="78" height="142" aria-label="pickleball player">
+  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
+    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
+  </div>
+
+  <!-- Hero stick figure — moved to sit just above "Her reality"; paddle scaled up for clearer pickleball read -->
+  <div style="display:flex;justify-content:center;margin-bottom:8px">
+    <svg viewBox="0 0 64 112" width="86" height="150" aria-label="pickleball player">
       <circle cx="30" cy="14" r="10" fill="none" stroke="#e88a4a" stroke-width="2.4"/>
       <line x1="30" y1="24" x2="30" y2="60" stroke="#e88a4a" stroke-width="2.4" stroke-linecap="round"/>
       <line x1="30" y1="34" x2="17" y2="46" stroke="#e88a4a" stroke-width="2.2" stroke-linecap="round"/>
-      <line x1="30" y1="34" x2="48" y2="20" stroke="#e88a4a" stroke-width="2.2" stroke-linecap="round"/>
-      <g transform="translate(50,14) rotate(30)">
-        <rect x="-4" y="-8" width="8" height="12" rx="2.4" fill="#e88a4a" opacity="0.95"/>
-        <rect x="-1.4" y="4" width="2.8" height="5" rx="0.6" fill="#e88a4a"/>
+      <line x1="30" y1="34" x2="50" y2="18" stroke="#e88a4a" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Pickleball paddle — larger (was 8x12, now 13x19) -->
+      <g transform="translate(54,12) rotate(30)">
+        <rect x="-6.5" y="-13" width="13" height="19" rx="3.6" fill="#e88a4a" opacity="0.95"/>
+        <rect x="-2.2" y="6" width="4.4" height="7" rx="1" fill="#e88a4a"/>
       </g>
       <line x1="30" y1="60" x2="19" y2="84" stroke="#e88a4a" stroke-width="2.4" stroke-linecap="round"/>
       <line x1="30" y1="60" x2="41" y2="84" stroke="#e88a4a" stroke-width="2.4" stroke-linecap="round"/>
     </svg>
-  </div>
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:8px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player. <span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
   </div>
 
   <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;margin:2px auto 14px;color:rgba(212,168,83,0.88)">
