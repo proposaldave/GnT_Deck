@@ -5876,7 +5876,6 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
       <!-- TOP: GREEN HERO — the new paradigm answer -->
       <div style="width:100%;max-width:840px;background:rgba(61,255,122,0.03);border:1px solid rgba(61,255,122,0.22);border-radius:18px;padding:28px 28px 24px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 36px rgba(61,255,122,0.08)">
-        <div style="font-size:0.58rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#3dff7a;margin-bottom:8px">The Data Exists</div>
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(0.95rem,1.55vw,1.25rem);color:#e8e0d0;line-height:1.35;font-weight:600;margin-bottom:14px;padding:0 8px">The most valuable, networkable, untapped dataset on the planet is <em style="font-style:italic;color:#3dff7a">trapped inside all of our heads.</em></div>
 
         <!-- ONE PERSON'S BRAIN: a single human head, with thoughts of other players inside.
@@ -6297,7 +6296,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
           youLabel.setAttribute('letter-spacing','0.36em');
           youLabel.setAttribute('fill','#e88a4a');
           youLabel.setAttribute('opacity','0');
-          youLabel.textContent = 'YOU';
+          youLabel.textContent = '';  // YOU label removed Dave 2026-04-28
           const yFade = document.createElementNS(NS,'animate');
           yFade.setAttribute('attributeName','opacity');
           yFade.setAttribute('values','0;1');
@@ -6480,12 +6479,11 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
     </div>
   </div>
 
-  <!-- Slide-level closer: brand phrase lifted out of LEFT card so it carries
-       both products. Bigger font, full-width centered. Dave 2026-04-28. -->
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:600;color:#e8e0d0;line-height:1.45;margin:34px auto 0;max-width:1000px;text-align:center;letter-spacing:-0.005em">
-    Today, <span style="color:var(--gold,#caa54a);font-weight:700">400 people</span> have a personalized <em style="font-style:italic;color:#5B8FD4">Give &lsquo;n Receive invitation feed</em>.<br>
-    In the future, <span style="color:#5B8FD4;font-weight:700">everyone</span> will.
-  </div>
+  <!-- "Today, 400 people have a personalized Give 'n Receive invitation feed.
+       In the future, everyone will." REMOVED from cs-11 on Dave 2026-04-28
+       per simplicity instinct. The line is preserved in git history; can be
+       moved to cs-11b (NEPC Proof) or a metrics slide later if wanted.
+       cs-11d already carries '400 monthly active players' in its meta strip. -->
 
 </div>
 </section>
