@@ -8979,32 +8979,28 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // cs-10c MERGED into cs-11 LEFT card. HTML preserved for revert.
-  // cs-10 (Human Value Marketplace) PULLED from main flow (Dave 2026-04-28) — HTML preserved
-  //   for revert; can move to appendix or much later if wanted.
-  // cs-18 (Founder Journey / About Me) MOVED UP to right after cs-8b (Abundance) per Dave —
-  //   the founder narrative lands when the 'Abundance' arc opens, before the proof slides.
-  'cs-1','cs-1b','cs-2b','cs-11','cs-3',
+  // Dave 2026-04-29: AI proposing cs-3 as slide 4 (pickleball wedge, post-paper-migration).
+  // Top seed pitch logic: after "communities are unsolved," show the WEDGE before the PRODUCT.
+  // Alts cs-11 + cs-8b stacked below for Dave to swap if preferred.
+  'cs-1','cs-1b','cs-2b','cs-3','cs-11',
   'cs-4','cs-7','cs-8','cs-8b','cs-18','cs-11d','cs-11b','cs-11e','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
-const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transition)
+const TOTAL = SLIDE_ORDER.length; // 29
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
-// SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alternative slide IDs to stack BELOW the primary dot.
-// Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order (second-best below top).
-// Empty {} = AI is locked on its first choice; no alternatives proposed.
-// Title slide committed to "Paper" design system (Dave 2026-04-28).
-// cs-1A..cs-1D variants and cs-11-anim "Decisions in Motion" alt kept in HTML
-// but unmounted from alt-dot stack — Dave 2026-04-28 didn't want alt dots showing.
-const SLIDE_ALTS = {};
+// SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alt slide IDs stacked BELOW the primary dot.
+// Top dot = AI's FIRST CHOICE (matches SLIDE_ORDER). Stacked dots = alternatives in priority order.
+// Dave 2026-04-29: position 4 has alts. AI recommends cs-3 (wedge); cs-11 and cs-8b are alternates.
+const SLIDE_ALTS = {
+  4: ['cs-11', 'cs-8b']  // pos 4 alts: Core Product / Opportunity Size (below top recommendation cs-3)
+};
 // REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
-// Set to null when not actively reviewing.
 const REVIEW_POSITION = 4;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN. Goal = all green.
-// 1=cs-1 (title), 2=cs-1b (gap), 3=cs-2b (the unmeasured).
-// 4=cs-11 (Invitation Feed + Group Formation merged) — under review.
+// 1=cs-1 (title), 2=cs-1b (science gap), 3=cs-2b ("What's a community?").
+// 4=cs-3 (pickleball wedge, AI's top choice) — under review with cs-11 / cs-8b as alts.
 const LOCKED_POSITIONS = [1, 2, 3];
 
 const APPENDIX_TOTAL = 19;
@@ -9108,10 +9104,10 @@ function appendixGo(n) {
 const slideLabels = [
   '', // 0 placeholder
   "Give 'n Receive",                                    //  1 cs-1
-  'The Gap · relationships, uninfrastructured',      //  2 cs-1b
-  'The Previous Era · social media narrow view',     //  3 cs-2
-  "What's a community?",                              //  4 cs-2b [Dave 2026-04-29]
-  '24 Rounds · Each one is a shape',                 //  5 cs-3
+  'Human connection · #1 predictor of fulfilling life', //  2 cs-1b
+  "What's a community?",                              //  3 cs-2b
+  'Pickleball wedge · max signal density · velocity · need', //  4 cs-3 [AI recommendation 2026-04-29]
+  'Core Product · Scheduling is measuring',           //  5 cs-11
   'Matchmaking in Social Sports Communities',        //  6 cs-4
   'The Data Exists',                                 //  7 cs-6
   'The Cost of Honesty',                             //  8 cs-7
