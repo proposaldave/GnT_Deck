@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Give 'n Receive &mdash; April Pitch Deck</title>
+<!-- ?export=1 detection: set data-export attribute and neuter requestAnimationFrame so
+     canvas/orb/particle loops don't run during PPTX/PDF capture. Must be FIRST script. -->
+<script>
+(function(){
+  try {
+    if (location.search.indexOf('export=1') !== -1) {
+      document.documentElement.dataset.export = '1';
+      window.requestAnimationFrame = function(){ return 0; };
+      window.cancelAnimationFrame = function(){};
+    }
+  } catch(e){}
+})();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Manrope:wght@200;300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================================
@@ -5219,13 +5232,17 @@ html, body, html body{
       </svg>
       <!-- Tagline — Fraunces italic, ink, with gold "digitized" emphasis -->
       <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(20px,2vw,30px);font-weight:400;color:#1a1612;line-height:1.45;max-width:960px;margin:0 auto 22px;letter-spacing:-0.005em">
-        Our uniqueness, connection, and value to each other in our real-world communities &mdash; <span style="color:#b8954a;font-weight:600">digitized</span>.
+        Real human connection &mdash; <span style="color:#b8954a;font-weight:600">finally measured, multiplied, made abundant</span>.
       </div>
       <!-- Thin gold rule -->
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px">
         <div style="width:48px;height:1px;background:#b8954a"></div>
         <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
         <div style="width:48px;height:1px;background:#b8954a"></div>
+      </div>
+      <!-- Contact info -->
+      <div style="margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,22,18,0.7);font-weight:500">
+        Dave Velardo &nbsp;&middot;&nbsp; <a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.7);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.4)">dave@givenreceive.com</a> &nbsp;&middot;&nbsp; 978-604-0223
       </div>
     </div>
   </div>
@@ -7367,7 +7384,7 @@ html, body, html body{
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#1a1612;line-height:1.22;font-weight:600;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
       When people say <em style="font-style:italic;color:#c8462c">no</em> to a group,<br>
-      they almost never tell you the <em style="font-style:italic;color:#b8954a">real</em> reason.
+      they don't say the <em style="font-style:italic;color:#b8954a">real</em> reason.
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
       <div style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.04) 100%);border:1px solid rgba(91,143,212,0.32);text-align:center">
