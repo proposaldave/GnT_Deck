@@ -5274,7 +5274,7 @@ html, body, html body{
       </svg>
       <!-- Tagline — Fraunces italic, ink, with gold "digitized" emphasis -->
       <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(20px,2vw,30px);font-weight:400;color:#1a1612;line-height:1.45;max-width:960px;margin:0 auto 22px;letter-spacing:-0.005em">
-        Real human connection &mdash; <span style="color:#b8954a;font-weight:600">finally measured, multiplied, made abundant</span>.
+        Our uniqueness, connection, and value to each other in our real-world communities &mdash; <span style="color:#b8954a;font-weight:600">measured, multiplied, made abundant</span>.
       </div>
       <!-- Thin gold rule -->
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px">
@@ -5591,10 +5591,20 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- Single RED chevron pointing down to "Done by hand." (cleaner than 3 converging arrows). -->
-  <div style="display:flex;justify-content:center;margin:14px auto 4px">
-    <svg width="36" height="22" viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 4 4 L 18 18 L 32 4" stroke="#c8462c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Merge connector: 3 short stems from each card meet on a horizontal bar, then a single
+       arrow drops to "Done by hand." Visually shows all three cards funnel to one fate. -->
+  <div style="max-width:880px;margin:8px auto 0;padding:0 36px">
+    <svg viewBox="0 0 800 70" preserveAspectRatio="xMidYMid meet" width="100%" height="70" xmlns="http://www.w3.org/2000/svg" style="display:block">
+      <!-- 3 short vertical stems from card centers -->
+      <path d="M 140 4 L 140 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 400 4 L 400 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+      <path d="M 660 4 L 660 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+      <!-- Horizontal merge bar connecting all three -->
+      <path d="M 140 26 L 660 26" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+      <!-- Single trunk down to "Done by hand." -->
+      <path d="M 400 26 L 400 56" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" opacity="0.95"/>
+      <!-- Filled triangle arrowhead -->
+      <path d="M 390 50 L 400 64 L 410 50 Z" fill="#c8462c" stroke="#c8462c" stroke-width="0.5" stroke-linejoin="round"/>
     </svg>
   </div>
 
@@ -6867,12 +6877,18 @@ html, body, html body{
          so it's green; bottom arrow points left (toward blue Invitation Feed) so it's blue. -->
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:72px">
       <svg viewBox="0 0 64 74" width="62" height="72" xmlns="http://www.w3.org/2000/svg">
-        <!-- Top: green arrow points right (toward Group Formation). Curve + filled triangle. -->
-        <path d="M 8 22 Q 32 4 52 20" stroke="#2a8a4f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M 58 20 L 50 16 L 50 24 Z" fill="#2a8a4f" stroke="#2a8a4f" stroke-width="0.5" stroke-linejoin="round"/>
-        <!-- Bottom: blue arrow points left (toward Invitation Feed). -->
-        <path d="M 56 52 Q 32 70 12 54" stroke="#5B8FD4" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M 6 54 L 14 50 L 14 58 Z" fill="#5B8FD4" stroke="#5B8FD4" stroke-width="0.5" stroke-linejoin="round"/>
+        <defs>
+          <marker id="arrGreen" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M 0 0 L 12 6 L 0 12 Z" fill="#2a8a4f"/>
+          </marker>
+          <marker id="arrBlue" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M 0 0 L 12 6 L 0 12 Z" fill="#5B8FD4"/>
+          </marker>
+        </defs>
+        <!-- Top: green curve points right (toward Group Formation), arrowhead via marker -->
+        <path d="M 8 22 Q 32 4 52 20" stroke="#2a8a4f" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#arrGreen)"/>
+        <!-- Bottom: blue curve points left (toward Invitation Feed), arrowhead via marker -->
+        <path d="M 56 52 Q 32 70 12 54" stroke="#5B8FD4" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#arrBlue)"/>
       </svg>
     </div>
 
@@ -7424,10 +7440,32 @@ html, body, html body{
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);z-index:10;">The secret inside the invitation</div>
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#1a1612;line-height:1.22;font-weight:600;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.4vw,2.8rem);color:#1a1612;line-height:1.22;font-weight:600;margin-bottom:22px;max-width:1080px;margin-left:auto;margin-right:auto">
       When people say <em style="font-style:italic;color:#c8462c">no</em> to a group,<br>
       they don't say the <em style="font-style:italic;color:#b8954a">real</em> reason.
     </div>
+
+    <!-- Mini invitation graphic — anchors what an "invitation" is at a glance. Dave 2026-04-29. -->
+    <div style="display:flex;flex-direction:column;align-items:center;margin:0 auto 24px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);margin-bottom:8px">An invitation</div>
+      <div style="display:flex;align-items:center;gap:12px;padding:11px 16px;border:1px solid rgba(26,22,18,0.18);border-radius:11px;background:rgba(255,255,255,0.55);max-width:360px;box-shadow:0 1px 2px rgba(26,22,18,0.05),0 6px 18px rgba(26,22,18,0.06)">
+        <div style="display:flex;gap:3px;flex-shrink:0">
+          <span style="width:14px;height:14px;border-radius:50%;background:#5B8FD4;border:1.5px solid #5B8FD4"></span>
+          <span style="width:14px;height:14px;border-radius:50%;background:#D46B7E;border:1.5px solid #D46B7E"></span>
+          <span style="width:14px;height:14px;border-radius:50%;background:rgba(199,107,219,0.20);border:1.5px solid #c76bdb"></span>
+          <span style="width:14px;height:14px;border-radius:50%;background:rgba(74,232,193,0.20);border:1.5px solid #4ae8c1"></span>
+        </div>
+        <div style="flex:1;line-height:1.2;text-align:left;min-width:0">
+          <div style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;color:#1a1612">Doubles</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(26,22,18,0.55);letter-spacing:.06em;margin-top:1px">Tonight &middot; 6:00 PM</div>
+        </div>
+        <div style="display:flex;gap:5px;flex-shrink:0">
+          <span title="Accept" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #2a8a4f;background:rgba(42,138,79,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;color:#2a8a4f;font-weight:800;line-height:1">&check;</span>
+          <span title="Decline" style="width:22px;height:22px;border-radius:50%;border:1.5px solid #c8462c;background:rgba(200,70,44,0.08);display:flex;align-items:center;justify-content:center;font-size:12px;color:#c8462c;font-weight:800;line-height:1">&times;</span>
+        </div>
+      </div>
+    </div>
+
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
       <div style="padding:36px 24px;border-radius:14px;background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.04) 100%);border:1px solid rgba(91,143,212,0.32);text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:clamp(3.6rem,8vw,6rem);font-weight:900;color:#5B8FD4;line-height:1;letter-spacing:-0.04em;margin-bottom:14px;text-shadow:0 0 32px rgba(91,143,212,0.32)">70%</div>
