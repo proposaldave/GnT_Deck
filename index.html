@@ -6310,7 +6310,7 @@ html, body, html body{
             sp.setAttribute('cx', sx.toFixed(1));
             sp.setAttribute('cy', sy.toFixed(1));
             sp.setAttribute('r', (0.7 + Math.random() * 0.6).toFixed(2));
-            sp.setAttribute('fill', '#e8e0d0');
+            sp.setAttribute('fill', '#1a1612');
             sp.setAttribute('opacity','0');
             const tw = document.createElementNS(NS,'animate');
             tw.setAttribute('attributeName','opacity');
@@ -6961,7 +6961,7 @@ html, body, html body{
       const k = document.createElementNS(NS,'line');
       k.setAttribute('x1', kx); k.setAttribute('x2', kx);
       k.setAttribute('y1', 2); k.setAttribute('y2', H-2);
-      k.setAttribute('stroke','rgba(237,233,224,0.5)');
+      k.setAttribute('stroke','rgba(26,22,18,0.5)');
       k.setAttribute('stroke-width','0.5');
       svg.appendChild(k);
     });
@@ -6973,7 +6973,7 @@ html, body, html body{
       const c = document.createElementNS(NS,'line');
       c.setAttribute('x1', seg[0]); c.setAttribute('x2', seg[1]);
       c.setAttribute('y1', cy); c.setAttribute('y2', cy);
-      c.setAttribute('stroke','rgba(237,233,224,0.42)');
+      c.setAttribute('stroke','rgba(26,22,18,0.45)');
       c.setAttribute('stroke-width','0.45');
       svg.appendChild(c);
     });
@@ -7087,7 +7087,7 @@ html, body, html body{
          : 'opacity:0.28;padding:0 4px;');
     const hdr = document.createElement('div');
     hdr.style.cssText='font-family:Manrope,sans-serif;font-size:8.5px;font-weight:700;letter-spacing:2px;color:'
-      +(active?'#3dff7a':'rgba(237,233,224,0.5)')+';margin-bottom:2px';
+      +(active?'#3dff7a':'rgba(26,22,18,0.5)')+';margin-bottom:2px';
     hdr.textContent = day;
     col.appendChild(hdr);
     if (active){
@@ -7626,7 +7626,7 @@ html, body, html body{
       <!-- Center: GnT brain -->
       <circle cx="220" cy="220" r="46" fill="rgba(212,168,83,0.14)" stroke="#d4a853" stroke-width="2.4" filter="drop-shadow(0 0 14px rgba(212,168,83,0.45))"/>
       <text x="208" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="220" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="17" font-weight="500" font-style="italic" fill="#e8e0d0">n</text>
+      <text x="220" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="17" font-weight="500" font-style="italic" fill="#1a1612">n</text>
       <text x="232" y="225" text-anchor="middle" font-family="'Playfair Display',serif" font-size="22" font-weight="900" fill="#e04040">R</text>
       <text x="220" y="244" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.2" fill="#d4a853">INTELLIGENCE</text>
       <!-- Pulse -->
@@ -7787,7 +7787,7 @@ html, body, html body{
       <rect x="478" y="180" width="244" height="80" rx="18" fill="rgba(20,15,8,0.96)" stroke="#d4a853" stroke-width="2" filter="drop-shadow(0 0 18px rgba(212,168,83,0.4))"/>
       <text x="600" y="208" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(232,224,208,0.62)">THE ENGINE</text>
       <text x="586" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="602" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="17" font-weight="900" font-style="italic" fill="#e8e0d0">n</text>
+      <text x="602" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="17" font-weight="900" font-style="italic" fill="#1a1612">n</text>
       <text x="618" y="234" text-anchor="middle" font-family="Playfair Display, serif" font-size="22" font-weight="900" fill="#e04040">R</text>
       <text x="600" y="252" text-anchor="middle" font-family="Manrope, sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#d4a853">LEARNS · MAXIMIZES RECIPROCITY</text>
 
@@ -8278,7 +8278,7 @@ html, body, html body{
         <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#e04040"/>
       </g>
       <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#e8e0d0" opacity="0.85">n</text>
+      <text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#1a1612" opacity="0.85">n</text>
       <text x="38" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#e04040">T</text>
     </svg>
   </div>
@@ -8971,8 +8971,8 @@ html, body, html body{
         <line x1="22" y1="38" x2="52" y2="18" stroke="#f4c5a0" stroke-width="6.5" stroke-linecap="round"/>
         <rect x="-22" y="86" width="16" height="40" rx="3" fill="#1a1a1a"/>
         <rect x="6" y="86" width="16" height="40" rx="3" fill="#1a1a1a"/>
-        <ellipse cx="-14" cy="128" rx="11" ry="4" fill="#e8e0d0"/>
-        <ellipse cx="14"  cy="128" rx="11" ry="4" fill="#e8e0d0"/>
+        <ellipse cx="-14" cy="128" rx="11" ry="4" fill="#1a1612"/>
+        <ellipse cx="14"  cy="128" rx="11" ry="4" fill="#1a1612"/>
       </g>
       <g transform="translate(180,24)">
         <g class="vault-paddle">
@@ -9753,10 +9753,10 @@ function startCourtForm() {
       const isGreen = sim.displayedScore >= 75 && (sim.phase === 'simulating' || sim.phase === 'resolved' || sim.phase === 'promoting');
       drawCourt(c.x, c.y, c.w, c.h, {
         fill: isGreen ? 'rgba(61,255,122,0.04)' : 'rgba(255,255,255,0.02)',
-        border: isGreen ? 'rgba(61,255,122,0.5)' : 'rgba(232,224,208,0.2)',
+        border: isGreen ? 'rgba(61,255,122,0.5)' : 'rgba(26,22,18,0.28)',
         lw: isGreen ? 1.5 : 1
       });
-      ctx.fillStyle = 'rgba(232,224,208,0.4)';
+      ctx.fillStyle = 'rgba(26,22,18,0.45)';
       ctx.font = '700 7px Manrope, sans-serif';
       ctx.textAlign = 'left';
       ctx.fillText('SIM ' + (i+1), c.x, c.y - 2);
@@ -9971,13 +9971,13 @@ function animateIntroExpansion() {
   const svg = document.getElementById('expansionSvg');
   if (!svg) return;
   svg.innerHTML = '';
-  const cx = 260, cy = 260, green = '#3dff7a', cream = '#e8e0d0';
+  const cx = 260, cy = 260, green = '#3dff7a', cream = '#1a1612';
   const rings = [
     { r: 42, label: 'New England\nPickleball Club', color: green, labelColor: green, fontWeight: '700', fontSize: '10' },
     { r: 90, label: 'Pickleball', color: '#4a8c5e', labelColor: cream, fontWeight: '600', fontSize: '11' },
     { r: 138, label: 'Padel', color: '#3d7050', labelColor: 'rgba(232,224,208,0.82)', fontWeight: '600', fontSize: '11' },
     { r: 186, label: 'All Social Sports', color: '#2d5a3d', labelColor: 'rgba(232,224,208,0.7)', fontWeight: '500', fontSize: '11' },
-    { r: 238, label: 'Beyond Social Sports', color: 'rgba(45,90,61,0.5)', labelColor: 'rgba(232,224,208,0.5)', fontWeight: '500', fontSize: '11' }
+    { r: 238, label: 'Beyond Social Sports', color: 'rgba(45,90,61,0.5)', labelColor: 'rgba(26,22,18,0.5)', fontWeight: '500', fontSize: '11' }
   ];
   for (let i = rings.length - 1; i >= 0; i--) {
     const ring = rings[i];
@@ -10076,8 +10076,8 @@ function openPanel(key, e) {
       const lx = 160, rx = 440;
       [lx, rx].forEach((px, idx) => {
         const g = svgEl('g', { opacity: '0' });
-        const head = svgEl('circle', { cx: px, cy: 120, r: 22, fill: idx === 0 ? color : '#e8e0d0', opacity: '0.85' });
-        const body = svgEl('path', { d: `M${px} 145 L${px} 210 M${px-20} 175 L${px+20} 175 M${px} 210 L${px-18} 260 M${px} 210 L${px+18} 260`, stroke: idx === 0 ? color : '#e8e0d0', 'stroke-width': '3', fill: 'none', 'stroke-linecap': 'round', opacity: '0.7' });
+        const head = svgEl('circle', { cx: px, cy: 120, r: 22, fill: idx === 0 ? color : '#1a1612', opacity: '0.85' });
+        const body = svgEl('path', { d: `M${px} 145 L${px} 210 M${px-20} 175 L${px+20} 175 M${px} 210 L${px-18} 260 M${px} 210 L${px+18} 260`, stroke: idx === 0 ? color : '#1a1612', 'stroke-width': '3', fill: 'none', 'stroke-linecap': 'round', opacity: '0.7' });
         g.appendChild(head); g.appendChild(body); svg.appendChild(g);
         setTimeout(() => { g.style.transition = 'opacity 0.6s'; g.setAttribute('opacity', '1'); }, 200 + idx * 300);
       });
@@ -10103,7 +10103,7 @@ function openPanel(key, e) {
       svg.appendChild(heart);
       setTimeout(() => { heart.style.transition = 'opacity 0.6s'; heart.setAttribute('opacity', '0.9'); }, 1600);
       // Label
-      const label = svgEl('text', { x: cx, y: 310, 'text-anchor': 'middle', 'font-size': '14', fill: 'rgba(232,224,208,0.5)', 'font-family': 'DM Sans, sans-serif' });
+      const label = svgEl('text', { x: cx, y: 310, 'text-anchor': 'middle', 'font-size': '14', fill: 'rgba(26,22,18,0.5)', 'font-family': 'DM Sans, sans-serif' });
       label.textContent = 'Real bonds. Measured by choices.';
       label.setAttribute('opacity', '0');
       svg.appendChild(label);
@@ -10143,8 +10143,8 @@ function openPanel(key, e) {
         const line = svgEl('line', { x1: cx, y1: cy, x2: px, y2: py, stroke: p.dots[0], 'stroke-width': '1.5', 'stroke-dasharray': '6 4', opacity: '0.35' });
         g.appendChild(line);
         // Person silhouette
-        g.appendChild(svgEl('circle', { cx: px, cy: py - 14, r: 10, fill: 'rgba(232,224,208,0.5)' }));
-        g.appendChild(svgEl('path', { d: `M${px} ${py-3} L${px} ${py+16} M${px-9} ${py+5} L${px+9} ${py+5}`, stroke: 'rgba(232,224,208,0.4)', 'stroke-width': '2', fill: 'none', 'stroke-linecap': 'round' }));
+        g.appendChild(svgEl('circle', { cx: px, cy: py - 14, r: 10, fill: 'rgba(26,22,18,0.5)' }));
+        g.appendChild(svgEl('path', { d: `M${px} ${py-3} L${px} ${py+16} M${px-9} ${py+5} L${px+9} ${py+5}`, stroke: 'rgba(26,22,18,0.45)', 'stroke-width': '2', fill: 'none', 'stroke-linecap': 'round' }));
         // Unique colored dots above/beside person
         p.dots.forEach((dc, di) => {
           const dx = px - (p.dots.length * 5) + di * 10;
@@ -10198,7 +10198,7 @@ function openPanel(key, e) {
       const newPositions = [[420,100],[480,140],[440,200],[500,260]];
       const colors = ['#f0c040','#e85a7a','#4ae8c1','#c76bdb'];
       // Left group label
-      const oldLabel = svgEl('text', { x: 160, y: 60, 'text-anchor': 'middle', 'font-size': '12', fill: 'rgba(232,224,208,0.4)', 'font-family': 'DM Sans, sans-serif', 'letter-spacing': '1' });
+      const oldLabel = svgEl('text', { x: 160, y: 60, 'text-anchor': 'middle', 'font-size': '12', fill: 'rgba(26,22,18,0.45)', 'font-family': 'DM Sans, sans-serif', 'letter-spacing': '1' });
       oldLabel.textContent = 'SKILL RATING';
       svg.appendChild(oldLabel);
       const newLabel = svgEl('text', { x: 460, y: 60, 'text-anchor': 'middle', 'font-size': '12', fill: color, 'font-family': 'DM Sans, sans-serif', 'font-weight': '700', 'letter-spacing': '1' });
@@ -10223,7 +10223,7 @@ function openPanel(key, e) {
         setTimeout(() => { c.style.transition = 'opacity 0.4s'; c.setAttribute('opacity', '0.5'); }, 300 + i * 100);
       });
       // Arrow
-      const arrow = svgEl('text', { x: cx, y: cy + 5, 'text-anchor': 'middle', 'font-size': '32', fill: 'rgba(232,224,208,0.2)' });
+      const arrow = svgEl('text', { x: cx, y: cy + 5, 'text-anchor': 'middle', 'font-size': '32', fill: 'rgba(26,22,18,0.28)' });
       arrow.textContent = '→';
       arrow.setAttribute('opacity', '0');
       svg.appendChild(arrow);
@@ -10257,9 +10257,9 @@ function openPanel(key, e) {
     groupformation(svg, color) {
       const cx = 300, cy = 190;
       // Court outline
-      const court = svgEl('rect', { x: cx - 100, y: cy - 65, width: 200, height: 130, rx: 8, fill: 'none', stroke: 'rgba(232,224,208,0.1)', 'stroke-width': '1.5', opacity: '0' });
+      const court = svgEl('rect', { x: cx - 100, y: cy - 65, width: 200, height: 130, rx: 8, fill: 'none', stroke: 'rgba(26,22,18,0.18)', 'stroke-width': '1.5', opacity: '0' });
       svg.appendChild(court);
-      const courtLine = svgEl('line', { x1: cx, y1: cy - 65, x2: cx, y2: cy + 65, stroke: 'rgba(232,224,208,0.08)', 'stroke-width': '1', opacity: '0' });
+      const courtLine = svgEl('line', { x1: cx, y1: cy - 65, x2: cx, y2: cy + 65, stroke: 'rgba(26,22,18,0.15)', 'stroke-width': '1', opacity: '0' });
       svg.appendChild(courtLine);
       setTimeout(() => { court.style.transition = 'opacity 0.8s'; court.setAttribute('opacity', '1'); courtLine.style.transition = 'opacity 0.8s'; courtLine.setAttribute('opacity', '1'); }, 400);
 
@@ -10302,7 +10302,7 @@ function openPanel(key, e) {
       svg.appendChild(score);
       setTimeout(() => { score.style.transition = 'opacity 0.6s'; score.setAttribute('opacity', '1'); }, 2200);
 
-      const bl = svgEl('text', { x: cx, y: cy + 135, 'text-anchor': 'middle', 'font-size': '12', fill: 'rgba(232,224,208,0.4)', 'font-family': 'DM Sans, sans-serif' });
+      const bl = svgEl('text', { x: cx, y: cy + 135, 'text-anchor': 'middle', 'font-size': '12', fill: 'rgba(26,22,18,0.45)', 'font-family': 'DM Sans, sans-serif' });
       bl.textContent = 'The right four. Every time.';
       bl.setAttribute('opacity', '0');
       svg.appendChild(bl);
@@ -10316,8 +10316,8 @@ function openPanel(key, e) {
       const snapX = 440, snapW = 120;
 
       // Axes
-      const xAxis = svgEl('line', { x1: chartL, y1: chartB, x2: chartR, y2: chartB, stroke: 'rgba(232,224,208,0.15)', 'stroke-width': '1' });
-      const yAxis = svgEl('line', { x1: chartL, y1: chartT, x2: chartL, y2: chartB, stroke: 'rgba(232,224,208,0.15)', 'stroke-width': '1' });
+      const xAxis = svgEl('line', { x1: chartL, y1: chartB, x2: chartR, y2: chartB, stroke: 'rgba(26,22,18,0.22)', 'stroke-width': '1' });
+      const yAxis = svgEl('line', { x1: chartL, y1: chartT, x2: chartL, y2: chartB, stroke: 'rgba(26,22,18,0.22)', 'stroke-width': '1' });
       svg.appendChild(xAxis); svg.appendChild(yAxis);
 
       // Y-axis label
@@ -10373,7 +10373,7 @@ function openPanel(key, e) {
       ];
       times.forEach((tm, i) => {
         const x = chartL + tm.t * (chartR - chartL);
-        const tick = svgEl('line', { x1: x, y1: chartB, x2: x, y2: chartB + 6, stroke: 'rgba(232,224,208,0.2)', 'stroke-width': '1' });
+        const tick = svgEl('line', { x1: x, y1: chartB, x2: x, y2: chartB + 6, stroke: 'rgba(26,22,18,0.28)', 'stroke-width': '1' });
         svg.appendChild(tick);
         const tl = svgEl('text', { x, y: chartB + 20, 'text-anchor': 'middle', 'font-size': '9', fill: i === times.length - 1 ? color : 'rgba(232,224,208,0.35)', 'font-family': 'DM Sans, sans-serif', 'font-weight': i === times.length - 1 ? '700' : '500', opacity: '0' });
         tl.textContent = tm.label;
@@ -10397,7 +10397,7 @@ function openPanel(key, e) {
         setTimeout(() => { dot.style.transition = 'opacity 0.4s'; dot.setAttribute('opacity', '1'); }, 800 + mi * 600);
 
         // Label to the right of the dot
-        const ml = svgEl('text', { x: mx + 14, y: my + 4, 'text-anchor': 'start', 'font-size': '10', fill: mi === 3 ? color : 'rgba(232,224,208,0.5)', 'font-family': 'DM Sans, sans-serif', 'font-weight': mi === 3 ? '700' : '500', opacity: '0' });
+        const ml = svgEl('text', { x: mx + 14, y: my + 4, 'text-anchor': 'start', 'font-size': '10', fill: mi === 3 ? color : 'rgba(26,22,18,0.5)', 'font-family': 'DM Sans, sans-serif', 'font-weight': mi === 3 ? '700' : '500', opacity: '0' });
         ml.textContent = ms.label;
         svg.appendChild(ml);
         setTimeout(() => { ml.style.transition = 'opacity 0.4s'; ml.setAttribute('opacity', '1'); }, 1000 + mi * 600);
