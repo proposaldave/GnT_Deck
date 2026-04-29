@@ -9163,24 +9163,27 @@ const SLIDE_ORDER = [
   // Alts: cs-18 (Founder Journey — credibility), cs-19 (3x Net Profit — business case).
   // cs-11c (Signal Density 645K) REMOVED from main flow Dave 2026-04-29 — 645K vs canonical
   // ~145K is inflated; don't surface in main deck where investors will dig. Lives in HTML for appendix.
+  // 2026-04-29 v6: slides 1-7 LOCKED. cs-19 (3x Net Profit) moved to slot 23 — late deck.
+  // Slide 8 = cs-18 (Founder Journey). After WEDGE, founder credibility grounds the bet.
+  // Alts: cs-16b (Autonomous social coordination — vision), cs-15 (The Leap — vision pivot).
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
-  'cs-11e','cs-3','cs-18','cs-19','cs-11b','cs-4','cs-7','cs-8','cs-8b','cs-12','cs-13',
-  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
+  'cs-11e','cs-3','cs-18','cs-11b','cs-4','cs-7','cs-8','cs-8b','cs-12','cs-13',
+  'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23','cs-19',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
-const TOTAL = SLIDE_ORDER.length; // 29
+const TOTAL = SLIDE_ORDER.length; // 28
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
 const SLIDE_ALTS = {
-  7: ['cs-18', 'cs-19']  // pos 7 alts below top pick cs-3: Founder Journey / 3x Net Profit
+  8: ['cs-16b', 'cs-15']  // pos 8 alts below top pick cs-18: Vision (autonomous) / The Leap
 };
-const REVIEW_POSITION = 7;
+const REVIEW_POSITION = 8;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
 // 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?),
 // 4=cs-11d (Secret Inside Invitation), 5=cs-11 (Scheduling is measuring),
 // 6=cs-11e (NEPC Proving Ground) [LOCKED 2026-04-29].
 // 7=cs-11c (Signal Density 645K, AI top pick) — under review with cs-3/cs-11b as alts.
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6];
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
