@@ -4878,6 +4878,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   color: #1a1612 !important;
   letter-spacing: 0.22em !important;
   font-weight: 700 !important;
+  font-size: 0.78rem !important;
   opacity: 1 !important;
 }
 
@@ -9141,33 +9142,31 @@ html, body, html body{
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  // Dave 2026-04-29 v3: slides 1-5 LOCKED.
-  // Slide 6 under review: AI top pick = cs-11e (NEPC Proving Ground / Same courts, better groups).
-  // YC canon: Solution -> TRACTION -> Wedge -> Vision. After product (cs-11) the audience
-  // demands proof: "and it works at NEPC right now." cs-11e has utilization lift +
-  // member quotes — the strongest proof slide.
-  // Alts: cs-11b (NEPC numbers), cs-3 (pickleball wedge).
+  // Dave 2026-04-29 v4: slides 1-6 LOCKED.
+  // Slide 7 under review: AI top pick = cs-11c (Signal Density 645K — data moat).
+  // After cs-11e (proof: it works at NEPC), the next investor question is "what's the
+  // defensible moat?" Answer: 645K behavioral signals already captured. Pure data moat.
+  // The line "We don't need millions of users — we need high-frequency users in
+  // structured group interactions" is a perfect bridge to wedge logic next.
+  // Alts: cs-3 (pickleball wedge), cs-11b (more NEPC numbers).
   'cs-1','cs-1b','cs-2b','cs-11d','cs-11',
-  'cs-11e','cs-11b','cs-11c','cs-3','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-19','cs-12','cs-13',
+  'cs-11e','cs-11c','cs-3','cs-11b','cs-4','cs-7','cs-8','cs-8b','cs-18','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
 ];
 const TOTAL = SLIDE_ORDER.length; // 29
 
 // === SLIDE-BY-SLIDE REVIEW WORKFLOW ===
-// SLIDE_ALTS: position (1-indexed in SLIDE_ORDER) -> array of alt slide IDs stacked BELOW the primary dot.
-// Top dot = AI's FIRST CHOICE. Stacked dots = alternatives in priority order.
-// Dave 2026-04-29 v3: position 6 under review with 2 alts.
 const SLIDE_ALTS = {
-  6: ['cs-11b', 'cs-3']  // pos 6 alts below top pick cs-11e: NEPC numbers / pickleball wedge
+  7: ['cs-3', 'cs-11b']  // pos 7 alts below top pick cs-11c: pickleball wedge / NEPC numbers
 };
-// REVIEW_POSITION: which dot position is currently under review — turns RED.
-const REVIEW_POSITION = 6;
+const REVIEW_POSITION = 7;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN.
-// 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?), 4=cs-11d (Secret Inside Invitation),
-// 5=cs-11 (Scheduling is measuring · Core Product · Invitation Feed) [LOCKED 2026-04-29].
-// 6=cs-11e (NEPC Proving Ground, AI top pick) — under review with cs-11b/cs-3 as alts.
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5];
+// 1=cs-1 (Title), 2=cs-1b (Good Life), 3=cs-2b (What's a community?),
+// 4=cs-11d (Secret Inside Invitation), 5=cs-11 (Scheduling is measuring),
+// 6=cs-11e (NEPC Proving Ground) [LOCKED 2026-04-29].
+// 7=cs-11c (Signal Density 645K, AI top pick) — under review with cs-3/cs-11b as alts.
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
