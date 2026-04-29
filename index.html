@@ -6391,26 +6391,33 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
   </div>
 
   <div style="display:flex;align-items:center;justify-content:center;gap:22px;max-width:1040px;margin:0 auto 34px auto;flex-wrap:wrap">
-    <!-- LEFT: GnT Invitations -->
-    <div style="flex:1;min-width:280px;max-width:380px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.32);border-radius:14px;padding:26px 22px;text-align:center">
-      <div style="margin:0 auto 14px;width:56px;height:56px;display:flex;align-items:center;justify-content:center">
-        <svg viewBox="0 0 56 56" width="52" height="52">
-          <rect x="10" y="14" width="36" height="32" rx="4" fill="none" stroke="#5B8FD4" stroke-width="2"/>
-          <line x1="10" y1="22" x2="46" y2="22" stroke="#5B8FD4" stroke-width="2"/>
-          <line x1="18" y1="10" x2="18" y2="18" stroke="#5B8FD4" stroke-width="2" stroke-linecap="round"/>
-          <line x1="38" y1="10" x2="38" y2="18" stroke="#5B8FD4" stroke-width="2" stroke-linecap="round"/>
-          <path d="M16 31 L19.5 34.5 L24 29" stroke="#3dff7a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M26 31 L29.5 34.5 L34 29" stroke="#3dff7a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M36 31 L39.5 34.5 L44 29" stroke="#3dff7a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+    <!-- LEFT: Invitation Feed (merged from cs-10c on Dave 2026-04-28).
+         Like-button vs Invitation comparison teaches what an Invitation Feed
+         IS in one visual. Punchline + brand caption + parallel question. -->
+    <div style="flex:1;min-width:300px;max-width:420px;background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.32);border-radius:14px;padding:22px 22px 24px;text-align:center">
+      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:4px">Before the room</div>
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:18px">Invitation Feed</div>
+
+      <!-- Mini Like vs Invitation comparison (compressed from cs-10c) -->
+      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;margin:0 auto 14px;align-items:center;max-width:340px">
+        <div style="text-align:center;padding:6px 4px">
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:5px;background:#1877F2;box-shadow:0 2px 8px rgba(24,119,242,0.32)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff"><path d="M2 11.5C2 10.6716 2.67157 10 3.5 10H6V20H3.5C2.67157 20 2 19.3284 2 18.5V11.5Z"/><path d="M7 9.99998L11 1.99998C12.6569 1.99998 14 3.34313 14 4.99998V8.99998H19.5C20.5 8.99998 21.2333 9.93331 21 10.9333L19.4 18.9333C19.2333 19.5333 18.6 20 18 20H7V9.99998Z"/></svg>
+            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:.72rem;font-weight:700;color:#ffffff">Like</div>
+          </div>
+        </div>
+        <div style="height:64px;background:linear-gradient(180deg,transparent,rgba(212,168,83,0.32),transparent)"></div>
+        <div style="text-align:center;padding:6px 4px">
+          <div style="display:inline-flex;align-items:center;justify-content:center;width:62px;height:42px;border:2px solid #d4a853;border-radius:6px;position:relative;background:rgba(212,168,83,0.06);box-shadow:0 0 22px rgba(212,168,83,0.22)">
+            <svg width="40" height="30" viewBox="0 0 56 42" fill="none" style="margin-top:-3px"><path d="M4 6 L28 26 L52 6" stroke="#d4a853" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
       </div>
-      <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">Before the room</div>
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:14px">Invitation Feed</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.35;margin-bottom:12px">
-        Who chooses to <em style="color:#5B8FD4;font-style:italic">show up</em> in the room together.
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:0.78rem;font-weight:500;font-style:italic;color:rgba(237,233,224,0.7);padding-top:10px;border-top:1px solid rgba(91,143,212,0.2);margin-top:4px;letter-spacing:0.01em;line-height:1.45">
-        Today, <span style="color:var(--gold,#caa54a);font-weight:700">400 people</span> have a personalized Give &lsquo;n Receive invitation feed.<br>In the future, <span style="color:#5B8FD4;font-weight:700">everyone</span> will.
+
+      <!-- The reveal — punchline absorbed from cs-10c -->
+      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:#e8e0d0;line-height:1.35;margin-top:6px">
+        There&rsquo;s no like button in the real world.<br>
+        <em style="font-style:italic;color:#d4a853;font-weight:700">But there&rsquo;s the invitation.</em>
       </div>
     </div>
 
@@ -6449,11 +6456,15 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
         </svg>
       </div>
       <div style="font-size:0.54rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(237,233,224,.42);margin-bottom:6px">In the room</div>
-      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:14px">Group Formation</div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream,#e8e0d0);line-height:1.35;margin-bottom:12px">
-        Who chooses <em style="color:var(--green-glow,#3dff7a);font-style:italic">who</em> in the room.
-      </div>
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-glow,#3dff7a);margin-bottom:8px">Group Formation</div>
     </div>
+  </div>
+
+  <!-- Slide-level closer: brand phrase lifted out of LEFT card so it carries
+       both products. Bigger font, full-width centered. Dave 2026-04-28. -->
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:600;color:#e8e0d0;line-height:1.45;margin:34px auto 0;max-width:1000px;text-align:center;letter-spacing:-0.005em">
+    Today, <span style="color:var(--gold,#caa54a);font-weight:700">400 people</span> have a personalized <em style="font-style:italic;color:#5B8FD4">Give &lsquo;n Receive invitation feed</em>.<br>
+    In the future, <span style="color:#5B8FD4;font-weight:700">everyone</span> will.
   </div>
 
 </div>
@@ -6467,7 +6478,7 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 
 <div class="inner" style="padding-top:14px;text-align:center;max-width:1180px">
   <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.15rem,2.5vw,1.8rem);color:var(--cream,#e8e0d0);line-height:1.2;margin-bottom:14px;font-weight:700;max-width:980px;margin-left:auto;margin-right:auto">
-    <span style="color:var(--green-glow,#3dff7a);font-weight:900">3</span> sessions, <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week per player.<br><span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
+    <span style="color:var(--cream)">Average player:</span> <span style="color:var(--green-glow,#3dff7a);font-weight:900">3</span> sessions, <span style="color:var(--green-glow,#3dff7a);font-weight:900">24</span> rounds per week.<br><span style="color:var(--cream)">Each one is</span> <em style="color:var(--green-glow,#3dff7a);font-style:italic;font-weight:900">it's own human connection experience and experiment.</em>
   </div>
 
   <!-- Hero stick figure — moved to sit just above "Her reality"; paddle scaled up for clearer pickleball read -->
@@ -8746,7 +8757,9 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 // ACT 4+: cs-10 through cs-26 unchanged
 
 const SLIDE_ORDER = [
-  'cs-1','cs-1b','cs-2b','cs-10c','cs-11','cs-3',
+  // cs-10c (Invitation Feed insight) MERGED into cs-11 LEFT card on Dave 2026-04-28.
+  // The standalone slide HTML stays in place so we can revert if needed.
+  'cs-1','cs-1b','cs-2b','cs-11','cs-3',
   'cs-4','cs-7','cs-8','cs-8b','cs-10','cs-11b','cs-11e','cs-11d','cs-11c','cs-19','cs-12','cs-13',
   'cs-14','cs-15','cs-16','cs-16b','cs-17','cs-18','cs-20','cs-21','cs-23',
   'cs-24','cs-25','cs-1a','cs-26'
@@ -8759,14 +8772,15 @@ const TOTAL = SLIDE_ORDER.length; // 29 (+ cs-8c Scheduling IS measuring transit
 // Empty {} = AI is locked on its first choice; no alternatives proposed.
 // Title slide is committed to the new "Paper" design system (Dave 2026-04-28).
 // cs-1A..cs-1D variants kept in HTML but no longer mounted as alt dots.
-// cs-11 has an animated "Decisions in motion" alt — click the gold dot under slide-5.
-const SLIDE_ALTS = { 5: ['cs-11-anim'] };
+// cs-11 has an animated "Decisions in motion" alt — click the gold dot under slide-4.
+const SLIDE_ALTS = { 4: ['cs-11-anim'] };
 // REVIEW_POSITION: which dot position is currently under review — turns RED ("stop light, we're stopped here").
 // Set to null when not actively reviewing.
-const REVIEW_POSITION = 5;
+const REVIEW_POSITION = 4;
 // LOCKED_POSITIONS: slides Dave has confirmed locked. Dots turn GREEN. Goal = all green.
-// 1=cs-1 (title), 2=cs-1b (gap), 3=cs-2b (good life / human connection), 4=cs-10c (the invitation).
-const LOCKED_POSITIONS = [1, 2, 3, 4];
+// 1=cs-1 (title), 2=cs-1b (gap), 3=cs-2b (the unmeasured).
+// 4=cs-11 (Invitation Feed + Group Formation merged) — under review.
+const LOCKED_POSITIONS = [1, 2, 3];
 
 const APPENDIX_TOTAL = 19;
 let current = 1;
