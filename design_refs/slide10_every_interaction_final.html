@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
+    html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    body {
+      background: radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%);
+      color: #1a1612;
+      font-family: Manrope, system-ui, sans-serif;
+    }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(255,255,255,.38), rgba(255,255,255,0) 56%),
+        radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%);
+    }
+    .slide:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .28;
+      background-image: radial-gradient(rgba(26,22,18,.16) .6px, transparent .7px);
+      background-size: 8px 8px;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    .headline {
+      position: absolute;
+      top: 62px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 63px;
+      line-height: .98;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      z-index: 2;
+    }
+    .headline .g { color: #5B8FD4; }
+    .headline .r { color: #c8462c; }
+    .subhead {
+      position: absolute;
+      top: 136px;
+      width: 100%;
+      text-align: center;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 47px;
+      line-height: 1;
+      font-style: italic;
+      font-weight: 700;
+      color: #b8954a;
+      z-index: 2;
+    }
+    .section-title {
+      position: absolute;
+      top: 215px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .34em;
+      color: #b8954a;
+      z-index: 3;
+    }
+    .section-title:before,
+    .section-title:after {
+      content: "";
+      position: absolute;
+      top: 28px;
+      height: 1px;
+      background: rgba(184,149,74,.48);
+    }
+    .section-title:before { right: calc(100% + 14px); width: 210px; }
+    .section-title:after { left: calc(100% + 14px); width: 210px; }
+    .section-title .dot {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      margin-left: -4px;
+      background: #b8954a;
+      border-radius: 50%;
+    }
+    .signals-title { left: 248px; }
+    .core-title { left: 855px; }
+    .actions-title { left: 1435px; }
+    .signals {
+      position: absolute;
+      top: 272px;
+      left: 68px;
+      width: 548px;
+      z-index: 3;
+    }
+    .row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 94px 154px 1px 1fr;
+      gap: 24px;
+      min-height: 128px;
+      padding: 9px 0 15px;
+      border-top: 1px solid rgba(184,149,74,.28);
+    }
+    .row:first-child { border-top-color: rgba(184,149,74,.42); }
+    .row:last-child { border-bottom: 1px solid rgba(184,149,74,.22); }
+    .icon {
+      width: 66px;
+      height: 66px;
+      margin-top: 5px;
+      margin-left: 4px;
+      border: 1.8px solid currentColor;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    .icon svg { width: 33px; height: 33px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .label {
+      align-self: center;
+      font-size: 17px;
+      line-height: 1.55;
+      letter-spacing: .22em;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: currentColor;
+    }
+    .divider { width: 1px; height: 78px; margin-top: 7px; background: rgba(184,149,74,.38); }
+    ul {
+      margin: 2px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.55;
+      color: rgba(26,22,18,.86);
+      font-weight: 600;
+    }
+    li {
+      position: relative;
+      padding-left: 22px;
+      white-space: nowrap;
+    }
+    li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .blue { color: #2f7bd0; }
+    .gold { color: #b8954a; }
+    .green { color: #168651; }
+    .red { color: #c8462c; }
+    .purple { color: #7d529f; }
+    .core-wrap {
+      position: absolute;
+      left: 746px;
+      top: 300px;
+      width: 430px;
+      height: 430px;
+      z-index: 2;
+    }
+    .actions {
+      position: absolute;
+      top: 286px;
+      right: 82px;
+      width: 435px;
+      z-index: 3;
+      display: grid;
+      gap: 33px;
+    }
+    .action {
+      height: 57px;
+      border: 1.6px solid currentColor;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px 0 68px;
+      color: var(--c);
+      background: rgba(251,247,239,.52);
+      position: relative;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #1a1612;
+    }
+    .action:before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--c);
+      box-shadow: 0 0 0 14px rgba(251,247,239,.75), 0 0 0 15.5px var(--c);
+    }
+    .action:after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      width: 66px;
+      border-top: 1px dashed rgba(184,149,74,.54);
+    }
+    .connections {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .curve { fill: none; stroke-width: 1.65; stroke-linecap: round; opacity: .95; }
+    .dot { stroke: #fbf7ef; stroke-width: 2; }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="headline">Every interaction trains <span class="g">G</span><em>n</em><span class="r">R</span>.</div>
+    <div class="subhead">It never stops getting smarter.</div>
+
+    <div class="section-title signals-title">SIGNALS<span class="dot"></span></div>
+    <div class="section-title core-title">GnR INTELLIGENCE<span class="dot"></span></div>
+    <div class="section-title actions-title">SMARTER ACTIONS<span class="dot"></span></div>
+
+    <svg class="connections" viewBox="0 0 1920 1080">
+      <path class="curve" stroke="#2f7bd0" d="M575 315 C675 312 675 417 828 418"/>
+      <path class="curve" stroke="#2f7bd0" d="M615 434 C705 434 706 500 805 505"/>
+      <path class="curve" stroke="#b8954a" d="M618 560 C704 558 716 580 803 564"/>
+      <path class="curve" stroke="#168651" d="M620 810 C727 812 727 703 838 700"/>
+      <circle class="dot" fill="#2f7bd0" cx="575" cy="315" r="6"/><circle class="dot" fill="#2f7bd0" cx="828" cy="418" r="7"/>
+      <circle class="dot" fill="#2f7bd0" cx="615" cy="434" r="6"/><circle class="dot" fill="#2f7bd0" cx="805" cy="505" r="7"/>
+      <circle class="dot" fill="#b8954a" cx="618" cy="560" r="6"/><circle class="dot" fill="#b8954a" cx="803" cy="564" r="7"/>
+      <circle class="dot" fill="#168651" cx="620" cy="810" r="6"/><circle class="dot" fill="#168651" cx="838" cy="700" r="7"/>
+
+      <path class="curve" stroke="#168651" d="M1092 423 C1215 388 1222 323 1378 323"/>
+      <path class="curve" stroke="#2f7bd0" d="M1120 478 C1230 448 1245 415 1378 415"/>
+      <path class="curve" stroke="#c8462c" d="M1138 555 C1238 540 1237 509 1378 508"/>
+      <path class="curve" stroke="#b8954a" d="M1120 623 C1235 650 1245 597 1378 600"/>
+      <path class="curve" stroke="#2f7bd0" d="M1070 708 C1207 780 1246 692 1378 693"/>
+      <circle class="dot" fill="#168651" cx="1092" cy="423" r="7"/><circle class="dot" fill="#fbf7ef" stroke="#168651" cx="1378" cy="323" r="7"/>
+      <circle class="dot" fill="#2f7bd0" cx="1120" cy="478" r="7"/><circle class="dot" fill="#fbf7ef" stroke="#2f7bd0" cx="1378" cy="415" r="7"/>
+      <circle class="dot" fill="#c8462c" cx="1138" cy="555" r="7"/><circle class="dot" fill="#fbf7ef" stroke="#c8462c" cx="1378" cy="508" r="7"/>
+      <circle class="dot" fill="#b8954a" cx="1120" cy="623" r="7"/><circle class="dot" fill="#fbf7ef" stroke="#b8954a" cx="1378" cy="600" r="7"/>
+      <circle class="dot" fill="#2f7bd0" cx="1070" cy="708" r="7"/><circle class="dot" fill="#fbf7ef" stroke="#2f7bd0" cx="1378" cy="693" r="7"/>
+    </svg>
+
+    <div class="signals">
+      <div class="row blue">
+        <div class="icon"><svg viewBox="0 0 32 32"><path d="M5 15L27 5l-8 22-4-9-10-3z"/><path d="M15 18l5-5"/></svg></div>
+        <div class="label">Invitations</div><div class="divider"></div>
+        <ul><li>RSVPs</li><li>cancellations</li></ul>
+      </div>
+      <div class="row blue">
+        <div class="icon"><svg viewBox="0 0 32 32"><circle cx="10" cy="10" r="4"/><circle cx="22" cy="10" r="4"/><path d="M7 25l18-18M7 7l18 18"/><path d="M8 25h5M19 25h5"/></svg></div>
+        <div class="label">Rounds</div><div class="divider"></div>
+        <ul><li>choose your round</li><li>favorite partner</li><li>favorite opponent</li><li>rounds feedback</li><li>competitive scores</li></ul>
+      </div>
+      <div class="row gold">
+        <div class="icon"><svg viewBox="0 0 32 32"><rect x="6" y="8" width="20" height="18" rx="2"/><path d="M10 5v6M22 5v6M6 14h20"/><path d="M11 18h2M16 18h2M21 18h2M11 22h2M16 22h2"/></svg></div>
+        <div class="label">Club<br>Operations</div><div class="divider"></div>
+        <ul><li>historical court bookings</li><li>computer vision</li><li>external club research</li><li>pro feedback</li><li>expert overrides</li></ul>
+      </div>
+      <div class="row green">
+        <div class="icon"><svg viewBox="0 0 32 32"><rect x="9" y="5" width="15" height="22" rx="2"/><path d="M13 5v22M7 10h4M7 15h4M7 20h4"/></svg></div>
+        <div class="label">Diary</div><div class="divider"></div>
+        <ul><li>wishlist</li><li>brain dump</li><li>who gives?</li><li>personality quiz</li><li>Relationship-AI</li></ul>
+      </div>
+    </div>
+
+    <svg class="core-wrap" viewBox="0 0 430 430">
+      <circle cx="215" cy="215" r="197" fill="none" stroke="#b8954a" stroke-width="1" stroke-dasharray="4 7" opacity=".65"/>
+      <circle cx="215" cy="215" r="152" fill="rgba(251,247,239,.35)" stroke="#b8954a" stroke-width="1.1" opacity=".58"/>
+      <circle cx="215" cy="215" r="130" fill="none" stroke="#b8954a" stroke-width="1" opacity=".42"/>
+      <circle cx="215" cy="215" r="104" fill="rgba(251,247,239,.42)" stroke="#b8954a" stroke-width="2.1"/>
+      <circle cx="215" cy="215" r="76" fill="rgba(251,247,239,.6)" stroke="#b8954a" stroke-width="1" opacity=".55"/>
+      <g stroke="#b8954a" stroke-width="1" opacity=".72">
+        <path d="M215 56v32M215 342v32M56 215h32M342 215h32"/>
+        <path d="M215 91l7 14h-14z" fill="#b8954a" stroke="none"/>
+        <path d="M215 339l7-14h-14z" fill="#b8954a" stroke="none"/>
+        <path d="M91 215l14-7v14z" fill="#b8954a" stroke="none"/>
+        <path d="M339 215l-14-7v14z" fill="#b8954a" stroke="none"/>
+      </g>
+      <g stroke="#b8954a" stroke-width="1" opacity=".48">
+        <script type="application/ecmascript"><![CDATA[]]></script>
+        <path d="M215 97v13M229 98l-2 13M243 101l-4 12M256 105l-5 12M269 111l-7 11M281 118l-8 10M293 127l-9 9M303 137l-10 8M312 149l-11 6M319 161l-12 5M325 175l-12 3M329 189l-13 1M330 203l-13 0M329 227l-13-1M325 241l-12-3M319 255l-12-5M312 268l-11-7M303 280l-10-8M293 290l-9-9M281 299l-8-10M269 306l-7-11M256 312l-5-12M243 317l-4-12M229 320l-2-13M215 321v-13M201 320l2-13M187 317l4-12M174 312l5-12M161 306l7-11M149 299l8-10M137 290l9-9M127 280l10-8M118 268l11-7M111 255l12-5M105 241l12-3M101 227l13-1M100 203h13M101 189l13 1M105 175l12 3M111 161l12 5M118 149l11 6M127 137l10 8M137 127l9 9M149 118l8 10M161 111l7 11M174 105l5 12M187 101l4 12M201 98l2 13"/>
+      </g>
+      <text x="215" y="209" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="60" font-weight="800">
+        <tspan fill="#5B8FD4">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="42">n</tspan><tspan fill="#c8462c">R</tspan>
+      </text>
+      <text x="215" y="253" text-anchor="middle" font-family="Manrope, sans-serif" font-size="22" font-weight="800" letter-spacing=".18em" fill="#b8954a">INTELLIGENCE</text>
+      <circle cx="215" cy="288" r="6" fill="#b8954a"/>
+    </svg>
+
+    <div class="actions">
+      <div class="action" style="--c:#168651">Smart sequential invitations</div>
+      <div class="action" style="--c:#2f7bd0">Partner selection + better matches</div>
+      <div class="action" style="--c:#c8462c">Cancellation fills</div>
+      <div class="action" style="--c:#b8954a">Club-growth recommendations</div>
+      <div class="action" style="--c:#2f7bd0">Text Concierge + Auto-Scheduler</div>
+    </div>
+  </div>
+</body>
+</html>
