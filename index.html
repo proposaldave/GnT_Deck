@@ -8766,22 +8766,87 @@ html, body, html body{
   </div>
   <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:rgba(26,22,18,0.5);letter-spacing:0.05em;margin-bottom:48px">SFIA 2025 &middot; DUPR public data</div>
 
-  <!-- 3-card grid: momentum · gap · moat -->
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1140px">
-    <div style="background:rgba(212,168,83,0.06);border:1px solid rgba(212,168,83,0.28);border-radius:14px;padding:30px 26px;text-align:center">
-      <div style="font-size:1.6rem;margin-bottom:14px">📈</div>
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:800;color:#b8954a;line-height:1.2">Fastest-growing sport</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.6);margin-top:6px">90+ new clubs / month</div>
+  <!-- 4 cards · 4 reasons pickleball is the perfect wedge [Dave 2026-04-30 PM evening] -->
+  <style>
+    #cs-25 .c25-card { padding:28px 22px 24px; border-radius:14px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; min-height:240px; }
+    #cs-25 .c25-icon { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    #cs-25 .c25-title { font-family:'Playfair Display',serif; font-size:clamp(1.05rem,1.5vw,1.3rem); font-weight:800; line-height:1.2; }
+    #cs-25 .c25-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:.95rem; line-height:1.25; }
+    #cs-25 .c25-detail { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.04em; color:rgba(26,22,18,0.62); line-height:1.4; margin-top:auto; }
+    /* Cascade entrance */
+    @keyframes c25FadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    #cs-25 .c25-card { opacity:0; }
+    #cs-25.active .c25-card { animation: c25FadeUp 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
+    #cs-25.active .c25-card:nth-child(1) { animation-delay: 0.30s; }
+    #cs-25.active .c25-card:nth-child(2) { animation-delay: 0.50s; }
+    #cs-25.active .c25-card:nth-child(3) { animation-delay: 0.70s; }
+    #cs-25.active .c25-card:nth-child(4) { animation-delay: 0.90s; }
+    html[data-export="1"] #cs-25 .c25-card { opacity:1 !important; animation:none !important; transform:none !important; }
+  </style>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px">
+
+    <!-- 1. Fastest-growing sport in US history -->
+    <div class="c25-card" style="background:linear-gradient(180deg,rgba(212,168,83,0.10) 0%,rgba(212,168,83,0.03) 100%);border:1px solid rgba(212,168,83,0.36)">
+      <div class="c25-icon" style="background:rgba(212,168,83,0.12);border:1.5px solid rgba(212,168,83,0.45)">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 25 L12 17 L17 21 L28 8"/>
+          <path d="M22 8 L28 8 L28 14"/>
+        </svg>
+      </div>
+      <div class="c25-title" style="color:#b8954a">Fastest-growing</div>
+      <div class="c25-sub" style="color:#1a1612">sport in U.S. history.</div>
+      <div class="c25-detail">13.6M &rarr; 19.8M+ in 4 years &middot; +45% YoY</div>
     </div>
-    <div style="background:rgba(200,70,44,0.05);border:1px solid rgba(200,70,44,0.28);border-radius:14px;padding:30px 26px;text-align:center">
-      <div style="font-size:1.6rem;margin-bottom:14px">📋</div>
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:800;color:#c8462c;line-height:1.2">Broken coordination<br>stack stuck in 2005</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.6);margin-top:6px">Ratings &middot; Court Booking &middot; Texts</div>
+
+    <!-- 2. Wildly social, high velocity -->
+    <div class="c25-card" style="background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.03) 100%);border:1px solid rgba(91,143,212,0.36)">
+      <div class="c25-icon" style="background:rgba(91,143,212,0.12);border:1.5px solid rgba(91,143,212,0.45)">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#3a7da3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
+          <circle cx="29" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
+          <circle cx="11" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
+          <circle cx="29" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
+          <line x1="14" y1="11" x2="26" y2="11"/>
+          <line x1="14" y1="29" x2="26" y2="29"/>
+          <line x1="11" y1="14" x2="11" y2="26"/>
+          <line x1="29" y1="14" x2="29" y2="26"/>
+          <line x1="13.5" y1="13.5" x2="26.5" y2="26.5" opacity="0.55"/>
+          <line x1="26.5" y1="13.5" x2="13.5" y2="26.5" opacity="0.55"/>
+        </svg>
+      </div>
+      <div class="c25-title" style="color:#3a7da3">Socially dense.<br>High velocity.</div>
+      <div class="c25-detail">4 players &times; 6 relationships &times; 3+ sessions/wk</div>
     </div>
-    <div style="background:rgba(74,140,94,0.07);border:1px solid rgba(74,140,94,0.32);border-radius:14px;padding:30px 26px;text-align:center;box-shadow:0 0 24px rgba(74,140,94,0.10)">
-      <div style="font-size:1.6rem;margin-bottom:14px">🤝</div>
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(1.2rem,1.8vw,1.5rem);font-weight:800;color:#2a8a4f;line-height:1.2">Belonging<br>built in</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.6);margin-top:6px">The rare sport already prescribed for the loneliness epidemic</div>
+
+    <!-- 3. Incumbent coordination stack stuck in 2005 -->
+    <div class="c25-card" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36);position:relative">
+      <div class="c25-icon" style="background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.45);position:relative">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#c8462c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="6" width="16" height="22" rx="1.5"/>
+          <rect x="13" y="3" width="8" height="4" rx="1" fill="rgba(200,70,44,0.20)"/>
+          <line x1="12" y1="13" x2="22" y2="13"/>
+          <line x1="12" y1="17" x2="22" y2="17"/>
+          <line x1="12" y1="21" x2="20" y2="21"/>
+          <line x1="6" y1="6" x2="28" y2="28" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="c25-title" style="color:#c8462c">Coordination stack<br>stuck in 2005.</div>
+      <div class="c25-detail">Ratings &middot; Court Booking &middot; Texts</div>
+    </div>
+
+    <!-- 4. Cold-start data cracked -->
+    <div class="c25-card" style="background:linear-gradient(180deg,rgba(42,138,79,0.10) 0%,rgba(42,138,79,0.03) 100%);border:1px solid rgba(42,138,79,0.42);box-shadow:0 0 24px rgba(42,138,79,0.10)">
+      <div class="c25-icon" style="background:rgba(42,138,79,0.12);border:1.5px solid rgba(42,138,79,0.50)">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2a8a4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="17" cy="9" rx="9" ry="3"/>
+          <path d="M8 9 L8 25 C8 27 26 27 26 25 L26 9"/>
+          <path d="M8 17 C8 19 26 19 26 17"/>
+          <circle cx="22" cy="22" r="6" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="1.6"/>
+          <path d="M19.5 22 L21 23.5 L24.5 20" stroke="#2a8a4f" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="c25-title" style="color:#2a8a4f">Cold-start<br>data cracked.</div>
+      <div class="c25-detail">NEPC's 2-yr history seeds the engine</div>
     </div>
   </div>
 
