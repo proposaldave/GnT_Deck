@@ -5610,25 +5610,27 @@ html, body, html body{
   #cs-2b[data-shown="1"] .c2b-hint { opacity: 0; pointer-events: none; animation: none; }
   html[data-export="1"] #cs-2b .c2b-hint { opacity: 0 !important; animation: none !important; }
 
-  /* Cards: hidden until reveal — wait until AFTER "But..." has fully landed (0.6s + ~0.4s pause), then stagger in */
+  /* Cards: hidden until reveal. Eyebrow first, then 4 bullets stagger left-to-right [Dave 2026-04-30 PM evening] */
   #cs-2b .c2b-card-anim { opacity: 0; }
-  #cs-2b[data-shown="1"] .c2b-card-anim { animation: c2bCardIn 0.75s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-1 { animation-delay: 1.05s; }
-  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-2 { animation-delay: 1.30s; }
-  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-3 { animation-delay: 1.55s; }
+  #cs-2b[data-shown="1"] .c2b-card-anim { animation: c2bCardIn 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-1 { animation-delay: 0.40s; }  /* "THE MANUAL BOTTLENECK" eyebrow */
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-2 { animation-delay: 0.85s; }  /* Finding your people */
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-3 { animation-delay: 1.05s; }  /* Engaging beyond inner circles */
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-4 { animation-delay: 1.25s; }  /* Scheduling */
+  #cs-2b[data-shown="1"] .c2b-card-anim.c2b-5 { animation-delay: 1.45s; }  /* Communities become cliques */
   html[data-export="1"] #cs-2b .c2b-card-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 
   /* Bottom block: HARD-hidden until reveal, fades up after all 3 cards land */
   #cs-2b .c2b-bottom { opacity: 0 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 0s; }
-  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 3.5s; }
+  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 2.8s; }
   html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transition: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Real-world social communities</div>
 <div class="inner" style="text-align:center;max-width:1100px;padding-top:54px;margin:0 auto">
 
-  <div class="display" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.6rem);color:#1a1612;line-height:1.25;font-weight:600;margin-bottom:18px;max-width:1080px;margin-left:auto;margin-right:auto">
-    Our communities <em style="font-style:italic;color:#b8954a">run on human connection</em>.<br>That&rsquo;s what they <em style="font-style:italic;color:#b8954a">are</em>. <span class="c2b-but"><em style="font-style:italic;color:#c8462c;font-weight:700">But&hellip;</em></span>
+  <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:8px;letter-spacing:-0.018em;max-width:1080px;margin-left:auto;margin-right:auto">
+    Real-world social communities are still <em style="font-style:italic;font-weight:500;color:#c8462c">built by hand.</em>
   </div>
 
   <!-- Click hint — visible only on first load -->
@@ -5637,69 +5639,56 @@ html, body, html body{
     <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 
-  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:36px">
-    <!-- Card 1: True Social Matchmaking — 2 hearts/pairs visualized, big circle-slash overlay -->
-    <div class="c2b-card-anim c2b-1" style="flex:1;min-width:240px;max-width:320px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.42);border-radius:18px;padding:42px 26px 36px;text-align:center;box-shadow:0 0 28px rgba(224,64,64,0.10)">
-      <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
-        <svg width="104" height="104" viewBox="0 0 96 96" fill="none">
-          <!-- 2 player nodes — matchmaking is fundamentally a PAIR decision -->
-          <circle cx="30" cy="48" r="14" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="2.6"/>
-          <circle cx="66" cy="48" r="14" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="2.6"/>
-          <!-- Pairing arc connecting them (gold dashed = matchmaking decision) -->
-          <path d="M 44 48 Q 48 32 52 48" stroke="rgba(212,168,83,0.7)" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
-        </svg>
-        <!-- Big circle-slash overlay (universal "no" symbol) -->
-        <svg width="104" height="104" viewBox="0 0 96 96" style="position:absolute;inset:0" fill="none">
-          <circle cx="48" cy="48" r="46" stroke="#c8462c" stroke-width="3.2" opacity="0.85"/>
-          <line x1="16" y1="16" x2="80" y2="80" stroke="#c8462c" stroke-width="3.6" stroke-linecap="round" opacity="0.9"/>
-        </svg>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#1a1612;line-height:1.25">True Social<br>Matchmaking</div>
+  <!-- THE MANUAL BOTTLENECK eyebrow -->
+  <div class="c2b-card-anim c2b-1" style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c8462c;margin-bottom:22px">
+    The manual bottleneck
+  </div>
+
+  <!-- 4 bottleneck bullets in a row -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px;margin:0 auto 30px;padding:0 8px">
+    <div class="c2b-card-anim c2b-2" style="background:linear-gradient(180deg,rgba(224,64,64,0.08) 0%,rgba(224,64,64,0.025) 100%);border:1px solid rgba(224,64,64,0.36);border-radius:14px;padding:24px 16px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <circle cx="16" cy="16" r="9" fill="none" stroke="#c8462c" stroke-width="2"/>
+        <line x1="23" y1="23" x2="32" y2="32" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="11" y1="16" x2="21" y2="16" stroke="#c8462c" stroke-width="1.4" opacity=".5"/>
+        <line x1="13" y1="13" x2="19" y2="13" stroke="#c8462c" stroke-width="1.4" opacity=".4"/>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#1a1612;line-height:1.35">Finding your people is <em style="color:#c8462c;font-style:italic">slow &amp; hard.</em></div>
     </div>
-    <!-- Card 2: Group-Experience Formation — orchestrated group constellation, slashed -->
-    <div class="c2b-card-anim c2b-2" style="flex:1;min-width:240px;max-width:320px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.42);border-radius:18px;padding:42px 26px 36px;text-align:center;box-shadow:0 0 28px rgba(224,64,64,0.10)">
-      <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
-        <svg width="104" height="104" viewBox="0 0 96 96" fill="none">
-          <!-- 4 player nodes — group-experience formation = 4 players orchestrated as a group -->
-          <circle cx="26" cy="26" r="9" fill="rgba(91,143,212,0.20)" stroke="#5B8FD4" stroke-width="2.4"/>
-          <circle cx="70" cy="26" r="9" fill="rgba(212,107,126,0.20)" stroke="#b8475c" stroke-width="2.4"/>
-          <circle cx="26" cy="70" r="9" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="2.4"/>
-          <circle cx="70" cy="70" r="9" fill="rgba(74,232,193,0.20)" stroke="#5fa896" stroke-width="2.4"/>
-          <!-- Connecting orchestration lines -->
-          <line x1="35" y1="26" x2="61" y2="26" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
-          <line x1="35" y1="70" x2="61" y2="70" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
-          <line x1="26" y1="35" x2="26" y2="61" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
-          <line x1="70" y1="35" x2="70" y2="61" stroke="rgba(212,168,83,0.45)" stroke-width="1.4" stroke-dasharray="2 2"/>
-          <line x1="33" y1="33" x2="63" y2="63" stroke="rgba(212,168,83,0.32)" stroke-width="1.2" stroke-dasharray="2 2"/>
-          <line x1="63" y1="33" x2="33" y2="63" stroke="rgba(212,168,83,0.32)" stroke-width="1.2" stroke-dasharray="2 2"/>
-        </svg>
-        <!-- Big circle-slash overlay -->
-        <svg width="104" height="104" viewBox="0 0 96 96" style="position:absolute;inset:0" fill="none">
-          <circle cx="48" cy="48" r="46" stroke="#c8462c" stroke-width="3.2" opacity="0.85"/>
-          <line x1="16" y1="16" x2="80" y2="80" stroke="#c8462c" stroke-width="3.6" stroke-linecap="round" opacity="0.9"/>
-        </svg>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#1a1612;line-height:1.25">Group-Experience<br>Scheduling</div>
+    <div class="c2b-card-anim c2b-3" style="background:linear-gradient(180deg,rgba(224,64,64,0.08) 0%,rgba(224,64,64,0.025) 100%);border:1px solid rgba(224,64,64,0.36);border-radius:14px;padding:24px 16px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <circle cx="13" cy="14" r="6" fill="none" stroke="#c8462c" stroke-width="2"/>
+        <circle cx="28" cy="14" r="4" fill="none" stroke="#c8462c" stroke-width="1.8" opacity=".55" stroke-dasharray="3 2"/>
+        <path d="M5 32 Q13 22 21 32" stroke="#c8462c" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M22 32 Q28 26 34 32" stroke="#c8462c" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".5" stroke-dasharray="3 2"/>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#1a1612;line-height:1.35">Engaging beyond our inner circles <em style="color:#c8462c;font-style:italic">feels risky.</em></div>
     </div>
-    <!-- Card 3: Compounding Community Value — exponential curve, slashed -->
-    <div class="c2b-card-anim c2b-3" style="flex:1;min-width:240px;max-width:320px;background:linear-gradient(180deg,rgba(224,64,64,0.10) 0%,rgba(224,64,64,0.04) 100%);border:1px solid rgba(224,64,64,0.42);border-radius:18px;padding:42px 26px 36px;text-align:center;box-shadow:0 0 28px rgba(224,64,64,0.10)">
-      <div style="position:relative;width:104px;height:104px;margin:0 auto 22px">
-        <svg width="104" height="104" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <marker id="growthArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
-              <path d="M 0 0 L 10 5 L 0 10 Z" fill="#2a8a4f"/>
-            </marker>
-          </defs>
-          <!-- Exponential growth curve compounding upward, clean filled-triangle marker arrowhead -->
-          <path d="M 18 76 Q 50 76 76 22" stroke="#2a8a4f" stroke-width="3.2" fill="none" stroke-linecap="round" marker-end="url(#growthArrow)"/>
-        </svg>
-        <!-- Big circle-slash overlay -->
-        <svg width="104" height="104" viewBox="0 0 96 96" style="position:absolute;inset:0" fill="none">
-          <circle cx="48" cy="48" r="46" stroke="#c8462c" stroke-width="3.2" opacity="0.85"/>
-          <line x1="16" y1="16" x2="80" y2="80" stroke="#c8462c" stroke-width="3.6" stroke-linecap="round" opacity="0.9"/>
-        </svg>
-      </div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#1a1612;line-height:1.25">Compounding<br>Community Value</div>
+    <div class="c2b-card-anim c2b-4" style="background:linear-gradient(180deg,rgba(224,64,64,0.08) 0%,rgba(224,64,64,0.025) 100%);border:1px solid rgba(224,64,64,0.36);border-radius:14px;padding:24px 16px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <rect x="6" y="9" width="26" height="22" rx="2.5" fill="none" stroke="#c8462c" stroke-width="2"/>
+        <line x1="11" y1="6" x2="11" y2="13" stroke="#c8462c" stroke-width="2" stroke-linecap="round"/>
+        <line x1="27" y1="6" x2="27" y2="13" stroke="#c8462c" stroke-width="2" stroke-linecap="round"/>
+        <line x1="6" y1="16" x2="32" y2="16" stroke="#c8462c" stroke-width="1.4"/>
+        <circle cx="13" cy="22" r="1.4" fill="#c8462c"/>
+        <circle cx="19" cy="22" r="1.4" fill="#c8462c"/>
+        <circle cx="25" cy="22" r="1.4" fill="#c8462c" opacity=".4"/>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#1a1612;line-height:1.35">Scheduling the <em style="color:#c8462c;font-style:italic">right groups.</em></div>
+    </div>
+    <div class="c2b-card-anim c2b-5" style="background:linear-gradient(180deg,rgba(224,64,64,0.08) 0%,rgba(224,64,64,0.025) 100%);border:1px solid rgba(224,64,64,0.36);border-radius:14px;padding:24px 16px;text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center">
+      <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+        <circle cx="14" cy="14" r="3" fill="#c8462c"/>
+        <circle cx="22" cy="14" r="3" fill="#c8462c"/>
+        <circle cx="14" cy="22" r="3" fill="#c8462c"/>
+        <circle cx="22" cy="22" r="3" fill="#c8462c"/>
+        <circle cx="18" cy="18" r="11" fill="none" stroke="#c8462c" stroke-width="2"/>
+        <line x1="14" y1="14" x2="22" y2="14" stroke="#c8462c" stroke-width="1.2"/>
+        <line x1="14" y1="22" x2="22" y2="22" stroke="#c8462c" stroke-width="1.2"/>
+        <line x1="14" y1="14" x2="14" y2="22" stroke="#c8462c" stroke-width="1.2"/>
+        <line x1="22" y1="14" x2="22" y2="22" stroke="#c8462c" stroke-width="1.2"/>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#1a1612;line-height:1.35">Communities <em style="color:#c8462c;font-style:italic">become cliques.</em></div>
     </div>
   </div>
 
@@ -7543,6 +7532,94 @@ html, body, html body{
 <!-- Inside NEPC — bridges from cs-18 (founder built NEPC) into cs-11b (proof of operations there).
      Simplified Dave 2026-04-28: lighter framing, NEPC eyebrow, the 70/0.6 secret stays as the
      killer insight, closer is now the bridge into the operational proof slides. -->
+<!-- ===== cs-gnr — Introducing Give n Receive · invitation-based matchmaking [Dave 2026-04-30 PM evening] ===== -->
+<style>
+  #cs-gnr .gnr-stage { position:relative; width:min(640px,68vmin); height:min(640px,68vmin); margin:24px auto 0; }
+  #cs-gnr .gnr-stage svg { width:100%; height:100%; }
+  /* Center envelope */
+  #cs-gnr .gnr-envelope { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:34%; max-width:220px; z-index:3; filter:drop-shadow(0 8px 22px rgba(184,149,74,0.22)); animation: gnrEnvFloat 4.5s ease-in-out infinite; }
+  @keyframes gnrEnvFloat { 0%,100% { transform:translate(-50%,-50%); } 50% { transform:translate(-50%,calc(-50% - 5px)); } }
+  /* People circles around envelope */
+  #cs-gnr .gnr-person { position:absolute; width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:2; box-shadow:0 4px 14px rgba(26,22,18,0.08); }
+  #cs-gnr .gnr-person svg { width:30px; height:30px; }
+  #cs-gnr.active .gnr-person { animation: gnrPersonIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; opacity:0; transform:scale(0.6); }
+  @keyframes gnrPersonIn { from { opacity:0; transform:scale(0.6); } to { opacity:1; transform:scale(1); } }
+  #cs-gnr.active .gnr-p1 { animation-delay: 0.7s; }
+  #cs-gnr.active .gnr-p2 { animation-delay: 0.85s; }
+  #cs-gnr.active .gnr-p3 { animation-delay: 1.0s; }
+  #cs-gnr.active .gnr-p4 { animation-delay: 1.15s; }
+  #cs-gnr.active .gnr-p5 { animation-delay: 1.3s; }
+  #cs-gnr.active .gnr-p6 { animation-delay: 1.45s; }
+  /* Dashed gold lines from envelope to each person */
+  #cs-gnr .gnr-lines path { stroke:#b8954a; stroke-width:1.5; stroke-dasharray:4 4; fill:none; opacity:0; }
+  #cs-gnr.active .gnr-lines path { animation: gnrLineIn 0.5s ease forwards; }
+  @keyframes gnrLineIn { from { opacity:0; } to { opacity:0.55; } }
+  #cs-gnr.active .gnr-lines path:nth-child(1) { animation-delay: 0.7s; }
+  #cs-gnr.active .gnr-lines path:nth-child(2) { animation-delay: 0.85s; }
+  #cs-gnr.active .gnr-lines path:nth-child(3) { animation-delay: 1.0s; }
+  #cs-gnr.active .gnr-lines path:nth-child(4) { animation-delay: 1.15s; }
+  #cs-gnr.active .gnr-lines path:nth-child(5) { animation-delay: 1.3s; }
+  #cs-gnr.active .gnr-lines path:nth-child(6) { animation-delay: 1.45s; }
+  html[data-export="1"] #cs-gnr .gnr-person { opacity:1 !important; transform:scale(1) !important; animation:none !important; }
+  html[data-export="1"] #cs-gnr .gnr-lines path { opacity:.55 !important; animation:none !important; }
+  html[data-export="1"] #cs-gnr .gnr-envelope { animation:none !important; }
+  /* Caption */
+  #cs-gnr .gnr-caption { font-family:'Manrope',sans-serif; font-size:.65rem; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:10px; }
+</style>
+<div class="casey-slide ds-focus" id="cs-gnr">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Introducing <span style="font-family:'Playfair Display',Georgia,serif;text-transform:none;letter-spacing:0;font-weight:700;font-size:0.96rem;vertical-align:baseline"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span></div>
+<div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
+
+  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
+    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking.</em>
+  </div>
+
+  <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1rem,1.5vw,1.25rem);color:rgba(26,22,18,0.65);margin:14px auto 0;line-height:1.45;max-width:780px">
+    AI sends curated invitations. People accept or decline. The right groups form.
+  </div>
+
+  <!-- Center stage: envelope + 6 people around it, dashed gold connections -->
+  <div class="gnr-stage">
+    <!-- Dashed connection lines (drawn in SVG, behind everything) -->
+    <svg class="gnr-lines" viewBox="0 0 600 600" style="position:absolute;inset:0;z-index:1">
+      <path d="M 300 300 L 300 90"/>
+      <path d="M 300 300 L 482 192"/>
+      <path d="M 300 300 L 482 408"/>
+      <path d="M 300 300 L 300 510"/>
+      <path d="M 300 300 L 118 408"/>
+      <path d="M 300 300 L 118 192"/>
+    </svg>
+
+    <!-- Envelope at center -->
+    <img class="gnr-envelope" src="design_refs/envelope_gnr.png" alt="GnR invitation envelope"/>
+
+    <!-- 6 people around the envelope, color-varied -->
+    <div class="gnr-person gnr-p1" style="left:50%;top:5%;transform:translateX(-50%);background:rgba(91,143,212,0.12);border:1.5px solid rgba(91,143,212,0.5)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5B8FD4"/><path d="M5 28 Q16 20 27 28" stroke="#5B8FD4" stroke-width="2.4" fill="rgba(91,143,212,0.25)" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gnr-person gnr-p2" style="left:78%;top:30%;background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.5)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#c8462c"/><path d="M5 28 Q16 20 27 28" stroke="#c8462c" stroke-width="2.4" fill="rgba(200,70,44,0.25)" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gnr-person gnr-p3" style="left:78%;top:65%;background:rgba(184,149,74,0.12);border:1.5px solid rgba(184,149,74,0.55)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#b8954a"/><path d="M5 28 Q16 20 27 28" stroke="#b8954a" stroke-width="2.4" fill="rgba(184,149,74,0.25)" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gnr-person gnr-p4" style="left:50%;top:85%;transform:translateX(-50%);background:rgba(74,140,94,0.12);border:1.5px solid rgba(74,140,94,0.5)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#4a8c5e"/><path d="M5 28 Q16 20 27 28" stroke="#4a8c5e" stroke-width="2.4" fill="rgba(74,140,94,0.25)" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gnr-person gnr-p5" style="left:8%;top:65%;background:rgba(122,74,140,0.10);border:1.5px solid rgba(122,74,140,0.5)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#7a4a8c"/><path d="M5 28 Q16 20 27 28" stroke="#7a4a8c" stroke-width="2.4" fill="rgba(122,74,140,0.25)" stroke-linecap="round"/></svg>
+    </div>
+    <div class="gnr-person gnr-p6" style="left:8%;top:30%;background:rgba(91,168,150,0.12);border:1.5px solid rgba(91,168,150,0.55)">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="11" r="5" fill="#5fa896"/><path d="M5 28 Q16 20 27 28" stroke="#5fa896" stroke-width="2.4" fill="rgba(91,168,150,0.25)" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+
+  <div class="gnr-caption">A curated invitation &middot; from the right person &middot; at the right time</div>
+</div>
+</section>
+</div>
+
 <!-- ===== cs-11d — card-flip on the two stat cards (envelope back-faces) [Dave 2026-04-30 PM] ===== -->
 <style>
   #cs-11d .hg-flip-wrap { perspective: 1500px; min-height: 220px; }
@@ -11175,8 +11252,10 @@ const SLIDE_ORDER = [
   // ALTS at slot 2: cs-1bm2 (heart-first, science as proof) · cs-1bm3 (head + heart agree, two-pane)
   // Originals cs-1b and cs-0a moved to APPENDIX as backups.
   'cs-1bm1',  //  2 MERGED Truth · science chart + "Deep down, we already feel it — we need each other."
-  'cs-2c',    //  3 Real-world social communities · 6-card grid (moved here per Dave 2026-04-30 PM evening)
-  'cs-2b','cs-11d','cs-11',
+  'cs-2c',    //  3 Community · 6-card grid (moved here per Dave 2026-04-30 PM evening)
+  'cs-2b',    //  4 Built by hand · 4 manual bottlenecks
+  'cs-gnr',   //  5 Introducing GnR · invitation-based matchmaking [NEW Dave 2026-04-30 PM evening]
+  'cs-11d','cs-11',
   'cs-11e','cs-3',
   'cs-4',     //  8 Moat — data in our heads [LOCKED]
   'cs-13',    //  9 Engine — HITL Krista loop + 25% adoption [LOCKED 2026-04-29]
