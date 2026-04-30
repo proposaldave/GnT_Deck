@@ -5618,10 +5618,10 @@ html, body, html body{
   #cs-2b[data-shown="1"] .c2b-card-anim.c2b-3 { animation-delay: 1.05s; }
   html[data-export="1"] #cs-2b .c2b-card-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 
-  /* Bottom block: hidden until reveal, then fades up after all 3 cards land */
-  #cs-2b .c2b-bottom { opacity: 0; }
-  #cs-2b[data-shown="1"] .c2b-bottom { animation: c2bCardIn 0.7s cubic-bezier(.45,.05,.18,1) forwards; animation-delay: 1.95s; }
-  html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; animation: none !important; transform: none !important; }
+  /* Bottom block: HARD-hidden until reveal (!important wins any cache/specificity issue), then fades up after all 3 cards land */
+  #cs-2b .c2b-bottom { opacity: 0 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 0s; }
+  #cs-2b[data-shown="1"] .c2b-bottom { opacity: 1 !important; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1) 1.95s; }
+  html[data-export="1"] #cs-2b .c2b-bottom { opacity: 1 !important; transition: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2b" data-shown="0" onclick="cs2bAdvance()" style="cursor:pointer">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Real-world social communities</div>
@@ -7540,17 +7540,13 @@ html, body, html body{
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.5);z-index:10;">The honesty gap</div>
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
-    <!-- Honest feedback frame: makes it explicit we're talking about what people say ABOUT OTHER PEOPLE [Dave 2026-04-30 PM] -->
-    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">Honest feedback &middot; about other players</div>
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:10px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      What they <em style="font-style:italic;font-weight:500;color:#5B8FD4">say</em> &nbsp;<span style="color:rgba(26,22,18,0.4);font-weight:300">&ne;</span>&nbsp; what they <em style="font-style:italic;font-weight:500;color:#c8462c">do</em>.
-    </div>
-    <!-- Context sub-line — names the situation explicitly -->
-    <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.1rem);font-weight:500;color:rgba(26,22,18,0.7);margin-bottom:28px;line-height:1.4">
-      When invited to play with someone they'd rather <em style="color:#c8462c">avoid</em>.
+    <!-- Promoted to slide headline: 'Honest feedback · about other players' is now the main header [Dave 2026-04-30 PM] -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:36px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
+      Honest feedback <em style="font-style:italic;font-weight:500;color:#b8954a">about other players.</em>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto 28px">
+    <!-- 3-column grid: LEFT card | ≠ | RIGHT card -->
+    <div style="display:grid;grid-template-columns:1fr 56px 1fr;gap:18px;max-width:980px;margin:0 auto 28px;align-items:center">
 
       <!-- LEFT card: 0.6% (what they SAY) — small stat, blue/cool. Reveals first. [Dave 2026-04-30 PM] -->
       <div class="hg-flip-wrap" onclick="cs11dToggle('left');event.stopPropagation()" style="cursor:pointer">
@@ -7566,6 +7562,9 @@ html, body, html body{
         </div>
        </div>
       </div>
+
+      <!-- ≠ between the cards — names the inequality between SAY and DO -->
+      <div style="display:flex;align-items:center;justify-content:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.5vw,3.5rem);font-weight:300;color:rgba(26,22,18,0.45);line-height:1">&ne;</div>
 
       <!-- RIGHT card: 70% (what they DO) — big stat, coral/urgent. Reveals second = punchline. [Dave 2026-04-30 PM] -->
       <div class="hg-flip-wrap" onclick="cs11dToggle('right');event.stopPropagation()" style="cursor:pointer">
@@ -10265,9 +10264,9 @@ html, body, html body{
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.95vw,1.55rem);font-weight:700;color:#1a1612;line-height:1.2;text-align:center;margin-top:8px">
             A multi-trillion stack<br><em style="font-style:italic;font-weight:500;color:#3a7da3">has us scrolling alone.</em>
           </div>
-          <!-- Scroll alone icon BELOW headline (paired with "scrolling alone" line) -->
-          <div style="width:64px;height:64px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(26,22,18,0.04);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
-            <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
+          <!-- Scroll alone icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
+          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
+            <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
               <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.4)"/>
               <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.32)" stroke-width="2" stroke-linecap="round"/>
               <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.28)" stroke-width="1.5" stroke-linecap="round"/>
@@ -10303,13 +10302,13 @@ html, body, html body{
           <!-- "Ourselves" leads — the biggest cultural obsession. Sets up the contrast with "Connection with others" below. [Dave 2026-04-30 PM] -->
           <div class="ti-bar-row ti-val-row">
             <div style="font-family:'DM Sans',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.7);text-align:right">Ourselves</div>
-            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-1" style="width:56%"></div></div>
+            <div class="ti-bar-track"><div class="ti-bar-fill ti-bf-1" style="width:50%"></div></div>
             <div></div>
           </div>
           <!-- "Ourselves" subtext on its own row — sized to match the bar so it visually centers under it -->
           <div class="ti-bar-row ti-val-row" style="margin-top:-4px;margin-bottom:9px">
             <div></div>
-            <div style="width:56%;text-align:center;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:0.03em;color:rgba(26,22,18,0.62);white-space:nowrap">status &middot; attention &middot; fame &middot; work &middot; rating &middot; ego</div>
+            <div style="width:50%;text-align:center;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:0.03em;color:rgba(26,22,18,0.62);white-space:nowrap">status &middot; attention &middot; fame &middot; work &middot; rating &middot; ego</div>
             <div></div>
           </div>
           <div class="ti-bar-row ti-val-row">
@@ -10341,9 +10340,9 @@ html, body, html body{
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.95vw,1.55rem);font-weight:700;color:#1a1612;line-height:1.2;text-align:center;margin-top:8px">
             Science proves <em style="font-style:italic;font-weight:500;color:#b8954a">connection matters most.</em>
           </div>
-          <!-- 3-figure community icon BELOW headline (paired with "connection matters most" line) -->
-          <div style="width:64px;height:64px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(26,22,18,0.04);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
-            <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
+          <!-- 3-figure community icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
+          <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
+            <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
               <circle cx="26" cy="16" r="5" fill="rgba(200,70,44,0.55)"/>
               <path d="M26 22 L26 38" stroke="rgba(200,70,44,0.5)" stroke-width="2" stroke-linecap="round"/>
               <path d="M22 30 L26 28 L30 30" stroke="rgba(200,70,44,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
