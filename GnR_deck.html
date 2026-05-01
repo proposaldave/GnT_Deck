@@ -9506,35 +9506,104 @@ html, body, html body{
 
 
 <!-- Closer — Promise + GnR wordmark merged. GnT branding deprecated. -->
+<!-- ===== cs-26 · THE PROMISE — REDESIGN 2026-05-01: slide IS the brand mark, exploded into a 3-column diptych. G/n/R structurally anchor the slide; each side carries half the promise. ===== -->
+<style>
+  #cs-26 .pr-stage   { display:grid; grid-template-columns:1fr auto 1fr; gap:48px; align-items:center; max-width:1500px; margin:0 auto; padding:48px 56px 0; width:100%; }
+  #cs-26 .pr-give    { text-align:right; }
+  #cs-26 .pr-receive { text-align:left; }
+  #cs-26 .pr-letter  { font-family:'Playfair Display',Georgia,serif; font-weight:900; line-height:0.9; letter-spacing:-0.04em; font-size:clamp(8rem,18vw,16rem); margin:0; display:block; }
+  #cs-26 .pr-give .pr-letter    { color:#4d82c6; }
+  #cs-26 .pr-receive .pr-letter { color:#c94d32; }
+  #cs-26 .pr-n       { font-family:'Playfair Display',serif; font-style:italic; font-weight:500; color:#1a1612; font-size:clamp(4rem,9vw,8rem); line-height:0.9; opacity:0.78; }
+  #cs-26 .pr-arrow   { display:flex; align-items:center; justify-content:flex-end; margin-bottom:14px; gap:10px; font-family:'Manrope',sans-serif; font-size:0.62rem; font-weight:800; letter-spacing:0.32em; text-transform:uppercase; }
+  #cs-26 .pr-receive .pr-arrow { justify-content:flex-start; }
+  #cs-26 .pr-give .pr-arrow    { color:#4d82c6; }
+  #cs-26 .pr-receive .pr-arrow { color:#c94d32; }
+  #cs-26 .pr-promise { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.6vw,1.4rem); font-weight:700; color:#1a1612; line-height:1.3; letter-spacing:-0.012em; margin-top:14px; max-width:380px; }
+  #cs-26 .pr-give    .pr-promise { margin-left:auto; }
+  #cs-26 .pr-promise em { font-style:italic; font-weight:500; }
+  #cs-26 .pr-give    .pr-promise em { color:#4d82c6; }
+  #cs-26 .pr-receive .pr-promise em { color:#c94d32; }
+  #cs-26 .pr-foot    { display:flex; flex-direction:column; align-items:center; gap:14px; margin:48px auto 0; padding-bottom:36px; }
+  #cs-26 .pr-divider { display:flex; align-items:center; justify-content:center; gap:14px; }
+  #cs-26 .pr-divider .pr-line { width:80px; height:1px; background:#b8954a; opacity:0.6; }
+  #cs-26 .pr-divider .pr-dia  { width:7px; height:7px; border:1px solid #b8954a; transform:rotate(45deg); }
+  #cs-26 .pr-tagline { font-family:'Playfair Display',Georgia,serif; font-size:1.05rem; color:rgba(26,22,18,0.7); letter-spacing:0.02em; }
+  #cs-26 .pr-tagline strong { color:#1a1612; font-weight:700; }
+  #cs-26 .pr-contact { font-family:'Manrope',sans-serif; font-size:0.82rem; color:rgba(26,22,18,0.72); letter-spacing:0.04em; font-weight:500; }
+  #cs-26 .pr-contact strong { font-weight:700; color:#1a1612; }
+  #cs-26 .pr-contact a { color:#b8954a; text-decoration:none; border-bottom:1px solid rgba(184,149,74,0.45); }
+  /* Reveal animation: G slides up, R slides down, n fades in, promises follow */
+  #cs-26 .pr-give    .pr-letter { opacity:0; transform:translateY(40px); transition:opacity 1s 0.20s cubic-bezier(.45,.05,.18,1), transform 1s 0.20s cubic-bezier(.45,.05,.18,1); }
+  #cs-26 .pr-receive .pr-letter { opacity:0; transform:translateY(-40px); transition:opacity 1s 0.40s cubic-bezier(.45,.05,.18,1), transform 1s 0.40s cubic-bezier(.45,.05,.18,1); }
+  #cs-26 .pr-n                  { opacity:0; transition:opacity 0.7s 0.95s ease; }
+  #cs-26 .pr-arrow              { opacity:0; transition:opacity 0.6s ease; }
+  #cs-26 .pr-give .pr-arrow     { transition-delay:1.10s; }
+  #cs-26 .pr-receive .pr-arrow  { transition-delay:1.25s; }
+  #cs-26 .pr-promise            { opacity:0; transform:translateY(8px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  #cs-26 .pr-give .pr-promise    { transition-delay:1.40s; }
+  #cs-26 .pr-receive .pr-promise { transition-delay:1.55s; }
+  #cs-26 .pr-foot               { opacity:0; transform:translateY(8px); transition:opacity 0.7s 1.85s ease, transform 0.7s 1.85s ease; }
+  #cs-26.casey-entered .pr-give .pr-letter,
+  #cs-26.casey-entered .pr-receive .pr-letter { opacity:1; transform:translateY(0); }
+  #cs-26.casey-entered .pr-n                  { opacity:0.78; }
+  #cs-26.casey-entered .pr-arrow              { opacity:1; }
+  #cs-26.casey-entered .pr-promise            { opacity:1; transform:translateY(0); }
+  #cs-26.casey-entered .pr-foot               { opacity:1; transform:translateY(0); }
+  html[data-export="1"] #cs-26 .pr-give .pr-letter,
+  html[data-export="1"] #cs-26 .pr-receive .pr-letter,
+  html[data-export="1"] #cs-26 .pr-promise,
+  html[data-export="1"] #cs-26 .pr-foot { opacity:1 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-26 .pr-n { opacity:0.78 !important; transition:none !important; }
+  html[data-export="1"] #cs-26 .pr-arrow { opacity:1 !important; transition:none !important; }
+</style>
 <div class="casey-slide ds-focus" id="cs-26">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Promise</div>
-<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
-  <!-- Promise headline (was cs-25) — leads the closer -->
-  <div class="h" style="font-size:clamp(22px,3.4vw,34px);max-width:900px;line-height:1.25;margin-bottom:48px">Get <span class="ember">the most out of your community,</span><br>while <span class="ember">your community gets the most out of you.</span></div>
-  <div id="gntLogoAnim">
-    <svg viewBox="0 0 56 48" width="280" height="240" xmlns="http://www.w3.org/2000/svg">
-      <g opacity="0.95">
-        <!-- Give arrow (blue, up) -->
-        <path d="M 10 4 L 6 11 L 8.5 11 L 8.5 16 L 11.5 16 L 11.5 11 L 14 11 Z" fill="#5B8FD4"/>
-        <!-- Receive arrow (red, down) -->
-        <path d="M 47 16 L 51 9 L 48.5 9 L 48.5 4 L 45.5 4 L 45.5 9 L 43 9 Z" fill="#c8462c"/>
-      </g>
-      <text x="2" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#5B8FD4">G</text>
-      <text x="24" y="42" font-family="Playfair Display, Georgia, serif" font-size="22" font-weight="900" font-style="italic" fill="#1a1612" opacity="0.85">n</text>
-      <text x="36" y="42" font-family="Playfair Display, Georgia, serif" font-size="26" font-weight="900" fill="#c8462c">R</text>
-    </svg>
+<section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+
+  <!-- Hero diptych: GIVE | n | RECEIVE — the slide IS the brand mark, exploded -->
+  <div class="pr-stage">
+
+    <!-- LEFT — GIVE (you to community) -->
+    <div class="pr-give">
+      <div class="pr-arrow">
+        <span>You give</span>
+        <svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M7 16 L7 2 M2 7 L7 2 L12 7" stroke="#4d82c6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <span class="pr-letter">G</span>
+      <div class="pr-promise">Your community gets <em>the most out of you.</em></div>
+    </div>
+
+    <!-- CENTER — italic n -->
+    <span class="pr-n">n</span>
+
+    <!-- RIGHT — RECEIVE (community to you) -->
+    <div class="pr-receive">
+      <div class="pr-arrow">
+        <svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M7 2 L7 16 M2 11 L7 16 L12 11" stroke="#c94d32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>You receive</span>
+      </div>
+      <span class="pr-letter">R</span>
+      <div class="pr-promise">You get <em>the most out of your community.</em></div>
+    </div>
+
   </div>
-  <div class="ga-text" style="text-align:center;margin-top:18px;opacity:1" id="gntLogoText">
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:rgba(26,22,18,0.85);letter-spacing:0.02em">Give n Receive</div>
-    <!-- Contact info — Dave 2026-04-29: closing slide must always show contact details. -->
-    <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.78);margin-top:18px;letter-spacing:0.04em;font-weight:500">
-      <strong style="font-weight:700;color:#1a1612">Dave Velardo</strong> &middot;&nbsp;
-      <a href="mailto:dave@givenreceive.com" style="color:#b8954a;text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a>
-      &nbsp;&middot;&nbsp; 978-604-0223
+
+  <!-- Foot: divider + tagline + contact -->
+  <div class="pr-foot">
+    <div class="pr-divider">
+      <div class="pr-line"></div>
+      <div class="pr-dia"></div>
+      <div class="pr-line"></div>
+    </div>
+    <div class="pr-tagline"><strong>Give n Receive</strong></div>
+    <div class="pr-contact">
+      <strong>Dave Velardo</strong> &middot;
+      <a href="mailto:dave@givenreceive.com">dave@givenreceive.com</a>
+      &middot; 978-604-0223
     </div>
   </div>
-</div>
+
 </section>
 </div>
 
