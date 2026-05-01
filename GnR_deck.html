@@ -10122,6 +10122,207 @@ html, body, html body{
 
 
 <!-- ===== cs-36 · 10-YEAR NORTH STAR ===== -->
+<!-- =====================================================================
+     cs-ns1 · NORTH STAR · MERGED — Dave 2026-04-30 PM evening
+     Synthesizes cs-cl2 (network constellation) + cs-36 (10-year concentric
+     time rings) into ONE jaw-drop slide. Each "year ring" of the 10-year
+     arc is also a *layer* of the connection graph — nodes scattered on
+     every ring radiate from NEPC at center. Time = scope = density.
+     ===================================================================== -->
+<style>
+  #cs-ns1 .ns1-ring  { opacity: 0; }
+  #cs-ns1 .ns1-label { opacity: 0; }
+  #cs-ns1 .ns1-node  { opacity: 0; }
+  #cs-ns1 .ns1-line  { opacity: 0; }
+  #cs-ns1 .ns1-h     { opacity: 0; transform: translateY(8px); }
+  #cs-ns1 .ns1-foot  { opacity: 0; }
+  #cs-ns1.active .ns1-h    { animation: ns1HIn 0.8s 0.10s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-ns1.active .ns1-ring { animation: ns1RingIn 0.7s ease forwards; }
+  #cs-ns1.active .ns1-label{ animation: ns1FadeIn 0.5s ease forwards; }
+  #cs-ns1.active .ns1-line { animation: ns1LineIn 0.7s ease forwards; }
+  #cs-ns1.active .ns1-node { animation: ns1FadeIn 0.5s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-ns1.active .ns1-foot { animation: ns1FadeIn 0.6s 3.40s ease forwards; }
+  @keyframes ns1HIn    { to { opacity: 1; transform: none; } }
+  @keyframes ns1RingIn { to { opacity: 1; } }
+  @keyframes ns1LineIn { to { opacity: 0.18; } }
+  @keyframes ns1FadeIn { to { opacity: 1; } }
+  /* Ring expansion order: today → Y3 → Y5 → Y7 → Y10 */
+  #cs-ns1.active .ns1-r0  { animation-delay: 0.85s; }
+  #cs-ns1.active .ns1-r3  { animation-delay: 1.25s; }
+  #cs-ns1.active .ns1-r5  { animation-delay: 1.60s; }
+  #cs-ns1.active .ns1-r7  { animation-delay: 1.95s; }
+  #cs-ns1.active .ns1-r10 { animation-delay: 2.30s; }
+  #cs-ns1.active .ns1-l0  { animation-delay: 1.05s; }
+  #cs-ns1.active .ns1-l3  { animation-delay: 1.45s; }
+  #cs-ns1.active .ns1-l5  { animation-delay: 1.80s; }
+  #cs-ns1.active .ns1-l7  { animation-delay: 2.15s; }
+  #cs-ns1.active .ns1-l10 { animation-delay: 2.50s; }
+  /* Nodes fade with their ring's label */
+  #cs-ns1.active .ns1-n3  { animation-delay: 1.50s; }
+  #cs-ns1.active .ns1-n5  { animation-delay: 1.85s; }
+  #cs-ns1.active .ns1-n7  { animation-delay: 2.20s; }
+  #cs-ns1.active .ns1-n10 { animation-delay: 2.55s; }
+  /* Radial lines fade with their target ring */
+  #cs-ns1.active .ns1-line-3  { animation-delay: 1.35s; }
+  #cs-ns1.active .ns1-line-5  { animation-delay: 1.70s; }
+  #cs-ns1.active .ns1-line-7  { animation-delay: 2.05s; }
+  #cs-ns1.active .ns1-line-10 { animation-delay: 2.40s; }
+  /* Today center pulse */
+  #cs-ns1 .ns1-pulse { animation: ns1Pulse 3.5s ease-in-out infinite; }
+  @keyframes ns1Pulse { 0%, 100% { opacity: 0.30; r: 46; } 50% { opacity: 0.55; r: 56; } }
+  html[data-export="1"] #cs-ns1 .ns1-ring,
+  html[data-export="1"] #cs-ns1 .ns1-label,
+  html[data-export="1"] #cs-ns1 .ns1-node,
+  html[data-export="1"] #cs-ns1 .ns1-h,
+  html[data-export="1"] #cs-ns1 .ns1-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
+  html[data-export="1"] #cs-ns1 .ns1-line { opacity: 0.18 !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-ns1">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">North Star &middot; 10-year vision</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px 24px">
+
+    <!-- Headline -->
+    <div class="ns1-h" style="text-align:center;max-width:1240px;margin-bottom:14px">
+      <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(0.95rem,1.4vw,1.15rem);color:rgba(184,149,74,0.85);letter-spacing:0.06em;margin-bottom:8px">In ten years&hellip;</div>
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.02em">
+        Every community in the world<br>runs on the <em style="font-style:italic;color:#b8954a">Give n Receive graph.</em>
+      </div>
+      <div style="margin-top:10px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(0.95rem,1.45vw,1.15rem);color:rgba(26,22,18,0.6)">
+        We're building the map of human connection &mdash; one invitation at a time.
+      </div>
+    </div>
+
+    <!-- The merged visual: concentric time rings + network nodes radiating from NEPC -->
+    <svg viewBox="0 0 1400 760" style="width:min(1400px,98%);height:auto;display:block">
+
+      <defs>
+        <radialGradient id="ns1CenterGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stop-color="#2a8a4f" stop-opacity="0.32"/>
+          <stop offset="100%" stop-color="#2a8a4f" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Radial lines (faint, beneath everything) -->
+      <g stroke="#b8954a" stroke-width="0.7" fill="none">
+        <!-- Y3 lines -->
+        <line class="ns1-line ns1-line-3" x1="700" y1="380" x2="765" y2="267"/>
+        <line class="ns1-line ns1-line-3" x1="700" y1="380" x2="813" y2="445"/>
+        <line class="ns1-line ns1-line-3" x1="700" y1="380" x2="635" y2="493"/>
+        <line class="ns1-line ns1-line-3" x1="700" y1="380" x2="587" y2="315"/>
+        <!-- Y5 lines -->
+        <line class="ns1-line ns1-line-5" x1="700" y1="380" x2="886" y2="272"/>
+        <line class="ns1-line ns1-line-5" x1="700" y1="380" x2="808" y2="566"/>
+        <line class="ns1-line ns1-line-5" x1="700" y1="380" x2="514" y2="488"/>
+        <line class="ns1-line ns1-line-5" x1="700" y1="380" x2="592" y2="194"/>
+        <!-- Y7 lines -->
+        <line class="ns1-line ns1-line-7" x1="700" y1="380" x2="912" y2="168"/>
+        <line class="ns1-line ns1-line-7" x1="700" y1="380" x2="912" y2="592"/>
+        <line class="ns1-line ns1-line-7" x1="700" y1="380" x2="488" y2="592"/>
+        <line class="ns1-line ns1-line-7" x1="700" y1="380" x2="488" y2="168"/>
+        <!-- Y10 outer scattered lines -->
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="1080" y2="380"/>
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="320"  y2="380"/>
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="975"  y2="65"/>
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="425"  y2="65"/>
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="975"  y2="695"/>
+        <line class="ns1-line ns1-line-10" x1="700" y1="380" x2="425"  y2="695"/>
+      </g>
+
+      <!-- Concentric time rings (dashed, color-coded per era) -->
+      <g fill="none" stroke-width="1.4" stroke-dasharray="5 4">
+        <circle class="ns1-ring ns1-r3"  cx="700" cy="380" r="130" stroke="#5B8FD4" stroke-opacity="0.55"/>
+        <circle class="ns1-ring ns1-r5"  cx="700" cy="380" r="215" stroke="#b8954a" stroke-opacity="0.55"/>
+        <circle class="ns1-ring ns1-r7"  cx="700" cy="380" r="300" stroke="#c8462c" stroke-opacity="0.50"/>
+        <circle class="ns1-ring ns1-r10" cx="700" cy="380" r="380" stroke="#7a4a8c" stroke-opacity="0.45"/>
+      </g>
+
+      <!-- TODAY center: NEPC pulsing core (always visible, anchors the slide) -->
+      <g class="ns1-ring ns1-r0">
+        <circle cx="700" cy="380" r="120" fill="url(#ns1CenterGlow)"/>
+        <circle class="ns1-pulse" cx="700" cy="380" r="46" fill="#2a8a4f" fill-opacity="0.42"/>
+        <circle cx="700" cy="380" r="38" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="2.2"/>
+        <text x="700" y="376" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="800" letter-spacing="2.2" fill="#2a8a4f">TODAY</text>
+        <text x="700" y="390" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" font-weight="800" fill="#1a1612">NEPC</text>
+      </g>
+
+      <!-- Year labels: badge-style, positioned at TOP of each ring -->
+      <g class="ns1-label ns1-l3">
+        <rect x="660" y="240" width="80" height="20" rx="10" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="1"/>
+        <text x="700" y="254" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="800" letter-spacing="2.2" fill="#3a7da3">YEAR 3</text>
+      </g>
+      <g class="ns1-label ns1-l5">
+        <rect x="660" y="155" width="80" height="20" rx="10" fill="#fbf6ec" stroke="#b8954a" stroke-width="1"/>
+        <text x="700" y="169" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="800" letter-spacing="2.2" fill="#b8954a">YEAR 5</text>
+      </g>
+      <g class="ns1-label ns1-l7">
+        <rect x="660" y="70" width="80" height="20" rx="10" fill="#fbf6ec" stroke="#c8462c" stroke-width="1"/>
+        <text x="700" y="84" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="800" letter-spacing="2.2" fill="#c8462c">YEAR 7</text>
+      </g>
+      <g class="ns1-label ns1-l10">
+        <rect x="655" y="-10" width="90" height="22" rx="11" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="1.3"/>
+        <text x="700" y="5" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8.5" font-weight="800" letter-spacing="2.4" fill="#7a4a8c">YEAR 10</text>
+      </g>
+
+      <!-- YEAR 3 nodes: Pickleball clubs (4 nodes) -->
+      <g class="ns1-node ns1-n3">
+        <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
+        <text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.62)">PB CLUB</text>
+        <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
+        <text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.62)">PB CLUB</text>
+        <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
+        <text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.62)">PB CLUB</text>
+        <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
+        <text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.62)">PB CLUB</text>
+        <text x="700" y="540" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="rgba(26,22,18,0.52)">500 pickleball clubs</text>
+      </g>
+
+      <!-- YEAR 5 nodes: Adjacent sports (4 nodes) -->
+      <g class="ns1-node ns1-n5">
+        <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
+        <text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">TENNIS</text>
+        <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
+        <text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">GOLF</text>
+        <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
+        <text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">CYCLING</text>
+        <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
+        <text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">RUN CLUB</text>
+      </g>
+
+      <!-- YEAR 7 nodes: All real communities (4 nodes) -->
+      <g class="ns1-node ns1-n7">
+        <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
+        <text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">YOGA</text>
+        <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
+        <text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">DINNER</text>
+        <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
+        <text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">BOOK CLUB</text>
+        <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
+        <text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.6)">CHURCH</text>
+      </g>
+
+      <!-- YEAR 10 nodes: outer ring fading off-canvas (the infinity gesture) -->
+      <g class="ns1-node ns1-n10">
+        <circle cx="1080" cy="380" r="9"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
+        <circle cx="320"  cy="380" r="9"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
+        <circle cx="975"  cy="65"  r="8"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+        <circle cx="425"  cy="65"  r="8"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+        <circle cx="975"  cy="695" r="8"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+        <circle cx="425"  cy="695" r="8"  fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
+        <text x="1140" y="384" text-anchor="start" font-family="Manrope,sans-serif" font-size="7" font-weight="700" letter-spacing="1.4" fill="rgba(122,74,140,0.7)">&hellip; AND BEYOND</text>
+        <text x="700" y="730" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10.5" fill="rgba(122,74,140,0.78)">Civilization-scale connection infrastructure</text>
+      </g>
+
+    </svg>
+
+    <!-- Foot -->
+    <div class="ns1-foot" style="margin-top:8px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(26,22,18,0.55);letter-spacing:0.04em;text-align:center">
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+      &middot; the map being drawn right now
+    </div>
+
+  </section>
+</div>
+
 <div class="casey-slide ds-focus appendix-slide" id="cs-36" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">10-Year North Star</div>
@@ -12303,7 +12504,8 @@ const SLIDE_ORDER = [
   // cs-16 (Every signal trains GnR / Autonomous Community Intelligence) → APPENDIX 2026-04-30 PM evening per Dave
   'cs-a3',    // 16 Pickleball: two revenue streams (TAM)
   // cs-11b (NEPC Numbers — receipts / "Running at New England Pickleball Clubs") → APPENDIX 2026-04-30 PM evening per Dave
-  // cs-36 (10-Year North Star) → APPENDIX 2026-04-30 PM evening per Dave
+  // cs-36 (10-Year North Star) → APPENDIX 2026-04-30 PM evening per Dave (replaced by cs-ns1 merge)
+  'cs-ns1',   // 17 NORTH STAR · MERGED — concentric time rings + connection-graph nodes (cs-cl2 + cs-36 fused) [Dave 2026-04-30 PM evening]
   // 2026-04-30 PM evening v9: Dave rejected mv1-4 ("none of them are any good"). New
   // approach: fuse the "What Runs The World" historical-eras framing with the mission
   // line "All our lives to run on human connection." mv5-7 are 3 distinct combinations.
