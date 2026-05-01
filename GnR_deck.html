@@ -9469,7 +9469,7 @@ html, body, html body{
      ============================================================================ -->
 
 <!-- ===== cs-mv1 · Editorial Pull-Quote ===== -->
-<div class="casey-slide ds-focus" id="cs-mv1">
+<div class="casey-slide ds-focus appendix-slide" id="cs-mv1" style="display:none">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant A</div>
   <div style="text-align:center;max-width:1100px;padding:0 48px">
@@ -9502,7 +9502,7 @@ html, body, html body{
   #cs-mv2.active .mv2-4 { animation-delay: 1.40s; }
   html[data-export="1"] #cs-mv2 .mv2-line { opacity: 1 !important; transform: none !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-mv2">
+<div class="casey-slide ds-focus appendix-slide" id="cs-mv2" style="display:none">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant B</div>
   <div style="text-align:center;max-width:1200px;padding:0 48px;display:flex;flex-direction:column;gap:14px;align-items:center">
@@ -9538,7 +9538,7 @@ html, body, html body{
   html[data-export="1"] #cs-mv3 .mv3-person { opacity: 1 !important; animation: none !important; }
   html[data-export="1"] #cs-mv3 .mv3-arcs path { opacity: 0.45 !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-mv3">
+<div class="casey-slide ds-focus appendix-slide" id="cs-mv3" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant C</div>
   <div class="inner" style="padding:60px 48px;text-align:center;max-width:1100px;margin:0 auto">
@@ -9598,7 +9598,7 @@ html, body, html body{
 
 
 <!-- ===== cs-mv4 · Invitation Card (formal/inscription) ===== -->
-<div class="casey-slide ds-focus" id="cs-mv4">
+<div class="casey-slide ds-focus appendix-slide" id="cs-mv4" style="display:none">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our mission &middot; Variant D</div>
   <div style="display:flex;align-items:center;justify-content:center">
@@ -9634,6 +9634,279 @@ html, body, html body{
     </div>
   </div>
 </section>
+</div>
+
+
+<!-- =====================================================================
+     MISSION VARIANTS · NEW SET — Dave 2026-04-30 PM evening
+     Existing mv1-4 rejected ("none of them are any good"). New approach:
+     fuse the "What Runs The World" historical-eras framing with the
+     mission line "All our lives to run on human connection."
+     3 distinct combinations (mv5-mv7). Each makes the mission line the
+     punchline of a civilizational arc.
+     ===================================================================== -->
+
+<!-- ===== cs-mv5 · Mission · Operating System of the Next Era (timeline + mission as twin reveal) ===== -->
+<style>
+  #cs-mv5 .mv5-era { opacity: 0; transform: translateY(6px); }
+  #cs-mv5.active .mv5-era { animation: mv5In 0.55s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv5.active .mv5-era:nth-child(1) { animation-delay: 0.20s; }
+  #cs-mv5.active .mv5-era:nth-child(2) { animation-delay: 0.30s; }
+  #cs-mv5.active .mv5-era:nth-child(3) { animation-delay: 0.40s; }
+  #cs-mv5.active .mv5-era:nth-child(4) { animation-delay: 0.50s; }
+  #cs-mv5.active .mv5-era:nth-child(5) { animation-delay: 0.60s; }
+  #cs-mv5.active .mv5-era:nth-child(6) { animation-delay: 0.70s; }
+  #cs-mv5 .mv5-arrow, #cs-mv5 .mv5-sub, #cs-mv5 .mv5-reveal, #cs-mv5 .mv5-mission, #cs-mv5 .mv5-foot { opacity: 0; transform: translateY(6px); }
+  #cs-mv5.active .mv5-arrow   { animation: mv5In 0.5s 0.95s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv5.active .mv5-sub     { animation: mv5In 0.6s 1.15s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv5.active .mv5-reveal  { animation: mv5RevealIn 0.95s 1.45s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv5.active .mv5-mission { animation: mv5In 0.7s 2.20s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv5.active .mv5-foot    { animation: mv5In 0.6s 2.70s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes mv5In { to { opacity: 1; transform: none; } }
+  @keyframes mv5RevealIn { to { opacity: 1; transform: none; } }
+  html[data-export="1"] #cs-mv5 .mv5-era,
+  html[data-export="1"] #cs-mv5 .mv5-arrow,
+  html[data-export="1"] #cs-mv5 .mv5-sub,
+  html[data-export="1"] #cs-mv5 .mv5-reveal,
+  html[data-export="1"] #cs-mv5 .mv5-mission,
+  html[data-export="1"] #cs-mv5 .mv5-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv5">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">What runs the world</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 48px">
+
+    <!-- Timeline -->
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;width:min(1180px,96%);margin-bottom:22px">
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(74,124,74,0.45);border-radius:12px;padding:16px 8px;background:rgba(74,124,74,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">Pre-1800</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#4a7c4a;line-height:1">Land</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">Kings &middot; Farms</div>
+      </div>
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(156,90,58,0.45);border-radius:12px;padding:16px 8px;background:rgba(156,90,58,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">1800s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#9c5a3a;line-height:1">Labor</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">Factories &middot; Industry</div>
+      </div>
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(184,149,74,0.45);border-radius:12px;padding:16px 8px;background:rgba(184,149,74,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">1900s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#b8954a;line-height:1">Capital</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">Banks &middot; Finance</div>
+      </div>
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(77,130,198,0.45);border-radius:12px;padding:16px 8px;background:rgba(77,130,198,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">1990s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#4d82c6;line-height:1">Information</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">Google</div>
+      </div>
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(200,70,44,0.45);border-radius:12px;padding:16px 8px;background:rgba(200,70,44,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">2010s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#c8462c;line-height:1">Attention</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">Meta &middot; TikTok</div>
+      </div>
+      <div class="mv5-era" style="text-align:center;border:1px solid rgba(122,74,140,0.45);border-radius:12px;padding:16px 8px;background:rgba(122,74,140,0.06)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-bottom:4px">2020s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#7a4a8c;line-height:1">Intelligence</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.5);text-transform:uppercase;margin-top:6px">OpenAI &middot; Anthropic</div>
+      </div>
+    </div>
+
+    <!-- Arrow -->
+    <div class="mv5-arrow" style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;color:rgba(184,149,74,0.7);line-height:1;margin:8px 0">↓</div>
+
+    <!-- Sub-kicker -->
+    <div class="mv5-sub" style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-bottom:10px">In the future, civilization will run on</div>
+
+    <!-- Big gold reveal -->
+    <div class="mv5-reveal" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.6rem,5.6vw,4.6rem);font-weight:700;color:#b8954a;line-height:1.05;letter-spacing:-0.02em;margin-bottom:18px">Human Connection</div>
+
+    <!-- Diamond divider -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0 16px">
+      <div style="width:60px;height:1px;background:#b8954a;opacity:0.55"></div>
+      <div style="width:6px;height:6px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+      <div style="width:60px;height:1px;background:#b8954a;opacity:0.55"></div>
+    </div>
+
+    <!-- Mission line (the personal scale) -->
+    <div class="mv5-mission" style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.1rem,1.9vw,1.5rem);color:rgba(26,22,18,0.78);max-width:900px;text-align:center;line-height:1.35">
+      All our lives <em style="color:#1a1612;font-style:italic;font-weight:600">to run on human connection.</em>
+    </div>
+
+    <!-- Foot: GnR mark + role -->
+    <div class="mv5-foot" style="margin-top:22px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:0.92rem;color:rgba(26,22,18,0.55);letter-spacing:0.04em">
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+      &middot; the operating system being built right now
+    </div>
+
+  </section>
+</div>
+
+
+<!-- ===== cs-mv6 · Mission · GnR is the 7th Era (we claim the next slot) ===== -->
+<style>
+  #cs-mv6 .mv6-era { opacity: 0; transform: translateY(6px); }
+  #cs-mv6.active .mv6-era { animation: mv6In 0.5s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv6.active .mv6-era:nth-child(1) { animation-delay: 0.18s; }
+  #cs-mv6.active .mv6-era:nth-child(2) { animation-delay: 0.26s; }
+  #cs-mv6.active .mv6-era:nth-child(3) { animation-delay: 0.34s; }
+  #cs-mv6.active .mv6-era:nth-child(4) { animation-delay: 0.42s; }
+  #cs-mv6.active .mv6-era:nth-child(5) { animation-delay: 0.50s; }
+  #cs-mv6.active .mv6-era:nth-child(6) { animation-delay: 0.58s; }
+  #cs-mv6 .mv6-gnr-card { opacity: 0; transform: translateY(10px) scale(0.96); }
+  #cs-mv6.active .mv6-gnr-card { animation: mv6CardIn 0.85s 0.95s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes mv6In { to { opacity: 1; transform: none; } }
+  @keyframes mv6CardIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+  #cs-mv6 .mv6-mission, #cs-mv6 .mv6-foot { opacity: 0; transform: translateY(6px); }
+  #cs-mv6.active .mv6-mission { animation: mv6In 0.75s 1.85s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv6.active .mv6-foot    { animation: mv6In 0.6s  2.45s cubic-bezier(.45,.05,.18,1) forwards; }
+  html[data-export="1"] #cs-mv6 .mv6-era,
+  html[data-export="1"] #cs-mv6 .mv6-gnr-card,
+  html[data-export="1"] #cs-mv6 .mv6-mission,
+  html[data-export="1"] #cs-mv6 .mv6-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv6">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Our mission</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px">
+
+    <!-- Pre-headline -->
+    <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px">Every era of civilization runs on something.</div>
+
+    <!-- 6 muted past-era chips + 7th gold GnR card -->
+    <div style="display:grid;grid-template-columns:repeat(6,0.7fr) 1.4fr;gap:8px;width:min(1280px,98%);align-items:stretch">
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">Pre-1800</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(74,124,74,0.78);line-height:1">Land</div>
+      </div>
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">1800s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(156,90,58,0.78);line-height:1">Labor</div>
+      </div>
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">1900s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(184,149,74,0.78);line-height:1">Capital</div>
+      </div>
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">1990s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(77,130,198,0.78);line-height:1">Information</div>
+      </div>
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">2010s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(200,70,44,0.78);line-height:1">Attention</div>
+      </div>
+      <div class="mv6-era" style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:14px 6px;background:rgba(26,22,18,0.02);opacity:0.7">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.45rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.4);text-transform:uppercase;margin-bottom:3px">2020s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(122,74,140,0.78);line-height:1">Intelligence</div>
+      </div>
+      <!-- The 7th: GnR's claim -->
+      <div class="mv6-gnr-card" style="text-align:center;border:2px solid #b8954a;border-radius:12px;padding:18px 12px 16px;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.05));box-shadow:0 8px 24px rgba(184,149,74,0.18);position:relative">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:800;letter-spacing:0.22em;color:#b8954a;text-transform:uppercase;margin-bottom:5px">2030s &middot; Now</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1a1612;line-height:1;margin-bottom:5px">Connection</div>
+        <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-style:italic;line-height:1">
+          <span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span>
+          <span style="font-style:normal;color:rgba(26,22,18,0.55);font-size:0.85em">&middot; Give n Receive</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission line -->
+    <div class="mv6-mission" style="margin-top:42px;text-align:center;max-width:1100px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.02em">
+        All our lives <em style="font-style:italic;font-weight:500;color:#b8954a">to run on</em><br>
+        human connection.
+      </div>
+    </div>
+
+    <!-- Foot -->
+    <div class="mv6-foot" style="margin-top:24px;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:0.92rem;color:rgba(26,22,18,0.55);text-align:center">
+      Each era was built by someone. <strong style="font-style:normal;color:#1a1612;font-weight:600">We're building this one.</strong>
+    </div>
+
+  </section>
+</div>
+
+
+<!-- ===== cs-mv7 · Mission · Mission Hero, Timeline as Evidence (mission dominant) ===== -->
+<style>
+  #cs-mv7 .mv7-mission { opacity: 0; transform: translateY(10px); }
+  #cs-mv7.active .mv7-mission { animation: mv7In 0.85s 0.20s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv7ascending { /* spacer */ }
+  #cs-mv7 .mv7-evidence { opacity: 0; transform: translateY(8px); }
+  #cs-mv7.active .mv7-evidence { animation: mv7In 0.7s 1.10s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv7 .mv7-chip { opacity: 0; transform: translateY(4px); }
+  #cs-mv7.active .mv7-chip { animation: mv7In 0.45s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-mv7.active .mv7-chip:nth-child(1) { animation-delay: 1.40s; }
+  #cs-mv7.active .mv7-chip:nth-child(2) { animation-delay: 1.50s; }
+  #cs-mv7.active .mv7-chip:nth-child(3) { animation-delay: 1.60s; }
+  #cs-mv7.active .mv7-chip:nth-child(4) { animation-delay: 1.70s; }
+  #cs-mv7.active .mv7-chip:nth-child(5) { animation-delay: 1.80s; }
+  #cs-mv7.active .mv7-chip:nth-child(6) { animation-delay: 1.90s; }
+  #cs-mv7.active .mv7-chip:nth-child(7) { animation-delay: 2.10s; }
+  #cs-mv7 .mv7-foot { opacity: 0; transform: translateY(6px); }
+  #cs-mv7.active .mv7-foot { animation: mv7In 0.6s 2.50s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes mv7In { to { opacity: 1; transform: none; } }
+  html[data-export="1"] #cs-mv7 .mv7-mission,
+  html[data-export="1"] #cs-mv7 .mv7-evidence,
+  html[data-export="1"] #cs-mv7 .mv7-chip,
+  html[data-export="1"] #cs-mv7 .mv7-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv7">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Our mission</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 48px">
+
+    <!-- HERO mission line -->
+    <div class="mv7-mission" style="text-align:center;max-width:1280px;margin-bottom:48px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;color:#1a1612;line-height:1.04;letter-spacing:-0.025em">
+        All our lives <em style="font-style:italic;font-weight:500;color:#b8954a">to run on</em><br>
+        human connection.
+      </div>
+    </div>
+
+    <!-- Evidence kicker -->
+    <div class="mv7-evidence" style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:18px">Every era of civilization runs on something.</div>
+
+    <!-- Compact 7-chip timeline strip -->
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:1240px">
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(74,124,74,0.5);background:rgba(74,124,74,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">Pre-1800</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#4a7c4a;line-height:1.1">Land</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(156,90,58,0.5);background:rgba(156,90,58,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">1800s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#9c5a3a;line-height:1.1">Labor</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(184,149,74,0.5);background:rgba(184,149,74,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">1900s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#b8954a;line-height:1.1">Capital</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(77,130,198,0.5);background:rgba(77,130,198,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">1990s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#4d82c6;line-height:1.1">Information</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(200,70,44,0.5);background:rgba(200,70,44,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">2010s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#c8462c;line-height:1.1">Attention</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;color:rgba(184,149,74,0.7)">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:1px solid rgba(122,74,140,0.5);background:rgba(122,74,140,0.06);padding:8px 14px;border-radius:999px;min-width:96px">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:700;letter-spacing:0.2em;color:rgba(26,22,18,0.5);text-transform:uppercase">2020s</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#7a4a8c;line-height:1.1">Intelligence</div>
+      </div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#b8954a;font-weight:700">→</div>
+      <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:2px solid #b8954a;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.06));padding:9px 18px;border-radius:999px;min-width:108px;box-shadow:0 4px 14px rgba(184,149,74,0.22)">
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:800;letter-spacing:0.2em;color:#b8954a;text-transform:uppercase">2030s &middot; Now</div>
+        <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1612;line-height:1.1">Connection</div>
+      </div>
+    </div>
+
+    <!-- Foot -->
+    <div class="mv7-foot" style="margin-top:38px;text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(26,22,18,0.6);letter-spacing:0.04em">
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span>
+      &middot; the operating system of the next era
+    </div>
+
+  </section>
 </div>
 
 
@@ -12109,11 +12382,14 @@ const SLIDE_ORDER = [
   'cs-a3',    // 16 Pickleball: two revenue streams (TAM)
   // cs-11b (NEPC Numbers — receipts / "Running at New England Pickleball Clubs") → APPENDIX 2026-04-30 PM evening per Dave
   'cs-36',    // 17 10-Year North Star
-  'cs-mv1',   // 21 Mission · Variant A · Editorial Pull-Quote [REVIEW · pick one Dave 2026-04-30 PM evening]
-  'cs-mv2',   // 22 Mission · Variant B · Manifesto Build (cinematic crescendo) [REVIEW]
-  'cs-mv3',   // 23 Mission · Variant C · Connected Constellation [REVIEW]
-  'cs-mv4',   // 24 Mission · Variant D · Invitation Card [REVIEW]
-  'cs-33',    // 25 The Ask — $1.5M Seed
+  // 2026-04-30 PM evening v9: Dave rejected mv1-4 ("none of them are any good"). New
+  // approach: fuse the "What Runs The World" historical-eras framing with the mission
+  // line "All our lives to run on human connection." mv5-7 are 3 distinct combinations.
+  // mv1-4 retained in HTML as backup but removed from main flow.
+  'cs-mv5',   // 18 Mission · Variant E · Operating System of the Next Era (timeline + twin reveal) [REVIEW]
+  'cs-mv6',   // 19 Mission · Variant F · GnR is the 7th Era (we claim the next slot) [REVIEW]
+  'cs-mv7',   // 20 Mission · Variant G · Mission Hero, Timeline as Evidence (mission dominant) [REVIEW]
+  'cs-33',    // 21 The Ask — $1.5M Seed
   // 4 NEW jaw-dropping closer concepts inserted here for Dave's review (2026-04-30 PM evening, post-dinner).
   // CL-A: Empty Rooms (TAM as negative space)
   // CL-B: Connection Graph (vision constellation, NEPC → world)
