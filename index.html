@@ -12764,18 +12764,14 @@ const SLIDE_ORDER = [
   // cs-36 (10-Year North Star) → APPENDIX 2026-04-30 PM evening per Dave (replaced by cs-ns1 merge)
   // cs-wn (Why Now · three forces) → APPENDIX 2026-05-01 per Dave
   'cs-ns1',   // 17 NORTH STAR · MERGED — concentric time rings + connection-graph nodes (cs-cl2 + cs-36 fused) [Dave 2026-04-30 PM evening]
-  // 2026-04-30 PM evening v9: Dave rejected mv1-4 ("none of them are any good"). New
-  // approach: fuse the "What Runs The World" historical-eras framing with the mission
-  // line "All our lives to run on human connection." mv5-7 are 3 distinct combinations.
-  // mv1-4 retained in HTML as backup but removed from main flow.
-  'cs-mv5',   // 17 Mission · Variant E · Operating System of the Next Era (timeline + twin reveal) [REVIEW]
-  'cs-mv6',   // 18 Mission · Variant F · GnR is the 7th Era (we claim the next slot) [REVIEW]
-  'cs-mv7',   // 19 Mission · Variant G · Mission Hero, Timeline as Evidence (mission dominant) [REVIEW]
+              //    cs-cl2 stacks here as ALT (see SLIDE_ALTS) — Dave wants them at same dot position to compare 2026-05-01
+  // 2026-05-01: Dave kept only cs-mv6. cs-mv5 and cs-mv7 hidden in appendix as backups.
+  'cs-mv6',   // 18 Mission · GnR is the 7th Era (Dave's pick) [LOCKED]
   // cs-33 (The Ask) → APPENDIX 2026-04-30 PM evening per Dave
   // 2026-04-30 PM evening: Dave deleted cs-cl1 (Empty Rooms) and cs-cl3 (Tuesday 6pm). Only cs-cl2 (Connection Graph) survives.
   // cs-cl4 (Inversion / "Until now.") DELETED 2026-04-30 PM evening per Dave
-  'cs-cl2',   // 20 Closer · Variant B · Connection Graph [REVIEW]
-  'cs-26'     // 21 Closer · current (Promise + GnR wordmark) — for comparison
+  // cs-cl2 lives as ALT for slot 17 (cs-ns1) per Dave 2026-05-01 — they're conceptually similar, dot stacks for comparison
+  'cs-26'     // 19 Closer · current (Promise + GnR wordmark)
   // Removed from main flow per Dave 2026-04-30 PM:
   //   cs-34 (Flywheel) → appendix · cs-30 (Why Now) → appendix · cs-32 (Distribution) → appendix
   //   cs-31 (Why We Win → archived) · cs-37 (Voice of Community → appendix)
@@ -12790,12 +12786,11 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  // Slot 2 LOCKED 2026-04-30 PM per Dave: "we are definitely going to use Two imbalances rule modern life"
-  // cs-1bm3 deleted; cs-1bm2 still in HTML but no longer surfaced as alt.
-  // Slot 13: cs-a3 vs cs-34 — secondary review
-  13: ['cs-34']
+  // Slot 2 LOCKED 2026-04-30 PM per Dave
+  // Slot 17: cs-ns1 (North Star · merged) vs cs-cl2 (Connection Graph closer) — Dave 2026-05-01 wants them stacked at same dot to compare
+  17: ['cs-cl2']
 };
-const REVIEW_POSITION = 13;
+const REVIEW_POSITION = 17;
 // LOCKED_POSITIONS: slot 2 LOCKED (cs-1bm1 confirmed). Slot 13 is review (cs-a3 vs cs-34).
 const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -12817,6 +12812,8 @@ const APPENDIX_ORDER = [
   'cs-rcp',  // 12: RECEIPTS — "Not a thesis. A two-year proof." [moved from main 2026-05-01 per Dave]
   'cs-kl',   // 13: THE KRISTA LOOP — proprietary training-data made visible [moved from main 2026-05-01 per Dave — "came out of nowhere"]
   'cs-wn',   // 14: WHY NOW — three macro forces converged [moved from main 2026-05-01 per Dave]
+  'cs-mv5',  // 15: Mission · Variant E (Operating System of Next Era) [DELETED from main 2026-05-01 per Dave — backup only]
+  'cs-mv7',  // 16: Mission · Variant G (Mission Hero, Timeline Evidence) [DELETED from main 2026-05-01 per Dave — backup only]
   // cs-37 (Voice of the Community) DELETED 2026-04-30 per Dave
   'cs-16c',  // 3: GnR takes action / Autonomous Actions — moved from main deck 2026-04-29 per Dave
   'cs-9',    // 3: Invitation-Feed orbital — moved from main deck 2026-04-29 per Dave
