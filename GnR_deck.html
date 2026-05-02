@@ -6900,7 +6900,6 @@ html, body, html body{
         animateCs4Court();
         </script>
 
-        <div class="cs4-flip-hint">&#x21BB; click to flip back</div>
         </div>
        </div>
       </div>
@@ -6964,7 +6963,6 @@ html, body, html body{
             <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:rgba(26,22,18,0.58);line-height:1.35">One number. One dimension.<br><span style="color:rgba(26,22,18,0.45);font-size:0.95rem">100-year reign &mdash; ending.</span></div>
           </div>
         </div>
-        <div class="cs4-flip-hint">&#x21BB; click to flip back</div>
         </div>
        </div>
       </div>
@@ -7241,7 +7239,6 @@ html, body, html body{
         </div>
 
       </div>
-        <div class="cs11-flip-hint">&#x21BB; flip back</div>
       </div>
      </div>
     </div>
@@ -7320,7 +7317,6 @@ html, body, html body{
           </g>
         </svg>
       </div>
-        <div class="cs11-flip-hint">&#x21BB; flip back</div>
       </div>
      </div>
     </div>
@@ -7785,17 +7781,23 @@ html, body, html body{
   html[data-export="1"] #cs-gnr .gnr-env-bg { transform:none !important; opacity:1 !important; animation:none !important; }
   html[data-export="1"] #cs-gnr .gnr-env-bg { transform:translate(-50%,-50%) rotate(-3deg) !important; }
 
-  /* 3 emphasis callouts (kept) */
-  #cs-gnr .gnr-callout { max-width:230px; opacity:0; }
-  #cs-gnr.active .gnr-callout { animation: gnrCalloutIn 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes gnrCalloutIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  /* 3 emphasis callouts — REDESIGNED 2026-05-02 PM:
+     short titles deserve hero treatment. Big Fraunces serif, gold-italic accent on the
+     punchy word, no number dots, thin centered gold rule above as quiet "marker,"
+     vertical gold gradient dividers between, generous breathing room. */
+  #cs-gnr .gnr-callout { position:relative; padding:26px 28px 8px; text-align:center; opacity:0; }
+  /* Vertical gradient divider between callouts */
+  #cs-gnr .gnr-callout + .gnr-callout::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:linear-gradient(180deg, transparent 0%, rgba(184,149,74,0.42) 35%, rgba(184,149,74,0.42) 65%, transparent 100%); }
+  /* Centered gold rule above each title */
+  #cs-gnr .gnr-callout::after { content:''; display:block; position:absolute; top:0; left:50%; transform:translateX(-50%); width:36px; height:2px; background:#b8954a; opacity:0.65; border-radius:2px; }
+  #cs-gnr.active .gnr-callout { animation: gnrCalloutIn 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
+  @keyframes gnrCalloutIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
   #cs-gnr.active .gnr-callout-1 { animation-delay: 1.6s; }
   #cs-gnr.active .gnr-callout-2 { animation-delay: 1.8s; }
   #cs-gnr.active .gnr-callout-3 { animation-delay: 2.0s; }
   html[data-export="1"] #cs-gnr .gnr-callout { opacity:1 !important; transform:none !important; animation:none !important; }
-  #cs-gnr .gnr-cnum { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:#b8954a; color:#f3ead8; font-family:'Playfair Display',serif; font-size:0.78rem; font-weight:700; margin-bottom:6px; box-shadow:0 2px 6px rgba(184,149,74,0.3); }
-  #cs-gnr .gnr-ctitle { font-family:'Fraunces','Playfair Display',serif; font-size:0.95rem; font-weight:700; color:#1a1612; line-height:1.2; margin-bottom:3px; letter-spacing:-0.005em; }
-  #cs-gnr .gnr-cdesc { font-family:'Playfair Display',serif; font-style:italic; font-size:0.78rem; line-height:1.35; color:rgba(26,22,18,0.65); }
+  #cs-gnr .gnr-ctitle { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.5rem,2.5vw,2.0rem); font-weight:700; color:#1a1612; line-height:1.15; letter-spacing:-0.018em; }
+  #cs-gnr .gnr-ctitle em { font-style:italic; font-weight:500; color:#b8954a; }
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr">
 <section style="position:relative;min-height:100%;width:100%">
@@ -7845,19 +7847,16 @@ html, body, html body{
     html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:none !important; animation:none !important; }
   </style>
 
-  <!-- 3 emphasis callouts: what the invitation feels like [Dave 2026-05-02] -->
-  <div style="position:relative;width:100%;max-width:1100px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start;text-align:left">
-    <div class="gnr-callout gnr-callout-1" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
-      <div class="gnr-cnum">1</div>
-      <div class="gnr-ctitle">Invitations, not calendars.</div>
+  <!-- 3 emphasis callouts — hero treatment per Dave 2026-05-02 PM (big Fraunces, gold-italic accent, vertical dividers) -->
+  <div style="position:relative;width:100%;max-width:1180px;margin:30px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:center">
+    <div class="gnr-callout gnr-callout-1">
+      <div class="gnr-ctitle"><em>Invitations,</em> not calendars.</div>
     </div>
-    <div class="gnr-callout gnr-callout-2" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
-      <div class="gnr-cnum">2</div>
-      <div class="gnr-ctitle">You belong.</div>
+    <div class="gnr-callout gnr-callout-2">
+      <div class="gnr-ctitle">You <em>belong.</em></div>
     </div>
-    <div class="gnr-callout gnr-callout-3" style="position:relative;padding-left:6px;border-left:2px solid rgba(184,149,74,0.4)">
-      <div class="gnr-cnum">3</div>
-      <div class="gnr-ctitle">Who gives?</div>
+    <div class="gnr-callout gnr-callout-3">
+      <div class="gnr-ctitle">Who <em>gives?</em></div>
     </div>
   </div>
 
@@ -7886,7 +7885,7 @@ html, body, html body{
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Promoted to slide headline: 'Honest feedback · about other players' is now the main header [Dave 2026-04-30 PM] -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:36px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#b8954a">what players would never say to each other.</em>
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#b8954a">what players would never say to each other</em>
     </div>
 
     <!-- 3-column grid: LEFT card | ≠ | RIGHT card -->
