@@ -820,6 +820,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
     gap: 12px;
     z-index: 100;
   }
+  /* Hide nav-dots on tablet/touch viewports — they covered slide content (Dave 2026-05-02). Swipe + D/A still navigate. */
+  @media (max-width: 1100px), (hover: none) and (pointer: coarse) {
+    .nav-dots { display: none !important; }
+  }
   .nav-dot {
     width: 10px;
     height: 10px;
@@ -6382,7 +6386,7 @@ html, body, html body{
 </style>
 <!-- Matchmaking / Correct Data — nav pos 5 (moved from 11 per Apr feedback — lands right after Pickleball 24-experiments wedge, answers "measurable by what?") -->
 <div class="casey-slide ds-intro" id="cs-4">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;user-select:text;-webkit-user-select:text;">The data exists in all our heads</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;user-select:text;-webkit-user-select:text;">The uncomfortable cultural shift</div>
 
   <div class="teaser-container" style="max-width:1020px">
     <!-- Restructured Dave 2026-04-28: GREEN hero on TOP (the new paradigm — what
@@ -7257,7 +7261,7 @@ html, body, html body{
 
 <div class="cs3-headline cs3-anim">
     Pickleball is the <em>fastest-growing, highest-velocity,<br>
-    densest social-signal</em> community ever.
+    densest GnR-signal</em> community ever.
 </div>
 
 <!-- Click hint — visible until first click [Dave 2026-05-01] -->
@@ -7655,7 +7659,7 @@ html, body, html body{
   <div style="padding:54px 48px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Promoted to slide headline: 'Honest feedback · about other players' is now the main header [Dave 2026-04-30 PM] -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:36px;max-width:1080px;margin-left:auto;margin-right:auto;letter-spacing:-0.018em">
-      Players tell <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> <em style="font-style:italic;font-weight:500;color:#b8954a">what they'd never tell each other.</em>
+      <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> learns <em style="font-style:italic;font-weight:500;color:#b8954a">what players would never say to each other.</em>
     </div>
 
     <!-- 3-column grid: LEFT card | ≠ | RIGHT card -->
@@ -7722,7 +7726,7 @@ html, body, html body{
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
-      Same courts. Better groups.<br>
+      Same courts. Higher GnR.<br>
       <em style="font-style:italic;color:#b8954a">More people showing up.</em>
     </div>
     <div style="display:grid;grid-template-columns:1fr 56px 1fr;gap:0;max-width:980px;margin:0 auto 32px;align-items:center">
@@ -7749,7 +7753,7 @@ html, body, html body{
     <!-- Three quotes -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:1080px;margin:0 auto">
       <div class="c11e-anim c11e-q1" style="padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
-        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;I don&rsquo;t even check calendar events anymore.&rdquo;</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.86rem;color:#1a1612;line-height:1.45;margin-bottom:10px">&ldquo;I don&rsquo;t even check the calendar anymore.&rdquo;</div>
         <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5B8FD4">&mdash; Member Dean Taylor</div>
       </div>
       <div class="c11e-anim c11e-q2" style="padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.22);text-align:left">
@@ -7822,7 +7826,7 @@ html, body, html body{
 <!-- Current Phase: Human-In-The-Loop — nav pos 15 -->
 <div class="casey-slide ds-focus appendix-slide" id="cs-13" style="display:none">
 <section id="s4" style="position:relative">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Engine</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The intelligence</div>
 <div class="orb orb-g" style="width:400px;height:400px;top:8%;right:-10%"></div>
 <div class="inner" style="padding-top:48px;display:flex;flex-direction:column;align-items:center">
   <div class="title" style="text-align:center">Human-<em style="color:#b8954a">in-the-loop.</em></div>
@@ -8195,7 +8199,7 @@ html, body, html body{
       <circle cx="600" cy="240" r="86" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="2.4"/>
       <circle cx="600" cy="240" r="70" fill="rgba(255,235,170,0.15)" stroke="rgba(184,149,74,0.4)" stroke-width="1"/>
       <!-- Engine label + GnR mark -->
-      <text x="600" y="216" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(26,22,18,0.6)">THE ENGINE</text>
+      <text x="600" y="216" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(26,22,18,0.6)">THE INTELLIGENCE</text>
       <text x="582" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="34" font-weight="900" fill="#5B8FD4">G</text>
       <text x="602" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="26" font-weight="500" font-style="italic" fill="#1a1612">n</text>
       <text x="622" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="34" font-weight="900" fill="#c8462c">R</text>
@@ -8523,7 +8527,7 @@ html, body, html body{
     <!-- HEADLINE -->
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.18;color:#1a1612;margin-bottom:24px;letter-spacing:-0.01em">
       Turned down the acquisition.<br>
-      Built <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em> &mdash; to blaze the trail for real-world community.
+      Built <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em> &mdash; to prove the future of real-world community.
     </div>
 
     <!-- TIMELINE — horizontal, with connector line, readable labels -->
@@ -8769,7 +8773,7 @@ html, body, html body{
 <div class="inner" style="padding:80px 56px 48px;max-width:1200px;margin:0 auto">
 
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.7rem);font-weight:800;line-height:1.18;color:#1a1612;letter-spacing:-0.01em;margin-bottom:24px;max-width:1080px">
-    Pickleball is the lowest-risk path to the world's first <em style="font-style:italic;color:#b8954a">autonomous social coordination network.</em>
+    Pickleball is the lowest-risk path to the world's first <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
   </div>
 
   <!-- "19.8M US players. 18.8M build it by hand." subtitle deleted 2026-05-01 per Dave -->
@@ -8777,9 +8781,9 @@ html, body, html body{
 
   <!-- 4 cards · 4 reasons pickleball is the perfect wedge [Dave 2026-04-30 PM evening] -->
   <style>
-    #cs-25 .c25-card { padding:28px 22px 24px; border-radius:14px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; min-height:240px; }
+    #cs-25 .c25-card { padding:28px 16px 24px; border-radius:14px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:14px; min-height:240px; overflow-wrap:break-word; }
     #cs-25 .c25-icon { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-    #cs-25 .c25-title { font-family:'Playfair Display',serif; font-size:clamp(1.05rem,1.5vw,1.3rem); font-weight:800; line-height:1.2; }
+    #cs-25 .c25-title { font-family:'Playfair Display',serif; font-size:clamp(0.95rem,1.35vw,1.18rem); font-weight:800; line-height:1.2; max-width:100%; word-break:normal; hyphens:auto; }
     #cs-25 .c25-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:.95rem; line-height:1.25; }
     #cs-25 .c25-detail { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.04em; color:rgba(26,22,18,0.62); line-height:1.4; margin-top:auto; }
     /* Cascade entrance */
@@ -8824,7 +8828,7 @@ html, body, html body{
         </svg>
       </div>
       <div class="c25-title" style="color:#3a7da3">Socially dense.<br>High velocity.</div>
-      <div class="c25-detail">24 unique groups per week, per club</div>
+      <div class="c25-detail">24 unique foursomes per week, per player</div>
     </div>
 
     <!-- 3. Incumbent coordination stack stuck in 2005 -->
@@ -9814,7 +9818,7 @@ html, body, html body{
   <div style="text-align:center;max-width:1100px;padding:0 48px">
     <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-bottom:36px">Our mission</div>
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:700;color:#1a1612;line-height:1.05;letter-spacing:-0.02em">
-      Our mission is for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+      Mission: for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
     </div>
     <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-top:48px">
       <div style="width:80px;height:1px;background:#b8954a"></div>
@@ -9883,7 +9887,7 @@ html, body, html body{
 
     <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-bottom:6px">Our mission</div>
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em">
-      Our mission is for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+      Mission: for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
     </div>
 
     <!-- Constellation: 8 people around a center, all connected by gold arcs -->
@@ -9956,7 +9960,7 @@ html, body, html body{
       </div>
 
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.015em">
-        Our mission is for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        Mission: for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
       </div>
 
       <div style="margin-top:36px;display:flex;align-items:center;justify-content:center;gap:10px">
@@ -10135,7 +10139,7 @@ html, body, html body{
       </div>
       <!-- The 7th: GnR's claim -->
       <div class="mv6-gnr-card" style="text-align:center;border:2px solid #b8954a;border-radius:12px;padding:14px 12px 16px;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.05));box-shadow:0 8px 24px rgba(184,149,74,0.18);position:relative">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:0.22em;color:#b8954a;text-transform:uppercase;margin-bottom:8px">2030s &middot; Now</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.7rem;font-weight:800;letter-spacing:0.22em;color:#b8954a;text-transform:none;margin-bottom:8px">2030s</div>
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 6px"><circle cx="6" cy="6" r="2.6" fill="rgba(77,130,198,0.5)" stroke="#4d82c6"/><circle cx="18" cy="6" r="2.6" fill="rgba(200,70,44,0.45)" stroke="#c8462c"/><circle cx="12" cy="18" r="2.6" fill="rgba(184,149,74,0.5)" stroke="#b8954a"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="6" x2="12" y2="18"/><line x1="18" y1="6" x2="12" y2="18"/></svg>
         <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#1a1612;line-height:1;margin-bottom:5px">Connection</div>
         <div style="font-family:'Playfair Display',serif;font-size:0.85rem;font-style:italic;line-height:1">
@@ -10148,7 +10152,7 @@ html, body, html body{
     <!-- Mission line -->
     <div class="mv6-mission" style="margin-top:42px;text-align:center;max-width:1100px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.08;letter-spacing:-0.02em">
-        Our mission is for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
       </div>
     </div>
 
@@ -10189,7 +10193,7 @@ html, body, html body{
     <!-- HERO mission line -->
     <div class="mv7-mission" style="text-align:center;max-width:1280px;margin-bottom:48px">
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;color:#1a1612;line-height:1.04;letter-spacing:-0.025em">
-        Our mission is for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+        Mission: for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
       </div>
     </div>
 
@@ -10229,7 +10233,7 @@ html, body, html body{
       </div>
       <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#b8954a;font-weight:700">→</div>
       <div class="mv7-chip" style="display:flex;flex-direction:column;align-items:center;border:2px solid #b8954a;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.06));padding:9px 18px;border-radius:999px;min-width:108px;box-shadow:0 4px 14px rgba(184,149,74,0.22)">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:800;letter-spacing:0.2em;color:#b8954a">2030s &middot; Now</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.46rem;font-weight:800;letter-spacing:0.2em;color:#b8954a;text-transform:none">2030s</div>
         <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1a1612;line-height:1.1">Connection</div>
       </div>
     </div>
@@ -10616,7 +10620,6 @@ html, body, html body{
         <text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
         <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
         <text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
-        <text x="700" y="544" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="12.5" fill="rgba(26,22,18,0.58)">500 pickleball clubs</text>
       </g>
 
       <!-- YEAR 5 nodes: Adjacent sports (4 nodes) -->
@@ -10710,7 +10713,7 @@ html, body, html body{
     </div>
 
     <div style="padding:24px 22px;border-radius:12px;background:rgba(184,149,74,0.05);border:1px solid rgba(184,149,74,0.28);text-align:left">
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:#1a1612;line-height:1.45;margin-bottom:14px">&ldquo;I don't even check calendar events anymore. The invitations just show up — and they're always right.&rdquo;</div>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:#1a1612;line-height:1.45;margin-bottom:14px">&ldquo;I don't even check the calendar anymore. The invitations just show up — and they're always right.&rdquo;</div>
       <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#b8954a">Member &middot; Dean Taylor</div>
     </div>
 
@@ -10830,7 +10833,7 @@ html, body, html body{
         <line x1="270" y1="248" x2="279" y2="255"/>
         <line x1="308" y1="210" x2="312" y2="222"/>
       </g>
-      <text x="360" y="282" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.62)">THE ENGINE</text>
+      <text x="360" y="282" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.62)">THE INTELLIGENCE</text>
       <text x="338" y="318" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#5B8FD4">G</text>
       <text x="362" y="318" text-anchor="middle" font-family="Playfair Display,serif" font-size="28" font-weight="500" font-style="italic" fill="#1a1612">n</text>
       <text x="386" y="318" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#c8462c">R</text>
@@ -10948,7 +10951,7 @@ html, body, html body{
         <circle cx="600" cy="240" r="124" fill="none" stroke="rgba(184,149,74,0.30)" stroke-width="1"/>
         <circle cx="600" cy="240" r="86" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="2.4"/>
         <circle cx="600" cy="240" r="70" fill="rgba(255,235,170,0.15)" stroke="rgba(184,149,74,0.4)" stroke-width="1"/>
-        <text x="600" y="216" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(26,22,18,0.6)">THE ENGINE</text>
+        <text x="600" y="216" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="rgba(26,22,18,0.6)">THE INTELLIGENCE</text>
         <text x="582" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="34" font-weight="900" fill="#5B8FD4">G</text>
         <text x="602" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="26" font-weight="500" font-style="italic" fill="#1a1612">n</text>
         <text x="622" y="252" text-anchor="middle" font-family="Playfair Display, serif" font-size="34" font-weight="900" fill="#c8462c">R</text>
@@ -11001,8 +11004,7 @@ html, body, html body{
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Market Size</div>
 <div class="inner" style="padding-top:72px;text-align:center;max-width:1180px">
-  <div class="display" style="font-size:clamp(2.2rem,4.4vw,3.4rem);margin-bottom:14px;line-height:1.18">Two <em style="font-style:italic;color:#b8954a">revenue streams.</em></div>
-  <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.7vw,1.35rem);color:rgba(26,22,18,0.65);margin-bottom:48px">One graph powers both.</div>
+  <div class="display" style="font-size:clamp(2.2rem,4.4vw,3.4rem);margin-bottom:48px;line-height:1.18">Pickleball <em style="font-style:italic;color:#b8954a">TAM.</em></div>
   <div style="display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:48px">
     <div style="background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.22);border-radius:18px;padding:36px 50px;min-width:340px">
       <div style="font-size:0.78rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">B2B / Clubs</div>
@@ -11018,12 +11020,6 @@ html, body, html body{
       <div style="font-size:0.85rem;color:rgba(26,22,18,0.62);margin-top:14px">10M regulars &times; $20/mo</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,0.55);margin-top:4px">Comp: Strava $12/mo</div>
     </div>
-  </div>
-  <div style="font-size:0.78rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:14px">Growth</div>
-  <div style="display:flex;gap:36px;justify-content:center;flex-wrap:wrap">
-    <div style="font-size:1.05rem;color:rgba(26,22,18,0.7)">Player growth: <strong style="color:var(--mint,#49b4a0)">+45.8% YoY</strong></div>
-    <div style="font-size:1.05rem;color:rgba(26,22,18,0.7)">Courts: <strong style="color:#b8954a">+37% YoY</strong></div>
-    <div style="font-size:1.05rem;color:rgba(26,22,18,0.7)">Locations: <strong style="color:#1a1612">+34% YoY</strong></div>
   </div>
 </div>
 </section>
@@ -12025,7 +12021,7 @@ html, body, html body{
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Community</div>
 <div class="inner" style="padding-top:64px;text-align:center;max-width:1600px;margin:0 auto">
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1200px;margin:0 auto">
-    Community <em style="font-style:italic;font-weight:500;color:#b8954a">brings us together.</em>
+    It's <em style="font-style:italic;font-weight:500;color:#b8954a">community</em> that <em style="font-style:italic;font-weight:500;color:#b8954a">brings us together.</em>
   </div>
 
   <div class="c2c-grid">
@@ -12073,6 +12069,16 @@ html, body, html body{
     </div>
 
     <div class="c2c-card">
+      <div class="c2c-icon">🧘</div>
+      <div class="c2c-label">Fitness &amp;<br>Gym Groups</div>
+    </div>
+
+    <div class="c2c-card">
+      <div class="c2c-icon">📚</div>
+      <div class="c2c-label">Homeschool<br>Groups</div>
+    </div>
+
+    <div class="c2c-card">
       <div class="c2c-icon">🏘️</div>
       <div class="c2c-label">Neighborhoods</div>
     </div>
@@ -12083,18 +12089,8 @@ html, body, html body{
     </div>
 
     <div class="c2c-card">
-      <div class="c2c-icon">📚</div>
-      <div class="c2c-label">Homeschool<br>Groups</div>
-    </div>
-
-    <div class="c2c-card">
       <div class="c2c-icon">⛪</div>
       <div class="c2c-label">Faith<br>Communities</div>
-    </div>
-
-    <div class="c2c-card">
-      <div class="c2c-icon">🧘</div>
-      <div class="c2c-label">Fitness &amp;<br>Gym Groups</div>
     </div>
   </div>
   <!-- "Our communities run on connection" sub-line REMOVED per Dave 2026-05-01 — moved (and reworded) to cs-2b headline -->
@@ -12879,7 +12875,7 @@ const SLIDE_ORDER = [
   // cs-rcp (Receipts) → APPENDIX 2026-05-01 per Dave
   // cs-kl (Krista Loop) → APPENDIX 2026-05-01 per Dave ("came out of nowhere")
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
-  'cs-25',    // 13 Why pickleball first ("Pickleball is the lowest-risk path to the world's first autonomous social coordination network.")
+  'cs-25',    // 13 Why pickleball first ("Pickleball is the lowest-risk path to the world's first autonomous human connection network.")
   'cs-18',    // 14 Founder · CEO · Dave Velardo (moved here per Dave 2026-04-30 PM evening)
   'cs-27',    // 15 CTO · Steve Callan (moved here per Dave 2026-04-30 PM evening)
   // cs-4 (Moat — data in our heads) → APPENDIX 2026-04-30 PM evening per Dave (then back to main same evening)
@@ -13659,17 +13655,39 @@ document.addEventListener('wheel', e => {
   setTimeout(() => { wheelLock = false; }, 400);
 }, { passive: false });
 
-// Touch swipe nav
+// Touch swipe nav — Dave 2026-05-02 update:
+//   Horizontal swipe (left/right)  = slide nav (no reveal)
+//   Vertical swipe   (up/down)     = animate reveal/reverse (cs1bm1, cs2b, cs3, cs11d), then slide nav
 let touchStartX = 0, touchStartY = 0, touchLock = false;
 document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; }, { passive: true });
 document.addEventListener('touchend', e => {
   if (touchLock) return;
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
-  if (Math.abs(dx) < 50 || Math.abs(dy) > Math.abs(dx)) return;
+  const adx = Math.abs(dx), ady = Math.abs(dy);
+  if (adx < 50 && ady < 50) return;  // ignore taps + tiny drags
   touchLock = true;
-  if (dx < 0) { if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1); }
-  else { if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1); }
+  if (ady > adx) {
+    // Vertical swipe → animate-reveal aware (mirrors ArrowRight / ArrowLeft logic)
+    const slideId = SLIDE_ORDER[current - 1];
+    if (dy < 0) { // swipe UP → advance reveal
+      if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
+    } else {       // swipe DOWN → reverse reveal
+      if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
+    }
+  } else {
+    // Horizontal swipe → fast slide nav (no reveal)
+    if (dx < 0) { if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1); }
+    else        { if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1); }
+  }
   setTimeout(() => { touchLock = false; }, 400);
 }, { passive: true });
 
@@ -15697,8 +15715,8 @@ const SPEAKER_NOTES = {
   },
   'cs-25': {
     title: "Pickleball is the lowest-risk wedge",
-    oneLine: "The lowest-risk path to the world's first autonomous social coordination network.",
-    body: `<p>Read the headline as a thesis statement, not a hope. <em>"<strong>Pickleball is the lowest-risk path to the world's first autonomous social coordination network.</strong>"</em></p>
+    oneLine: "The lowest-risk path to the world's first autonomous human connection network.",
+    body: `<p>Read the headline as a thesis statement, not a hope. <em>"<strong>Pickleball is the lowest-risk path to the world's first autonomous human connection network.</strong>"</em></p>
 <p>Then the math: <em>"19.8M US players. <strong>18.8M build it by hand.</strong>"</em> Pause. Let it land.</p>
 <p><strong>Three reasons. Three cards. Walk fast:</strong></p>
 <p><strong>Fastest-growing sport.</strong> <em>"90+ new clubs every month. Riding a wave nobody can stop."</em></p>
