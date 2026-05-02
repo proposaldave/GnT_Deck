@@ -8525,7 +8525,7 @@ html, body, html body{
     <!-- HEADLINE -->
     <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.18;color:#1a1612;margin-bottom:24px;letter-spacing:-0.01em">
       Turned down the acquisition.<br>
-      Built <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em> &mdash; to prove the future of real-world community.
+      Built <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em> &mdash; to blaze the trail for real-world community.
     </div>
 
     <!-- TIMELINE — horizontal, with connector line, readable labels -->
@@ -9558,7 +9558,7 @@ html, body, html body{
   html[data-export="1"] #cs-26 .pr-arrow { opacity:1 !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-26">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Promise</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our Promise</div>
 <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
 
   <!-- Hero diptych: GIVE | n | RECEIVE — the slide IS the brand mark, exploded -->
@@ -12079,6 +12079,15 @@ html, body, html body{
   #cs-1bm1 .ti-card,
   #cs-1bm1 .ti-ph { backface-visibility: hidden; -webkit-backface-visibility: hidden; position: absolute !important; inset: 0; width: 100%; margin: 0; }
   #cs-1bm1 .ti-card { transform: rotateY(180deg); }
+  /* iOS Safari fix 2026-05-01: backface-visibility leaks text through on iOS. Belt-and-suspenders opacity hide. */
+  #cs-1bm1 .ti-card { opacity: 0; transition: opacity 0.35s ease; }
+  #cs-1bm1 .ti-ph   { opacity: 1; transition: opacity 0.35s 0.45s ease; }
+  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
+  #cs-1bm1[data-left="1"]  .ti-flip-left  .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
+  #cs-1bm1[data-right="1"] .ti-flip-right .ti-card { opacity: 1; transition: opacity 0.35s 0.45s ease; }
+  #cs-1bm1[data-right="1"] .ti-flip-right .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
+  html[data-export="1"] #cs-1bm1 .ti-card { opacity: 1 !important; transition: none !important; }
+  html[data-export="1"] #cs-1bm1 .ti-ph   { opacity: 0 !important; transition: none !important; }
   /* Per-card flip state — each card independently togglable via mouse click [Dave 2026-04-30 PM] */
   #cs-1bm1[data-left="1"] .ti-flip-left { transform: rotateY(180deg); }
   #cs-1bm1[data-right="1"] .ti-flip-right { transform: rotateY(180deg); }
