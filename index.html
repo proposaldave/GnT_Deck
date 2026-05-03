@@ -5377,8 +5377,8 @@ html, body, html body{
       </div>
     </div>
   </div>
-  <!-- Contact info — moved to bottom-right corner [Dave 2026-05-03 PM]: cleaner cover, business-card placement -->
-  <div style="position:absolute;bottom:30px;right:36px;text-align:right;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.65);font-weight:500;line-height:1.85;z-index:10">
+  <!-- Contact info — bottom-LEFT corner [Dave 2026-05-03 PM, moved from bottom-right]: business-card placement -->
+  <div style="position:absolute;bottom:30px;left:36px;text-align:left;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(26,22,18,0.65);font-weight:500;line-height:1.85;z-index:10">
     <div style="color:#1a1612;font-weight:700">Dave Velardo</div>
     <div style="color:rgba(26,22,18,0.55)">Founder &amp; CEO</div>
     <div><a href="mailto:dave@givenreceive.com" style="color:rgba(26,22,18,0.7);text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.4)">dave@givenreceive.com</a></div>
@@ -7028,75 +7028,80 @@ html, body, html body{
        <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
         <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
         <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
-          <!-- FRONT: row of community-type emojis (mirrors cs-2c grid) with single red strike across — says "today's data layer fails ALL these communities" [Dave 2026-05-03 PM v5] -->
-          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;padding:6px 16px;width:100%">
-            <!-- Community-type icon row (desaturated/dimmed to convey "running on old broken infrastructure") -->
-            <div style="display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:nowrap;position:relative;width:100%;max-width:560px;filter:grayscale(0.45) opacity(0.78)">
-              <div style="font-size:42px;line-height:1">⛹️</div>
-              <div style="font-size:42px;line-height:1">🧘</div>
-              <div style="font-size:42px;line-height:1">🏘️</div>
-              <div style="font-size:42px;line-height:1">🏛️</div>
-              <div style="font-size:42px;line-height:1">⛪</div>
-              <div style="font-size:42px;line-height:1">⛳</div>
+          <!-- FRONT: row of community-type emojis (mirrors cs-2c grid: ALL 8 categories) with single red strike — says "today's data fails ALL these communities" [Dave 2026-05-03 PM v6] -->
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:6px 16px;width:100%">
+            <!-- Community-type icon row (desaturated to convey "running on old broken infrastructure") -->
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;position:relative;width:100%;max-width:780px;filter:grayscale(0.45) opacity(0.80)">
+              <!-- 1. Social Sports — pickleball ball SVG (matches cs-2c Social Sports icon exactly) -->
+              <div style="display:flex;align-items:center;justify-content:center;width:46px;height:46px">
+                <svg width="42" height="42" viewBox="0 0 60 60" fill="none">
+                  <defs>
+                    <radialGradient id="cs4PbRow" cx="38%" cy="34%" r="62%">
+                      <stop offset="0%" stop-color="#f0e85a"/>
+                      <stop offset="60%" stop-color="#d8cf3a"/>
+                      <stop offset="100%" stop-color="#a89c2a"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="30" cy="30" r="24" fill="url(#cs4PbRow)" stroke="#857c1c" stroke-width="0.8"/>
+                  <g fill="#857c1c" opacity="0.78">
+                    <circle cx="22" cy="14" r="1.6"/><circle cx="30" cy="11" r="1.6"/><circle cx="38" cy="14" r="1.6"/>
+                    <circle cx="15" cy="22" r="1.6"/><circle cx="23" cy="22" r="1.6"/><circle cx="31" cy="20" r="1.6"/><circle cx="39" cy="22" r="1.6"/><circle cx="45" cy="22" r="1.6"/>
+                    <circle cx="13" cy="31" r="1.6"/><circle cx="22" cy="31" r="1.6"/><circle cx="30" cy="30" r="1.6"/><circle cx="38" cy="31" r="1.6"/><circle cx="47" cy="31" r="1.6"/>
+                    <circle cx="16" cy="40" r="1.6"/><circle cx="24" cy="40" r="1.6"/><circle cx="32" cy="41" r="1.6"/><circle cx="40" cy="40" r="1.6"/>
+                    <circle cx="22" cy="48" r="1.6"/><circle cx="30" cy="50" r="1.6"/><circle cx="38" cy="48" r="1.6"/>
+                  </g>
+                </svg>
+              </div>
+              <div style="font-size:38px;line-height:1">🧘</div>
+              <div style="font-size:38px;line-height:1">📚</div>
+              <div style="font-size:38px;line-height:1">🎓</div>
+              <div style="font-size:38px;line-height:1">🏘️</div>
+              <div style="font-size:38px;line-height:1">🏛️</div>
+              <div style="font-size:38px;line-height:1">⛪</div>
+              <div style="font-size:38px;line-height:1">⛳</div>
               <!-- Red strike line through the entire row -->
               <div style="position:absolute;left:-6px;right:-6px;top:50%;height:3px;background:#c8462c;transform:translateY(-50%) rotate(-2deg);box-shadow:0 0 8px rgba(200,70,44,0.30);border-radius:2px;pointer-events:none"></div>
             </div>
-            <!-- Tiny labels under each icon (low-key, just to anchor what they are) -->
-            <div style="display:flex;align-items:center;justify-content:center;gap:18px;width:100%;max-width:560px;font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,0.45)">
-              <div style="flex:1;text-align:center;min-width:42px">Sports</div>
-              <div style="flex:1;text-align:center;min-width:42px">Fitness</div>
-              <div style="flex:1;text-align:center;min-width:42px">Neigh.</div>
-              <div style="flex:1;text-align:center;min-width:42px">Towns</div>
-              <div style="flex:1;text-align:center;min-width:42px">Faith</div>
-              <div style="flex:1;text-align:center;min-width:42px">Clubs</div>
+            <!-- Labels under each icon — bigger, more legible -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;width:100%;max-width:780px;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,0.55);line-height:1.2">
+              <div style="flex:1;text-align:center">Sports</div>
+              <div style="flex:1;text-align:center">Fitness</div>
+              <div style="flex:1;text-align:center">Homeschool</div>
+              <div style="flex:1;text-align:center">Colleges</div>
+              <div style="flex:1;text-align:center">Neighbor-<br>hoods</div>
+              <div style="flex:1;text-align:center">Towns</div>
+              <div style="flex:1;text-align:center">Faith</div>
+              <div style="flex:1;text-align:center">Country<br>Clubs</div>
             </div>
           </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
         <!-- BACK: OLD PARADIGM expanded to ego/self/values dimension per Dave 2026-05-02.
              X overlay constrained inside card (overflow:hidden, viewBox-relative coords). -->
-        <div class="cs4-flip-back" style="width:100%;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.22);border-radius:16px;padding:28px 38px;text-align:center;display:flex;align-items:center;justify-content:center;gap:32px;position:absolute;inset:0;overflow:hidden;transform:rotateY(180deg);box-sizing:border-box">
-        <!-- Giant X overlay — coords pulled inward + overflow:hidden on parent so it stays inside -->
-        <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:0.55" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="12" y1="16" x2="88" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
-          <line x1="88" y1="16" x2="12" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
+        <div class="cs4-flip-back" style="width:100%;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.22);border-radius:16px;padding:32px 40px;text-align:center;display:flex;align-items:center;justify-content:center;gap:24px;position:absolute;inset:0;overflow:hidden;transform:rotateY(180deg);box-sizing:border-box">
+        <!-- Subtle red diagonal slashes in CORNERS only (was a giant X overlapping the headline) [Dave 2026-05-03 PM v2] -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.16" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="0" y1="0" x2="22" y2="22" stroke="#c8462c" stroke-width="1.5"/>
+          <line x1="100" y1="0" x2="78" y2="22" stroke="#c8462c" stroke-width="1.5"/>
+          <line x1="0" y1="100" x2="22" y2="78" stroke="#c8462c" stroke-width="1.5"/>
+          <line x1="100" y1="100" x2="78" y2="78" stroke="#c8462c" stroke-width="1.5"/>
         </svg>
-        <!-- Pickleball ball graphic — matches the Social Sports icon on cs-2c [Dave 2026-05-03 PM:
-             ties the OLD PARADIGM specifically to PICKLEBALL — what we're measuring TODAY in the sport] -->
-        <svg width="92" height="92" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;position:relative;z-index:1">
-          <defs>
-            <radialGradient id="cs4PbBall" cx="38%" cy="34%" r="62%">
-              <stop offset="0%" stop-color="#f0e85a"/>
-              <stop offset="60%" stop-color="#d8cf3a"/>
-              <stop offset="100%" stop-color="#a89c2a"/>
-            </radialGradient>
-          </defs>
-          <circle cx="30" cy="30" r="24" fill="url(#cs4PbBall)" stroke="#857c1c" stroke-width="0.8"/>
-          <g fill="#857c1c" opacity="0.78">
-            <circle cx="22" cy="14" r="1.6"/>
-            <circle cx="30" cy="11" r="1.6"/>
-            <circle cx="38" cy="14" r="1.6"/>
-            <circle cx="15" cy="22" r="1.6"/>
-            <circle cx="23" cy="22" r="1.6"/>
-            <circle cx="31" cy="20" r="1.6"/>
-            <circle cx="39" cy="22" r="1.6"/>
-            <circle cx="45" cy="22" r="1.6"/>
-            <circle cx="13" cy="31" r="1.6"/>
-            <circle cx="22" cy="31" r="1.6"/>
-            <circle cx="30" cy="30" r="1.6"/>
-            <circle cx="38" cy="31" r="1.6"/>
-            <circle cx="47" cy="31" r="1.6"/>
-            <circle cx="16" cy="40" r="1.6"/>
-            <circle cx="24" cy="40" r="1.6"/>
-            <circle cx="32" cy="41" r="1.6"/>
-            <circle cx="40" cy="40" r="1.6"/>
-            <circle cx="22" cy="48" r="1.6"/>
-            <circle cx="30" cy="50" r="1.6"/>
-            <circle cx="38" cy="48" r="1.6"/>
-          </g>
-          <ellipse cx="22" cy="20" rx="7" ry="3.6" fill="rgba(255,255,255,0.42)"/>
+        <!-- Replaced pickleball ball with broken-spreadsheet/clipboard icon — fits the new community-row FRONT theme [Dave 2026-05-03 PM v2] -->
+        <svg width="86" height="86" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;position:relative;z-index:1">
+          <!-- Clipboard/spreadsheet -->
+          <rect x="10" y="8" width="40" height="46" rx="2.5" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="2"/>
+          <rect x="22" y="4" width="16" height="8" rx="1.5" fill="rgba(200,70,44,0.18)" stroke="#c8462c" stroke-width="1.5"/>
+          <!-- Spreadsheet rows -->
+          <line x1="14" y1="22" x2="46" y2="22" stroke="#c8462c" stroke-width="1.2" opacity="0.6"/>
+          <line x1="14" y1="32" x2="46" y2="32" stroke="#c8462c" stroke-width="1.2" opacity="0.6"/>
+          <line x1="14" y1="42" x2="46" y2="42" stroke="#c8462c" stroke-width="1.2" opacity="0.6"/>
+          <!-- Cell columns -->
+          <line x1="26" y1="18" x2="26" y2="50" stroke="#c8462c" stroke-width="1.2" opacity="0.45"/>
+          <line x1="36" y1="18" x2="36" y2="50" stroke="#c8462c" stroke-width="1.2" opacity="0.45"/>
+          <!-- Big red strike (broken/failing) -->
+          <line x1="6" y1="50" x2="54" y2="6" stroke="#c8462c" stroke-width="3" stroke-linecap="round"/>
         </svg>
-        <div style="text-align:left;position:relative;z-index:1;max-width:560px">
+        <div style="text-align:left;position:relative;z-index:1;max-width:580px">
           <div style="font-size:0.66rem;font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:#c8462c;margin-bottom:12px">Today &middot; The gap</div>
           <!-- Headline mirrors GREEN BACK's "Who gives?" — but as the void [Dave 2026-05-03 PM] -->
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2.3vw,1.85rem);font-weight:700;color:#1a1612;line-height:1.18;margin-bottom:14px;letter-spacing:-0.014em">
@@ -7164,65 +7169,102 @@ html, body, html body{
       </div>
 
       <div class="bh-svg-wrap">
-        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-          <!-- LEFT: the giver — head with private impressions inside, arm extended -->
+        <svg viewBox="0 0 1140 460" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <!-- ============== LEFT: BRAIN — thought cloud with NAMED private impressions ============== -->
           <g>
-            <!-- Body silhouette -->
-            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
-            <!-- Head -->
-            <circle cx="200" cy="110" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
-            <!-- Body shoulders -->
-            <path d="M 130 280 Q 130 200 165 175 L 235 175 Q 270 200 270 280 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
-            <!-- Arm extending RIGHT toward connection -->
-            <path d="M 270 195 Q 320 200 358 215" fill="none" stroke="#5B8FD4" stroke-width="6" stroke-linecap="round"/>
-            <!-- Hand at end of arm holding envelope -->
-            <circle cx="372" cy="218" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/>
-
-            <!-- THOUGHT-DOTS inside head (private impressions about others) -->
-            <g class="bh-thoughts-static">
-              <circle cx="178" cy="92"  r="6" fill="#b8954a"/>
-              <circle cx="208" cy="86"  r="5" fill="#5fa896"/>
-              <circle cx="232" cy="105" r="6" fill="#c8556a"/>
-              <circle cx="186" cy="125" r="5" fill="#8a5aa0"/>
-              <circle cx="218" cy="132" r="5" fill="#3a7da3"/>
+            <!-- Cloud bubble -->
+            <path d="M 60 90 Q 30 90 30 130 Q 10 160 50 175 Q 50 215 100 215 L 320 215 Q 365 215 365 175 Q 395 165 380 130 Q 380 95 340 90 Q 290 60 220 75 Q 150 60 100 80 Q 70 75 60 90 Z" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2"/>
+            <!-- Eyebrow inside cloud -->
+            <text x="200" y="103" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#3a7da3">PRIVATE IMPRESSIONS · IN YOUR HEAD</text>
+            <!-- Named impressions inside the cloud -->
+            <g font-family="Playfair Display,serif" font-size="14" fill="#1a1612">
+              <text x="60" y="130"><tspan font-weight="700" fill="#3a7da3">Sarah</tspan> &middot; <tspan font-style="italic">trusted backbone</tspan></text>
+              <text x="60" y="152"><tspan font-weight="700" fill="#c8462c">Tom</tspan> &middot; <tspan font-style="italic">flaky, last-minute</tspan></text>
+              <text x="60" y="174"><tspan font-weight="700" fill="#b8954a">Mike</tspan> &middot; <tspan font-style="italic">the heartbeat</tspan></text>
+              <text x="60" y="196"><tspan font-weight="700" fill="#5fa896">Renee</tspan> &middot; <tspan font-style="italic">plays better with Tom</tspan></text>
             </g>
-
-            <!-- ANIMATED: one thought "falls" from head down through body to hand -->
-            <circle class="bh-thought-anim" cx="208" cy="105" r="7" fill="#b8954a" opacity="0.9"/>
-
-            <!-- Label under person -->
-            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
-            <text x="200" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">private impressions, in your head</text>
+            <!-- Cloud-tail pointing DOWN to phone (visualizes brain → hand) -->
+            <circle cx="200" cy="232" r="8" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1.6"/>
+            <circle cx="200" cy="248" r="5" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1.4"/>
+            <circle cx="200" cy="262" r="3" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1"/>
           </g>
 
-          <!-- MIDDLE: the manual connection line + animated envelope -->
-          <line class="bh-conn-line" x1="386" y1="220" x2="546" y2="220" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
-          <!-- Envelope flying along the line -->
-          <g class="bh-envelope-anim" transform="translate(386 220)">
+          <!-- ============== MIDDLE: PHONE — the literal "hand" bottleneck ============== -->
+          <g>
+            <!-- Hand silhouette (simplified) holding the phone -->
+            <path d="M 130 420 Q 130 360 175 350 L 280 350 Q 320 360 320 420 Z" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.6"/>
+            <text x="225" y="438" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#c8462c">YOUR HAND</text>
+            <!-- The PHONE -->
+            <rect x="170" y="278" width="110" height="170" rx="14" fill="#fbf6ec" stroke="#1a1612" stroke-width="2.2"/>
+            <rect x="180" y="296" width="90" height="135" rx="3" fill="rgba(26,22,18,0.04)"/>
+            <!-- ONE outgoing SMS bubble inside the phone (the only output) -->
+            <rect x="190" y="320" width="74" height="32" rx="14" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="1.4"/>
+            <text x="227" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="#3a7da3">"hey, sat 9am?"</text>
+            <!-- Empty placeholder bubbles below — visually says "this is the entire output" -->
+            <rect x="190" y="360" width="74" height="22" rx="11" fill="none" stroke="rgba(26,22,18,0.15)" stroke-width="1" stroke-dasharray="2 3"/>
+            <rect x="190" y="386" width="74" height="22" rx="11" fill="none" stroke="rgba(26,22,18,0.15)" stroke-width="1" stroke-dasharray="2 3"/>
+            <text x="225" y="265" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#c8462c">ONE TEXT · ONE PERSON</text>
+          </g>
+
+          <!-- ============== ARROW from phone → community ============== -->
+          <line class="bh-conn-line" x1="290" y1="365" x2="500" y2="200" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
+          <!-- Animated envelope along the line -->
+          <g class="bh-envelope-anim" transform="translate(290 365)">
             <rect x="-14" y="-9" width="28" height="18" rx="1.5" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.6"/>
             <path d="M -14 -9 L 0 0 L 14 -9" fill="none" stroke="#c8462c" stroke-width="1.6"/>
           </g>
-          <!-- "BY HAND" label centered above the line -->
-          <text x="466" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#c8462c">BY HAND</text>
+          <text x="395" y="265" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#c8462c" transform="rotate(-38 395 265)">BY HAND</text>
 
-          <!-- RIGHT: ONE recipient (lit), 3 OTHERS (greyed out) — the rest of the community waits -->
-          <!-- Lit recipient (animated pulse on receive) -->
+          <!-- ============== RIGHT: COMMUNITY — 1 reached (gold), 31 unreached (grey) ============== -->
+          <!-- The lit recipient (gold, big) -->
           <g class="bh-recipient" opacity="0.32">
-            <circle cx="600" cy="180" r="32" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="2.2"/>
-            <circle cx="600" cy="170" r="11" fill="rgba(184,149,74,0.32)"/>
-            <path d="M 580 200 Q 600 188 620 200" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
-            <text x="600" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">INVITED</text>
+            <circle cx="540" cy="180" r="28" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2.2"/>
+            <circle cx="540" cy="172" r="9" fill="rgba(184,149,74,0.45)"/>
+            <path d="M 524 198 Q 540 186 556 198" fill="rgba(184,149,74,0.20)" stroke="#b8954a" stroke-width="1.6"/>
+            <text x="540" y="226" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#b8954a">REACHED</text>
           </g>
 
-          <!-- 5 GREYED OUT bystanders (still waiting) -->
-          <g opacity="0.30">
-            <g><circle cx="700" cy="80"  r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="74"  r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 96 Q 700 86 714 96" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="800" cy="160" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="800" cy="154" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 786 176 Q 800 166 814 176" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="820" cy="280" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="820" cy="274" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 806 296 Q 820 286 834 296" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="700" cy="300" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="294" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 316 Q 700 306 714 316" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
-            <g><circle cx="600" cy="320" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="600" cy="314" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 586 336 Q 600 326 614 336" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+          <!-- The community grid: 31 small grey figures (8 cols × 4 rows minus 1) -->
+          <g opacity="0.40" stroke="rgba(26,22,18,0.40)" stroke-width="1.2" fill="none">
+            <!-- Row 1: y=100, 8 figures -->
+            <g><circle cx="650" cy="98" r="13"/><circle cx="650" cy="94" r="4.5"/><path d="M 640 110 Q 650 104 660 110"/></g>
+            <g><circle cx="710" cy="98" r="13"/><circle cx="710" cy="94" r="4.5"/><path d="M 700 110 Q 710 104 720 110"/></g>
+            <g><circle cx="770" cy="98" r="13"/><circle cx="770" cy="94" r="4.5"/><path d="M 760 110 Q 770 104 780 110"/></g>
+            <g><circle cx="830" cy="98" r="13"/><circle cx="830" cy="94" r="4.5"/><path d="M 820 110 Q 830 104 840 110"/></g>
+            <g><circle cx="890" cy="98" r="13"/><circle cx="890" cy="94" r="4.5"/><path d="M 880 110 Q 890 104 900 110"/></g>
+            <g><circle cx="950" cy="98" r="13"/><circle cx="950" cy="94" r="4.5"/><path d="M 940 110 Q 950 104 960 110"/></g>
+            <g><circle cx="1010" cy="98" r="13"/><circle cx="1010" cy="94" r="4.5"/><path d="M 1000 110 Q 1010 104 1020 110"/></g>
+            <g><circle cx="1070" cy="98" r="13"/><circle cx="1070" cy="94" r="4.5"/><path d="M 1060 110 Q 1070 104 1080 110"/></g>
+            <!-- Row 2 -->
+            <g><circle cx="650" cy="160" r="13"/><circle cx="650" cy="156" r="4.5"/><path d="M 640 172 Q 650 166 660 172"/></g>
+            <g><circle cx="710" cy="160" r="13"/><circle cx="710" cy="156" r="4.5"/><path d="M 700 172 Q 710 166 720 172"/></g>
+            <g><circle cx="770" cy="160" r="13"/><circle cx="770" cy="156" r="4.5"/><path d="M 760 172 Q 770 166 780 172"/></g>
+            <g><circle cx="830" cy="160" r="13"/><circle cx="830" cy="156" r="4.5"/><path d="M 820 172 Q 830 166 840 172"/></g>
+            <g><circle cx="890" cy="160" r="13"/><circle cx="890" cy="156" r="4.5"/><path d="M 880 172 Q 890 166 900 172"/></g>
+            <g><circle cx="950" cy="160" r="13"/><circle cx="950" cy="156" r="4.5"/><path d="M 940 172 Q 950 166 960 172"/></g>
+            <g><circle cx="1010" cy="160" r="13"/><circle cx="1010" cy="156" r="4.5"/><path d="M 1000 172 Q 1010 166 1020 172"/></g>
+            <g><circle cx="1070" cy="160" r="13"/><circle cx="1070" cy="156" r="4.5"/><path d="M 1060 172 Q 1070 166 1080 172"/></g>
+            <!-- Row 3 — skip first (it's the gold lit recipient) -->
+            <g><circle cx="710" cy="222" r="13"/><circle cx="710" cy="218" r="4.5"/><path d="M 700 234 Q 710 228 720 234"/></g>
+            <g><circle cx="770" cy="222" r="13"/><circle cx="770" cy="218" r="4.5"/><path d="M 760 234 Q 770 228 780 234"/></g>
+            <g><circle cx="830" cy="222" r="13"/><circle cx="830" cy="218" r="4.5"/><path d="M 820 234 Q 830 228 840 234"/></g>
+            <g><circle cx="890" cy="222" r="13"/><circle cx="890" cy="218" r="4.5"/><path d="M 880 234 Q 890 228 900 234"/></g>
+            <g><circle cx="950" cy="222" r="13"/><circle cx="950" cy="218" r="4.5"/><path d="M 940 234 Q 950 228 960 234"/></g>
+            <g><circle cx="1010" cy="222" r="13"/><circle cx="1010" cy="218" r="4.5"/><path d="M 1000 234 Q 1010 228 1020 234"/></g>
+            <g><circle cx="1070" cy="222" r="13"/><circle cx="1070" cy="218" r="4.5"/><path d="M 1060 234 Q 1070 228 1080 234"/></g>
+            <!-- Row 4 -->
+            <g><circle cx="650" cy="284" r="13"/><circle cx="650" cy="280" r="4.5"/><path d="M 640 296 Q 650 290 660 296"/></g>
+            <g><circle cx="710" cy="284" r="13"/><circle cx="710" cy="280" r="4.5"/><path d="M 700 296 Q 710 290 720 296"/></g>
+            <g><circle cx="770" cy="284" r="13"/><circle cx="770" cy="280" r="4.5"/><path d="M 760 296 Q 770 290 780 296"/></g>
+            <g><circle cx="830" cy="284" r="13"/><circle cx="830" cy="280" r="4.5"/><path d="M 820 296 Q 830 290 840 296"/></g>
+            <g><circle cx="890" cy="284" r="13"/><circle cx="890" cy="280" r="4.5"/><path d="M 880 296 Q 890 290 900 296"/></g>
+            <g><circle cx="950" cy="284" r="13"/><circle cx="950" cy="280" r="4.5"/><path d="M 940 296 Q 950 290 960 296"/></g>
+            <g><circle cx="1010" cy="284" r="13"/><circle cx="1010" cy="280" r="4.5"/><path d="M 1000 296 Q 1010 290 1020 296"/></g>
+            <g><circle cx="1070" cy="284" r="13"/><circle cx="1070" cy="280" r="4.5"/><path d="M 1060 296 Q 1070 290 1080 296"/></g>
           </g>
-          <text x="760" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="rgba(26,22,18,0.45)">EVERYONE ELSE WAITS</text>
+          <!-- Caption under the grid -->
+          <text x="860" y="332" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.6" fill="rgba(26,22,18,0.55)">31 OTHERS · NEVER GET AN INVITATION</text>
+          <text x="860" y="354" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.62)">your impressions about them never reach them</text>
         </svg>
       </div>
 
@@ -7280,7 +7322,7 @@ html, body, html body{
   #cs-bh2.active .bh2-card-4 { animation-delay: 3.6s; }
   html[data-export="1"] #cs-bh2 [class*="bh2-"] { animation: none !important; opacity: 1 !important; transform: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-bh2">
+<div class="casey-slide ds-focus appendix-slide" id="cs-bh2" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Synthesis</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="bh2-stage">
@@ -14527,9 +14569,9 @@ const SLIDE_ORDER = [
   // Headline preserved in text_archive: "Your impressions are a database. It just can't leave the host."
   'cs-2b',    //  4 Built by hand · 4 manual bottlenecks [moved up to follow cs-2c per Dave 2026-05-01]
   'cs-4',     //  5 The uncomfortable cultural shift — GREEN card (top, flip) + RED skill-rating card (bottom, flip) [Dave 2026-05-03 PM]
-  'cs-bh2',    //  5c Brain → Digital · TOMORROW · rebuilt with multi-person → graph synthesis [Dave 2026-05-03 PM]
-  // cs-bh2-v2 (LIVING GRAPH) MOVED to APPENDIX per Dave 2026-05-03 PM
-  // cs-bh2-v3 (RADAR TOWER) DELETED per Dave 2026-05-03 PM — too abstract, didn't land
+  // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
+  // cs-bh2-v2 (LIVING GRAPH) also in APPENDIX
+  // cs-bh2-v3 (RADAR TOWER) DELETED — too abstract
   'cs-gnr',   //  6 Introducing GnR · invitation matchmaking
   'cs-11d','cs-11',
   'cs-3',
@@ -14581,6 +14623,7 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  'cs-bh2',    // Brain → Digital · TOMORROW · multi-person synthesis (moved from main per Dave 2026-05-03 PM)
   'cs-bh2-v2', // Brain → Digital · LIVING GRAPH variant (moved from main flow per Dave 2026-05-03 PM — kept as backup)
   'cs-about',// 1: Brand · "It's About"
   'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us."
