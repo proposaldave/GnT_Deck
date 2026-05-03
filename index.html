@@ -10039,6 +10039,136 @@ html, body, html body{
 </section>
 </div>
 
+<!-- ===== cs-tnf · THE NEXT FRONTIER · MERGED [NEW Dave 2026-05-03 PM]
+     Merge of cs-future (5 verbs you can do when you digitize human connection) +
+     cs-8b (era stack ending in Abundance). Tells one continuous story:
+     "This is the next era → which unlocks these things → resulting in Abundance."
+     Lands BETWEEN cs-future and cs-8b in main flow so Dave can compare. ===== -->
+<style>
+  #cs-tnf .tnf-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:48px 56px 24px; gap:18px; text-align:center; }
+  #cs-tnf .tnf-eye { font-family:'Manrope',sans-serif; font-size:.6rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:rgba(184,149,74,0.85); }
+  #cs-tnf .tnf-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.4rem,2.4vw,1.95rem); font-weight:600; font-style:italic; color:rgba(26,22,18,0.78); line-height:1.25; max-width:980px; }
+  #cs-tnf .tnf-head em { font-style:italic; color:#b8954a; font-weight:700; }
+  /* Era stack — compact, horizontal grid showing the progression */
+  #cs-tnf .tnf-eras { display:grid; grid-template-columns:repeat(4, 1fr); gap:0; max-width:920px; width:100%; margin:6px 0; }
+  #cs-tnf .tnf-era { display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px 8px 12px; position:relative; }
+  #cs-tnf .tnf-era + .tnf-era::before { content:'\2192'; position:absolute; top:50%; left:-8px; transform:translateY(-50%); font-family:'Playfair Display',serif; font-size:1.1rem; color:rgba(184,149,74,0.4); }
+  #cs-tnf .tnf-era-logo { width:36px; height:36px; display:flex; align-items:center; justify-content:center; }
+  #cs-tnf .tnf-era-resource { font-family:'Playfair Display',serif; font-size:.85rem; font-weight:600; color:rgba(26,22,18,0.6); font-style:italic; line-height:1; }
+  #cs-tnf .tnf-era-gnr { background:linear-gradient(180deg,rgba(212,168,83,0.12),rgba(212,168,83,0.04)); border:1px solid rgba(212,168,83,0.4); border-radius:10px; box-shadow:0 0 24px rgba(212,168,83,0.18); }
+  #cs-tnf .tnf-era-gnr .tnf-era-resource { color:#b8954a; font-weight:800; font-style:normal; }
+  /* Transition arrow + "unlocks" line */
+  #cs-tnf .tnf-arrow-down { font-family:'Playfair Display',serif; font-size:1.5rem; color:#b8954a; line-height:1; opacity:0.7; }
+  #cs-tnf .tnf-unlocks { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.3vw,1.1rem); color:rgba(26,22,18,0.65); }
+  /* Verb row */
+  #cs-tnf .tnf-verbs { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; max-width:1280px; }
+  #cs-tnf .tnf-verb { display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px 14px 12px; min-width:124px; max-width:160px; background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.2)); border-radius:12px; box-shadow:0 4px 14px rgba(26,22,18,0.05), inset 0 1px 0 rgba(255,255,255,0.6); }
+  #cs-tnf .tnf-verb-1 { border:1.5px solid rgba(91,143,212,0.45); }
+  #cs-tnf .tnf-verb-2 { border:1.5px solid rgba(184,149,74,0.45); }
+  #cs-tnf .tnf-verb-3 { border:1.5px solid rgba(91,168,150,0.50); }
+  #cs-tnf .tnf-verb-4 { border:1.5px solid rgba(42,138,79,0.45); }
+  #cs-tnf .tnf-verb-5 { border:1.5px solid rgba(200,70,44,0.50); background:linear-gradient(180deg,rgba(200,70,44,0.10),rgba(200,70,44,0.04)); }
+  #cs-tnf .tnf-verb-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  #cs-tnf .tnf-verb-1 .tnf-verb-icon { background:rgba(91,143,212,0.12); }
+  #cs-tnf .tnf-verb-2 .tnf-verb-icon { background:rgba(184,149,74,0.14); }
+  #cs-tnf .tnf-verb-3 .tnf-verb-icon { background:rgba(91,168,150,0.14); }
+  #cs-tnf .tnf-verb-4 .tnf-verb-icon { background:rgba(42,138,79,0.14);  }
+  #cs-tnf .tnf-verb-5 .tnf-verb-icon { background:rgba(200,70,44,0.14);  }
+  #cs-tnf .tnf-verb-label { font-family:'Fraunces','Playfair Display',serif; font-size:1rem; font-weight:800; letter-spacing:-0.005em; line-height:1.1; }
+  #cs-tnf .tnf-verb-1 .tnf-verb-label { color:#3a7da3; }
+  #cs-tnf .tnf-verb-2 .tnf-verb-label { color:#b8954a; }
+  #cs-tnf .tnf-verb-3 .tnf-verb-label { color:#5fa896; }
+  #cs-tnf .tnf-verb-4 .tnf-verb-label { color:#2a8a4f; }
+  #cs-tnf .tnf-verb-5 .tnf-verb-label { color:#c8462c; }
+  #cs-tnf .tnf-verb-arrow { font-family:'Playfair Display',serif; font-size:.85rem; color:rgba(184,149,74,0.55); }
+  /* Closer hero word */
+  #cs-tnf .tnf-coda { display:flex; align-items:baseline; justify-content:center; gap:14px; margin-top:6px; }
+  #cs-tnf .tnf-coda-eq { font-family:'Playfair Display',serif; font-size:2rem; color:rgba(184,149,74,0.6); font-style:italic; line-height:1; }
+  #cs-tnf .tnf-coda-word { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,4.5vw,3.6rem); font-weight:900; line-height:1; letter-spacing:-0.025em; background:linear-gradient(180deg,#f0c040 0%,#d4a853 55%,#e88a4a 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+</style>
+<div class="casey-slide ds-focus" id="cs-tnf">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The Next Frontier</div>
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="tnf-stage">
+
+    <div class="tnf-eye">The Next Frontier</div>
+
+    <div class="tnf-head">
+      Each era unlocked one missing layer.<br>Now we unlock <em>human connection</em> &mdash; and here&rsquo;s what it lets us do.
+    </div>
+
+    <!-- ERA PROGRESSION: info → sharing → intelligence → human connection -->
+    <div class="tnf-eras">
+      <div class="tnf-era">
+        <div class="tnf-era-logo">
+          <svg width="32" height="32" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div class="tnf-era-resource">information</div>
+      </div>
+      <div class="tnf-era">
+        <div class="tnf-era-logo">
+          <svg width="32" height="22" viewBox="0 0 200 100"><path d="M30 50 C 30 22, 70 22, 100 52 C 130 82, 170 82, 170 50 C 170 22, 130 22, 100 50 C 70 78, 30 78, 30 50 Z" fill="none" stroke="#0668E1" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="tnf-era-resource">sharing</div>
+      </div>
+      <div class="tnf-era">
+        <div class="tnf-era-logo" style="display:flex;gap:4px">
+          <svg viewBox="0 0 36 36" width="20" height="20"><g fill="none" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="6"/><ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="6" transform="rotate(120 18 18)"/></g></svg>
+          <svg viewBox="0 0 64 64" width="20" height="20"><g fill="#cc785c"><path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z"/><path d="M32 23.2 25.4 39h13.2z" fill="#f4ead8"/></g></svg>
+        </div>
+        <div class="tnf-era-resource">intelligence</div>
+      </div>
+      <div class="tnf-era tnf-era-gnr">
+        <div class="tnf-era-logo">
+          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:-0.01em;line-height:1;display:inline-flex;align-items:baseline">
+            <span style="color:#5B8FD4;font-weight:700">G</span><span style="color:#1a1612;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c8462c;font-weight:700">R</span>
+          </span>
+        </div>
+        <div class="tnf-era-resource">human connection</div>
+      </div>
+    </div>
+
+    <div class="tnf-arrow-down">&darr;</div>
+    <div class="tnf-unlocks">When you digitize <em style="font-style:italic;color:#b8954a;font-weight:700">human connection</em>, you can:</div>
+
+    <!-- 5 verbs -->
+    <div class="tnf-verbs">
+      <div class="tnf-verb tnf-verb-1">
+        <div class="tnf-verb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a7da3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="6" x2="12" y2="18"/><line x1="18" y1="6" x2="12" y2="18"/></svg></div>
+        <div class="tnf-verb-label">Graph it.</div>
+      </div>
+      <span class="tnf-verb-arrow">&rarr;</span>
+      <div class="tnf-verb tnf-verb-2">
+        <div class="tnf-verb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.4" fill="rgba(184,149,74,0.25)"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="6.5" y1="7.2" x2="10.5" y2="11"/><line x1="17.5" y1="7.2" x2="13.5" y2="11"/><line x1="6.5" y1="16.8" x2="10.5" y2="13"/><line x1="17.5" y1="16.8" x2="13.5" y2="13"/></svg></div>
+        <div class="tnf-verb-label">Coordinate it.</div>
+      </div>
+      <span class="tnf-verb-arrow">&rarr;</span>
+      <div class="tnf-verb tnf-verb-3">
+        <div class="tnf-verb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5fa896" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2 L12 5 M12 19 L12 22 M2 12 L5 12 M19 12 L22 12 M5 5 L7 7 M17 17 L19 19 M5 19 L7 17 M17 7 L19 5"/></svg></div>
+        <div class="tnf-verb-label">Automate it.</div>
+      </div>
+      <span class="tnf-verb-arrow">&rarr;</span>
+      <div class="tnf-verb tnf-verb-4">
+        <div class="tnf-verb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a8a4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 L10 17 L20 7"/><circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/></svg></div>
+        <div class="tnf-verb-label">Incentivize it.</div>
+      </div>
+      <span class="tnf-verb-arrow">&rarr;</span>
+      <div class="tnf-verb tnf-verb-5">
+        <div class="tnf-verb-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14 Q8 4 12 12 Q16 20 21 10"/><circle cx="3" cy="14" r="1.6" fill="#c8462c"/><circle cx="21" cy="10" r="1.6" fill="#c8462c"/></svg></div>
+        <div class="tnf-verb-label">Make it abundant.</div>
+      </div>
+    </div>
+
+    <!-- Coda: the result is Abundance (echoes cs-8b's hero word) -->
+    <div class="tnf-coda">
+      <div class="tnf-coda-eq">=</div>
+      <div class="tnf-coda-word">Abundance.</div>
+    </div>
+
+  </div>
+</section>
+</div>
+
 <!-- ===== cs-future · FUTURE OF OUR COMMUNITIES [NEW Dave 2026-05-02]
      Five verbs: graph it · schedule it · orchestrate it · sell it · make it abundant.
      Lands between Mission (cs-mv6) and Promise (cs-prom). ===== -->
@@ -10202,7 +10332,7 @@ html, body, html body{
   #cs-tv .tv-head { text-align:center; max-width:1240px; }
   #cs-tv .tv-head-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,3vw,2.4rem); font-weight:700; color:#1a1612; line-height:1.15; letter-spacing:-0.018em; }
   #cs-tv .tv-head-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  #cs-tv .tv-map { width:min(1300px,98%); height:auto; display:block; }
+  #cs-tv .tv-map { width:min(1500px,99%); height:auto; display:block; }
 </style>
 <div class="casey-slide ds-focus" id="cs-tv">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Vision · Market Size</div>
@@ -10271,38 +10401,38 @@ html, body, html body{
         <g>
           <circle cx="700" cy="380" r="120" fill="url(#tvCenterGlow)"/>
           <circle cx="700" cy="380" r="38" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="2.2"/>
-          <text x="700" y="374" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#2a8a4f">TODAY</text>
-          <text x="700" y="392" text-anchor="middle" font-family="Playfair Display,serif" font-size="13.5" font-weight="800" fill="#1a1612">NEPC</text>
+          <text x="700" y="372" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#2a8a4f">TODAY</text>
+          <text x="700" y="394" text-anchor="middle" font-family="Playfair Display,serif" font-size="17" font-weight="800" fill="#1a1612">NEPC</text>
         </g>
 
-        <!-- Year labels at top of each ring -->
-        <g><rect x="650" y="234" width="100" height="26" rx="13" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="1.2"/><text x="700" y="252" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#3a7da3">YEAR 1</text></g>
-        <g><rect x="650" y="149" width="100" height="26" rx="13" fill="#fbf6ec" stroke="#b8954a" stroke-width="1.2"/><text x="700" y="167" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#b8954a">YEAR 3</text></g>
-        <g><rect x="650" y="64"  width="100" height="26" rx="13" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.2"/><text x="700" y="82"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#c8462c">YEAR 5</text></g>
-        <g><rect x="645" y="-16" width="110" height="28" rx="14" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="1.4"/><text x="700" y="3"   text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="800" letter-spacing="2.6" fill="#7a4a8c">YEAR 8</text></g>
+        <!-- Year labels at top of each ring (sizes bumped for legibility 2026-05-03 PM) -->
+        <g><rect x="640" y="232" width="120" height="32" rx="16" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="1.4"/><text x="700" y="254" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#3a7da3">YEAR 1</text></g>
+        <g><rect x="640" y="146" width="120" height="32" rx="16" fill="#fbf6ec" stroke="#b8954a" stroke-width="1.4"/><text x="700" y="168" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#b8954a">YEAR 3</text></g>
+        <g><rect x="640" y="61"  width="120" height="32" rx="16" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.4"/><text x="700" y="83"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#c8462c">YEAR 5</text></g>
+        <g><rect x="635" y="-22" width="130" height="36" rx="18" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="1.6"/><text x="700" y="3"   text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8" fill="#7a4a8c">YEAR 8</text></g>
 
         <!-- YEAR 1 nodes (PB CLUBs) -->
         <g>
-          <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">PB CLUB</text>
+          <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
+          <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
+          <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
+          <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
         </g>
 
         <!-- YEAR 3 nodes (adjacent sports) -->
         <g>
-          <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">TENNIS</text>
-          <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">GOLF</text>
-          <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">CYCLING</text>
-          <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.78)">PADEL</text>
+          <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">TENNIS</text>
+          <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">GOLF</text>
+          <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">CYCLING</text>
+          <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PADEL</text>
         </g>
 
         <!-- YEAR 5 nodes -->
         <g>
-          <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">YOGA</text>
-          <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">DINNER</text>
-          <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
-          <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">CHURCH</text>
+          <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">YOGA</text>
+          <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">DINNER</text>
+          <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
+          <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">CHURCH</text>
         </g>
 
         <!-- YEAR 8 outer scatter + ...AND BEYOND -->
@@ -11276,37 +11406,37 @@ html, body, html body{
       <!-- YEAR 3 nodes: Pickleball clubs (4 nodes) -->
       <g class="ns1-node ns1-n3">
         <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
-        <text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+        <text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">PB CLUB</text>
         <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
-        <text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+        <text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">PB CLUB</text>
         <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
-        <text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+        <text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">PB CLUB</text>
         <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.6"/>
-        <text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PB CLUB</text>
+        <text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">PB CLUB</text>
       </g>
 
       <!-- YEAR 5 nodes: Adjacent sports (4 nodes) -->
       <g class="ns1-node ns1-n5">
         <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
-        <text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">TENNIS</text>
+        <text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">TENNIS</text>
         <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
-        <text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">GOLF</text>
+        <text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">GOLF</text>
         <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
-        <text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">CYCLING</text>
+        <text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">CYCLING</text>
         <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.12)" stroke="#b8954a" stroke-width="1.5"/>
-        <text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">PADEL</text>
+        <text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">PADEL</text>
       </g>
 
       <!-- YEAR 7 nodes: All real communities (4 nodes) -->
       <g class="ns1-node ns1-n7">
         <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
-        <text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">YOGA</text>
+        <text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">YOGA</text>
         <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
-        <text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">DINNER</text>
+        <text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">DINNER</text>
         <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
-        <text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
+        <text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
         <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/>
-        <text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(26,22,18,0.7)">CHURCH</text>
+        <text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">CHURCH</text>
       </g>
 
       <!-- YEAR 10 nodes: outer ring fading off-canvas (the infinity gesture) -->
@@ -13640,7 +13770,8 @@ const SLIDE_ORDER = [
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
   'cs-25',    // 13 Why pickleball first ("Pickleball is the clearest path...")
   'cs-future',// 14 Future of our communities · 5 verbs ("When you digitize human connection, you can")
-  'cs-8b',    // 15 The Next Frontier · Abundance [Dave 2026-05-03 PM — lands right after cs-future per Dave: 'The Next Frontier slide right after Future of our communities']
+  'cs-tnf',   // 15 NEW MERGED · The Next Frontier (eras → human connection → 5 verbs → Abundance) [Dave 2026-05-03 PM — sandwiched between cs-future + cs-8b for comparison]
+  'cs-8b',    // 16 The Next Frontier · Abundance [original — kept as backup for now]
   'cs-tv',    // 16 MERGED Vision + Pickleball TAM ("We're building the map of human connection — one invitation at a time" + $2.55B inner-rings TAM) [Dave 2026-05-03 PM — comes right after the Abundance slide]
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
   'cs-18',    // 17 Founder · CEO · Dave Velardo
@@ -13670,7 +13801,7 @@ const SLIDE_ALTS = {
   // Slot 2 LOCKED 2026-04-30 PM per Dave
   // cs-cl2 (Connection Graph closer · VARIANT B) DELETED from alts 2026-05-02 PM per Dave
 };
-const REVIEW_POSITION = 17;
+const REVIEW_POSITION = -1; // disabled 2026-05-03 PM per Dave — no red review dot needed (was landing on cs-18 Founder slide)
 // LOCKED_POSITIONS: slot 2 LOCKED (cs-1bm1 confirmed). Slot 13 is review (cs-a3 vs cs-34).
 const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
