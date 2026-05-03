@@ -7118,6 +7118,247 @@ html, body, html body{
   </div>
 </div>
 
+<!-- ===== cs-bh · TODAY: Brain → Hand · the manual pipeline [Dave 2026-05-03 PM] =====
+     The CORE INSIGHT slide that lands after cs-4: our private impressions about each
+     other live in our HEADS, then we manually pick ONE person at a time to invite —
+     by hand, every time. Animated to show thoughts dropping from head → arm → hand → ONE
+     line out, with all other community members standing by, unconnected. ============= -->
+<style>
+  #cs-bh .bh-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:64px 48px 48px; gap:18px; text-align:center; }
+  #cs-bh .bh-eye { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#c8462c; }
+  #cs-bh .bh-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.6vw,3rem); font-weight:700; color:#1a1612; line-height:1.1; letter-spacing:-0.02em; max-width:1080px; }
+  #cs-bh .bh-head em { font-style:italic; font-weight:600; color:#c8462c; }
+  #cs-bh .bh-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1rem,1.55vw,1.3rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:920px; margin-top:6px; }
+  #cs-bh .bh-foot em { font-style:italic; color:#c8462c; font-weight:600; }
+  #cs-bh .bh-svg-wrap { width:min(900px,94%); margin:6px auto 0; }
+  /* Animation timing — runs once per entry */
+  @keyframes bhThoughtFall {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0.9; }
+    35%  { transform: translate(0, 0) scale(1); opacity: 0.9; }
+    70%  { transform: translate(-58px, 105px) scale(0.4); opacity: 1; }
+    100% { transform: translate(-58px, 105px) scale(0); opacity: 0; }
+  }
+  @keyframes bhEnvelopeFly {
+    0%, 60%   { transform: translate(0, 0); opacity: 0; }
+    72%       { transform: translate(0, 0); opacity: 1; }
+    100%      { transform: translate(180px, -10px); opacity: 1; }
+  }
+  @keyframes bhLineDraw { 0%,68% { stroke-dashoffset:160; } 100% { stroke-dashoffset:0; } }
+  @keyframes bhRecipientPulse { 0%,75% { opacity:0.32; transform:scale(1); } 88% { opacity:1; transform:scale(1.12); } 100% { opacity:1; transform:scale(1); } }
+  #cs-bh.active .bh-thought-anim { animation: bhThoughtFall 3.8s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh.active .bh-envelope-anim { animation: bhEnvelopeFly 3.8s cubic-bezier(.55,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh.active .bh-conn-line { stroke-dasharray:160; stroke-dashoffset:160; animation: bhLineDraw 3.8s cubic-bezier(.45,.05,.18,1) forwards; }
+  #cs-bh.active .bh-recipient { animation: bhRecipientPulse 4.2s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  html[data-export="1"] #cs-bh .bh-thought-anim,
+  html[data-export="1"] #cs-bh .bh-envelope-anim,
+  html[data-export="1"] #cs-bh .bh-conn-line,
+  html[data-export="1"] #cs-bh .bh-recipient { animation: none !important; }
+  html[data-export="1"] #cs-bh .bh-conn-line { stroke-dashoffset: 0 !important; }
+  html[data-export="1"] #cs-bh .bh-recipient { opacity: 1 !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-bh">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Today &middot; The manual pipeline</div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="bh-stage">
+      <div class="bh-eye">Today</div>
+      <div class="bh-head">
+        Our private impressions stay in our <em>heads</em>.<br>Connection happens <em>by hand</em>.
+      </div>
+
+      <div class="bh-svg-wrap">
+        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <!-- LEFT: the giver — head with private impressions inside, arm extended -->
+          <g>
+            <!-- Body silhouette -->
+            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
+            <!-- Head -->
+            <circle cx="200" cy="110" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
+            <!-- Body shoulders -->
+            <path d="M 130 280 Q 130 200 165 175 L 235 175 Q 270 200 270 280 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <!-- Arm extending RIGHT toward connection -->
+            <path d="M 270 195 Q 320 200 358 215" fill="none" stroke="#5B8FD4" stroke-width="6" stroke-linecap="round"/>
+            <!-- Hand at end of arm holding envelope -->
+            <circle cx="372" cy="218" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/>
+
+            <!-- THOUGHT-DOTS inside head (private impressions about others) -->
+            <g class="bh-thoughts-static">
+              <circle cx="178" cy="92"  r="6" fill="#b8954a"/>
+              <circle cx="208" cy="86"  r="5" fill="#5fa896"/>
+              <circle cx="232" cy="105" r="6" fill="#c8556a"/>
+              <circle cx="186" cy="125" r="5" fill="#8a5aa0"/>
+              <circle cx="218" cy="132" r="5" fill="#3a7da3"/>
+            </g>
+
+            <!-- ANIMATED: one thought "falls" from head down through body to hand -->
+            <circle class="bh-thought-anim" cx="208" cy="105" r="7" fill="#b8954a" opacity="0.9"/>
+
+            <!-- Label under person -->
+            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
+            <text x="200" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">private impressions, in your head</text>
+          </g>
+
+          <!-- MIDDLE: the manual connection line + animated envelope -->
+          <line class="bh-conn-line" x1="386" y1="220" x2="546" y2="220" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
+          <!-- Envelope flying along the line -->
+          <g class="bh-envelope-anim" transform="translate(386 220)">
+            <rect x="-14" y="-9" width="28" height="18" rx="1.5" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.6"/>
+            <path d="M -14 -9 L 0 0 L 14 -9" fill="none" stroke="#c8462c" stroke-width="1.6"/>
+          </g>
+          <!-- "BY HAND" label centered above the line -->
+          <text x="466" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#c8462c">BY HAND</text>
+
+          <!-- RIGHT: ONE recipient (lit), 3 OTHERS (greyed out) — the rest of the community waits -->
+          <!-- Lit recipient (animated pulse on receive) -->
+          <g class="bh-recipient" opacity="0.32">
+            <circle cx="600" cy="180" r="32" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="2.2"/>
+            <circle cx="600" cy="170" r="11" fill="rgba(184,149,74,0.32)"/>
+            <path d="M 580 200 Q 600 188 620 200" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
+            <text x="600" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">INVITED</text>
+          </g>
+
+          <!-- 5 GREYED OUT bystanders (still waiting) -->
+          <g opacity="0.30">
+            <g><circle cx="700" cy="80"  r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="74"  r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 96 Q 700 86 714 96" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="800" cy="160" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="800" cy="154" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 786 176 Q 800 166 814 176" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="820" cy="280" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="820" cy="274" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 806 296 Q 820 286 834 296" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="700" cy="300" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="294" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 316 Q 700 306 714 316" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="600" cy="320" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="600" cy="314" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 586 336 Q 600 326 614 336" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+          </g>
+          <text x="760" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="rgba(26,22,18,0.45)">EVERYONE ELSE WAITS</text>
+        </svg>
+      </div>
+
+      <div class="bh-foot">
+        Brain &rarr; hand. <em>One person at a time.</em> Always by hand.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== cs-bh2 · TOMORROW: Brain DIGITIZED → Everyone [Dave 2026-05-03 PM] =====
+     The future-state mirror of cs-bh: same person, same impressions — but now those
+     impressions BEAM UPWARD into a digital graph (the GnR cloud), and the graph
+     automatically routes invitations to ALL the right people simultaneously. Same
+     community, same person, completely transformed pipeline. ============= -->
+<style>
+  #cs-bh2 .bh2-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:64px 48px 48px; gap:18px; text-align:center; }
+  #cs-bh2 .bh2-eye { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#b8954a; }
+  #cs-bh2 .bh2-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.6vw,3rem); font-weight:700; color:#1a1612; line-height:1.1; letter-spacing:-0.02em; max-width:1100px; }
+  #cs-bh2 .bh2-head em { font-style:italic; font-weight:600; color:#b8954a; }
+  #cs-bh2 .bh2-head .gnr-mark { font-family:'Playfair Display',serif; font-style:normal; }
+  #cs-bh2 .bh2-head .gnr-mark .g { color:#5B8FD4; font-weight:700; }
+  #cs-bh2 .bh2-head .gnr-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.06em; }
+  #cs-bh2 .bh2-head .gnr-mark .r { color:#c8462c; font-weight:700; }
+  #cs-bh2 .bh2-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1rem,1.55vw,1.3rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:980px; margin-top:6px; }
+  #cs-bh2 .bh2-foot em { font-style:italic; color:#b8954a; font-weight:600; }
+  #cs-bh2 .bh2-svg-wrap { width:min(900px,94%); margin:6px auto 0; }
+  /* Animation: thoughts beam UP → cloud glows → invitations rain DOWN to everyone */
+  @keyframes bh2BeamUp {
+    0%, 10%   { opacity: 0; transform: translate(0, 0); }
+    25%       { opacity: 1; transform: translate(0, 0); }
+    55%       { opacity: 1; transform: translate(180px, -55px); }
+    65%       { opacity: 0; transform: translate(180px, -55px); }
+    100%      { opacity: 0; transform: translate(180px, -55px); }
+  }
+  @keyframes bh2CloudGlow {
+    0%, 50%   { opacity: 0.25; }
+    65%       { opacity: 1; filter: drop-shadow(0 0 12px rgba(184,149,74,0.55)); }
+    100%      { opacity: 1; filter: drop-shadow(0 0 8px rgba(184,149,74,0.35)); }
+  }
+  @keyframes bh2RecipientLight { 0%, 70% { opacity: 0.32; } 85%, 100% { opacity: 1; } }
+  @keyframes bh2InviteFly { 0%, 70% { opacity: 0; transform: translate(0,0); } 80% { opacity: 1; } 100% { opacity: 1; transform: var(--bh2-end); } }
+  #cs-bh2.active .bh2-beam-1 { animation: bh2BeamUp 4s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh2.active .bh2-beam-2 { animation: bh2BeamUp 4s 0.15s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh2.active .bh2-beam-3 { animation: bh2BeamUp 4s 0.3s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh2.active .bh2-cloud { animation: bh2CloudGlow 4.2s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  #cs-bh2.active .bh2-recipient { animation: bh2RecipientLight 4.4s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
+  html[data-export="1"] #cs-bh2 .bh2-beam-1,
+  html[data-export="1"] #cs-bh2 .bh2-beam-2,
+  html[data-export="1"] #cs-bh2 .bh2-beam-3,
+  html[data-export="1"] #cs-bh2 .bh2-cloud,
+  html[data-export="1"] #cs-bh2 .bh2-recipient { animation: none !important; opacity: 1 !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-bh2">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Digitized</div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="bh2-stage">
+      <div class="bh2-eye">With <span class="gnr-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
+      <div class="bh2-head">
+        Your private impressions become <em>shared infrastructure</em>.<br>Invitations find <em>everyone</em>.
+      </div>
+
+      <div class="bh2-svg-wrap">
+        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bh2CloudGrad" cx="50%" cy="50%" r="55%">
+              <stop offset="0%"  stop-color="#f0c040" stop-opacity="0.45"/>
+              <stop offset="60%" stop-color="#b8954a" stop-opacity="0.20"/>
+              <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- LEFT: the same person, same impressions — but thoughts BEAM UP -->
+          <g>
+            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
+            <circle cx="200" cy="180" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
+            <path d="M 130 285 Q 130 250 165 240 L 235 240 Q 270 250 270 285 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <!-- Static thoughts -->
+            <g>
+              <circle cx="178" cy="162" r="6" fill="#b8954a"/>
+              <circle cx="208" cy="156" r="5" fill="#5fa896"/>
+              <circle cx="232" cy="175" r="6" fill="#c8556a"/>
+              <circle cx="186" cy="195" r="5" fill="#8a5aa0"/>
+              <circle cx="218" cy="202" r="5" fill="#3a7da3"/>
+            </g>
+            <!-- Animated beams: 3 thoughts fly UP & RIGHT into the GnR cloud -->
+            <circle class="bh2-beam-1" cx="200" cy="155" r="6" fill="#b8954a" opacity="0"/>
+            <circle class="bh2-beam-2" cx="208" cy="162" r="5" fill="#5fa896" opacity="0"/>
+            <circle class="bh2-beam-3" cx="218" cy="170" r="6" fill="#c8556a" opacity="0"/>
+            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
+            <text x="200" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">same private impressions</text>
+          </g>
+
+          <!-- CENTER: GnR digital cloud (the graph) -->
+          <g class="bh2-cloud" opacity="0.25">
+            <ellipse cx="450" cy="100" rx="110" ry="62" fill="url(#bh2CloudGrad)"/>
+            <ellipse cx="450" cy="100" rx="78" ry="44" fill="rgba(212,168,83,0.12)" stroke="rgba(184,149,74,0.55)" stroke-width="1.8"/>
+            <!-- GnR mark inside the cloud -->
+            <text x="450" y="108" text-anchor="middle" font-family="Playfair Display,serif" font-size="32" font-weight="700" letter-spacing="-1">
+              <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="22" font-weight="500" fill="#1a1612" dx="2">n</tspan><tspan fill="#c8462c" dx="2">R</tspan>
+            </text>
+            <text x="450" y="135" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="rgba(184,149,74,0.85)">SHARED GRAPH</text>
+          </g>
+
+          <!-- AUTOMATIC invitation lines: cloud → all 6 recipients (all gold, all simultaneous) -->
+          <g stroke="#b8954a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0">
+            <line class="bh2-recipient" x1="450" y1="125" x2="600" y2="200"/>
+            <line class="bh2-recipient" x1="450" y1="125" x2="700" y2="100"/>
+            <line class="bh2-recipient" x1="450" y1="125" x2="800" y2="180"/>
+            <line class="bh2-recipient" x1="450" y1="125" x2="820" y2="290"/>
+            <line class="bh2-recipient" x1="450" y1="125" x2="700" y2="310"/>
+            <line class="bh2-recipient" x1="450" y1="125" x2="600" y2="320"/>
+          </g>
+
+          <!-- RIGHT: ALL recipients lit (gold, animated to brighten when graph routes invites) -->
+          <g class="bh2-recipient" opacity="0.32">
+            <g><circle cx="600" cy="200" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="600" cy="194" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 586 216 Q 600 206 614 216" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+            <g><circle cx="700" cy="100" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="700" cy="94"  r="7" fill="rgba(184,149,74,0.45)"/><path d="M 686 116 Q 700 106 714 116" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+            <g><circle cx="800" cy="180" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="800" cy="174" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 786 196 Q 800 186 814 196" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+            <g><circle cx="820" cy="290" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="820" cy="284" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 806 306 Q 820 296 834 306" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+            <g><circle cx="700" cy="310" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="700" cy="304" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 686 326 Q 700 316 714 326" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+            <g><circle cx="600" cy="320" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="600" cy="314" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 586 336 Q 600 326 614 336" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+          </g>
+          <text x="710" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#b8954a">EVERYONE GETS THE RIGHT INVITATION</text>
+        </svg>
+      </div>
+
+      <div class="bh2-foot">
+        Brain &rarr; <em>digital</em> &rarr; everyone. The whole community runs itself.
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- The Invitation — "There's no like button in the real world. There's the invitation."
      The feeling of being invited frames the Scheduling-is-measuring reveal that follows. -->
 <div class="casey-slide ds-focus" id="cs-10c">
@@ -13890,6 +14131,8 @@ const SLIDE_ORDER = [
   'cs-2c',    //  3 Community · 6-card grid (moved here per Dave 2026-04-30 PM evening)
   'cs-2b',    //  4 Built by hand · 4 manual bottlenecks [moved up to follow cs-2c per Dave 2026-05-01]
   'cs-4',     //  5 The uncomfortable cultural shift — GREEN card (top, flip) + RED skill-rating card (bottom, flip) [Dave 2026-05-03 PM]
+  'cs-bh',    //  5b Brain → Hand · TODAY: private impressions live in our heads, manual connection by hand [Dave 2026-05-03 PM]
+  'cs-bh2',   //  5c Brain → Digital · TOMORROW: thoughts digitized, connection automatic for everyone [Dave 2026-05-03 PM]
   'cs-gnr',   //  6 Introducing GnR · invitation matchmaking
   'cs-11d','cs-11',
   'cs-3',
