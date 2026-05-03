@@ -7019,30 +7019,35 @@ html, body, html body{
        <div class="cs4-flip-inner cs4-flip-bottom" style="min-height:200px">
         <!-- FRONT: giant "3.0" struck through — universally reads as "skill rating, killed" — Dave 2026-05-02 PM v2 -->
         <div class="cs4-flip-front" style="width:100%;background:rgba(224,64,64,0.04);border:1.5px solid rgba(224,64,64,0.32);border-radius:16px;padding:36px;display:flex;align-items:center;justify-content:center;gap:36px;min-height:200px;position:relative;overflow:hidden">
-          <!-- FRONT: ONE graphic only, no text [Dave 2026-05-03 PM] —
-               chaotic hand-drawn web of people connected by squiggly lines = matchmaking, cliques, group formation
-               happening BY HAND because the right community data isn't digitized. Red strike across.
-               Text content lives on the BACK. -->
-          <svg width="380" height="220" viewBox="0 0 380 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:100%;height:auto">
-            <!-- Hand-drawn squiggly dashed lines connecting people (chaotic / by hand) -->
-            <g stroke="rgba(26,22,18,0.5)" stroke-width="1.4" fill="none" stroke-dasharray="3 3" opacity="0.6" stroke-linecap="round">
-              <path d="M 60 50 Q 130 100 200 60 Q 270 30 330 90"/>
-              <path d="M 200 60 Q 150 130 80 150"/>
-              <path d="M 200 60 Q 270 140 320 170"/>
-              <path d="M 80 150 Q 200 200 320 170"/>
-              <path d="M 60 50 Q 100 100 80 150"/>
-              <path d="M 330 90 Q 350 130 320 170"/>
-              <path d="M 80 150 Q 200 110 200 60"/>
-            </g>
-            <!-- People dots, varied colors (palette-matched to GREEN front avatars) -->
-            <circle cx="60" cy="50" r="11" fill="rgba(91,143,212,0.78)" stroke="#fff" stroke-width="2"/>
-            <circle cx="200" cy="60" r="11" fill="rgba(184,149,74,0.78)" stroke="#fff" stroke-width="2"/>
-            <circle cx="330" cy="90" r="11" fill="rgba(200,85,106,0.78)" stroke="#fff" stroke-width="2"/>
-            <circle cx="80" cy="150" r="11" fill="rgba(138,90,160,0.78)" stroke="#fff" stroke-width="2"/>
-            <circle cx="320" cy="170" r="11" fill="rgba(95,168,150,0.78)" stroke="#fff" stroke-width="2"/>
-            <!-- Big diagonal red strike across the whole web -->
-            <line x1="20" y1="200" x2="360" y2="20" stroke="#c8462c" stroke-width="3.2" stroke-linecap="round" opacity="0.85"/>
-          </svg>
+          <!-- FRONT: stairstep skill-rating climb with red strike — old-paradigm "solo ascent" metaphor [Dave 2026-05-03 PM v4: reverted from chaotic-web; stairstep is clearer] -->
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:6px 16px;width:100%">
+            <div style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,70,44,0.85);text-align:center;line-height:1.4">Replaces non-existing<br>&amp; failing community data</div>
+            <svg width="360" height="160" viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:100%;height:auto">
+              <!-- 5 ascending step blocks -->
+              <g>
+                <rect x="24"  y="116" width="56" height="22" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.40)" stroke-width="1.4"/>
+                <rect x="80"  y="92"  width="56" height="46" fill="rgba(26,22,18,0.08)" stroke="rgba(26,22,18,0.45)" stroke-width="1.4"/>
+                <rect x="136" y="68"  width="56" height="70" fill="rgba(26,22,18,0.10)" stroke="rgba(26,22,18,0.50)" stroke-width="1.4"/>
+                <rect x="192" y="44"  width="56" height="94" fill="rgba(26,22,18,0.12)" stroke="rgba(26,22,18,0.55)" stroke-width="1.4"/>
+                <rect x="248" y="20"  width="56" height="118" fill="rgba(26,22,18,0.14)" stroke="rgba(26,22,18,0.60)" stroke-width="1.4"/>
+              </g>
+              <!-- Skill-rating tier labels under each step -->
+              <g font-family="Manrope,sans-serif" font-size="11" font-weight="700" fill="rgba(26,22,18,0.55)" letter-spacing="0.06em" text-anchor="middle">
+                <text x="52"  y="154">2.0</text>
+                <text x="108" y="154">3.0</text>
+                <text x="164" y="154">4.0</text>
+                <text x="220" y="154">5.0</text>
+                <text x="276" y="154">6.0</text>
+              </g>
+              <!-- Lone climber on the top step (head + torso, alone — solo ascent) -->
+              <g>
+                <circle cx="276" cy="9" r="5.5" fill="rgba(26,22,18,0.6)"/>
+                <line x1="276" y1="14.5" x2="276" y2="20" stroke="rgba(26,22,18,0.6)" stroke-width="2.2" stroke-linecap="round"/>
+              </g>
+              <!-- Red diagonal strike-through across the whole climb -->
+              <line x1="14" y1="136" x2="320" y2="6" stroke="#c8462c" stroke-width="2.8" stroke-linecap="round"/>
+            </svg>
+          </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
         <!-- BACK: OLD PARADIGM expanded to ego/self/values dimension per Dave 2026-05-02.
@@ -7091,7 +7096,7 @@ html, body, html body{
         <div style="text-align:left;position:relative;z-index:1;max-width:520px">
           <div style="font-size:0.66rem;font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:#c8462c;margin-bottom:14px">Old paradigm &middot; Old data &middot; Old incentives</div>
           <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.25rem,2.1vw,1.7rem);font-weight:800;color:#1a1612;line-height:1.2;margin-bottom:12px;letter-spacing:-0.012em">
-            Skill &middot; Ego &middot; Status
+            Rating &middot; Ego &middot; Status
           </div>
           <!-- "All measure the self. None measure us." DELETED 2026-05-03 PM per Dave -->
         </div>
@@ -8966,9 +8971,8 @@ html, body, html body{
   <div style="text-align:center;max-width:1140px;width:100%">
 
     <!-- HEADLINE -->
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.18;color:#1a1612;margin-bottom:24px;letter-spacing:-0.01em">
-      Turned down the acquisition.<br>
-      Built <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em> &mdash; to prove the future of real-world community.
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;line-height:1.22;color:#1a1612;margin-bottom:24px;letter-spacing:-0.01em;max-width:1180px;margin-left:auto;margin-right:auto">
+      The future of <em style="font-style:italic;color:#b8954a">human connection and community technology</em> is being solved at 500-member, founder-owned <em style="font-style:italic;color:#b8954a">New England Pickleball Club</em>.
     </div>
 
     <!-- TIMELINE — horizontal, with connector line, readable labels -->
@@ -9222,88 +9226,128 @@ html, body, html body{
     Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented.</em>
   </div>
 
-  <!-- 4 cards · 4 reasons pickleball is the perfect wedge [Dave 2026-04-30 PM evening] -->
+  <!-- 4 FLIP cards [Dave 2026-05-03 PM]: FRONT shows just the icon; click flips to BACK to reveal title + content. -->
   <style>
-    #cs-25 .c25-card { padding:28px 16px 24px; border-radius:14px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; min-height:240px; overflow-wrap:break-word; }
+    #cs-25 .c25-card { perspective: 1500px; min-height: 240px; cursor: pointer; opacity: 0; }
+    #cs-25 .c25-card-inner { position: relative; width: 100%; height: 100%; min-height: 240px; transform-style: preserve-3d; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); }
+    #cs-25 .c25-card[data-flipped="1"] .c25-card-inner { transform: rotateY(180deg); }
+    #cs-25 .c25-card-front,
+    #cs-25 .c25-card-back  { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; padding: 28px 16px 24px; border-radius: 14px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; }
+    #cs-25 .c25-card-back  { transform: rotateY(180deg); }
     #cs-25 .c25-icon { width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
-    #cs-25 .c25-title { font-family:'Playfair Display',serif; font-size:clamp(0.95rem,1.35vw,1.18rem); font-weight:800; line-height:1.2; max-width:100%; word-break:normal; hyphens:auto; }
+    #cs-25 .c25-title { font-family:'Playfair Display',serif; font-size:clamp(0.95rem,1.35vw,1.18rem); font-weight:800; line-height:1.2; max-width:100%; }
     #cs-25 .c25-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:.95rem; line-height:1.25; }
-    #cs-25 .c25-detail { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:600; letter-spacing:.04em; color:rgba(26,22,18,0.62); line-height:1.4; margin-top:auto; }
+    /* Subtle "click to flip" hint on the front face */
+    #cs-25 .c25-flip-hint { position:absolute; bottom:8px; right:14px; font-family:'Manrope',sans-serif; font-size:.45rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.32); pointer-events:none; }
     /* Cascade entrance */
     @keyframes c25FadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-    #cs-25 .c25-card { opacity:0; }
     #cs-25.active .c25-card { animation: c25FadeUp 0.6s cubic-bezier(.45,.05,.18,1) forwards; }
     #cs-25.active .c25-card:nth-child(1) { animation-delay: 0.30s; }
     #cs-25.active .c25-card:nth-child(2) { animation-delay: 0.50s; }
     #cs-25.active .c25-card:nth-child(3) { animation-delay: 0.70s; }
     #cs-25.active .c25-card:nth-child(4) { animation-delay: 0.90s; }
     html[data-export="1"] #cs-25 .c25-card { opacity:1 !important; animation:none !important; transform:none !important; }
+    html[data-export="1"] #cs-25 .c25-card-inner { transform: rotateY(180deg) !important; transition: none !important; }
+    html[data-export="1"] #cs-25 .c25-flip-hint { display: none !important; }
   </style>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px">
 
     <!-- 1. Fastest-growing sport in US history -->
-    <div class="c25-card" style="background:linear-gradient(180deg,rgba(212,168,83,0.10) 0%,rgba(212,168,83,0.03) 100%);border:1px solid rgba(212,168,83,0.36)">
-      <div class="c25-icon" style="background:rgba(212,168,83,0.12);border:1.5px solid rgba(212,168,83,0.45)">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 25 L12 17 L17 21 L28 8"/>
-          <path d="M22 8 L28 8 L28 14"/>
-        </svg>
+    <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
+      <div class="c25-card-inner">
+        <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(212,168,83,0.10) 0%,rgba(212,168,83,0.03) 100%);border:1px solid rgba(212,168,83,0.36)">
+          <div class="c25-icon" style="background:rgba(212,168,83,0.12);border:1.5px solid rgba(212,168,83,0.45)">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 25 L12 17 L17 21 L28 8"/>
+              <path d="M22 8 L28 8 L28 14"/>
+            </svg>
+          </div>
+          <div class="c25-flip-hint">&#x21BB; flip</div>
+        </div>
+        <div class="c25-card-back" style="background:linear-gradient(180deg,rgba(212,168,83,0.10) 0%,rgba(212,168,83,0.03) 100%);border:1px solid rgba(212,168,83,0.36)">
+          <div class="c25-title" style="color:#b8954a">Fastest-growing</div>
+          <div class="c25-sub" style="color:#1a1612">sport in U.S. history.</div>
+        </div>
       </div>
-      <div class="c25-title" style="color:#b8954a">Fastest-growing</div>
-      <div class="c25-sub" style="color:#1a1612">sport in U.S. history.</div>
     </div>
 
     <!-- 2. Wildly social, high velocity -->
-    <div class="c25-card" style="background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.03) 100%);border:1px solid rgba(91,143,212,0.36)">
-      <div class="c25-icon" style="background:rgba(91,143,212,0.12);border:1.5px solid rgba(91,143,212,0.45)">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#3a7da3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
-          <circle cx="29" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
-          <circle cx="11" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
-          <circle cx="29" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
-          <line x1="14" y1="11" x2="26" y2="11"/>
-          <line x1="14" y1="29" x2="26" y2="29"/>
-          <line x1="11" y1="14" x2="11" y2="26"/>
-          <line x1="29" y1="14" x2="29" y2="26"/>
-          <line x1="13.5" y1="13.5" x2="26.5" y2="26.5" opacity="0.55"/>
-          <line x1="26.5" y1="13.5" x2="13.5" y2="26.5" opacity="0.55"/>
-        </svg>
+    <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
+      <div class="c25-card-inner">
+        <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.03) 100%);border:1px solid rgba(91,143,212,0.36)">
+          <div class="c25-icon" style="background:rgba(91,143,212,0.12);border:1.5px solid rgba(91,143,212,0.45)">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#3a7da3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
+              <circle cx="29" cy="11" r="3.5" fill="rgba(91,143,212,0.20)"/>
+              <circle cx="11" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
+              <circle cx="29" cy="29" r="3.5" fill="rgba(91,143,212,0.20)"/>
+              <line x1="14" y1="11" x2="26" y2="11"/>
+              <line x1="14" y1="29" x2="26" y2="29"/>
+              <line x1="11" y1="14" x2="11" y2="26"/>
+              <line x1="29" y1="14" x2="29" y2="26"/>
+              <line x1="13.5" y1="13.5" x2="26.5" y2="26.5" opacity="0.55"/>
+              <line x1="26.5" y1="13.5" x2="13.5" y2="26.5" opacity="0.55"/>
+            </svg>
+          </div>
+          <div class="c25-flip-hint">&#x21BB; flip</div>
+        </div>
+        <div class="c25-card-back" style="background:linear-gradient(180deg,rgba(91,143,212,0.10) 0%,rgba(91,143,212,0.03) 100%);border:1px solid rgba(91,143,212,0.36)">
+          <div class="c25-title" style="color:#3a7da3">Wildly social.<br>High velocity.</div>
+        </div>
       </div>
-      <div class="c25-title" style="color:#3a7da3">Wildly social.<br>High velocity.</div>
     </div>
 
-    <!-- 3. Cold-start data cracked [swapped to slot 3 per Dave 2026-05-03 PM — Coordination stack now lands as the 4th card] -->
-    <div class="c25-card" style="background:linear-gradient(180deg,rgba(42,138,79,0.10) 0%,rgba(42,138,79,0.03) 100%);border:1px solid rgba(42,138,79,0.42);box-shadow:0 0 24px rgba(42,138,79,0.10)">
-      <div class="c25-icon" style="background:rgba(42,138,79,0.12);border:1.5px solid rgba(42,138,79,0.50)">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2a8a4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <ellipse cx="17" cy="9" rx="9" ry="3"/>
-          <path d="M8 9 L8 25 C8 27 26 27 26 25 L26 9"/>
-          <path d="M8 17 C8 19 26 19 26 17"/>
-          <circle cx="22" cy="22" r="6" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="1.6"/>
-          <path d="M19.5 22 L21 23.5 L24.5 20" stroke="#2a8a4f" stroke-width="2" fill="none"/>
-        </svg>
+    <!-- 3. Cold-start data cracked -->
+    <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
+      <div class="c25-card-inner">
+        <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(42,138,79,0.10) 0%,rgba(42,138,79,0.03) 100%);border:1px solid rgba(42,138,79,0.42);box-shadow:0 0 24px rgba(42,138,79,0.10)">
+          <div class="c25-icon" style="background:rgba(42,138,79,0.12);border:1.5px solid rgba(42,138,79,0.50)">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#2a8a4f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="17" cy="9" rx="9" ry="3"/>
+              <path d="M8 9 L8 25 C8 27 26 27 26 25 L26 9"/>
+              <path d="M8 17 C8 19 26 19 26 17"/>
+              <circle cx="22" cy="22" r="6" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="1.6"/>
+              <path d="M19.5 22 L21 23.5 L24.5 20" stroke="#2a8a4f" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <div class="c25-flip-hint">&#x21BB; flip</div>
+        </div>
+        <div class="c25-card-back" style="background:linear-gradient(180deg,rgba(42,138,79,0.10) 0%,rgba(42,138,79,0.03) 100%);border:1px solid rgba(42,138,79,0.42);box-shadow:0 0 24px rgba(42,138,79,0.10)">
+          <div class="c25-title" style="color:#2a8a4f">Cold-start<br>data cracked.</div>
+        </div>
       </div>
-      <div class="c25-title" style="color:#2a8a4f">Cold-start<br>data cracked.</div>
     </div>
 
-    <!-- 4. Incumbent coordination stack stuck in 2005 [moved to slot 4 per Dave 2026-05-03 PM] -->
-    <div class="c25-card" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36);position:relative">
-      <div class="c25-icon" style="background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.45);position:relative">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#c8462c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="6" width="16" height="22" rx="1.5"/>
-          <rect x="13" y="3" width="8" height="4" rx="1" fill="rgba(200,70,44,0.20)"/>
-          <line x1="12" y1="13" x2="22" y2="13"/>
-          <line x1="12" y1="17" x2="22" y2="17"/>
-          <line x1="12" y1="21" x2="20" y2="21"/>
-          <line x1="6" y1="6" x2="28" y2="28" opacity="0.7"/>
-        </svg>
-      </div>
-      <div class="c25-title" style="color:#c8462c;margin-bottom:10px">Coordination stack:</div>
-      <div style="display:flex;flex-direction:column;gap:6px;width:100%;max-width:220px">
-        <div style="padding:7px 10px;background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.32);border-radius:6px;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:600;color:#1a1612;text-align:center;line-height:1.25">stuck in 2005</div>
-        <div style="padding:7px 10px;background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.32);border-radius:6px;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:600;color:#1a1612;text-align:center;line-height:1.25">doesn't measure <em style="font-style:italic;color:#c8462c;font-weight:700">human connection</em></div>
+    <!-- 4. Coordination stack -->
+    <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
+      <div class="c25-card-inner">
+        <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36)">
+          <div class="c25-icon" style="background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.45);position:relative">
+            <!-- Calendar / court bookings icon — represents the old coordination stack [Dave 2026-05-03 PM] -->
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#c8462c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="8" width="22" height="20" rx="2"/>
+              <line x1="11" y1="5" x2="11" y2="11"/>
+              <line x1="23" y1="5" x2="23" y2="11"/>
+              <line x1="6" y1="14" x2="28" y2="14"/>
+              <line x1="13" y1="14" x2="13" y2="28"/>
+              <line x1="21" y1="14" x2="21" y2="28"/>
+              <line x1="6" y1="21" x2="28" y2="21"/>
+              <rect x="14.5" y="15.5" width="5.5" height="3.5" fill="rgba(200,70,44,0.55)" stroke="none"/>
+              <rect x="22" y="22" width="5" height="3.5" fill="rgba(200,70,44,0.4)" stroke="none"/>
+            </svg>
+          </div>
+          <div class="c25-flip-hint">&#x21BB; flip</div>
+        </div>
+        <div class="c25-card-back" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36)">
+          <div class="c25-title" style="color:#c8462c;margin-bottom:10px">Coordination stack</div>
+          <div style="display:flex;flex-direction:column;gap:6px;width:100%;max-width:220px">
+            <div style="padding:7px 10px;background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.32);border-radius:6px;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:600;color:#1a1612;text-align:center;line-height:1.25">stuck in 2005</div>
+            <div style="padding:7px 10px;background:rgba(200,70,44,0.06);border:1px solid rgba(200,70,44,0.32);border-radius:6px;font-family:'Playfair Display',serif;font-size:.82rem;font-weight:600;color:#1a1612;text-align:center;line-height:1.25">doesn't measure <em style="font-style:italic;color:#c8462c;font-weight:700">human connection</em></div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 
   <!-- Kicker moved above the boxes per Dave 2026-05-02 PM (see line above the 4-card grid) -->
@@ -10394,161 +10438,172 @@ html, body, html body{
      The inner rings (Year 1 + Year 3) are highlighted as the addressable pickleball TAM today.
      Outer rings (Year 5 + Year 8) tee up the multiplier story for adjacent communities. ===== -->
 <style>
-  #cs-tv .tv-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:48px 32px 24px; gap:18px; }
-  #cs-tv .tv-head { text-align:center; max-width:1240px; }
-  #cs-tv .tv-head-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,3vw,2.4rem); font-weight:700; color:#1a1612; line-height:1.15; letter-spacing:-0.018em; }
-  #cs-tv .tv-head-text em { font-style:italic; font-weight:500; color:#b8954a; }
-  #cs-tv .tv-map { width:min(1500px,99%); height:auto; display:block; }
+  /* cs-tv v3 — TAM panel as HTML (full font control), orbital map as SVG, side-by-side [Dave 2026-05-03 PM v3 rewrite] */
+  #cs-tv .tv-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:48px 36px 28px; gap:22px; }
+  #cs-tv .tv-head { text-align:center; max-width:1320px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2rem,3.6vw,3.1rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.022em; }
+  #cs-tv .tv-head em { font-style:italic; font-weight:500; color:#b8954a; }
+  #cs-tv .tv-body { display:grid; grid-template-columns: minmax(320px, 380px) 1fr; gap:28px; align-items:center; width:100%; max-width:1480px; }
+  /* TAM panel — left side, all HTML, properly sized fonts */
+  #cs-tv .tv-tam { display:flex; flex-direction:column; align-items:center; gap:14px; padding:24px 24px 28px; background:linear-gradient(180deg,rgba(212,168,83,0.08) 0%,rgba(212,168,83,0.02) 100%); border:1px solid rgba(184,149,74,0.32); border-radius:18px; }
+  #cs-tv .tv-tam-eye { font-family:'Manrope',sans-serif; font-size:clamp(.62rem,.85vw,.78rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#b8954a; text-align:center; }
+  #cs-tv .tv-tam-eye em { font-style:italic; font-weight:500; color:rgba(26,22,18,0.65); text-transform:none; letter-spacing:0.02em; display:block; margin-top:4px; }
+  #cs-tv .tv-tam-hero { font-family:'Playfair Display',serif; font-size:clamp(3.4rem,5vw,4.6rem); font-weight:900; line-height:0.95; letter-spacing:-0.04em; color:#1a1612; }
+  #cs-tv .tv-tam-hero .b { color:#b8954a; }
+  #cs-tv .tv-tam-arr { font-family:'Manrope',sans-serif; font-size:clamp(.78rem,1vw,.92rem); font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:rgba(26,22,18,0.6); }
+  #cs-tv .tv-tam-rule { width:80%; height:1px; background:rgba(184,149,74,0.4); margin:6px 0; }
+  #cs-tv .tv-tam-row { display:flex; flex-direction:column; align-items:center; gap:2px; text-align:center; }
+  #cs-tv .tv-tam-label { font-family:'Manrope',sans-serif; font-size:clamp(.65rem,.85vw,.78rem); font-weight:800; letter-spacing:.24em; text-transform:uppercase; }
+  #cs-tv .tv-tam-row.b2b .tv-tam-label { color:#b8954a; }
+  #cs-tv .tv-tam-row.d2p .tv-tam-label { color:#49b4a0; }
+  #cs-tv .tv-tam-num { font-family:'Playfair Display',serif; font-size:clamp(2rem,2.8vw,2.6rem); font-weight:900; line-height:1; letter-spacing:-0.025em; }
+  #cs-tv .tv-tam-row.b2b .tv-tam-num { color:#b8954a; }
+  #cs-tv .tv-tam-row.d2p .tv-tam-num { color:#49b4a0; }
+  #cs-tv .tv-tam-detail { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.78rem,1vw,.95rem); color:rgba(26,22,18,0.62); margin-top:2px; }
+  #cs-tv .tv-tam-plus { font-family:'Playfair Display',serif; font-style:italic; font-size:1.6rem; color:rgba(184,149,74,0.6); line-height:1; }
+  #cs-tv .tv-tam-multi { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.85rem,1vw,1rem); color:rgba(26,22,18,0.65); line-height:1.4; text-align:center; padding:10px 12px; background:rgba(122,74,140,0.05); border-left:3px solid #7a4a8c; border-radius:4px; margin-top:4px; }
+  #cs-tv .tv-tam-multi strong { font-style:normal; font-weight:700; color:#7a4a8c; }
+  /* Map — right side, SVG */
+  #cs-tv .tv-map-wrap { width:100%; display:flex; align-items:center; justify-content:center; }
+  #cs-tv .tv-map { width:100%; max-width:1000px; height:auto; display:block; }
 </style>
 <div class="casey-slide ds-focus" id="cs-tv">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Vision · Market Size</div>
-  <section style="position:relative;min-height:100%;width:100%">
+  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="tv-stage">
 
+      <!-- Headline -->
       <div class="tv-head">
-        <div class="tv-head-text">
-          We're building the map of <em>human connection</em><br>&mdash; one invitation at a time.
-        </div>
+        We're building the map of <em>human connection</em><br>&mdash; one invitation at a time.
       </div>
 
-      <!-- Orbital map with TAM annotations INTEGRATED INTO the visual [Dave 2026-05-03 PM v2 — true merge].
-           ViewBox extended LEFTWARD to (-360 → 1400 = width 1760) so the TAM number lives in the
-           same coordinate system as the rings, with a thin gold bracket pulling from the dollar
-           amount INTO the inner Year 1 + Year 3 rings. The numbers ARE the inner rings, visually. -->
-      <svg class="tv-map" viewBox="-380 -25 1780 800">
-        <defs>
-          <radialGradient id="tvCenterGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"  stop-color="#2a8a4f" stop-opacity="0.32"/>
-            <stop offset="100%" stop-color="#2a8a4f" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="tvInnerGold" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stop-color="#b8954a" stop-opacity="0"/>
-            <stop offset="55%"  stop-color="#b8954a" stop-opacity="0"/>
-            <stop offset="78%"  stop-color="#b8954a" stop-opacity="0.16"/>
-            <stop offset="92%"  stop-color="#b8954a" stop-opacity="0.06"/>
-            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
+      <!-- Two-column body: TAM panel (HTML) + orbital map (SVG) -->
+      <div class="tv-body">
 
-        <!-- Soft gold halo on the inner rings (the TAM is HERE) -->
-        <circle cx="700" cy="380" r="240" fill="url(#tvInnerGold)"/>
+        <!-- LEFT: TAM panel -->
+        <div class="tv-tam">
+          <div class="tv-tam-eye">
+            Pickleball TAM
+            <em>just the inner rings, today</em>
+          </div>
+          <div class="tv-tam-hero">$2.55<span class="b">B</span></div>
+          <div class="tv-tam-arr">ARR · today</div>
+          <div class="tv-tam-rule"></div>
+          <div class="tv-tam-row b2b">
+            <div class="tv-tam-label">B2B / Clubs</div>
+            <div class="tv-tam-num">$150M</div>
+            <div class="tv-tam-detail">5,000 clubs &times; $2,500/mo</div>
+          </div>
+          <div class="tv-tam-plus">+</div>
+          <div class="tv-tam-row d2p">
+            <div class="tv-tam-label">Direct-to-Players</div>
+            <div class="tv-tam-num">$2.4B</div>
+            <div class="tv-tam-detail">10M regulars &times; $20/mo</div>
+          </div>
+          <div class="tv-tam-multi"><strong>Outer rings multiply.</strong> Tennis. Golf. Yoga. Church. Every community.</div>
+        </div>
 
-        <!-- Radial lines -->
-        <g stroke="#b8954a" stroke-width="0.7" fill="none" opacity="0.7">
-          <line x1="700" y1="380" x2="765" y2="267"/>
-          <line x1="700" y1="380" x2="813" y2="445"/>
-          <line x1="700" y1="380" x2="635" y2="493"/>
-          <line x1="700" y1="380" x2="587" y2="315"/>
-          <line x1="700" y1="380" x2="886" y2="272"/>
-          <line x1="700" y1="380" x2="808" y2="566"/>
-          <line x1="700" y1="380" x2="514" y2="488"/>
-          <line x1="700" y1="380" x2="592" y2="194"/>
-          <line x1="700" y1="380" x2="912" y2="168"/>
-          <line x1="700" y1="380" x2="912" y2="592"/>
-          <line x1="700" y1="380" x2="488" y2="592"/>
-          <line x1="700" y1="380" x2="488" y2="168"/>
-          <line x1="700" y1="380" x2="1080" y2="380"/>
-          <line x1="700" y1="380" x2="320"  y2="380"/>
-          <line x1="700" y1="380" x2="975"  y2="65"/>
-          <line x1="700" y1="380" x2="425"  y2="65"/>
-          <line x1="700" y1="380" x2="975"  y2="695"/>
-          <line x1="700" y1="380" x2="425"  y2="695"/>
-        </g>
+        <!-- RIGHT: orbital map (SVG, no embedded TAM annotations) -->
+        <div class="tv-map-wrap">
+          <svg class="tv-map" viewBox="0 -30 1400 810" fill="none">
+            <defs>
+              <radialGradient id="tvCenterGlow2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%"  stop-color="#2a8a4f" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#2a8a4f" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="tvInnerGold2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%"   stop-color="#b8954a" stop-opacity="0"/>
+                <stop offset="55%"  stop-color="#b8954a" stop-opacity="0"/>
+                <stop offset="78%"  stop-color="#b8954a" stop-opacity="0.18"/>
+                <stop offset="92%"  stop-color="#b8954a" stop-opacity="0.07"/>
+                <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
 
-        <!-- Concentric rings — inner two get a slightly stronger stroke since they ARE the TAM -->
-        <g fill="none" stroke-dasharray="5 4">
-          <circle cx="700" cy="380" r="130" stroke="#5B8FD4" stroke-opacity="0.75" stroke-width="1.8"/>
-          <circle cx="700" cy="380" r="215" stroke="#b8954a" stroke-opacity="0.75" stroke-width="1.8"/>
-          <circle cx="700" cy="380" r="300" stroke="#c8462c" stroke-opacity="0.45" stroke-width="1.3"/>
-          <circle cx="700" cy="380" r="380" stroke="#7a4a8c" stroke-opacity="0.40" stroke-width="1.2"/>
-        </g>
+            <!-- Soft gold halo on the inner rings (TAM is HERE) -->
+            <circle cx="700" cy="380" r="240" fill="url(#tvInnerGold2)"/>
 
-        <!-- TODAY center -->
-        <g>
-          <circle cx="700" cy="380" r="120" fill="url(#tvCenterGlow)"/>
-          <circle cx="700" cy="380" r="38" fill="rgba(42,138,79,0.18)" stroke="#2a8a4f" stroke-width="2.2"/>
-          <text x="700" y="372" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#2a8a4f">TODAY</text>
-          <text x="700" y="394" text-anchor="middle" font-family="Playfair Display,serif" font-size="17" font-weight="800" fill="#1a1612">NEPC</text>
-        </g>
+            <!-- Radial lines -->
+            <g stroke="#b8954a" stroke-width="0.9" fill="none" opacity="0.55">
+              <line x1="700" y1="380" x2="765" y2="267"/>
+              <line x1="700" y1="380" x2="813" y2="445"/>
+              <line x1="700" y1="380" x2="635" y2="493"/>
+              <line x1="700" y1="380" x2="587" y2="315"/>
+              <line x1="700" y1="380" x2="886" y2="272"/>
+              <line x1="700" y1="380" x2="808" y2="566"/>
+              <line x1="700" y1="380" x2="514" y2="488"/>
+              <line x1="700" y1="380" x2="592" y2="194"/>
+              <line x1="700" y1="380" x2="912" y2="168"/>
+              <line x1="700" y1="380" x2="912" y2="592"/>
+              <line x1="700" y1="380" x2="488" y2="592"/>
+              <line x1="700" y1="380" x2="488" y2="168"/>
+              <line x1="700" y1="380" x2="1080" y2="380"/>
+              <line x1="700" y1="380" x2="320"  y2="380"/>
+              <line x1="700" y1="380" x2="975"  y2="65"/>
+              <line x1="700" y1="380" x2="425"  y2="65"/>
+              <line x1="700" y1="380" x2="975"  y2="695"/>
+              <line x1="700" y1="380" x2="425"  y2="695"/>
+            </g>
 
-        <!-- Year labels at top of each ring (sizes bumped for legibility 2026-05-03 PM) -->
-        <g><rect x="640" y="232" width="120" height="32" rx="16" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="1.4"/><text x="700" y="254" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#3a7da3">YEAR 1</text></g>
-        <g><rect x="640" y="146" width="120" height="32" rx="16" fill="#fbf6ec" stroke="#b8954a" stroke-width="1.4"/><text x="700" y="168" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#b8954a">YEAR 3</text></g>
-        <g><rect x="640" y="61"  width="120" height="32" rx="16" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.4"/><text x="700" y="83"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="2.6" fill="#c8462c">YEAR 5</text></g>
-        <g><rect x="635" y="-22" width="130" height="36" rx="18" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="1.6"/><text x="700" y="3"   text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.8" fill="#7a4a8c">YEAR 8</text></g>
+            <!-- Concentric rings — inner two stronger -->
+            <g fill="none" stroke-dasharray="6 5">
+              <circle cx="700" cy="380" r="130" stroke="#5B8FD4" stroke-opacity="0.85" stroke-width="2.2"/>
+              <circle cx="700" cy="380" r="215" stroke="#b8954a" stroke-opacity="0.85" stroke-width="2.2"/>
+              <circle cx="700" cy="380" r="300" stroke="#c8462c" stroke-opacity="0.50" stroke-width="1.6"/>
+              <circle cx="700" cy="380" r="380" stroke="#7a4a8c" stroke-opacity="0.45" stroke-width="1.4"/>
+            </g>
 
-        <!-- YEAR 1 nodes (PB CLUBs) -->
-        <g>
-          <circle cx="765" cy="267" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="765" y="295" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="813" cy="445" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="813" y="472" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="635" cy="493" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="635" y="520" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-          <circle cx="587" cy="315" r="14" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/><text x="587" y="294" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PB CLUB</text>
-        </g>
+            <!-- TODAY center — bigger -->
+            <g>
+              <circle cx="700" cy="380" r="120" fill="url(#tvCenterGlow2)"/>
+              <circle cx="700" cy="380" r="48" fill="rgba(42,138,79,0.20)" stroke="#2a8a4f" stroke-width="2.6"/>
+              <text x="700" y="372" text-anchor="middle" font-family="Manrope,sans-serif" font-size="16" font-weight="800" letter-spacing="2.8" fill="#2a8a4f">TODAY</text>
+              <text x="700" y="395" text-anchor="middle" font-family="Playfair Display,serif" font-size="22" font-weight="800" fill="#1a1612">NEPC</text>
+            </g>
 
-        <!-- YEAR 3 nodes (adjacent sports) -->
-        <g>
-          <circle cx="886" cy="272" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="886" y="298" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">TENNIS</text>
-          <circle cx="808" cy="566" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="808" y="592" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">GOLF</text>
-          <circle cx="514" cy="488" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="514" y="514" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">CYCLING</text>
-          <circle cx="592" cy="194" r="13" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.7"/><text x="592" y="220" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.78)">PADEL</text>
-        </g>
+            <!-- Year labels (much bigger) -->
+            <g><rect x="630" y="225" width="140" height="42" rx="21" fill="#fbf6ec" stroke="#5B8FD4" stroke-width="2"/><text x="700" y="253" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="800" letter-spacing="3" fill="#3a7da3">YEAR 1</text></g>
+            <g><rect x="630" y="138" width="140" height="42" rx="21" fill="#fbf6ec" stroke="#b8954a" stroke-width="2"/><text x="700" y="166" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="800" letter-spacing="3" fill="#b8954a">YEAR 3</text></g>
+            <g><rect x="630" y="50"  width="140" height="42" rx="21" fill="#fbf6ec" stroke="#c8462c" stroke-width="2"/><text x="700" y="78"  text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="800" letter-spacing="3" fill="#c8462c">YEAR 5</text></g>
+            <g><rect x="625" y="-30" width="150" height="46" rx="23" fill="#fbf6ec" stroke="#7a4a8c" stroke-width="2.2"/><text x="700" y="0"   text-anchor="middle" font-family="Manrope,sans-serif" font-size="22" font-weight="800" letter-spacing="3.2" fill="#7a4a8c">YEAR 8</text></g>
 
-        <!-- YEAR 5 nodes -->
-        <g>
-          <circle cx="912" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">YOGA</text>
-          <circle cx="912" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="912" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">DINNER</text>
-          <circle cx="488" cy="592" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="618" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">BOOK CLUB</text>
-          <circle cx="488" cy="168" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.4"/><text x="488" y="194" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="rgba(26,22,18,0.7)">CHURCH</text>
-        </g>
+            <!-- YEAR 1 nodes (PB CLUBs) -->
+            <g>
+              <circle cx="765" cy="267" r="18" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="2.2"/><text x="765" y="302" text-anchor="middle" font-family="Manrope,sans-serif" font-size="18" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">PB CLUB</text>
+              <circle cx="813" cy="445" r="18" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="2.2"/><text x="813" y="480" text-anchor="middle" font-family="Manrope,sans-serif" font-size="18" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">PB CLUB</text>
+              <circle cx="635" cy="493" r="18" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="2.2"/><text x="635" y="528" text-anchor="middle" font-family="Manrope,sans-serif" font-size="18" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">PB CLUB</text>
+              <circle cx="587" cy="315" r="18" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="2.2"/><text x="587" y="290" text-anchor="middle" font-family="Manrope,sans-serif" font-size="18" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">PB CLUB</text>
+            </g>
 
-        <!-- YEAR 8 outer scatter + ...AND BEYOND -->
-        <g>
-          <circle cx="1080" cy="380" r="9" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
-          <circle cx="320"  cy="380" r="9" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.7"/>
-          <circle cx="975"  cy="65"  r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
-          <circle cx="425"  cy="65"  r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
-          <circle cx="975"  cy="695" r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
-          <circle cx="425"  cy="695" r="8" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.1" opacity="0.55"/>
-          <text x="1140" y="386" text-anchor="start" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="rgba(122,74,140,0.78)">&hellip; AND BEYOND</text>
-          <text x="1140" y="408" text-anchor="start" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(122,74,140,0.55)">every ring multiplies</text>
-        </g>
+            <!-- YEAR 3 nodes (adjacent sports) -->
+            <g>
+              <circle cx="886" cy="272" r="16" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2"/><text x="886" y="305" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">TENNIS</text>
+              <circle cx="808" cy="566" r="16" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2"/><text x="808" y="599" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">GOLF</text>
+              <circle cx="514" cy="488" r="16" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2"/><text x="514" y="521" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">CYCLING</text>
+              <circle cx="592" cy="194" r="16" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2"/><text x="592" y="225" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.82)">PADEL</text>
+            </g>
 
-        <!-- ============================================================
-             TAM CALLOUT — INTEGRATED INTO THE VISUAL [Dave 2026-05-03 PM v2]
-             Lives at the LEFT side of the orbital map, with a soft gold
-             bracket pulling visually FROM the inner rings TO the dollar amount.
-             The number IS the inner rings.
-             ============================================================ -->
-        <g>
-          <!-- Curved bracket: starts at the left edge of Year 3 ring, sweeps left to the TAM number -->
-          <path d="M 485 380 Q 280 380 -40 380" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
-          <!-- Tick marks at both rings -->
-          <line x1="568" y1="380" x2="568" y2="372" stroke="#5B8FD4" stroke-width="2" stroke-linecap="round"/>
-          <line x1="485" y1="380" x2="485" y2="372" stroke="#b8954a" stroke-width="2" stroke-linecap="round"/>
+            <!-- YEAR 5 nodes -->
+            <g>
+              <circle cx="912" cy="168" r="14" fill="rgba(200,70,44,0.14)" stroke="#c8462c" stroke-width="1.7"/><text x="912" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="16" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.75)">YOGA</text>
+              <circle cx="912" cy="592" r="14" fill="rgba(200,70,44,0.14)" stroke="#c8462c" stroke-width="1.7"/><text x="912" y="624" text-anchor="middle" font-family="Manrope,sans-serif" font-size="16" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.75)">DINNER</text>
+              <circle cx="488" cy="592" r="14" fill="rgba(200,70,44,0.14)" stroke="#c8462c" stroke-width="1.7"/><text x="488" y="624" text-anchor="middle" font-family="Manrope,sans-serif" font-size="16" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.75)">BOOK CLUB</text>
+              <circle cx="488" cy="168" r="14" fill="rgba(200,70,44,0.14)" stroke="#c8462c" stroke-width="1.7"/><text x="488" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="16" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.75)">CHURCH</text>
+            </g>
 
-          <!-- Eyebrow -->
-          <text x="-200" y="270" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="3.4" fill="#b8954a">PICKLEBALL TAM</text>
-          <text x="-200" y="290" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.6)">just the inner rings, today</text>
+            <!-- YEAR 8 outer scatter + ...AND BEYOND label -->
+            <g>
+              <circle cx="1080" cy="380" r="11" fill="rgba(122,74,140,0.10)" stroke="#7a4a8c" stroke-width="1.4" opacity="0.7"/>
+              <circle cx="320"  cy="380" r="11" fill="rgba(122,74,140,0.10)" stroke="#7a4a8c" stroke-width="1.4" opacity="0.7"/>
+              <circle cx="975"  cy="65"  r="10" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.3" opacity="0.55"/>
+              <circle cx="425"  cy="65"  r="10" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.3" opacity="0.55"/>
+              <circle cx="975"  cy="695" r="10" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.3" opacity="0.55"/>
+              <circle cx="425"  cy="695" r="10" fill="rgba(122,74,140,0.08)" stroke="#7a4a8c" stroke-width="1.3" opacity="0.55"/>
+              <text x="1140" y="386" text-anchor="start" font-family="Manrope,sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="rgba(122,74,140,0.85)">&hellip; AND BEYOND</text>
+            </g>
+          </svg>
+        </div>
 
-          <!-- The hero number: $2.55B -->
-          <text x="-200" y="385" text-anchor="middle" font-family="Playfair Display,serif" font-size="84" font-weight="900" letter-spacing="-2.5" fill="#1a1612">$2.55<tspan fill="#b8954a">B</tspan></text>
-          <text x="-200" y="412" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="3.2" fill="rgba(26,22,18,0.55)">ARR · TODAY</text>
-
-          <!-- Breakdown stack: $150M B2B + $2.4B D2P -->
-          <line x1="-300" y1="445" x2="-100" y2="445" stroke="rgba(184,149,74,0.4)" stroke-width="1"/>
-
-          <text x="-200" y="478" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#b8954a">B2B / CLUBS</text>
-          <text x="-200" y="510" text-anchor="middle" font-family="Playfair Display,serif" font-size="32" font-weight="900" fill="#b8954a" letter-spacing="-1">$150M</text>
-          <text x="-200" y="528" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.55)">5,000 clubs &times; $2,500/mo</text>
-
-          <text x="-200" y="565" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="rgba(184,149,74,0.7)">+</text>
-
-          <text x="-200" y="595" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#49b4a0">DIRECT-TO-PLAYERS</text>
-          <text x="-200" y="627" text-anchor="middle" font-family="Playfair Display,serif" font-size="32" font-weight="900" fill="#49b4a0" letter-spacing="-1">$2.4B</text>
-          <text x="-200" y="645" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.55)">10M regulars &times; $20/mo</text>
-        </g>
-      </svg>
-
+      </div>
     </div>
   </section>
 </div>
@@ -11387,7 +11442,7 @@ html, body, html body{
   html[data-export="1"] #cs-ns1 .ns1-foot { opacity: 1 !important; transform: none !important; animation: none !important; }
   html[data-export="1"] #cs-ns1 .ns1-line { opacity: 0.18 !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-ns1">
+<div class="casey-slide ds-focus appendix-slide" id="cs-ns1" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">North Star &middot; 10-year vision</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px 24px">
 
@@ -11980,7 +12035,7 @@ html, body, html body{
 
 <!-- Market Size — moved from APPENDIX (was cs-a3) to MAIN DECK as cs-a3-main per Dave 2026-04-29.
      Sizes bumped throughout. Lives in SLIDE_ORDER right after cs-8b (Abundance · TAM). -->
-<div class="casey-slide ds-focus" id="cs-a3">
+<div class="casey-slide ds-focus appendix-slide" id="cs-a3" style="display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Market Size</div>
 <div class="inner" style="padding-top:72px;text-align:center;max-width:1180px">
@@ -13856,8 +13911,8 @@ const SLIDE_ORDER = [
   'cs-27',    // 18 CTO · Steve Callan
   // cs-4 (Moat) → at slot 5
   // cs-16 (Every signal) → APPENDIX
-  'cs-a3',    // 19 [BACKUP] Pickleball TAM original [kept in main flow per Dave 'just in case I don't like the merged slide']
-  'cs-ns1',   // 20 [BACKUP] NORTH STAR original orbital [kept in main flow per Dave 'just in case I don't like the merged slide']
+  // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
+  // cs-ns1 (North Star original orbital) MOVED to APPENDIX 2026-05-03 PM per Dave
   'cs-mv6',   // 21 Mission · "for all our lives to run on abundant human connection" [Dave 2026-05-03 PM — moved to right BEFORE cs-prom (the new last/closer slide)]
   'cs-prom'   // 22 LAST · Our Promise · GnR wordmark exploded + Dave's contact info [cs-prom is now the closing slide per Dave 2026-05-03 PM]
   // cs-nr (Networked Reciprocity) DELETED 2026-05-03 PM per Dave
@@ -13886,8 +13941,10 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
-  'cs-about',// 1: Brand · "It's About" — human spirit / spontaneity / connection / giving / kindness / fit [NEW Dave 2026-05-03 PM brand brain dump]
-  'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us." [moved from main deck to appendix 2026-05-03 PM per Dave]
+  'cs-about',// 1: Brand · "It's About"
+  'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us."
+  'cs-a3',   // 3: Pickleball TAM original [moved from main flow 2026-05-03 PM per Dave]
+  'cs-ns1',  // 4: North Star · 10-year orbital map original [moved from main flow 2026-05-03 PM per Dave]
   // cs-8b (Abundance · Opportunity Size) MOVED to main flow as slot 15 per Dave 2026-05-03 PM
   'cs-33',   // 2: Raising $1.5M Seed
   'cs-a20',  // 3: The Ask  (was cs-24)
