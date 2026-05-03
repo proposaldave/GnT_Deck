@@ -7943,14 +7943,12 @@ html, body, html body{
        no rating numbers, no detail card. ===== -->
   <div class="gnr-stage" style="position:relative;width:min(560px,72vmin);margin:18px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px">
 
-    <!-- HERO ENVELOPE — foursome strip moved BELOW the envelope as a sibling per Dave 2026-05-03
-         (was overlaid on top of the GnR seal — fixed visual collision). -->
+    <!-- HERO ENVELOPE — foursome strip is INSIDE the envelope at the BOTTOM (below the GnR seal) per Dave 2026-05-03 PM. -->
     <div class="gnr-env-container" style="position:relative;width:100%;max-width:520px;display:flex;align-items:center;justify-content:center">
       <img class="gnr-env-hero" src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:100%;display:block;filter:drop-shadow(0 22px 48px rgba(184,149,74,0.28))"/>
-    </div><!-- /gnr-env-container -->
 
-    <!-- Foursome strip — sits BELOW the envelope (no longer overlapping the GnR seal) -->
-    <div class="gnr-fs-strip" style="display:flex;align-items:center;gap:14px;padding:8px 18px 8px 16px;background:#fcf6e7;border:1.6px solid rgba(184,149,74,0.45);border-radius:99px;box-shadow:0 6px 18px rgba(184,149,74,0.22);opacity:0;margin-top:-6px">
+      <!-- Foursome strip — overlaid on the BOTTOM of the envelope (top:84% so it clears the GnR seal) -->
+      <div class="gnr-fs-strip" style="position:absolute;top:86%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px;padding:8px 18px 8px 16px;background:#fcf6e7;border:1.6px solid rgba(184,149,74,0.45);border-radius:99px;box-shadow:0 6px 18px rgba(184,149,74,0.22);opacity:0;z-index:2">
       <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#b8954a">Joining you</div>
       <div style="display:flex;align-items:center">
         <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(184,149,74,0.22),rgba(184,149,74,0.08));border:2.5px solid #b8954a;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2.5px #fcf6e7,0 4px 12px rgba(184,149,74,0.32);z-index:2">
@@ -7966,21 +7964,23 @@ html, body, html body{
           <svg viewBox="0 0 32 32" width="20" height="20" fill="none"><circle cx="16" cy="11" r="5" fill="#4a8c5e"/><path d="M5 28 Q16 20 27 28" stroke="#4a8c5e" stroke-width="2.4" fill="rgba(74,140,94,0.25)" stroke-linecap="round"/></svg>
         </div>
       </div>
-    </div>
+    </div><!-- /gnr-fs-strip -->
+    </div><!-- /gnr-env-container -->
   </div>
 
   <style>
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
     #cs-gnr.active .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
-    /* Foursome strip now sits BELOW the envelope as a normal block element (Dave 2026-05-03 — was overlapping GnR seal). */
+    /* Foursome strip is absolute-positioned at the BOTTOM of the envelope (top:86%) per Dave 2026-05-03 PM —
+       was overlapping the GnR seal at top:64%. Keyframe preserves translate(-50%,-50%) centering throughout. */
     #cs-gnr.active .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
     @keyframes gnrFsStripIn {
-      from { opacity:0; transform:translateY(8px); }
-      to   { opacity:1; transform:translateY(0); }
+      from { opacity:0; transform:translate(-50%, calc(-50% + 8px)); }
+      to   { opacity:1; transform:translate(-50%, -50%); }
     }
     html[data-export="1"] #cs-gnr .gnr-env-hero { opacity:1 !important; transform:rotate(-1deg) !important; animation:none !important; }
-    html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:none !important; animation:none !important; }
+    html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
   <!-- 3 emphasis callouts — hero treatment per Dave 2026-05-02 PM (big Fraunces, gold-italic accent, vertical dividers) -->
