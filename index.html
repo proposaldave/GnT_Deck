@@ -6391,7 +6391,7 @@ html, body, html body{
           }
           html[data-export="1"] #cs-4 .cs4-mind-svg .cs4-avatar { animation: none !important; }
         </style>
-        <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
+        <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
           <!-- FRONT graphic = SAME network of 5 heads-with-thoughts-inside as BACK [Dave 2026-05-03 PM]
                *** ANY UPDATE TO THIS GRAPHIC MUST ALSO UPDATE THE BACK COPY (search "cs4-network-svg" for both copies). *** -->
           <svg class="cs4-network-svg" width="380" height="320" viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block">
@@ -6453,6 +6453,11 @@ html, body, html body{
               </g>
             </g>
           </svg>
+          <!-- Caption label: "Give n Receive community data" — branded label for the network graphic [Dave 2026-05-03 PM]
+               *** Mirrored on BACK card. Sync any updates. *** -->
+          <div class="cs4-network-label" style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:center">
+            <span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-weight:700"><span style="color:#4d82c6">Give</span> <span style="color:#1a1612;font-style:italic;font-size:0.84em;font-weight:500;padding:0 0.04em">n</span> <span style="color:#c94d32">Receive</span></span> &nbsp;community data
+          </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
         <!-- BACK: headline + complementary network graphic [Dave 2026-05-03 PM v2: graphic added back].
@@ -6554,6 +6559,10 @@ html, body, html body{
             </g>
           </g>
         </svg>
+        <!-- Caption label below the graphic — mirrors FRONT [Dave 2026-05-03 PM]. Sync with FRONT 'cs4-network-label'. -->
+        <div class="cs4-network-label" style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:center;margin-top:-6px">
+          <span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-weight:700"><span style="color:#4d82c6">Give</span> <span style="color:#1a1612;font-style:italic;font-size:0.84em;font-weight:500;padding:0 0.04em">n</span> <span style="color:#c94d32">Receive</span></span> &nbsp;community data
+        </div>
 
         <!-- cs4CourtSvg + JS-rendered head DELETED 2026-05-03 PM per Dave: BACK card is text-only.
              animateCs4Court() function (below) is now orphaned but harmless — exits via the !group guard. -->
