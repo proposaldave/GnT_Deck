@@ -6488,7 +6488,7 @@ html, body, html body{
         <div class="cs4-flip-back" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1px solid rgba(61,255,122,0.36);border-radius:18px;padding:32px 36px;text-align:center;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12);transform:rotateY(180deg)">
         <!-- TOP slot: category label (swapped to top per Dave 2026-05-03 PM). Same font + size as bottom headline. -->
         <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.4rem);color:#1a1612;line-height:1.22;font-weight:700;letter-spacing:-0.018em;padding:0 16px;user-select:text;-webkit-user-select:text;cursor:text">
-          <em style="font-style:italic;color:#2a8a4f;font-weight:600">Who gives</em> in your community?
+          <em style="font-style:italic;color:#2a8a4f;font-weight:600">Who gives?</em>
         </div>
 
         <!-- Network graphic: 5 heads (you in center, 4 around), each connected by dashed gold lines = the private-feelings dataset across a community -->
@@ -7169,102 +7169,65 @@ html, body, html body{
       </div>
 
       <div class="bh-svg-wrap">
-        <svg viewBox="0 0 1140 460" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-          <!-- ============== LEFT: BRAIN — thought cloud with NAMED private impressions ============== -->
+        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+          <!-- LEFT: the giver — head with private impressions inside, arm extended -->
           <g>
-            <!-- Cloud bubble -->
-            <path d="M 60 90 Q 30 90 30 130 Q 10 160 50 175 Q 50 215 100 215 L 320 215 Q 365 215 365 175 Q 395 165 380 130 Q 380 95 340 90 Q 290 60 220 75 Q 150 60 100 80 Q 70 75 60 90 Z" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2"/>
-            <!-- Eyebrow inside cloud -->
-            <text x="200" y="103" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#3a7da3">PRIVATE IMPRESSIONS · IN YOUR HEAD</text>
-            <!-- Named impressions inside the cloud -->
-            <g font-family="Playfair Display,serif" font-size="14" fill="#1a1612">
-              <text x="60" y="130"><tspan font-weight="700" fill="#3a7da3">Sarah</tspan> &middot; <tspan font-style="italic">trusted backbone</tspan></text>
-              <text x="60" y="152"><tspan font-weight="700" fill="#c8462c">Tom</tspan> &middot; <tspan font-style="italic">flaky, last-minute</tspan></text>
-              <text x="60" y="174"><tspan font-weight="700" fill="#b8954a">Mike</tspan> &middot; <tspan font-style="italic">the heartbeat</tspan></text>
-              <text x="60" y="196"><tspan font-weight="700" fill="#5fa896">Renee</tspan> &middot; <tspan font-style="italic">plays better with Tom</tspan></text>
+            <!-- Body silhouette -->
+            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
+            <!-- Head -->
+            <circle cx="200" cy="110" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
+            <!-- Body shoulders -->
+            <path d="M 130 280 Q 130 200 165 175 L 235 175 Q 270 200 270 280 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <!-- Arm extending RIGHT toward connection -->
+            <path d="M 270 195 Q 320 200 358 215" fill="none" stroke="#5B8FD4" stroke-width="6" stroke-linecap="round"/>
+            <!-- Hand at end of arm -->
+            <circle cx="372" cy="218" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.8"/>
+
+            <!-- THOUGHT-DOTS inside head (private impressions about others) -->
+            <g class="bh-thoughts-static">
+              <circle cx="178" cy="92"  r="6" fill="#b8954a"/>
+              <circle cx="208" cy="86"  r="5" fill="#5fa896"/>
+              <circle cx="232" cy="105" r="6" fill="#c8556a"/>
+              <circle cx="186" cy="125" r="5" fill="#8a5aa0"/>
+              <circle cx="218" cy="132" r="5" fill="#3a7da3"/>
             </g>
-            <!-- Cloud-tail pointing DOWN to phone (visualizes brain → hand) -->
-            <circle cx="200" cy="232" r="8" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1.6"/>
-            <circle cx="200" cy="248" r="5" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1.4"/>
-            <circle cx="200" cy="262" r="3" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="1"/>
+
+            <!-- ANIMATED: one thought "falls" from head down through body to hand -->
+            <circle class="bh-thought-anim" cx="208" cy="105" r="7" fill="#b8954a" opacity="0.9"/>
+
+            <!-- Label under person -->
+            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
+            <text x="200" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">private impressions, in your head</text>
           </g>
 
-          <!-- ============== MIDDLE: PHONE — the literal "hand" bottleneck ============== -->
-          <g>
-            <!-- Hand silhouette (simplified) holding the phone -->
-            <path d="M 130 420 Q 130 360 175 350 L 280 350 Q 320 360 320 420 Z" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.6"/>
-            <text x="225" y="438" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#c8462c">YOUR HAND</text>
-            <!-- The PHONE -->
-            <rect x="170" y="278" width="110" height="170" rx="14" fill="#fbf6ec" stroke="#1a1612" stroke-width="2.2"/>
-            <rect x="180" y="296" width="90" height="135" rx="3" fill="rgba(26,22,18,0.04)"/>
-            <!-- ONE outgoing SMS bubble inside the phone (the only output) -->
-            <rect x="190" y="320" width="74" height="32" rx="14" fill="rgba(91,143,212,0.22)" stroke="#5B8FD4" stroke-width="1.4"/>
-            <text x="227" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="#3a7da3">"hey, sat 9am?"</text>
-            <!-- Empty placeholder bubbles below — visually says "this is the entire output" -->
-            <rect x="190" y="360" width="74" height="22" rx="11" fill="none" stroke="rgba(26,22,18,0.15)" stroke-width="1" stroke-dasharray="2 3"/>
-            <rect x="190" y="386" width="74" height="22" rx="11" fill="none" stroke="rgba(26,22,18,0.15)" stroke-width="1" stroke-dasharray="2 3"/>
-            <text x="225" y="265" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#c8462c">ONE TEXT · ONE PERSON</text>
-          </g>
-
-          <!-- ============== ARROW from phone → community ============== -->
-          <line class="bh-conn-line" x1="290" y1="365" x2="500" y2="200" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
-          <!-- Animated envelope along the line -->
-          <g class="bh-envelope-anim" transform="translate(290 365)">
+          <!-- MIDDLE: the manual connection line + animated envelope -->
+          <line class="bh-conn-line" x1="386" y1="220" x2="546" y2="220" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 5"/>
+          <!-- Envelope flying along the line -->
+          <g class="bh-envelope-anim" transform="translate(386 220)">
             <rect x="-14" y="-9" width="28" height="18" rx="1.5" fill="#fbf6ec" stroke="#c8462c" stroke-width="1.6"/>
             <path d="M -14 -9 L 0 0 L 14 -9" fill="none" stroke="#c8462c" stroke-width="1.6"/>
           </g>
-          <text x="395" y="265" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#c8462c" transform="rotate(-38 395 265)">BY HAND</text>
+          <!-- "BY HAND" label centered above the line -->
+          <text x="466" y="200" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="3" fill="#c8462c">BY HAND</text>
 
-          <!-- ============== RIGHT: COMMUNITY — 1 reached (gold), 31 unreached (grey) ============== -->
-          <!-- The lit recipient (gold, big) -->
+          <!-- RIGHT: ONE recipient (lit), 5 OTHERS (greyed out) — the rest of the community waits -->
+          <!-- Lit recipient (animated pulse on receive) -->
           <g class="bh-recipient" opacity="0.32">
-            <circle cx="540" cy="180" r="28" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="2.2"/>
-            <circle cx="540" cy="172" r="9" fill="rgba(184,149,74,0.45)"/>
-            <path d="M 524 198 Q 540 186 556 198" fill="rgba(184,149,74,0.20)" stroke="#b8954a" stroke-width="1.6"/>
-            <text x="540" y="226" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.6" fill="#b8954a">REACHED</text>
+            <circle cx="600" cy="180" r="32" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="2.2"/>
+            <circle cx="600" cy="170" r="11" fill="rgba(184,149,74,0.32)"/>
+            <path d="M 580 200 Q 600 188 620 200" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
+            <text x="600" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">INVITED</text>
           </g>
 
-          <!-- The community grid: 31 small grey figures (8 cols × 4 rows minus 1) -->
-          <g opacity="0.40" stroke="rgba(26,22,18,0.40)" stroke-width="1.2" fill="none">
-            <!-- Row 1: y=100, 8 figures -->
-            <g><circle cx="650" cy="98" r="13"/><circle cx="650" cy="94" r="4.5"/><path d="M 640 110 Q 650 104 660 110"/></g>
-            <g><circle cx="710" cy="98" r="13"/><circle cx="710" cy="94" r="4.5"/><path d="M 700 110 Q 710 104 720 110"/></g>
-            <g><circle cx="770" cy="98" r="13"/><circle cx="770" cy="94" r="4.5"/><path d="M 760 110 Q 770 104 780 110"/></g>
-            <g><circle cx="830" cy="98" r="13"/><circle cx="830" cy="94" r="4.5"/><path d="M 820 110 Q 830 104 840 110"/></g>
-            <g><circle cx="890" cy="98" r="13"/><circle cx="890" cy="94" r="4.5"/><path d="M 880 110 Q 890 104 900 110"/></g>
-            <g><circle cx="950" cy="98" r="13"/><circle cx="950" cy="94" r="4.5"/><path d="M 940 110 Q 950 104 960 110"/></g>
-            <g><circle cx="1010" cy="98" r="13"/><circle cx="1010" cy="94" r="4.5"/><path d="M 1000 110 Q 1010 104 1020 110"/></g>
-            <g><circle cx="1070" cy="98" r="13"/><circle cx="1070" cy="94" r="4.5"/><path d="M 1060 110 Q 1070 104 1080 110"/></g>
-            <!-- Row 2 -->
-            <g><circle cx="650" cy="160" r="13"/><circle cx="650" cy="156" r="4.5"/><path d="M 640 172 Q 650 166 660 172"/></g>
-            <g><circle cx="710" cy="160" r="13"/><circle cx="710" cy="156" r="4.5"/><path d="M 700 172 Q 710 166 720 172"/></g>
-            <g><circle cx="770" cy="160" r="13"/><circle cx="770" cy="156" r="4.5"/><path d="M 760 172 Q 770 166 780 172"/></g>
-            <g><circle cx="830" cy="160" r="13"/><circle cx="830" cy="156" r="4.5"/><path d="M 820 172 Q 830 166 840 172"/></g>
-            <g><circle cx="890" cy="160" r="13"/><circle cx="890" cy="156" r="4.5"/><path d="M 880 172 Q 890 166 900 172"/></g>
-            <g><circle cx="950" cy="160" r="13"/><circle cx="950" cy="156" r="4.5"/><path d="M 940 172 Q 950 166 960 172"/></g>
-            <g><circle cx="1010" cy="160" r="13"/><circle cx="1010" cy="156" r="4.5"/><path d="M 1000 172 Q 1010 166 1020 172"/></g>
-            <g><circle cx="1070" cy="160" r="13"/><circle cx="1070" cy="156" r="4.5"/><path d="M 1060 172 Q 1070 166 1080 172"/></g>
-            <!-- Row 3 — skip first (it's the gold lit recipient) -->
-            <g><circle cx="710" cy="222" r="13"/><circle cx="710" cy="218" r="4.5"/><path d="M 700 234 Q 710 228 720 234"/></g>
-            <g><circle cx="770" cy="222" r="13"/><circle cx="770" cy="218" r="4.5"/><path d="M 760 234 Q 770 228 780 234"/></g>
-            <g><circle cx="830" cy="222" r="13"/><circle cx="830" cy="218" r="4.5"/><path d="M 820 234 Q 830 228 840 234"/></g>
-            <g><circle cx="890" cy="222" r="13"/><circle cx="890" cy="218" r="4.5"/><path d="M 880 234 Q 890 228 900 234"/></g>
-            <g><circle cx="950" cy="222" r="13"/><circle cx="950" cy="218" r="4.5"/><path d="M 940 234 Q 950 228 960 234"/></g>
-            <g><circle cx="1010" cy="222" r="13"/><circle cx="1010" cy="218" r="4.5"/><path d="M 1000 234 Q 1010 228 1020 234"/></g>
-            <g><circle cx="1070" cy="222" r="13"/><circle cx="1070" cy="218" r="4.5"/><path d="M 1060 234 Q 1070 228 1080 234"/></g>
-            <!-- Row 4 -->
-            <g><circle cx="650" cy="284" r="13"/><circle cx="650" cy="280" r="4.5"/><path d="M 640 296 Q 650 290 660 296"/></g>
-            <g><circle cx="710" cy="284" r="13"/><circle cx="710" cy="280" r="4.5"/><path d="M 700 296 Q 710 290 720 296"/></g>
-            <g><circle cx="770" cy="284" r="13"/><circle cx="770" cy="280" r="4.5"/><path d="M 760 296 Q 770 290 780 296"/></g>
-            <g><circle cx="830" cy="284" r="13"/><circle cx="830" cy="280" r="4.5"/><path d="M 820 296 Q 830 290 840 296"/></g>
-            <g><circle cx="890" cy="284" r="13"/><circle cx="890" cy="280" r="4.5"/><path d="M 880 296 Q 890 290 900 296"/></g>
-            <g><circle cx="950" cy="284" r="13"/><circle cx="950" cy="280" r="4.5"/><path d="M 940 296 Q 950 290 960 296"/></g>
-            <g><circle cx="1010" cy="284" r="13"/><circle cx="1010" cy="280" r="4.5"/><path d="M 1000 296 Q 1010 290 1020 296"/></g>
-            <g><circle cx="1070" cy="284" r="13"/><circle cx="1070" cy="280" r="4.5"/><path d="M 1060 296 Q 1070 290 1080 296"/></g>
+          <!-- 5 GREYED OUT bystanders (still waiting) -->
+          <g opacity="0.30">
+            <g><circle cx="700" cy="80"  r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="74"  r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 96 Q 700 86 714 96" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="800" cy="160" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="800" cy="154" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 786 176 Q 800 166 814 176" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="820" cy="280" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="820" cy="274" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 806 296 Q 820 286 834 296" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="700" cy="300" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="700" cy="294" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 686 316 Q 700 306 714 316" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
+            <g><circle cx="600" cy="320" r="22" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/><circle cx="600" cy="314" r="7" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/><path d="M 586 336 Q 600 326 614 336" fill="none" stroke="rgba(26,22,18,0.4)" stroke-width="1.2"/></g>
           </g>
-          <!-- Caption under the grid -->
-          <text x="860" y="332" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.6" fill="rgba(26,22,18,0.55)">31 OTHERS · NEVER GET AN INVITATION</text>
-          <text x="860" y="354" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.62)">your impressions about them never reach them</text>
+          <text x="760" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="700" letter-spacing="2.2" fill="rgba(26,22,18,0.45)">NEVER GET AN INVITATION</text>
         </svg>
       </div>
 
