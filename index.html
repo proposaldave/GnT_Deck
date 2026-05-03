@@ -7227,150 +7227,194 @@ html, body, html body{
   </section>
 </div>
 
-<!-- ===== cs-bh2 · TOMORROW: Brain DIGITIZED → Everyone [Dave 2026-05-03 PM] =====
-     The future-state mirror of cs-bh: same person, same impressions — but now those
-     impressions BEAM UPWARD into a digital graph (the GnR cloud), and the graph
-     automatically routes invitations to ALL the right people simultaneously. Same
-     community, same person, completely transformed pipeline. ============= -->
+<!-- ===== cs-bh2 · TOMORROW: Brain DIGITIZED → Synthesis [Dave 2026-05-03 PM v2 — REBUILT]
+     Multiple people contribute their private impressions UPWARD into the GnR graph.
+     As the impressions accumulate, GnR SYNTHESIZES understanding: who's unique, who's
+     valuable to whom, who fits which situations. Synthesis cards materialize around
+     the graph showing what GnR has learned. ============= -->
 <style>
-  #cs-bh2 .bh2-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:64px 48px 48px; gap:18px; text-align:center; }
+  #cs-bh2 .bh2-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:48px 48px 36px; gap:14px; text-align:center; }
   #cs-bh2 .bh2-eye { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#b8954a; }
-  #cs-bh2 .bh2-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.6vw,3rem); font-weight:700; color:#1a1612; line-height:1.1; letter-spacing:-0.02em; max-width:1100px; }
+  #cs-bh2 .bh2-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.2vw,2.6rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1140px; }
   #cs-bh2 .bh2-head em { font-style:italic; font-weight:600; color:#b8954a; }
   #cs-bh2 .bh2-head .gnr-mark { font-family:'Playfair Display',serif; font-style:normal; }
   #cs-bh2 .bh2-head .gnr-mark .g { color:#5B8FD4; font-weight:700; }
   #cs-bh2 .bh2-head .gnr-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.06em; }
   #cs-bh2 .bh2-head .gnr-mark .r { color:#c8462c; font-weight:700; }
-  #cs-bh2 .bh2-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(1rem,1.55vw,1.3rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:980px; margin-top:6px; }
+  #cs-bh2 .bh2-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.4vw,1.2rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:1100px; margin-top:4px; }
   #cs-bh2 .bh2-foot em { font-style:italic; color:#b8954a; font-weight:600; }
-  #cs-bh2 .bh2-svg-wrap { width:min(900px,94%); margin:6px auto 0; }
-  /* Animation: thoughts beam UP → cloud glows → invitations rain DOWN to everyone */
-  @keyframes bh2BeamUp {
-    0%, 10%   { opacity: 0; transform: translate(0, 0); }
-    25%       { opacity: 1; transform: translate(0, 0); }
-    55%       { opacity: 1; transform: translate(180px, -55px); }
-    65%       { opacity: 0; transform: translate(180px, -55px); }
-    100%      { opacity: 0; transform: translate(180px, -55px); }
+  #cs-bh2 .bh2-svg-wrap { width:min(1140px,98%); margin:4px auto 0; }
+
+  /* Animation: 4 contributors beam UP → cloud accumulates → synthesis cards POP IN */
+  @keyframes bh2BeamFlow {
+    0%       { opacity: 0; }
+    15%      { opacity: 1; }
+    100%     { opacity: 0; offset-distance: 100%; }
   }
-  @keyframes bh2CloudGlow {
-    0%, 50%   { opacity: 0.25; }
-    65%       { opacity: 1; filter: drop-shadow(0 0 12px rgba(184,149,74,0.55)); }
-    100%      { opacity: 1; filter: drop-shadow(0 0 8px rgba(184,149,74,0.35)); }
+  @keyframes bh2BeamUp1 { 0% { transform: translate(0,0); opacity:0 } 15% { opacity:1 } 100% { transform: translate(425px,-160px); opacity:0 } }
+  @keyframes bh2BeamUp2 { 0% { transform: translate(0,0); opacity:0 } 15% { opacity:1 } 100% { transform: translate(345px,-50px); opacity:0 } }
+  @keyframes bh2BeamUp3 { 0% { transform: translate(0,0); opacity:0 } 15% { opacity:1 } 100% { transform: translate(345px,40px); opacity:0 } }
+  @keyframes bh2BeamUp4 { 0% { transform: translate(0,0); opacity:0 } 15% { opacity:1 } 100% { transform: translate(425px,140px); opacity:0 } }
+  @keyframes bh2GraphGrow {
+    0%   { opacity: 0.20; transform: scale(0.85); }
+    50%  { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.04); filter: drop-shadow(0 0 14px rgba(184,149,74,0.55)); }
   }
-  @keyframes bh2RecipientLight { 0%, 70% { opacity: 0.32; } 85%, 100% { opacity: 1; } }
-  @keyframes bh2InviteFly { 0%, 70% { opacity: 0; transform: translate(0,0); } 80% { opacity: 1; } 100% { opacity: 1; transform: var(--bh2-end); } }
-  #cs-bh2.active .bh2-beam-1 { animation: bh2BeamUp 4s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh2.active .bh2-beam-2 { animation: bh2BeamUp 4s 0.15s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh2.active .bh2-beam-3 { animation: bh2BeamUp 4s 0.3s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh2.active .bh2-cloud { animation: bh2CloudGlow 4.2s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  #cs-bh2.active .bh2-recipient { animation: bh2RecipientLight 4.4s cubic-bezier(.45,.05,.18,1) forwards; transform-origin: center; transform-box: fill-box; }
-  html[data-export="1"] #cs-bh2 .bh2-beam-1,
-  html[data-export="1"] #cs-bh2 .bh2-beam-2,
-  html[data-export="1"] #cs-bh2 .bh2-beam-3,
-  html[data-export="1"] #cs-bh2 .bh2-cloud,
-  html[data-export="1"] #cs-bh2 .bh2-recipient { animation: none !important; opacity: 1 !important; }
+  @keyframes bh2CardIn {
+    0%, 50%   { opacity: 0; transform: translateY(8px) scale(0.94); }
+    100%      { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  #cs-bh2.active .bh2-beam-1 { animation: bh2BeamUp1 3.6s cubic-bezier(.45,.05,.18,1) infinite; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-beam-2 { animation: bh2BeamUp2 3.6s 0.5s cubic-bezier(.45,.05,.18,1) infinite; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-beam-3 { animation: bh2BeamUp3 3.6s 1.0s cubic-bezier(.45,.05,.18,1) infinite; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-beam-4 { animation: bh2BeamUp4 3.6s 1.5s cubic-bezier(.45,.05,.18,1) infinite; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-graph { animation: bh2GraphGrow 3s cubic-bezier(.45,.05,.18,1) forwards; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-card { opacity:0; animation: bh2CardIn 0.9s cubic-bezier(.45,.05,.18,1) forwards; transform-box: fill-box; transform-origin: center; }
+  #cs-bh2.active .bh2-card-1 { animation-delay: 2.4s; }
+  #cs-bh2.active .bh2-card-2 { animation-delay: 2.8s; }
+  #cs-bh2.active .bh2-card-3 { animation-delay: 3.2s; }
+  #cs-bh2.active .bh2-card-4 { animation-delay: 3.6s; }
+  html[data-export="1"] #cs-bh2 [class*="bh2-"] { animation: none !important; opacity: 1 !important; transform: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-bh2">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Digitized</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Synthesis</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="bh2-stage">
       <div class="bh2-eye">With <span class="gnr-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
       <div class="bh2-head">
-        Your private impressions become <em>shared infrastructure</em>.<br>Invitations find <em>everyone</em>.
+        Each of us digitizes our impressions.<br><span class="gnr-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span> learns who we are <em>to each other</em>.
       </div>
 
       <div class="bh2-svg-wrap">
-        <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1140 460" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="bh2CloudGrad" cx="50%" cy="50%" r="55%">
-              <stop offset="0%"  stop-color="#f0c040" stop-opacity="0.45"/>
-              <stop offset="60%" stop-color="#b8954a" stop-opacity="0.20"/>
+            <radialGradient id="bh2GraphGrad" cx="50%" cy="50%" r="55%">
+              <stop offset="0%"  stop-color="#f0c040" stop-opacity="0.55"/>
+              <stop offset="55%" stop-color="#b8954a" stop-opacity="0.22"/>
               <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
             </radialGradient>
           </defs>
 
-          <!-- LEFT: the same person, same impressions — but thoughts BEAM UP -->
+          <!-- LEFT: 4 CONTRIBUTORS, each with their own thought-dots — all digitizing simultaneously -->
+          <!-- Person 1 (top) -->
           <g>
-            <ellipse cx="200" cy="285" rx="90" ry="14" fill="rgba(26,22,18,0.04)"/>
-            <circle cx="200" cy="180" r="62" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="2.2"/>
-            <path d="M 130 285 Q 130 250 165 240 L 235 240 Q 270 250 270 285 Z" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.8"/>
-            <!-- Static thoughts -->
-            <g>
-              <circle cx="178" cy="162" r="6" fill="#b8954a"/>
-              <circle cx="208" cy="156" r="5" fill="#5fa896"/>
-              <circle cx="232" cy="175" r="6" fill="#c8556a"/>
-              <circle cx="186" cy="195" r="5" fill="#8a5aa0"/>
-              <circle cx="218" cy="202" r="5" fill="#3a7da3"/>
-            </g>
-            <!-- Animated beams: 3 thoughts fly UP & RIGHT into the GnR cloud -->
-            <circle class="bh2-beam-1" cx="200" cy="155" r="6" fill="#b8954a" opacity="0"/>
-            <circle class="bh2-beam-2" cx="208" cy="162" r="5" fill="#5fa896" opacity="0"/>
-            <circle class="bh2-beam-3" cx="218" cy="170" r="6" fill="#c8556a" opacity="0"/>
-            <text x="200" y="320" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.6)">YOU</text>
-            <text x="200" y="340" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">same private impressions</text>
+            <circle cx="120" cy="60" r="32" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <circle cx="111" cy="53" r="3" fill="#b8954a"/><circle cx="124" cy="50" r="3" fill="#5fa896"/><circle cx="135" cy="60" r="3" fill="#c8556a"/><circle cx="116" cy="68" r="3" fill="#8a5aa0"/>
+            <text x="120" y="115" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.6)">SARAH</text>
+          </g>
+          <!-- Person 2 -->
+          <g>
+            <circle cx="120" cy="170" r="32" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <circle cx="111" cy="163" r="3" fill="#5fa896"/><circle cx="124" cy="160" r="3" fill="#b8954a"/><circle cx="135" cy="170" r="3" fill="#3a7da3"/><circle cx="116" cy="178" r="3" fill="#c8556a"/>
+            <text x="120" y="225" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.6)">TOM</text>
+          </g>
+          <!-- Person 3 -->
+          <g>
+            <circle cx="120" cy="280" r="32" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <circle cx="111" cy="273" r="3" fill="#c8556a"/><circle cx="124" cy="270" r="3" fill="#8a5aa0"/><circle cx="135" cy="280" r="3" fill="#5fa896"/><circle cx="116" cy="288" r="3" fill="#b8954a"/>
+            <text x="120" y="335" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.6)">MIKE</text>
+          </g>
+          <!-- Person 4 (bottom) -->
+          <g>
+            <circle cx="120" cy="390" r="32" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.8"/>
+            <circle cx="111" cy="383" r="3" fill="#8a5aa0"/><circle cx="124" cy="380" r="3" fill="#3a7da3"/><circle cx="135" cy="390" r="3" fill="#b8954a"/><circle cx="116" cy="398" r="3" fill="#5fa896"/>
+            <text x="120" y="445" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.6)">RENEE</text>
           </g>
 
-          <!-- CENTER: GnR digital cloud (the graph) -->
-          <g class="bh2-cloud" opacity="0.25">
-            <ellipse cx="450" cy="100" rx="110" ry="62" fill="url(#bh2CloudGrad)"/>
-            <ellipse cx="450" cy="100" rx="78" ry="44" fill="rgba(212,168,83,0.12)" stroke="rgba(184,149,74,0.55)" stroke-width="1.8"/>
-            <!-- GnR mark inside the cloud -->
-            <text x="450" y="108" text-anchor="middle" font-family="Playfair Display,serif" font-size="32" font-weight="700" letter-spacing="-1">
-              <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="22" font-weight="500" fill="#1a1612" dx="2">n</tspan><tspan fill="#c8462c" dx="2">R</tspan>
+          <!-- Faint dashed paths showing impression-flow from each person to the graph -->
+          <g stroke="rgba(184,149,74,0.25)" stroke-width="1" stroke-dasharray="2 4" fill="none">
+            <path d="M 152 60  Q 320 100 545 220" />
+            <path d="M 152 170 Q 320 195 495 220" />
+            <path d="M 152 280 Q 320 250 495 240" />
+            <path d="M 152 390 Q 320 340 545 260" />
+          </g>
+
+          <!-- ANIMATED IMPRESSION DOTS flying from each person into the graph -->
+          <circle class="bh2-beam-1" cx="120" cy="60"  r="4" fill="#b8954a"/>
+          <circle class="bh2-beam-2" cx="120" cy="170" r="4" fill="#5fa896"/>
+          <circle class="bh2-beam-3" cx="120" cy="280" r="4" fill="#c8556a"/>
+          <circle class="bh2-beam-4" cx="120" cy="390" r="4" fill="#8a5aa0"/>
+
+          <!-- CENTER: GnR GRAPH — actively synthesizing -->
+          <g class="bh2-graph" opacity="0.20">
+            <!-- Outer halo -->
+            <circle cx="555" cy="230" r="125" fill="url(#bh2GraphGrad)"/>
+            <!-- Mid ring -->
+            <circle cx="555" cy="230" r="92" fill="rgba(212,168,83,0.10)" stroke="rgba(184,149,74,0.45)" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <!-- Inner core -->
+            <circle cx="555" cy="230" r="64" fill="rgba(212,168,83,0.18)" stroke="#b8954a" stroke-width="2"/>
+            <!-- GnR mark in the center -->
+            <text x="555" y="240" text-anchor="middle" font-family="Playfair Display,serif" font-size="34" font-weight="700" letter-spacing="-1">
+              <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="24" font-weight="500" fill="#1a1612" dx="2">n</tspan><tspan fill="#c8462c" dx="2">R</tspan>
             </text>
-            <text x="450" y="135" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="rgba(184,149,74,0.85)">SHARED GRAPH</text>
+            <text x="555" y="265" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="rgba(184,149,74,0.85)">SYNTHESIZING</text>
+            <!-- Inner orbital dots (representing the graph nodes/edges getting populated) -->
+            <g fill="#b8954a" opacity="0.6">
+              <circle cx="555" cy="166" r="3"/>
+              <circle cx="611" cy="200" r="3"/>
+              <circle cx="611" cy="260" r="3"/>
+              <circle cx="555" cy="294" r="3"/>
+              <circle cx="499" cy="260" r="3"/>
+              <circle cx="499" cy="200" r="3"/>
+            </g>
+            <g stroke="rgba(184,149,74,0.4)" stroke-width="1" fill="none">
+              <line x1="555" y1="166" x2="611" y2="200"/>
+              <line x1="611" y1="200" x2="611" y2="260"/>
+              <line x1="611" y1="260" x2="555" y2="294"/>
+              <line x1="555" y1="294" x2="499" y2="260"/>
+              <line x1="499" y1="260" x2="499" y2="200"/>
+              <line x1="499" y1="200" x2="555" y2="166"/>
+              <line x1="555" y1="166" x2="611" y2="260"/>
+              <line x1="611" y1="200" x2="555" y2="294"/>
+              <line x1="499" y1="200" x2="611" y2="260"/>
+            </g>
           </g>
 
-          <!-- AUTOMATIC invitation lines: cloud → all 6 recipients (all gold, all simultaneous) -->
-          <g stroke="#b8954a" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0">
-            <line class="bh2-recipient" x1="450" y1="125" x2="600" y2="200"/>
-            <line class="bh2-recipient" x1="450" y1="125" x2="700" y2="100"/>
-            <line class="bh2-recipient" x1="450" y1="125" x2="800" y2="180"/>
-            <line class="bh2-recipient" x1="450" y1="125" x2="820" y2="290"/>
-            <line class="bh2-recipient" x1="450" y1="125" x2="700" y2="310"/>
-            <line class="bh2-recipient" x1="450" y1="125" x2="600" y2="320"/>
+          <!-- RIGHT: SYNTHESIS CARDS — what GnR has learned. Pop in sequentially as the graph fills. -->
+          <!-- Card 1: Uniqueness per person -->
+          <g class="bh2-card bh2-card-1">
+            <rect x="730" y="30" width="380" height="78" rx="9" fill="rgba(255,255,255,0.85)" stroke="rgba(184,149,74,0.55)" stroke-width="1.6"/>
+            <text x="744" y="52" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="#b8954a">UNIQUENESS</text>
+            <text x="744" y="74" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#1a1612">Sarah · <tspan font-style="italic" fill="#b8954a">the heartbeat of the room</tspan></text>
+            <text x="744" y="93" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="rgba(26,22,18,0.7)">Mike · <tspan font-style="italic" fill="rgba(184,149,74,0.85)">brings energy, anchors Tuesdays</tspan></text>
           </g>
-
-          <!-- RIGHT: ALL recipients lit (gold, animated to brighten when graph routes invites) -->
-          <g class="bh2-recipient" opacity="0.32">
-            <g><circle cx="600" cy="200" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="600" cy="194" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 586 216 Q 600 206 614 216" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
-            <g><circle cx="700" cy="100" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="700" cy="94"  r="7" fill="rgba(184,149,74,0.45)"/><path d="M 686 116 Q 700 106 714 116" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
-            <g><circle cx="800" cy="180" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="800" cy="174" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 786 196 Q 800 186 814 196" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
-            <g><circle cx="820" cy="290" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="820" cy="284" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 806 306 Q 820 296 834 306" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
-            <g><circle cx="700" cy="310" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="700" cy="304" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 686 326 Q 700 316 714 326" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
-            <g><circle cx="600" cy="320" r="22" fill="rgba(184,149,74,0.22)" stroke="#b8954a" stroke-width="1.8"/><circle cx="600" cy="314" r="7" fill="rgba(184,149,74,0.45)"/><path d="M 586 336 Q 600 326 614 336" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.4"/></g>
+          <!-- Card 2: Pair value -->
+          <g class="bh2-card bh2-card-2">
+            <rect x="730" y="120" width="380" height="78" rx="9" fill="rgba(255,255,255,0.85)" stroke="rgba(184,149,74,0.55)" stroke-width="1.6"/>
+            <text x="744" y="142" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="#b8954a">PAIR VALUE</text>
+            <text x="744" y="164" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#1a1612">Tom + Renee · <tspan font-style="italic" fill="#b8954a">play their best game together</tspan></text>
+            <text x="744" y="183" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="rgba(26,22,18,0.7)">Sarah + Mike · <tspan font-style="italic" fill="rgba(184,149,74,0.85)">balance the room</tspan></text>
           </g>
-          <text x="710" y="346" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#b8954a">EVERYONE GETS THE RIGHT INVITATION</text>
+          <!-- Card 3: Situational fit -->
+          <g class="bh2-card bh2-card-3">
+            <rect x="730" y="210" width="380" height="78" rx="9" fill="rgba(255,255,255,0.85)" stroke="rgba(184,149,74,0.55)" stroke-width="1.6"/>
+            <text x="744" y="232" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="#b8954a">SITUATIONAL FIT</text>
+            <text x="744" y="254" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#1a1612">Saturday 9am · <tspan font-style="italic" fill="#b8954a">competitive, focused</tspan></text>
+            <text x="744" y="273" font-family="Playfair Display,serif" font-size="13" font-weight="600" fill="rgba(26,22,18,0.7)">Tuesday 6pm · <tspan font-style="italic" fill="rgba(184,149,74,0.85)">social, energy</tspan></text>
+          </g>
+          <!-- Card 4: Smart match output -->
+          <g class="bh2-card bh2-card-4">
+            <rect x="730" y="300" width="380" height="116" rx="9" fill="rgba(212,168,83,0.18)" stroke="#b8954a" stroke-width="2"/>
+            <text x="744" y="322" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="#b8954a">SMART MATCH · SAT 9AM</text>
+            <text x="744" y="349" font-family="Playfair Display,serif" font-size="17" font-weight="800" fill="#1a1612">Sarah · Mike · Tom · Renee</text>
+            <text x="744" y="370" font-family="Playfair Display,serif" font-style="italic" font-size="12" fill="rgba(26,22,18,0.72)">Balanced fairness. Right energy. Best game everyone plays.</text>
+            <text x="744" y="396" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.2" fill="#5fa896">→  invitations sent automatically</text>
+          </g>
         </svg>
       </div>
 
       <div class="bh2-foot">
-        Brain &rarr; <em>digital</em> &rarr; everyone. The whole community runs itself.
+        Your impressions become a <em>living understanding</em>. The graph knows who's unique, who fits whom, when.
       </div>
     </div>
   </section>
 </div>
 
-<!-- ===== cs-bh-v2 · TODAY · VARIANT B: ICEBERG metaphor [Dave 2026-05-03 PM]
-     Above water: ONE SMS bubble between two phones — what you SEE.
-     Below water: dense web of private impressions across the community — what's REAL.
-     Punch: today, only the surface gets digitized. ============= -->
+<!-- cs-bh-v2 (ICEBERG variant) DELETED Dave 2026-05-03 PM — didn't land. -->
 <style>
-  #cs-bh-v2 .ice-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:60px 48px 36px; gap:14px; text-align:center; }
-  #cs-bh-v2 .ice-eye { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#c8462c; }
-  #cs-bh-v2 .ice-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.2vw,2.7rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1100px; }
-  #cs-bh-v2 .ice-head em { font-style:italic; font-weight:600; color:#c8462c; }
-  #cs-bh-v2 .ice-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.4vw,1.2rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:920px; }
-  #cs-bh-v2 .ice-foot em { font-style:italic; color:#c8462c; font-weight:600; }
-  #cs-bh-v2 .ice-svg { width:min(960px,96%); margin:4px auto 0; }
-  @keyframes iceShimmer { 0%,100% { opacity:0.55; } 50% { opacity:0.85; } }
-  #cs-bh-v2.active .ice-water-line { animation: iceShimmer 3s ease-in-out infinite; }
-  @keyframes icePulseUp { 0% { opacity:0; transform:translateY(0); } 30% { opacity:0.7; } 100% { opacity:0; transform:translateY(-12px); } }
-  #cs-bh-v2.active .ice-bubble-1 { animation: icePulseUp 3.6s ease-in-out infinite; }
-  #cs-bh-v2.active .ice-bubble-2 { animation: icePulseUp 3.6s 0.6s ease-in-out infinite; }
-  #cs-bh-v2.active .ice-bubble-3 { animation: icePulseUp 3.6s 1.2s ease-in-out infinite; }
+  /* (deleted) */
 </style>
-<div class="casey-slide ds-focus" id="cs-bh-v2">
+<div style="display:none" id="cs-bh-v2-DELETED">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Today &middot; Variant B &middot; Iceberg</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="ice-stage">
@@ -7460,21 +7504,11 @@ html, body, html body{
   </section>
 </div>
 
-<!-- ===== cs-bh-v3 · TODAY · VARIANT C: BRAIN AS LOCAL DATABASE [Dave 2026-05-03 PM]
-     Schematic brain with database-style rows inside (impressions about each person).
-     Watermark: "your_impressions.local" — the data exists, but it can't leave the host. ============= -->
+<!-- cs-bh-v3 (.local variant) DELETED Dave 2026-05-03 PM — headline "Your impressions are a database. It just can't leave the host." preserved in text_archive for future use. -->
 <style>
-  #cs-bh-v3 .db-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:60px 48px 36px; gap:18px; text-align:center; }
-  #cs-bh-v3 .db-eye { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#c8462c; }
-  #cs-bh-v3 .db-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.2vw,2.7rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1100px; }
-  #cs-bh-v3 .db-head em { font-style:italic; font-weight:600; color:#c8462c; }
-  #cs-bh-v3 .db-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.4vw,1.2rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:980px; }
-  #cs-bh-v3 .db-foot em { font-style:italic; color:#c8462c; font-weight:600; }
-  #cs-bh-v3 .db-svg { width:min(940px,96%); margin:4px auto 0; }
-  @keyframes dbCursorBlink { 0%,55% { opacity:1; } 56%,100% { opacity:0; } }
-  #cs-bh-v3.active .db-cursor { animation: dbCursorBlink 1.1s steps(1) infinite; }
+  /* (deleted) */
 </style>
-<div class="casey-slide ds-focus" id="cs-bh-v3">
+<div style="display:none" id="cs-bh-v3-DELETED">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Today &middot; Variant C &middot; .local</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="db-stage">
@@ -7565,7 +7599,7 @@ html, body, html body{
   #cs-bh2-v2.active .gph-node-5 { animation-delay: 1.2s; }
   #cs-bh2-v2.active .gph-node-6 { animation-delay: 1.5s; }
 </style>
-<div class="casey-slide ds-focus" id="cs-bh2-v2">
+<div class="casey-slide ds-focus appendix-slide" id="cs-bh2-v2" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Variant B &middot; Living Graph</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="gph-stage">
@@ -7633,17 +7667,10 @@ html, body, html body{
   </section>
 </div>
 
-<!-- ===== cs-bh2-v3 · TOMORROW · VARIANT C: RADAR / AIR-TRAFFIC CONTROL [Dave 2026-05-03 PM]
-     GnR as the tower with rotating radar sweep over all community members.
-     The sweep illuminates the right connections at the right time. ============= -->
+<!-- cs-bh2-v3 (RADAR TOWER variant) DELETED Dave 2026-05-03 PM — too abstract, didn't land. -->
 <style>
-  #cs-bh2-v3 .rdr-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:60px 48px 36px; gap:14px; text-align:center; }
-  #cs-bh2-v3 .rdr-eye { font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:800; letter-spacing:.36em; text-transform:uppercase; color:#b8954a; }
-  #cs-bh2-v3 .rdr-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.2vw,2.7rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1100px; }
-  #cs-bh2-v3 .rdr-head em { font-style:italic; font-weight:600; color:#b8954a; }
-  #cs-bh2-v3 .rdr-foot { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.4vw,1.2rem); color:rgba(26,22,18,0.72); line-height:1.45; max-width:980px; }
-  #cs-bh2-v3 .rdr-foot em { font-style:italic; color:#b8954a; font-weight:600; }
-  #cs-bh2-v3 .rdr-svg { width:min(640px,90%); margin:4px auto 0; aspect-ratio:1/1; }
+  /* (deleted — block kept hidden via display:none below to avoid orphan SVG) */
+  #cs-bh2-v3-DELETED .rdr-svg { width:min(640px,90%); margin:4px auto 0; aspect-ratio:1/1; }
   @keyframes rdrSweepRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   #cs-bh2-v3.active .rdr-sweep { animation: rdrSweepRotate 5s linear infinite; transform-origin: 250px 250px; }
   @keyframes rdrBlipPulse {
@@ -7659,7 +7686,7 @@ html, body, html body{
   #cs-bh2-v3.active .rdr-blip-7 { animation-delay: 3.6s; }
   #cs-bh2-v3.active .rdr-blip-8 { animation-delay: 4.2s; }
 </style>
-<div class="casey-slide ds-focus" id="cs-bh2-v3">
+<div class="casey-slide ds-focus" id="cs-bh2-v3" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Variant C &middot; Radar Tower</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="rdr-stage">
@@ -14492,13 +14519,13 @@ const SLIDE_ORDER = [
   'cs-2c',    //  3 Community · 6-card grid (moved here per Dave 2026-04-30 PM evening)
   // cs-bh moved BEFORE cs-2b per Dave 2026-05-03 PM — TODAY (manual pipeline) bridges from "communities run on connection" → "no tech measures it"
   'cs-bh',     //  3b Brain → Hand · TODAY · V1 single-figure animation [Dave 2026-05-03 PM]
-  'cs-bh-v2',  //  3b' VARIANT B: ICEBERG metaphor (above/below water) — pick one [Dave 2026-05-03 PM]
-  'cs-bh-v3',  //  3b'' VARIANT C: brain-as-local-database with .local watermark — pick one
+  // cs-bh-v2 (ICEBERG) and cs-bh-v3 (.local DB) DELETED per Dave 2026-05-03 PM — neither landed.
+  // Headline preserved in text_archive: "Your impressions are a database. It just can't leave the host."
   'cs-2b',    //  4 Built by hand · 4 manual bottlenecks [moved up to follow cs-2c per Dave 2026-05-01]
   'cs-4',     //  5 The uncomfortable cultural shift — GREEN card (top, flip) + RED skill-rating card (bottom, flip) [Dave 2026-05-03 PM]
-  'cs-bh2',    //  5c Brain → Digital · TOMORROW · V1 cloud broadcast [Dave 2026-05-03 PM]
-  'cs-bh2-v2', //  5c' VARIANT B: living knowledge graph pulse — pick one
-  'cs-bh2-v3', //  5c'' VARIANT C: radar / air-traffic-control tower — pick one
+  'cs-bh2',    //  5c Brain → Digital · TOMORROW · rebuilt with multi-person → graph synthesis [Dave 2026-05-03 PM]
+  // cs-bh2-v2 (LIVING GRAPH) MOVED to APPENDIX per Dave 2026-05-03 PM
+  // cs-bh2-v3 (RADAR TOWER) DELETED per Dave 2026-05-03 PM — too abstract, didn't land
   'cs-gnr',   //  6 Introducing GnR · invitation matchmaking
   'cs-11d','cs-11',
   'cs-3',
@@ -14550,6 +14577,7 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
+  'cs-bh2-v2', // Brain → Digital · LIVING GRAPH variant (moved from main flow per Dave 2026-05-03 PM — kept as backup)
   'cs-about',// 1: Brand · "It's About"
   'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us."
   'cs-a3',   // 3: Pickleball TAM original [moved from main flow 2026-05-03 PM per Dave]
