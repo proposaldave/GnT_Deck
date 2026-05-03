@@ -9854,11 +9854,10 @@ html, body, html body{
 </section>
 </div>
 
-<!-- ===== cs-nr · NETWORKED RECIPROCITY · DUPR vs GnR contrast [NEW Dave 2026-05-03 PM]
-     Lands right after cs-prom ("get the most out of community"). Concept: networked reciprocity =
-     measuring net value given AND received across the community. DUPR tracks skill only and disincentivizes
-     strong players from playing weaker teammates; GnR tracks value, so giving is rewarded. ===== -->
-<style>
+<!-- ===== cs-nr · NETWORKED RECIPROCITY [Dave 2026-05-03 PM v2 — STRIPPED to just headline + tiny contrast]
+     v1 had cards with full DUPR-vs-GnR bullet lists — too much text. The thesis IS the headline.
+     One quiet supporting line below: "Most track skill. We track value." That's it. ===== -->
+<style id="cs-nr-old-style-deprecated" data-disabled="1">
   #cs-nr .nr-stage { padding:54px 48px 32px; max-width:1240px; margin:0 auto; text-align:center; }
   #cs-nr .nr-eye { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#b8954a; margin-bottom:14px; }
   #cs-nr .nr-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.4vw,2.7rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1100px; margin:0 auto 10px; }
@@ -9898,81 +9897,23 @@ html, body, html body{
 <div class="casey-slide ds-focus" id="cs-nr">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Networked Reciprocity</div>
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div class="nr-stage">
+  <div style="text-align:center;max-width:1200px;padding:60px 48px">
 
-    <div class="nr-eye">Networked Reciprocity</div>
-    <div class="nr-head">
-      Get the most out of <em>your community</em>.<br>
-      While your community gets the most out of <em>you</em>.
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:34px">Networked Reciprocity</div>
+
+    <!-- The thesis. Big. Centered. The whole slide. -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4.2vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.02em;max-width:1180px;margin:0 auto">
+      Get the most out of <em style="font-style:italic;font-weight:500;color:#b8954a">your community</em>.<br>
+      While your community gets the most out of <em style="font-style:italic;font-weight:500;color:#b8954a">you</em>.
     </div>
-    <div class="nr-sub">
-      Most rating systems track <em>skill</em>. We track <em>value</em> &mdash; given and received &mdash; across the whole community.
+
+    <!-- One quiet supporting line. Skill vs Value, separated by a thin gold rule. -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-top:54px;font-family:'Playfair Display',serif;font-size:clamp(1rem,1.6vw,1.3rem);line-height:1">
+      <div style="font-style:italic;color:rgba(26,22,18,0.45)">Most track <span style="font-style:normal;font-weight:600">skill</span>.</div>
+      <div style="width:42px;height:1px;background:rgba(184,149,74,0.5)"></div>
+      <div style="font-style:italic;color:#1a1612">We track <em style="font-style:italic;color:#b8954a;font-weight:600">value</em>.</div>
     </div>
 
-    <div class="nr-grid">
-
-      <!-- LEFT: DUPR Club -->
-      <div class="nr-card nr-card-dupr">
-        <div class="nr-brand">DUPR Club</div>
-        <div class="nr-claim">Tracks <em>skill rating</em> only.</div>
-
-        <div class="nr-example">
-          <div class="nr-ex-title">Example · Pickleball doubles</div>
-          <div class="nr-matchup">
-            <div class="nr-team">
-              <div class="nr-team-rating">5.25</div>
-              <div class="nr-team-label">Strong team</div>
-            </div>
-            <div class="nr-vs">vs</div>
-            <div class="nr-team">
-              <div class="nr-team-rating">4.25</div>
-              <div class="nr-team-label">Weaker team</div>
-            </div>
-          </div>
-          <div class="nr-arrows">
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-down">&darr;</span><span>Strong team's rating <em style="color:#c8462c;font-style:italic">drops</em> unless they win 11-2.</span></div>
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-down">&times;</span><span>Strong team is <em style="color:#c8462c;font-style:italic">disincentivized</em> from showing up.</span></div>
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Weaker team gets to play up &mdash; but the system never sees it.</span></div>
-          </div>
-        </div>
-
-        <div class="nr-bottom">Measures <em>skill</em>. Misses <em>value</em>.</div>
-      </div>
-
-      <!-- BRIDGE -->
-      <div class="nr-vs-bridge">
-        <div class="nr-vs-bridge-text">vs</div>
-      </div>
-
-      <!-- RIGHT: GnR Club -->
-      <div class="nr-card nr-card-gnr">
-        <div class="nr-brand"><span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.78em;font-weight:500;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> Club</div>
-        <div class="nr-claim">Tracks <em>value</em> across the community.</div>
-
-        <div class="nr-example">
-          <div class="nr-ex-title">Same example · Pickleball doubles</div>
-          <div class="nr-matchup">
-            <div class="nr-team">
-              <div class="nr-team-rating">5.25</div>
-              <div class="nr-team-label">Strong team</div>
-            </div>
-            <div class="nr-vs">vs</div>
-            <div class="nr-team">
-              <div class="nr-team-rating">4.25</div>
-              <div class="nr-team-label">Weaker team</div>
-            </div>
-          </div>
-          <div class="nr-arrows">
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Strong team gets credit for <em style="color:#b8954a;font-style:italic">giving</em> value.</span></div>
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Weaker team gets credit for <em style="color:#b8954a;font-style:italic">receiving</em> value.</span></div>
-            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&#8644;</span><span>Both gain. The community sees who gives the most.</span></div>
-          </div>
-        </div>
-
-        <div class="nr-bottom">Measures <em>net value</em>. Reciprocates back.</div>
-      </div>
-
-    </div>
   </div>
 </section>
 </div>
@@ -13354,19 +13295,19 @@ const SLIDE_ORDER = [
   // cs-kl (Krista Loop) → APPENDIX 2026-05-01 per Dave ("came out of nowhere")
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
   'cs-25',    // 13 Why pickleball first ("Pickleball is the clearest path to the world's first autonomous human connection network.")
-  'cs-future',// 14 Future of our communities · 7 verbs ("When you digitize human connection within a community, you can") [moved here per Dave 2026-05-03 PM — lands right after cs-25]
-  'cs-18',    // 15 Founder · CEO · Dave Velardo (moved here per Dave 2026-04-30 PM evening)
-  'cs-27',    // 16 CTO · Steve Callan (moved here per Dave 2026-04-30 PM evening)
+  'cs-future',// 14 Future of our communities · 5 verbs ("When you digitize human connection within a community, you can") [moved here per Dave 2026-05-03 PM — lands right after cs-25]
+  'cs-mv6',   // 15 Mission · GnR is the 7th Era [moved here right after cs-future per Dave 2026-05-03 PM]
+  'cs-18',    // 16 Founder · CEO · Dave Velardo (moved here per Dave 2026-04-30 PM evening)
+  'cs-27',    // 17 CTO · Steve Callan (moved here per Dave 2026-04-30 PM evening)
   // cs-4 (Moat — data in our heads) → APPENDIX 2026-04-30 PM evening per Dave (then back to main same evening)
   // cs-16 (Every signal trains GnR / Autonomous Community Intelligence) → APPENDIX 2026-04-30 PM evening per Dave
-  'cs-a3',    // 17 Pickleball: two revenue streams (TAM)
+  'cs-a3',    // 18 Pickleball: two revenue streams (TAM)
   // cs-11b (NEPC Numbers — receipts / "Running at New England Pickleball Clubs") → APPENDIX 2026-04-30 PM evening per Dave
   // cs-36 (10-Year North Star) → APPENDIX 2026-04-30 PM evening per Dave (replaced by cs-ns1 merge)
   // cs-wn (Why Now · three forces) → APPENDIX 2026-05-01 per Dave
-  'cs-ns1',   // 17 NORTH STAR · MERGED — concentric time rings + connection-graph nodes (cs-cl2 + cs-36 fused) [Dave 2026-04-30 PM evening]
+  'cs-ns1',   // 19 NORTH STAR · MERGED — concentric time rings + connection-graph nodes (cs-cl2 + cs-36 fused) [Dave 2026-04-30 PM evening]
               //    cs-cl2 stacks here as ALT (see SLIDE_ALTS) — Dave wants them at same dot position to compare 2026-05-01
   // 2026-05-01: Dave kept only cs-mv6. cs-mv5 and cs-mv7 hidden in appendix as backups.
-  'cs-mv6',   // 19 Mission · GnR is the 7th Era (Dave's pick) [LOCKED]
   // cs-33 (The Ask) → APPENDIX 2026-04-30 PM evening per Dave
   // 2026-04-30 PM evening: Dave deleted cs-cl1 (Empty Rooms) and cs-cl3 (Tuesday 6pm). Only cs-cl2 (Connection Graph) survives.
   // cs-cl4 (Inversion / "Until now.") DELETED 2026-04-30 PM evening per Dave
