@@ -7172,6 +7172,26 @@ html, body, html body{
 
   /* === Flip cards for BEFORE THE ROOM + IN THE ROOM === */
   #cs-11 .cs11-flip-wrap { perspective: 1500px; flex: 1; min-width: 280px; max-width: 420px; }
+  /* Pulsing 'next slide' arrow — appears only when RIGHT card is flipped to BACK [Dave 2026-05-03 PM] */
+  #cs-11 .cs11-next-arrow {
+    position: absolute; right: -78px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease 0.45s;
+  }
+  #cs-11[data-right-flipped="1"] .cs11-flip-right .cs11-next-arrow,
+  #cs-11[data-right-flipped="1"] .cs11-flip-wrap:has(.cs11-flip-right) .cs11-next-arrow {
+    /* fallback covered by the simpler rule below */
+  }
+  #cs-11[data-right-flipped="1"] .cs11-flip-wrap:nth-child(3) .cs11-next-arrow,
+  #cs-11[data-right-flipped="1"] .cs11-flip-right + .cs11-next-arrow,
+  /* Simplest selector: any cs11-next-arrow inside a flip-wrap that contains a flipped cs11-flip-right */
+  #cs-11[data-right-flipped="1"] .cs11-next-arrow { opacity: 1; pointer-events: auto; animation: cs11NextPulse 1.8s ease-in-out infinite 0.7s; }
+  @keyframes cs11NextPulse {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.85; }
+    50%      { transform: translateY(-50%) translateX(8px); opacity: 1; }
+  }
+  html[data-export="1"] #cs-11 .cs11-next-arrow { opacity: 0 !important; animation: none !important; }
   #cs-11 .cs11-flip-inner { position: relative; width: 100%; min-height: 280px; transition: transform 0.95s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; cursor: pointer; }
   #cs-11 .cs11-flip-front,
   #cs-11 .cs11-flip-back  { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
@@ -7405,7 +7425,14 @@ html, body, html body{
     </div>
 
     <!-- RIGHT: Group Formation (FLIP CARD [Dave 2026-05-02 PM]) — front = simple graphic, back = social experience clusters -->
-    <div class="cs11-flip-wrap" onclick="cs11ToggleRight();event.stopPropagation()">
+    <div class="cs11-flip-wrap" onclick="cs11ToggleRight();event.stopPropagation()" style="position:relative">
+     <!-- Pulsing "next slide" arrow — appears ONLY when RIGHT card is flipped to BACK [Dave 2026-05-03 PM] -->
+     <div class="cs11-next-arrow" aria-hidden="true">
+       <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M 6 21 L 26 21 M 18 11 L 28 21 L 18 31" stroke="#2a8a4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+       </svg>
+       <div style="font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(42,138,79,0.8);margin-top:6px;text-align:center">Next slide</div>
+     </div>
      <div class="cs11-flip-inner cs11-flip-right">
       <!-- FRONT: ONE group of 4 — graphic only, no eyebrow on load [Dave 2026-05-03 PM: 'IN THE ROOM' only on BACK] -->
       <div class="cs11-flip-front" style="background:rgba(61,255,122,0.04);border:1.5px solid rgba(61,255,122,0.42);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative">
@@ -7573,7 +7600,7 @@ html, body, html body{
 
 <div class="cs3-headline cs3-anim">
     Pickleball is the <em>fastest-growing, highest-velocity,<br>
-    densest GnR-signal</em> community ever.
+    densest social-signal</em> community ever.
 </div>
 
 <!-- Click hint — visible until first click [Dave 2026-05-01] -->
@@ -8002,10 +8029,23 @@ html, body, html body{
         <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
           <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Hand-drawn green check (variant 1) — organic ink stroke, no circle bg [Dave 2026-05-03 PM: more handwritten feel] -->
-          <g transform="translate(254, 28)" opacity="0.92">
-            <path d="M -16 -1 Q -11 4 -5 10 Q -2 12 1 9 Q 7 -1 16 -12 Q 19 -16 21 -17"
-                  fill="none" stroke="#1f6b3d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3 — refined, polished but warm] -->
+          <defs>
+            <radialGradient id="cs-gnr-seal-1" cx="38%" cy="32%" r="68%">
+              <stop offset="0%" stop-color="#4ab36c"/>
+              <stop offset="55%" stop-color="#2a8a4f"/>
+              <stop offset="100%" stop-color="#1a5e34"/>
+            </radialGradient>
+            <filter id="cs-gnr-seal-shadow-1" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
+              <feOffset dx="0" dy="1.4"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-1)">
+            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-1)" stroke="#fbf7ef" stroke-width="2.2"/>
+            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
         <div class="gnr-env-text"><em>Invitation-feed,</em><br>not calendars.</div>
@@ -8016,10 +8056,23 @@ html, body, html body{
         <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
           <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Hand-drawn green check (variant 2) — slightly different angle/flourish [Dave 2026-05-03 PM] -->
-          <g transform="translate(255, 30)" opacity="0.92">
-            <path d="M -14 1 Q -9 5 -3 11 Q 0 12 3 9 Q 8 0 16 -10 Q 19 -13 22 -15"
-                  fill="none" stroke="#1f6b3d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3] -->
+          <defs>
+            <radialGradient id="cs-gnr-seal-2" cx="38%" cy="32%" r="68%">
+              <stop offset="0%" stop-color="#4ab36c"/>
+              <stop offset="55%" stop-color="#2a8a4f"/>
+              <stop offset="100%" stop-color="#1a5e34"/>
+            </radialGradient>
+            <filter id="cs-gnr-seal-shadow-2" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
+              <feOffset dx="0" dy="1.4"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-2)">
+            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-2)" stroke="#fbf7ef" stroke-width="2.2"/>
+            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
         <div class="gnr-env-text">You <em>belong.</em></div>
@@ -8030,10 +8083,23 @@ html, body, html body{
         <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
           <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Hand-drawn green check (variant 3) — more confident, longer tail flourish [Dave 2026-05-03 PM] -->
-          <g transform="translate(254, 29)" opacity="0.92">
-            <path d="M -15 -2 Q -10 3 -4 10 Q -1 12 2 8 Q 7 -1 14 -10 Q 18 -14 23 -17"
-                  fill="none" stroke="#1f6b3d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3] -->
+          <defs>
+            <radialGradient id="cs-gnr-seal-3" cx="38%" cy="32%" r="68%">
+              <stop offset="0%" stop-color="#4ab36c"/>
+              <stop offset="55%" stop-color="#2a8a4f"/>
+              <stop offset="100%" stop-color="#1a5e34"/>
+            </radialGradient>
+            <filter id="cs-gnr-seal-shadow-3" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
+              <feOffset dx="0" dy="1.4"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <g transform="translate(258, 28)" filter="url(#cs-gnr-seal-shadow-3)">
+            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-3)" stroke="#fbf7ef" stroke-width="2.2"/>
+            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
           </g>
         </svg>
         <div class="gnr-env-text">Who <em>gives?</em></div>
@@ -8133,7 +8199,7 @@ html, body, html body{
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
-      Same courts. Higher GnR.<br>
+      Same courts. Better groups.<br>
       <em style="font-style:italic;color:#b8954a">More people showing up.</em>
     </div>
     <div style="display:grid;grid-template-columns:1fr 56px 1fr;gap:0;max-width:980px;margin:0 auto 32px;align-items:center">
@@ -11726,7 +11792,7 @@ html, body, html body{
       <line x1="-58" y1="30" x2="58" y2="30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.35"/>
       <line x1="-58" y1="45" x2="58" y2="45" stroke="#5B8FD4" stroke-width="0.9" opacity="0.3"/>
       <!-- Label [sizes bumped 2026-05-03] -->
-      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">JUMPSTART</text>
+      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">JUMPSTART DATA</text>
       <text x="0" y="80" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">historical scheduling</text>
       <text x="0" y="98" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">+ private booking data</text>
     </g>
