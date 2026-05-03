@@ -7131,6 +7131,18 @@ html, body, html body{
 </style>
 
 <div class="inner" style="padding-top:52px;text-align:center;max-width:1100px">
+  <!-- Facebook-style "Like" button graphic — added above headline per Dave 2026-05-03 -->
+  <div style="display:flex;justify-content:center;margin-bottom:22px">
+    <div style="position:relative;display:inline-flex;align-items:center;gap:8px;padding:10px 22px 10px 18px;background:#1877F2;color:#fff;border-radius:6px;box-shadow:0 4px 14px rgba(24,119,242,0.34);font-family:'Helvetica Neue','Helvetica',Arial,sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:0.005em">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+        <path d="M2 9.5h3.6V21H2zM7.6 9.5h3.6c0-2.2 0-4.4 0.4-5.5 0.4-1.1 1.3-2 2.6-2 1.6 0 2.6 0.9 2.6 3v0.6h2.6c1.4 0 2.6 1.2 2.6 2.7 0 0.5-0.1 1-0.3 1.4l-3 8.3c-0.4 1.2-1.6 2-2.9 2H7.6V9.5z"/>
+      </svg>
+      <span>Like</span>
+      <!-- diagonal slash to reinforce "no like button" — subtle red, ~30deg over button -->
+      <span aria-hidden="true" style="position:absolute;top:50%;left:-6px;right:-6px;height:3px;background:#c8462c;border-radius:2px;transform:translateY(-50%) rotate(-12deg);box-shadow:0 0 0 1.5px rgba(255,255,255,0.85);opacity:0.85"></span>
+    </div>
+  </div>
+
   <!-- Slide headline (top): "No like button, no problem" promoted to main headline per Dave 2026-04-30 PM evening -->
   <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);color:#1a1612;line-height:1.1;margin-bottom:30px;font-weight:700;letter-spacing:-0.018em;max-width:920px;margin-left:auto;margin-right:auto">
     No like button? <em style="font-style:italic;font-weight:500;color:#b8954a">No problem.</em>
@@ -7314,102 +7326,10 @@ html, body, html body{
         </svg>
         <div class="cs11-flip-hint">&#x21BB; flip</div>
       </div>
-      <!-- BACK: post-experience action feed (parallel to LEFT card invitation feed)
-           Each row = one experience the user played + actions: favorite partner / opponent / experience [Dave 2026-05-02 PM] -->
-      <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:18px 18px 16px;text-align:center;display:block;position:absolute;inset:0;transform:rotateY(180deg)">
-      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:6px">In the room</div>
-      <div style="font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#2a8a4f;margin-bottom:18px">Social Experience</div>
-
-      <!-- Tiny action legend -->
-      <div style="display:flex;gap:14px;justify-content:center;margin-bottom:12px;font-family:'Manrope',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:.06em;color:rgba(26,22,18,0.55);text-transform:uppercase">
-        <span style="display:inline-flex;align-items:center;gap:4px"><svg width="11" height="11" viewBox="0 0 14 14" fill="#b8954a"><path d="M7 1.5 L8.7 5.3 L13 6 L10 9 L10.7 13 L7 11 L3.3 13 L4 9 L1 6 L5.3 5.3 Z"/></svg>Partner</span>
-        <span style="display:inline-flex;align-items:center;gap:4px"><svg width="11" height="11" viewBox="0 0 14 14" fill="#c8462c"><path d="M7 1 L8 5 L12.5 5.5 L9 8 L10 12 L7 10 L4 12 L5 8 L1.5 5.5 L6 5 Z M7 5 L4 7 L8 9 L7 7 Z"/></svg>Opponent</span>
-        <span style="display:inline-flex;align-items:center;gap:4px"><svg width="11" height="11" viewBox="0 0 14 14" fill="#5fa896"><path d="M7 12 L1.5 6.5 Q-0.5 4 1.5 2 Q3.5 0 5.5 2 L7 3.5 L8.5 2 Q10.5 0 12.5 2 Q14.5 4 12.5 6.5 Z"/></svg>Experience</span>
-      </div>
-
-      <!-- Vertical feed of past experiences -->
-      <div style="display:flex;flex-direction:column;gap:7px;margin:0 auto;max-width:300px;width:100%;text-align:left">
-
-        <!-- Past experience 1: Dream foursome (just played, all 3 actions chosen) -->
-        <div style="display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid rgba(74,140,94,0.25);border-radius:9px;background:rgba(61,255,122,0.04)">
-          <!-- 4-dot foursome (2x2 mini grid) -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;flex-shrink:0;width:20px">
-            <span style="width:9px;height:9px;border-radius:50%;background:#5B8FD4;border:1px solid #5B8FD4"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#D46B7E;border:1px solid #D46B7E"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#c76bdb;border:1px solid #c76bdb"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#4ae8c1;border:1px solid #4ae8c1"></span>
-          </div>
-          <div style="flex:1;line-height:1.2;min-width:0">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;color:#1a1612">Dream foursome</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:500;color:rgba(26,22,18,0.6);letter-spacing:.04em;margin-top:1px">Tonight</div>
-          </div>
-          <div style="display:flex;gap:3px;flex-shrink:0">
-            <span title="Favorite partner" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #b8954a;background:#b8954a;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 1.5 L8.7 5.3 L13 6 L10 9 L10.7 13 L7 11 L3.3 13 L4 9 L1 6 L5.3 5.3 Z"/></svg></span>
-            <span title="Favorite opponent" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #c8462c;background:#c8462c;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 1 L8 5 L12.5 5.5 L9 8 L10 12 L7 10 L4 12 L5 8 L1.5 5.5 L6 5 Z"/></svg></span>
-            <span title="Favorite experience" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #5fa896;background:#5fa896;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 12 L1.5 6.5 Q-0.5 4 1.5 2 Q3.5 0 5.5 2 L7 3.5 L8.5 2 Q10.5 0 12.5 2 Q14.5 4 12.5 6.5 Z"/></svg></span>
-          </div>
-        </div>
-
-        <!-- Past experience 2: Refer a friend mixer (one action chosen — partner) -->
-        <div style="display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid rgba(74,140,94,0.25);border-radius:9px;background:rgba(61,255,122,0.04)">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;flex-shrink:0;width:20px">
-            <span style="width:9px;height:9px;border-radius:50%;background:#5B8FD4;border:1px solid #5B8FD4"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#D46B7E;border:1px solid #D46B7E"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#c76bdb;border:1px solid #c76bdb"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#4ae8c1;border:1px solid #4ae8c1"></span>
-          </div>
-          <div style="flex:1;line-height:1.2;min-width:0">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;color:#1a1612">Refer a friend mixer</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:500;color:rgba(26,22,18,0.6);letter-spacing:.04em;margin-top:1px">Last Friday</div>
-          </div>
-          <div style="display:flex;gap:3px;flex-shrink:0">
-            <span title="Favorite partner" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #b8954a;background:#b8954a;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 1.5 L8.7 5.3 L13 6 L10 9 L10.7 13 L7 11 L3.3 13 L4 9 L1 6 L5.3 5.3 Z"/></svg></span>
-            <span style="width:18px;height:18px;border-radius:50%;border:1.4px solid rgba(200,70,44,0.30);background:rgba(200,70,44,0.05)"></span>
-            <span style="width:18px;height:18px;border-radius:50%;border:1.4px solid rgba(95,168,150,0.30);background:rgba(95,168,150,0.05)"></span>
-          </div>
-        </div>
-
-        <!-- Past experience 3: Round Robin (favorite experience chosen) -->
-        <div style="display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid rgba(74,140,94,0.25);border-radius:9px;background:rgba(61,255,122,0.04)">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;flex-shrink:0;width:20px">
-            <span style="width:9px;height:9px;border-radius:50%;background:#5B8FD4;border:1px solid #5B8FD4"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#D46B7E;border:1px solid #D46B7E"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#c76bdb;border:1px solid #c76bdb"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#4ae8c1;border:1px solid #4ae8c1"></span>
-          </div>
-          <div style="flex:1;line-height:1.2;min-width:0">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;color:#1a1612">Round Robin</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:500;color:rgba(26,22,18,0.6);letter-spacing:.04em;margin-top:1px">Last Saturday</div>
-          </div>
-          <div style="display:flex;gap:3px;flex-shrink:0">
-            <span style="width:18px;height:18px;border-radius:50%;border:1.4px solid rgba(184,149,74,0.30);background:rgba(184,149,74,0.05)"></span>
-            <span style="width:18px;height:18px;border-radius:50%;border:1.4px solid rgba(200,70,44,0.30);background:rgba(200,70,44,0.05)"></span>
-            <span title="Favorite experience" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #5fa896;background:#5fa896;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 12 L1.5 6.5 Q-0.5 4 1.5 2 Q3.5 0 5.5 2 L7 3.5 L8.5 2 Q10.5 0 12.5 2 Q14.5 4 12.5 6.5 Z"/></svg></span>
-          </div>
-        </div>
-
-        <!-- Past experience 4: Member Mixer (favorite partner + favorite opponent) -->
-        <div style="display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid rgba(74,140,94,0.25);border-radius:9px;background:rgba(61,255,122,0.04)">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;flex-shrink:0;width:20px">
-            <span style="width:9px;height:9px;border-radius:50%;background:#5B8FD4;border:1px solid #5B8FD4"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#D46B7E;border:1px solid #D46B7E"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#c76bdb;border:1px solid #c76bdb"></span>
-            <span style="width:9px;height:9px;border-radius:50%;background:#4ae8c1;border:1px solid #4ae8c1"></span>
-          </div>
-          <div style="flex:1;line-height:1.2;min-width:0">
-            <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;color:#1a1612">Member Mixer</div>
-            <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:500;color:rgba(26,22,18,0.6);letter-spacing:.04em;margin-top:1px">Last Sunday</div>
-          </div>
-          <div style="display:flex;gap:3px;flex-shrink:0">
-            <span title="Favorite partner" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #b8954a;background:#b8954a;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 1.5 L8.7 5.3 L13 6 L10 9 L10.7 13 L7 11 L3.3 13 L4 9 L1 6 L5.3 5.3 Z"/></svg></span>
-            <span title="Favorite opponent" style="width:18px;height:18px;border-radius:50%;border:1.4px solid #c8462c;background:#c8462c;display:flex;align-items:center;justify-content:center"><svg width="9" height="9" viewBox="0 0 14 14" fill="#fff"><path d="M7 1 L8 5 L12.5 5.5 L9 8 L10 12 L7 10 L4 12 L5 8 L1.5 5.5 L6 5 Z"/></svg></span>
-            <span style="width:18px;height:18px;border-radius:50%;border:1.4px solid rgba(95,168,150,0.30);background:rgba(95,168,150,0.05)"></span>
-          </div>
-        </div>
-
-      </div>
-      <div style="margin:0 auto;display:flex;align-items:center;justify-content:center">
-        <svg viewBox="0 0 56 56" width="170" height="170">
+      <!-- BACK: simplified — just the 4 group circles, no rectangle list / legend / header.
+           Per Dave 2026-05-03: "i dont like this content, get rid of it and move the four circles as the content inside this box" -->
+      <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;position:absolute;inset:0;transform:rotateY(180deg)">
+        <svg viewBox="0 0 56 56" width="240" height="240">
           <!-- 4 group clusters: each wrapped in <g class="cs11-group"> for staggered bloom. Dave 2026-04-29 v2 -->
           <g class="cs11-group">
             <circle cx="14" cy="14" r="9" fill="rgba(61,255,122,0.05)" stroke="rgba(61,255,122,0.45)" stroke-width="1" stroke-dasharray="2 1.5"/>
@@ -7443,7 +7363,6 @@ html, body, html body{
             <circle cx="45" cy="45" r="2.0" fill="rgba(199,107,219,0.20)" stroke="#7a4a8c" stroke-width="0.5"/>
           </g>
         </svg>
-      </div>
       </div>
      </div>
     </div>
