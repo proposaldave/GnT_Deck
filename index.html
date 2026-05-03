@@ -5358,7 +5358,7 @@ html, body, html body{
       </svg>
       <!-- Primary descriptor (new) -->
       <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
-        Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for our communities</em>
+        Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for real communities</em>
       </div>
       <!-- Tagline — Fraunces italic, ink, gold emphasis. white-space:nowrap forces single line per Dave 2026-05-01. -->
       <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(13px,1.25vw,19px);font-weight:400;color:rgba(26,22,18,0.82);line-height:1.45;margin:0 auto 22px;letter-spacing:-0.005em;white-space:nowrap;text-align:center">
@@ -5641,7 +5641,7 @@ html, body, html body{
 <div class="inner" style="text-align:center;max-width:1100px;padding-top:54px;margin:0 auto">
 
   <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.8rem);color:#1a1612;line-height:1.15;font-weight:700;margin-bottom:8px;letter-spacing:-0.018em;max-width:1100px;margin-left:auto;margin-right:auto">
-    Our communities <em style="font-style:italic;font-weight:500;color:#c8462c">run on human connection.</em><br>That's what they <em style="font-style:italic;font-weight:600;color:#b8954a">are</em>.
+    But <strong style="color:#c8462c;font-weight:700">no technology measures and powers</strong> <em style="font-style:italic;font-weight:500;color:#b8954a">that reality</em>.
   </div>
 
   <!-- Click hint — visible only on first load -->
@@ -5688,23 +5688,8 @@ html, body, html body{
     </div>
   </div>
 
-  <div class="c2b-bottom">
-    <!-- Single RED chevron pointing down to "Done by hand." Dave's "better than nothing" pick. -->
-    <div style="display:flex;justify-content:center;margin:14px auto 4px">
-      <svg width="36" height="22" viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 4 4 L 18 18 L 32 4" stroke="#c8462c" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-
-    <!-- Diagnosis below the chevron. Editorial serif. -->
-    <div style="font-family:'Playfair Display',Georgia,serif;color:#1a1612;line-height:1.4;max-width:980px;margin:0 auto 24px">
-      <div style="font-size:clamp(1.1rem,1.85vw,1.5rem);font-weight:600;color:#1a1612;line-height:1.35;letter-spacing:-0.005em">
-        But <strong style="color:#c8462c;font-weight:700">no technology measures and powers</strong> <em style="font-style:italic;color:#b8954a">that reality</em>.
-      </div>
-    </div>
-
-    <div style="width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(224,64,64,0.4),transparent);margin:0 auto 20px"></div>
-  </div>
+  <!-- c2b-bottom block REMOVED 2026-05-03 per Dave: "But no technology measures..." promoted to title (above).
+       Click now reveals the 3 manual bottleneck cards as direct proof of the title's claim. -->
 </div>
 </div>
 
@@ -6417,69 +6402,135 @@ html, body, html body{
       <!-- TOP: GREEN HERO — FLIP CARD [Dave 2026-05-02 PM v2: front = simple graphic NO TEXT, back = existing rich content] -->
       <div class="cs4-anim cs4-green cs4-flip-wrap" onclick="cs4ToggleTop();event.stopPropagation()">
        <div class="cs4-flip-inner cs4-flip-top" style="min-height:380px">
-        <!-- FRONT: front-facing head silhouette with 4 OTHER PEOPLE thoughts INSIDE the head
-             ("private thoughts and feelings about each other") — Dave 2026-05-02 PM v3 -->
+        <!-- FRONT: editorial-quality head silhouette + 4 portrait avatars inside the mind
+             ("private thoughts and feelings about each other") — Dave 2026-05-02 PM jaw-drop pass.
+             Slimmer human proportions, gradient-filled portrait avatars with soft glow rings,
+             dashed organic arcs (private thoughts/feelings connecting), warm gold mind-glow,
+             subtle thinking sparks above the head, gentle CSS pulse on each avatar. -->
+        <style>
+          #cs-4 .cs4-mind-svg .cs4-avatar { transform-origin: center; transform-box: fill-box; }
+          #cs-4.active .cs4-mind-svg .cs4-avatar { animation: cs4AvatarPulse 3.6s ease-in-out infinite; }
+          #cs-4.active .cs4-mind-svg .cs4-avatar.av-2 { animation-delay: 0.9s; }
+          #cs-4.active .cs4-mind-svg .cs4-avatar.av-3 { animation-delay: 1.8s; }
+          #cs-4.active .cs4-mind-svg .cs4-avatar.av-4 { animation-delay: 2.7s; }
+          @keyframes cs4AvatarPulse {
+            0%, 100% { transform: scale(1); filter: none; }
+            50%      { transform: scale(1.07); filter: drop-shadow(0 0 6px currentColor); }
+          }
+          html[data-export="1"] #cs-4 .cs4-mind-svg .cs4-avatar { animation: none !important; }
+        </style>
         <div class="cs4-flip-front" style="width:100%;background:linear-gradient(180deg,rgba(61,255,122,0.10) 0%,rgba(61,255,122,0.04) 100%);border:1.5px solid rgba(61,255,122,0.42);border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:380px;position:relative;overflow:hidden;box-shadow:0 0 32px rgba(61,255,122,0.12)">
-          <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Soft gold inner-glow at top of head (mind / thinking aura) -->
-            <radialGradient id="cs4MindGlow" cx="50%" cy="36%" r="42%">
-              <stop offset="0%" stop-color="rgba(212,168,83,0.30)"/>
-              <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
-            </radialGradient>
-            <!-- Head + neck + shoulders silhouette (front-facing) — single continuous outline so it reads as one person -->
-            <path d="M 160 28
-                     C 110 28 86 70 86 118
-                     C 86 145 96 165 108 178
-                     L 108 196
-                     C 108 212 90 222 70 232
-                     C 50 242 36 256 36 280
-                     L 36 308
-                     L 284 308
-                     L 284 280
-                     C 284 256 270 242 250 232
-                     C 230 222 212 212 212 196
-                     L 212 178
-                     C 224 165 234 145 234 118
-                     C 234 70 210 28 160 28 Z"
-                  fill="rgba(42,138,79,0.07)" stroke="#2a8a4f" stroke-width="2.6" stroke-linejoin="round"/>
+          <svg class="cs4-mind-svg" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Warm gold mind-glow inside the head -->
+              <radialGradient id="cs4MindGlow" cx="50%" cy="32%" r="42%">
+                <stop offset="0%" stop-color="rgba(240,200,120,0.55)"/>
+                <stop offset="50%" stop-color="rgba(212,168,83,0.20)"/>
+                <stop offset="100%" stop-color="rgba(212,168,83,0)"/>
+              </radialGradient>
+              <!-- Portrait gradients: highlight at top-left, depth at bottom-right -->
+              <radialGradient id="avGold" cx="36%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#f7d68a"/>
+                <stop offset="55%" stop-color="#c89a45"/>
+                <stop offset="100%" stop-color="#7a5a26"/>
+              </radialGradient>
+              <radialGradient id="avBlue" cx="36%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#a4cdf0"/>
+                <stop offset="55%" stop-color="#5B8FD4"/>
+                <stop offset="100%" stop-color="#2a4a78"/>
+              </radialGradient>
+              <radialGradient id="avPink" cx="36%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#f0a4b6"/>
+                <stop offset="55%" stop-color="#c8556a"/>
+                <stop offset="100%" stop-color="#722a3c"/>
+              </radialGradient>
+              <radialGradient id="avPlum" cx="36%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#cba8d8"/>
+                <stop offset="55%" stop-color="#8a5aa0"/>
+                <stop offset="100%" stop-color="#46245a"/>
+              </radialGradient>
+              <!-- Soft drop-shadow for portraits + head -->
+              <filter id="cs4SoftShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="1.4" in="SourceAlpha"/>
+                <feOffset dx="0" dy="1.2"/>
+                <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
 
-            <!-- Mind glow inside the head -->
-            <ellipse cx="160" cy="100" rx="62" ry="60" fill="url(#cs4MindGlow)"/>
+            <!-- ELEGANT HEAD + SHOULDERS — slimmer human proportions, single continuous outline -->
+            <path d="M 160 30
+                     C 118 30 96 66 96 114
+                     C 96 140 105 162 116 175
+                     L 116 192
+                     C 116 206 100 214 78 224
+                     C 52 236 30 254 30 282
+                     L 30 308
+                     L 290 308
+                     L 290 282
+                     C 290 254 268 236 242 224
+                     C 220 214 204 206 204 192
+                     L 204 175
+                     C 215 162 224 140 224 114
+                     C 224 66 202 30 160 30 Z"
+                  fill="rgba(42,138,79,0.06)"
+                  stroke="#2a8a4f"
+                  stroke-width="2.4"
+                  stroke-linejoin="round"
+                  filter="url(#cs4SoftShadow)"/>
 
-            <!-- 4 small "other people" thoughts INSIDE the head, with faint connecting lines -->
-            <!-- Lines first (so dots sit on top) -->
-            <g stroke="rgba(42,138,79,0.30)" stroke-width="0.9">
-              <line x1="135" y1="84" x2="185" y2="80"/>
-              <line x1="135" y1="84" x2="138" y2="130"/>
-              <line x1="185" y1="80" x2="190" y2="128"/>
-              <line x1="138" y1="130" x2="190" y2="128"/>
-              <line x1="135" y1="84" x2="190" y2="128"/>
-              <line x1="185" y1="80" x2="138" y2="130"/>
+            <!-- Warm mind glow (gold) inside the upper head -->
+            <ellipse cx="160" cy="98" rx="64" ry="58" fill="url(#cs4MindGlow)"/>
+
+            <!-- Subtle thinking sparks above the head -->
+            <g fill="#d4a853" opacity="0.55">
+              <circle cx="160" cy="18" r="1.4"/>
+              <circle cx="138" cy="22" r="0.9"/>
+              <circle cx="182" cy="22" r="0.9"/>
+              <circle cx="118" cy="38" r="0.7"/>
+              <circle cx="202" cy="38" r="0.7"/>
             </g>
-            <!-- 4 colored mini-people inside the head -->
-            <g>
-              <!-- top-left: gold -->
-              <circle cx="135" cy="84" r="11" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.6"/>
-              <circle cx="135" cy="81" r="3" fill="#b8954a"/>
-              <path d="M 129 92 Q 135 87 141 92" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+            <!-- Organic connection arcs between the 4 avatars (private thoughts/feelings) -->
+            <g stroke="#b8954a" stroke-width="0.9" fill="none" stroke-dasharray="2.2 2.6" opacity="0.55">
+              <path d="M 134 78 Q 160 58 186 78"/>
+              <path d="M 134 78 Q 116 105 138 132"/>
+              <path d="M 186 78 Q 204 105 186 132"/>
+              <path d="M 138 132 Q 162 144 186 132"/>
             </g>
-            <g>
-              <!-- top-right: blue -->
-              <circle cx="185" cy="80" r="11" fill="rgba(91,143,212,0.18)" stroke="#5B8FD4" stroke-width="1.6"/>
-              <circle cx="185" cy="77" r="3" fill="#5B8FD4"/>
-              <path d="M 179 88 Q 185 83 191 88" stroke="#5B8FD4" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <g stroke="#b8954a" stroke-width="0.7" fill="none" stroke-dasharray="1.6 2.4" opacity="0.32">
+              <path d="M 134 78 Q 162 105 186 132"/>
+              <path d="M 186 78 Q 162 105 138 132"/>
             </g>
-            <g>
-              <!-- bottom-left: pink -->
-              <circle cx="138" cy="130" r="11" fill="rgba(184,71,92,0.18)" stroke="#b8475c" stroke-width="1.6"/>
-              <circle cx="138" cy="127" r="3" fill="#b8475c"/>
-              <path d="M 132 138 Q 138 133 144 138" stroke="#b8475c" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+            <!-- 4 PORTRAIT AVATARS (gradient-filled, with white ring + soft halo + face hint) -->
+            <!-- Top-left: Gold -->
+            <g class="cs4-avatar av-1" style="color:#b8954a">
+              <circle cx="134" cy="78" r="17" fill="rgba(184,149,74,0.10)" opacity="0.7"/>
+              <circle cx="134" cy="78" r="12.5" fill="url(#avGold)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
+              <circle cx="134" cy="74" r="3" fill="#fff" opacity="0.9"/>
+              <path d="M 128 84 Q 134 88 140 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
             </g>
-            <g>
-              <!-- bottom-right: purple -->
-              <circle cx="190" cy="128" r="11" fill="rgba(122,74,140,0.18)" stroke="#7a4a8c" stroke-width="1.6"/>
-              <circle cx="190" cy="125" r="3" fill="#7a4a8c"/>
-              <path d="M 184 136 Q 190 131 196 136" stroke="#7a4a8c" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <!-- Top-right: Blue -->
+            <g class="cs4-avatar av-2" style="color:#5B8FD4">
+              <circle cx="186" cy="78" r="17" fill="rgba(91,143,212,0.10)" opacity="0.7"/>
+              <circle cx="186" cy="78" r="12.5" fill="url(#avBlue)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
+              <circle cx="186" cy="74" r="3" fill="#fff" opacity="0.9"/>
+              <path d="M 180 84 Q 186 88 192 84" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+            </g>
+            <!-- Bottom-left: Pink/Coral -->
+            <g class="cs4-avatar av-3" style="color:#c8556a">
+              <circle cx="138" cy="132" r="17" fill="rgba(200,85,106,0.10)" opacity="0.7"/>
+              <circle cx="138" cy="132" r="12.5" fill="url(#avPink)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
+              <circle cx="138" cy="128" r="3" fill="#fff" opacity="0.9"/>
+              <path d="M 132 138 Q 138 142 144 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
+            </g>
+            <!-- Bottom-right: Plum -->
+            <g class="cs4-avatar av-4" style="color:#8a5aa0">
+              <circle cx="186" cy="132" r="17" fill="rgba(138,90,160,0.10)" opacity="0.7"/>
+              <circle cx="186" cy="132" r="12.5" fill="url(#avPlum)" stroke="#fff" stroke-width="1.6" filter="url(#cs4SoftShadow)"/>
+              <circle cx="186" cy="128" r="3" fill="#fff" opacity="0.9"/>
+              <path d="M 180 138 Q 186 142 192 138" stroke="#fff" stroke-width="1.3" fill="none" opacity="0.75" stroke-linecap="round"/>
             </g>
           </svg>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
@@ -6962,29 +7013,32 @@ html, body, html body{
           </div>
           <div class="cs4-flip-hint">&#x21BB; click to flip</div>
         </div>
-        <!-- BACK: existing 3.0 + skill-rating content -->
-        <div class="cs4-flip-back" style="width:100%;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.22);border-radius:16px;padding:26px 32px;text-align:center;display:flex;align-items:center;justify-content:center;gap:30px;position:absolute;inset:0;overflow:hidden;transform:rotateY(180deg)">
-        <!-- Giant X overlay (full-card cross) -->
-        <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:0.7" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="6" y1="8" x2="94" y2="92" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
-          <line x1="94" y1="8" x2="6" y2="92" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
+        <!-- BACK: OLD PARADIGM expanded to ego/self/values dimension per Dave 2026-05-02.
+             X overlay constrained inside card (overflow:hidden, viewBox-relative coords). -->
+        <div class="cs4-flip-back" style="width:100%;background:rgba(224,64,64,0.04);border:1px solid rgba(224,64,64,0.22);border-radius:16px;padding:28px 38px;text-align:center;display:flex;align-items:center;justify-content:center;gap:32px;position:absolute;inset:0;overflow:hidden;transform:rotateY(180deg);box-sizing:border-box">
+        <!-- Giant X overlay — coords pulled inward + overflow:hidden on parent so it stays inside -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:0.55" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="12" y1="16" x2="88" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
+          <line x1="88" y1="16" x2="12" y2="84" stroke="#c8462c" stroke-width="2" stroke-linecap="butt"/>
         </svg>
-        <!-- Person silhouette (larger) -->
-        <svg width="84" height="98" viewBox="0 0 120 140" fill="none" style="flex-shrink:0">
-          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(26,22,18,0.25)" stroke-width="2"/>
-          <circle cx="54" cy="28" r="2" fill="rgba(26,22,18,0.2)"/>
-          <circle cx="66" cy="28" r="2" fill="rgba(26,22,18,0.2)"/>
-          <path d="M54 36 Q60 40 66 36" stroke="rgba(26,22,18,0.15)" stroke-width="1.2" fill="none"/>
-          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
-          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
-          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(26,22,18,0.2)" stroke-width="2"/>
+        <!-- Person silhouette -->
+        <svg width="78" height="92" viewBox="0 0 120 140" fill="none" style="flex-shrink:0;position:relative;z-index:1">
+          <circle cx="60" cy="32" r="18" fill="none" stroke="rgba(26,22,18,0.28)" stroke-width="2"/>
+          <circle cx="54" cy="28" r="2" fill="rgba(26,22,18,0.22)"/>
+          <circle cx="66" cy="28" r="2" fill="rgba(26,22,18,0.22)"/>
+          <path d="M54 36 Q60 40 66 36" stroke="rgba(26,22,18,0.18)" stroke-width="1.2" fill="none"/>
+          <line x1="60" y1="50" x2="60" y2="90" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
+          <line x1="42" y1="70" x2="78" y2="70" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="45" y2="120" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
+          <line x1="60" y1="90" x2="75" y2="120" stroke="rgba(26,22,18,0.22)" stroke-width="2"/>
         </svg>
-        <div style="text-align:left">
-          <div style="font-size:0.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(224,64,64,0.85);margin-bottom:8px">Skill Ratings &middot; the old paradigm</div>
-          <div style="display:flex;align-items:baseline;gap:18px">
-            <div style="font-family:'Playfair Display',serif;font-size:clamp(56px,8.5vw,76px);font-weight:900;color:#c8462c;line-height:1">3.0</div>
-            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.18rem;color:rgba(26,22,18,0.58);line-height:1.35">One number. One dimension.<br><span style="color:rgba(26,22,18,0.45);font-size:0.95rem">100-year reign &mdash; ending.</span></div>
+        <div style="text-align:left;position:relative;z-index:1;max-width:480px">
+          <div style="font-size:0.66rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#c8462c;margin-bottom:10px">Old Paradigm &middot; All About Me</div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.85vw,1.4rem);font-weight:700;color:#1a1612;line-height:1.3;margin-bottom:8px;letter-spacing:-0.005em">
+            <span style="font-family:'Playfair Display',serif;font-weight:900;color:#c8462c">3.0</span> Skill rating &middot; Ego &middot; Status &middot; Achievement
+          </div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:0.95rem;color:rgba(26,22,18,0.6);line-height:1.4">
+            All measure <em style="color:#c8462c;font-style:italic">the self</em>. None measure <em style="color:#1a1612;font-style:italic">us</em>.
           </div>
         </div>
         </div>
@@ -7036,7 +7090,7 @@ html, body, html body{
 
 <!-- Two Products · Invitations + Rounds — nav pos 13 -->
 <!-- 2026-05-02: cs-11 converted per Dave: header-only on load, BEFORE/AFTER as flip cards, 'Scheduling is measuring' as bottom card -->
-<div class="casey-slide ds-focus" id="cs-11" data-shown="0" data-left-flipped="0" data-right-flipped="0" onclick="cs11Advance()" style="cursor:pointer">
+<div class="casey-slide ds-focus" id="cs-11" data-shown="1" data-left-flipped="0" data-right-flipped="0">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Scheduling is measuring.</div>
 <style>
@@ -7119,10 +7173,7 @@ html, body, html body{
   <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);color:#1a1612;line-height:1.1;margin-bottom:30px;font-weight:700;letter-spacing:-0.018em;max-width:920px;margin-left:auto;margin-right:auto">
     No like button? <em style="font-style:italic;font-weight:500;color:#b8954a">No problem.</em>
   </div>
-  <!-- Click-to-reveal hint (visible only on first load) -->
-  <div class="cs11-hint">
-    <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
+  <!-- cs11-hint removed Dave 2026-05-02: cards now visible from start, no reveal step needed. -->
 
   <div class="cs11-cards-row" style="display:flex;align-items:center;justify-content:center;gap:22px;max-width:1040px;margin:36px auto 34px auto;flex-wrap:wrap">
     <!-- LEFT: Invitation Feed (FLIP CARD [Dave 2026-05-02]).
@@ -7902,16 +7953,18 @@ html, body, html body{
   #cs-gnr .gnr-callout { position:relative; padding:26px 28px 8px; text-align:center; opacity:0; }
   /* Vertical gradient divider between callouts */
   #cs-gnr .gnr-callout + .gnr-callout::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:linear-gradient(180deg, transparent 0%, rgba(184,149,74,0.42) 35%, rgba(184,149,74,0.42) 65%, transparent 100%); }
-  /* Centered gold rule above each title */
-  #cs-gnr .gnr-callout::after { content:''; display:block; position:absolute; top:0; left:50%; transform:translateX(-50%); width:36px; height:2px; background:#b8954a; opacity:0.65; border-radius:2px; }
+  /* Gold rule above removed Dave 2026-05-02 — envelope provides the visual now. */
   #cs-gnr.active .gnr-callout { animation: gnrCalloutIn 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
   @keyframes gnrCalloutIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
   #cs-gnr.active .gnr-callout-1 { animation-delay: 1.6s; }
   #cs-gnr.active .gnr-callout-2 { animation-delay: 1.8s; }
   #cs-gnr.active .gnr-callout-3 { animation-delay: 2.0s; }
   html[data-export="1"] #cs-gnr .gnr-callout { opacity:1 !important; transform:none !important; animation:none !important; }
-  #cs-gnr .gnr-ctitle { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.5rem,2.5vw,2.0rem); font-weight:700; color:#1a1612; line-height:1.15; letter-spacing:-0.018em; }
-  #cs-gnr .gnr-ctitle em { font-style:italic; font-weight:500; color:#b8954a; }
+  /* Envelope wrapper — each callout becomes an envelope with text on the front (Dave 2026-05-02). */
+  #cs-gnr .gnr-envelope { position:relative; max-width:220px; margin:6px auto 0; }
+  #cs-gnr .gnr-env-svg { display:block; width:100%; height:auto; filter:drop-shadow(0 2px 10px rgba(184,149,74,0.20)); }
+  #cs-gnr .gnr-env-text { position:absolute; top:72%; left:50%; transform:translate(-50%,-50%); width:84%; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(0.72rem,1.05vw,0.9rem); font-weight:700; color:#1a1612; line-height:1.25; letter-spacing:-0.005em; }
+  #cs-gnr .gnr-env-text em { font-style:italic; font-weight:500; color:#b8954a; }
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr">
 <section style="position:relative;min-height:100%;width:100%">
@@ -7919,7 +7972,7 @@ html, body, html body{
 <div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
-    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking for our communities.</em>
+    <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.72em;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> is <em style="font-style:italic;font-weight:500;color:#b8954a">invitation-based matchmaking for real communities.</em>
   </div>
 
   <!-- ===== Center stage: ENVELOPE IS THE HERO [Dave 2026-05-02 PM v3]
@@ -7928,11 +7981,13 @@ html, body, html body{
        no rating numbers, no detail card. ===== -->
   <div class="gnr-stage" style="position:relative;width:min(560px,72vmin);margin:18px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px">
 
-    <!-- HERO ENVELOPE -->
-    <img class="gnr-env-hero" src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:100%;max-width:520px;filter:drop-shadow(0 22px 48px rgba(184,149,74,0.28))"/>
+    <!-- HERO ENVELOPE — foursome strip now sits INSIDE the envelope (absolute-positioned
+         on top of the address area) per Dave 2026-05-02. -->
+    <div class="gnr-env-container" style="position:relative;width:100%;max-width:520px;display:flex;align-items:center;justify-content:center">
+      <img class="gnr-env-hero" src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:100%;display:block;filter:drop-shadow(0 22px 48px rgba(184,149,74,0.28))"/>
 
-    <!-- Foursome strip — small pill, no rating numbers, no names with tags -->
-    <div class="gnr-fs-strip" style="display:flex;align-items:center;gap:20px;padding:11px 26px 11px 22px;background:#fcf6e7;border:1.8px solid rgba(184,149,74,0.42);border-radius:99px;box-shadow:0 8px 24px rgba(184,149,74,0.20);opacity:0;transform:translateY(10px)">
+      <!-- Foursome strip — overlaid on the envelope's address area, smaller scale to fit -->
+      <div class="gnr-fs-strip" style="position:absolute;top:64%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px;padding:8px 18px 8px 16px;background:#fcf6e7;border:1.6px solid rgba(184,149,74,0.45);border-radius:99px;box-shadow:0 6px 18px rgba(184,149,74,0.22);opacity:0;z-index:2">
       <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#b8954a">Joining you</div>
       <div style="display:flex;align-items:center">
         <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(184,149,74,0.22),rgba(184,149,74,0.08));border:2.5px solid #b8954a;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2.5px #fcf6e7,0 4px 12px rgba(184,149,74,0.32);z-index:2">
@@ -7949,28 +8004,52 @@ html, body, html body{
         </div>
       </div>
     </div>
+    </div><!-- /gnr-env-container -->
   </div>
 
   <style>
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
     #cs-gnr.active .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
+    /* Foursome strip is position:absolute and uses translate(-50%,-50%) for centering on the envelope.
+       Keyframe must preserve that centering transform throughout the animation. */
     #cs-gnr.active .gnr-fs-strip { animation: gnrFsStripIn 0.7s cubic-bezier(.45,.05,.18,1) forwards 1.10s; }
-    @keyframes gnrFsStripIn { to { opacity:1; transform:translateY(0); } }
+    @keyframes gnrFsStripIn {
+      from { opacity:0; transform:translate(-50%, calc(-50% + 8px)); }
+      to   { opacity:1; transform:translate(-50%, -50%); }
+    }
     html[data-export="1"] #cs-gnr .gnr-env-hero { opacity:1 !important; transform:rotate(-1deg) !important; animation:none !important; }
-    html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:none !important; animation:none !important; }
+    html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
   <!-- 3 emphasis callouts — hero treatment per Dave 2026-05-02 PM (big Fraunces, gold-italic accent, vertical dividers) -->
   <div style="position:relative;width:100%;max-width:1180px;margin:30px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:center">
     <div class="gnr-callout gnr-callout-1">
-      <div class="gnr-ctitle"><em>Invitations,</em> not calendars.</div>
+      <div class="gnr-envelope">
+        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="gnr-env-text"><em>Invitations,</em> not calendars.</div>
+      </div>
     </div>
     <div class="gnr-callout gnr-callout-2">
-      <div class="gnr-ctitle">You <em>belong.</em></div>
+      <div class="gnr-envelope">
+        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="gnr-env-text">You <em>belong.</em></div>
+      </div>
     </div>
     <div class="gnr-callout gnr-callout-3">
-      <div class="gnr-ctitle">Who <em>gives?</em></div>
+      <div class="gnr-envelope">
+        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="gnr-env-text">Who <em>gives?</em></div>
+      </div>
     </div>
   </div>
 
@@ -9154,7 +9233,7 @@ html, body, html body{
           <line x1="6" y1="6" x2="28" y2="28" opacity="0.7"/>
         </svg>
       </div>
-      <div class="c25-title" style="color:#c8462c">Coordination stack<br>broken for social players<br>and stuck in 2005.</div>
+      <div class="c25-title" style="color:#c8462c">Coordination stack<br>stuck in 2005.</div>
       <div class="c25-detail">Court Booking &middot; Texts &middot; Ratings</div>
     </div>
 
@@ -9950,8 +10029,7 @@ html, body, html body{
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Future of our communities</div>
 <section style="position:relative;min-height:100%;width:100%">
   <div class="ft-stage">
-    <div class="ft-eye">When you digitize <em>human connection</em>, you can</div>
-    <div class="ft-headline">Seven verbs that <em>didn&rsquo;t exist</em> for our communities &mdash; until now.</div>
+    <div class="ft-eye">When you digitize <em>human connection</em> within a community, you can</div>
 
     <div class="ft-verbs-row">
       <div class="ft-verb ft-verb-1">
@@ -10003,6 +10081,9 @@ html, body, html body{
         <div class="ft-verb-label">Make it abundant.</div>
       </div>
     </div>
+    <!-- Headline moved BELOW the graphics per Dave 2026-05-02 — verbs are the visual,
+         the line is the conclusion. -->
+    <div class="ft-headline" style="margin-top:32px">Seven verbs that <em>didn&rsquo;t exist</em> for our communities &mdash; until now.</div>
   </div>
 </section>
 </div>
@@ -10015,7 +10096,7 @@ html, body, html body{
   #cs-26 .cl-line    { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.4rem,5.4vw,4.8rem); font-weight:700; line-height:1.06; letter-spacing:-0.025em; color:#1a1612; max-width:1240px; opacity:0; transform:translateY(14px); transition:opacity 1.1s 0.65s cubic-bezier(.45,.05,.18,1), transform 1.1s 0.65s cubic-bezier(.45,.05,.18,1); }
   #cs-26 .cl-line .cl-mark { font-family:'Playfair Display',serif; font-style:normal; }
   #cs-26 .cl-line .cl-mark .g { color:#4d82c6; font-weight:700; }
-  #cs-26 .cl-line .cl-mark .n { color:#1a1612; font-style:italic; font-weight:500; font-size:0.78em; padding:0 0.04em; }
+  #cs-26 .cl-line .cl-mark .n { color:#1a1612; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-26 .cl-line .cl-mark .r { color:#c94d32; font-weight:700; }
   #cs-26 .cl-line em { font-style:italic; font-weight:500; color:#b8954a; }
   #cs-26 .cl-divider { display:flex; align-items:center; justify-content:center; gap:14px; opacity:0; transition:opacity 0.6s 1.50s ease; }
@@ -11161,10 +11242,13 @@ html, body, html body{
     <em style="font-style:italic;font-weight:500;color:#b8954a">It just works. And compounds forever &mdash; at AI speed.</em>
   </div>
 
-  <svg viewBox="-60 0 820 600" style="width:min(980px,96%);max-width:980px;height:auto;display:block;margin:8px auto 0">
+  <svg viewBox="-260 0 1020 600" style="width:min(1100px,98%);max-width:1100px;height:auto;display:block;margin:8px auto 0">
     <defs>
       <marker id="fw1Arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 0 L 10 5 L 0 10 z" fill="#b8954a"/>
+      </marker>
+      <marker id="fw1ArrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#5B8FD4"/>
       </marker>
       <radialGradient id="fw1EngineGlow" cx="50%" cy="50%" r="50%">
         <stop offset="0%" stop-color="#f0c040" stop-opacity="0.22"/>
@@ -11198,8 +11282,32 @@ html, body, html body{
       <text x="338" y="324" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#5B8FD4">G</text>
       <text x="362" y="324" text-anchor="middle" font-family="Playfair Display,serif" font-size="28" font-weight="500" font-style="italic" fill="#1a1612">n</text>
       <text x="386" y="324" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#c8462c">R</text>
-      <text x="360" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="8" font-weight="700" letter-spacing="2.8" fill="rgba(26,22,18,0.42)">AT AI SPEED</text>
+      <!-- 'AT AI SPEED' duplicate removed Dave 2026-05-02 — only appears once now (in headline above). -->
     </g>
+
+    <!-- LEFT JUMPSTART (Dave 2026-05-02): historical scheduling + private booking data feeds the wheel.
+         Solves the cold-start problem — drop into ANY existing pickleball community and the wheel
+         spins from day one because we ingest their existing operational data. -->
+    <g class="fw1-anim fw1-feed" transform="translate(-180, 300)">
+      <!-- Database / records canister -->
+      <rect x="-72" y="-58" width="144" height="116" rx="8" fill="rgba(91,143,212,0.06)" stroke="#5B8FD4" stroke-width="1.7" stroke-dasharray="4 2.5"/>
+      <ellipse cx="0" cy="-58" rx="72" ry="10" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.7"/>
+      <ellipse cx="0" cy="-58" rx="72" ry="10" fill="none" stroke="#5B8FD4" stroke-width="1.7"/>
+      <!-- Database row stripes -->
+      <line x1="-58" y1="-30" x2="58" y2="-30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.55"/>
+      <line x1="-58" y1="-15" x2="58" y2="-15" stroke="#5B8FD4" stroke-width="0.9" opacity="0.5"/>
+      <line x1="-58" y1="0" x2="58" y2="0" stroke="#5B8FD4" stroke-width="0.9" opacity="0.45"/>
+      <line x1="-58" y1="15" x2="58" y2="15" stroke="#5B8FD4" stroke-width="0.9" opacity="0.4"/>
+      <line x1="-58" y1="30" x2="58" y2="30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.35"/>
+      <line x1="-58" y1="45" x2="58" y2="45" stroke="#5B8FD4" stroke-width="0.9" opacity="0.3"/>
+      <!-- Label -->
+      <text x="0" y="-78" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">JUMPSTART</text>
+      <text x="0" y="78" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.65)">historical scheduling</text>
+      <text x="0" y="93" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0.65)">+ private booking data</text>
+    </g>
+    <!-- Jumpstart arrow from feeder INTO the wheel (curves down into the engine left edge) -->
+    <path class="fw1-anim fw1-jumpstart" d="M -100 300 Q 60 290 245 300" stroke="#5B8FD4" stroke-width="2.6" fill="none" opacity="0.78" marker-end="url(#fw1ArrowBlue)" stroke-dasharray="7 4"/>
+    <text x="70" y="278" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9.5" font-weight="800" letter-spacing="2.2" fill="#5B8FD4">cold start, solved</text>
 
     <!-- 4 outer nodes — richer content drawn from the matching+value loop attachment -->
     <!-- TOP: Personalized Invitations (blue) -->
@@ -12351,7 +12459,7 @@ html, body, html body{
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; max-width:1500px; margin:48px auto 0; padding:0 32px; }
+  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:14px; max-width:1500px; margin:48px auto 0; padding:0 24px; }
   #cs-2c .c2c-card { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.16); border-radius:14px; padding:36px 18px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; text-align:center; aspect-ratio:1/1; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   #cs-2c .c2c-card.c2c-highlight { background:linear-gradient(180deg,rgba(184,149,74,0.12) 0%,rgba(184,149,74,0.04) 100%); border:1.5px solid rgba(184,149,74,0.55); box-shadow:0 0 28px rgba(184,149,74,0.18); position:relative; }
   #cs-2c .c2c-icon { font-size:64px; line-height:1; margin:0; }
@@ -12383,9 +12491,22 @@ html, body, html body{
   #cs-2c.active .c2c-card:nth-child(4) { animation-delay: 0.95s; }
   #cs-2c.active .c2c-card:nth-child(5) { animation-delay: 1.10s; }
   #cs-2c.active .c2c-card:nth-child(6) { animation-delay: 1.25s; }
+  #cs-2c.active .c2c-card:nth-child(7) { animation-delay: 1.40s; }
   html[data-export="1"] #cs-2c .c2c-card { opacity:1 !important; animation:none !important; transform:none !important; }
+
+  /* Click-reveal: "Our communities run on human connection." text below grid [Dave 2026-05-03] */
+  #cs-2c .c2c-reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
+  #cs-2c[data-shown="1"] .c2c-reveal { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+  html[data-export="1"] #cs-2c .c2c-reveal { opacity: 1 !important; transform: none !important; }
+
+  @keyframes c2cHintBounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(4px); } }
+  @keyframes c2cHintPulse { 0%,100% { opacity:.85; } 50% { opacity:1; } }
+  #cs-2c .c2c-hint { display:flex; flex-direction:column; align-items:center; gap:6px; margin: 26px auto 0; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(184,149,74,0.85); animation: c2cHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-2c .c2c-hint svg { animation: c2cHintBounce 1.6s ease-in-out infinite; }
+  #cs-2c[data-shown="1"] .c2c-hint { opacity: 0; pointer-events: none; animation: none; }
+  html[data-export="1"] #cs-2c .c2c-hint { opacity: 0 !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-2c">
+<div class="casey-slide ds-focus" id="cs-2c" data-shown="0" onclick="cs2cAdvance()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Community</div>
 <div class="inner" style="padding-top:64px;text-align:center;max-width:1600px;margin:0 auto">
@@ -12448,6 +12569,11 @@ html, body, html body{
     </div>
 
     <div class="c2c-card">
+      <div class="c2c-icon">🎓</div>
+      <div class="c2c-label">Colleges &amp;<br>Universities</div>
+    </div>
+
+    <div class="c2c-card">
       <div class="c2c-icon">🏘️</div>
       <div class="c2c-label">Neighborhoods</div>
     </div>
@@ -12462,7 +12588,19 @@ html, body, html body{
       <div class="c2c-label">Faith<br>Communities</div>
     </div>
   </div>
-  <!-- "Our communities run on connection" sub-line REMOVED per Dave 2026-05-01 — moved (and reworded) to cs-2b headline -->
+
+  <!-- Click hint — visible only before first click [Dave 2026-05-03] -->
+  <div class="c2c-hint">
+    <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <!-- Click-revealed sub-line: "Our communities run on human connection. That's what they are."
+       MOVED here from cs-2b on 2026-05-03 per Dave. cs-2b's title is now "But no technology measures..." -->
+  <div class="c2c-reveal" style="margin: 30px auto 0; max-width:1200px; padding: 0 32px;">
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.5vw,2rem);color:#1a1612;line-height:1.25;font-weight:600;letter-spacing:-0.012em;text-align:center">
+      Our communities run on our <em style="font-style:italic;font-weight:500;color:#5B8FD4">uniqueness to each other</em>, our <em style="font-style:italic;font-weight:500;color:#c8462c">connection</em>, and our <em style="font-style:italic;font-weight:500;color:#b8954a">value to each other</em>.
+    </div>
+  </div>
 </div>
 </section>
 </div>
@@ -12543,11 +12681,11 @@ html, body, html body{
 
   <div style="text-align:center">
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);font-weight:700;color:#1a1612;line-height:1.1;letter-spacing:-0.018em">
-      Two imbalances rule modern life, <em style="font-style:italic;font-weight:500;color:#b8954a">and drive us apart.</em>
+      Two imbalances rule our lives, <em style="font-style:italic;font-weight:500;color:#b8954a">and drive us apart.</em>
     </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start">
+  <div style="display:grid;grid-template-columns:1fr 92px 1fr;gap:14px;align-items:stretch;position:relative">
 
     <!-- LEFT WRAPPER (Tech) — card-flip: placeholder = back, card = front -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('left');event.stopPropagation()" style="cursor:pointer">
@@ -12607,8 +12745,8 @@ html, body, html body{
         <!-- BOTTOM SECTION — fades in AFTER card flip (bars first, verdict second) [Dave 2026-04-30 PM] -->
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
           <!-- Headline (verdict) BELOW the chart -->
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.95vw,1.55rem);font-weight:700;color:#1a1612;line-height:1.2;text-align:center;margin-top:8px">
-            A multi-trillion stack<br><em style="font-style:italic;font-weight:500;color:#3a7da3">keeps us scrolling alone.</em>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.4vw,1.95rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;margin-top:8px">
+            <em style="font-style:italic;font-weight:500;color:#3a7da3">Scroll alone.</em>
           </div>
           <!-- Scroll alone icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
           <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
@@ -12637,6 +12775,15 @@ html, body, html body{
         <div style="font-family:'Manrope',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);animation:tiHintPulse 1.8s ease-in-out infinite">&#9655; Click to reveal</div>
       </div>
      </div>
+    </div>
+
+    <!-- CENTER BRIDGE — single gold double-arrow showing the two cards are related [Dave 2026-05-03] -->
+    <div class="ti-bridge" style="display:flex;align-items:center;justify-content:center;pointer-events:none">
+      <svg width="86" height="22" viewBox="0 0 86 22" style="display:block">
+        <line x1="11" y1="11" x2="75" y2="11" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+        <path d="M16 5 L9 11 L16 17" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 5 L77 11 L70 17" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
 
     <!-- RIGHT WRAPPER (Values) — card-flip: placeholder = back, card = front -->
@@ -13346,6 +13493,22 @@ window.cs2bReverse = function() {
   return true;
 };
 
+// cs-2c (Community brings us together) — single click-reveal: 7-card grid lands first, then click reveals "Our communities run on human connection. That's what they are." [Dave 2026-05-03]
+window.cs2cAdvance = function() {
+  const slide = document.getElementById('cs-2c');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.cs2cReverse = function() {
+  const slide = document.getElementById('cs-2c');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown !== '1') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+
 // cs-3 (24 unique social experiences) — click-reveal: 4 .scored cards + closer text hidden until click [Dave 2026-05-01]
 window.cs3Advance = function() {
   const slide = document.getElementById('cs-3');
@@ -13375,35 +13538,28 @@ window.cs3Toggle = function() {
 window.cs11Advance = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return false;
-  // Step 0 -> 1: reveal cards
-  if (slide.dataset.shown !== '1') { slide.dataset.shown = '1'; return true; }
-  // Step 1 -> 2: flip LEFT card
+  // Cards visible from start (Dave 2026-05-02). Keyboard arrow advances flips, then nav.
   if (slide.dataset.leftFlipped !== '1') { slide.dataset.leftFlipped = '1'; return true; }
-  // Step 2 -> 3: flip RIGHT card
   if (slide.dataset.rightFlipped !== '1') { slide.dataset.rightFlipped = '1'; return true; }
-  // Step 3: fully revealed — let nav advance to next slide
   return false;
 };
 window.cs11Reverse = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return false;
-  // Reverse order: unflip RIGHT, then LEFT, then hide cards
   if (slide.dataset.rightFlipped === '1') { slide.dataset.rightFlipped = '0'; return true; }
   if (slide.dataset.leftFlipped === '1')  { slide.dataset.leftFlipped  = '0'; return true; }
-  if (slide.dataset.shown === '1')        { slide.dataset.shown        = '0'; return true; }
   return false;
 };
-// Direct-card click — independent toggle, doesn't affect global step state
+// Direct-card click — independent toggle, flips on FIRST click (Dave 2026-05-02 bug fix:
+// removed redundant data-shown reveal-step that was eating the first click).
 window.cs11ToggleLeft = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return;
-  if (slide.dataset.shown !== '1') { slide.dataset.shown = '1'; return; }
   slide.dataset.leftFlipped = slide.dataset.leftFlipped === '1' ? '0' : '1';
 };
 window.cs11ToggleRight = function() {
   const slide = document.getElementById('cs-11');
   if (!slide || !slide.classList.contains('active')) return;
-  if (slide.dataset.shown !== '1') { slide.dataset.shown = '1'; return; }
   slide.dataset.rightFlipped = slide.dataset.rightFlipped === '1' ? '0' : '1';
 };
 
@@ -13969,6 +14125,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
@@ -13979,6 +14136,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  return;
@@ -13999,6 +14157,10 @@ document.addEventListener('wheel', e => {
   if (e.deltaY > 0) {
     // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -14027,6 +14189,10 @@ document.addEventListener('wheel', e => {
   else if (e.deltaY < 0) {
     // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -14069,6 +14235,7 @@ document.addEventListener('touchend', e => {
     const slideId = SLIDE_ORDER[current - 1];
     if (dy < 0) { // swipe UP → advance reveal
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -14077,6 +14244,7 @@ document.addEventListener('touchend', e => {
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -16031,14 +16199,15 @@ const SPEAKER_NOTES = {
     body: `<p><em>This slide is in appendix as backup only. Use cs-1bm1 in main flow.</em></p>`
   },
   'cs-2b': {
-    title: "Real-world social communities",
-    oneLine: "Our communities run on human connection. That's what they ARE.",
-    body: `<p>Lead with the headline as a fact, not a question. <em>"Our communities run on human connection. That's what they ARE."</em></p>
-<p>Then disqualify what we're NOT building. <em>"Not matchmaking. Not group formation. Not scheduling. <strong>Connection.</strong>"</em></p>
-<p>Look up. <em>"Today, every real-world community — clubs, churches, gyms, leagues — coordinates by hand. By Krista. By group chats. By the GM's memory."</em></p>
-<p>Pause. <em>"No technology measures what our communities actually run on. Until ours."</em></p>
+    title: "Built by hand — no technology measures and powers that reality",
+    oneLine: "But no technology measures and powers that reality.",
+    body: `<p><strong>Land the headline as a fact, not a question.</strong> <em>"But no technology measures and powers that reality."</em> Pause on it. The previous slide just told them communities run on human connection — this one tells them nobody has built the technology for it yet.</p>
+<p>Then disqualify what we're NOT building. <em>"Not matchmaking. Not group formation. Not scheduling. <strong>Connection itself.</strong>"</em></p>
+<p>Set up the click. <em>"Every real-world community — clubs, churches, gyms, leagues — coordinates by hand. By the GM. By group chats. By memory. Here's what that actually looks like."</em></p>
+<p><strong>Click to reveal the 3 manual bottlenecks:</strong> finding your people is slow and hard · giving freely beyond inner circles feels risky · communities break into cliques. Read them out loud, fast.</p>
+<p>Land the close. <em>"This is what every community does today. By hand. And we built the system that fixes it."</em></p>
 <p style="border-left:3px solid rgba(184,149,74,0.5);padding-left:12px;color:rgba(26,22,18,0.7)"><strong>What they're thinking:</strong> "Hasn't someone done this?"<br><strong>Preempt:</strong> <em>"50+ products track scores. None measure the people. We just told you the gap exists. Next slide tells you HOW we measure it."</em></p>
-<p><strong>Transition:</strong> Here's the secret nobody else has — what people don't tell you when they say no.</p>`
+<p><strong>Transition:</strong> Here's what we built — invitation-based matchmaking for real communities.</p>`
   },
   'cs-11d': {
     title: "The honesty gap · GnR invitation captures it",
@@ -16323,18 +16492,18 @@ const SPEAKER_NOTES = {
 
   'cs-2c': {
     title: "Community brings us together",
-    oneLine: "Every kind of community exists for one reason: to bring us together.",
-    body: `<p><strong>Open with the slide title as fact.</strong> <em>"Community brings us together."</em> Pause. Then read the grid out loud, fast: <em>"Social sports. Neighborhoods. Towns. Homeschool groups. Faith communities. Gym groups."</em></p>
-<p>Land it: <em>"All of these communities exist for one reason — to bring us together. The question is whether the technology to coordinate them exists yet. It doesn't."</em></p>
+    oneLine: "Every kind of community exists for one reason: to bring us together — they run on human connection.",
+    body: `<p><strong>Open with the slide title as fact.</strong> <em>"It's community that brings us together."</em> Pause. Then read the grid out loud, fast: <em>"Social sports. Fitness and gym groups. Homeschool groups. Colleges and universities. Neighborhoods. Towns and cities. Faith communities."</em></p>
+<p><strong>Click to reveal the line below the grid:</strong> <em>"Our communities run on human connection. That's what they are."</em> Let it sit. This is the whole thesis in one sentence — communities aren't a feature, they ARE human connection.</p>
 <p>Wedge tee-up: <em>"Pickleball — our wedge — is the fastest-growing one of them. The most active. The densest. We'll come back to it."</em></p>
 <p style="border-left:3px solid rgba(184,149,74,0.5);padding-left:12px;color:rgba(26,22,18,0.7)"><strong>What they're thinking:</strong> "Why pickleball and not just go straight to all communities?"<br><strong>Preempt:</strong> <em>"Pickleball is the wedge, not the destination. We'll show you both."</em></p>
-<p><strong>Transition:</strong> Here is the dirty secret of every one of these communities.</p>`
+<p><strong>Transition:</strong> But here's the dirty secret of every one of these communities — no technology measures and powers that reality.</p>`
   },
 
   'cs-gnr': {
-    title: "GnR is invitation-based matchmaking for our communities",
+    title: "GnR is invitation-based matchmaking for real communities",
     oneLine: "An invitation is the unit. From the right person, at the right time, to the right group.",
-    body: `<p><strong>Read the title slowly:</strong> <em>"GnR is invitation-based matchmaking for our communities."</em></p>
+    body: `<p><strong>Read the title slowly:</strong> <em>"GnR is invitation-based matchmaking for real communities."</em></p>
 <p>Point at the envelope. <em>"That's the unit. An invitation. From the right person, at the right time, to the right group."</em></p>
 <p>Set up the moat reveal: <em>"The product is simple. The data underneath it is the moat. And the data is what we are about to show you."</em></p>
 <p style="border-left:3px solid rgba(184,149,74,0.5);padding-left:12px;color:rgba(26,22,18,0.7)"><strong>What they're thinking:</strong> "What makes the matching defensible?"<br><strong>Preempt:</strong> <em>"Two slides from now, you'll see exactly what data we have that nobody else does."</em></p>
