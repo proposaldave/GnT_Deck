@@ -9041,7 +9041,7 @@ html, body, html body{
 <div class="inner" style="padding:80px 56px 48px;max-width:1200px;margin:0 auto">
 
   <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.7rem);font-weight:800;line-height:1.18;color:#1a1612;letter-spacing:-0.01em;margin-bottom:14px;max-width:1080px">
-    Pickleball is the lowest-risk path to the world's first <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
+    Pickleball is the clearest path to the world's first <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
   </div>
 
   <!-- Kicker line moved ABOVE the four boxes per Dave 2026-05-02 PM -->
@@ -9855,6 +9855,129 @@ html, body, html body{
 
   <!-- Foot (Give n Receive tagline + Dave contact) deleted per Dave 2026-05-02 PM (contact lives on the closer cs-26) -->
 
+</section>
+</div>
+
+<!-- ===== cs-nr · NETWORKED RECIPROCITY · DUPR vs GnR contrast [NEW Dave 2026-05-03 PM]
+     Lands right after cs-prom ("get the most out of community"). Concept: networked reciprocity =
+     measuring net value given AND received across the community. DUPR tracks skill only and disincentivizes
+     strong players from playing weaker teammates; GnR tracks value, so giving is rewarded. ===== -->
+<style>
+  #cs-nr .nr-stage { padding:54px 48px 32px; max-width:1240px; margin:0 auto; text-align:center; }
+  #cs-nr .nr-eye { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#b8954a; margin-bottom:14px; }
+  #cs-nr .nr-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.7rem,3.4vw,2.7rem); font-weight:700; color:#1a1612; line-height:1.12; letter-spacing:-0.018em; max-width:1100px; margin:0 auto 10px; }
+  #cs-nr .nr-head em { font-style:italic; font-weight:500; color:#b8954a; }
+  #cs-nr .nr-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(.95rem,1.5vw,1.18rem); color:rgba(26,22,18,0.7); max-width:880px; margin:0 auto 28px; line-height:1.4; }
+  #cs-nr .nr-grid { display:grid; grid-template-columns:1fr 70px 1fr; gap:18px; align-items:stretch; max-width:1100px; margin:0 auto; }
+  #cs-nr .nr-card { padding:22px 22px 24px; border-radius:14px; text-align:left; display:flex; flex-direction:column; gap:14px; }
+  #cs-nr .nr-card-dupr { background:rgba(200,70,44,0.04); border:1px solid rgba(200,70,44,0.30); border-top:4px solid #c8462c; }
+  #cs-nr .nr-card-gnr  { background:rgba(184,149,74,0.05); border:1px solid rgba(184,149,74,0.40); border-top:4px solid #b8954a; }
+  #cs-nr .nr-brand { font-family:'Manrope',sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; }
+  #cs-nr .nr-card-dupr .nr-brand { color:#c8462c; }
+  #cs-nr .nr-card-gnr  .nr-brand { color:#b8954a; }
+  #cs-nr .nr-claim { font-family:'Fraunces',serif; font-size:1.1rem; font-weight:700; line-height:1.25; color:#1a1612; }
+  #cs-nr .nr-claim em { font-style:italic; font-weight:500; }
+  #cs-nr .nr-card-dupr .nr-claim em { color:#c8462c; }
+  #cs-nr .nr-card-gnr  .nr-claim em { color:#b8954a; }
+  #cs-nr .nr-example { padding:14px 16px; background:rgba(255,255,255,0.55); border:1px solid rgba(26,22,18,0.10); border-radius:10px; }
+  #cs-nr .nr-ex-title { font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-bottom:10px; }
+  #cs-nr .nr-matchup { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:12px; }
+  #cs-nr .nr-team { display:flex; flex-direction:column; align-items:center; gap:5px; padding:10px 14px; background:#fcf6e7; border-radius:10px; min-width:90px; }
+  #cs-nr .nr-team-rating { font-family:'Fraunces',serif; font-size:1.2rem; font-weight:800; color:#1a1612; line-height:1; }
+  #cs-nr .nr-team-label { font-family:'Manrope',sans-serif; font-size:.5rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  #cs-nr .nr-vs { font-family:'Playfair Display',serif; font-style:italic; font-size:.85rem; color:rgba(26,22,18,0.5); }
+  #cs-nr .nr-arrows { display:flex; flex-direction:column; gap:7px; font-family:'DM Sans',sans-serif; font-size:.78rem; color:#1a1612; line-height:1.35; }
+  #cs-nr .nr-arrow-row { display:flex; align-items:flex-start; gap:8px; }
+  #cs-nr .nr-arrow-glyph { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:800; flex-shrink:0; padding-top:1px; }
+  #cs-nr .nr-card-dupr .nr-down  { color:#c8462c; }
+  #cs-nr .nr-card-dupr .nr-up    { color:rgba(42,138,79,0.78); }
+  #cs-nr .nr-card-gnr  .nr-up    { color:#b8954a; }
+  #cs-nr .nr-bottom { margin-top:auto; padding-top:14px; border-top:1px dashed rgba(26,22,18,0.15); font-family:'Fraunces',serif; font-size:.95rem; font-weight:700; color:#1a1612; line-height:1.3; text-align:center; }
+  #cs-nr .nr-card-dupr .nr-bottom em { font-style:italic; font-weight:500; color:#c8462c; }
+  #cs-nr .nr-card-gnr  .nr-bottom em { font-style:italic; font-weight:500; color:#b8954a; }
+  /* Center bridge: vs */
+  #cs-nr .nr-vs-bridge { display:flex; align-items:center; justify-content:center; }
+  #cs-nr .nr-vs-bridge-text { font-family:'Playfair Display',serif; font-style:italic; font-weight:600; font-size:1.4rem; color:rgba(184,149,74,0.85); writing-mode:horizontal-tb; }
+</style>
+<div class="casey-slide ds-focus" id="cs-nr">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Networked Reciprocity</div>
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div class="nr-stage">
+
+    <div class="nr-eye">Networked Reciprocity</div>
+    <div class="nr-head">
+      Get the most out of <em>your community</em>.<br>
+      While your community gets the most out of <em>you</em>.
+    </div>
+    <div class="nr-sub">
+      Most rating systems track <em>skill</em>. We track <em>value</em> &mdash; given and received &mdash; across the whole community.
+    </div>
+
+    <div class="nr-grid">
+
+      <!-- LEFT: DUPR Club -->
+      <div class="nr-card nr-card-dupr">
+        <div class="nr-brand">DUPR Club</div>
+        <div class="nr-claim">Tracks <em>skill rating</em> only.</div>
+
+        <div class="nr-example">
+          <div class="nr-ex-title">Example · Pickleball doubles</div>
+          <div class="nr-matchup">
+            <div class="nr-team">
+              <div class="nr-team-rating">5.25</div>
+              <div class="nr-team-label">Strong team</div>
+            </div>
+            <div class="nr-vs">vs</div>
+            <div class="nr-team">
+              <div class="nr-team-rating">4.25</div>
+              <div class="nr-team-label">Weaker team</div>
+            </div>
+          </div>
+          <div class="nr-arrows">
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-down">&darr;</span><span>Strong team's rating <em style="color:#c8462c;font-style:italic">drops</em> unless they win 11-2.</span></div>
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-down">&times;</span><span>Strong team is <em style="color:#c8462c;font-style:italic">disincentivized</em> from showing up.</span></div>
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Weaker team gets to play up &mdash; but the system never sees it.</span></div>
+          </div>
+        </div>
+
+        <div class="nr-bottom">Measures <em>skill</em>. Misses <em>value</em>.</div>
+      </div>
+
+      <!-- BRIDGE -->
+      <div class="nr-vs-bridge">
+        <div class="nr-vs-bridge-text">vs</div>
+      </div>
+
+      <!-- RIGHT: GnR Club -->
+      <div class="nr-card nr-card-gnr">
+        <div class="nr-brand"><span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.78em;font-weight:500;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> Club</div>
+        <div class="nr-claim">Tracks <em>value</em> across the community.</div>
+
+        <div class="nr-example">
+          <div class="nr-ex-title">Same example · Pickleball doubles</div>
+          <div class="nr-matchup">
+            <div class="nr-team">
+              <div class="nr-team-rating">5.25</div>
+              <div class="nr-team-label">Strong team</div>
+            </div>
+            <div class="nr-vs">vs</div>
+            <div class="nr-team">
+              <div class="nr-team-rating">4.25</div>
+              <div class="nr-team-label">Weaker team</div>
+            </div>
+          </div>
+          <div class="nr-arrows">
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Strong team gets credit for <em style="color:#b8954a;font-style:italic">giving</em> value.</span></div>
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&uarr;</span><span>Weaker team gets credit for <em style="color:#b8954a;font-style:italic">receiving</em> value.</span></div>
+            <div class="nr-arrow-row"><span class="nr-arrow-glyph nr-up">&#8644;</span><span>Both gain. The community sees who gives the most.</span></div>
+          </div>
+        </div>
+
+        <div class="nr-bottom">Measures <em>net value</em>. Reciprocates back.</div>
+      </div>
+
+    </div>
+  </div>
 </section>
 </div>
 
@@ -11097,22 +11220,38 @@ html, body, html body{
 
 <!-- ===== cs-fw1 · FLYWHEEL · One Loop (main deck) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  /* Opacity-only animation — DO NOT use transform here, it clobbers the SVG translate() on each node */
-  #cs-fw1 .fw1-anim { opacity:0; }
-  #cs-fw1.active .fw1-anim { animation: fw1FadeIn 0.55s ease forwards; }
-  @keyframes fw1FadeIn { from { opacity:0; } to { opacity:1; } }
-  #cs-fw1.active .fw1-engine { animation-delay: 0.25s; }
-  #cs-fw1.active .fw1-n1 { animation-delay: 0.55s; }
-  #cs-fw1.active .fw1-a1 { animation-delay: 0.70s; }
-  #cs-fw1.active .fw1-n2 { animation-delay: 0.85s; }
-  #cs-fw1.active .fw1-a2 { animation-delay: 1.00s; }
-  #cs-fw1.active .fw1-n3 { animation-delay: 1.15s; }
-  #cs-fw1.active .fw1-a3 { animation-delay: 1.30s; }
-  #cs-fw1.active .fw1-n4 { animation-delay: 1.45s; }
-  #cs-fw1.active .fw1-a4 { animation-delay: 1.60s; }
-  html[data-export="1"] #cs-fw1 .fw1-anim { opacity:1 !important; animation:none !important; transform:none !important; }
+  /* Stage-based reveal [Dave 2026-05-03 PM] — story starts with JUMPSTART (stage 0) then each click adds a piece.
+     Stages:
+       0: only the JUMPSTART feeder visible
+       1: + jumpstart arrow + PERSONALIZED INVITATION FEED (top)
+       2: + arrow → RSVPs & ROUND SELECTION (right)
+       3: + arrow → FILLED COURTS · BETTER MATCHES (bottom)
+       4: + arrow → COMPOUNDING COMMUNITY VALUE (left) + closing arrow back to top
+       5: + GnR ENGINE in the center (the result of the loop)
+  */
+  #cs-fw1 .fw1-anim { opacity:0; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1); }
+  #cs-fw1[data-stage="0"] .fw1-feed,
+  #cs-fw1[data-stage="1"] :is(.fw1-feed, .fw1-jumpstart, .fw1-n1),
+  #cs-fw1[data-stage="2"] :is(.fw1-feed, .fw1-jumpstart, .fw1-n1, .fw1-a1, .fw1-n2),
+  #cs-fw1[data-stage="3"] :is(.fw1-feed, .fw1-jumpstart, .fw1-n1, .fw1-a1, .fw1-n2, .fw1-a2, .fw1-n3),
+  #cs-fw1[data-stage="4"] :is(.fw1-feed, .fw1-jumpstart, .fw1-n1, .fw1-a1, .fw1-n2, .fw1-a2, .fw1-n3, .fw1-a3, .fw1-n4, .fw1-a4),
+  #cs-fw1[data-stage="5"] .fw1-anim { opacity:1; }
+  html[data-export="1"] #cs-fw1 .fw1-anim { opacity:1 !important; transition:none !important; }
+
+  /* Click hint */
+  #cs-fw1 .fw1-hint {
+    margin: 12px auto 0;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: 'Manrope', sans-serif; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase; color: rgba(184,149,74,0.85);
+    transition: opacity 0.3s ease;
+    animation: fw1HintPulse 1.8s ease-in-out infinite;
+  }
+  #cs-fw1[data-stage="5"] .fw1-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes fw1HintPulse { 0%,100% { opacity:0.7; } 50% { opacity:1; } }
+  html[data-export="1"] #cs-fw1 .fw1-hint { opacity: 0 !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-fw1">
+<div class="casey-slide ds-focus" id="cs-fw1" data-stage="0" onclick="csFw1Advance();event.stopPropagation()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Flywheel</div>
 <div class="inner" style="padding:50px 32px 24px;text-align:center;max-width:1180px;margin:0 auto">
@@ -11122,7 +11261,7 @@ html, body, html body{
     <em style="font-style:italic;font-weight:500;color:#b8954a">It just works. And compounds forever &mdash; at AI speed.</em>
   </div>
 
-  <svg viewBox="-260 0 1020 600" style="width:min(1100px,98%);max-width:1100px;height:auto;display:block;margin:8px auto 0">
+  <svg viewBox="-260 0 1060 600" style="width:min(1100px,98%);max-width:1100px;height:auto;display:block;margin:8px auto 0">
     <defs>
       <marker id="fw1Arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M 0 0 L 10 5 L 0 10 z" fill="#b8954a"/>
@@ -11185,34 +11324,59 @@ html, body, html body{
       <text x="0" y="80" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">historical scheduling</text>
       <text x="0" y="98" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">+ private booking data</text>
     </g>
-    <!-- Jumpstart arrow from feeder INTO the wheel — ARCS OVER the COMPOUNDING VALUE oval (was passing through it) per Dave 2026-05-03 -->
-    <path class="fw1-anim fw1-jumpstart" d="M -100 280 Q 70 165 290 245" stroke="#5B8FD4" stroke-width="2.6" fill="none" opacity="0.78" marker-end="url(#fw1ArrowBlue)" stroke-dasharray="7 4"/>
-    <text x="80" y="148" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="800" letter-spacing="2.2" fill="#5B8FD4">cold start, solved</text>
+    <!-- Jumpstart arrow from feeder INTO the PERSONALIZED INVITATION FEED rectangle (TOP node), not the engine center [Dave 2026-05-03 PM]. Arcs over the COMPOUNDING VALUE oval. 'cold start, solved' label removed per Dave. -->
+    <path class="fw1-anim fw1-jumpstart" d="M -100 285 Q 70 130 270 100" stroke="#5B8FD4" stroke-width="2.6" fill="none" opacity="0.78" marker-end="url(#fw1ArrowBlue)" stroke-dasharray="7 4"/>
 
-    <!-- 4 outer nodes — richer content drawn from the matching+value loop attachment -->
+    <!-- 4 outer nodes — each rect has a small icon-badge positioned radially OUTWARD from the engine [icons added Dave 2026-05-03 PM] -->
     <!-- TOP: Personalized Invitations (blue) -->
     <g class="fw1-anim fw1-n1" transform="translate(360, 70)">
       <rect x="-145" y="-30" width="290" height="60" rx="30" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.7"/>
       <text x="0" y="-3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#3a7da3">PERSONALIZED INVITATION FEED</text>
       <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">sequential · curated</text>
+      <!-- Envelope icon ABOVE the rect -->
+      <g transform="translate(0, -52)">
+        <circle cx="0" cy="0" r="14" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.5"/>
+        <rect x="-7" y="-5" width="14" height="10" rx="1.5" fill="none" stroke="#3a7da3" stroke-width="1.5"/>
+        <path d="M -7 -5 L 0 1 L 7 -5" fill="none" stroke="#3a7da3" stroke-width="1.5" stroke-linejoin="round"/>
+      </g>
     </g>
     <!-- RIGHT: RSVPs + Feedback (gold) -->
     <g class="fw1-anim fw1-n2" transform="translate(620, 300)">
       <rect x="-128" y="-30" width="256" height="60" rx="30" fill="rgba(184,149,74,0.08)" stroke="#b8954a" stroke-width="1.7"/>
       <text x="0" y="-3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#b8954a">RSVPs &amp; ROUND SELECTION</text>
       <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">partners · opponents · wishlist</text>
+      <!-- Checkmark badge to the RIGHT of the rect -->
+      <g transform="translate(155, 0)">
+        <circle cx="0" cy="0" r="14" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="1.5"/>
+        <path d="M -6 0 L -2 4 L 6 -5" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
     </g>
     <!-- BOTTOM: Filled Courts, Better Matches (green) -->
     <g class="fw1-anim fw1-n3" transform="translate(360, 530)">
       <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(42,138,79,0.08)" stroke="#2a8a4f" stroke-width="1.7"/>
       <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#2a8a4f">FILLED COURTS · BETTER MATCHES</text>
-      <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">right 4 people, right time</text>
+      <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">right people, right time</text>
+      <!-- 4 dots in court badge BELOW the rect -->
+      <g transform="translate(0, 52)">
+        <circle cx="0" cy="0" r="14" fill="rgba(42,138,79,0.10)" stroke="#2a8a4f" stroke-width="1.5"/>
+        <line x1="-9" y1="0" x2="9" y2="0" stroke="#2a8a4f" stroke-width="0.8" opacity="0.55"/>
+        <circle cx="-4" cy="-4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="4" cy="-4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="-4" cy="4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="4" cy="4" r="1.9" fill="#2a8a4f"/>
+      </g>
     </g>
-    <!-- LEFT: Compounding Value (coral) -->
+    <!-- LEFT: Compounding Community Value (coral) — eyebrow font dropped to 11.5 so longer label fits same rect [Dave 2026-05-03] -->
     <g class="fw1-anim fw1-n4" transform="translate(100, 300)">
       <rect x="-138" y="-30" width="276" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
-      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING VALUE</text>
+      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="800" letter-spacing="2.0" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
       <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">engagement · incentivized giving · 3× profit</text>
+      <!-- Upward growth-curve badge to the LEFT of the rect -->
+      <g transform="translate(-170, 0)">
+        <circle cx="0" cy="0" r="14" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.5"/>
+        <path d="M -8 6 L -3 1 L 2 4 L 8 -5" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 3 -5 L 8 -5 L 8 0" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
     </g>
 
     <!-- Clockwise arrows -->
@@ -11224,23 +11388,14 @@ html, body, html body{
     <!-- HCD external feeder DELETED 2026-05-01 per Dave — was right-shifting the wheel on the slide. Cold-start narrative now lives on cs-rcp (Receipts) + cs-kl (Krista Loop). -->
   </svg>
 
-  <!-- "Networked reciprocity" tagline — moved out of COMPOUNDING VALUE rectangle (was overflowing) per Dave 2026-05-02 -->
-  <div style="display:flex;justify-content:center;margin:14px auto 0">
-    <div style="display:inline-flex;align-items:center;gap:10px;padding:6px 16px;border:1px solid rgba(184,149,74,0.4);border-radius:99px;background:rgba(184,149,74,0.04)">
-      <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;color:#1a1612">Networked reciprocity</div>
-      <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
-    </div>
+  <!-- Click hint: visible until user reaches stage 5 [Dave 2026-05-03 PM] -->
+  <div class="fw1-hint">
+    <svg width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M2 3 L7 8 L12 3" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Click to reveal</span>
   </div>
-  <div style="display:flex;justify-content:center;align-items:center;gap:38px;flex-wrap:wrap;margin:14px auto 0;max-width:980px;padding:0 16px">
-    <div style="display:flex;align-items:center;gap:8px">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 4 C 5 4 4 8 4 12 C 4 16 6 19 9 19 L 15 19 C 18 19 20 16 20 12 C 20 8 19 4 15 4 Z"/>
-        <path d="M12 4 L12 19"/>
-      </svg>
-      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a"><span style="font-family:'Playfair Display',serif;text-transform:none;letter-spacing:0;font-weight:700"><span style="color:#4d82c6">G</span><span style="color:#1a1612;font-style:italic;font-size:0.78em;font-weight:500;padding:0 0.04em">n</span><span style="color:#c94d32">R</span></span> value-exchange communities</div>
-    </div>
-  </div>
+
+  <!-- "Networked reciprocity" chip + "GnR value-exchange communities" line REMOVED 2026-05-03 PM per Dave —
+       'Networked reciprocity' is now its OWN dedicated slide (cs-nr) for proper explanation. -->
 </div>
 </section>
 </div>
@@ -13225,7 +13380,8 @@ const SLIDE_ORDER = [
   // cs-cl4 (Inversion / "Until now.") DELETED 2026-04-30 PM evening per Dave
   // cs-cl2 lives as ALT for slot 17 (cs-ns1) per Dave 2026-05-01 — they're conceptually similar, dot stacks for comparison
   'cs-prom',  // 20 Promise · GnR wordmark exploded (was cs-26 — moved here as the prev slide per Dave 2026-05-02)
-  'cs-26'     // 21 Closer · "We're wired to Give n Receive. All of us." [REWRITE Dave 2026-05-02]
+  'cs-nr',    // 21 Networked Reciprocity · DUPR vs GnR contrast [NEW Dave 2026-05-03 PM — pulled out of cs-fw1]
+  'cs-26'     // 22 Closer · "We're wired to Give n Receive. All of us." [REWRITE Dave 2026-05-02]
   // Removed from main flow per Dave 2026-04-30 PM:
   //   cs-34 (Flywheel) → appendix · cs-30 (Why Now) → appendix · cs-32 (Distribution) → appendix
   //   cs-31 (Why We Win → archived) · cs-37 (Voice of Community → appendix)
@@ -13410,6 +13566,30 @@ window.cs3Toggle = function() {
   const slide = document.getElementById('cs-3');
   if (!slide || !slide.classList.contains('active')) return;
   slide.dataset.shown = slide.dataset.shown === '1' ? '0' : '1';
+};
+
+// cs-fw1 (Flywheel) — 5-stage click-reveal so Dave can tell each part of the story one at a time [Dave 2026-05-03 PM]
+// Stage 0: only the JUMPSTART feeder visible
+// Stage 1: + jumpstart arrow + PERSONALIZED INVITATION FEED (top)
+// Stage 2: + arrow → RSVPs & ROUND SELECTION (right)
+// Stage 3: + arrow → FILLED COURTS · BETTER MATCHES (bottom)
+// Stage 4: + arrow → COMPOUNDING COMMUNITY VALUE (left) + closing arrow back to top
+// Stage 5: + GnR ENGINE in the center (the result)
+window.csFw1Advance = function() {
+  const slide = document.getElementById('cs-fw1');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 5) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csFw1Reverse = function() {
+  const slide = document.getElementById('cs-fw1');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
 };
 
 // cs-11 [Dave 2026-05-02 PM]: multi-step scroll/swipe/arrow reveal.
@@ -14011,6 +14191,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Advance   && window.cs11Advance())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Advance  && window.csFw1Advance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) return;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
@@ -14022,6 +14203,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse())   return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Reverse  && window.csFw1Reverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) return;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
@@ -14061,6 +14243,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Advance  && window.csFw1Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -14087,6 +14273,10 @@ document.addEventListener('wheel', e => {
       return;
     }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Reverse  && window.csFw1Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -14121,6 +14311,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Advance    && window.cs3Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11'   && window.cs11Advance   && window.cs11Advance())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-fw1'  && window.csFw1Advance  && window.csFw1Advance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
@@ -14130,6 +14321,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-3'    && window.cs3Reverse    && window.cs3Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-fw1'  && window.csFw1Reverse  && window.csFw1Reverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     }
