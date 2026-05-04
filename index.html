@@ -7259,32 +7259,29 @@ html, body, html body{
           <!-- Divider above "what actually happens" row -->
           <line x1="80" y1="350" x2="1220" y2="350" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
 
-          <!-- ═══ ROW 3: "WHAT ACTUALLY HAPPENS" — texting visualization ═══ -->
-          <!-- Label box -->
-          <g transform="translate(60, 400)">
+          <!-- ═══ ROW 3: "WHAT ACTUALLY HAPPENS" — texting visualization (centered around x=650) ═══ -->
+          <!-- Label pill (centered) -->
+          <g transform="translate(200, 400)">
             <rect x="0" y="-22" width="290" height="44" rx="22" fill="none" stroke="rgba(26,22,18,0.35)" stroke-width="1.2"/>
             <text x="145" y="6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#1a1612">WHAT ACTUALLY HAPPENS</text>
           </g>
 
           <!-- Texting person (dark filled silhouette) -->
-          <g transform="translate(390, 410)">
+          <g transform="translate(540, 410)">
             <circle cx="0" cy="-18" r="22" fill="#1a1612"/>
             <path d="M -32 56 Q -32 6 -10 -2 L 10 -2 Q 32 6 32 56 Z" fill="#1a1612"/>
-            <!-- arms holding phone -->
             <path d="M 10 14 Q 22 12 30 22 L 38 26" fill="none" stroke="#1a1612" stroke-width="3" stroke-linecap="round"/>
-            <!-- phone -->
             <rect x="22" y="10" width="22" height="32" rx="3" fill="#fbf7ee" stroke="#1a1612" stroke-width="1.6"/>
             <rect x="25" y="14" width="16" height="22" fill="rgba(91,143,212,0.18)"/>
           </g>
 
           <!-- Speech bubble with timestamp + read receipts -->
           <g class="tg-bubble">
-            <rect x="470" y="378" width="260" height="74" rx="10" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/>
-            <text x="490" y="406" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">Anyone free</text>
-            <text x="490" y="430" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">for coffee at 7?</text>
-            <text x="630" y="448" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.55)">9:41 AM</text>
-            <!-- Double-check read receipt -->
-            <g transform="translate(686, 444)" stroke="#3a7da3" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="620" y="378" width="260" height="74" rx="10" fill="rgba(26,22,18,0.06)" stroke="rgba(26,22,18,0.4)" stroke-width="1.4"/>
+            <text x="640" y="406" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">Anyone free</text>
+            <text x="640" y="430" font-family="Manrope,sans-serif" font-size="18" fill="#1a1612">for coffee at 7?</text>
+            <text x="780" y="448" font-family="Manrope,sans-serif" font-size="11" fill="rgba(26,22,18,0.55)">9:41 AM</text>
+            <g transform="translate(836, 444)" stroke="#3a7da3" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M -8 0 L -3 5 L 5 -5"/>
               <path d="M -2 0 L 3 5 L 11 -5"/>
             </g>
@@ -7292,30 +7289,27 @@ html, body, html body{
 
           <!-- Arrows fanning to 3 avatars -->
           <g stroke="#c8462c" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="6 5">
-            <line x1="740" y1="395" x2="860" y2="375"/>
-            <line x1="740" y1="415" x2="860" y2="425"/>
-            <line x1="740" y1="435" x2="860" y2="475"/>
+            <line x1="890" y1="395" x2="1010" y2="375"/>
+            <line x1="890" y1="415" x2="1010" y2="425"/>
+            <line x1="890" y1="435" x2="1010" y2="475"/>
           </g>
 
-          <!-- 3 dark filled avatar circles (mimicking B&W photo headshots) -->
+          <!-- 3 dark filled avatar circles -->
           <g>
-            <!-- Avatar 1: yes -->
-            <circle cx="880" cy="375" r="20" fill="#1a1612"/>
-            <ellipse cx="880" cy="370" rx="11" ry="9" fill="#0a0806"/>
-            <g class="tg-check-1" transform="translate(940, 375)">
+            <circle cx="1030" cy="375" r="20" fill="#1a1612"/>
+            <ellipse cx="1030" cy="370" rx="11" ry="9" fill="#0a0806"/>
+            <g class="tg-check-1" transform="translate(1090, 375)">
               <circle r="18" fill="#5fa896"/>
               <path d="M -8 0 L -1 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
-            <!-- Avatar 2: yes -->
-            <circle cx="880" cy="425" r="20" fill="#1a1612"/>
-            <ellipse cx="880" cy="420" rx="11" ry="9" fill="#0a0806"/>
-            <g class="tg-check-2" transform="translate(940, 425)">
+            <circle cx="1030" cy="425" r="20" fill="#1a1612"/>
+            <ellipse cx="1030" cy="420" rx="11" ry="9" fill="#0a0806"/>
+            <g class="tg-check-2" transform="translate(1090, 425)">
               <circle r="18" fill="#5fa896"/>
               <path d="M -8 0 L -1 8 L 10 -7" stroke="#fbf7ee" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
-            <!-- Avatar 3: no answer (faded) -->
-            <circle cx="880" cy="475" r="20" fill="rgba(26,22,18,0.35)"/>
-            <circle cx="940" cy="475" r="18" fill="none" stroke="rgba(26,22,18,0.45)" stroke-width="2"/>
+            <circle cx="1030" cy="475" r="20" fill="rgba(26,22,18,0.35)"/>
+            <circle cx="1090" cy="475" r="18" fill="none" stroke="rgba(26,22,18,0.45)" stroke-width="2"/>
           </g>
         </svg>
       </div>
@@ -7345,7 +7339,7 @@ html, body, html body{
               <circle cx="15" cy="11" r="4"/><path d="M5 25 Q 15 18 25 25"/>
             </svg>
           </div>
-          <div class="tg-icon-text"><div class="tg-icon-label">Weak Connections</div><div class="tg-icon-desc">Manual and inconsistent</div></div>
+          <div class="tg-icon-text"><div class="tg-icon-label">Scheduling by Hand</div><div class="tg-icon-desc">Texts, group chats, memory</div></div>
         </div>
         <div class="tg-icon-cell">
           <div class="tg-icon-circle" style="background:rgba(200,70,44,0.14)">
