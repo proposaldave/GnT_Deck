@@ -5342,7 +5342,7 @@ html, body, html body{
   <!-- Warm golden hour glow -->
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Tiny meta corners — mono, very faint -->
-  <div style="position:absolute;top:24px;left:32px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.42);z-index:10">The future of real-world social communities</div>
+  <div style="position:absolute;top:24px;left:32px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.42);z-index:10">Invitation-based matchmaking for our communities</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612">
       <!-- Wordmark — original GnR colors. Blue Give (exact #5B8FD4) + ink italic n + red Receive (exact #e04040).
@@ -9084,16 +9084,18 @@ html, body, html body{
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product for the future of our communities</div>
 <div class="inner" style="padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
 
-  <!-- ===== Center stage: ENVELOPE IS THE HERO [Dave 2026-05-02 PM v3]
-       Stripped the heavy invitation card. The large envelope graphic + the 3 callouts below
-       carry the meaning. Compact "Joining you" foursome strip just below the envelope —
-       no rating numbers, no detail card. ===== -->
-  <div class="gnr-stage" style="position:relative;width:min(560px,72vmin);margin:18px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px">
+  <!-- Headline ABOVE the large envelope per Dave 2026-05-04 -->
+  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto 6px;text-align:center">
+    <em style="font-style:italic;font-weight:500;color:#b8954a">Invitation-based matchmaking</em>
+  </div>
+
+  <!-- ===== Center stage: ENVELOPE IS THE HERO ===== -->
+  <div class="gnr-stage" style="position:relative;width:min(560px,72vmin);margin:6px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px">
 
     <!-- HERO ENVELOPE — foursome strip is INSIDE the envelope at the BOTTOM (below the GnR seal) per Dave 2026-05-03 PM. -->
     <div class="gnr-env-container" style="position:relative;width:100%;max-width:520px;display:flex;align-items:center;justify-content:center">
@@ -9135,98 +9137,157 @@ html, body, html body{
     html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
-  <!-- Headline relocated here [Dave 2026-05-03 PM]: between the large hero envelope and the 3 small envelopes -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.6vw,2.9rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:18px auto 0;text-align:center">
-    <em style="font-style:italic;font-weight:500;color:#b8954a">Invitation-based matchmaking<br>for real communities.</em>
+  <!-- Headline below large envelope: "Everyone in your community gets" [Dave 2026-05-04] -->
+  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:600;color:#1a1612;line-height:1.2;letter-spacing:-0.014em;max-width:1080px;margin:14px auto 0;text-align:center">
+    Everyone in your community gets <em style="font-style:italic;font-weight:500;color:#b8954a">&hellip;</em>
   </div>
 
-  <!-- 3 emphasis callouts — hero treatment per Dave 2026-05-02 PM (big Fraunces, gold-italic accent, vertical dividers) -->
-  <div style="position:relative;width:100%;max-width:1180px;margin:24px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:center">
-    <div class="gnr-callout gnr-callout-1">
-      <div class="gnr-envelope">
-        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
-          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3 — refined, polished but warm] -->
-          <defs>
-            <radialGradient id="cs-gnr-seal-1" cx="38%" cy="32%" r="68%">
-              <stop offset="0%" stop-color="#4ab36c"/>
-              <stop offset="55%" stop-color="#2a8a4f"/>
-              <stop offset="100%" stop-color="#1a5e34"/>
-            </radialGradient>
-            <filter id="cs-gnr-seal-shadow-1" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
-              <feOffset dx="0" dy="1.4"/>
-              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
-              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <g transform="translate(258, 28) rotate(-5)" filter="url(#cs-gnr-seal-shadow-1)">
-            <circle cx="0" cy="0" r="22.5" fill="url(#cs-gnr-seal-1)" stroke="#fbf7ef" stroke-width="2.2"/>
-            <!-- Subtle inner highlight (hand-pressed feel) -->
-            <ellipse cx="-6" cy="-7" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
-            <path d="M -10 0 L -3 8 L 11 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
-          </g>
-        </svg>
-        <div class="gnr-env-text"><em>Invitation-feed,</em><br>not calendars.</div>
+  <!-- 3 ANIMATED OPENING ENVELOPES per Dave 2026-05-04
+       Each envelope auto-opens (flap rotates up, letter slides up) on a staggered loop.
+       Front (closed): teaser word. Open: the punch line revealed. -->
+  <style>
+    #cs-gnr .gnr-env-grid { position:relative;width:100%;max-width:1180px;margin:30px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;perspective:1200px; }
+    #cs-gnr .gnr-env-grid > * + *::before { content:''; position:absolute; left:0; top:18%; bottom:18%; width:1px; background:linear-gradient(180deg, transparent 0%, rgba(184,149,74,0.42) 35%, rgba(184,149,74,0.42) 65%, transparent 100%); }
+
+    #cs-gnr .env-card { position:relative; padding:20px 28px 28px; text-align:center; }
+    #cs-gnr .env-stage { position:relative; width:100%; max-width:240px; aspect-ratio:1.45/1; margin:0 auto; transform-style:preserve-3d; }
+
+    /* Letter slides up out of envelope when flap opens */
+    #cs-gnr .env-letter {
+      position:absolute; left:7%; right:7%; top:18%; bottom:8%;
+      background:#fff; border:1px solid rgba(184,149,74,0.40); border-radius:4px;
+      box-shadow:0 6px 14px rgba(184,149,74,0.18);
+      display:flex; align-items:center; justify-content:center;
+      padding:10px 14px;
+      font-family:'Fraunces','Playfair Display',Georgia,serif;
+      font-size:clamp(0.95rem,1.45vw,1.25rem); font-weight:700; color:#1a1612;
+      line-height:1.22; letter-spacing:-0.008em; text-align:center;
+      transform:translateY(0); opacity:0; z-index:1;
+    }
+    #cs-gnr .env-letter em { font-style:italic; font-weight:500; color:#b8954a; }
+
+    /* Envelope body — the rectangular pocket */
+    #cs-gnr .env-body {
+      position:absolute; inset:32% 0 0 0;
+      background:#fbf7ef; border:1.6px solid #b8954a; border-radius:4px;
+      box-shadow:0 4px 14px rgba(184,149,74,0.18);
+      z-index:2;
+    }
+
+    /* Front text (closed teaser) sits ON the body */
+    #cs-gnr .env-front {
+      position:absolute; left:0; right:0; top:62%;
+      font-family:'Fraunces','Playfair Display',Georgia,serif;
+      font-size:clamp(1rem,1.55vw,1.32rem); font-weight:700; color:#1a1612;
+      line-height:1.18; letter-spacing:-0.008em; text-align:center;
+      padding:0 12px;
+      transition: opacity 0.4s ease;
+      z-index:3;
+    }
+    #cs-gnr .env-front em { font-style:italic; font-weight:500; color:#b8954a; }
+
+    /* The flap — closed by default, rotates up on open */
+    #cs-gnr .env-flap {
+      position:absolute; left:0; right:0; top:0; height:62%;
+      background:#fbf7ef; border:1.6px solid #b8954a; border-bottom:none;
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      transform-origin: top center;
+      transform: rotateX(0deg);
+      z-index:4;
+      box-shadow: 0 2px 6px rgba(184,149,74,0.10);
+    }
+
+    /* Wax seal on closed flap */
+    #cs-gnr .env-seal {
+      position:absolute; left:50%; top:30%; transform:translate(-50%,-50%);
+      width:32px; height:32px; border-radius:50%;
+      background:radial-gradient(ellipse at 38% 32%, #4ab36c 0%, #2a8a4f 55%, #1a5e34 100%);
+      border:2px solid #fbf7ef;
+      box-shadow:0 2px 6px rgba(26,22,18,0.25);
+      z-index:5;
+      display:flex; align-items:center; justify-content:center;
+    }
+    #cs-gnr .env-seal::after { content:'\2713'; color:#fff; font-weight:800; font-size:18px; line-height:1; }
+
+    /* === Auto-loop opening animation, staggered across the 3 envelopes === */
+    @keyframes envOpenFlap {
+      0%, 5%   { transform: rotateX(0deg);   }
+      18%, 65% { transform: rotateX(170deg); }
+      80%, 100%{ transform: rotateX(0deg);   }
+    }
+    @keyframes envLetterRise {
+      0%, 8%   { transform: translateY(0);     opacity: 0; }
+      22%, 64% { transform: translateY(-26%);  opacity: 1; }
+      78%, 100%{ transform: translateY(0);     opacity: 0; }
+    }
+    @keyframes envFrontFade {
+      0%, 8%   { opacity: 1; }
+      22%, 64% { opacity: 0; }
+      78%, 100%{ opacity: 1; }
+    }
+    @keyframes envSealFade {
+      0%, 5%   { opacity: 1; }
+      14%, 70% { opacity: 0; }
+      82%, 100%{ opacity: 1; }
+    }
+
+    #cs-gnr.active .env-card-1 .env-flap   { animation: envOpenFlap   8s ease-in-out 1.6s infinite; }
+    #cs-gnr.active .env-card-1 .env-letter { animation: envLetterRise 8s ease-in-out 1.6s infinite; }
+    #cs-gnr.active .env-card-1 .env-front  { animation: envFrontFade  8s ease-in-out 1.6s infinite; }
+    #cs-gnr.active .env-card-1 .env-seal   { animation: envSealFade   8s ease-in-out 1.6s infinite; }
+
+    #cs-gnr.active .env-card-2 .env-flap   { animation: envOpenFlap   8s ease-in-out 3.0s infinite; }
+    #cs-gnr.active .env-card-2 .env-letter { animation: envLetterRise 8s ease-in-out 3.0s infinite; }
+    #cs-gnr.active .env-card-2 .env-front  { animation: envFrontFade  8s ease-in-out 3.0s infinite; }
+    #cs-gnr.active .env-card-2 .env-seal   { animation: envSealFade   8s ease-in-out 3.0s infinite; }
+
+    #cs-gnr.active .env-card-3 .env-flap   { animation: envOpenFlap   8s ease-in-out 4.4s infinite; }
+    #cs-gnr.active .env-card-3 .env-letter { animation: envLetterRise 8s ease-in-out 4.4s infinite; }
+    #cs-gnr.active .env-card-3 .env-front  { animation: envFrontFade  8s ease-in-out 4.4s infinite; }
+    #cs-gnr.active .env-card-3 .env-seal   { animation: envSealFade   8s ease-in-out 4.4s infinite; }
+
+    /* Export mode: hold all 3 in OPEN state so the letter is visible */
+    html[data-export="1"] #cs-gnr .env-flap   { animation:none !important; transform:rotateX(170deg) !important; }
+    html[data-export="1"] #cs-gnr .env-letter { animation:none !important; transform:translateY(-26%) !important; opacity:1 !important; }
+    html[data-export="1"] #cs-gnr .env-front  { animation:none !important; opacity:0 !important; }
+    html[data-export="1"] #cs-gnr .env-seal   { animation:none !important; opacity:0 !important; }
+  </style>
+
+  <div class="gnr-env-grid">
+
+    <!-- ENVELOPE 1: Personalized -> An invitation-feed, not a public calendar -->
+    <div class="env-card env-card-1">
+      <div class="env-stage">
+        <div class="env-letter">An <em>invitation-feed,</em><br>not a public calendar.</div>
+        <div class="env-body"></div>
+        <div class="env-front"><em>Personalized</em></div>
+        <div class="env-flap"></div>
+        <div class="env-seal"></div>
       </div>
     </div>
-    <div class="gnr-callout gnr-callout-2">
-      <div class="gnr-envelope">
-        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
-          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3] -->
-          <defs>
-            <radialGradient id="cs-gnr-seal-2" cx="38%" cy="32%" r="68%">
-              <stop offset="0%" stop-color="#4ab36c"/>
-              <stop offset="55%" stop-color="#2a8a4f"/>
-              <stop offset="100%" stop-color="#1a5e34"/>
-            </radialGradient>
-            <filter id="cs-gnr-seal-shadow-2" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
-              <feOffset dx="0" dy="1.4"/>
-              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
-              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <g transform="translate(258, 30) rotate(4)" filter="url(#cs-gnr-seal-shadow-2)">
-            <circle cx="0" cy="0" r="21.5" fill="url(#cs-gnr-seal-2)" stroke="#fbf7ef" stroke-width="2.2"/>
-            <ellipse cx="-5" cy="-7" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
-            <path d="M -9 1 L -3 8 L 11 -8" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
-          </g>
-        </svg>
-        <div class="gnr-env-text">You <em>belong.</em></div>
+
+    <!-- ENVELOPE 2: Feel it, every time -> You belong -->
+    <div class="env-card env-card-2">
+      <div class="env-stage">
+        <div class="env-letter">You <em>belong.</em></div>
+        <div class="env-body"></div>
+        <div class="env-front">Feel it, <em>every time</em></div>
+        <div class="env-flap"></div>
+        <div class="env-seal"></div>
       </div>
     </div>
-    <div class="gnr-callout gnr-callout-3">
-      <div class="gnr-envelope">
-        <svg class="gnr-env-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="294" height="194" rx="6" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
-          <path d="M 3 3 L 150 100 L 297 3" fill="none" stroke="#b8954a" stroke-width="1.6" opacity="0.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Wax-seal style green check stamp [Dave 2026-05-03 PM v3] -->
-          <defs>
-            <radialGradient id="cs-gnr-seal-3" cx="38%" cy="32%" r="68%">
-              <stop offset="0%" stop-color="#4ab36c"/>
-              <stop offset="55%" stop-color="#2a8a4f"/>
-              <stop offset="100%" stop-color="#1a5e34"/>
-            </radialGradient>
-            <filter id="cs-gnr-seal-shadow-3" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur in="SourceAlpha" stdDeviation="1.6"/>
-              <feOffset dx="0" dy="1.4"/>
-              <feComponentTransfer><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
-              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <g transform="translate(256, 29) rotate(-2)" filter="url(#cs-gnr-seal-shadow-3)">
-            <circle cx="0" cy="0" r="22" fill="url(#cs-gnr-seal-3)" stroke="#fbf7ef" stroke-width="2.2"/>
-            <ellipse cx="-6" cy="-6" rx="6" ry="3" fill="rgba(255,255,255,0.18)"/>
-            <path d="M -10 -1 L -2 8 L 12 -7" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.96"/>
-          </g>
-        </svg>
-        <div class="gnr-env-text">Who <em>gives?</em></div>
+
+    <!-- ENVELOPE 3: Honor the giving -> Who gives? -->
+    <div class="env-card env-card-3">
+      <div class="env-stage">
+        <div class="env-letter">Who <em>gives?</em></div>
+        <div class="env-body"></div>
+        <div class="env-front"><em>Honor the giving</em></div>
+        <div class="env-flap"></div>
+        <div class="env-seal"></div>
       </div>
     </div>
+
   </div>
 
 
