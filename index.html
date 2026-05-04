@@ -7149,8 +7149,15 @@ html, body, html body{
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Problem &middot; Communities Today</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
-      <div class="tg-eye">The Problem Today</div>
-      <div class="tg-head">There&rsquo;s <em>no like button</em><br>in the real world.</div>
+      <div class="tg-head" style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap">
+        <span>Our communities don&rsquo;t have a <em>like button</em>.</span>
+        <!-- Facebook-style like button (thumbs-up in blue circle) -->
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#1877F2;box-shadow:0 4px 14px rgba(24,119,242,0.35);flex-shrink:0">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+          </svg>
+        </span>
+      </div>
       <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.95vw,1.7rem);font-weight:500;color:rgba(26,22,18,0.78);line-height:1.3;max-width:1200px;margin:6px auto 0;font-style:italic">
         Our private thoughts &amp; feelings about each other stay <em style="color:#c8462c;font-weight:600">trapped in our heads</em>.
       </div>
@@ -7243,8 +7250,8 @@ html, body, html body{
       </div>
 
       <div class="tg-foot">
-        <div class="top-strip">Rich insight. Zero sharing. Weak connections.</div>
-        <div class="bot-strip">Connection happens by hand.</div>
+        <div class="top-strip">Felt by every member. Captured by no system.</div>
+        <div class="bot-strip">So community still happens one text at a time.</div>
       </div>
     </div>
   </section>
