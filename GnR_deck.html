@@ -11493,17 +11493,20 @@ html, body, html body{
 <div class="casey-slide ds-focus" id="cs-hc3">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Human Flywheel</div>
   <section style="position:relative;min-height:100%;width:100%">
-    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:64px 64px 48px;gap:14px;text-align:center">
-      <!-- Hero text — top line forced single-line per Dave 2026-05-06 PM; "are most alive" → "feel most alive" -->
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,2.05vw,1.85rem);font-weight:700;line-height:1.22;letter-spacing:-0.018em;color:#1a1612;max-width:none;white-space:nowrap">
-        The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves for others</em>
+    <!-- Two-column layout [Dave 2026-05-06 PM]: hero text LEFT, radiating figure RIGHT.
+         "valuable" → "magnetic" (matches the radiating visual, drops the transactional read). -->
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;min-height:100%;padding:80px 80px 64px;max-width:1760px;margin:0 auto">
+      <!-- LEFT: hero copy stack -->
+      <div style="display:flex;flex-direction:column;gap:18px;text-align:left">
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
+          The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves for others</em>
+        </div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
+          feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em> &mdash; and <em style="font-style:italic;font-weight:500;color:#c8462c">most magnetic to everyone</em> around them.
+        </div>
       </div>
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:700;line-height:1.22;letter-spacing:-0.018em;color:#1a1612;max-width:1180px">
-        feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em> &mdash; and <em style="font-style:italic;font-weight:500;color:#c8462c">most valuable to everyone</em> around them.
-      </div>
-      <!-- JAW-DROPPING GRAPHIC [Dave 2026-05-06]: single radiant figure broadcasting outward (gold rays = "showing up as themselves"),
-           with smaller return-arrows curving back inward (red = reciprocity flowing back). One iconic visual, two-directional energy. -->
-      <svg viewBox="0 -16 520 312" style="width:100%;max-width:760px;margin:0 auto;display:block" xmlns="http://www.w3.org/2000/svg">
+      <!-- RIGHT: radiant-figure graphic -->
+      <svg viewBox="0 -16 520 312" style="width:100%;max-width:640px;margin:0 auto;display:block" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="hc3Halo" cx="50%" cy="50%" r="55%">
             <stop offset="0%" stop-color="#b8954a" stop-opacity="0.32"/>
