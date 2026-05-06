@@ -5381,10 +5381,13 @@ html, body, html body{
         <text x="395" y="180" text-anchor="end" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#5B8FD4" letter-spacing="-3">Give</text>
         <text x="460" y="180" text-anchor="middle" font-family="Fraunces, Playfair Display, Georgia, serif" font-style="italic" font-size="128" font-weight="400" fill="#1a1612">n</text>
         <text x="525" y="180" text-anchor="start" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="178" font-weight="500" fill="#c8462c" letter-spacing="-3">Receive</text>
-        <!-- Gold leaf arc above the n — brackets the n at x=460 -->
-        <path d="M 432 52 Q 460 -2 488 52" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/>
-        <circle cx="432" cy="52" r="3.6" fill="#5B8FD4"/>
-        <circle cx="488" cy="52" r="3.6" fill="#c8462c"/>
+        <!-- Gold leaf arc above the n — brackets the OPTICAL top of the italic n.
+             [Dave 2026-05-06 PM] Shifted +10px right because text-anchor "middle" at x=460 sits at the
+             baseline-middle, but the italic slant (~12°) pushes the visible top of the n right by ~10px.
+             Centering on x=470 puts the arc apex over the eye-perceived top of the glyph. -->
+        <path d="M 442 52 Q 470 -2 498 52" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/>
+        <circle cx="442" cy="52" r="3.6" fill="#5B8FD4"/>
+        <circle cx="498" cy="52" r="3.6" fill="#c8462c"/>
       </svg>
       <!-- Primary descriptor (header) -->
       <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
