@@ -10226,20 +10226,7 @@ html, body, html body{
       <em style="font-style:italic;font-weight:600;color:#1a1612">Now betting everything on <span style="color:#4d82c6;font-weight:700">G</span><span style="font-style:italic;color:#1a1612;font-weight:500">n</span><span style="color:#c94d32;font-weight:700">R</span>.</em>
     </div>
 
-    <!-- DUPR LOGO BLOCK — official-style mark: black square with white "D" monogram + DUPR wordmark beside [Dave 2026-05-06 PM v11] -->
-    <div style="display:flex;align-items:center;justify-content:center;margin:0 auto 28px">
-      <div style="display:inline-flex;align-items:center;gap:14px;padding:10px 24px 10px 16px;background:#0a0a0a;border-radius:10px;box-shadow:0 6px 22px rgba(10,10,10,0.32),inset 0 1px 0 rgba(255,255,255,0.08)">
-        <!-- D-monogram square mark -->
-        <svg width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="40" height="40" rx="6" fill="#ffffff"/>
-          <path d="M 12 8 L 22 8 C 30 8 33 14 33 20 C 33 26 30 32 22 32 L 12 32 Z M 17 13 L 17 27 L 22 27 C 26 27 28 24 28 20 C 28 16 26 13 22 13 Z" fill="#0a0a0a"/>
-        </svg>
-        <!-- DUPR wordmark -->
-        <span style="font-family:'Inter','Helvetica Neue',sans-serif;font-size:1.7rem;font-weight:800;letter-spacing:0.08em;color:#ffffff;line-height:1">DUPR</span>
-        <span style="font-family:'Inter',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);line-height:1.2;border-left:1px solid rgba(255,255,255,0.22);padding-left:12px">Universal<br>Pickleball<br>Rating</span>
-      </div>
-    </div>
-
+    <!-- DUPR LOGO BLOCK REMOVED 2026-05-06 PM per Dave -->
 
     <!-- TIMELINE — horizontal, with connector line, readable labels -->
     <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1080px;margin:0 auto 50px;position:relative">
@@ -10729,7 +10716,7 @@ html, body, html body{
               <circle cx="30" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
             </svg>
           </div>
-          <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Pickleball already is a social network beyond the courts.</div>
+          <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Pickleball is already a social network beyond the courts.</div>
         </div>
       </div>
     </div>
@@ -10754,17 +10741,22 @@ html, body, html body{
           </defs>
           <!-- Globe body (ocean) -->
           <circle cx="70" cy="70" r="56" fill="url(#c25EarthBlue)" stroke="rgba(26,22,18,0.25)" stroke-width="1"/>
-          <!-- Continents (green, simplified) -->
-          <g clip-path="url(#c25EarthClip)" fill="#4a7c4a" stroke="rgba(26,22,18,0.25)" stroke-width="0.6">
-            <!-- North/Central America -->
-            <path d="M 32 48 Q 38 38 50 40 Q 56 46 54 56 Q 50 64 42 62 Q 34 56 32 48 Z"/>
-            <!-- South America -->
-            <path d="M 50 78 Q 56 76 60 84 Q 62 96 56 102 Q 48 100 46 92 Q 46 84 50 78 Z"/>
-            <!-- Europe/Africa -->
-            <path d="M 72 42 Q 84 40 88 50 Q 86 60 80 64 Q 76 70 78 80 Q 80 96 72 100 Q 64 96 64 86 Q 66 70 70 60 Q 68 50 72 42 Z"/>
-            <!-- Asia/Australia -->
-            <path d="M 92 46 Q 104 44 108 54 Q 110 64 102 66 Q 94 64 92 56 Z"/>
-            <path d="M 96 90 Q 106 88 110 94 Q 108 100 100 100 Q 94 96 96 90 Z"/>
+          <!-- Continents (green, simplified but recognizable Earth-from-space) -->
+          <g clip-path="url(#c25EarthClip)" fill="#4a7c4a" stroke="rgba(26,22,18,0.28)" stroke-width="0.5">
+            <!-- North America (big bulge upper-left) -->
+            <path d="M 22 36 L 30 30 L 42 28 L 52 32 L 56 40 L 54 50 L 48 56 L 42 60 L 36 58 L 30 62 L 26 56 L 22 48 Z M 50 56 L 56 56 L 58 62 L 54 66 L 50 64 Z"/>
+            <!-- South America (long extending down) -->
+            <path d="M 50 70 L 58 70 L 62 78 L 64 90 L 60 102 L 54 110 L 48 104 L 46 92 L 48 80 Z"/>
+            <!-- Africa (iconic teardrop center) -->
+            <path d="M 70 48 L 80 46 L 86 54 L 88 64 L 84 76 L 80 88 L 74 96 L 68 92 L 66 82 L 68 70 L 70 60 Z"/>
+            <!-- Europe (small smudge upper-center) -->
+            <path d="M 70 38 L 80 36 L 86 40 L 84 46 L 76 46 L 70 44 Z"/>
+            <!-- Asia (large mass upper-right) -->
+            <path d="M 86 32 L 100 30 L 114 34 L 118 42 L 116 52 L 108 56 L 96 54 L 88 50 L 86 42 Z"/>
+            <!-- India (tip below Asia) -->
+            <path d="M 96 56 L 104 56 L 102 64 L 98 66 L 94 62 Z"/>
+            <!-- Australia (separate down-right) -->
+            <path d="M 104 88 L 116 88 L 120 94 L 116 100 L 108 100 L 104 96 Z"/>
           </g>
           <!-- Latitude/longitude lines -->
           <g fill="none" stroke="rgba(255,255,255,0.32)" stroke-width="0.7">
@@ -10782,7 +10774,7 @@ html, body, html body{
       <!-- BACK: the culmination text -->
       <div class="c25-culm-back" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.18) 0%,rgba(184,149,74,0.06) 100%);border:1.5px solid rgba(184,149,74,0.65);box-shadow:0 0 56px rgba(184,149,74,0.25);padding:38px 44px;display:flex;align-items:center;justify-content:center;text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.95vw,2.45rem);font-weight:800;line-height:1.16;color:#1a1612;letter-spacing:-0.014em;max-width:1180px">
-          Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
+          Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous social coordination network.</em>
         </div>
       </div>
     </div>
@@ -12491,7 +12483,7 @@ html, body, html body{
       <circle cx="8" cy="20" r="4" fill="#5B8FD4"/>
       <circle cx="52" cy="20" r="4" fill="#c8462c"/>
     </svg>
-    <div class="ft-eye">When <em>human connection</em> is measurable, you can</div>
+    <div class="ft-eye">When <em>human connection</em> becomes measurable, you can</div>
 
     <div class="ft-verbs-row">
       <!-- NEW: Test it (purple) — completes the brand palette + adds the experimentation/learning beat investors love [Dave 2026-05-04] -->
@@ -13526,11 +13518,11 @@ html, body, html body{
           <line x1="1320" y1="40" x2="1320" y2="500"/>
         </g>
 
-        <!-- Filled area under curve — anchors land EXACTLY where the era dots sit (Dave 2026-05-06 PM dot-alignment fix) -->
-        <path d="M 160 110 C 220 130, 280 150, 340 170 C 400 195, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470 L 1060 500 L 160 500 Z" fill="url(#mv6bFill)"/>
+        <!-- Filled area under curve — anchors land EXACTLY where the era dots sit (Dave 2026-05-06 PM dot-alignment fix v2: brown dot moved 170→180 to lie on the smooth declining curve) -->
+        <path d="M 160 110 C 220 135, 280 158, 340 180 C 400 200, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470 L 1060 500 L 160 500 Z" fill="url(#mv6bFill)"/>
 
         <!-- DECLINE curve — passes through every era dot (anchored at x=160,340,520,700,880,1060) -->
-        <path d="M 160 110 C 220 130, 280 150, 340 170 C 400 195, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470"
+        <path d="M 160 110 C 220 135, 280 158, 340 180 C 400 200, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470"
               stroke="rgba(26,22,18,0.7)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <!-- PARABOLIC shoot up at GnR (start at last dot 1060,470 → end at 1320,70) -->
         <path d="M 1060 470 C 1180 470, 1260 380, 1320 70"
@@ -13542,7 +13534,7 @@ html, body, html body{
         <!-- Era data points — y values match the curve anchors above EXACTLY -->
         <g>
           <circle cx="160" cy="110" r="6" fill="#4a7c4a"/>
-          <circle cx="340" cy="170" r="6" fill="#9c5a3a"/>
+          <circle cx="340" cy="180" r="6" fill="#9c5a3a"/>
           <circle cx="520" cy="250" r="6" fill="#b8954a"/>
           <circle cx="700" cy="340" r="6" fill="#4d82c6"/>
           <circle cx="880" cy="420" r="6" fill="#c8462c"/>
