@@ -15234,14 +15234,19 @@ html, body, html body{
   #cs-2c[data-shown="1"] .c2c-r-3 { opacity: 1; transition-delay: 1.40s; }
   /* Down-arrow (the equivalence move) — line draws top→bottom, head pops with bounce */
   #cs-2c .c2c-r-arrow { opacity: 0; transition: opacity 0.4s cubic-bezier(.45,.05,.18,1); }
-  #cs-2c .c2c-r-arrow .arr-line { stroke-dasharray: 50; stroke-dashoffset: 50; transition: stroke-dashoffset 0.55s cubic-bezier(.45,.05,.18,1); }
+  #cs-2c .c2c-r-arrow .arr-line { stroke-dasharray: 65; stroke-dashoffset: 65; transition: stroke-dashoffset 0.6s cubic-bezier(.45,.05,.18,1); }
   #cs-2c .c2c-r-arrow .arr-head { opacity: 0; transform: scale(0.4); transform-origin: 50% 100%; transition: opacity 0.35s cubic-bezier(.34,1.56,.64,1), transform 0.4s cubic-bezier(.34,1.56,.64,1); }
   #cs-2c[data-shown="1"] .c2c-r-arrow { opacity: 1; transition-delay: 0.55s; }
   #cs-2c[data-shown="1"] .c2c-r-arrow .arr-line { stroke-dashoffset: 0; transition-delay: 0.55s; }
-  #cs-2c[data-shown="1"] .c2c-r-arrow .arr-head { opacity: 1; transform: scale(1); transition-delay: 1.00s; }
+  #cs-2c[data-shown="1"] .c2c-r-arrow .arr-head { opacity: 1; transform: scale(1); transition-delay: 1.05s; }
+  /* Gold underline that draws beneath "unique value" right as the punchline lands */
+  #cs-2c .c2c-uv-underline { transition: transform 0.7s cubic-bezier(.45,.05,.18,1); }
+  #cs-2c[data-shown="1"] .c2c-uv-underline { transform: scaleX(1); transition-delay: 1.55s; }
   html[data-export="1"] #cs-2c .c2c-r-arrow,
   html[data-export="1"] #cs-2c .c2c-r-arrow .arr-line,
-  html[data-export="1"] #cs-2c .c2c-r-arrow .arr-head { opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; transition: none !important; }
+  html[data-export="1"] #cs-2c .c2c-r-arrow .arr-head,
+  html[data-export="1"] #cs-2c .c2c-uv-underline { opacity: 1 !important; transform: scaleX(1) !important; stroke-dashoffset: 0 !important; transition: none !important; }
+  html[data-export="1"] #cs-2c .c2c-r-arrow .arr-head { transform: scale(1) !important; }
   html[data-export="1"] #cs-2c .c2c-reveal,
   html[data-export="1"] #cs-2c .c2c-r-part { opacity: 1 !important; transform: none !important; visibility: visible !important; }
 
@@ -15345,29 +15350,40 @@ html, body, html body{
     <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 
-  <!-- Click-revealed sub-line: setup → arrow → punchline → afterthought.
-       3-beat reveal redesigned 2026-05-06 PM per Dave: arrow visualizes the equivalence move
-       between "human connection" and "unique value to each other" — the punchline. -->
-  <div class="c2c-reveal" style="margin: 26px auto 0; max-width:1200px; padding: 0 32px;">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
-      <!-- Setup -->
-      <div class="c2c-r-part c2c-r-1" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,2.2vw,1.8rem);color:rgba(26,22,18,0.78);line-height:1.22;font-weight:500;letter-spacing:-0.012em;text-align:center">
+  <!-- Click-revealed sub-line — JAW-DROP redesign 2026-05-06 PM v2 per Dave.
+       Polish: bigger setup; ornamental gold arrow with halo backdrop; massive punchline with
+       a gold underline accent that draws under "unique value"; afterthought flanked by hairline
+       gold rules (museum-plaque vibe). -->
+  <div class="c2c-reveal" style="margin: 28px auto 0; max-width:1320px; padding: 0 32px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;position:relative">
+      <!-- Setup — bigger, more breathing room -->
+      <div class="c2c-r-part c2c-r-1" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.55vw,2.1rem);color:rgba(26,22,18,0.78);line-height:1.22;font-weight:500;letter-spacing:-0.014em;text-align:center">
         Our communities run on <em style="font-style:italic;font-weight:600;color:#c8462c">human connection</em>
       </div>
-      <!-- The "is really" arrow — line draws, head pops -->
-      <div class="c2c-r-arrow" style="display:flex;align-items:center;justify-content:center">
-        <svg width="48" height="60" viewBox="0 0 48 60" xmlns="http://www.w3.org/2000/svg" style="display:block">
-          <line class="arr-line" x1="24" y1="4" x2="24" y2="44" stroke="#b8954a" stroke-width="2.8" stroke-linecap="round"/>
-          <polygon class="arr-head" points="24,56 12,38 36,38" fill="#b8954a"/>
+      <!-- Ornamental gold arrow — vertical stroke draws top→bottom, head bounces in, soft gold halo behind. -->
+      <div class="c2c-r-arrow" style="display:flex;align-items:center;justify-content:center;position:relative">
+        <svg width="86" height="98" viewBox="0 0 86 98" xmlns="http://www.w3.org/2000/svg" style="display:block">
+          <defs>
+            <radialGradient id="c2cArrowHalo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#b8954a" stop-opacity="0.34"/>
+              <stop offset="55%" stop-color="#b8954a" stop-opacity="0.10"/>
+              <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="43" cy="49" rx="40" ry="49" fill="url(#c2cArrowHalo)"/>
+          <line class="arr-line" x1="43" y1="8" x2="43" y2="70" stroke="#b8954a" stroke-width="3.4" stroke-linecap="round"/>
+          <polygon class="arr-head" points="43,90 25,64 61,64" fill="#b8954a"/>
         </svg>
       </div>
-      <!-- Punchline (bigger, heavier — the resolution) -->
-      <div class="c2c-r-part c2c-r-2" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,3vw,2.45rem);color:#1a1612;line-height:1.16;font-weight:700;letter-spacing:-0.018em;text-align:center">
-        Our <em style="font-style:italic;font-weight:600;color:#b8954a">unique value</em> to each other.
+      <!-- Punchline — MUCH bigger; "unique value" gold italic with an animated gold underline accent -->
+      <div class="c2c-r-part c2c-r-2" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.05rem,3.85vw,3.05rem);color:#1a1612;line-height:1.1;font-weight:700;letter-spacing:-0.024em;text-align:center;position:relative">
+        Our <em class="c2c-uv" style="font-style:italic;font-weight:700;color:#b8954a;position:relative;display:inline-block;padding-bottom:6px">unique value<span class="c2c-uv-underline" style="position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,rgba(184,149,74,0) 0%,#b8954a 18%,#d4a853 50%,#b8954a 82%,rgba(184,149,74,0) 100%);border-radius:2px;transform:scaleX(0);transform-origin:center"></span></em> to each other.
       </div>
-      <!-- Afterthought (smaller italic, settles the point) -->
-      <div class="c2c-r-part c2c-r-3" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.2rem);color:rgba(26,22,18,0.6);line-height:1.4;font-weight:500;letter-spacing:-0.005em;text-align:center;margin-top:4px">
-        That's what they are.
+      <!-- Afterthought — italic seal, flanked by hairline gold rules (museum plaque) -->
+      <div class="c2c-r-part c2c-r-3" style="display:flex;align-items:center;gap:18px;margin-top:10px">
+        <div style="width:42px;height:1px;background:#b8954a;opacity:0.55"></div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.25rem,2vw,1.7rem);color:rgba(26,22,18,0.72);line-height:1.3;font-weight:500;letter-spacing:-0.006em;text-align:center">That's what they are.</div>
+        <div style="width:42px;height:1px;background:#b8954a;opacity:0.55"></div>
       </div>
     </div>
   </div>
