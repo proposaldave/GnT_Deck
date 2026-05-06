@@ -7227,16 +7227,16 @@ html, body, html body{
      hierarchical closing line.
 ═══════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-thegap .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:48px 64px 48px; gap:6px; text-align:center; }
-  #cs-thegap .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.4vw,3rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
-  #cs-thegap .tg-head em { font-style:italic; font-weight:600; color:#c8462c; }
-  #cs-thegap .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(.95rem,1.4vw,1.18rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1100px; margin:8px auto 0; }
-  #cs-thegap .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
-  #cs-thegap .tg-svg-wrap { width:100%; max-width:1300px; margin:10px auto 0; }
+  [id^="cs-thegap"] .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:48px 64px 48px; gap:6px; text-align:center; }
+  [id^="cs-thegap"] .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,3.4vw,3rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
+  [id^="cs-thegap"] .tg-head em { font-style:italic; font-weight:600; color:#c8462c; }
+  [id^="cs-thegap"] .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(.95rem,1.4vw,1.18rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1100px; margin:8px auto 0; }
+  [id^="cs-thegap"] .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
+  [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1300px; margin:10px auto 0; }
 
   /* Closing line — single red caps punchline (icon strip + bold black line removed 2026-05-04) */
-  #cs-thegap .tg-close { margin-top:18px; }
-  #cs-thegap .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.2vw,1.05rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#c8462c; }
+  [id^="cs-thegap"] .tg-close { margin-top:18px; }
+  [id^="cs-thegap"] .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.2vw,1.05rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#c8462c; }
 
   /* Animations REMOVED 2026-05-04 — were broken; static state only */
 </style>
@@ -8479,7 +8479,7 @@ html, body, html body{
       </div>
       <!-- BACK: existing invitation feed UI [Dave 2026-05-02 PM: this is what flip reveals] -->
       <div class="cs11-flip-back" style="background:rgba(91,143,212,0.04);border:1px solid rgba(91,143,212,0.32);border-radius:14px;padding:18px 18px 16px;text-align:center;display:block;position:absolute;inset:0;transform:rotateY(180deg)">
-      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:6px">Before the room</div>
+      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(26,22,18,0.6);margin-bottom:6px">Measure before the room</div>
       <div style="font-size:1.05rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#5B8FD4;margin-bottom:18px">Invitation Feed</div>
 
       <!-- Vertical feed — Dave 2026-04-29: looks like Instagram/inbox feed.
@@ -8624,7 +8624,7 @@ html, body, html body{
       </div>
       <!-- BACK: 4 group circles + 'IN THE ROOM' eyebrow (parallel to FRONT and to LEFT 'BEFORE THE ROOM') -->
       <div class="cs11-flip-back" style="background:rgba(61,255,122,0.04);border:1px solid rgba(61,255,122,0.32);border-radius:14px;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:absolute;inset:0;transform:rotateY(180deg)">
-        <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,138,79,0.85);text-align:center">In the room</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,138,79,0.85);text-align:center">Measure in the room</div>
         <svg viewBox="0 0 56 56" width="240" height="240">
           <!-- 4 group clusters: each wrapped in <g class="cs11-group"> for staggered bloom. Dave 2026-04-29 v2 -->
           <g class="cs11-group">
@@ -9201,7 +9201,7 @@ html, body, html body{
 
   <!-- Headline below large envelope: "Everyone in your community gets" + 3-fan arrow to envelopes [Dave 2026-05-04] -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:600;color:#1a1612;line-height:1.2;letter-spacing:-0.014em;max-width:1080px;margin:14px auto 0;text-align:center">
-    Everyone in the community gets
+    What each member <em style="font-style:italic;font-weight:500;color:#b8954a">receives</em>
   </div>
   <!-- Single down arrow (clean) pointing to the 3 envelopes below -->
   <div style="width:100%;max-width:120px;margin:6px auto 0">
@@ -9246,40 +9246,7 @@ html, body, html body{
 
   <div class="gnr-env-grid">
 
-    <!-- ENVELOPE 1: Personalized -> An invitation-feed, not a public calendar -->
-    <div class="env-card" data-open="0" onclick="this.dataset.open=this.dataset.open==='1'?'0':'1'">
-      <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
-        <!-- Body (back rect — always visible) -->
-        <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
-        <!-- Letter content (revealed on open) -->
-        <g class="env-letter">
-          <!-- Icon: stack of 3 mini-envelopes — all centered on x=120, fanned vertically -->
-          <g transform="translate(120, 42)">
-            <rect x="-24" y="-14" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
-            <rect x="-24" y="-8" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
-            <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
-            <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="#b8954a" stroke-width="1.2"/>
-          </g>
-          <text x="120" y="98" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
-          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
-        </g>
-        <!-- Front teaser (visible when closed, lower half) -->
-        <g class="env-front-text">
-          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Personalized</text>
-        </g>
-        <!-- Flap (triangle covering top half when closed, rotates open) -->
-        <g class="env-flap">
-          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
-          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
-          <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
-            <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
-          </text>
-        </g>
-      </svg>
-    </div>
-
-    <!-- ENVELOPE 2: Feel it, every time -> You belong -->
+    <!-- ENVELOPE 1 (was 2): The feeling -> You belong [reordered to first per Dave 2026-05-04] -->
     <div class="env-card" data-open="0" onclick="this.dataset.open=this.dataset.open==='1'?'0':'1'">
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
@@ -9302,6 +9269,35 @@ html, body, html body{
         </g>
         <g class="env-front-text">
           <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">The feeling</text>
+        </g>
+        <g class="env-flap">
+          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
+            <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
+          </text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ENVELOPE 2 (was 1): Personalized -> An invitation-feed, not a public calendar -->
+    <div class="env-card" data-open="0" onclick="this.dataset.open=this.dataset.open==='1'?'0':'1'">
+      <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+        <g class="env-letter">
+          <!-- Icon: stack of 3 mini-envelopes — all centered on x=120, fanned vertically -->
+          <g transform="translate(120, 42)">
+            <rect x="-24" y="-14" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
+            <rect x="-24" y="-8" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
+            <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
+            <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="#b8954a" stroke-width="1.2"/>
+          </g>
+          <text x="120" y="98" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">An <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
+          <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
+        </g>
+        <g class="env-front-text">
+          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Personalized</text>
         </g>
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
@@ -10455,7 +10451,7 @@ html, body, html body{
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Why pickleball first</div>
 <div class="inner" style="padding:80px 56px 48px;max-width:1200px;margin:0 auto">
 
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.7rem);font-weight:800;line-height:1.18;color:#1a1612;letter-spacing:-0.01em;margin-bottom:14px;max-width:1080px">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(2.1rem,3.9vw,3.3rem);font-weight:800;line-height:1.14;color:#1a1612;letter-spacing:-0.014em;margin-bottom:18px;max-width:1180px">
     Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
   </div>
 
@@ -11487,9 +11483,24 @@ html, body, html body{
       <circle cx="8" cy="20" r="4" fill="#5B8FD4"/>
       <circle cx="52" cy="20" r="4" fill="#c8462c"/>
     </svg>
-    <div class="ft-eye">When you digitize <em>human connection</em>, you can</div>
+    <div class="ft-eye">When <em>human connection</em> becomes measurable, you can</div>
 
     <div class="ft-verbs-row">
+      <!-- NEW: Test it (purple) — completes the brand palette + adds the experimentation/learning beat investors love [Dave 2026-05-04] -->
+      <div class="ft-verb ft-verb-0">
+        <div class="ft-verb-icon">
+          <!-- Lab flask icon = test/experiment -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7a4a8c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3 L9 8.5 L4.5 18 Q4 20 6 20 L18 20 Q20 20 19.5 18 L15 8.5 L15 3 Z" fill="rgba(122,74,140,0.14)"/>
+            <line x1="8" y1="3" x2="16" y2="3"/>
+            <line x1="6.4" y1="14" x2="17.6" y2="14"/>
+            <circle cx="10" cy="16.5" r="1.1" fill="#7a4a8c"/>
+            <circle cx="13.5" cy="17.5" r="0.9" fill="#7a4a8c"/>
+          </svg>
+        </div>
+        <div class="ft-verb-label">Test it.</div>
+      </div>
+      <span class="ft-arrow">&rarr;</span>
       <div class="ft-verb ft-verb-1">
         <div class="ft-verb-icon">
           <!-- 3-node connected graph (triangle) — clearly a graph data structure [Dave 2026-05-04 redesigned] -->
@@ -14215,7 +14226,7 @@ html, body, html body{
 
 <!-- ===== cs-2c — Real-world social communities · 6-card grid (ported from pitch-communities.html, paper-mode) [Dave 2026-04-30 PM evening] ===== -->
 <style>
-  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:clamp(8px,0.9vw,14px); max-width:1500px; margin:48px auto 0; padding:0 clamp(16px,2vw,32px); }
+  #cs-2c .c2c-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:clamp(8px,0.9vw,14px); max-width:1700px; margin:48px auto 0; padding:0 clamp(16px,2vw,32px); }
   #cs-2c .c2c-card { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.16); border-radius:14px; padding:clamp(18px,2.4vw,36px) clamp(8px,1.2vw,18px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(10px,1.4vw,18px); text-align:center; aspect-ratio:1/1; min-width:0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   #cs-2c .c2c-card.c2c-highlight { background:linear-gradient(180deg,rgba(184,149,74,0.12) 0%,rgba(184,149,74,0.04) 100%); border:1.5px solid rgba(184,149,74,0.55); box-shadow:0 0 28px rgba(184,149,74,0.18); position:relative; }
   #cs-2c .c2c-icon { font-size:clamp(38px,4.4vw,64px); line-height:1; margin:0; }
@@ -14520,11 +14531,14 @@ html, body, html body{
           </div>
         </div>
         <!-- BOTTOM SECTION — fades in AFTER card flip (bars first, verdict second) [Dave 2026-04-30 PM] -->
-        <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
+        <!-- margin-top:32px pushes 'Scroll alone' + icon down so they align with the right card's headline + icon (which sits lower because of the sub-eyebrow + sources rows underneath it) [Dave 2026-05-04] -->
+        <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;margin-top:32px">
           <!-- Headline (verdict) BELOW the chart -->
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.4vw,1.95rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;margin-top:8px">
             <em style="font-style:italic;font-weight:500;color:#3a7da3">Scroll alone.</em>
           </div>
+          <!-- Invisible spacer matching the right side's sub-eyebrow line height so the icons align exactly [Dave 2026-05-04] -->
+          <div style="font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;visibility:hidden;margin-top:4px">&nbsp;</div>
           <!-- Scroll alone icon — matched exactly to placeholder back-face (90px white circle) per Dave 2026-04-30 PM -->
           <div style="width:90px;height:90px;border-radius:50%;border:1px solid rgba(26,22,18,0.12);background:rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;margin:6px 0 0">
             <svg width="60" height="60" viewBox="0 0 52 52" fill="none">
