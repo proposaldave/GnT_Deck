@@ -11676,9 +11676,12 @@ html, body, html body{
     #cs-12m2 .gnrlab { display:inline-flex;align-items:center;font-family:'Manrope',sans-serif;font-size:1rem;font-weight:800;letter-spacing:0.38em;color:#fff8e7;background:linear-gradient(135deg,#d4ad60 0%,#8a6a2a 100%);box-shadow:0 4px 22px rgba(184,149,74,0.55),inset 0 1px 0 rgba(255,255,255,0.22);position:relative;text-shadow:0 1px 0 rgba(0,0,0,0.18); }
     #cs-12m2 .gnrlab.when { padding:11px 30px 11px 18px; clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%); }
     #cs-12m2 .gnrlab.then { padding:11px 18px 11px 30px; clip-path:polygon(16px 0, 100% 0, 100% 100%, 16px 100%, 0 50%); }
-    #cs-12m2 .gletter, #cs-12m2 .rletter { font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:0.88;letter-spacing:-0.04em;font-size:clamp(10rem,20vw,18rem);display:block;margin:0;position:relative;z-index:2; }
+    #cs-12m2 .gletter, #cs-12m2 .rletter { font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:0.88;letter-spacing:-0.04em;font-size:clamp(10rem,20vw,18rem);display:inline-block;margin:0;position:relative;z-index:2;isolation:isolate; }
     #cs-12m2 .gletter { color:#4d82c6;text-shadow:0 10px 50px rgba(77,130,198,0.40),0 2px 0 rgba(0,0,0,0.05); }
     #cs-12m2 .rletter { color:#c94d32;text-shadow:0 10px 50px rgba(201,77,50,0.40),0 2px 0 rgba(0,0,0,0.05); }
+    /* Aurora pseudo-halos behind G and R — pinned to each letter's box */
+    #cs-12m2 .gletter::before { content:"";position:absolute;top:50%;left:50%;width:380%;height:240%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(77,130,198,0.35) 0%, rgba(77,130,198,0.10) 38%, rgba(77,130,198,0) 60%);z-index:-1;pointer-events:none; }
+    #cs-12m2 .rletter::before { content:"";position:absolute;top:50%;left:50%;width:380%;height:240%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(201,77,50,0.34) 0%, rgba(201,77,50,0.10) 38%, rgba(201,77,50,0) 60%);z-index:-1;pointer-events:none; }
     #cs-12m2 .nletter { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(5rem,11vw,10rem);line-height:0.9;opacity:0.85;text-shadow:0 0 44px rgba(184,149,74,0.65);position:relative;z-index:3; }
     #cs-12m2 .clause { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.7vw,1.5rem);font-weight:700;color:#1a1612;line-height:1.3;letter-spacing:-0.012em;margin-top:20px;max-width:460px; }
     #cs-12m2 .auroraL { position:absolute;width:46vw;height:46vw;max-width:680px;max-height:680px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(77,130,198,0.40) 0%, rgba(77,130,198,0.10) 42%, rgba(77,130,198,0) 62%);pointer-events:none;z-index:0; }
@@ -11711,9 +11714,8 @@ html, body, html body{
     <!-- Wordmark grid — G [recip-bar+n] R · auroras nested INSIDE each letter cell so they anchor behind the letters -->
     <div class="word-stage">
 
-      <!-- LEFT — G with aurora halo nested inside, WHEN tag + clause -->
+      <!-- LEFT — G (with ::before aurora halo) + WHEN tag + clause -->
       <div class="gcell" style="text-align:right;display:flex;flex-direction:column;align-items:flex-end">
-        <div class="auroraL"></div>
         <span class="gnrlab when" style="position:relative;z-index:2">WHEN</span>
         <span class="gletter" style="margin-top:14px">G</span>
         <div class="clause" style="position:relative;z-index:2">
@@ -11728,9 +11730,8 @@ html, body, html body{
         <div class="recip-flow-bot"><span style="margin-left:14px">← RECEIVE</span><span style="margin-right:14px">RECEIVE ←</span></div>
       </div>
 
-      <!-- RIGHT — R with aurora halo nested inside, THEN tag + clause -->
+      <!-- RIGHT — R (with ::before aurora halo) + THEN tag + clause -->
       <div class="rcell" style="text-align:left;display:flex;flex-direction:column;align-items:flex-start">
-        <div class="auroraR"></div>
         <span class="gnrlab then" style="position:relative;z-index:2">THEN</span>
         <span class="rletter" style="margin-top:14px">R</span>
         <div class="clause" style="position:relative;z-index:2">
