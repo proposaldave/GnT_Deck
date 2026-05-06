@@ -11448,21 +11448,17 @@ html, body, html body{
   </section>
 </div>
 
-<!-- ═══ SECTION 3 — FLYWHEEL (2 slides) ═══ -->
-<!-- HC3 · "The ones who show up as themselves get the most reciprocity back." — REDESIGNED 2026-05-04
-     v1 had "People draw people. Generosity compounds." headline + 3-node flywheel diagram.
-     Dave: "the only thing really good on this slide is 'The most generous get the most reciprocity back.'"
-     v2 = pure typography promoting that line to hero. "Generous" → "show up as themselves" (Dave's words). -->
-<div class="casey-slide ds-focus hc-slide" id="cs-hc3">
-  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Flywheel &middot; 3 / 10</div>
-  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+<!-- cs-hc3 · MAIN DECK — sits right before cs-25 "Why pickleball first" [Dave 2026-05-06: promoted out of orange review].
+     The principle: people who show up as their freest, most unique selves are the most alive AND the most valuable to others.
+     Word 'flywheel' avoided here (used on cs-fw1). -->
+<div class="casey-slide ds-focus" id="cs-hc3">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">The Truth</div>
   <section style="position:relative;min-height:100%;width:100%">
-    <div class="hc-stage" style="gap:24px">
-      <div class="hc-section">The flywheel</div>
-      <!-- Hero: the line Dave called the only good thing on the slide -->
-      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;line-height:1.14;letter-spacing:-0.022em;color:#1a1612;max-width:1240px">
-        The ones who <em style="font-style:italic;font-weight:500;color:#b8954a">show up as themselves</em><br>
-        get the most reciprocity back.
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:80px 64px 56px;gap:24px;text-align:center">
+      <!-- 3-beat hero: cause → self-effect → others-effect -->
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.6vw,3rem);font-weight:700;line-height:1.18;letter-spacing:-0.02em;color:#1a1612;max-width:1280px">
+        The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves</em> &mdash; for others &mdash;<br>
+        are <em style="font-style:italic;font-weight:500;color:#b8954a">most alive,</em> and <em style="font-style:italic;font-weight:500;color:#c8462c">most valuable to everyone</em> around them.
       </div>
       <!-- JAW-DROPPING GRAPHIC [Dave 2026-05-06]: single radiant figure broadcasting outward (gold rays = "showing up as themselves"),
            with smaller return-arrows curving back inward (red = reciprocity flowing back). One iconic visual, two-directional energy. -->
@@ -11521,7 +11517,6 @@ html, body, html body{
         <text x="260" y="14" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="rgba(184,149,74,0.85)">YOU SHOW UP</text>
         <text x="260" y="276" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.6" fill="rgba(200,70,44,0.85)">RECIPROCITY FLOWS BACK</text>
       </svg>
-      <div class="hc-sub" style="max-width:980px;margin-top:14px">The <strong>Invitation Graph</strong> is the receipt &mdash; whoever delivers the most human value to others has the most flowing back.</div>
     </div>
   </section>
 </div>
@@ -15586,7 +15581,8 @@ const SLIDE_ORDER = [
   // cs-rcp (Receipts) → APPENDIX 2026-05-01 per Dave
   // cs-kl (Krista Loop) → APPENDIX 2026-05-01 per Dave ("came out of nowhere")
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
-  'cs-25',    // 13 Why pickleball first ("Pickleball is the clearest path...")
+  'cs-hc3',   // 13 The Truth · "The ones who show up as their freest, most unique selves — for others — are most alive, and most valuable to everyone around them." [moved from orange review into main flow per Dave 2026-05-06]
+  'cs-25',    // 14 Why pickleball first ("Pickleball is the clearest path...")
   'cs-future',// 14 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
   // cs-8b (Abundance hero) → APPENDIX 2026-05-04 per Dave: too many "abundance" beats in back half (cs-future verb 5 + cs-8b + cs-mv6 mission). Setup-and-payoff structure works better with just 2: cs-future (outcome) + cs-mv6 (mission).
   'cs-tv',    // 15 MERGED Vision + Pickleball TAM ("We're mapping human connection — one invitation at a time" + $2.55B inner-rings TAM)
@@ -15606,7 +15602,7 @@ const SLIDE_ORDER = [
   // fold the strongest into earlier slots in the main arc.
   // cs-hc1 (Paradigm · "We sell human connection.")            DELETED 2026-05-06 per Dave
   // cs-hc2 (Inversion · "Membership is admission...")           DELETED 2026-05-06 per Dave
-  'cs-hc3',   // 23 FLYWHEEL · "The ones who show up as themselves get the most reciprocity back." (with starburst graphic 2026-05-06)
+  // cs-hc3 PROMOTED to main flow (slot 13, before cs-25) per Dave 2026-05-06 — no longer in orange review
   // cs-hc4 (Flywheel · DUPR vs GnR contrast)                    DELETED 2026-05-06 per Dave
   // cs-hc5 (Human value largest unmeasured asset · bar chart)   DELETED 2026-05-04 per Dave
   // cs-hc6 (Each era of internet · why now)                     DELETED 2026-05-04 per Dave
