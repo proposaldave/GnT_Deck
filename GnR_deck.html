@@ -11322,6 +11322,27 @@ html, body, html body{
   html[data-export="1"] #cs-prom .pr-foot { opacity:1 !important; transform:none !important; transition:none !important; }
   html[data-export="1"] #cs-prom .pr-n { opacity:0.78 !important; transition:none !important; }
   html[data-export="1"] #cs-prom .pr-arrow { opacity:1 !important; transition:none !important; }
+
+  /* ============================================================================
+     HC PARADIGM REVIEW SECTION · 10 candidate slides · review-status = orange
+     [Dave 2026-05-04] Sits just before APPENDIX in SLIDE_ORDER. Orange top-border
+     + orange eyebrow = "REVIEW STATUS" — these are candidates Dave hasn't approved
+     into main flow yet. NEW slides only — does not modify existing slides.
+     ============================================================================ */
+  .hc-slide { border-top: 3px solid #f76e3c !important; }
+  .hc-slide .hc-eye { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:#f76e3c; z-index:10; }
+  .hc-slide .hc-eye .hc-tag { display:inline-block; padding:2px 8px; background:#f76e3c; color:#fbf7ee; border-radius:3px; font-weight:800; letter-spacing:.18em; margin-right:8px; }
+  .hc-slide .hc-tr { position:absolute; top:28px; right:48px; font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1rem; letter-spacing:-0.02em; z-index:10; }
+  .hc-slide .hc-tr .g { color:#5B8FD4; } .hc-slide .hc-tr .n { color:#1a1612; font-style:italic; font-weight:500; font-size:.85rem; } .hc-slide .hc-tr .r { color:#c8462c; }
+  .hc-slide .hc-stage { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100%; padding:80px 64px 56px; gap:18px; text-align:center; }
+  .hc-slide .hc-section { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.42em; text-transform:uppercase; color:#b8954a; }
+  .hc-slide .hc-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.2rem,4.4vw,3.6rem); font-weight:700; line-height:1.08; letter-spacing:-0.022em; color:#1a1612; max-width:1200px; }
+  .hc-slide .hc-hero em { font-style:italic; font-weight:500; color:#b8954a; }
+  .hc-slide .hc-hero .red { color:#c8462c; font-style:italic; font-weight:600; }
+  .hc-slide .hc-hero .gold { color:#b8954a; font-style:italic; font-weight:500; }
+  .hc-slide .hc-sub { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:clamp(1.05rem,1.6vw,1.3rem); color:rgba(26,22,18,0.66); max-width:980px; line-height:1.4; }
+  .hc-slide .hc-sub strong { font-style:normal; color:#1a1612; font-weight:700; }
+  .hc-slide .hc-foot { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.45); margin-top:18px; }
 </style>
 <div class="casey-slide ds-focus" id="cs-prom">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Our Promise</div>
@@ -11361,6 +11382,361 @@ html, body, html body{
 
 </section>
 </div>
+
+<!-- ============================================================================
+     ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES · cs-hc1 through cs-hc10
+     [Dave 2026-05-04] Inserted just before APPENDIX. Status = REVIEW (orange top
+     border + orange eyebrow). NEW slides only — adds to SLIDE_ORDER, doesn't
+     modify any existing slide. Dave to green-light/edit/kill section by section.
+     ============================================================================ -->
+
+<!-- ═══ SECTION 1 — PARADIGM (1 slide) ═══ -->
+<!-- HC1 · "We sell human connection." · the reframe -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc1">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Paradigm &middot; 1 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">The reframe</div>
+      <div class="hc-hero">We sell <em>human connection.</em></div>
+      <!-- Strikethrough on the things people THINK we sell, gold check on the truth -->
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:18px;font-family:'Manrope',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.04em">
+        <div style="color:rgba(26,22,18,0.35);text-decoration:line-through;text-decoration-color:#c8462c;text-decoration-thickness:1.5px">Not pickleball.</div>
+        <div style="color:rgba(26,22,18,0.35);text-decoration:line-through;text-decoration-color:#c8462c;text-decoration-thickness:1.5px">Not court time.</div>
+        <div style="color:rgba(26,22,18,0.35);text-decoration:line-through;text-decoration-color:#c8462c;text-decoration-thickness:1.5px">Not access.</div>
+        <div style="color:#1a1612;font-weight:800;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8 L7 12 L13 4" stroke="#b8954a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Always this.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 2 — INVERSION (1 slide) ═══ -->
+<!-- HC2 · "Membership is admission. Connection is the payout." -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc2">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Inversion &middot; 2 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">The inversion</div>
+      <div class="hc-hero">Membership is admission.<br>Connection is the <span class="gold">payout.</span></div>
+      <!-- Two-arrow flip diagram: $ → club (in) // club → person (out) -->
+      <svg viewBox="0 0 720 220" style="width:100%;max-width:780px;margin-top:24px" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top arrow: MEMBERSHIP IN -->
+        <g>
+          <text x="40" y="48" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.55)">MEMBERSHIP IN</text>
+          <circle cx="100" cy="80" r="22" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.8"/>
+          <text x="100" y="86" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="700" fill="#b8954a">$</text>
+          <line x1="130" y1="80" x2="600" y2="80" stroke="#b8954a" stroke-width="1.8" stroke-dasharray="6 5"/>
+          <path d="M 590 72 L 612 80 L 590 88" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="620" y="56" width="60" height="48" rx="6" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.8"/>
+          <text x="650" y="86" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#3a7da3">CLUB</text>
+        </g>
+        <!-- Bottom arrow: CONNECTION OUT (reversed direction) -->
+        <g>
+          <text x="40" y="178" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#c8462c">CONNECTION OUT</text>
+          <circle cx="100" cy="160" r="14" fill="rgba(200,70,44,0.20)" stroke="#c8462c" stroke-width="1.8"/>
+          <path d="M 90 156 Q 90 152 100 152 Q 110 152 110 156 M 92 168 Q 92 162 100 162 Q 108 162 108 168" stroke="#c8462c" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <line x1="130" y1="160" x2="600" y2="160" stroke="#c8462c" stroke-width="1.8" stroke-dasharray="6 5"/>
+          <path d="M 140 152 L 118 160 L 140 168" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="620" y="136" width="60" height="48" rx="6" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.8"/>
+          <text x="650" y="166" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#3a7da3">CLUB</text>
+        </g>
+      </svg>
+      <div class="hc-sub">We pay you &mdash; in invitations, matches, belonging &mdash; to do the thing you value most anyway.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 3 — FLYWHEEL (2 slides) ═══ -->
+<!-- HC3 · "People draw people. Generosity compounds." -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc3">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Flywheel &middot; 3 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">The flywheel</div>
+      <div class="hc-hero">People draw people.<br><span class="gold">Generosity compounds.</span></div>
+      <!-- 3-node reciprocity loop -->
+      <svg viewBox="0 0 480 320" style="width:100%;max-width:540px;margin:18px 0 8px" xmlns="http://www.w3.org/2000/svg">
+        <!-- Center: Invitation Graph -->
+        <circle cx="240" cy="160" r="58" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="1.6" stroke-dasharray="3 3"/>
+        <text x="240" y="155" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">INVITATION</text>
+        <text x="240" y="170" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="800" letter-spacing="2.4" fill="#b8954a">GRAPH</text>
+        <!-- 3 nodes around the center -->
+        <g>
+          <!-- Top: GIVE -->
+          <circle cx="240" cy="40" r="34" fill="rgba(91,143,212,0.16)" stroke="#5B8FD4" stroke-width="2"/>
+          <text x="240" y="38" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#3a7da3">GIVE</text>
+          <text x="240" y="52" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="rgba(26,22,18,0.55)">invite well</text>
+          <!-- Bottom-right: DRAW -->
+          <circle cx="380" cy="240" r="34" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="2"/>
+          <text x="380" y="238" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#b8954a">DRAW</text>
+          <text x="380" y="252" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="rgba(26,22,18,0.55)">others show up</text>
+          <!-- Bottom-left: RETURN -->
+          <circle cx="100" cy="240" r="34" fill="rgba(200,70,44,0.16)" stroke="#c8462c" stroke-width="2"/>
+          <text x="100" y="238" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="2.4" fill="#c8462c">RETURN</text>
+          <text x="100" y="252" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="10" fill="rgba(26,22,18,0.55)">reciprocity flows</text>
+        </g>
+        <!-- Curved arrows -->
+        <g fill="none" stroke="rgba(184,149,74,0.65)" stroke-width="1.8" stroke-linecap="round">
+          <path d="M 264 64 Q 360 100 360 210" />
+          <path d="M 348 252 Q 240 296 132 252" />
+          <path d="M 124 210 Q 124 100 216 64" />
+        </g>
+        <g fill="#b8954a">
+          <path d="M 354 200 L 360 212 L 366 200 Z"/>
+          <path d="M 144 244 L 132 252 L 144 260 Z"/>
+          <path d="M 226 64 L 216 56 L 222 70 Z"/>
+        </g>
+      </svg>
+      <div class="hc-sub">The most generous get the most reciprocity back. The <strong>Invitation Graph</strong> is the receipt.</div>
+    </div>
+  </section>
+</div>
+
+<!-- HC4 · DUPR contrast — generosity rewarded, not penalized -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc4">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Flywheel &middot; 4 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">What we measure</div>
+      <div class="hc-hero">Skill ratings measure <span class="red">what you do.</span><br>We measure <span class="gold">who you are to others.</span></div>
+      <!-- Side-by-side contrast -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:980px;margin-top:24px">
+        <div style="background:rgba(200,70,44,0.05);border:1px solid rgba(200,70,44,0.30);border-top:4px solid #c8462c;border-radius:12px;padding:22px;text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c8462c;margin-bottom:14px">DUPR</div>
+          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#1a1612;line-height:1">3.78</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.74rem;color:rgba(26,22,18,0.55);margin-top:6px">A number for what you can do.</div>
+          <div style="margin-top:16px;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(26,22,18,0.7);line-height:1.4;border-left:2px solid rgba(200,70,44,0.45);padding-left:10px">Penalizes you for playing with weaker partners.</div>
+        </div>
+        <div style="background:rgba(184,149,74,0.06);border:1px solid rgba(184,149,74,0.40);border-top:4px solid #b8954a;border-radius:12px;padding:22px;text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">Give &lsquo;n Receive</div>
+          <!-- Mini connection graph instead of a number -->
+          <svg viewBox="0 0 140 56" width="140" height="42">
+            <line x1="20" y1="20" x2="50" y2="36" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+            <line x1="50" y1="36" x2="80" y2="18" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+            <line x1="80" y1="18" x2="110" y2="34" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+            <line x1="20" y1="20" x2="80" y2="18" stroke="#b8954a" stroke-width="1.4" opacity="0.4"/>
+            <line x1="50" y1="36" x2="110" y2="34" stroke="#b8954a" stroke-width="1.4" opacity="0.4"/>
+            <circle cx="20" cy="20" r="4" fill="#5B8FD4"/>
+            <circle cx="50" cy="36" r="4" fill="#b8954a"/>
+            <circle cx="80" cy="18" r="4" fill="#c8462c"/>
+            <circle cx="110" cy="34" r="4" fill="#5fa896"/>
+          </svg>
+          <div style="font-family:'Manrope',sans-serif;font-size:.74rem;color:rgba(26,22,18,0.55);margin-top:6px">A graph of who you draw out.</div>
+          <div style="margin-top:16px;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(26,22,18,0.78);line-height:1.4;border-left:2px solid rgba(184,149,74,0.55);padding-left:10px"><strong style="font-style:normal">Rewards</strong> you for it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 4 — SCALE OF PRIZE (4 slides) ═══ -->
+<!-- HC5 · "Human value: the largest unmeasured asset on Earth." · the headline claim -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc5">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Scale &middot; 5 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">Scale of prize</div>
+      <div class="hc-hero">Human value:<br>the largest <span class="red">unmeasured</span> asset on Earth.</div>
+      <!-- Bar comparison: measured asset classes (faded) vs. unmeasured human value (lit up) -->
+      <div style="width:100%;max-width:880px;margin-top:24px;display:flex;flex-direction:column;gap:8px;font-family:'Manrope',sans-serif">
+        <div style="display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:12px;font-size:.78rem;color:rgba(26,22,18,0.55)">
+          <div style="text-align:right;letter-spacing:.04em">Real estate</div>
+          <div style="height:14px;background:rgba(26,22,18,0.04);border-radius:3px;overflow:hidden"><div style="height:100%;width:22%;background:rgba(26,22,18,0.45)"></div></div>
+          <div style="font-weight:700;color:rgba(26,22,18,0.55)">$330T</div>
+        </div>
+        <div style="display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:12px;font-size:.78rem;color:rgba(26,22,18,0.55)">
+          <div style="text-align:right;letter-spacing:.04em">Equities</div>
+          <div style="height:14px;background:rgba(26,22,18,0.04);border-radius:3px;overflow:hidden"><div style="height:100%;width:8%;background:rgba(26,22,18,0.45)"></div></div>
+          <div style="font-weight:700;color:rgba(26,22,18,0.55)">$120T</div>
+        </div>
+        <div style="display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:12px;font-size:.78rem;color:rgba(26,22,18,0.55)">
+          <div style="text-align:right;letter-spacing:.04em">Gold</div>
+          <div style="height:14px;background:rgba(26,22,18,0.04);border-radius:3px;overflow:hidden"><div style="height:100%;width:1.5%;background:rgba(26,22,18,0.45)"></div></div>
+          <div style="font-weight:700;color:rgba(26,22,18,0.55)">$15T</div>
+        </div>
+        <div style="display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:12px;font-size:.78rem;color:rgba(26,22,18,0.55)">
+          <div style="text-align:right;letter-spacing:.04em">Data economy</div>
+          <div style="height:14px;background:rgba(26,22,18,0.04);border-radius:3px;overflow:hidden"><div style="height:100%;width:0.6%;background:rgba(26,22,18,0.45)"></div></div>
+          <div style="font-weight:700;color:rgba(26,22,18,0.55)">~$5T</div>
+        </div>
+        <div style="display:grid;grid-template-columns:160px 1fr 80px;align-items:center;gap:12px;font-size:1rem;color:#1a1612;margin-top:6px">
+          <div style="text-align:right;font-weight:800;letter-spacing:.04em;color:#b8954a">Human value</div>
+          <div style="height:22px;background:rgba(184,149,74,0.10);border-radius:3px;overflow:hidden;position:relative"><div style="height:100%;width:96%;background:linear-gradient(90deg,#b8954a,#c8462c);box-shadow:0 0 12px rgba(184,149,74,0.3)"></div><div style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:#fbf7ee;font-weight:700">unpriced</div></div>
+          <div style="font-weight:800;color:#c8462c">?</div>
+        </div>
+      </div>
+      <div class="hc-sub" style="margin-top:18px">Always existed. Never measurable. <strong>Until now.</strong></div>
+    </div>
+  </section>
+</div>
+
+<!-- HC6 · WHY NOW · history parallel -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc6">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Scale &middot; 6 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">Why now</div>
+      <div class="hc-hero">Each era of the internet digitized one thing.</div>
+      <!-- 3 stacked epoch cards: SEARCH (faded) · SOCIAL (faded) · GnR (highlighted) -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1080px;margin-top:24px">
+        <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.16);border-radius:12px;padding:22px 18px;opacity:0.55">
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:10px">Search</div>
+          <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1a1612;line-height:1.1;margin-bottom:8px">Facts</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.6)">What is true.</div>
+        </div>
+        <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.16);border-radius:12px;padding:22px 18px;opacity:0.55">
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:10px">Social networks</div>
+          <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1a1612;line-height:1.1;margin-bottom:8px">Identity</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.6)">Who you are.</div>
+        </div>
+        <div style="background:linear-gradient(180deg,rgba(184,149,74,0.14),rgba(184,149,74,0.04));border:1.5px solid #b8954a;border-radius:12px;padding:22px 18px;box-shadow:0 4px 18px rgba(184,149,74,0.18)">
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:10px">Give &lsquo;n Receive</div>
+          <div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1a1612;line-height:1.1;margin-bottom:8px">Value exchange</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:#c8462c;font-weight:600">Who matters to whom.</div>
+        </div>
+      </div>
+      <div class="hc-sub" style="margin-top:18px">The next layer of the internet. <strong>We&rsquo;re building it.</strong></div>
+    </div>
+  </section>
+</div>
+
+<!-- HC7 · 4 verbs · what AI does to human value -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc7">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Scale &middot; 7 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">AI &times; human value</div>
+      <div class="hc-hero">Measure it. Network it. Sell it. <span class="gold">Make it abundant.</span></div>
+      <!-- 4-column verb row matching cs-future styling -->
+      <div style="display:flex;align-items:stretch;gap:14px;max-width:1080px;margin-top:28px">
+        <div style="flex:1;background:rgba(184,149,74,0.06);border:1px solid rgba(184,149,74,0.32);border-radius:12px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21 L3 3 M3 21 L21 21"/>
+            <line x1="6" y1="17" x2="6" y2="14"/>
+            <line x1="11" y1="17" x2="11" y2="9"/>
+            <line x1="16" y1="17" x2="16" y2="11"/>
+            <line x1="20" y1="17" x2="20" y2="6"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:#b8954a">Measure</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:rgba(26,22,18,0.6);text-align:center;line-height:1.3">Behavioral signals at scale.</div>
+        </div>
+        <div style="flex:1;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.32);border-radius:12px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3a7da3" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="5" y2="18"/><line x1="12" y1="5" x2="19" y2="18"/><line x1="5" y1="18" x2="19" y2="18"/>
+            <circle cx="12" cy="5" r="2.6" fill="#3a7da3"/><circle cx="5" cy="18" r="2.4" fill="rgba(91,143,212,0.45)"/><circle cx="19" cy="18" r="2.4" fill="rgba(91,143,212,0.45)"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:#3a7da3">Network</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:rgba(26,22,18,0.6);text-align:center;line-height:1.3">Every interaction strengthens the graph.</div>
+        </div>
+        <div style="flex:1;background:rgba(95,168,150,0.06);border:1px solid rgba(95,168,150,0.32);border-radius:12px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5fa896" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 8 L19 8 L17 18 L7 18 Z" fill="rgba(95,168,150,0.16)"/>
+            <path d="M9 8 V6 Q9 4 12 4 Q15 4 15 6 V8"/>
+            <line x1="11" y1="13" x2="13" y2="13"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:#5fa896">Sell</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:rgba(26,22,18,0.6);text-align:center;line-height:1.3">Clubs pay for what already drives retention.</div>
+        </div>
+        <div style="flex:1;background:rgba(200,70,44,0.06);border:1.5px solid #c8462c;border-radius:12px;padding:22px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(200,70,44,0.10)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c8462c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="6" fill="rgba(200,70,44,0.10)" stroke="none"/>
+            <circle cx="12" cy="12" r="3.2" fill="#c8462c" stroke="none"/>
+            <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+            <line x1="4.8" y1="4.8" x2="6.9" y2="6.9"/><line x1="17.1" y1="17.1" x2="19.2" y2="19.2"/>
+            <line x1="4.8" y1="19.2" x2="6.9" y2="17.1"/><line x1="17.1" y1="6.9" x2="19.2" y2="4.8"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:#c8462c">Abundant</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:rgba(26,22,18,0.6);text-align:center;line-height:1.3">More invitations to more right people.</div>
+        </div>
+      </div>
+      <div class="hc-sub" style="margin-top:20px">What the machines now do to the asset class hiding in plain sight.</div>
+    </div>
+  </section>
+</div>
+
+<!-- HC8 · Abundance double · the rare AI win -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc8">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Scale &middot; 8 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">A rare double</div>
+      <div class="hc-hero">Most things AI makes abundant get <span class="red">cheaper.</span><br>Connection gets <span class="gold">more valuable.</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:980px;margin-top:24px">
+        <div style="background:rgba(26,22,18,0.03);border:1px solid rgba(26,22,18,0.20);border-radius:12px;padding:22px;text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:14px">Content &middot; Code &middot; Images</div>
+          <!-- Down arrow + "value per unit" -->
+          <svg viewBox="0 0 80 80" width="60" height="60" style="margin:8px 0">
+            <path d="M40 16 L40 60 M28 48 L40 60 L52 48" stroke="#1a1612" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;font-weight:600;color:rgba(26,22,18,0.65);line-height:1.3">Value per unit drops.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.5);margin-top:8px;line-height:1.4">Supply explodes. Demand splits across more options.</div>
+        </div>
+        <div style="background:linear-gradient(180deg,rgba(184,149,74,0.10),rgba(184,149,74,0.02));border:1.5px solid #b8954a;border-radius:12px;padding:22px;text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">Human connection</div>
+          <svg viewBox="0 0 80 80" width="60" height="60" style="margin:8px 0">
+            <path d="M40 64 L40 20 M28 32 L40 20 L52 32" stroke="#b8954a" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;font-weight:600;color:#1a1612;line-height:1.3">Value per node grows.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.85rem;color:rgba(26,22,18,0.65);margin-top:8px;line-height:1.4">Network effects compound. Every new connection raises the value of every prior one.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ SECTION 5 — HUMAN TRUTH & MISSION (2 slides) ═══ -->
+<!-- HC9 · Observed at NEPC, the human truth -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc9">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Mission &middot; 9 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage">
+      <div class="hc-section">Observed at NEPC, every week</div>
+      <!-- Twin italic gold lines, very still -->
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;max-width:1100px;margin-top:18px">
+        We feel best when we <span class="gold">give.</span>
+      </div>
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:600;line-height:1.18;letter-spacing:-0.018em;color:#1a1612;max-width:1100px">
+        Others feel best when we <span class="gold">show up as ourselves.</span>
+      </div>
+      <!-- Hairline divider -->
+      <div style="width:64px;height:1.5px;background:rgba(184,149,74,0.55);margin:28px auto"></div>
+      <div class="hc-sub" style="max-width:880px">Witnessed every Tuesday at 7. Every Thursday morning. Every Saturday round-robin. <strong>Generosity is when humans are most alive.</strong></div>
+    </div>
+  </section>
+</div>
+
+<!-- HC10 · The mission close -->
+<div class="casey-slide ds-focus hc-slide" id="cs-hc10">
+  <div class="hc-eye"><span class="hc-tag">REVIEW</span>Mission &middot; 10 / 10</div>
+  <div class="hc-tr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section style="position:relative;min-height:100%;width:100%">
+    <div class="hc-stage" style="gap:14px">
+      <!-- Connection arc graphic -->
+      <svg viewBox="0 0 60 28" style="width:84px;height:auto;margin-bottom:12px" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 8 20 Q 30 -2 52 20" fill="none" stroke="#b8954a" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="8" cy="20" r="4" fill="#5B8FD4"/>
+        <circle cx="52" cy="20" r="4" fill="#c8462c"/>
+      </svg>
+      <div class="hc-section">Mission</div>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.05rem,1.5vw,1.25rem);color:rgba(26,22,18,0.65);max-width:880px">A mission for the rest of our lives:</div>
+      <div class="hc-hero" style="font-size:clamp(2.6rem,5vw,4.2rem);max-width:1240px">Run on <em>abundant</em><br>human connection.</div>
+      <!-- Hairline divider -->
+      <div style="width:64px;height:1.5px;background:rgba(184,149,74,0.55);margin:24px auto"></div>
+      <div class="hc-sub" style="max-width:920px">Every community gets to be built on this. <strong>The give and take we already do</strong> &mdash; finally measurable, networkable, abundant.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== END ORANGE REVIEW SECTION ===== -->
 
 <!-- ===== cs-nr · NETWORKED RECIPROCITY [Dave 2026-05-03 PM v2 — STRIPPED to just headline + tiny contrast]
      v1 had cards with full DUPR-vs-GnR bullet lists — too much text. The thesis IS the headline.
@@ -15100,7 +15476,23 @@ const SLIDE_ORDER = [
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
   // cs-ns1 (North Star original orbital) MOVED to APPENDIX 2026-05-03 PM per Dave
   'cs-mv6',   // 21 Mission · "for all our lives to run on abundant human connection" [Dave 2026-05-03 PM — moved to right BEFORE cs-prom (the new last/closer slide)]
-  'cs-prom'   // 22 LAST · Our Promise · GnR wordmark exploded + Dave's contact info [cs-prom is now the closing slide per Dave 2026-05-03 PM]
+  'cs-prom',  // 22 Our Promise · GnR wordmark exploded + Dave's contact info [cs-prom is now the closing slide per Dave 2026-05-03 PM]
+  // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
+  // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
+  // (orange top border + orange eyebrow). Sit at the end of main flow before APPENDIX.
+  // Dave to green-light/edit/kill section by section, then either keep standalone or
+  // fold the strongest into earlier slots in the main arc.
+  'cs-hc1',   // 23 PARADIGM · "We sell human connection."
+  'cs-hc2',   // 24 INVERSION · "Membership is admission. Connection is the payout."
+  'cs-hc3',   // 25 FLYWHEEL · "People draw people. Generosity compounds." (3-node loop)
+  'cs-hc4',   // 26 FLYWHEEL · DUPR vs GnR — "We measure who you are to others."
+  'cs-hc5',   // 27 SCALE · "Human value: the largest unmeasured asset on Earth."
+  'cs-hc6',   // 28 SCALE · Why now — Search digitized facts → Social digitized identity → GnR digitizes value exchange
+  'cs-hc7',   // 29 SCALE · Measure / Network / Sell / Abundant — what AI does to human value
+  'cs-hc8',   // 30 SCALE · Rare double — most AI-abundant things get cheaper; connection gets more valuable
+  'cs-hc9',   // 31 MISSION · Observed at NEPC — "We feel best when we give. Others feel best when we show up as ourselves."
+  'cs-hc10'   // 32 MISSION · "Run on abundant human connection." (the close)
+  // ===== END ORANGE REVIEW SECTION =====
   // cs-nr (Networked Reciprocity) DELETED 2026-05-03 PM per Dave
   // cs-26 ("We're wired to Give n Receive. All of us.") MOVED to APPENDIX 2026-05-03 PM per Dave
   // Removed from main flow per Dave 2026-04-30 PM:
