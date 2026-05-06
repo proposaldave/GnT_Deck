@@ -10535,7 +10535,7 @@ html, body, html body{
 
   <!-- TOP kicker [Dave 2026-05-06 PM]: this is the lead now, with a red down-arrow pointing to the first (red) Coordination-stack-stuck card. -->
   <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.3rem,2.05vw,1.7rem);color:#1a1612;line-height:1.32;margin-bottom:12px;max-width:1180px;text-align:center">
-    Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented</em> &rarr; it desperately needs this new paradigm.
+    Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented</em> &rarr; <em style="font-style:italic;color:#c8462c;font-weight:600">it desperately needs this new paradigm.</em>
   </div>
   <!-- Red down-arrow pointing to first (red) card · "Coordination stack stuck in 2005" -->
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1280px;margin-bottom:6px">
@@ -10764,10 +10764,44 @@ html, body, html body{
 
   </div>
 
-  <!-- BOTTOM closer [Dave 2026-05-06 PM]: replaces what used to be the top headline. -->
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.95vw,2.45rem);font-weight:800;line-height:1.16;color:#1a1612;letter-spacing:-0.014em;margin-top:28px;max-width:1180px;text-align:center">
-    Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
+  <!-- 6th CULMINATION CARD [Dave 2026-05-06 PM]: full-width gold-glow card; flips to reveal the closer.
+       Front = teaser ("→ THE PATH"). Back = "Pickleball is the clearest path..." closer text. -->
+  <div class="c25-culm" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()" style="margin:24px auto 0;max-width:1280px;width:100%;cursor:pointer;perspective:1800px;min-height:170px;position:relative">
+    <div class="c25-culm-inner" style="position:relative;width:100%;height:100%;min-height:170px;transform-style:preserve-3d;transition:transform 0.95s cubic-bezier(.45,.05,.18,1)">
+      <!-- FRONT: gold-glow teaser -->
+      <div class="c25-culm-front" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.16) 0%,rgba(184,149,74,0.05) 100%);border:1.5px solid rgba(184,149,74,0.55);box-shadow:0 0 48px rgba(184,149,74,0.20);padding:38px 44px;display:flex;align-items:center;justify-content:center;gap:28px;text-align:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:#b8954a">→ The Path</div>
+        <!-- network-of-dots icon (global connection) -->
+        <svg viewBox="0 0 80 50" style="width:80px;height:50px;display:block" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="rgba(184,149,74,0.55)" stroke-width="0.9">
+            <line x1="14" y1="14" x2="40" y2="6"/><line x1="40" y1="6" x2="66" y2="14"/>
+            <line x1="14" y1="14" x2="26" y2="32"/><line x1="40" y1="6" x2="40" y2="26"/><line x1="66" y1="14" x2="54" y2="32"/>
+            <line x1="26" y1="32" x2="40" y2="26"/><line x1="40" y1="26" x2="54" y2="32"/>
+            <line x1="26" y1="32" x2="40" y2="44"/><line x1="54" y1="32" x2="40" y2="44"/>
+          </g>
+          <circle cx="14" cy="14" r="3" fill="#5B8FD4"/>
+          <circle cx="40" cy="6" r="3" fill="#b8954a"/>
+          <circle cx="66" cy="14" r="3" fill="#c8462c"/>
+          <circle cx="26" cy="32" r="3" fill="#7a4a8c"/>
+          <circle cx="40" cy="26" r="4" fill="#b8954a"/>
+          <circle cx="54" cy="32" r="3" fill="#5fa896"/>
+          <circle cx="40" cy="44" r="3" fill="#1a1612"/>
+        </svg>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,1.5vw,1.3rem);color:rgba(26,22,18,0.75);font-weight:600">Where these five add up.</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(184,149,74,0.7);position:absolute;bottom:14px;right:22px">↻ flip</div>
+      </div>
+      <!-- BACK: the culmination text -->
+      <div class="c25-culm-back" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.18) 0%,rgba(184,149,74,0.06) 100%);border:1.5px solid rgba(184,149,74,0.65);box-shadow:0 0 56px rgba(184,149,74,0.25);padding:38px 44px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.95vw,2.45rem);font-weight:800;line-height:1.16;color:#1a1612;letter-spacing:-0.014em;max-width:1180px">
+          Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous human connection network.</em>
+        </div>
+      </div>
+    </div>
   </div>
+  <style>
+    #cs-25 .c25-culm[data-flipped="1"] .c25-culm-inner { transform: rotateY(180deg); }
+    html[data-export="1"] #cs-25 .c25-culm-inner { transform: rotateY(180deg) !important; transition: none !important; }
+  </style>
 
 </div>
 </section>
@@ -11650,7 +11684,7 @@ html, body, html body{
      Layout: TRUTH on top → bridge → GnR wordmark + 2-clause promise → contact info.
      cs-hc3 + cs-prom both kept; this is an alt under review. ===== -->
 <div class="casey-slide ds-focus" id="cs-12m1">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Human Flywheel · Our Promise</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Human Flywheel</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:72px 56px 56px;gap:18px">
     <!-- TOP: the truth -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.15vw,1.85rem);font-weight:700;line-height:1.22;letter-spacing:-0.018em;color:#1a1612;max-width:1280px;text-align:center">
@@ -11689,73 +11723,52 @@ html, body, html body{
   </section>
 </div>
 
-<!-- ===== cs-12m2 · MERGE candidate B (slot 12 alt) — two-column.
-     LEFT = truth (text + radiating-figure SVG). RIGHT = promise (GnR wordmark + 2 clauses + contact). ===== -->
+<!-- ===== cs-12m2 · MERGE candidate B (slot 12 alt) — JAW-DROP REDESIGN 2026-05-06 PM v2.
+     Single-column manifesto. Massive GnR wordmark center-stage. Truth + Promise distilled. ===== -->
 <div class="casey-slide ds-focus" id="cs-12m2">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Human Flywheel &rarr; Our Promise</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Human Flywheel</div>
   <section style="position:relative;min-height:100%;width:100%">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:100%;padding:72px 56px;max-width:1760px;margin:0 auto">
-      <!-- LEFT: the truth -->
-      <div style="display:flex;flex-direction:column;gap:16px;text-align:left">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:#b8954a">The truth</div>
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.25rem,1.95vw,1.75rem);font-weight:700;line-height:1.2;letter-spacing:-0.018em;color:#1a1612">
-          The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves for others</em>
-          feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em> &mdash; and <em style="font-style:italic;font-weight:500;color:#c8462c">most magnetic to everyone</em> around them.
-        </div>
-        <!-- Radiating-figure (compact, no annotations) -->
-        <svg viewBox="0 0 520 280" style="width:100%;max-width:520px;margin-top:8px;display:block" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="260" cy="140" r="120" fill="rgba(184,149,74,0.10)"/>
-          <circle cx="260" cy="140" r="92" fill="none" stroke="rgba(184,149,74,0.30)" stroke-width="1" stroke-dasharray="3 4"/>
-          <circle cx="260" cy="140" r="62" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="1" stroke-dasharray="3 4"/>
-          <g stroke="#b8954a" stroke-width="2.2" stroke-linecap="round">
-            <line x1="260" y1="48" x2="260" y2="22"/><line x1="260" y1="232" x2="260" y2="258"/>
-            <line x1="168" y1="140" x2="142" y2="140"/><line x1="352" y1="140" x2="378" y2="140"/>
-            <line x1="195" y1="75" x2="177" y2="57"/><line x1="325" y1="205" x2="343" y2="223"/>
-            <line x1="195" y1="205" x2="177" y2="223"/><line x1="325" y1="75" x2="343" y2="57"/>
-          </g>
-          <g stroke="#c8462c" stroke-width="1.6" fill="none" stroke-linecap="round">
-            <path d="M 410 60 Q 360 60 322 100"/><path d="M 322 100 L 332 95 M 322 100 L 332 110"/>
-            <path d="M 460 140 Q 410 140 380 140"/><path d="M 380 140 L 390 134 M 380 140 L 390 146"/>
-            <path d="M 410 220 Q 360 220 322 180"/><path d="M 322 180 L 332 185 M 322 180 L 332 175"/>
-            <path d="M 110 220 Q 160 220 198 180"/><path d="M 198 180 L 188 185 M 198 180 L 188 175"/>
-            <path d="M 60 140 Q 110 140 140 140"/><path d="M 140 140 L 130 134 M 140 140 L 130 146"/>
-            <path d="M 110 60 Q 160 60 198 100"/><path d="M 198 100 L 188 95 M 198 100 L 188 110"/>
-          </g>
-          <g transform="translate(260, 140)">
-            <circle r="34" fill="rgba(184,149,74,0.18)"/>
-            <circle cx="0" cy="-12" r="10" fill="#b8954a"/>
-            <path d="M -16 24 Q -16 -2 0 -4 Q 16 -2 16 24 Z" fill="#b8954a"/>
-          </g>
-        </svg>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:64px 56px 48px;max-width:1480px;margin:0 auto;gap:0;text-align:center">
+
+      <!-- TRUTH (top, small) -->
+      <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.36em;text-transform:uppercase;color:#b8954a;margin-bottom:14px">The truth</div>
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.25rem,2.05vw,1.85rem);font-weight:600;line-height:1.22;letter-spacing:-0.012em;color:rgba(26,22,18,0.82);max-width:1080px">
+        Show up as your <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique self for others</em> &mdash;<br>
+        feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em>, become <em style="font-style:italic;font-weight:500;color:#c8462c">most magnetic to everyone</em> around you.
       </div>
-      <!-- RIGHT: the promise -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:#b8954a">Our promise to them</div>
-        <!-- GnR wordmark -->
-        <div style="display:flex;align-items:center;justify-content:center;gap:6px">
-          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:0.9;letter-spacing:-0.04em;font-size:clamp(5rem,10.5vw,8.5rem);color:#4d82c6">G</span>
-          <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:0.9;opacity:0.78;align-self:center">n</span>
-          <span style="font-family:'Playfair Display',Georgia,serif;font-weight:900;line-height:0.9;letter-spacing:-0.04em;font-size:clamp(5rem,10.5vw,8.5rem);color:#c94d32">R</span>
+
+      <!-- HERO: massive GnR wordmark -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:36px 0 20px;line-height:0.85">
+        <span style="font-family:'Playfair Display',Georgia,serif;font-weight:900;letter-spacing:-0.04em;font-size:clamp(7rem,16vw,13rem);color:#4d82c6;line-height:0.85">G</span>
+        <span style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(3.5rem,8vw,6.5rem);opacity:0.78;align-self:center">n</span>
+        <span style="font-family:'Playfair Display',Georgia,serif;font-weight:900;letter-spacing:-0.04em;font-size:clamp(7rem,16vw,13rem);color:#c94d32;line-height:0.85">R</span>
+      </div>
+
+      <!-- PROMISE: 2 clauses side by side under GnR -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1100px;margin:0 auto 20px;width:100%">
+        <div style="text-align:right">
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.35rem);font-weight:700;color:#1a1612;line-height:1.3">Your community gets<br><em style="font-style:italic;font-weight:500;color:#4d82c6">the most out of you.</em></div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:560px;width:100%">
-          <div style="text-align:center">
-            <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(0.92rem,1.3vw,1.12rem);font-weight:700;color:#1a1612;line-height:1.3">Your community gets<br><em style="font-style:italic;font-weight:500;color:#4d82c6">the most out of you.</em></div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(0.92rem,1.3vw,1.12rem);font-weight:700;color:#1a1612;line-height:1.3">You get<br><em style="font-style:italic;font-weight:500;color:#c94d32">the most out of your community.</em></div>
-          </div>
-        </div>
-        <div style="margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:10px">
-          <div style="display:flex;align-items:center;justify-content:center;gap:14px">
-            <div style="width:48px;height:1px;background:#b8954a;opacity:0.5"></div>
-            <div style="width:7px;height:7px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
-            <div style="width:48px;height:1px;background:#b8954a;opacity:0.5"></div>
-          </div>
-          <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.78);letter-spacing:0.04em;font-weight:500;text-align:center">
-            <strong style="font-weight:700;color:#1a1612">Dave Velardo</strong> &middot; <a href="mailto:dave@givenreceive.com" style="color:#b8954a;text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a> &middot; 978-604-0223
-          </div>
+        <div style="text-align:left">
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.35rem);font-weight:700;color:#1a1612;line-height:1.3">You get<br><em style="font-style:italic;font-weight:500;color:#c94d32">the most out of your community.</em></div>
         </div>
       </div>
+
+      <!-- Closing italic vision line -->
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.35vw,1.18rem);color:rgba(26,22,18,0.6);margin-top:18px;letter-spacing:-0.005em">
+        the future of our communities &middot; our humanity
+      </div>
+
+      <!-- Hairline divider + contact -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:30px 0 14px">
+        <div style="width:60px;height:1px;background:#b8954a;opacity:0.5"></div>
+        <div style="width:7px;height:7px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+        <div style="width:60px;height:1px;background:#b8954a;opacity:0.5"></div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.78);letter-spacing:0.04em;font-weight:500;text-align:center">
+        <strong style="font-weight:700;color:#1a1612">Dave Velardo</strong> &middot; <a href="mailto:dave@givenreceive.com" style="color:#b8954a;text-decoration:none;border-bottom:1px solid rgba(184,149,74,0.45)">dave@givenreceive.com</a> &middot; 978-604-0223
+      </div>
+
     </div>
   </section>
 </div>
@@ -13152,10 +13165,9 @@ html, body, html body{
             <stop offset="100%" stop-color="#b8954a"/>
           </linearGradient>
         </defs>
-        <!-- Y-axis label (rotated) -->
-        <text x="-160" y="22" transform="rotate(-90)" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.5)">HUMAN CONNECTION</text>
-        <text x="38" y="40" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.4)">ABUNDANT</text>
-        <text x="38" y="280" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.4)">SCARCE</text>
+        <!-- Y-axis labels — simplified (rotated label removed; ABUNDANT top, SCARCE bottom only) -->
+        <text x="105" y="20" text-anchor="start" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.5)">ABUNDANT HUMAN CONNECTION</text>
+        <text x="105" y="305" text-anchor="start" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.5)">SCARCE</text>
         <!-- Axis baseline -->
         <line x1="60" y1="290" x2="1170" y2="290" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
         <line x1="60" y1="30" x2="60" y2="290" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
@@ -13177,8 +13189,8 @@ html, body, html body{
         <!-- The decline curve (Pre-1800 → 2020s, smooth descent) -->
         <path d="M 105 70 C 200 90, 280 130, 375 145 C 470 165, 460 200, 510 200 C 600 230, 670 260, 780 268"
               stroke="rgba(26,22,18,0.62)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- The parabolic shoot up at GnR (2030s) -->
-        <path d="M 780 268 C 870 268, 940 240, 990 60"
+        <!-- The parabolic shoot up at GnR (2030s) — much higher than start (start was y=70, end now y=20) -->
+        <path d="M 780 268 C 870 268, 940 200, 990 20"
               stroke="#b8954a" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
         <!-- Era data points -->
@@ -13189,15 +13201,13 @@ html, body, html body{
           <circle cx="510" cy="200" r="4.5" fill="#4d82c6"/>
           <circle cx="645" cy="240" r="4.5" fill="#c8462c"/>
           <circle cx="780" cy="268" r="4.5" fill="#7a4a8c"/>
-          <!-- GnR endpoint (parabolic high) — large gold halo -->
-          <circle cx="990" cy="60" r="14" fill="rgba(184,149,74,0.18)"/>
-          <circle cx="990" cy="60" r="7" fill="#b8954a"/>
+          <!-- GnR endpoint (parabolic high, now at y=20 — clearly higher than start at y=70) — large gold halo -->
+          <circle cx="990" cy="20" r="14" fill="rgba(184,149,74,0.18)"/>
+          <circle cx="990" cy="20" r="7" fill="#b8954a"/>
         </g>
 
-        <!-- Annotation: GnR breaks the trend -->
-        <text x="990" y="22" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#b8954a">GnR</text>
-        <!-- "Attention economy lows" annotation -->
-        <text x="640" y="312" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">attention era · lowest in human history</text>
+        <!-- GnR label above the endpoint -->
+        <text x="990" y="-2" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#b8954a">GnR</text>
       </svg>
     </div>
 
@@ -13247,27 +13257,27 @@ html, body, html body{
           <line x1="1320" y1="40" x2="1320" y2="500"/>
         </g>
 
-        <!-- Filled area under curve -->
-        <path d="M 160 110 C 260 130, 320 200, 340 220 C 440 250, 480 290, 520 310 C 620 360, 700 420, 880 450 C 980 462, 1020 470, 1060 472 L 1060 500 L 160 500 Z" fill="url(#mv6bFill)"/>
+        <!-- Filled area under curve — anchors land EXACTLY where the era dots sit (Dave 2026-05-06 PM dot-alignment fix) -->
+        <path d="M 160 110 C 220 130, 280 150, 340 170 C 400 195, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470 L 1060 500 L 160 500 Z" fill="url(#mv6bFill)"/>
 
-        <!-- DECLINE curve (Pre-1800 high → 2020s low) -->
-        <path d="M 160 110 C 260 130, 320 200, 340 220 C 440 250, 480 290, 520 310 C 620 360, 700 420, 880 450 C 980 462, 1020 470, 1060 472"
+        <!-- DECLINE curve — passes through every era dot (anchored at x=160,340,520,700,880,1060) -->
+        <path d="M 160 110 C 220 130, 280 150, 340 170 C 400 195, 460 225, 520 250 C 580 280, 640 320, 700 340 C 760 365, 820 395, 880 420 C 940 440, 1000 460, 1060 470"
               stroke="rgba(26,22,18,0.7)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- PARABOLIC shoot up at GnR -->
-        <path d="M 1060 472 C 1180 472, 1260 380, 1320 70"
+        <!-- PARABOLIC shoot up at GnR (start at last dot 1060,470 → end at 1320,70) -->
+        <path d="M 1060 470 C 1180 470, 1260 380, 1320 70"
               stroke="#b8954a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         <!-- GnR endpoint glow -->
         <circle cx="1320" cy="70" r="22" fill="rgba(184,149,74,0.18)"/>
         <circle cx="1320" cy="70" r="11" fill="#b8954a"/>
 
-        <!-- Era data points (down-trend) -->
+        <!-- Era data points — y values match the curve anchors above EXACTLY -->
         <g>
           <circle cx="160" cy="110" r="6" fill="#4a7c4a"/>
-          <circle cx="340" cy="160" r="6" fill="#9c5a3a"/>
-          <circle cx="520" cy="240" r="6" fill="#b8954a"/>
-          <circle cx="700" cy="350" r="6" fill="#4d82c6"/>
-          <circle cx="880" cy="430" r="6" fill="#c8462c"/>
-          <circle cx="1060" cy="472" r="6" fill="#7a4a8c"/>
+          <circle cx="340" cy="170" r="6" fill="#9c5a3a"/>
+          <circle cx="520" cy="250" r="6" fill="#b8954a"/>
+          <circle cx="700" cy="340" r="6" fill="#4d82c6"/>
+          <circle cx="880" cy="420" r="6" fill="#c8462c"/>
+          <circle cx="1060" cy="470" r="6" fill="#7a4a8c"/>
         </g>
 
         <!-- X-AXIS LABELS: Era names + era titles -->
@@ -13288,9 +13298,8 @@ html, body, html body{
           <text x="1320" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="15" font-weight="700" fill="#1a1612">Human connection</text>
         </g>
 
-        <!-- Annotations -->
+        <!-- GnR label only -->
         <text x="1320" y="38" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="3.2" fill="#b8954a">GnR</text>
-        <text x="970" y="478" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="rgba(26,22,18,0.6)">lowest in human history</text>
       </svg>
     </div>
 
@@ -16190,7 +16199,7 @@ const SLIDE_ORDER = [
   // Variants A/B/C in review — Dave to pick best, then keep one and delete others.
   'cs-mv6-altA', // 22a · cards on top, downtrend curve below
   'cs-mv6-altB', // 22b · chart-only, era labels as X-axis ticks
-  'cs-mv6-altC', // 22c · two divergent lines (civilization rises, connection falls; GnR reverses)
+  // cs-mv6-altC (two divergent lines) DELETED 2026-05-06 PM per Dave
   'cs-prom',  // 22 Our Promise · GnR wordmark exploded + Dave's contact info [cs-prom is now the closing slide per Dave 2026-05-03 PM]
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
   // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
