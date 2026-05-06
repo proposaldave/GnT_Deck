@@ -8431,15 +8431,9 @@ html, body, html body{
     </div>
   </div>
 
-  <!-- Slide headline + down arrow pointing to the BEFORE/IN THE ROOM flip cards [Dave 2026-05-06: swap from 'No like button? No problem.' which moved to eyebrow] -->
-  <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);color:#1a1612;line-height:1.1;margin-bottom:14px;font-weight:700;letter-spacing:-0.018em;max-width:920px;margin-left:auto;margin-right:auto">
+  <!-- Slide headline (no arrow underneath — arrow moved above 'Who do you choose?' below per Dave 2026-05-06) -->
+  <div class="display" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,3.8vw,3.1rem);color:#1a1612;line-height:1.1;margin-bottom:30px;font-weight:700;letter-spacing:-0.018em;max-width:920px;margin-left:auto;margin-right:auto">
     We <em style="font-style:italic;font-weight:500;color:#b8954a">measure connection.</em>
-  </div>
-  <!-- Down arrow under the headline, pointing to the two graphics below -->
-  <div class="display" style="margin:0 auto 24px;display:flex;justify-content:center">
-    <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11 2 V24 M3 16 L11 24 L19 16" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
   </div>
   <!-- cs11-hint removed Dave 2026-05-02: cards now visible from start, no reveal step needed. -->
 
@@ -8672,8 +8666,13 @@ html, body, html body{
 
   <!-- "Scheduling is measuring" bottom card deleted per Dave 2026-05-02 PM (now lives as the slide eyebrow) -->
 
-  <!-- "Who do you choose?" prompt under the two graphics — animates in on slide load [Dave 2026-05-06] -->
+  <!-- Down arrow + "Who do you choose?" prompt under the two graphics — arrow points from the cards/evidence DOWN to the conclusion question. Both animate in on slide load. [Dave 2026-05-06: arrow moved here from above the cards] -->
   <div class="cs11-choose-prompt" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.4rem,2.3vw,1.95rem);font-weight:600;color:#1a1612;text-align:center;margin:32px auto 0;max-width:800px;letter-spacing:-0.014em;opacity:0;transform:translateY(10px);transition:opacity 0.8s 1.4s cubic-bezier(.45,.05,.18,1),transform 0.8s 1.4s cubic-bezier(.45,.05,.18,1)">
+    <div style="display:flex;justify-content:center;margin-bottom:14px">
+      <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2 V24 M3 16 L11 24 L19 16" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
     Who do you <em style="color:#b8954a">choose?</em>
   </div>
 
@@ -9283,7 +9282,7 @@ html, body, html body{
           <text class="env-letter-print" x="120" y="130" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">belonging.</text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">The feeling</text>
+          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Feeling</text>
         </g>
         <g class="env-flap">
           <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
@@ -9296,28 +9295,28 @@ html, body, html body{
       </svg>
     </div>
 
-    <!-- ENVELOPE 2 (was 1): Personalized -> An invitation-feed, not a public calendar -->
+    <!-- ENVELOPE 2 (was 1): Effortless / Your invitation-feed — BLUE accent (calm, Give-color) -->
     <div class="env-card" data-open="0" onclick="this.dataset.open=this.dataset.open==='1'?'0':'1'">
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+        <rect x="2" y="2" width="236" height="156" rx="4" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.6"/>
         <g class="env-letter">
-          <!-- Icon: stack of 3 mini-envelopes — all centered on x=120, fanned vertically -->
+          <!-- Icon: stack of 3 mini-envelopes — blue accent for Effortless category -->
           <g transform="translate(120, 42)">
-            <rect x="-24" y="-14" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.45"/>
-            <rect x="-24" y="-8" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.2" opacity="0.7"/>
-            <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.4"/>
-            <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="#b8954a" stroke-width="1.2"/>
+            <rect x="-24" y="-14" width="48" height="22" rx="2" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.2" opacity="0.45"/>
+            <rect x="-24" y="-8" width="48" height="22" rx="2" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.2" opacity="0.7"/>
+            <rect x="-24" y="-2" width="48" height="22" rx="2" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.4"/>
+            <path d="M -24 -2 L 0 12 L 24 -2" fill="none" stroke="#5B8FD4" stroke-width="1.2"/>
           </g>
-          <text x="120" y="98" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">Your <tspan font-style="italic" font-weight="500" fill="#b8954a">invitation-feed,</tspan></text>
+          <text x="120" y="98" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">Your <tspan font-style="italic" font-weight="500" fill="#3a7da3">invitation-feed,</tspan></text>
           <text x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="15" font-weight="700" fill="#1a1612">not a public calendar.</text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Effortless</text>
+          <text x="120" y="138" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#3a7da3">Effortless</text>
         </g>
         <g class="env-flap">
-          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
-          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#f5f8fc" stroke="#5B8FD4" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(91,143,212,0.45)" stroke-width="0.7"/>
           <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
             <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
           </text>
@@ -9325,33 +9324,33 @@ html, body, html body{
       </svg>
     </div>
 
-    <!-- ENVELOPE 3: Honor the giving -> Who gives? -->
+    <!-- ENVELOPE 3: Recognize / Who gives? — RED accent (heat/recognition, Receive-color) -->
     <div class="env-card" data-open="0" onclick="this.dataset.open=this.dataset.open==='1'?'0':'1'">
       <svg class="env-svg" viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="236" height="156" rx="4" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6"/>
+        <rect x="2" y="2" width="236" height="156" rx="4" fill="#fcf3f0" stroke="#c8462c" stroke-width="1.6"/>
         <g class="env-letter">
-          <!-- Icon: highlighted person silhouette with golden aura (the giver being recognized) -->
+          <!-- Icon: highlighted person silhouette with red aura (the giver being recognized) -->
           <g transform="translate(120, 50)">
-            <!-- Outer glow rings -->
-            <circle r="26" fill="#b8954a" opacity="0.10"/>
-            <circle r="20" fill="#b8954a" opacity="0.16"/>
-            <circle r="14" fill="rgba(184,149,74,0.22)"/>
+            <!-- Outer red glow rings -->
+            <circle r="26" fill="#c8462c" opacity="0.10"/>
+            <circle r="20" fill="#c8462c" opacity="0.16"/>
+            <circle r="14" fill="rgba(200,70,44,0.22)"/>
             <!-- Person silhouette in red (the giver, lit up) -->
             <circle cx="0" cy="-5" r="6" fill="#c8462c"/>
             <path d="M -10 14 Q -10 2 0 -1 Q 10 2 10 14 Z" fill="#c8462c"/>
           </g>
-          <text class="env-letter-live" x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#b8954a">gives?</tspan></text>
+          <text class="env-letter-live" x="120" y="118" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" fill="#1a1612">Who <tspan font-style="italic" font-weight="500" fill="#c8462c">gives?</tspan></text>
           <!-- PDF-export-only text: 2-line so longer phrase fits in 240-wide viewBox -->
           <text class="env-letter-print" x="120" y="108" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" fill="#1a1612">Recognize</text>
-          <text class="env-letter-print" x="120" y="130" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#b8954a">who gives?</text>
+          <text class="env-letter-print" x="120" y="130" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="20" font-weight="700" font-style="italic" fill="#c8462c">who gives?</text>
         </g>
         <g class="env-front-text">
-          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#b8954a">Recognize</text>
+          <text x="120" y="135" text-anchor="middle" font-family="Fraunces,Playfair Display,Georgia,serif" font-size="22" font-weight="700" font-style="italic" fill="#c8462c">Recognize</text>
         </g>
         <g class="env-flap">
-          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.6" stroke-linejoin="round"/>
-          <circle cx="120" cy="80" r="18" fill="#fbf7ef" stroke="#b8954a" stroke-width="1.8"/>
-          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.7"/>
+          <path d="M 2 2 L 238 2 L 120 80 Z" fill="#fcf3f0" stroke="#c8462c" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="120" cy="80" r="18" fill="#fcf3f0" stroke="#c8462c" stroke-width="1.8"/>
+          <circle cx="120" cy="80" r="14" fill="none" stroke="rgba(200,70,44,0.45)" stroke-width="0.7"/>
           <text x="120" y="85" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-weight="700" font-size="13" letter-spacing="-0.5">
             <tspan fill="#4d82c6">G</tspan><tspan fill="#1a1612" font-style="italic" font-size="10" dy="0.5">n</tspan><tspan fill="#c94d32" dy="-0.5">R</tspan>
           </text>
