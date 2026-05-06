@@ -10485,7 +10485,7 @@ html, body, html body{
     html[data-export="1"] #cs-25 .c25-card-inner { transform: rotateY(180deg) !important; transition: none !important; }
     html[data-export="1"] #cs-25 .c25-flip-hint { display: none !important; }
   </style>
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px">
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1280px">
 
     <!-- 1. Coordination stack stuck in 2005 [moved to first position per Dave 2026-05-06] -->
     <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
@@ -10620,6 +10620,57 @@ html, body, html body{
             </svg>
           </div>
           <div class="c25-title" style="color:#2a8a4f">Cold-start<br>data cracked.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Friendships beyond the court (extensibility) — purple [Dave 2026-05-06: pickleball connections spill into life] -->
+    <div class="c25-card" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()">
+      <div class="c25-card-inner">
+        <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(122,74,140,0.10) 0%,rgba(122,74,140,0.03) 100%);border:1px solid rgba(122,74,140,0.40)">
+          <div class="c25-icon" style="background:rgba(122,74,140,0.12);border:1.5px solid rgba(122,74,140,0.48)">
+            <!-- Pickleball at center radiating outward to life-context dots — extensibility motif -->
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#7a4a8c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Center: small pickleball -->
+              <circle cx="18" cy="18" r="5.5" fill="rgba(122,74,140,0.20)"/>
+              <circle cx="15" cy="15" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="21" cy="15" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="15" cy="21" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="21" cy="21" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <!-- Connection lines extending outward (dashed = "spillover") -->
+              <line x1="14" y1="14" x2="6" y2="6" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="22" y1="14" x2="30" y2="6" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="14" y1="22" x2="6" y2="30" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="22" y1="22" x2="30" y2="30" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <!-- Outer life-context dots -->
+              <circle cx="6" cy="6" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="30" cy="6" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="6" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="30" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+            </svg>
+          </div>
+          <div class="c25-flip-hint">&#x21BB; flip</div>
+        </div>
+        <div class="c25-card-back" style="background:linear-gradient(180deg,rgba(122,74,140,0.10) 0%,rgba(122,74,140,0.03) 100%);border:1px solid rgba(122,74,140,0.40)">
+          <div class="c25-icon" style="background:rgba(122,74,140,0.12);border:1.5px solid rgba(122,74,140,0.48)">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#7a4a8c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="5.5" fill="rgba(122,74,140,0.20)"/>
+              <circle cx="15" cy="15" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="21" cy="15" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="15" cy="21" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <circle cx="21" cy="21" r="0.9" fill="#7a4a8c" stroke="none"/>
+              <line x1="14" y1="14" x2="6" y2="6" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="22" y1="14" x2="30" y2="6" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="14" y1="22" x2="6" y2="30" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <line x1="22" y1="22" x2="30" y2="30" stroke-dasharray="2 1.6" opacity="0.7"/>
+              <circle cx="6" cy="6" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="30" cy="6" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="6" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+              <circle cx="30" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
+            </svg>
+          </div>
+          <div class="c25-title" style="color:#7a4a8c">Friendships<br>beyond the court.</div>
+          <div class="c25-sub" style="color:#1a1612;font-style:italic;font-size:0.78rem;margin-top:6px;line-height:1.35;max-width:200px">Spills into life &mdash; meals, trips, neighbors.</div>
         </div>
       </div>
     </div>
