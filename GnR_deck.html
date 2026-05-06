@@ -9205,7 +9205,7 @@ html, body, html body{
 
   <!-- Headline + down arrow pointing to the 3 envelopes below [Dave 2026-05-06: 'What each community member receives' → 'Open the envelope.'; arrow color gold → black] -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
-    Open the <em style="font-style:italic;font-weight:500;color:#b8954a">envelope.</em>
+    Experience a <em style="font-style:italic;font-weight:500;color:#b8954a">GnR envelope</em>
   </div>
   <!-- Single down arrow (clean) pointing to the 3 envelopes below — black per Dave 2026-05-06 -->
   <div style="width:100%;max-width:120px;margin:6px auto 0">
@@ -12766,30 +12766,48 @@ html, body, html body{
 
 <!-- ===== cs-mv6 · Mission · GnR is the 7th Era. [Reverted 2026-05-02 PM per Dave: Connection is NOT a flip card, mission text shows big underneath the boxes] ===== -->
 <style>
-  #cs-mv6 .mv6-era { opacity: 0; transform: translateY(6px); }
-  #cs-mv6.active .mv6-era { animation: mv6In 0.5s cubic-bezier(.45,.05,.18,1) forwards; }
-  #cs-mv6.active .mv6-era:nth-child(1) { animation-delay: 0.18s; }
-  #cs-mv6.active .mv6-era:nth-child(2) { animation-delay: 0.26s; }
-  #cs-mv6.active .mv6-era:nth-child(3) { animation-delay: 0.34s; }
-  #cs-mv6.active .mv6-era:nth-child(4) { animation-delay: 0.42s; }
-  #cs-mv6.active .mv6-era:nth-child(5) { animation-delay: 0.50s; }
-  #cs-mv6.active .mv6-era:nth-child(6) { animation-delay: 0.58s; }
-  #cs-mv6 .mv6-gnr-card { opacity: 0; transform: translateY(10px) scale(0.96); }
-  #cs-mv6.active .mv6-gnr-card { animation: mv6CardIn 0.85s 0.95s cubic-bezier(.45,.05,.18,1) forwards; }
-  @keyframes mv6In { to { opacity: 1; transform: none; } }
-  @keyframes mv6CardIn { to { opacity: 1; transform: translateY(0) scale(1); } }
-  #cs-mv6 .mv6-mission { opacity: 0; transform: translateY(6px); }
-  #cs-mv6.active .mv6-mission { animation: mv6In 0.75s 1.85s cubic-bezier(.45,.05,.18,1) forwards; }
+  /* Pre-headline eyebrow animates in first as the lead-in [Dave 2026-05-06: more fun intro animation] */
+  #cs-mv6 .mv6-eyebrow { opacity: 0; transform: translateY(-6px); }
+  #cs-mv6.active .mv6-eyebrow { animation: mv6EyebrowIn 0.55s 0.10s cubic-bezier(.22,1,.36,1) forwards; }
+  @keyframes mv6EyebrowIn { to { opacity: 1; transform: translateY(0); } }
+
+  /* Era cards march in from below with a slight overshoot bounce — playful, intentional rhythm */
+  #cs-mv6 .mv6-era { opacity: 0; transform: translateY(28px) scale(0.92); }
+  #cs-mv6.active .mv6-era { animation: mv6EraIn 0.7s cubic-bezier(.34,1.56,.64,1) forwards; }
+  #cs-mv6.active .mv6-era:nth-child(1) { animation-delay: 0.55s; }
+  #cs-mv6.active .mv6-era:nth-child(2) { animation-delay: 0.70s; }
+  #cs-mv6.active .mv6-era:nth-child(3) { animation-delay: 0.85s; }
+  #cs-mv6.active .mv6-era:nth-child(4) { animation-delay: 1.00s; }
+  #cs-mv6.active .mv6-era:nth-child(5) { animation-delay: 1.15s; }
+  #cs-mv6.active .mv6-era:nth-child(6) { animation-delay: 1.30s; }
+  @keyframes mv6EraIn { 0% { opacity: 0; transform: translateY(28px) scale(0.92); } 70% { opacity: 1; transform: translateY(-3px) scale(1.02); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+
+  /* The GnR 7th card — DRAMATIC entrance: scale up from small + gold halo burst behind it */
+  #cs-mv6 .mv6-gnr-card { opacity: 0; transform: scale(0.6); position: relative; }
+  #cs-mv6.active .mv6-gnr-card { animation: mv6GnrPop 1s 1.65s cubic-bezier(.34,1.56,.64,1) forwards; }
+  @keyframes mv6GnrPop { 0% { opacity: 0; transform: scale(0.6); } 60% { opacity: 1; transform: scale(1.08); } 100% { opacity: 1; transform: scale(1); } }
+  /* Halo burst behind the GnR card — expands and fades as the card lands */
+  #cs-mv6 .mv6-gnr-card::before { content: ""; position: absolute; inset: -16px; background: radial-gradient(circle, rgba(184,149,74,0.55) 0%, rgba(184,149,74,0.15) 45%, transparent 75%); border-radius: 24px; opacity: 0; pointer-events: none; z-index: -1; }
+  #cs-mv6.active .mv6-gnr-card::before { animation: mv6Halo 1.4s 1.65s ease-out forwards; }
+  @keyframes mv6Halo { 0% { opacity: 0; transform: scale(0.7); } 35% { opacity: 1; transform: scale(1.15); } 100% { opacity: 0; transform: scale(1.45); } }
+
+  /* Mission text — final beat, gentle fade-up */
+  #cs-mv6 .mv6-mission { opacity: 0; transform: translateY(8px); }
+  #cs-mv6.active .mv6-mission { animation: mv6MissionIn 0.8s 2.55s cubic-bezier(.22,1,.36,1) forwards; }
+  @keyframes mv6MissionIn { to { opacity: 1; transform: translateY(0); } }
+
+  html[data-export="1"] #cs-mv6 .mv6-eyebrow,
   html[data-export="1"] #cs-mv6 .mv6-era,
   html[data-export="1"] #cs-mv6 .mv6-gnr-card,
   html[data-export="1"] #cs-mv6 .mv6-mission { opacity: 1 !important; transform: none !important; animation: none !important; }
+  html[data-export="1"] #cs-mv6 .mv6-gnr-card::before { display: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px">
 
-    <!-- Pre-headline -->
-    <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px">Every era of civilization runs on something new</div>
+    <!-- Pre-headline (animates in first as the lead-in) -->
+    <div class="mv6-eyebrow" style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px">Every era of civilization runs on something new</div>
 
     <!-- 6 muted past-era chips + 7th gold GnR card -->
     <div style="display:grid;grid-template-columns:repeat(6,0.7fr) 1.4fr;gap:8px;width:min(1280px,98%);align-items:stretch">
@@ -15598,9 +15616,9 @@ const SLIDE_ORDER = [
   // cs-hc6 (Each era of internet · why now)                     DELETED 2026-05-04 per Dave
   // cs-hc7 (Measure / Network / Sell / Abundant 4-verb row)     DELETED 2026-05-06 per Dave
   // cs-hc8 (Rare double — abundance + value compounds) MOVED to APPENDIX 2026-05-06 per Dave
-  // cs-hc11 (Creator economy compare/contrast) DELETED 2026-05-06 per Dave — redundant with cs-hc12 which makes the same distributed-vs-concentrated argument with cleaner framing
-  'cs-hc12',  // 23 ECONOMY · What is your human value to others? (distributed network)
-  'cs-hc9'    // 24 MISSION · Run on abundant human connection (merged: mission + how-it's-possible + NEPC ground truth) [cs-hc10 absorbed 2026-05-04]
+  'cs-hc11',  // 23 ECONOMY · Attention concentrates / Connection distributes (creator economy power-law vs flat) [restored 2026-05-06 per Dave]
+  'cs-hc12',  // 24 ECONOMY · What is your human value to others? (distributed network)
+  'cs-hc9'    // 25 MISSION · Run on abundant human connection (merged: mission + how-it's-possible + NEPC ground truth) [cs-hc10 absorbed 2026-05-04]
   // cs-hc10 (Run on abundant human connection · standalone close) MERGED INTO cs-hc9 2026-05-04 per Dave
   // ===== END ORANGE REVIEW SECTION =====
   // cs-nr (Networked Reciprocity) DELETED 2026-05-03 PM per Dave
