@@ -7812,8 +7812,8 @@ html, body, html body{
   #cs-bh2.active .bh2-card-4 { animation-delay: 3.6s; }
   html[data-export="1"] #cs-bh2 [class*="bh2-"] { animation: none !important; opacity: 1 !important; transform: none !important; }
 </style>
-<div class="casey-slide ds-focus appendix-slide" id="cs-bh2" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Tomorrow &middot; Synthesis</div>
+<div class="casey-slide ds-focus" id="cs-bh2">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Autonomous social coordination</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="bh2-stage">
       <div class="bh2-eye">With <span class="gnr-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
@@ -14177,7 +14177,7 @@ html, body, html body{
   @keyframes fw1HintPulse { 0%,100% { opacity:0.7; } 50% { opacity:1; } }
   html[data-export="1"] #cs-fw1 .fw1-hint { opacity: 0 !important; animation: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-fw1" data-stage="0" onclick="csFw1Advance();event.stopPropagation()" style="cursor:pointer">
+<div class="casey-slide ds-focus appendix-slide" id="cs-fw1" data-stage="0" onclick="csFw1Advance();event.stopPropagation()" style="cursor:pointer;display:none">
 <section style="position:relative;min-height:100%;width:100%">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Autonomous social coordination</div>
 <div class="inner" style="padding:50px 32px 24px;text-align:center;max-width:1180px;margin:0 auto">
@@ -16335,7 +16335,7 @@ const SLIDE_ORDER = [
   'cs-11e',
   // cs-dupr (Founder's Bet) MERGED INTO cs-18 founder slide per Dave 2026-05-06 PM v2 — the DUPR-rejection IS the founder story; standalone cs-dupr div retained in HTML as backup but not in main flow.
   'cs-19',    // 10 3× court fee revenue · For Your Club
-  'cs-fw1',   // 11 Flywheel · single loop [Dave decided ONE loop 2026-04-30 PM evening; locked as canonical 2026-05-01 — beat cs-34 in head-to-head: cleaner engine motif + better headline]
+  'cs-bh2',   // 11 Autonomous social coordination · "Each of us digitizes our impressions. GnR learns who we are to each other." [Dave 2026-05-06 PM v12: cs-fw1 swapped to appendix — cs-bh2 promoted from appendix; same eyebrow, more concrete synthesis visual]
   // cs-34 (Flywheel · network effects) → APPENDIX 2026-05-01 per Dave — cs-fw1 won the head-to-head; "graph is moat" idea already covered by cs-4 + cs-ns1
   // cs-rcp (Receipts) → APPENDIX 2026-05-01 per Dave
   // cs-kl (Krista Loop) → APPENDIX 2026-05-01 per Dave ("came out of nowhere")
@@ -16405,12 +16405,13 @@ const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const APPENDIX_ORDER = [
   'cs-hc8',    // Rare double — most things AI makes abundant get cheaper, connection gets more valuable [moved from main 2026-05-06 per Dave: 'decent and can be moved to the appendix']
   'cs-prob',   // NEW 2026-05-05 per Dave: Every NEPC problem is a GnR problem — the unfair-advantage map. First slide in appendix.
-  'cs-bh2',    // Brain → Digital · TOMORROW · multi-person synthesis (moved from main per Dave 2026-05-03 PM)
+  'cs-fw1',    // Flywheel · single loop — moved to appendix as backup 2026-05-06 PM v12 per Dave (cs-bh2 promoted to main slot 11)
+  // cs-bh2 PROMOTED to main flow slot 11 (2026-05-06 PM v12) — was in appendix
   'cs-bh2-v2', // Brain → Digital · LIVING GRAPH variant (moved from main flow per Dave 2026-05-03 PM — kept as backup)
   'cs-about',// 1: Brand · "It's About"
   'cs-26',   // 2: Closer · "We're wired to Give n Receive. All of us."
   'cs-a3',   // 3: Pickleball TAM original [moved from main flow 2026-05-03 PM per Dave]
-  'cs-ns1',  // 4: North Star · 10-year orbital map original [moved from main flow 2026-05-03 PM per Dave]
+  // cs-ns1 (North Star · 10-year orbital map) DELETED from appendix 2026-05-06 PM v12 per Dave
   'cs-8b',   // Abundance · "The Next Abundance Frontier" [moved BACK to appendix 2026-05-04 per Dave — cs-future already lands abundance via verb 5; cs-mv6 restates as mission; cs-8b was a 3rd hit]
   'cs-33',   // 2: Raising $1.5M Seed
   'cs-a20',  // 3: The Ask  (was cs-24)
