@@ -9446,14 +9446,14 @@ html, body, html body{
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
       Same courts. Better groups.<br>
-      <em style="font-style:italic;color:#b8954a">$210K in new court fees a year.</em>
+      <em style="font-style:italic;color:#b8954a">$210K in court fees/year.</em>
     </div>
     <!-- HERO REVENUE STAT [Dave 2026-05-06 PM]: replaced the 55%→61% utilization before/after.
-         Court utilization was an internal ops metric — court-fee revenue is the metric investors care about. -->
+         Court utilization was an internal ops metric — court-fee revenue is the metric investors care about.
+         Italic sub-line removed Dave 2026-05-06 PM v2 — hero stat stands alone. -->
     <div class="c11e-anim c11e-hero" style="margin:0 auto 36px;max-width:760px;padding:46px 56px;border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.14) 0%,rgba(184,149,74,0.04) 100%);border:1.5px solid rgba(184,149,74,0.50);text-align:center;box-shadow:0 0 44px rgba(184,149,74,0.20);position:relative">
       <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-bottom:12px">Annual court fees powered by G<span style="text-transform:none">n</span>R</div>
       <div style="font-family:'Playfair Display',serif;font-size:clamp(4.5rem,9.5vw,7.2rem);font-weight:900;color:#b8954a;line-height:1;letter-spacing:-0.04em;text-shadow:0 0 38px rgba(184,149,74,0.30)">$210K</div>
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(0.95rem,1.45vw,1.2rem);color:rgba(26,22,18,0.72);margin-top:14px;line-height:1.4">orchestrated by G<span style="font-style:normal">n</span>R at New&nbsp;England&nbsp;Pickleball&nbsp;Club &mdash; <span style="color:#1a1612;font-weight:600;font-style:normal">real club, real revenue, real proof.</span></div>
     </div>
     <!-- Three quotes -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;max-width:1080px;margin:0 auto">
@@ -10295,18 +10295,29 @@ html, body, html body{
   </div>
 
 
-  <!-- 3-bar chart: court-fee revenue powered by GnR at each automation stage [Dave 2026-05-06 PM].
-       Heights scale to revenue: 130px @ $210K · 241px @ $390K · 390px @ $630K (3× from Stage 1).
-       Replaced 4-bar net-profit-with-utilization chart. Court-fee revenue is the investor-facing metric. -->
-  <div style="display:flex;align-items:flex-end;justify-content:center;gap:64px;margin:0 0 12px 0;flex-wrap:wrap;max-width:1000px;margin-left:auto;margin-right:auto">
+  <!-- 4-bar chart: court-fee revenue across automation stages [Dave 2026-05-06 PM v2 — restored Before GnR bar].
+       Heights scale to revenue: ~28px baseline @ $0 · 130px @ $210K · 241px @ $390K · 390px @ $630K (3× from Stage 1). -->
+  <div style="display:flex;align-items:flex-end;justify-content:center;gap:48px;margin:0 0 12px 0;flex-wrap:wrap;max-width:1100px;margin-left:auto;margin-right:auto">
+    <!-- Before GnR — baseline (no GnR-driven court fees yet) -->
+    <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
+      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:rgba(26,22,18,0.6);margin-bottom:6px">$0</div>
+      <div style="font-size:0.78rem;color:rgba(26,22,18,0.45);font-weight:700;margin-bottom:10px;letter-spacing:.18em;text-transform:uppercase">&mdash;</div>
+      <div style="width:140px;height:28px;background:rgba(26,22,18,.05);border:1px dashed rgba(26,22,18,.30);border-bottom:none;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,0.4)">no G<span style="text-transform:none">n</span>R</div>
+      </div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:140px"></div>
+      <div style="font-size:1rem;font-weight:600;color:rgba(26,22,18,0.7);margin-top:14px">Before G<span style="text-transform:none">n</span>R</div>
+      <div style="font-size:0.78rem;color:rgba(26,22,18,0.5);margin-top:3px;font-style:italic">baseline</div>
+    </div>
+
     <!-- Stage 1 — TODAY (manual GnR invites) -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">$210K</div>
       <div style="font-size:0.78rem;color:#2a8a4f;font-weight:700;margin-bottom:10px;letter-spacing:.18em;text-transform:uppercase">Today</div>
-      <div style="width:148px;height:130px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">Court fees<br>per year</div>
+      <div style="width:140px;height:130px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">Court fees<br>per year</div>
       </div>
-      <div style="border-top:1px solid rgba(26,22,18,.2);width:148px"></div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:140px"></div>
       <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:14px">Stage 1</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">manual GnR invites</div>
     </div>
@@ -10315,10 +10326,10 @@ html, body, html body{
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">$390K</div>
       <div style="font-size:0.95rem;color:#2a8a4f;font-weight:700;margin-bottom:10px">+86%</div>
-      <div style="width:148px;height:241px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">Court fees<br>per year</div>
+      <div style="width:140px;height:241px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">Court fees<br>per year</div>
       </div>
-      <div style="border-top:1px solid rgba(26,22,18,.2);width:148px"></div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:140px"></div>
       <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:14px">Stage 2</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">human-in-loop</div>
     </div>
@@ -10327,10 +10338,10 @@ html, body, html body{
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:#b8954a;margin-bottom:6px">$630K</div>
       <div style="font-size:1.05rem;color:#c8462c;font-weight:900;margin-bottom:10px">3&times; today</div>
-      <div style="width:148px;height:390px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:10px 10px 0 0;position:relative;box-shadow:0 0 32px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 8px">Court fees<br>per year</div>
+      <div style="width:140px;height:390px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:10px 10px 0 0;position:relative;box-shadow:0 0 32px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 8px">Court fees<br>per year</div>
       </div>
-      <div style="border-top:1px solid rgba(212,168,83,.4);width:148px"></div>
+      <div style="border-top:1px solid rgba(212,168,83,.4);width:140px"></div>
       <div style="font-size:1rem;font-weight:800;color:#b8954a;margin-top:14px">Stage 3</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,.7);margin-top:3px;font-style:italic">autonomous</div>
     </div>
