@@ -15227,11 +15227,21 @@ html, body, html body{
   /* Belt-and-suspenders 2026-05-03 PM: force opacity 0 with !important so no cached rule wins */
   #cs-2c .c2c-reveal { opacity: 0 !important; transform: translateY(10px); transition: opacity 0.5s cubic-bezier(.45,.05,.18,1), transform 0.5s cubic-bezier(.45,.05,.18,1); pointer-events: none; visibility: hidden; }
   #cs-2c[data-shown="1"] .c2c-reveal { opacity: 1 !important; transform: translateY(0); transition-delay: 0.10s; visibility: visible; }
-  /* Staggered 3-part reveal [Dave 2026-05-03 PM]: each phrase fades in sequentially */
+  /* Staggered reveal [Dave 2026-05-06 PM]: setup → arrow → punchline → afterthought */
   #cs-2c .c2c-r-part { opacity: 0; transition: opacity 0.55s cubic-bezier(.45,.05,.18,1); }
   #cs-2c[data-shown="1"] .c2c-r-1 { opacity: 1; transition-delay: 0.20s; }
-  #cs-2c[data-shown="1"] .c2c-r-2 { opacity: 1; transition-delay: 0.50s; }
-  #cs-2c[data-shown="1"] .c2c-r-3 { opacity: 1; transition-delay: 0.80s; }
+  #cs-2c[data-shown="1"] .c2c-r-2 { opacity: 1; transition-delay: 0.95s; }
+  #cs-2c[data-shown="1"] .c2c-r-3 { opacity: 1; transition-delay: 1.40s; }
+  /* Down-arrow (the equivalence move) — line draws top→bottom, head pops with bounce */
+  #cs-2c .c2c-r-arrow { opacity: 0; transition: opacity 0.4s cubic-bezier(.45,.05,.18,1); }
+  #cs-2c .c2c-r-arrow .arr-line { stroke-dasharray: 50; stroke-dashoffset: 50; transition: stroke-dashoffset 0.55s cubic-bezier(.45,.05,.18,1); }
+  #cs-2c .c2c-r-arrow .arr-head { opacity: 0; transform: scale(0.4); transform-origin: 50% 100%; transition: opacity 0.35s cubic-bezier(.34,1.56,.64,1), transform 0.4s cubic-bezier(.34,1.56,.64,1); }
+  #cs-2c[data-shown="1"] .c2c-r-arrow { opacity: 1; transition-delay: 0.55s; }
+  #cs-2c[data-shown="1"] .c2c-r-arrow .arr-line { stroke-dashoffset: 0; transition-delay: 0.55s; }
+  #cs-2c[data-shown="1"] .c2c-r-arrow .arr-head { opacity: 1; transform: scale(1); transition-delay: 1.00s; }
+  html[data-export="1"] #cs-2c .c2c-r-arrow,
+  html[data-export="1"] #cs-2c .c2c-r-arrow .arr-line,
+  html[data-export="1"] #cs-2c .c2c-r-arrow .arr-head { opacity: 1 !important; transform: none !important; stroke-dashoffset: 0 !important; transition: none !important; }
   html[data-export="1"] #cs-2c .c2c-reveal,
   html[data-export="1"] #cs-2c .c2c-r-part { opacity: 1 !important; transform: none !important; visibility: visible !important; }
 
@@ -15335,11 +15345,30 @@ html, body, html body{
     <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 
-  <!-- Click-revealed sub-line: "Our communities run on human connection. That's what they are."
-       MOVED here from cs-2b on 2026-05-03 per Dave. cs-2b's title is now "But no technology measures..." -->
-  <div class="c2c-reveal" style="margin: 30px auto 0; max-width:1200px; padding: 0 32px;">
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2.5vw,2rem);color:#1a1612;line-height:1.25;font-weight:600;letter-spacing:-0.012em;text-align:center">
-<span class="c2c-r-part c2c-r-1">Our communities run on <em style="font-style:italic;font-weight:500;color:#c8462c">human connection</em></span><br><span class="c2c-r-part c2c-r-2">and our <em style="font-style:italic;font-weight:500;color:#b8954a">unique value</em> to each other.</span><br><span class="c2c-r-part c2c-r-3">That's what they <em style="font-style:italic;font-weight:500;color:#c8462c">are</em>.</span>
+  <!-- Click-revealed sub-line: setup → arrow → punchline → afterthought.
+       3-beat reveal redesigned 2026-05-06 PM per Dave: arrow visualizes the equivalence move
+       between "human connection" and "unique value to each other" — the punchline. -->
+  <div class="c2c-reveal" style="margin: 26px auto 0; max-width:1200px; padding: 0 32px;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+      <!-- Setup -->
+      <div class="c2c-r-part c2c-r-1" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,2.2vw,1.8rem);color:rgba(26,22,18,0.78);line-height:1.22;font-weight:500;letter-spacing:-0.012em;text-align:center">
+        Our communities run on <em style="font-style:italic;font-weight:600;color:#c8462c">human connection</em>
+      </div>
+      <!-- The "is really" arrow — line draws, head pops -->
+      <div class="c2c-r-arrow" style="display:flex;align-items:center;justify-content:center">
+        <svg width="48" height="60" viewBox="0 0 48 60" xmlns="http://www.w3.org/2000/svg" style="display:block">
+          <line class="arr-line" x1="24" y1="4" x2="24" y2="44" stroke="#b8954a" stroke-width="2.8" stroke-linecap="round"/>
+          <polygon class="arr-head" points="24,56 12,38 36,38" fill="#b8954a"/>
+        </svg>
+      </div>
+      <!-- Punchline (bigger, heavier — the resolution) -->
+      <div class="c2c-r-part c2c-r-2" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,3vw,2.45rem);color:#1a1612;line-height:1.16;font-weight:700;letter-spacing:-0.018em;text-align:center">
+        Our <em style="font-style:italic;font-weight:600;color:#b8954a">unique value</em> to each other.
+      </div>
+      <!-- Afterthought (smaller italic, settles the point) -->
+      <div class="c2c-r-part c2c-r-3" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.2rem);color:rgba(26,22,18,0.6);line-height:1.4;font-weight:500;letter-spacing:-0.005em;text-align:center;margin-top:4px">
+        That's what they are.
+      </div>
     </div>
   </div>
 </div>
