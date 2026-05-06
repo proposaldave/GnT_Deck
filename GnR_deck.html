@@ -11435,7 +11435,7 @@ html, body, html body{
   #cs-prom .pr-receive .pr-arrow { justify-content:flex-start; }
   #cs-prom .pr-give .pr-arrow    { color:#4d82c6; }
   #cs-prom .pr-receive .pr-arrow { color:#c94d32; }
-  #cs-prom .pr-promise { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.6vw,1.4rem); font-weight:700; color:#1a1612; line-height:1.3; letter-spacing:-0.012em; margin-top:14px; max-width:380px; }
+  #cs-prom .pr-promise { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,2.35vw,2.05rem); font-weight:700; color:#1a1612; line-height:1.3; letter-spacing:-0.012em; margin-top:18px; max-width:520px; }
   #cs-prom .pr-give    .pr-promise { margin-left:auto; }
   #cs-prom .pr-promise em { font-style:italic; font-weight:500; }
   #cs-prom .pr-give    .pr-promise em { color:#4d82c6; }
@@ -11444,9 +11444,9 @@ html, body, html body{
   #cs-prom .pr-divider { display:flex; align-items:center; justify-content:center; gap:14px; }
   #cs-prom .pr-divider .pr-line { width:80px; height:1px; background:#b8954a; opacity:0.6; }
   #cs-prom .pr-divider .pr-dia  { width:7px; height:7px; border:1px solid #b8954a; transform:rotate(45deg); }
-  #cs-prom .pr-tagline { font-family:'Playfair Display',Georgia,serif; font-size:1.05rem; color:rgba(26,22,18,0.7); letter-spacing:0.02em; }
+  #cs-prom .pr-tagline { font-family:'Playfair Display',Georgia,serif; font-size:1.35rem; color:rgba(26,22,18,0.7); letter-spacing:0.02em; }
   #cs-prom .pr-tagline strong { color:#1a1612; font-weight:700; }
-  #cs-prom .pr-contact { font-family:'Manrope',sans-serif; font-size:0.82rem; color:rgba(26,22,18,0.72); letter-spacing:0.04em; font-weight:500; }
+  #cs-prom .pr-contact { font-family:'Manrope',sans-serif; font-size:1.05rem; color:rgba(26,22,18,0.78); letter-spacing:0.04em; font-weight:500; }
   #cs-prom .pr-contact strong { font-weight:700; color:#1a1612; }
   #cs-prom .pr-contact a { color:#b8954a; text-decoration:none; border-bottom:1px solid rgba(184,149,74,0.45); }
   /* Reveal animation: G slides up, R slides down, n fades in, promises follow */
@@ -11504,7 +11504,7 @@ html, body, html body{
     <!-- LEFT — GIVE (you to community) — "You give" arrow deleted per Dave 2026-05-02 PM -->
     <div class="pr-give">
       <span class="pr-letter">G</span>
-      <div class="pr-promise">Your community gets<br><em>the most out of you.</em></div>
+      <div class="pr-promise">When your community gets<br><em>the most out of you.</em></div>
     </div>
 
     <!-- CENTER — italic n -->
@@ -11664,7 +11664,7 @@ html, body, html body{
      Center crossing = the figure (you/community).
      Subtle gold flow-arrows along the loop convey perpetual motion. ===== -->
 <div class="casey-slide ds-focus" id="cs-12m2">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Our name is our brand</div>
 
   <!-- BRAND SLIDE — concept 3 + 6 hybrid [Dave 2026-05-06 PM v11]
        Solid G + R in BRAND COLORS (#4d82c6 blue / #c94d32 red), italic ink n at center.
@@ -13613,7 +13613,7 @@ html, body, html body{
 <!-- ===== cs-mv6-altB · MISSION variant B: chart IS the slide. Era labels are the X-axis ticks.
      No cards — the curve carries the whole story. Mission line big at the bottom. ===== -->
 <div class="casey-slide ds-focus" id="cs-mv6-altB">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission · variant B</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 56px;gap:14px">
 
     <!-- Mission line MOVED to TOP — above the chart [Dave 2026-05-06 PM v11; v12 bumped sizes] -->
@@ -16573,6 +16573,7 @@ const SLIDE_ORDER = [
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
   // cs-hc3 (radiating-figure Human Flywheel) DELETED from main flow 2026-05-06 PM v5 per Dave — replaced with cs-12m2 infinity-loop reciprocity.
   'cs-12m2',  // 12 Reciprocity Flywheel — infinity loop with WHEN/THEN reciprocity (was the slot-12 alt; now primary)
+  'cs-hc9',   // 13 'We feel most alive when we're free, generous, spontaneously ourselves' [moved from end-of-deck to right after brand slide per Dave 2026-05-06 PM]
   'cs-25',    // 14 Why pickleball first ("Pickleball is the clearest path...")
   'cs-tv',    // 15 MERGED Vision + Pickleball TAM ("We're mapping human connection — one invitation at a time" + $2.55B inner-rings TAM) [Dave 2026-05-06 PM: moved up to immediately follow cs-25]
   'cs-future',// 16 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
@@ -16584,7 +16585,7 @@ const SLIDE_ORDER = [
   // cs-16 (Every signal) → APPENDIX
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
   // cs-ns1 (North Star original orbital) MOVED to APPENDIX 2026-05-03 PM per Dave
-  'cs-mv6',   // 21 Mission · "for all our lives to run on abundant human connection" [Dave 2026-05-03 PM — moved to right BEFORE cs-prom (the new last/closer slide)]
+  // cs-mv6 → MOVED to APPENDIX (last slide) per Dave 2026-05-06 PM — cs-mv6-altB now serves as the mission slide in main flow
   // [Dave 2026-05-06 PM] Mission alts: era progression + chart of human-connection downtrend → parabolic at GnR.
   // Variants A/B/C in review — Dave to pick best, then keep one and delete others.
   // cs-mv6-altA → DELETED from main flow 2026-05-06 PM per Dave (10x version moved to appendix as cs-mv6-app)
@@ -16604,9 +16605,9 @@ const SLIDE_ORDER = [
   // cs-hc6 (Each era of internet · why now)                     DELETED 2026-05-04 per Dave
   // cs-hc7 (Measure / Network / Sell / Abundant 4-verb row)     DELETED 2026-05-06 per Dave
   // cs-hc8 (Rare double — abundance + value compounds) MOVED to APPENDIX 2026-05-06 per Dave
-  'cs-hc11',  // 23 ECONOMY · Attention concentrates / Connection distributes (creator economy power-law vs flat) [restored 2026-05-06 per Dave]
+  'cs-hc11'   // 23 ECONOMY · Attention concentrates / Connection distributes (creator economy power-law vs flat) [restored 2026-05-06 per Dave]
   // cs-hc12 ('What is your human value to others?' / Witnessed every Tuesday...) → DELETED 2026-05-06 PM per Dave
-  'cs-hc9'    // 25 MISSION · Run on abundant human connection (merged: mission + how-it's-possible + NEPC ground truth) [cs-hc10 absorbed 2026-05-04]
+  // cs-hc9 → MOVED to slot 13 (right after cs-12m2 brand slide) per Dave 2026-05-06 PM
   // cs-hc10 (Run on abundant human connection · standalone close) MERGED INTO cs-hc9 2026-05-04 per Dave
   // ===== END ORANGE REVIEW SECTION =====
   // cs-nr (Networked Reciprocity) DELETED 2026-05-03 PM per Dave
@@ -16689,6 +16690,7 @@ const APPENDIX_ORDER = [
   // cs-a17 + cs-a18 → DELETED 2026-05-02 per Dave (orphan refs — no slide div, were rendering blank)
   // cs-a19 ("What Runs the World" — Land/Labor/Capital/Information/Attention/Intelligence → Human Connection)
   //   → DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed)
+  'cs-mv6',  // LAST · Mission · 'for all our lives to run on abundant human connection' (era-cards version) [moved from main flow per Dave 2026-05-06 PM — cs-mv6-altB now main mission slide]
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
@@ -17359,18 +17361,19 @@ const slideLabels = [
   '3× court fees for your club',                     // 10 cs-19
   'Autonomous social coordination',                  // 11 cs-fw1
   'Networked reciprocity',                           // 12 cs-12m2 (infinity loop)
-  'Why pickleball first',                            // 13 cs-25
+  'We feel most alive · NEPC ground truth',          // 13 cs-hc9 [moved from end-of-deck per Dave 2026-05-06 PM]
+  'Why pickleball first',                            // 14 cs-25
   'Mapping human connection · Pickleball TAM',       // 14 cs-tv
   'Future of our communities',                       // 15 cs-future
   'All In · Dave Velardo',                           // 16 cs-18
   'CTO · Steve Callan',                              // 17 cs-27
-  'Mission · run on abundant human connection',      // 18 cs-mv6
+  // 'Mission · run on abundant human connection' label removed — cs-mv6 moved to APPENDIX (last slide) per Dave 2026-05-06 PM
   // 'Mission · variant A' label removed — cs-mv6-altA deleted from main flow 2026-05-06 PM (10x version moved to appendix as cs-mv6-app)
-  'Mission · variant B',                             // 20 cs-mv6-altB
+  'Mission',                                         // cs-mv6-altB (was 'Mission · variant B' — renamed per Dave 2026-05-06 PM)
   'Our Promise',                                     // 21 cs-prom
   'Economy · attention vs connection',               // 22 cs-hc11
   // 'What is your human value to others?' label removed — cs-hc12 deleted from main flow 2026-05-06 PM per Dave
-  'Mission · run on abundant connection',            // 24 cs-hc9
+  // cs-hc9 label removed at end — moved to slot 13 (right after cs-12m2) per Dave 2026-05-06 PM
 ];
 
 // Build nav dots
