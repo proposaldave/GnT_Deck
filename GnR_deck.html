@@ -10468,15 +10468,19 @@ html, body, html body{
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Why pickleball first</div>
 <div class="inner" style="padding:80px 56px 48px;max-width:1200px;margin:0 auto">
 
-  <!-- TOP kicker [Dave 2026-05-06 PM v3]: lead phrase centered, then RED follow-up positioned over column 1 above the red arrow so the red text VISUALLY links to the red arrow → red card. -->
-  <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.3rem,2.05vw,1.7rem);color:#1a1612;line-height:1.32;margin-bottom:14px;max-width:1180px;text-align:center">
+  <!-- TOP main header [Dave 2026-05-06 PM v4 simplified]: 'clearest path' moved from bottom culmination card up to TOP — that IS the slide's point -->
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,3.55vw,3rem);font-weight:800;line-height:1.14;color:#1a1612;letter-spacing:-0.018em;max-width:1320px;margin:0 auto 14px;text-align:center">
+    Pickleball is the clearest path to the first global <em style="font-style:italic;color:#b8954a">autonomous social coordination network.</em>
+  </div>
+  <!-- Subhead: most community-oriented (BUMPED size per Dave 2026-05-06 PM) -->
+  <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.55rem,2.45vw,2.05rem);color:#1a1612;line-height:1.32;margin-bottom:18px;max-width:1280px;text-align:center">
     Pickleball is the <em style="font-style:italic;color:#b8954a;font-weight:600">most community-oriented sport ever invented.</em>
   </div>
-  <!-- Red follow-up "→ it desperately needs this new paradigm." aligned above the red arrow column -->
+  <!-- Red follow-up above red card -->
   <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1280px;margin-bottom:4px;align-items:end">
     <div style="text-align:center">
       <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(0.95rem,1.35vw,1.18rem);color:#c8462c;font-weight:600;line-height:1.3;margin-bottom:6px">
-        Desperately needs<br>new paradigm.
+        Desperately needs<br>new GnR paradigm.
       </div>
     </div>
     <div></div><div></div><div></div><div></div>
@@ -10711,16 +10715,15 @@ html, body, html body{
               <circle cx="30" cy="30" r="2.2" fill="rgba(122,74,140,0.35)" stroke="none"/>
             </svg>
           </div>
-          <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Already a social network beyond the courts.</div>
+          <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Already a social<br>network beyond<br>the courts.</div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- 6th CULMINATION CARD [Dave 2026-05-06 PM]: full-width gold-glow card; flips to reveal the closer.
-       Front = teaser ("→ THE PATH"). Back = "Pickleball is the clearest path..." closer text. -->
-  <div class="c25-culm" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()" style="margin:24px auto 0;max-width:1280px;width:100%;cursor:pointer;perspective:1800px;min-height:170px;position:relative">
+  <!-- 6th CULMINATION CARD REMOVED 2026-05-06 PM v4 per Dave (simplification): 'clearest path' moved to top as main header. -->
+  <div class="c25-culm" data-flipped="0" onclick="this.dataset.flipped=this.dataset.flipped==='1'?'0':'1';event.stopPropagation()" style="display:none;margin:24px auto 0;max-width:1280px;width:100%;cursor:pointer;perspective:1800px;min-height:170px;position:relative">
     <div class="c25-culm-inner" style="position:relative;width:100%;height:100%;min-height:170px;transform-style:preserve-3d;transition:transform 0.95s cubic-bezier(.45,.05,.18,1)">
       <!-- FRONT: gold-glow teaser — simple Earth hero icon, no text [Dave 2026-05-06 PM v11 — clean earth, not pickleball-earth hybrid] -->
       <div class="c25-culm-front" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.16) 0%,rgba(184,149,74,0.05) 100%);border:1.5px solid rgba(184,149,74,0.55);box-shadow:0 0 48px rgba(184,149,74,0.20);padding:24px 44px;display:flex;align-items:center;justify-content:center;text-align:center">
@@ -11703,8 +11706,41 @@ html, body, html body{
     #cs-12m2.active .ripple-ring.r3 { animation:cs12m2ripple 4s ease-out infinite 2s; }
     #cs-12m2.active .ripple-ring.r4 { animation:cs12m2ripple 4s ease-out infinite 3s; }
     @keyframes cs12m2pulse { 0%,100% { transform:scale(1) } 50% { transform:scale(1.018) } }
-    #cs-12m2.active .gletter { animation:cs12m2pulse 5.2s ease-in-out infinite; }
-    #cs-12m2.active .rletter { animation:cs12m2pulse 5.2s ease-in-out infinite 2.6s; }
+    /* === Entrance animation [Dave 2026-05-06 PM v14 — for live pitch] ===
+       Sequence (auto on slide enter, no clicks needed):
+       0.15s G fades in (slides up)        |  0.35s R fades in (slides down)  |  0.55s n appears
+       0.85s networks fan out from G/R     |  1.45s clauses fade in below     |
+       2.05s curved arrow + n→reciprocity arrow + label appear
+       2.95s YOUR IMPACT RIPPLES closer line appears */
+    #cs-12m2 .gletter,
+    #cs-12m2 .rletter,
+    #cs-12m2 .nletter,
+    #cs-12m2 .dispersion-left,
+    #cs-12m2 .dispersion-right,
+    #cs-12m2 .clause,
+    #cs-12m2 .reciprocity-arrow,
+    #cs-12m2 .closer-line { opacity:0; }
+    #cs-12m2 .gletter { transform:translateY(40px); }
+    #cs-12m2 .rletter { transform:translateY(-40px); }
+    @keyframes cs12m2In         { to { opacity:1; transform:none; } }
+    @keyframes cs12m2InDispLeft  { to { opacity:1; } }
+    @keyframes cs12m2InDispRight { to { opacity:1; } }
+    #cs-12m2.active .gletter { animation: cs12m2In 0.7s 0.15s cubic-bezier(.45,.05,.18,1) forwards, cs12m2pulse 5.2s 1.4s ease-in-out infinite; }
+    #cs-12m2.active .rletter { animation: cs12m2In 0.7s 0.35s cubic-bezier(.45,.05,.18,1) forwards, cs12m2pulse 5.2s 4.0s ease-in-out infinite; }
+    #cs-12m2.active .nletter { animation: cs12m2In 0.6s 0.55s ease forwards; }
+    #cs-12m2.active .dispersion-left  { animation: cs12m2InDispLeft  1.0s 0.85s cubic-bezier(.45,.05,.18,1) forwards; }
+    #cs-12m2.active .dispersion-right { animation: cs12m2InDispRight 1.0s 0.85s cubic-bezier(.45,.05,.18,1) forwards; }
+    #cs-12m2.active .clause           { animation: cs12m2In 0.7s 1.45s ease forwards; }
+    #cs-12m2.active .reciprocity-arrow { animation: cs12m2In 0.8s 2.05s ease forwards; }
+    #cs-12m2.active .closer-line      { animation: cs12m2In 0.7s 2.95s ease forwards; }
+    html[data-export="1"] #cs-12m2 .gletter,
+    html[data-export="1"] #cs-12m2 .rletter,
+    html[data-export="1"] #cs-12m2 .nletter,
+    html[data-export="1"] #cs-12m2 .dispersion-left,
+    html[data-export="1"] #cs-12m2 .dispersion-right,
+    html[data-export="1"] #cs-12m2 .clause,
+    html[data-export="1"] #cs-12m2 .reciprocity-arrow,
+    html[data-export="1"] #cs-12m2 .closer-line { opacity:1 !important;transform:none !important;animation:none !important; }
     html[data-export="1"] #cs-12m2.active .gletter,
     html[data-export="1"] #cs-12m2.active .rletter,
     html[data-export="1"] #cs-12m2.active .ripple-ring { animation:none !important;opacity:1 !important;transform:translate(-50%,-50%) scale(1) !important; }
@@ -11905,8 +11941,8 @@ html, body, html body{
 
     </div>
 
-    <!-- Connecting arrow: When-clause → Then-clause, dipping under the n; with downward arrow under n landing on "networked reciprocity" label [Dave 2026-05-06 PM v13] -->
-    <div style="position:relative;z-index:5;margin-top:14px;width:min(1340px,96%);display:flex;flex-direction:column;align-items:center">
+    <!-- Connecting arrow: When-clause → Then-clause, dipping under the n; with downward arrow under n landing on "networked reciprocity" label [Dave 2026-05-06 PM v13; v14 added entrance class] -->
+    <div class="reciprocity-arrow" style="position:relative;z-index:5;margin-top:14px;width:min(1340px,96%);display:flex;flex-direction:column;align-items:center">
       <svg viewBox="0 0 1200 200" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="cs12m2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
@@ -11928,8 +11964,8 @@ html, body, html body{
       </svg>
     </div>
 
-    <!-- Closer line — concept 6 takeaway in gold -->
-    <div style="position:relative;z-index:4;margin-top:24px;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;display:flex;align-items:center;gap:18px">
+    <!-- Closer line — concept 6 takeaway in gold [v14 added entrance class] -->
+    <div class="closer-line" style="position:relative;z-index:4;margin-top:24px;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;display:flex;align-items:center;gap:18px">
       <span style="width:54px;height:1px;background:rgba(184,149,74,0.55)"></span>
       Your impact ripples. Everyone rises.
       <span style="width:54px;height:1px;background:rgba(184,149,74,0.55)"></span>
