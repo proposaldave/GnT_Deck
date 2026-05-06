@@ -12930,6 +12930,279 @@ html, body, html body{
 </div>
 
 
+<!-- ===== cs-mv6-altA · MISSION variant: era cards on top, "human connection" curve below
+     [Dave 2026-05-06 PM]: civilization built more & more, but human-connection level steadily declined →
+     bottoms out at attention/intelligence era → GnR makes it go parabolic.
+     A/B/C variants follow — Dave to pick best, then we'll keep one and delete the others. ===== -->
+<div class="casey-slide ds-focus" id="cs-mv6-altA">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission · variant A</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 48px;gap:18px">
+
+    <div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55)">Every era of civilization runs on something new</div>
+
+    <!-- Era chip row (compact, no SVG icons — to keep room for chart) -->
+    <div style="display:grid;grid-template-columns:repeat(6,0.7fr) 1.4fr;gap:8px;width:min(1280px,98%);align-items:stretch">
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">Pre-1800</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(74,124,74,0.85);line-height:1">Land</div></div>
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">1800s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(156,90,58,0.85);line-height:1">Labor</div></div>
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">1900s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(184,149,74,0.85);line-height:1">Capital</div></div>
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">1990s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(77,130,198,0.85);line-height:1">Information</div></div>
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">2010s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(200,70,44,0.85);line-height:1">Attention</div></div>
+      <div style="text-align:center;border:1px solid rgba(26,22,18,0.18);border-radius:8px;padding:10px 6px;background:rgba(26,22,18,0.02);opacity:0.7"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.18em;color:rgba(26,22,18,0.55);margin-bottom:4px">2020s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.05rem;font-weight:700;color:rgba(122,74,140,0.85);line-height:1">Intelligence</div></div>
+      <div style="text-align:center;border:2px solid #b8954a;border-radius:10px;padding:10px 6px;background:linear-gradient(180deg,rgba(184,149,74,0.18),rgba(184,149,74,0.05));box-shadow:0 6px 18px rgba(184,149,74,0.18)"><div style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.18em;color:#b8954a;margin-bottom:4px">2030s</div><div style="font-family:'Fraunces','Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#1a1612;line-height:1">Human connection</div></div>
+    </div>
+
+    <!-- THE CHART: human-connection curve under the era cards. -->
+    <div style="position:relative;width:min(1280px,98%);margin-top:6px">
+      <svg viewBox="0 0 1200 320" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mv6aFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#b8954a" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="mv6aLine" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="rgba(26,22,18,0.55)"/>
+            <stop offset="80%" stop-color="rgba(200,70,44,0.85)"/>
+            <stop offset="92%" stop-color="#c8462c"/>
+            <stop offset="100%" stop-color="#b8954a"/>
+          </linearGradient>
+        </defs>
+        <!-- Y-axis label (rotated) -->
+        <text x="-160" y="22" transform="rotate(-90)" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="rgba(26,22,18,0.5)">HUMAN CONNECTION</text>
+        <text x="38" y="40" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.4)">ABUNDANT</text>
+        <text x="38" y="280" font-family="Manrope,sans-serif" font-size="9" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.4)">SCARCE</text>
+        <!-- Axis baseline -->
+        <line x1="60" y1="290" x2="1170" y2="290" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
+        <line x1="60" y1="30" x2="60" y2="290" stroke="rgba(26,22,18,0.18)" stroke-width="1"/>
+
+        <!-- 7 vertical guide lines aligned with era cards above -->
+        <g stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="2 4">
+          <line x1="105" y1="30" x2="105" y2="290"/>
+          <line x1="240" y1="30" x2="240" y2="290"/>
+          <line x1="375" y1="30" x2="375" y2="290"/>
+          <line x1="510" y1="30" x2="510" y2="290"/>
+          <line x1="645" y1="30" x2="645" y2="290"/>
+          <line x1="780" y1="30" x2="780" y2="290"/>
+          <line x1="990" y1="30" x2="990" y2="290"/>
+        </g>
+
+        <!-- Filled area under the declining curve -->
+        <path d="M 105 70 C 200 90, 280 130, 375 145 C 470 165, 460 200, 510 200 C 600 230, 670 260, 780 268 L 780 290 L 105 290 Z" fill="url(#mv6aFill)"/>
+
+        <!-- The decline curve (Pre-1800 → 2020s, smooth descent) -->
+        <path d="M 105 70 C 200 90, 280 130, 375 145 C 470 165, 460 200, 510 200 C 600 230, 670 260, 780 268"
+              stroke="rgba(26,22,18,0.62)" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- The parabolic shoot up at GnR (2030s) -->
+        <path d="M 780 268 C 870 268, 940 240, 990 60"
+              stroke="#b8954a" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Era data points -->
+        <g>
+          <circle cx="105" cy="70"  r="4.5" fill="#4a7c4a"/>
+          <circle cx="240" cy="100" r="4.5" fill="#9c5a3a"/>
+          <circle cx="375" cy="145" r="4.5" fill="#b8954a"/>
+          <circle cx="510" cy="200" r="4.5" fill="#4d82c6"/>
+          <circle cx="645" cy="240" r="4.5" fill="#c8462c"/>
+          <circle cx="780" cy="268" r="4.5" fill="#7a4a8c"/>
+          <!-- GnR endpoint (parabolic high) — large gold halo -->
+          <circle cx="990" cy="60" r="14" fill="rgba(184,149,74,0.18)"/>
+          <circle cx="990" cy="60" r="7" fill="#b8954a"/>
+        </g>
+
+        <!-- Annotation: GnR breaks the trend -->
+        <text x="990" y="22" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#b8954a">GnR</text>
+        <!-- "Attention economy lows" annotation -->
+        <text x="640" y="312" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.55)">attention era · lowest in human history</text>
+      </svg>
+    </div>
+
+    <!-- Mission line -->
+    <div style="margin-top:12px;text-align:center;max-width:1180px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.02em">
+        <span style="font-family:'Manrope',sans-serif;font-size:0.55em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ===== cs-mv6-altB · MISSION variant B: chart IS the slide. Era labels are the X-axis ticks.
+     No cards — the curve carries the whole story. Mission line big at the bottom. ===== -->
+<div class="casey-slide ds-focus" id="cs-mv6-altB">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission · variant B</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 56px;gap:14px">
+
+    <div style="font-family:'Manrope',sans-serif;font-size:0.66rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55)">For 200 years, civilization went one way. Human connection went the other.</div>
+
+    <div style="width:min(1500px,98%);position:relative">
+      <svg viewBox="0 0 1500 560" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mv6bFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#b8954a" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Y-axis title -->
+        <text x="-280" y="26" transform="rotate(-90)" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="3.4" fill="rgba(26,22,18,0.5)">HUMAN CONNECTION</text>
+        <text x="48" y="60" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="2.6" fill="rgba(26,22,18,0.45)">ABUNDANT</text>
+        <text x="48" y="490" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="2.6" fill="rgba(26,22,18,0.45)">SCARCE</text>
+
+        <!-- Axes -->
+        <line x1="80" y1="500" x2="1460" y2="500" stroke="rgba(26,22,18,0.22)" stroke-width="1.2"/>
+        <line x1="80" y1="40" x2="80" y2="500" stroke="rgba(26,22,18,0.22)" stroke-width="1.2"/>
+
+        <!-- Vertical guide lines for era ticks -->
+        <g stroke="rgba(26,22,18,0.07)" stroke-width="1" stroke-dasharray="3 5">
+          <line x1="160" y1="40" x2="160" y2="500"/>
+          <line x1="340" y1="40" x2="340" y2="500"/>
+          <line x1="520" y1="40" x2="520" y2="500"/>
+          <line x1="700" y1="40" x2="700" y2="500"/>
+          <line x1="880" y1="40" x2="880" y2="500"/>
+          <line x1="1060" y1="40" x2="1060" y2="500"/>
+          <line x1="1320" y1="40" x2="1320" y2="500"/>
+        </g>
+
+        <!-- Filled area under curve -->
+        <path d="M 160 110 C 260 130, 320 200, 340 220 C 440 250, 480 290, 520 310 C 620 360, 700 420, 880 450 C 980 462, 1020 470, 1060 472 L 1060 500 L 160 500 Z" fill="url(#mv6bFill)"/>
+
+        <!-- DECLINE curve (Pre-1800 high → 2020s low) -->
+        <path d="M 160 110 C 260 130, 320 200, 340 220 C 440 250, 480 290, 520 310 C 620 360, 700 420, 880 450 C 980 462, 1020 470, 1060 472"
+              stroke="rgba(26,22,18,0.7)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- PARABOLIC shoot up at GnR -->
+        <path d="M 1060 472 C 1180 472, 1260 380, 1320 70"
+              stroke="#b8954a" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- GnR endpoint glow -->
+        <circle cx="1320" cy="70" r="22" fill="rgba(184,149,74,0.18)"/>
+        <circle cx="1320" cy="70" r="11" fill="#b8954a"/>
+
+        <!-- Era data points (down-trend) -->
+        <g>
+          <circle cx="160" cy="110" r="6" fill="#4a7c4a"/>
+          <circle cx="340" cy="160" r="6" fill="#9c5a3a"/>
+          <circle cx="520" cy="240" r="6" fill="#b8954a"/>
+          <circle cx="700" cy="350" r="6" fill="#4d82c6"/>
+          <circle cx="880" cy="430" r="6" fill="#c8462c"/>
+          <circle cx="1060" cy="472" r="6" fill="#7a4a8c"/>
+        </g>
+
+        <!-- X-AXIS LABELS: Era names + era titles -->
+        <g font-family="Manrope,sans-serif" text-anchor="middle">
+          <text x="160" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">PRE-1800</text>
+          <text x="160" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(74,124,74,0.85)">Land</text>
+          <text x="340" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1800s</text>
+          <text x="340" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(156,90,58,0.85)">Labor</text>
+          <text x="520" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1900s</text>
+          <text x="520" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(184,149,74,0.85)">Capital</text>
+          <text x="700" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1990s</text>
+          <text x="700" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(77,130,198,0.85)">Information</text>
+          <text x="880" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">2010s</text>
+          <text x="880" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(200,70,44,0.85)">Attention</text>
+          <text x="1060" y="525" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">2020s</text>
+          <text x="1060" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="14" font-weight="700" fill="rgba(122,74,140,0.85)">Intelligence</text>
+          <text x="1320" y="525" font-size="11" font-weight="800" letter-spacing="2.4" fill="#b8954a">2030s</text>
+          <text x="1320" y="546" font-family="Fraunces,'Playfair Display',serif" font-size="15" font-weight="700" fill="#1a1612">Human connection</text>
+        </g>
+
+        <!-- Annotations -->
+        <text x="1320" y="38" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="3.2" fill="#b8954a">GnR</text>
+        <text x="970" y="478" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="rgba(26,22,18,0.6)">lowest in human history</text>
+      </svg>
+    </div>
+
+    <!-- Mission line -->
+    <div style="margin-top:6px;text-align:center;max-width:1180px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.8vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.02em">
+        <span style="font-family:'Manrope',sans-serif;font-size:0.6em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ===== cs-mv6-altC · MISSION variant C: TWO divergent lines.
+     "What civilization built" rises monotonically over centuries.
+     "Human connection" declines steadily over the same period.
+     They split apart. Then GnR appears and human connection shoots parabolically up. ===== -->
+<div class="casey-slide ds-focus" id="cs-mv6-altC">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.7);z-index:10">Mission · variant C</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 56px;gap:14px">
+
+    <div style="font-family:'Manrope',sans-serif;font-size:0.66rem;font-weight:800;letter-spacing:0.32em;text-transform:uppercase;color:rgba(26,22,18,0.55)">Two centuries · Two lines · One reversal</div>
+
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.7vw,2.15rem);font-weight:700;line-height:1.18;letter-spacing:-0.014em;color:#1a1612;max-width:1180px;text-align:center">
+      One line went up.<br>The line that <em style="font-style:italic;color:#c8462c">mattered most</em> went down. <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:500">We make it go up again.</span>
+    </div>
+
+    <div style="width:min(1500px,98%);position:relative;margin-top:6px">
+      <svg viewBox="0 0 1500 480" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+        <!-- Axes -->
+        <line x1="80" y1="430" x2="1460" y2="430" stroke="rgba(26,22,18,0.22)" stroke-width="1.2"/>
+        <line x1="80" y1="30" x2="80" y2="430" stroke="rgba(26,22,18,0.22)" stroke-width="1.2"/>
+
+        <!-- Vertical guide lines for era ticks -->
+        <g stroke="rgba(26,22,18,0.07)" stroke-width="1" stroke-dasharray="3 5">
+          <line x1="180" y1="30" x2="180" y2="430"/>
+          <line x1="360" y1="30" x2="360" y2="430"/>
+          <line x1="540" y1="30" x2="540" y2="430"/>
+          <line x1="720" y1="30" x2="720" y2="430"/>
+          <line x1="900" y1="30" x2="900" y2="430"/>
+          <line x1="1080" y1="30" x2="1080" y2="430"/>
+          <line x1="1320" y1="30" x2="1320" y2="430"/>
+        </g>
+
+        <!-- LINE 1 — "What civilization built" — rising gold line -->
+        <path d="M 180 360 C 280 340, 320 300, 360 280 C 460 250, 500 200, 540 180 C 640 145, 680 110, 720 95 C 820 80, 860 70, 900 60 C 1000 50, 1040 45, 1080 42 C 1180 40, 1240 38, 1320 36"
+              stroke="#b8954a" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+
+        <!-- LINE 2 — "Human connection" — declining line + parabolic upturn at GnR -->
+        <path d="M 180 80 C 280 100, 320 130, 360 145 C 460 170, 500 200, 540 215 C 640 245, 680 290, 720 310 C 820 340, 860 365, 900 385 C 1000 400, 1040 405, 1080 408"
+              stroke="rgba(26,22,18,0.7)" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 1080 408 C 1200 408, 1260 280, 1320 50"
+              stroke="#c8462c" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Endpoints -->
+        <circle cx="1320" cy="36" r="7" fill="#b8954a"/>
+        <circle cx="1320" cy="50" r="14" fill="rgba(200,70,44,0.18)"/>
+        <circle cx="1320" cy="50" r="8" fill="#c8462c"/>
+
+        <!-- Line labels at left -->
+        <text x="180" y="62" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="#b8954a">CIVILIZATION OUTPUT</text>
+        <text x="180" y="62" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(26,22,18,0)">.</text>
+        <text x="180" y="78" font-family="Playfair Display,serif" font-style="italic" font-size="11" fill="rgba(184,149,74,0.7)" opacity="0">land · labor · capital · info · attn · intel</text>
+        <text x="180" y="100" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="2.4" fill="rgba(26,22,18,0.7)">HUMAN CONNECTION</text>
+
+        <!-- GnR breakthrough annotation -->
+        <text x="1320" y="22" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="3.2" fill="#c8462c">GnR · breaks the trend</text>
+
+        <!-- X-axis era labels -->
+        <g font-family="Manrope,sans-serif" text-anchor="middle">
+          <text x="180" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">PRE-1800</text>
+          <text x="360" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1800s</text>
+          <text x="540" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1900s</text>
+          <text x="720" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">1990s</text>
+          <text x="900" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">2010s</text>
+          <text x="1080" y="452" font-size="10" font-weight="700" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">2020s</text>
+          <text x="1320" y="452" font-size="11" font-weight="800" letter-spacing="2.4" fill="#b8954a">2030s</text>
+          <text x="180" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(74,124,74,0.85)">Land</text>
+          <text x="360" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(156,90,58,0.85)">Labor</text>
+          <text x="540" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(184,149,74,0.85)">Capital</text>
+          <text x="720" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(77,130,198,0.85)">Information</text>
+          <text x="900" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(200,70,44,0.85)">Attention</text>
+          <text x="1080" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="12" font-weight="700" fill="rgba(122,74,140,0.85)">Intelligence</text>
+          <text x="1320" y="470" font-family="Fraunces,'Playfair Display',serif" font-size="13" font-weight="700" fill="#1a1612">Human connection</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Mission line -->
+    <div style="margin-top:6px;text-align:center;max-width:1180px">
+      <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,2.6vw,2.15rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.02em">
+        <span style="font-family:'Manrope',sans-serif;font-size:0.6em;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#b8954a">Mission:</span> for all our lives to run on <em style="font-style:italic;font-weight:500;color:#b8954a">abundant human connection.</em>
+      </div>
+    </div>
+  </section>
+</div>
+
+
 <!-- cs-mv7 ("Mission · What runs the world?" — Land/Labor/Capital/Information/Attention/Intelligence → Connection)
      → DELETED 2026-05-02 per Dave (was duplicate of cs-a19 which was also deleted; cs-mv6 is the canonical mission slide).
      Slide div + style block fully removed (was previously orphaned in HTML — array ref was already gone). -->
@@ -15665,6 +15938,11 @@ const SLIDE_ORDER = [
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
   // cs-ns1 (North Star original orbital) MOVED to APPENDIX 2026-05-03 PM per Dave
   'cs-mv6',   // 21 Mission · "for all our lives to run on abundant human connection" [Dave 2026-05-03 PM — moved to right BEFORE cs-prom (the new last/closer slide)]
+  // [Dave 2026-05-06 PM] Mission alts: era progression + chart of human-connection downtrend → parabolic at GnR.
+  // Variants A/B/C in review — Dave to pick best, then keep one and delete others.
+  'cs-mv6-altA', // 22a · cards on top, downtrend curve below
+  'cs-mv6-altB', // 22b · chart-only, era labels as X-axis ticks
+  'cs-mv6-altC', // 22c · two divergent lines (civilization rises, connection falls; GnR reverses)
   'cs-prom',  // 22 Our Promise · GnR wordmark exploded + Dave's contact info [cs-prom is now the closing slide per Dave 2026-05-03 PM]
   // ===== ORANGE REVIEW SECTION · HC PARADIGM CANDIDATES (Dave 2026-05-04) =====
   // 10 candidate slides drafting the Human Connection paradigm reframe. Status = REVIEW
