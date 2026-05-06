@@ -11491,19 +11491,11 @@ html, body, html body{
 <div class="casey-slide ds-focus" id="cs-hc3">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Human Flywheel</div>
   <section style="position:relative;min-height:100%;width:100%">
-    <!-- Two-column layout [Dave 2026-05-06 PM]: hero text LEFT, radiating figure RIGHT.
-         "valuable" → "magnetic" (matches the radiating visual, drops the transactional read). -->
-    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;min-height:100%;padding:80px 80px 64px;max-width:1760px;margin:0 auto">
-      <!-- LEFT: hero copy stack -->
-      <div style="display:flex;flex-direction:column;gap:18px;text-align:left">
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
-          The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves for others</em>
-        </div>
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
-          feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em> &mdash; and <em style="font-style:italic;font-weight:500;color:#c8462c">most magnetic to everyone</em> around them.
-        </div>
-      </div>
-      <!-- RIGHT: radiant-figure graphic -->
+    <!-- Two-column layout [Dave 2026-05-06 PM v3]: GRAPHIC LEFT, hero text RIGHT (swapped per Dave).
+         Red arrows redrawn with proper SVG marker so arrowheads auto-orient at curve endpoints.
+         Bottom label "RECIPROCITY FLOWS BACK" → "GnR is networked reciprocity". -->
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;min-height:100%;padding:80px 80px 64px;max-width:1760px;margin:0 auto">
+      <!-- LEFT: radiant-figure graphic -->
       <svg viewBox="0 -16 520 312" style="width:100%;max-width:640px;margin:0 auto;display:block" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="hc3Halo" cx="50%" cy="50%" r="55%">
@@ -11511,6 +11503,10 @@ html, body, html body{
             <stop offset="60%" stop-color="#b8954a" stop-opacity="0.10"/>
             <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
           </radialGradient>
+          <!-- Auto-orienting red arrowhead used by all 6 reciprocity curves -->
+          <marker id="hc3RedArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#c8462c"/>
+          </marker>
         </defs>
         <!-- Concentric halo rings (the radiating presence) -->
         <circle cx="260" cy="140" r="120" fill="url(#hc3Halo)"/>
@@ -11527,38 +11523,34 @@ html, body, html body{
           <line x1="195" y1="205" x2="177" y2="223"/>
           <line x1="325" y1="75" x2="343" y2="57"/>
         </g>
-        <!-- 6 returning red curved arrows (reciprocity flowing back) -->
+        <!-- 6 returning red curved arrows (reciprocity flowing back) — clean marker-end arrowheads -->
         <g stroke="#c8462c" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <!-- top-right quadrant -->
-          <path d="M 410 60 Q 360 60 322 100"/>
-          <path d="M 322 100 L 332 95 M 322 100 L 332 110"/>
-          <!-- right -->
-          <path d="M 460 140 Q 410 140 380 140"/>
-          <path d="M 380 140 L 390 134 M 380 140 L 390 146"/>
-          <!-- bottom-right -->
-          <path d="M 410 220 Q 360 220 322 180"/>
-          <path d="M 322 180 L 332 185 M 322 180 L 332 175"/>
-          <!-- bottom-left -->
-          <path d="M 110 220 Q 160 220 198 180"/>
-          <path d="M 198 180 L 188 185 M 198 180 L 188 175"/>
-          <!-- left -->
-          <path d="M 60 140 Q 110 140 140 140"/>
-          <path d="M 140 140 L 130 134 M 140 140 L 130 146"/>
-          <!-- top-left -->
-          <path d="M 110 60 Q 160 60 198 100"/>
-          <path d="M 198 100 L 188 95 M 198 100 L 188 110"/>
+          <path d="M 410 60 Q 360 60 322 100" marker-end="url(#hc3RedArr)"/>
+          <path d="M 460 140 Q 410 140 380 140" marker-end="url(#hc3RedArr)"/>
+          <path d="M 410 220 Q 360 220 322 180" marker-end="url(#hc3RedArr)"/>
+          <path d="M 110 220 Q 160 220 198 180" marker-end="url(#hc3RedArr)"/>
+          <path d="M 60 140 Q 110 140 140 140" marker-end="url(#hc3RedArr)"/>
+          <path d="M 110 60 Q 160 60 198 100" marker-end="url(#hc3RedArr)"/>
         </g>
         <!-- Central glowing figure (you, showing up) -->
         <g transform="translate(260, 140)">
           <circle r="34" fill="rgba(184,149,74,0.18)" stroke="none"/>
-          <!-- Solid gold figure -->
           <circle cx="0" cy="-12" r="10" fill="#b8954a"/>
           <path d="M -16 24 Q -16 -2 0 -4 Q 16 -2 16 24 Z" fill="#b8954a"/>
         </g>
-        <!-- Tiny annotation labels -->
+        <!-- Annotation labels -->
         <text x="260" y="-2" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3.4" fill="rgba(184,149,74,0.95)">YOU SHOW UP</text>
-        <text x="260" y="290" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="3.4" fill="rgba(200,70,44,0.95)">RECIPROCITY FLOWS BACK</text>
+        <text x="260" y="290" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="800" letter-spacing="1.2" fill="rgba(200,70,44,0.95)">G<tspan font-style="italic" font-weight="600" letter-spacing="0">n</tspan>R is networked reciprocity</text>
       </svg>
+      <!-- RIGHT: hero copy stack -->
+      <div style="display:flex;flex-direction:column;gap:18px;text-align:left">
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
+          The ones who show up as their <em style="font-style:italic;font-weight:500;color:#b8954a">freest, most unique selves for others</em>
+        </div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.55vw,2.25rem);font-weight:700;line-height:1.18;letter-spacing:-0.018em;color:#1a1612">
+          feel <em style="font-style:italic;font-weight:500;color:#b8954a">most alive</em> &mdash; and <em style="font-style:italic;font-weight:500;color:#c8462c">most magnetic to everyone</em> around them.
+        </div>
+      </div>
     </div>
   </section>
 </div>
