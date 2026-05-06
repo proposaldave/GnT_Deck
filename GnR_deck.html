@@ -16118,7 +16118,8 @@ const SLIDE_ORDER = [
   // cs-rcp (Receipts) → APPENDIX 2026-05-01 per Dave
   // cs-kl (Krista Loop) → APPENDIX 2026-05-01 per Dave ("came out of nowhere")
   // cs-4 (Moat — data in our heads) → MOVED to slot 4 (after cs-2c) per Dave 2026-05-01 — tightens front-half problem-arc
-  'cs-hc3',   // 13 The Truth · "The ones who show up as their freest, most unique selves — for others — are most alive, and most valuable to everyone around them." [moved from orange review into main flow per Dave 2026-05-06]
+  // cs-hc3 (radiating-figure Human Flywheel) DELETED from main flow 2026-05-06 PM v5 per Dave — replaced with cs-12m2 infinity-loop reciprocity.
+  'cs-12m2',  // 12 Reciprocity Flywheel — infinity loop with WHEN/THEN reciprocity (was the slot-12 alt; now primary)
   'cs-25',    // 14 Why pickleball first ("Pickleball is the clearest path...")
   'cs-tv',    // 15 MERGED Vision + Pickleball TAM ("We're mapping human connection — one invitation at a time" + $2.55B inner-rings TAM) [Dave 2026-05-06 PM: moved up to immediately follow cs-25]
   'cs-future',// 16 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
@@ -16171,13 +16172,11 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  // Slot 12 (cs-hc3) under review per Dave: cs-12m1 deleted 2026-05-06 PM v4 — only cs-12m2 remains as alt.
-  // cs-12m2 = WHEN/THEN reciprocity (now infinity-loop design — option #3 from ChatGPT idea grid).
-  12: ['cs-12m2'],
+  // 2026-05-06 PM v5: cs-12m2 promoted to slot 12 primary; cs-hc3 retired from main flow. No more slot-12 alts.
 };
-const REVIEW_POSITION = 12; // slot 12 under review 2026-05-06 PM — alts cs-12m1, cs-12m2 are merge candidates
-// LOCKED_POSITIONS: slot 12 removed 2026-05-06 PM (now under review).
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const REVIEW_POSITION = -1; // disabled — slot 12 locked on cs-12m2 (infinity loop)
+// LOCKED_POSITIONS: slot 12 re-locked 2026-05-06 PM v5 (cs-12m2 chosen, cs-hc3 retired).
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
@@ -16903,7 +16902,7 @@ const slideLabels = [
   'NEPC proof · $210K court fees',                   //  9 cs-11e
   '3× court fees for your club',                     // 10 cs-19
   'Community Flywheel',                              // 11 cs-fw1
-  'Human Flywheel',                                  // 12 cs-hc3
+  'Reciprocity flywheel',                            // 12 cs-12m2 (infinity loop · cs-hc3 retired)
   'Why pickleball first',                            // 13 cs-25
   'Mapping human connection · Pickleball TAM',       // 14 cs-tv
   'Future of our communities',                       // 15 cs-future
