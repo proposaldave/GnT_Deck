@@ -880,6 +880,35 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
   @media (max-width: 1100px), (hover: none) and (pointer: coarse) {
     .nav-dots { display: none !important; }
   }
+
+  /* ══════════════════════════════════════════════════════════════════════
+     TABLET / IPAD OPTIMIZATIONS [Dave 2026-05-07 PM]
+     Targets touch devices ≥769px (excludes phones, which already hit the
+     mobile breakpoint and get single-column phone layout). Optimizations:
+       1. Disable infinite per-dot drift animations after entrance (battery
+          + GPU savings; entrance reveal still plays).
+       2. Reduce/eliminate expensive backdrop-filter blur (iPad GPU-heavy).
+       3. Reduce SVG feGaussianBlur impact by lowering filter blur intensity.
+       4. Disable continuous orbital-ring spin loops (80s cycles drain battery).
+       5. Larger tap targets on click-to-reveal elements where needed.
+     ══════════════════════════════════════════════════════════════════════ */
+  @media (hover: none) and (pointer: coarse) and (min-width: 769px) {
+    /* V8 particle galaxy: keep entrance, kill the infinite per-dot drift (saves GPU + battery on iPad) */
+    #cs-brand-V8.casey-entered .v8-particles circle { animation-iteration-count: 1 !important; animation-duration: 1.6s !important; }
+    /* V15 orbital ring spin (80s loop) — disable on touch; static dashed ring still renders */
+    #cs-brand-V15 .v15-orb::after,
+    #cs-brand-V10 .v10-orb::after { animation: none !important; }
+    /* Reduce backdrop-filter blur intensity (iPad GPU) */
+    .casey-nav { backdrop-filter: blur(4px) !important; -webkit-backdrop-filter: blur(4px) !important; }
+    /* V8 large G/R wordmarks already huge tap targets via clamp font-size — no override needed.
+       V15 G/R wordmarks: ensure cursor:pointer + reasonable tap-target padding for finger taps. */
+    #cs-brand-V15 .v15-G,
+    #cs-brand-V15 .v15-R,
+    #cs-brand-V15 .v15-orb { padding: 8px; }
+    /* Disable continuous pulse/glow animations on appendix slides that aren't visible until appendix-mode (battery savings) */
+    #cs-brand-V15 .v15-orb::before,
+    #cs-brand-V10 .v10-orb::before { animation: none !important; }
+  }
   .nav-dot {
     width: 10px;
     height: 10px;
