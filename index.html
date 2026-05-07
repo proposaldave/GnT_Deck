@@ -893,6 +893,8 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
        5. Larger tap targets on click-to-reveal elements where needed.
      ══════════════════════════════════════════════════════════════════════ */
   @media (hover: none) and (pointer: coarse) and (min-width: 769px) {
+    /* iPad/tablet: hide the bottom slide-dot bar entirely [Dave 2026-05-07 PM: 'For the iPad tablet version, I'd like you to not show the slide dots on the bottom']. Swipe + D/A still navigate. */
+    .casey-nav { display: none !important; }
     /* V8 particle galaxy: keep entrance, kill the infinite per-dot drift (saves GPU + battery on iPad) */
     #cs-brand-V8.casey-entered .v8-particles circle { animation-iteration-count: 1 !important; animation-duration: 1.6s !important; }
     /* V15 orbital ring spin (80s loop) — disable on touch; static dashed ring still renders */
@@ -7338,17 +7340,27 @@ html, body, html body{
   [id^="cs-thegap"] .tg-close { opacity:0; }
   /* Three beats: head 0.15s · sub 0.50s · diagram + close together 0.95s */
   #cs-thegap.casey-entered .tg-head     { animation: tgFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.15s both; }
-  #cs-thegap.casey-entered .tg-sub      { animation: tgFadeUp 0.65s cubic-bezier(.22,1,.36,1) 0.50s both; }
-  #cs-thegap.casey-entered .tg-svg-wrap { animation: tgFadeUp 0.85s cubic-bezier(.22,1,.36,1) 0.95s both; }
-  #cs-thegap.casey-entered .tg-close    { animation: tgFadeUp 0.85s cubic-bezier(.22,1,.36,1) 0.95s both; }
+  /* Click-to-reveal pattern [Dave 2026-05-07 PM]: on slide load only show 'Communities don't have a like button.' + FB icon (the tg-head).
+     The rest (sub line, SVG row of figures + bubbles, closing line) reveals on click/scroll/swipe via data-shown="1". */
+  #cs-thegap .tg-sub      { opacity: 0; transition: opacity 0.55s cubic-bezier(.22,1,.36,1); }
+  #cs-thegap .tg-svg-wrap { opacity: 0; transition: opacity 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-thegap .tg-close    { opacity: 0; transition: opacity 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-thegap[data-shown="1"] .tg-sub      { opacity: 1; transition-delay: 0.05s; }
+  #cs-thegap[data-shown="1"] .tg-svg-wrap { opacity: 1; transition-delay: 0.30s; }
+  #cs-thegap[data-shown="1"] .tg-close    { opacity: 1; transition-delay: 0.30s; }
+  /* Hint to user that there's more to reveal — small pulsing down-arrow under the headline. */
+  #cs-thegap .tg-hint { display: flex; align-items: center; justify-content: center; margin-top: 18px; opacity: 0.7; animation: tgHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-thegap[data-shown="1"] .tg-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes tgHintPulse { 0%,100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
   /* SVG row sub-stagger DISABLED — rows are now baked into the single SVG fade above. .tg-row classes left in markup as no-op placeholders. */
   /* Export mode: snap everything to final state, no animation */
   html[data-export="1"] [id^="cs-thegap"] .tg-head,
   html[data-export="1"] [id^="cs-thegap"] .tg-sub,
   html[data-export="1"] [id^="cs-thegap"] .tg-svg-wrap,
   html[data-export="1"] [id^="cs-thegap"] .tg-close { opacity:1 !important; animation:none !important; transform:none !important; }
+  html[data-export="1"] #cs-thegap .tg-hint { display: none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-thegap">
+<div class="casey-slide ds-focus" id="cs-thegap" data-shown="0" onclick="csThegapAdvance();event.stopPropagation()" style="cursor:pointer">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The most valuable, networkable, untapped dataset</div>
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
@@ -7357,6 +7369,10 @@ html, body, html body{
         <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#1877F2;box-shadow:0 3px 8px rgba(24,119,242,0.3);flex-shrink:0">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
+      </div>
+      <!-- Click hint — pulses while waiting for user click; fades on data-shown="1" [Dave 2026-05-07 PM] -->
+      <div class="tg-hint">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8954a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </div>
       <div class="tg-sub">Our private thoughts and feelings about each other stay <em>trapped in our heads</em>.</div>
 
@@ -11897,7 +11913,7 @@ html, body, html body{
      Center crossing = the figure (you/community).
      Subtle gold flow-arrows along the loop convey perpetual motion. ===== -->
 <div class="casey-slide ds-focus" id="cs-12m2" data-stage="0">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Generational Consumer Brand Opportunity</div>
 
   <!-- BRAND SLIDE — concept 3 + 6 hybrid [Dave 2026-05-06 PM v11]
        Solid G + R in BRAND COLORS (#4d82c6 blue / #c94d32 red), italic ink n at center.
@@ -12244,7 +12260,7 @@ html, body, html body{
   #cs-brand-V1 .v1-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V1" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v1-stage">
 
@@ -12344,7 +12360,7 @@ html, body, html body{
   #cs-brand-V2 .v2-tag .ln { width:60px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V2" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v2-stage">
       <div class="v2-row">
@@ -12420,7 +12436,7 @@ html, body, html body{
   #cs-brand-V3 .v3-n-label .dot { width:5px;height:5px;border-radius:50%;background:#b8954a;display:inline-block; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V3" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v3-stage">
       <div class="v3-row">
@@ -12502,7 +12518,7 @@ html, body, html body{
   #cs-brand-V4 .v4-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V4" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v4-stage">
       <div class="v4-mark">
@@ -12563,7 +12579,7 @@ html, body, html body{
   #cs-brand-V5 .v5-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V5" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v5-stage">
       <div class="v5-mark">
@@ -12622,7 +12638,7 @@ html, body, html body{
   #cs-brand-V6 .v6-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V6" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v6-stage">
       <div class="v6-promise">GnR ensures the <em>people and experiences</em> most valuable to you are <em>reciprocated back</em>.</div>
@@ -12679,7 +12695,7 @@ html, body, html body{
   @keyframes v7Spin { to { transform:rotate(360deg); } }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V7" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v7-stage">
       <div class="v7-wheel-row">
@@ -12783,7 +12799,7 @@ html, body, html body{
   html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V8">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v8-stage">
       <div class="v8-hero">Human Value, Finally Seen.</div>
@@ -12813,8 +12829,8 @@ html, body, html body{
         <!-- CENTER n orb [Dave 2026-05-07 PM]: replaced 'Networked / Reciprocity' label with 'THE NETWORK / sees. measures.' eyebrow+body pattern, parallel to the left/right captions. -->
         <div class="v8-ncell">
           <span class="v8-n">n</span>
-          <div class="v8-n-label" style="margin-top:8px">Networked reciprocity</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.95rem,1.15vw,1.15rem);font-weight:500;font-style:italic;color:#b8954a;line-height:1.3;text-align:center;margin-top:4px;z-index:3">sees. measures.</div>
+          <div class="v8-n-label" style="margin-top:8px">The Network</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.95rem,1.15vw,1.15rem);font-weight:500;font-style:italic;color:#b8954a;line-height:1.3;text-align:center;margin-top:4px;z-index:3">Sees. Measures. Reciprocates.</div>
         </div>
 
         <!-- RIGHT particle galaxy (red) — mirrors left -->
@@ -12896,7 +12912,7 @@ html, body, html body{
   #cs-brand-V9 .v9-tag .ln { width:90px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V9" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v9-stage">
       <div class="v9-headline">
@@ -12979,7 +12995,7 @@ html, body, html body{
   /* Click-to-reveal animations REMOVED 2026-05-07 PM per Dave: 'i decided i dont want animations on this slide'. All three captions visible by default. */
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V15">
-  <div class="slide-eyebrow" style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div class="slide-eyebrow" style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v15-stage">
 
@@ -13095,7 +13111,7 @@ html, body, html body{
   #cs-brand-V11 .v11-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.72vw,.78rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3;margin-top:6px;z-index:3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V11" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v11-stage">
 
@@ -13138,7 +13154,7 @@ html, body, html body{
   #cs-brand-V12 .v12-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.72vw,.78rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V12" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v12-stage">
       <div class="v12-cols">
@@ -13177,7 +13193,7 @@ html, body, html body{
   #cs-brand-V13 .v13-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.72vw,.78rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3;margin-top:4px;z-index:3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V13" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v13-stage">
       <div class="v13-headline">
@@ -13214,7 +13230,7 @@ html, body, html body{
   #cs-brand-V14 .v14-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.65rem,.78vw,.82rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3;margin-top:6px;z-index:3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V14" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v14-stage">
       <div class="v14-headline">
@@ -13259,7 +13275,7 @@ html, body, html body{
   #cs-brand-V15 .v15-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.72vw,.78rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V15" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v15-stage">
       <div class="v15-cols">
@@ -13310,7 +13326,7 @@ html, body, html body{
   #cs-brand-V16 .v16-tag .ln { width:60px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V16" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v16-stage">
       <div class="v16-headline">
@@ -13372,7 +13388,7 @@ html, body, html body{
   #cs-brand-V17 .v17-credit { font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#b8954a;margin-top:6px; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V17" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v17-stage">
       <div class="v17-entry">
@@ -13416,7 +13432,7 @@ html, body, html body{
   #cs-brand-V18 .v18-sig { font-family:'Fraunces','Playfair Display',serif;font-style:italic;font-size:clamp(.95rem,1.15vw,1.1rem);color:rgba(26,22,18,0.55);font-weight:400; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V18" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v18-stage">
       <div class="v18-decl">
@@ -13458,7 +13474,7 @@ html, body, html body{
   #cs-brand-V19 .v19-tag .ln { width:80px;height:1px;background:rgba(184,149,74,0.55); }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V19" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v19-stage">
       <div class="v19-grid">
@@ -13494,7 +13510,7 @@ html, body, html body{
   #cs-brand-V20 .v20-label { font-family:'Manrope',sans-serif;font-size:clamp(.65rem,.78vw,.82rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.3; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V20" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v20-stage">
       <div>
@@ -16070,7 +16086,7 @@ html, body, html body{
   #cs-about .ab-coda em { font-style:italic; color:#b8954a; font-weight:600; }
 </style>
 <div class="casey-slide ds-focus appendix-slide" id="cs-about" style="display:none">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Generational Consumer Brand</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Generational Consumer Brand Opportunity</div>
 <section style="position:relative;min-height:100%;width:100%">
   <div class="ab-stage">
 
@@ -17581,8 +17597,8 @@ html, body, html body{
     </div>
 
     <div class="c2c-card">
-      <div class="c2c-icon">🏛️</div>
-      <div class="c2c-label">Towns &amp;<br>Cities</div>
+      <div class="c2c-icon">🏫</div>
+      <div class="c2c-label">Cities &amp;<br>Schools</div>
     </div>
 
     <div class="c2c-card">
@@ -17646,9 +17662,14 @@ html, body, html body{
 <!-- ===== cs-1bm1 — MERGED VARIANT 1: Two Imbalances · harmonized charts · click-reveal [Dave 2026-04-30 PM] ===== -->
 <style>
   /* Card-flip reveal: placeholder is back face, content is front face (pre-rotated 180deg).
-     Click rotates the inner container 180deg, flipping placeholder away and content in. */
-  #cs-1bm1 .ti-flip-wrap { perspective: 1500px; min-height: 480px; }
-  #cs-1bm1 .ti-flip-inner { position: relative; width: 100%; height: 100%; min-height: 480px; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; }
+     Click rotates the inner container 180deg, flipping placeholder away and content in.
+     [Dave 2026-05-07 PM iPad bug fix]: when right card flipped on iPad, content disappeared.
+     Root cause: Safari iOS loses 3D depth + height when an absolutely-positioned 3D-flipped child renders inside a grid stretch context.
+     Fix: lock height explicitly, propagate preserve-3d to the wrapper, force GPU layer with translateZ + will-change. */
+  #cs-1bm1 .ti-flip-wrap { perspective: 1500px; min-height: 480px; height: 480px; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; position: relative; }
+  #cs-1bm1 .ti-flip-inner { position: relative; width: 100%; height: 100%; min-height: 480px; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; -webkit-transform-style: preserve-3d; will-change: transform; transform: translateZ(0); }
+  #cs-1bm1[data-left="1"] .ti-flip-left { transform: translateZ(0) rotateY(180deg); }
+  #cs-1bm1[data-right="1"] .ti-flip-right { transform: translateZ(0) rotateY(180deg); }
   #cs-1bm1 .ti-card,
   #cs-1bm1 .ti-ph { backface-visibility: hidden; -webkit-backface-visibility: hidden; position: absolute !important; inset: 0; width: 100%; margin: 0; }
   #cs-1bm1 .ti-card { transform: rotateY(180deg); }
@@ -17661,9 +17682,9 @@ html, body, html body{
   #cs-1bm1[data-right="1"] .ti-flip-right .ti-ph   { opacity: 0; transition: opacity 0.35s ease; }
   html[data-export="1"] #cs-1bm1 .ti-card { opacity: 1 !important; transition: none !important; }
   html[data-export="1"] #cs-1bm1 .ti-ph   { opacity: 0 !important; transition: none !important; }
-  /* Per-card flip state — each card independently togglable via mouse click [Dave 2026-04-30 PM] */
-  #cs-1bm1[data-left="1"] .ti-flip-left { transform: rotateY(180deg); }
-  #cs-1bm1[data-right="1"] .ti-flip-right { transform: rotateY(180deg); }
+  /* Per-card flip state — each card independently togglable via mouse click [Dave 2026-04-30 PM]. translateZ(0) added 2026-05-07 PM for iPad fix (forces GPU layer, preserves 3D context). */
+  #cs-1bm1[data-left="1"] .ti-flip-left { transform: translateZ(0) rotateY(180deg) !important; }
+  #cs-1bm1[data-right="1"] .ti-flip-right { transform: translateZ(0) rotateY(180deg) !important; }
   html[data-export="1"] #cs-1bm1 .ti-flip-inner { transform: rotateY(180deg) !important; }
 
   /* PROGRESSIVE REVEAL — bars appear first (with the card flip), bottom section (headline + icon + sources) fades in after the flip completes [Dave 2026-04-30 PM] */
@@ -17776,7 +17797,7 @@ html, body, html body{
           <div class="ti-bar-row ti-tech-row ti-empty">
             <div style="text-align:right;font-family:'Playfair Display',serif;font-size:1.4rem;color:#b8954a;font-weight:400">?</div>
             <div class="ti-bar-track"></div>
-            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;font-weight:800;color:#b8954a;text-align:left;line-height:1.18">Human connection<br>technology</div>
+            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.92rem;font-weight:800;color:#b8954a;text-align:left;line-height:1.18">Human<br>connection</div>
           </div>
         </div>
         <!-- BOTTOM SECTION — fades in AFTER card flip (bars first, verdict second) [Dave 2026-04-30 PM] -->
@@ -18602,6 +18623,22 @@ window.cs1bm1Toggle = function(side) {
   const key = side === 'left' ? 'left' : 'right';
   slide.dataset[key] = slide.dataset[key] === '1' ? '0' : '1';
 };
+// cs-thegap click-to-reveal [Dave 2026-05-07 PM]: on load only show 'Communities don't have a like button.' + FB icon.
+// Click / scroll-down / swipe-up reveals the rest (sub line, SVG row, closing line).
+window.csThegapAdvance = function() {
+  const slide = document.getElementById('cs-thegap');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csThegapReverse = function() {
+  const slide = document.getElementById('cs-thegap');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '0') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
 // cs-11d (Honesty Gap) — same per-card pattern as cs-1bm1 [Dave 2026-04-30 PM]
 window.cs11dAdvance = function() {
   const slide = document.getElementById('cs-11d');
@@ -18853,6 +18890,7 @@ function caseyGo(n) {
   if (targetId === 'cs-3'    && target) target.dataset.shown = '0';
   if (targetId === 'cs-fw1'  && target) target.dataset.stage = '0';
   if (targetId === 'cs-1bm1' && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
+  if (targetId === 'cs-thegap' && target) target.dataset.shown = '0';
   if (targetId === 'cs-11d'  && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
   // V15 click-to-reveal: reset all three reveal classes on slide entry so each visit starts fresh [Dave 2026-05-07 PM]
   if (targetId === 'cs-brand-V15' && target) { target.classList.remove('cs-revealed-give','cs-revealed-net','cs-revealed-rec'); }
@@ -19243,7 +19281,7 @@ const slideLabels = [
   'NEPC proof · $210K court fees',                   //  9 cs-11e
   '3× net profit for your club',                     // 10 cs-19
   // cs-brand-V9 + cs-brand-V15 labels REMOVED from main 2026-05-07 PM — both moved to appendix end
-  'Generational Consumer Brand · Human Value, Finally Seen',   // 12 cs-brand-V8
+  'Generational Consumer Brand Opportunity · Human Value, Finally Seen',   // 12 cs-brand-V8
   'Why pickleball first',                            // 13 cs-25
   'Autonomous social coordination',                  // 14 cs-fw1 (moved from appendix to main slot 14 per Dave 2026-05-07 PM)
   'The AI Inversion',                                // 15 cs-hc8 (moved from appendix to main slot 15 per Dave 2026-05-07 PM)
@@ -19392,6 +19430,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
@@ -19408,6 +19447,7 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
@@ -19546,6 +19586,7 @@ document.addEventListener('touchend', e => {
     if (dy < 0) { // swipe UP → advance reveal
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -19559,6 +19600,7 @@ document.addEventListener('touchend', e => {
     } else {       // swipe DOWN → reverse reveal
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
