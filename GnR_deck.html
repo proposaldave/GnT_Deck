@@ -5361,7 +5361,19 @@ html, body, html body{
      wordmark (blue Give + ink italic n + red Receive), gold leaf accent for emphasis.
      Strict: no "No. 01" stamps, no "An operating system" subhead, no clutter.
      Just wordmark + tagline + a single thin gold rule. -->
-<div class="casey-slide ds-measure active" id="cs-1" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<div class="casey-slide ds-measure active" id="cs-1" data-revealed="0" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+  <style>
+    /* cs-1 click-reveal [Dave 2026-05-07]: hide descriptor + tagline on initial load; pulsing down-arrow indicates click-to-reveal. Right-arrow / scroll / swipe-up reveals. */
+    #cs-1 .cs1-reveal { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); pointer-events:none; }
+    #cs-1[data-revealed="1"] .cs1-reveal { opacity:1; transform:none; pointer-events:auto; }
+    #cs-1 .cs1-hint { opacity:1; transition:opacity 0.4s ease; }
+    #cs-1[data-revealed="1"] .cs1-hint { opacity:0; pointer-events:none; }
+    @keyframes cs1HintBob { 0%,100% { transform:translateY(0); opacity:0.85; } 50% { transform:translateY(8px); opacity:0.45; } }
+    #cs-1 .cs1-hint-arrow { animation: cs1HintBob 2.2s ease-in-out infinite; }
+    /* Export mode: reveal everything immediately, no animations */
+    html[data-export="1"] #cs-1 .cs1-reveal { opacity:1 !important; transform:none !important; }
+    html[data-export="1"] #cs-1 .cs1-hint { display:none !important; }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- Subtle paper grain -->
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
@@ -5389,19 +5401,29 @@ html, body, html body{
         <circle cx="442" cy="52" r="3.6" fill="#5B8FD4"/>
         <circle cx="498" cy="52" r="3.6" fill="#c8462c"/>
       </svg>
-      <!-- Primary descriptor (header) -->
-      <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
-        Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for our communities</em>
+      <!-- Primary descriptor + gold rule + tagline — wrapped in .cs1-reveal so they're hidden until click [Dave 2026-05-07] -->
+      <div class="cs1-reveal">
+        <!-- Primary descriptor (header) -->
+        <div style="font-family:'Fraunces',Georgia,serif;font-size:clamp(28px,3vw,46px);font-weight:600;color:#1a1612;line-height:1.15;letter-spacing:-0.012em;margin:0 auto 14px;text-align:center">
+          Invitation-based <em style="font-style:italic;font-weight:500;color:#b8954a">matchmaking for our communities</em>
+        </div>
+        <!-- Thin gold rule — moved BETWEEN header (descriptor) and subheader (tagline) [Dave 2026-05-03 PM] -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:6px auto 16px">
+          <div style="width:48px;height:1px;background:#b8954a"></div>
+          <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
+          <div style="width:48px;height:1px;background:#b8954a"></div>
+        </div>
+        <!-- Tagline (subheader) — Fraunces italic. tightened to mirror cs-2c reveal "unique value" [Dave 2026-05-03 PM] -->
+        <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(13px,1.25vw,19px);font-weight:400;color:rgba(26,22,18,0.82);line-height:1.45;margin:0 auto;letter-spacing:-0.005em;white-space:nowrap;text-align:center">
+          Our connection and unique value to each other &mdash; <span style="color:#b8954a;font-weight:600">measured, multiplied, made abundant</span>.
+        </div>
       </div>
-      <!-- Thin gold rule — moved BETWEEN header (descriptor) and subheader (tagline) [Dave 2026-05-03 PM] -->
-      <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin:6px auto 16px">
-        <div style="width:48px;height:1px;background:#b8954a"></div>
-        <div style="width:5px;height:5px;border:1px solid #b8954a;transform:rotate(45deg)"></div>
-        <div style="width:48px;height:1px;background:#b8954a"></div>
-      </div>
-      <!-- Tagline (subheader) — Fraunces italic. tightened to mirror cs-2c reveal "unique value" [Dave 2026-05-03 PM] -->
-      <div style="font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(13px,1.25vw,19px);font-weight:400;color:rgba(26,22,18,0.82);line-height:1.45;margin:0 auto;letter-spacing:-0.005em;white-space:nowrap;text-align:center">
-        Our connection and unique value to each other &mdash; <span style="color:#b8954a;font-weight:600">measured, multiplied, made abundant</span>.
+      <!-- Click-to-reveal hint — pulsing down arrow + tiny prompt. Hides when revealed. -->
+      <div class="cs1-hint" style="display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:38px;cursor:pointer" onclick="if(window.cs1Advance) window.cs1Advance();">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(26,22,18,0.45);margin-bottom:10px">Click to reveal</div>
+        <svg class="cs1-hint-arrow" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 4 L 14 22 M 14 22 L 6 14 M 14 22 L 22 14" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
   </div>
@@ -17177,6 +17199,22 @@ function goTo(n) { caseyGo(n); }
 //   - keyboard right / scroll-down advances: off,off → on,off → on,on → next slide
 //   - keyboard left / scroll-up reverses: on,on → on,off → off,off → prev slide
 //   - mouse click on a specific card TOGGLES that card independently (any direction)
+// cs-1 click-reveal handler [Dave 2026-05-07] — descriptor + tagline hidden until click
+window.cs1Advance = function() {
+  const slide = document.getElementById('cs-1');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.revealed === '1') return false;
+  slide.dataset.revealed = '1';
+  return true;
+};
+window.cs1Reverse = function() {
+  const slide = document.getElementById('cs-1');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.revealed === '0') return false;
+  slide.dataset.revealed = '0';
+  return true;
+};
+
 window.cs1bm1Advance = function() {
   const slide = document.getElementById('cs-1bm1');
   if (!slide || !slide.classList.contains('active')) return false;
@@ -17489,6 +17527,10 @@ function caseyGo(n) {
       void el.offsetWidth;  // force reflow
       el.classList.add('beat-again');
     }
+  }
+  if (targetId === 'cs-1') {
+    // Reset reveal state on each entry to cs-1 [Dave 2026-05-07] — descriptor + tagline hidden until click
+    target.dataset.revealed = '0';
   }
   if (targetId === 'cs-1bm1') {
     // Reset per-card flip state on each entry [Dave 2026-04-30 PM]
@@ -17948,6 +17990,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowRight' || e.key === ' ') {
     e.preventDefault();
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
@@ -17962,6 +18005,7 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'ArrowLeft') {
     e.preventDefault();
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
@@ -17985,7 +18029,11 @@ document.addEventListener('wheel', e => {
   e.preventDefault();
   wheelLock = true;
   if (e.deltaY > 0) {
-    // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
+    // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-down advances reveal step before navigating to next slide
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -18026,7 +18074,11 @@ document.addEventListener('wheel', e => {
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   else if (e.deltaY < 0) {
-    // cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
+    // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -18082,6 +18134,7 @@ document.addEventListener('touchend', e => {
     // Vertical swipe → animate-reveal aware (mirrors ArrowRight / ArrowLeft logic)
     const slideId = SLIDE_ORDER[current - 1];
     if (dy < 0) { // swipe UP → advance reveal
+      if (!inAppendix && slideId === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -18093,6 +18146,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
+      if (!inAppendix && slideId === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
