@@ -7904,7 +7904,7 @@ html, body, html body{
             <text x="555" y="240" text-anchor="middle" font-family="Playfair Display,serif" font-size="34" font-weight="700" letter-spacing="-1">
               <tspan fill="#5B8FD4">G</tspan><tspan font-style="italic" font-size="24" font-weight="500" fill="#1a1612" dx="2">n</tspan><tspan fill="#c8462c" dx="2">R</tspan>
             </text>
-            <text x="555" y="270" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#1a1612">SYNTHESIZING</text>
+            <text x="555" y="268" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.2" fill="#1a1612">SYNTHESIZING</text>
             <!-- Inner orbital dots (representing the graph nodes/edges getting populated) -->
             <g fill="#b8954a" opacity="0.6">
               <circle cx="555" cy="166" r="3"/>
@@ -11688,8 +11688,8 @@ html, body, html body{
      RIGHT lobe = THEN you get the most out of your community.
      Center crossing = the figure (you/community).
      Subtle gold flow-arrows along the loop convey perpetual motion. ===== -->
-<div class="casey-slide ds-focus" id="cs-12m2">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Our name is our brand</div>
+<div class="casey-slide ds-focus" id="cs-12m2" data-stage="0">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Brand</div>
 
   <!-- BRAND SLIDE — concept 3 + 6 hybrid [Dave 2026-05-06 PM v11]
        Solid G + R in BRAND COLORS (#4d82c6 blue / #c94d32 red), italic ink n at center.
@@ -11728,41 +11728,28 @@ html, body, html body{
     #cs-12m2.active .ripple-ring.r3 { animation:cs12m2ripple 4s ease-out infinite 2s; }
     #cs-12m2.active .ripple-ring.r4 { animation:cs12m2ripple 4s ease-out infinite 3s; }
     @keyframes cs12m2pulse { 0%,100% { transform:scale(1) } 50% { transform:scale(1.018) } }
-    /* === Entrance animation [Dave 2026-05-06 PM v14 — for live pitch] ===
-       Sequence (auto on slide enter, no clicks needed):
-       0.15s G fades in (slides up)        |  0.35s R fades in (slides down)  |  0.55s n appears
-       0.85s networks fan out from G/R     |  1.45s clauses fade in below     |
-       2.05s curved arrow + n→reciprocity arrow + label appear
-       2.95s YOUR IMPACT RIPPLES closer line appears */
-    #cs-12m2 .gletter,
-    #cs-12m2 .rletter,
-    #cs-12m2 .nletter,
+    /* === Click-reveal staging [Dave 2026-05-07 v15 — replaces auto-cascade] ===
+       Stage 0 (load):   GnR wordmark + 2 clauses visible. Networks/arrow/closer hidden.
+       Stage 1 (click):  Networks fan in + 'NETWORKED RECIPROCITY' arrow + label appear.
+       Stage 2 (click):  'YOUR IMPACT RIPPLES. EVERYONE RISES.' closer line appears. */
     #cs-12m2 .dispersion-left,
     #cs-12m2 .dispersion-right,
-    #cs-12m2 .clause,
     #cs-12m2 .reciprocity-arrow,
-    #cs-12m2 .closer-line { opacity:0; }
-    #cs-12m2 .gletter { transform:translateY(40px); }
-    #cs-12m2 .rletter { transform:translateY(-40px); }
-    @keyframes cs12m2In         { to { opacity:1; transform:none; } }
-    @keyframes cs12m2InDispLeft  { to { opacity:1; } }
-    @keyframes cs12m2InDispRight { to { opacity:1; } }
-    #cs-12m2.active .gletter { animation: cs12m2In 0.7s 0.15s cubic-bezier(.45,.05,.18,1) forwards, cs12m2pulse 5.2s 1.4s ease-in-out infinite; }
-    #cs-12m2.active .rletter { animation: cs12m2In 0.7s 0.35s cubic-bezier(.45,.05,.18,1) forwards, cs12m2pulse 5.2s 4.0s ease-in-out infinite; }
-    #cs-12m2.active .nletter { animation: cs12m2In 0.6s 0.55s ease forwards; }
-    #cs-12m2.active .dispersion-left  { animation: cs12m2InDispLeft  1.0s 0.85s cubic-bezier(.45,.05,.18,1) forwards; }
-    #cs-12m2.active .dispersion-right { animation: cs12m2InDispRight 1.0s 0.85s cubic-bezier(.45,.05,.18,1) forwards; }
-    #cs-12m2.active .clause           { animation: cs12m2In 0.7s 1.45s ease forwards; }
-    #cs-12m2.active .reciprocity-arrow { animation: cs12m2In 0.8s 2.05s ease forwards; }
-    #cs-12m2.active .closer-line      { animation: cs12m2In 0.7s 2.95s ease forwards; }
-    html[data-export="1"] #cs-12m2 .gletter,
-    html[data-export="1"] #cs-12m2 .rletter,
-    html[data-export="1"] #cs-12m2 .nletter,
+    #cs-12m2 .closer-line { opacity:0; transition: opacity 0.7s cubic-bezier(.45,.05,.18,1); }
+    /* Stage 1: networks + reciprocity arrow visible */
+    #cs-12m2[data-stage="1"] .dispersion-left,
+    #cs-12m2[data-stage="1"] .dispersion-right,
+    #cs-12m2[data-stage="1"] .reciprocity-arrow,
+    #cs-12m2[data-stage="2"] .dispersion-left,
+    #cs-12m2[data-stage="2"] .dispersion-right,
+    #cs-12m2[data-stage="2"] .reciprocity-arrow { opacity:1; }
+    /* Stage 2: closer also visible */
+    #cs-12m2[data-stage="2"] .closer-line { opacity:1; }
+    /* Export mode (PDF): show everything */
     html[data-export="1"] #cs-12m2 .dispersion-left,
     html[data-export="1"] #cs-12m2 .dispersion-right,
-    html[data-export="1"] #cs-12m2 .clause,
     html[data-export="1"] #cs-12m2 .reciprocity-arrow,
-    html[data-export="1"] #cs-12m2 .closer-line { opacity:1 !important;transform:none !important;animation:none !important; }
+    html[data-export="1"] #cs-12m2 .closer-line { opacity:1 !important; transition:none !important; }
     html[data-export="1"] #cs-12m2.active .gletter,
     html[data-export="1"] #cs-12m2.active .rletter,
     html[data-export="1"] #cs-12m2.active .ripple-ring { animation:none !important;opacity:1 !important;transform:translate(-50%,-50%) scale(1) !important; }
@@ -11982,7 +11969,7 @@ html, body, html body{
         <line x1="600" y1="14" x2="600" y2="106" stroke="#1a1612" stroke-width="2.4" stroke-linecap="round" marker-end="url(#cs12m2arrowDown)"/>
         <!-- "networked reciprocity" label centered below n -->
         <text x="600" y="148" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="800" letter-spacing="5.2" fill="#1a1612" text-transform="uppercase">NETWORKED RECIPROCITY</text>
-        <text x="600" y="178" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="15" font-weight="500" fill="rgba(26,22,18,0.62)">the engine in the middle</text>
+        <!-- 'the engine in the middle' subtitle REMOVED 2026-05-07 per Dave -->
       </svg>
     </div>
 
@@ -17215,6 +17202,27 @@ window.cs1Reverse = function() {
   return true;
 };
 
+// cs-12m2 staged-reveal handler [Dave 2026-05-07] — 2 click stages
+//   Stage 0 → 1: networks + 'NETWORKED RECIPROCITY' arrow + label appear
+//   Stage 1 → 2: 'YOUR IMPACT RIPPLES' closer line appears
+//   Stage 2 → next slide
+window.cs12m2Advance = function() {
+  const slide = document.getElementById('cs-12m2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 2) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.cs12m2Reverse = function() {
+  const slide = document.getElementById('cs-12m2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
+};
+
 window.cs1bm1Advance = function() {
   const slide = document.getElementById('cs-1bm1');
   if (!slide || !slide.classList.contains('active')) return false;
@@ -17531,6 +17539,10 @@ function caseyGo(n) {
   if (targetId === 'cs-1') {
     // Reset reveal state on each entry to cs-1 [Dave 2026-05-07] — descriptor + tagline hidden until click
     target.dataset.revealed = '0';
+  }
+  if (targetId === 'cs-12m2') {
+    // Reset stage on each entry to cs-12m2 [Dave 2026-05-07] — networks + reciprocity arrow + closer hidden until clicks
+    target.dataset.stage = '0';
   }
   if (targetId === 'cs-1bm1') {
     // Reset per-card flip state on each entry [Dave 2026-04-30 PM]
@@ -17999,6 +18011,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Advance   && window.cs11Advance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Advance  && window.csFw1Advance())  return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-12m2' && window.cs12m2Advance && window.cs12m2Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-25'   && window.cs25Advance   && window.cs25Advance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) return;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
@@ -18014,6 +18027,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-fw1'  && window.csFw1Reverse  && window.csFw1Reverse())  return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-12m2' && window.cs12m2Reverse && window.cs12m2Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-25'   && window.cs25Reverse   && window.cs25Reverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) return;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
@@ -18067,6 +18081,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-12m2' && window.cs12m2Advance && window.cs12m2Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -18109,6 +18127,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-12m2' && window.cs12m2Reverse && window.cs12m2Reverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
@@ -18143,6 +18165,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dAdvance  && window.cs11dAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11'   && window.cs11Advance   && window.cs11Advance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-fw1'  && window.csFw1Advance  && window.csFw1Advance())  { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-12m2' && window.cs12m2Advance && window.cs12m2Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
@@ -18155,6 +18178,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-11d'  && window.cs11dReverse  && window.cs11dReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-11'   && window.cs11Reverse   && window.cs11Reverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-fw1'  && window.csFw1Reverse  && window.csFw1Reverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-12m2' && window.cs12m2Reverse && window.cs12m2Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Reverse && window.cs_mv6_Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     }
