@@ -10422,8 +10422,9 @@ html, body, html body{
 
 
 
-  <!-- 3-bar chart: club court fees ARR across automation stages [Dave 2026-05-07 PM v5 — finagled to land Stage 3 NP at ~3× Stage 1 NP].
-       Bar heights scale to ARR lift: 130px @ +$210K · 260px @ +$420K · 564px @ +$910K.
+  <!-- 3-bar chart: club court fees ARR across automation stages [Dave 2026-05-07 PM v6 — content scaled DOWN ~30% per Dave: 'doesn't go down so close to the bottom'].
+       Bar heights scale to ARR lift: 90px @ +$210K · 180px @ +$420K · 390px @ +$910K (was 130/260/564).
+       Bar width 130px (was 160px). All ARR/net-profit number font sizes also reduced proportionally so the slide footprint matches the rest of the deck.
 
        NEPC ANCHOR: Stage 1 = $350K total club net profit (NEPC actual last year). Pre-GnR baseline X = $350 − ($210 × 0.80) = $182K.
 
@@ -10445,48 +10446,48 @@ html, body, html body{
          · Backup data Dave should have ready: NEPC P&L line items showing court-fee margin actuals, hours-of-
            coordination-labor saved per fill cycle, and pipeline of Stage 2 / Stage 3 club partners.
        Override numbers in three places below if NEPC actuals diverge. -->
-  <div style="display:flex;align-items:flex-end;justify-content:center;gap:64px;margin:0 0 12px 0;flex-wrap:wrap;max-width:1100px;margin-left:auto;margin-right:auto">
+  <div style="display:flex;align-items:flex-end;justify-content:center;gap:56px;margin:0 0 12px 0;flex-wrap:wrap;max-width:1000px;margin-left:auto;margin-right:auto">
 
     <!-- Stage 1 — TODAY (manual GnR invites) -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">+$210K ARR</div>
-      <div style="font-size:0.78rem;color:#2a8a4f;font-weight:700;margin-bottom:10px;letter-spacing:.18em;text-transform:uppercase">Today</div>
-      <div style="width:160px;height:130px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">club court fees</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:5px">+$210K ARR</div>
+      <div style="font-size:0.7rem;color:#2a8a4f;font-weight:700;margin-bottom:8px;letter-spacing:.18em;text-transform:uppercase">Today</div>
+      <div style="width:130px;height:90px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:8px 8px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 6px">club court fees</div>
       </div>
-      <div style="border-top:1px solid rgba(26,22,18,.2);width:160px;margin-top:0"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:#b8954a;margin-top:10px;line-height:1">$350K</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
-      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:12px">Stage 1</div>
-      <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">manual GnR invites</div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:130px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:#b8954a;margin-top:8px;line-height:1">$350K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
+      <div style="font-size:0.88rem;font-weight:700;color:#1a1612;margin-top:10px">Stage 1</div>
+      <div style="font-size:0.7rem;color:rgba(26,22,18,0.62);margin-top:2px;font-style:italic">manual GnR invites</div>
     </div>
 
-    <!-- Stage 2 — human-in-loop [Dave 2026-05-07 PM v2: re-finagled to ladder toward 3x at Stage 3] -->
+    <!-- Stage 2 — human-in-loop [Dave 2026-05-07 PM v2: re-finagled to ladder toward 3x at Stage 3; v3 scaled down] -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">+$420K ARR</div>
-      <div style="font-size:0.95rem;color:#2a8a4f;font-weight:700;margin-bottom:10px">+100%</div>
-      <div style="width:160px;height:260px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">club court fees</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:5px">+$420K ARR</div>
+      <div style="font-size:0.82rem;color:#2a8a4f;font-weight:700;margin-bottom:8px">+100%</div>
+      <div style="width:130px;height:180px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:8px 8px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 6px">club court fees</div>
       </div>
-      <div style="border-top:1px solid rgba(26,22,18,.2);width:160px;margin-top:0"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:#b8954a;margin-top:10px;line-height:1">$540K</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
-      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:12px">Stage 2</div>
-      <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">human-in-loop</div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:130px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:#b8954a;margin-top:8px;line-height:1">$540K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
+      <div style="font-size:0.88rem;font-weight:700;color:#1a1612;margin-top:10px">Stage 2</div>
+      <div style="font-size:0.7rem;color:rgba(26,22,18,0.62);margin-top:2px;font-style:italic">human-in-loop</div>
     </div>
 
-    <!-- Stage 3 — autonomous [Dave 2026-05-07 PM v2: ARR lift bumped to +$910K and margin expanded to ~95% (autonomous = software margins, no manual coordinator labor) so total club net profit ≈ $1.05M ≈ 3× Stage 1 $350K. Bar height 564px = $910K / $210K × 130px scale.] -->
+    <!-- Stage 3 — autonomous [Dave 2026-05-07 PM v3: scaled down. Bar 390px = $910K / $210K × 90px scale.] -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:#b8954a;margin-bottom:6px">+$910K ARR</div>
-      <div style="font-size:1.05rem;color:#c8462c;font-weight:900;margin-bottom:10px">~4&times; today</div>
-      <div style="width:160px;height:564px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:10px 10px 0 0;position:relative;box-shadow:0 0 32px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
-        <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 8px">club court fees</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#b8954a;margin-bottom:5px">+$910K ARR</div>
+      <div style="font-size:0.88rem;color:#c8462c;font-weight:900;margin-bottom:8px">~4&times; today</div>
+      <div style="width:130px;height:390px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:8px 8px 0 0;position:relative;box-shadow:0 0 28px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 6px">club court fees</div>
       </div>
-      <div style="border-top:1px solid rgba(212,168,83,.4);width:160px;margin-top:0"></div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:#c8462c;margin-top:10px;line-height:1;text-shadow:0 0 24px rgba(200,70,44,0.22)">$1.05M</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-top:2px">net profit &middot; 3&times;</div>
-      <div style="font-size:1rem;font-weight:800;color:#b8954a;margin-top:12px">Stage 3</div>
-      <div style="font-size:0.78rem;color:rgba(26,22,18,.7);margin-top:3px;font-style:italic">autonomous</div>
+      <div style="border-top:1px solid rgba(212,168,83,.4);width:130px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#c8462c;margin-top:8px;line-height:1;text-shadow:0 0 20px rgba(200,70,44,0.22)">$1.05M</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-top:2px">net profit &middot; 3&times;</div>
+      <div style="font-size:0.88rem;font-weight:800;color:#b8954a;margin-top:10px">Stage 3</div>
+      <div style="font-size:0.7rem;color:rgba(26,22,18,.7);margin-top:2px;font-style:italic">autonomous</div>
     </div>
   </div>
 
