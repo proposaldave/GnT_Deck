@@ -10408,77 +10408,68 @@ html, body, html body{
 
 
 
-  <!-- 3-bar chart: club court fees ARR across automation stages.
+  <!-- 3-bar chart: club court fees ARR across automation stages [Dave 2026-05-07 PM v4 — NEPC-anchored].
        Heights scale to revenue: 130px @ $210K · 241px @ $390K · 390px @ $630K (3× from Stage 1).
-       [Dave 2026-05-07 PM v3] Per-bar NET PROFIT dollar amounts REMOVED. Reasons:
-         (a) $210K Stage 1 ARR was visually colliding with $210K Stage 3 net profit (same digit, different meaning).
-         (b) Specific net-profit dollars on a fundraise slide are speculative without club-actuals; investor will rip the number apart in DD.
-         (c) Slide story is now ARR-only ladder + "3× your community" headline. Margin lift is implied by autonomous bar styling, not asserted with a fake number.
-       If we ever want profit numbers back, the honest ladder is 33% → 40% → 48% margin ($70K → $155K → $300K) — autonomous earns the higher margin. -->
+
+       NET PROFIT NUMBERS now anchored on NEPC's REAL last-year net profit of $350K (Dave 2026-05-07 PM):
+         Stage 1: $350K — NEPC's actual current net profit (manual GnR mode, today)
+         Stage 2: $495K — Stage 1 + ($390K − $210K) × 0.80 incremental court-fee margin (human-in-loop)
+         Stage 3: $685K — Stage 1 + ($630K − $210K) × 0.80 incremental court-fee margin (autonomous, software margins)
+       Court fees are very high margin — facility is sunk cost, marginal labor minimal — so ~80% of incremental court-fee dollars drop to net profit.
+       Stage 3 / Stage 1 ≈ 1.96× total club net profit. The slide tells: 3× club court-fee ARR, ~2× total club net profit.
+       Override numbers in three places below if NEPC actuals diverge from these projections. -->
   <div style="display:flex;align-items:flex-end;justify-content:center;gap:64px;margin:0 0 12px 0;flex-wrap:wrap;max-width:1100px;margin-left:auto;margin-right:auto">
 
     <!-- Stage 1 — TODAY (manual GnR invites) -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">$210K ARR</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">+$210K ARR</div>
       <div style="font-size:0.78rem;color:#2a8a4f;font-weight:700;margin-bottom:10px;letter-spacing:.18em;text-transform:uppercase">Today</div>
       <div style="width:160px;height:130px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">club court fees</div>
       </div>
-      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:14px">Stage 1</div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:160px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:#b8954a;margin-top:10px;line-height:1">$350K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
+      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:12px">Stage 1</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">manual GnR invites</div>
     </div>
 
     <!-- Stage 2 — human-in-loop -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">$390K ARR</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:6px">+$390K ARR</div>
       <div style="font-size:0.95rem;color:#2a8a4f;font-weight:700;margin-bottom:10px">+86%</div>
       <div style="width:160px;height:241px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:10px 10px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 8px">club court fees</div>
       </div>
-      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:14px">Stage 2</div>
+      <div style="border-top:1px solid rgba(26,22,18,.2);width:160px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:900;color:#b8954a;margin-top:10px;line-height:1">$495K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,149,74,0.85);margin-top:2px">net profit</div>
+      <div style="font-size:1rem;font-weight:700;color:#1a1612;margin-top:12px">Stage 2</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,0.62);margin-top:3px;font-style:italic">human-in-loop</div>
     </div>
 
     <!-- Stage 3 — autonomous (highlighted, gold) -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:#b8954a;margin-bottom:6px">$630K ARR</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:900;color:#b8954a;margin-bottom:6px">+$630K ARR</div>
       <div style="font-size:1.05rem;color:#c8462c;font-weight:900;margin-bottom:10px">3&times; today</div>
       <div style="width:160px;height:390px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:10px 10px 0 0;position:relative;box-shadow:0 0 32px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 8px">club court fees</div>
       </div>
-      <div style="font-size:1rem;font-weight:800;color:#b8954a;margin-top:14px">Stage 3</div>
+      <div style="border-top:1px solid rgba(212,168,83,.4);width:160px;margin-top:0"></div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:#c8462c;margin-top:10px;line-height:1;text-shadow:0 0 24px rgba(200,70,44,0.22)">$685K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;margin-top:2px">net profit &middot; ~2&times;</div>
+      <div style="font-size:1rem;font-weight:800;color:#b8954a;margin-top:12px">Stage 3</div>
       <div style="font-size:0.78rem;color:rgba(26,22,18,.7);margin-top:3px;font-style:italic">autonomous</div>
     </div>
   </div>
 
-  <!-- HERO INVESTOR CALLOUT [Dave 2026-05-07 PM v3]: REVERTED net profit to 3× per Dave — parallel rhetoric beats asymmetry on a punchline slide.
-       The slide now reads as a slogan ("three things triple"), not a spreadsheet. The 3× net profit is conservative-floor honest:
-       at minimum margins hold flat at 33% → 3× ARR = 3× profit. If margins expand (autonomous = they will), it's a bonus, not a contradiction.
-       NET PROFIT (center) stays dominant — biggest font, gold brand color, drop-shadow glow — because it's the answer to the operator question. -->
-  <div style="margin:40px auto 0;max-width:1100px;padding:24px 40px;background:linear-gradient(180deg,rgba(212,168,83,0.08) 0%,rgba(212,168,83,0.02) 100%);border:1px solid rgba(212,168,83,0.36);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:48px">
-    <!-- Pillar 1: ARR -->
-    <div style="text-align:center;flex:1">
-      <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#1a1612;line-height:1;letter-spacing:-0.02em">3&times;</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.65);margin-top:6px">ARR</div>
-    </div>
-    <!-- Divider -->
-    <div style="width:1px;height:60px;background:rgba(184,149,74,0.32)"></div>
-    <!-- Pillar 2: NET PROFIT (DOMINANT pillar — same 3× multiplier, bigger font + gold color + glow to keep visual primacy) -->
-    <div style="text-align:center;flex:1.4">
-      <div style="font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;color:#b8954a;line-height:1;letter-spacing:-0.025em;text-shadow:0 0 28px rgba(184,149,74,0.25)">3&times;</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;margin-top:6px">Net Profit</div>
-      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:.78rem;color:rgba(26,22,18,0.6);margin-top:4px">for your club</div>
-    </div>
-    <!-- Divider -->
-    <div style="width:1px;height:60px;background:rgba(184,149,74,0.32)"></div>
-    <!-- Pillar 3: COMMUNITY VALUE -->
-    <div style="text-align:center;flex:1">
-      <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#1a1612;line-height:1;letter-spacing:-0.02em">3&times;</div>
-      <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.65);margin-top:6px">Community Value</div>
-    </div>
-  </div>
+  <!-- HERO 3× callout strip DELETED 2026-05-07 PM per Dave: 'i think you can delete this'. The bars + headline already carry the punchline; the strip was redundant. -->
 
-  <!-- Krista quote removed 2026-04-29 — already on cs-11e Proving Ground; redundant here. -->
+  <!-- NEPC proving-ground attribution [Dave 2026-05-07 PM]: ground the slide in the actual example so investors know this isn't theoretical. -->
+  <div style="margin:36px auto 0;text-align:center">
+    <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:4px">Proven at</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;font-style:italic;color:#b8954a;letter-spacing:-0.005em">New England Pickleball Club</div>
+  </div>
 </div>
 </section>
 </div>
@@ -10581,31 +10572,14 @@ html, body, html body{
   </div>
   <!-- Subhead 'Pickleball is the most community-oriented sport ever invented' DELETED 2026-05-07 per Dave -->
 
-  <!-- Red follow-up above red card -->
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1280px;margin-bottom:4px;align-items:end">
-    <div style="text-align:center">
-      <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(0.95rem,1.35vw,1.18rem);color:#c8462c;font-weight:600;line-height:1.3;margin-bottom:6px">
-        It desperately needs<br><span style="font-style:normal;color:#5B8FD4;font-weight:900">G</span><span style="font-style:italic;color:#1a1612;font-weight:600">n</span><span style="font-style:normal;color:#c8462c;font-weight:900">R</span> paradigm.
-      </div>
-    </div>
-    <div></div><div></div><div></div><div></div>
-  </div>
-  <!-- Red down-arrow pointing to first (red) card -->
-  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:1280px;margin-bottom:6px">
-    <div style="display:flex;justify-content:center;align-items:flex-end">
-      <svg viewBox="0 0 60 80" style="width:50px;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
-        <line x1="30" y1="6" x2="30" y2="60" stroke="#c8462c" stroke-width="3.5" stroke-linecap="round"/>
-        <polygon points="30,76 16,56 44,56" fill="#c8462c"/>
-      </svg>
-    </div>
-    <div></div><div></div><div></div><div></div>
-  </div>
+  <!-- 'It desperately needs GnR paradigm.' standalone text + red down-arrow REMOVED 2026-05-07 PM per Dave: text moved onto front face of card #1 (so it lives WITH the icon, not pointing at it from outside). Arrow no longer needed. -->
 
 
   <!-- 4 FLIP cards [Dave 2026-05-03 PM]: FRONT shows just the icon; click flips to BACK to reveal title + content. -->
   <style>
-    #cs-25 .c25-card { perspective: 1500px; min-height: 240px; cursor: pointer; opacity: 0; }
-    #cs-25 .c25-card-inner { position: relative; width: 100%; height: 100%; min-height: 240px; transform-style: preserve-3d; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); }
+    /* min-height bumped 240→300px [Dave 2026-05-07 PM]: card #1 back face has more content (icon + title + 2 numbered items) than other cards. Was overflowing 240px so the icon got pushed against the top border. */
+    #cs-25 .c25-card { perspective: 1500px; min-height: 300px; cursor: pointer; opacity: 0; }
+    #cs-25 .c25-card-inner { position: relative; width: 100%; height: 100%; min-height: 300px; transform-style: preserve-3d; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); }
     #cs-25 .c25-card[data-flipped="1"] .c25-card-inner { transform: rotateY(180deg); }
     #cs-25 .c25-card-front,
     /* Bottom padding bumped 24→34px [Dave 2026-05-07] so inner numbered boxes don't kiss the back-card border. */
@@ -10634,7 +10608,6 @@ html, body, html body{
       <div class="c25-card-inner">
         <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%,rgba(200,70,44,0.03) 100%);border:1px solid rgba(200,70,44,0.36)">
           <div class="c25-icon" style="background:rgba(200,70,44,0.10);border:1.5px solid rgba(200,70,44,0.45);position:relative">
-            <!-- Calendar icon cleaned 2026-05-07 PM per Dave: removed binding tabs that poked above the icon circle. Now self-contained within y=6 to y=28. -->
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="#c8462c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
               <rect x="6" y="6" width="22" height="22" rx="2"/>
               <line x1="6" y1="13" x2="28" y2="13"/>
@@ -10644,6 +10617,10 @@ html, body, html body{
               <rect x="14.5" y="14.5" width="5.5" height="4" fill="rgba(200,70,44,0.55)" stroke="none"/>
               <rect x="22" y="21.5" width="5" height="4" fill="rgba(200,70,44,0.4)" stroke="none"/>
             </svg>
+          </div>
+          <!-- 'It desperately needs GnR paradigm.' moved here from a standalone text block above the cards [Dave 2026-05-07 PM]. -->
+          <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(0.95rem,1.3vw,1.15rem);color:#c8462c;font-weight:600;line-height:1.32;text-align:center;padding:0 12px">
+            It desperately needs<br><span style="font-style:normal;color:#5B8FD4;font-weight:900">G</span><span style="font-style:italic;color:#1a1612;font-weight:600">n</span><span style="font-style:normal;color:#c8462c;font-weight:900">R</span> paradigm.
           </div>
           <div class="c25-flip-hint">&#x21BB; flip</div>
         </div>
@@ -10765,7 +10742,7 @@ html, body, html body{
 
     <!-- 5. Friendships beyond the court (extensibility) — purple [Dave 2026-05-06: pickleball connections spill into life]
          [Dave 2026-05-07 PM]: front click flips to back; back click opens proof modal with Krista's Slack quote (cancer-radiation surprise party). -->
-    <div class="c25-card" data-flipped="0" onclick="cs25SocialNetworkClick(this);event.stopPropagation()">
+    <div class="c25-card" data-flipped="0" onclick="cs25SocialNetworkClick(this,event);event.stopPropagation()">
       <div class="c25-card-inner">
         <div class="c25-card-front" style="background:linear-gradient(180deg,rgba(122,74,140,0.10) 0%,rgba(122,74,140,0.03) 100%);border:1px solid rgba(122,74,140,0.40)">
           <div class="c25-icon" style="background:rgba(122,74,140,0.12);border:1.5px solid rgba(122,74,140,0.48)">
@@ -10825,7 +10802,8 @@ html, body, html body{
             </svg>
           </div>
           <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Already a social<br>network beyond<br>the courts.</div>
-          <div style="margin-top:10px;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(122,74,140,0.72)">click for the proof &rarr;</div>
+          <!-- Bottom-strip CTA [Dave 2026-05-07 PM]: visually delineates the bottom 1/3 click zone (opens proof modal). Top 2/3 click zone flips card back to front. -->
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(122,74,140,0.10);border-top:1px solid rgba(122,74,140,0.28);font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(122,74,140,0.85);text-align:center">see here &rarr;</div>
         </div>
       </div>
     </div>
@@ -10846,7 +10824,8 @@ html, body, html body{
     #cs25SocialProof .proof-msg { display:flex;gap:12px;align-items:flex-start;margin-bottom:18px; }
     #cs25SocialProof .proof-avatar { width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:#fff;flex-shrink:0; }
     #cs25SocialProof .proof-avatar.k { background:linear-gradient(135deg,#7a4a8c 0%,#a65bbf 100%); }
-    #cs25SocialProof .proof-avatar.s { background:linear-gradient(135deg,#3a8a8a 0%,#5bbfb0 100%); }
+    /* Steve avatar [Dave 2026-05-07 PM v2]: switched from teal to a clear deep blue so it reads as a distinct second person at a glance — was too close to background tones. */
+    #cs25SocialProof .proof-avatar.s { background:linear-gradient(135deg,#2a5fa3 0%,#4a82c6 100%); }
     #cs25SocialProof .proof-author { font-family:'Inter',sans-serif;font-weight:900;color:#1d1c1d;font-size:.95rem; }
     #cs25SocialProof .proof-time { font-family:'Inter',sans-serif;font-weight:400;color:#616061;font-size:.78rem;margin-left:8px; }
     #cs25SocialProof .proof-text { font-family:'Inter',sans-serif;color:#1d1c1d;font-size:.94rem;line-height:1.5;margin-top:2px; }
@@ -10860,13 +10839,7 @@ html, body, html body{
   <div id="cs25SocialProof" onclick="if(event.target===this){this.dataset.open='0';}">
     <button class="proof-close" onclick="document.getElementById('cs25SocialProof').dataset.open='0'">&times; close</button>
     <div class="proof-card" onclick="event.stopPropagation()">
-      <!-- Eyebrow: identifies this as a Slack proof from the founding team's actual workspace -->
-      <div class="proof-eyebrow">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 15a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-4 4v-4H5z" fill="#7a4a8c"/>
-        </svg>
-        <span>From Krista &middot; NEPC GM &middot; Slack</span>
-      </div>
+      <!-- Eyebrow 'From Krista · NEPC GM · Slack' DELETED 2026-05-07 PM per Dave. Modal now opens directly to the message thread. -->
       <!-- Krista's message -->
       <div class="proof-msg">
         <div class="proof-avatar k">K</div>
@@ -10886,24 +10859,30 @@ html, body, html body{
           <div class="proof-text">That's amazing, love it</div>
         </div>
       </div>
-      <!-- Caption: what this proves -->
-      <div class="proof-caption">
-        The invitation surface isn't just for pickleball.<br>
-        It's already the connective tissue of a community.
-      </div>
+      <!-- Caption 'The invitation surface isn't just for pickleball...' DELETED 2026-05-07 PM per Dave. Slack thread speaks for itself. -->
     </div>
   </div>
   <script>
-    // Click handler for card #5 [Dave 2026-05-07 PM]:
-    //   - If currently showing front (data-flipped="0") → flip to back
-    //   - If currently showing back (data-flipped="1") → open proof modal (do NOT flip back)
-    //   This way the user gets the headline first, then a deliberate second click to see the actual proof.
-    window.cs25SocialNetworkClick = function(card) {
+    // Click handler for card #5 [Dave 2026-05-07 PM v2 — split-zone behavior]:
+    //   - Front face: any click → flip to back.
+    //   - Back face:
+    //       Top 2/3 of card → flip back to front (so the user can re-read the headline / bail out)
+    //       Bottom 1/3 of card → open the Slack proof modal (the 'see here →' strip is in this zone)
+    window.cs25SocialNetworkClick = function(card, event) {
       if (card.dataset.flipped === '0') {
         card.dataset.flipped = '1';
-      } else {
+        return;
+      }
+      // Currently showing back face. Decide based on click Y-position.
+      const rect = card.getBoundingClientRect();
+      const clickY = event.clientY - rect.top;
+      if (clickY > rect.height * (2/3)) {
+        // Bottom 1/3 → open proof modal
         const modal = document.getElementById('cs25SocialProof');
         if (modal) modal.dataset.open = '1';
+      } else {
+        // Top 2/3 → flip back to front
+        card.dataset.flipped = '0';
       }
     };
     // ESC closes the modal
@@ -12715,7 +12694,7 @@ html, body, html body{
   @keyframes v8Pulse { 0%,100% { box-shadow:inset 0 0 60px rgba(184,149,74,0.3),0 0 80px rgba(184,149,74,0.25); } 50% { box-shadow:inset 0 0 80px rgba(184,149,74,0.45),0 0 110px rgba(184,149,74,0.4); } }
   #cs-brand-V8 .v8-ncell::before { animation:v8Pulse 4s ease-in-out infinite; }
 </style>
-<div class="casey-slide ds-focus" id="cs-brand-V8" style="display:none">
+<div class="casey-slide ds-focus" id="cs-brand-V8">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v8-stage">
@@ -12858,140 +12837,8 @@ html, body, html body{
 </div>
 
 
-<!-- ── V10 · ALIVE · most emotional brand expression yet. Top headline 'When you're free, generous, spontaneously yourself.
-        Everything comes alive.' Central glowing n core with etheric blue + red wisps fanning out. Three-verb mantra closer:
-        We connect it / We measure it / We amplify it. Inspired by ChatGPT iteration Dave 2026-05-07 ('i like this'). ── -->
-<style>
-  #cs-brand-V10 .v10-stage { position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:64px 56px 56px;width:100%;gap:18px; }
-
-  /* Top emotional headline */
-  #cs-brand-V10 .v10-headline { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.2vw,2.4rem);font-weight:600;color:#1a1612;line-height:1.28;text-align:center;max-width:1100px;letter-spacing:-0.012em; }
-  #cs-brand-V10 .v10-headline .acc-give { font-style:italic;font-weight:600;color:#3a73b8; }
-  /* 'Everything comes alive.' is the R-side payoff — colored red to map to the big R wordmark on the right [Dave 2026-05-07 PM]. */
-  #cs-brand-V10 .v10-headline .acc-alive { font-style:italic;font-weight:600;color:#c94d32; }
-
-  /* CENTER STAGE: n orb with etheric wisps */
-  #cs-brand-V10 .v10-stage-row { position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:clamp(360px,38vw,520px); }
-  #cs-brand-V10 .v10-wisp-svg { position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1; }
-  /* Central glowing orb */
-  #cs-brand-V10 .v10-orb { position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:clamp(220px,20vw,300px);height:clamp(220px,20vw,300px);z-index:5; }
-  #cs-brand-V10 .v10-orb::before { content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,250,238,0.95) 0%,rgba(243,234,216,0.55) 55%,rgba(243,234,216,0) 100%);box-shadow:inset 0 0 80px rgba(184,149,74,0.3),0 0 100px rgba(184,149,74,0.32);z-index:-1;animation:v10Pulse 4.5s ease-in-out infinite; }
-  /* Subtle dashed orbital ring */
-  #cs-brand-V10 .v10-orb::after { content:'';position:absolute;inset:-10%;border-radius:50%;border:1px dashed rgba(184,149,74,0.28);z-index:-1;animation:v10Spin 80s linear infinite; }
-  @keyframes v10Pulse { 0%,100% { box-shadow:inset 0 0 80px rgba(184,149,74,0.3),0 0 100px rgba(184,149,74,0.32); } 50% { box-shadow:inset 0 0 100px rgba(184,149,74,0.45),0 0 130px rgba(184,149,74,0.5); } }
-  @keyframes v10Spin { to { transform:rotate(360deg); } }
-  #cs-brand-V10 .v10-n { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(4.5rem,8vw,7rem);line-height:0.9;z-index:3; }
-  #cs-brand-V10 .v10-n-label { font-family:'Manrope',sans-serif;font-size:clamp(.65rem,.78vw,.82rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;text-align:center;line-height:1.35;margin-top:8px;z-index:3; }
-
-  /* Bottom mantra — three short verb lines, gold serif italic */
-  #cs-brand-V10 .v10-mantra { display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Fraunces','Playfair Display',serif;font-size:clamp(1.05rem,1.4vw,1.3rem);font-style:italic;font-weight:500;color:#b8954a;line-height:1.4;text-align:center; }
-
-  /* G + R wordmark anchors flanking the n orb [Dave 2026-05-07 PM]: blue G left = source/giving, red R right = destination/receiving.
-     Wisps visually flow from G → n → R, completing the brand mark across the entire stage. */
-  #cs-brand-V10 .v10-G,
-  #cs-brand-V10 .v10-R { position:absolute;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(7rem,12vw,11rem);line-height:0.9;letter-spacing:-0.04em;z-index:6;pointer-events:none; }
-  #cs-brand-V10 .v10-G { left:clamp(40px,6vw,120px);color:#4d82c6;text-shadow:0 8px 50px rgba(77,130,198,0.4); }
-  #cs-brand-V10 .v10-R { right:clamp(40px,6vw,120px);color:#c94d32;text-shadow:0 8px 50px rgba(201,77,50,0.4); }
-</style>
-<div class="casey-slide ds-focus" id="cs-brand-V10" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand Opportunity</div>
-  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-    <div class="v10-stage">
-
-      <!-- TOP emotional headline [Dave 2026-05-07 PM v3]: REVERTED to original 11-word version per Dave — the 5-word 'When you're alive, everyone is' was too simple for slide #12.
-           Line 1: blue qualifiers (G/giving side). Line 2: red 'Everything comes alive.' (R/receive side) — color logic maps to the big G/R wordmarks flanking the n. -->
-      <div class="v10-headline">
-        When you're <span class="acc-give">free</span>, <span class="acc-give">generous</span>, <span class="acc-give">spontaneously yourself</span>.<br>
-        <span class="acc-alive">Everything comes alive.</span>
-      </div>
-
-      <!-- CENTER stage: etheric wisps + glowing n + flanking G/R wordmarks -->
-      <div class="v10-stage-row">
-        <!-- Big blue G on the left (source: giving) -->
-        <span class="v10-G">G</span>
-        <!-- Big red R on the right (destination: receiving) -->
-        <span class="v10-R">R</span>
-        <!-- Wisps SVG: blue streaks fanning IN from left, red streaks fanning OUT to right -->
-        <svg class="v10-wisp-svg" viewBox="0 0 1600 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="overflow:visible">
-          <defs>
-            <filter id="v10blur" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="1.4"/>
-            </filter>
-            <radialGradient id="v10coreGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="rgba(255,238,180,0.6)"/>
-              <stop offset="50%" stop-color="rgba(184,149,74,0.18)"/>
-              <stop offset="100%" stop-color="rgba(184,149,74,0)"/>
-            </radialGradient>
-          </defs>
-          <!-- Background ambient core glow -->
-          <ellipse cx="800" cy="260" rx="380" ry="240" fill="url(#v10coreGlow)"/>
-
-          <!-- LEFT BLUE WISPS — flowing curves from the left edge into the center -->
-          <g stroke="#4d82c6" stroke-linecap="round" fill="none" filter="url(#v10blur)">
-            <path d="M 40 190 Q 280 200 700 260" stroke-width="1.6" opacity="0.55"/>
-            <path d="M 60 230 Q 300 240 700 260" stroke-width="1.4" opacity="0.5"/>
-            <path d="M 30 260 Q 280 260 700 260" stroke-width="2" opacity="0.7"/>
-            <path d="M 60 290 Q 300 280 700 260" stroke-width="1.4" opacity="0.5"/>
-            <path d="M 40 330 Q 280 320 700 260" stroke-width="1.6" opacity="0.55"/>
-            <path d="M 90 160 Q 320 200 700 260" stroke-width="1.2" opacity="0.42"/>
-            <path d="M 90 360 Q 320 320 700 260" stroke-width="1.2" opacity="0.42"/>
-            <path d="M 140 130 Q 360 190 700 260" stroke-width="1" opacity="0.32"/>
-            <path d="M 140 390 Q 360 330 700 260" stroke-width="1" opacity="0.32"/>
-          </g>
-          <!-- LEFT BLUE PARTICLES sparkling along the wisps -->
-          <g fill="#4d82c6">
-            <circle cx="180" cy="200" r="2.4" opacity="0.7"/>
-            <circle cx="280" cy="240" r="2" opacity="0.6"/>
-            <circle cx="380" cy="258" r="2.4" opacity="0.65"/>
-            <circle cx="480" cy="262" r="2" opacity="0.55"/>
-            <circle cx="240" cy="290" r="2" opacity="0.55"/>
-            <circle cx="340" cy="280" r="2.4" opacity="0.6"/>
-            <circle cx="440" cy="262" r="2" opacity="0.55"/>
-            <circle cx="200" cy="180" r="1.6" opacity="0.4"/>
-            <circle cx="320" cy="170" r="1.6" opacity="0.42"/>
-            <circle cx="200" cy="340" r="1.6" opacity="0.42"/>
-            <circle cx="320" cy="350" r="1.6" opacity="0.4"/>
-          </g>
-
-          <!-- RIGHT RED WISPS — flowing curves from center out to the right edge -->
-          <g stroke="#c94d32" stroke-linecap="round" fill="none" filter="url(#v10blur)">
-            <path d="M 900 260 Q 1320 200 1560 190" stroke-width="1.6" opacity="0.55"/>
-            <path d="M 900 260 Q 1300 240 1540 230" stroke-width="1.4" opacity="0.5"/>
-            <path d="M 900 260 Q 1320 260 1570 260" stroke-width="2" opacity="0.7"/>
-            <path d="M 900 260 Q 1300 280 1540 290" stroke-width="1.4" opacity="0.5"/>
-            <path d="M 900 260 Q 1320 320 1560 330" stroke-width="1.6" opacity="0.55"/>
-            <path d="M 900 260 Q 1280 200 1510 160" stroke-width="1.2" opacity="0.42"/>
-            <path d="M 900 260 Q 1280 320 1510 360" stroke-width="1.2" opacity="0.42"/>
-            <path d="M 900 260 Q 1240 190 1460 130" stroke-width="1" opacity="0.32"/>
-            <path d="M 900 260 Q 1240 330 1460 390" stroke-width="1" opacity="0.32"/>
-          </g>
-          <!-- RIGHT RED PARTICLES -->
-          <g fill="#c94d32">
-            <circle cx="1120" cy="262" r="2.4" opacity="0.65"/>
-            <circle cx="1220" cy="248" r="2" opacity="0.6"/>
-            <circle cx="1320" cy="232" r="2.4" opacity="0.6"/>
-            <circle cx="1420" cy="218" r="2" opacity="0.55"/>
-            <circle cx="1180" cy="280" r="2" opacity="0.55"/>
-            <circle cx="1280" cy="290" r="2.4" opacity="0.6"/>
-            <circle cx="1380" cy="304" r="2" opacity="0.55"/>
-            <circle cx="1280" cy="180" r="1.6" opacity="0.42"/>
-            <circle cx="1400" cy="160" r="1.6" opacity="0.4"/>
-            <circle cx="1280" cy="340" r="1.6" opacity="0.4"/>
-            <circle cx="1400" cy="360" r="1.6" opacity="0.42"/>
-          </g>
-        </svg>
-
-        <!-- Central glowing n orb -->
-        <div class="v10-orb">
-          <span class="v10-n">n</span>
-          <div class="v10-n-label">Networked<br>Reciprocity</div>
-        </div>
-      </div>
-
-      <!-- BOTTOM mantra REMOVED 2026-05-07 PM per Dave: 'i dont like this'. Slide is now headline + central wisps + flanking G/R only. -->
-    </div>
-  </section>
-</div>
+<!-- cs-brand-V10 (V10 · ALIVE · 'When you're free, generous, spontaneously yourself / Everything comes alive') HTML FULLY DELETED 2026-05-07 PM per Dave: second 'delete this'.
+     Was already removed from SLIDE_ALTS earlier today; HTML now also removed so it can't be reached via stale cache or URL. V15 (the hybrid) is the only slide carrying this energy now. -->
 
 
 <!-- ══════════════════════════════════════════════════════════════════════════════════
@@ -13015,22 +12862,29 @@ html, body, html body{
   @keyframes v15Pulse { 0%,100% { box-shadow:inset 0 0 70px rgba(184,149,74,0.3),0 0 90px rgba(184,149,74,0.32); } 50% { box-shadow:inset 0 0 90px rgba(184,149,74,0.45),0 0 120px rgba(184,149,74,0.45); } }
   @keyframes v15Spin { to { transform:rotate(360deg); } }
   #cs-brand-V15 .v15-n { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(3.6rem,6.5vw,5.6rem);line-height:0.9;z-index:3; }
-  /* Big flanking G/R wordmarks */
+  /* Big flanking G/R wordmarks — clickable [Dave 2026-05-07 PM]: G click reveals give caption, R click reveals rec caption (matching n→net pattern). */
   #cs-brand-V15 .v15-G,
-  #cs-brand-V15 .v15-R { position:absolute;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(5.6rem,9.5vw,9rem);line-height:0.9;letter-spacing:-0.04em;z-index:6;pointer-events:none; }
+  #cs-brand-V15 .v15-R { position:absolute;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(5.6rem,9.5vw,9rem);line-height:0.9;letter-spacing:-0.04em;z-index:6;cursor:pointer;user-select:none; }
   #cs-brand-V15 .v15-G { left:clamp(40px,7vw,140px);color:#4d82c6;text-shadow:0 8px 50px rgba(77,130,198,0.4); }
   #cs-brand-V15 .v15-R { right:clamp(40px,7vw,140px);color:#c94d32;text-shadow:0 8px 50px rgba(201,77,50,0.4); }
-  /* Caption row: V9's three pillars below the wisps */
-  #cs-brand-V15 .v15-caps { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1280px;margin-top:12px;text-align:center; }
+  /* Caption row [Dave 2026-05-07 PM v3]: switched from 3-col grid (which centered captions in equal-thirds, NOT under the actual letter positions)
+     to absolute positioning so each caption anchors directly under its corresponding G | n | R letter.
+     G is at left:clamp(40,7vw,140px); R is at right:clamp(40,7vw,140px); n is centered. Caption anchors mirror these. */
+  #cs-brand-V15 .v15-caps { position:relative; width:100%; max-width:1600px; min-height:90px; margin-top:14px; }
+  #cs-brand-V15 .v15-cap { position:absolute; top:0; text-align:center; width:clamp(220px,22vw,320px); }
+  #cs-brand-V15 .v15-cap.give { left:clamp(80px,11vw,210px); transform:translateX(-50%); }
+  #cs-brand-V15 .v15-cap.net  { left:50%; transform:translateX(-50%); width:clamp(240px,26vw,380px); }
+  #cs-brand-V15 .v15-cap.rec  { right:clamp(80px,11vw,210px); transform:translateX(50%); }
   #cs-brand-V15 .v15-cap-eye { font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.86rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;margin-bottom:8px; }
   #cs-brand-V15 .v15-cap-line { font-family:'Fraunces','Playfair Display',serif;font-size:clamp(.95rem,1.2vw,1.15rem);font-weight:500;color:#1a1612;line-height:1.4;font-style:italic; }
   #cs-brand-V15 .v15-cap-line em { font-style:italic;font-weight:600; }
   #cs-brand-V15 .v15-cap.give .v15-cap-eye { color:#4d82c6; }
   #cs-brand-V15 .v15-cap.net .v15-cap-eye  { color:#b8954a; }
   #cs-brand-V15 .v15-cap.rec .v15-cap-eye  { color:#c94d32; }
+  /* Click-to-reveal animations REMOVED 2026-05-07 PM per Dave: 'i decided i dont want animations on this slide'. All three captions visible by default. */
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V15">
-  <div class="slide-eyebrow" style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Networked Reciprocity</div>
+  <div class="slide-eyebrow" style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand Opportunity</div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v15-stage">
 
@@ -13040,10 +12894,10 @@ html, body, html body{
         <span class="acc-alive">Everything comes alive.</span>
       </div>
 
-      <!-- STAGE ROW: V10's wisps + n orb + flanking G/R -->
+      <!-- STAGE ROW: V10's wisps + n orb + flanking G/R. G + R clickable per Dave 2026-05-07 PM — each click reveals its caption. -->
       <div class="v15-stage-row">
-        <span class="v15-G">G</span>
-        <span class="v15-R">R</span>
+        <span class="v15-G" onclick="document.getElementById('cs-brand-V15').classList.add('cs-revealed-give');event.stopPropagation()">G</span>
+        <span class="v15-R" onclick="document.getElementById('cs-brand-V15').classList.add('cs-revealed-rec');event.stopPropagation()">R</span>
         <svg class="v15-wisp-svg" viewBox="0 0 1600 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="overflow:visible">
           <defs>
             <filter id="v15blur" x="-20%" y="-20%" width="140%" height="140%">
@@ -13093,7 +12947,8 @@ html, body, html body{
             <circle cx="1240" cy="210" r="2" opacity="0.55"/>
           </g>
         </svg>
-        <div class="v15-orb">
+        <!-- n-orb click-to-reveal [Dave 2026-05-07 PM]: clicking the orb adds .cs-revealed-net to the slide, fading in the center caption. -->
+        <div class="v15-orb" onclick="document.getElementById('cs-brand-V15').classList.add('cs-revealed-net');event.stopPropagation()">
           <span class="v15-n">n</span>
         </div>
       </div>
@@ -18383,8 +18238,9 @@ const SLIDE_ORDER = [
   'cs-11e',
   // cs-dupr (Founder's Bet) MERGED INTO cs-18 founder slide per Dave 2026-05-06 PM v2 — the DUPR-rejection IS the founder story; standalone cs-dupr div retained in HTML as backup but not in main flow.
   'cs-19',    // 11 3× court fee revenue · For Your Club ('3x your community' slide per Dave)
-  'cs-brand-V9',   // 12 Brand Opportunity · 'Identity to Impact' [Dave 2026-05-07: moved up — brand lands right after the 3x court-fees promise]
-  'cs-brand-V15',  // 13 Networked Reciprocity (HYBRID: V10 wisps graphic + V9 open-heart content) [Dave 2026-05-07 PM: 'i like this graphic but i like this content']
+  // cs-brand-V9 MOVED to end of appendix per Dave 2026-05-07 PM — V15 (hybrid) won slot 12.
+  // cs-brand-V15 MOVED to end of appendix per Dave 2026-05-07 PM — V8 (HUMAN VALUE, FINALLY SEEN) now primary at slot 12.
+  'cs-brand-V8',   // 12 Brand Opportunity · 'HUMAN VALUE, FINALLY SEEN' [Dave 2026-05-07 PM: 'i loved it. make this the main top dot slide #12']
   // cs-bh2 MOVED to appendix slot 3 per Dave 2026-05-07 — was main slot 13
   // cs-34 (Flywheel · network effects) → APPENDIX 2026-05-01 per Dave — cs-fw1 won the head-to-head; "graph is moat" idea already covered by cs-4 + cs-ns1
   // cs-rcp (Receipts) → APPENDIX 2026-05-01 per Dave
@@ -18461,7 +18317,15 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-07 PM v12] V17 'Dictionary' (networked reciprocity entry) removed from alts — Dave: 'delete this'. HTML retained as backup.
   // [Dave 2026-05-07 PM v13] V16 'Open Heart' MOVED from alts to first appendix slide per Dave: 'really good but move it to the first appendix slide'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-07 PM v14] V15 'Time, Care, Ideas, Love' MOVED from alts to END of appendix per Dave: 'move this slide to the end of the appendix'. Now lives in APPENDIX_ORDER, not as alt dot.
-  12: ['cs-brand-V1', 'cs-brand-V2', 'cs-brand-V3', 'cs-brand-V4', 'cs-brand-V5', 'cs-brand-V6', 'cs-brand-V7', 'cs-brand-V8', 'cs-brand-V10'],
+  12: ['cs-brand-V1'],
+  // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V2 ('When you show up fully... / What matters most comes back to you. + Networked stacked above n + n is the engine tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V3 ('When you show up fully... / What matters most comes back to you. + Networked · Reciprocity inline label') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V4 ('WHEN you show up fully... THEN what matters most comes back to you. + Your impact, intelligently returned tagline') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V6 ('GnR ensures the people and experiences most valuable to you are reciprocated back / 3-column YOU GIVE / GNR MEASURES / YOU RECEIVE') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V7 ('FLYWHEEL: GIVE → SEE → RETURN → GROW with circular arrows around n') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
+  // cs-brand-V8 PROMOTED to primary at slot 12 per Dave 2026-05-07 PM ('i loved it. make this the main top dot slide #12'). No longer in alts.
+  // cs-brand-V10 ('When you're free, generous, spontaneously yourself / Everything comes alive') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V11 ('It's not just what you give. / It's the feeling of being seen for it.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V12 ('You give from the heart / We see you / You receive what you need') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
@@ -18539,8 +18403,9 @@ const APPENDIX_ORDER = [
   // cs-a17 + cs-a18 → DELETED 2026-05-02 per Dave (orphan refs — no slide div, were rendering blank)
   // cs-a19 ("What Runs the World" — Land/Labor/Capital/Information/Attention/Intelligence → Human Connection)
   //   → DELETED 2026-05-02 per Dave (duplicate of cs-mv7 which was already removed)
-  'cs-mv6-altB',  // LAST · Mission · chart-only variant (era labels as X-axis ticks) [moved from main slot 19 per Dave 2026-05-07 — cs-mv6 era-cards restored to main flow]
-  // cs-brand-V15 ('Time, Care, Ideas, Love') REMOVED from appendix per Dave 2026-05-07: 'delete this, i dont like it'. HTML retained as silent backup but no longer in nav.
+  'cs-mv6-altB',  // Mission · chart-only variant (era labels as X-axis ticks) [moved from main slot 19 per Dave 2026-05-07 — cs-mv6 era-cards restored to main flow]
+  'cs-brand-V9',  // Brand Opportunity · 'Open Heart' three-orb pillar version — moved from main slot 12 to appendix per Dave 2026-05-07 PM
+  'cs-brand-V15', // LAST · Brand Opportunity · 'Open Heart Hybrid' (V10 wisps + V9 captions) — moved from main slot 12 to appendix end per Dave 2026-05-07 PM ('move it to the last slide in the appendix'). V8 now wins slot 12.
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
@@ -18885,6 +18750,8 @@ function caseyGo(n) {
   if (targetId === 'cs-fw1'  && target) target.dataset.stage = '0';
   if (targetId === 'cs-1bm1' && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
   if (targetId === 'cs-11d'  && target) { target.dataset.left = '0'; target.dataset.right = '0'; }
+  // V15 click-to-reveal: reset all three reveal classes on slide entry so each visit starts fresh [Dave 2026-05-07 PM]
+  if (targetId === 'cs-brand-V15' && target) { target.classList.remove('cs-revealed-give','cs-revealed-net','cs-revealed-rec'); }
   // Position-indexed triggers. Triggers are keyed by targetId so variant removal doesn't break them.
   if (targetId === 'cs-10') startCourtForm(); else stopCourtForm();
   if (targetId === 'cs-4') animateIntroTeaser();
@@ -19272,8 +19139,8 @@ const slideLabels = [
   'NEPC proof · $210K court fees',                   //  9 cs-11e
   '3× net profit for your club',                     // 10 cs-19
   'Autonomous social coordination',                  // 11 cs-fw1
-  'Brand Opportunity · Identity to Impact',          // 12 cs-brand-V9 [Dave 2026-05-07: moved up to slot 12]
-  'Networked Reciprocity · Open Heart',              // 13 cs-brand-V15 [Dave 2026-05-07 PM: hybrid V10 wisps + V9 content]
+  // cs-brand-V9 + cs-brand-V15 labels REMOVED from main 2026-05-07 PM — both moved to appendix end
+  'Brand Opportunity · Human Value, Finally Seen',   // 12 cs-brand-V8 [Dave 2026-05-07 PM: V8 promoted to primary; V15 demoted to appendix]
   // 'We feel most alive' label removed — cs-hc9 moved to appendix per Dave 2026-05-07 (was slot 14)
   'Why pickleball first',                            // 14 cs-25
   'Mapping human connection · Pickleball TAM',       // 14 cs-tv
@@ -19339,12 +19206,15 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
   // If this position is the REVIEW slot, the alts are also RED (multiple uncertain options).
   // Otherwise alts render gold (alternative-but-not-under-review).
   const isReviewSlot = (pos === REVIEW_POSITION);
-  SLIDE_ALTS[posKey].forEach((altId) => {
+  SLIDE_ALTS[posKey].forEach((altId, i) => {
     const altDot = document.createElement('button');
     altDot.className = 'casey-dot alt' + (isReviewSlot ? ' review' : '');
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
+    // Stack alts vertically below the primary dot [Dave 2026-05-07 PM]: previously all alts shared top:18px (the CSS default)
+    // and rendered ON TOP of each other — only the last was visible. Now each alt offsets by 13px so all are clickable.
+    altDot.style.top = (18 + i * 13) + 'px';
     altDot.onclick = (e) => {
       e.stopPropagation();
       // Manual navigate to the alt slide ID — without disturbing the primary SLIDE_ORDER index
