@@ -11974,6 +11974,270 @@ html, body, html body{
   </section>
 </div>
 
+<!-- ════════════════════════════════════════════════════════════════════════════
+     cs-brand-V1 / V2 / V3 — BRAND VARIANTS FOR SLIDE 12 REVIEW [Dave 2026-05-06 PM]
+     Inspired by Dave's favorite (#1 in his attached image grid):
+       - Beautiful firework-burst dispersion behind G (blue) and R (red)
+       - WHEN/THEN ribbons above G/R
+       - 'NETWORKED RECIPROCITY' label RIGHT NEXT TO the n (visually inseparable)
+       - Two clauses below G and R
+       - Gold-caps bottom tagline
+     Each variant places the 'networked reciprocity' label differently relative to n.
+     Wired into SLIDE_ALTS at position 12 — appear as RED dots stacked under slot-12 nav dot.
+     ════════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── V1 · INLINE: 'networked reciprocity' label tucked DIRECTLY beneath the n ── -->
+<style>
+  #cs-brand-V1 .v1-stage { position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 56px;width:100%; }
+  #cs-brand-V1 .v1-eye-row { display:grid;grid-template-columns:1fr auto 1fr;gap:14px;width:min(1700px,98%);align-items:end;margin-bottom:8px; }
+  #cs-brand-V1 .v1-eye-row .v1-eye-l { text-align:right; }
+  #cs-brand-V1 .v1-eye-row .v1-eye-r { text-align:left; }
+  #cs-brand-V1 .v1-rib { display:inline-flex;align-items:center;font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:0.42em;color:#fff8e7;background:linear-gradient(135deg,#d4ad60 0%,#8a6a2a 100%);box-shadow:0 4px 22px rgba(184,149,74,0.55);padding:10px 22px;text-shadow:0 1px 0 rgba(0,0,0,0.2); }
+  #cs-brand-V1 .v1-rib.when { padding-right:34px;clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%); }
+  #cs-brand-V1 .v1-rib.then { padding-left:34px;clip-path:polygon(16px 0, 100% 0, 100% 100%, 16px 100%, 0 50%); }
+  #cs-brand-V1 .v1-stage-row { display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;width:min(1700px,98%); }
+  #cs-brand-V1 .v1-gcell { text-align:right;display:flex;flex-direction:column;align-items:flex-end; }
+  #cs-brand-V1 .v1-rcell { text-align:left;display:flex;flex-direction:column;align-items:flex-start; }
+  #cs-brand-V1 .v1-ncell { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px; }
+  #cs-brand-V1 .v1-letter-row { position:relative;display:flex;align-items:center;width:100%; }
+  #cs-brand-V1 .v1-gcell .v1-letter-row { justify-content:flex-end; }
+  #cs-brand-V1 .v1-rcell .v1-letter-row { justify-content:flex-start; }
+  #cs-brand-V1 .v1-G, #cs-brand-V1 .v1-R { font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(10rem,20vw,18rem);line-height:0.9;letter-spacing:-0.04em;position:relative;z-index:3; }
+  #cs-brand-V1 .v1-G { color:#4d82c6;text-shadow:0 10px 50px rgba(77,130,198,0.4); }
+  #cs-brand-V1 .v1-R { color:#c94d32;text-shadow:0 10px 50px rgba(201,77,50,0.4); }
+  #cs-brand-V1 .v1-n { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(5rem,10vw,9rem);line-height:0.9;position:relative;z-index:5; }
+  #cs-brand-V1 .v1-n-label { font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:#b8954a;text-align:center;margin-top:-12px;line-height:1.2;max-width:200px; }
+  #cs-brand-V1 .v1-n-glow { position:absolute;top:50%;left:50%;width:240%;height:240%;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(184,149,74,0.32) 0%, rgba(184,149,74,0.08) 45%, rgba(184,149,74,0) 70%);pointer-events:none;z-index:1; }
+  #cs-brand-V1 .v1-n-wrap { position:relative;display:flex;align-items:center;justify-content:center; }
+  #cs-brand-V1 .v1-burst { position:absolute;top:50%;width:55%;height:160%;transform:translateY(-50%);pointer-events:none;z-index:1;overflow:visible; }
+  #cs-brand-V1 .v1-burst.left { right:60%; }
+  #cs-brand-V1 .v1-burst.right { left:60%; }
+  #cs-brand-V1 .v1-clause { font-family:'Fraunces','Playfair Display',serif;font-size:clamp(1.1rem,1.55vw,1.4rem);font-weight:600;color:#1a1612;line-height:1.32;margin-top:18px;max-width:480px;letter-spacing:-0.012em; }
+  #cs-brand-V1 .v1-clause em { font-style:italic;font-weight:500;color:#b8954a; }
+  #cs-brand-V1 .v1-tag { margin-top:42px;display:flex;align-items:center;gap:18px;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a; }
+  #cs-brand-V1 .v1-tag .ln { width:60px;height:1px;background:rgba(184,149,74,0.55); }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-V1" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand · Variant 1 · Inline label</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+    <div class="v1-stage">
+      <div class="v1-eye-row"><div class="v1-eye-l"><span class="v1-rib when">WHEN</span></div><div></div><div class="v1-eye-r"><span class="v1-rib then">THEN</span></div></div>
+      <div class="v1-stage-row">
+        <div class="v1-gcell">
+          <div class="v1-letter-row">
+            <svg class="v1-burst left" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#4d82c6">
+                <circle cx="600" cy="300" r="6" opacity="0.92"/>
+                <circle cx="540" cy="220" r="5" opacity="0.85"/><circle cx="540" cy="380" r="5" opacity="0.85"/>
+                <circle cx="490" cy="160" r="4.5" opacity="0.78"/><circle cx="490" cy="300" r="4.5" opacity="0.82"/><circle cx="490" cy="440" r="4.5" opacity="0.78"/>
+                <circle cx="430" cy="110" r="4" opacity="0.7"/><circle cx="430" cy="240" r="4" opacity="0.72"/><circle cx="430" cy="360" r="4" opacity="0.72"/><circle cx="430" cy="490" r="4" opacity="0.7"/>
+                <circle cx="370" cy="80"  r="3.6" opacity="0.62"/><circle cx="370" cy="180" r="3.6" opacity="0.65"/><circle cx="370" cy="300" r="3.6" opacity="0.7"/><circle cx="370" cy="420" r="3.6" opacity="0.65"/><circle cx="370" cy="520" r="3.6" opacity="0.62"/>
+                <circle cx="300" cy="60"  r="3" opacity="0.5"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.6"/><circle cx="300" cy="360" r="3" opacity="0.6"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.5"/>
+                <circle cx="220" cy="100" r="2.6" opacity="0.4"/><circle cx="220" cy="200" r="2.6" opacity="0.45"/><circle cx="220" cy="300" r="2.6" opacity="0.5"/><circle cx="220" cy="400" r="2.6" opacity="0.45"/><circle cx="220" cy="500" r="2.6" opacity="0.4"/>
+                <circle cx="140" cy="160" r="2" opacity="0.3"/><circle cx="140" cy="280" r="2" opacity="0.35"/><circle cx="140" cy="320" r="2" opacity="0.35"/><circle cx="140" cy="440" r="2" opacity="0.3"/>
+                <circle cx="60"  cy="220" r="1.6" opacity="0.2"/><circle cx="60"  cy="300" r="1.6" opacity="0.22"/><circle cx="60"  cy="380" r="1.6" opacity="0.2"/>
+              </g>
+            </svg>
+            <span class="v1-G">G</span>
+          </div>
+          <div class="v1-clause">When you show up <em>fully</em>, give <em>freely</em>, be <em>you</em>.</div>
+        </div>
+        <div class="v1-ncell">
+          <div class="v1-n-wrap"><div class="v1-n-glow"></div><span class="v1-n">n</span></div>
+          <div class="v1-n-label">networked<br>reciprocity</div>
+        </div>
+        <div class="v1-rcell">
+          <div class="v1-letter-row">
+            <span class="v1-R">R</span>
+            <svg class="v1-burst right" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#c94d32">
+                <circle cx="0" cy="300" r="6" opacity="0.92"/>
+                <circle cx="60" cy="220" r="5" opacity="0.85"/><circle cx="60" cy="380" r="5" opacity="0.85"/>
+                <circle cx="110" cy="160" r="4.5" opacity="0.78"/><circle cx="110" cy="300" r="4.5" opacity="0.82"/><circle cx="110" cy="440" r="4.5" opacity="0.78"/>
+                <circle cx="170" cy="110" r="4" opacity="0.7"/><circle cx="170" cy="240" r="4" opacity="0.72"/><circle cx="170" cy="360" r="4" opacity="0.72"/><circle cx="170" cy="490" r="4" opacity="0.7"/>
+                <circle cx="230" cy="80"  r="3.6" opacity="0.62"/><circle cx="230" cy="180" r="3.6" opacity="0.65"/><circle cx="230" cy="300" r="3.6" opacity="0.7"/><circle cx="230" cy="420" r="3.6" opacity="0.65"/><circle cx="230" cy="520" r="3.6" opacity="0.62"/>
+                <circle cx="300" cy="60"  r="3" opacity="0.5"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.6"/><circle cx="300" cy="360" r="3" opacity="0.6"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.5"/>
+                <circle cx="380" cy="100" r="2.6" opacity="0.4"/><circle cx="380" cy="200" r="2.6" opacity="0.45"/><circle cx="380" cy="300" r="2.6" opacity="0.5"/><circle cx="380" cy="400" r="2.6" opacity="0.45"/><circle cx="380" cy="500" r="2.6" opacity="0.4"/>
+                <circle cx="460" cy="160" r="2" opacity="0.3"/><circle cx="460" cy="280" r="2" opacity="0.35"/><circle cx="460" cy="320" r="2" opacity="0.35"/><circle cx="460" cy="440" r="2" opacity="0.3"/>
+                <circle cx="540" cy="220" r="1.6" opacity="0.2"/><circle cx="540" cy="300" r="1.6" opacity="0.22"/><circle cx="540" cy="380" r="1.6" opacity="0.2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="v1-clause">What matters most <em>comes back to you</em>.</div>
+        </div>
+      </div>
+      <div class="v1-tag"><span class="ln"></span>Your impact, intelligently returned.<span class="ln"></span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ── V2 · STACKED: 'networked' over n, 'reciprocity' under n — n IS the spine of the words ── -->
+<style>
+  #cs-brand-V2 .v2-stage { position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 56px;width:100%; }
+  #cs-brand-V2 .v2-row { display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;width:min(1700px,98%); }
+  #cs-brand-V2 .v2-gcell { text-align:right;display:flex;flex-direction:column;align-items:flex-end; }
+  #cs-brand-V2 .v2-rcell { text-align:left;display:flex;flex-direction:column;align-items:flex-start; }
+  #cs-brand-V2 .v2-ncell { display:flex;flex-direction:column;align-items:center;justify-content:center; }
+  #cs-brand-V2 .v2-G, #cs-brand-V2 .v2-R { font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(10rem,20vw,18rem);line-height:0.9;letter-spacing:-0.04em;position:relative;z-index:3; }
+  #cs-brand-V2 .v2-G { color:#4d82c6;text-shadow:0 10px 50px rgba(77,130,198,0.4); }
+  #cs-brand-V2 .v2-R { color:#c94d32;text-shadow:0 10px 50px rgba(201,77,50,0.4); }
+  #cs-brand-V2 .v2-n { font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:#1a1612;font-size:clamp(5rem,10vw,9rem);line-height:0.95;position:relative;z-index:5; }
+  #cs-brand-V2 .v2-stack-word { font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:800;letter-spacing:.45em;text-transform:uppercase;color:#b8954a;line-height:1; }
+  #cs-brand-V2 .v2-stack-word.top { margin-bottom:-4px; }
+  #cs-brand-V2 .v2-stack-word.bottom { margin-top:-4px; }
+  #cs-brand-V2 .v2-n-wrap { position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 24px;border-radius:14px; }
+  #cs-brand-V2 .v2-n-wrap::before { content:'';position:absolute;inset:-12px -22px;background:radial-gradient(ellipse,rgba(184,149,74,0.22) 0%,rgba(184,149,74,0.06) 50%,rgba(184,149,74,0) 80%);z-index:-1;border-radius:50%; }
+  #cs-brand-V2 .v2-burst { position:absolute;top:50%;width:55%;height:160%;transform:translateY(-50%);pointer-events:none;z-index:1;overflow:visible; }
+  #cs-brand-V2 .v2-burst.left { right:60%; }
+  #cs-brand-V2 .v2-burst.right { left:60%; }
+  #cs-brand-V2 .v2-letter-row { position:relative;display:flex;align-items:center;width:100%; }
+  #cs-brand-V2 .v2-gcell .v2-letter-row { justify-content:flex-end; }
+  #cs-brand-V2 .v2-rcell .v2-letter-row { justify-content:flex-start; }
+  #cs-brand-V2 .v2-clause { font-family:'Fraunces','Playfair Display',serif;font-size:clamp(1.1rem,1.55vw,1.4rem);font-weight:600;color:#1a1612;line-height:1.32;margin-top:18px;max-width:480px;letter-spacing:-0.012em; }
+  #cs-brand-V2 .v2-clause em { font-style:italic;font-weight:500;color:#b8954a; }
+  #cs-brand-V2 .v2-tag { margin-top:42px;display:flex;align-items:center;gap:18px;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a; }
+  #cs-brand-V2 .v2-tag .ln { width:60px;height:1px;background:rgba(184,149,74,0.55); }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-V2" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand · Variant 2 · Stacked spine</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+    <div class="v2-stage">
+      <div class="v2-row">
+        <div class="v2-gcell">
+          <div class="v2-letter-row">
+            <svg class="v2-burst left" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#4d82c6">
+                <circle cx="600" cy="300" r="6"/><circle cx="540" cy="220" r="5"/><circle cx="540" cy="380" r="5"/><circle cx="490" cy="160" r="4.5"/><circle cx="490" cy="300" r="4.5"/><circle cx="490" cy="440" r="4.5"/><circle cx="430" cy="110" r="4"/><circle cx="430" cy="240" r="4"/><circle cx="430" cy="360" r="4"/><circle cx="430" cy="490" r="4"/>
+                <circle cx="370" cy="80" r="3.6" opacity="0.7"/><circle cx="370" cy="180" r="3.6" opacity="0.7"/><circle cx="370" cy="300" r="3.6" opacity="0.7"/><circle cx="370" cy="420" r="3.6" opacity="0.7"/><circle cx="370" cy="520" r="3.6" opacity="0.7"/>
+                <circle cx="300" cy="60" r="3" opacity="0.55"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.55"/><circle cx="300" cy="360" r="3" opacity="0.55"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.55"/>
+                <circle cx="220" cy="200" r="2.6" opacity="0.4"/><circle cx="220" cy="300" r="2.6" opacity="0.45"/><circle cx="220" cy="400" r="2.6" opacity="0.4"/>
+                <circle cx="140" cy="280" r="2" opacity="0.28"/><circle cx="140" cy="320" r="2" opacity="0.28"/>
+              </g>
+            </svg>
+            <span class="v2-G">G</span>
+          </div>
+          <div class="v2-clause">When you show up <em>fully</em>, give <em>freely</em>, be <em>you</em>.</div>
+        </div>
+        <div class="v2-ncell">
+          <div class="v2-n-wrap">
+            <div class="v2-stack-word top">Networked</div>
+            <span class="v2-n">n</span>
+            <div class="v2-stack-word bottom">Reciprocity</div>
+          </div>
+        </div>
+        <div class="v2-rcell">
+          <div class="v2-letter-row">
+            <span class="v2-R">R</span>
+            <svg class="v2-burst right" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#c94d32">
+                <circle cx="0" cy="300" r="6"/><circle cx="60" cy="220" r="5"/><circle cx="60" cy="380" r="5"/><circle cx="110" cy="160" r="4.5"/><circle cx="110" cy="300" r="4.5"/><circle cx="110" cy="440" r="4.5"/><circle cx="170" cy="110" r="4"/><circle cx="170" cy="240" r="4"/><circle cx="170" cy="360" r="4"/><circle cx="170" cy="490" r="4"/>
+                <circle cx="230" cy="80" r="3.6" opacity="0.7"/><circle cx="230" cy="180" r="3.6" opacity="0.7"/><circle cx="230" cy="300" r="3.6" opacity="0.7"/><circle cx="230" cy="420" r="3.6" opacity="0.7"/><circle cx="230" cy="520" r="3.6" opacity="0.7"/>
+                <circle cx="300" cy="60" r="3" opacity="0.55"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.55"/><circle cx="300" cy="360" r="3" opacity="0.55"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.55"/>
+                <circle cx="380" cy="200" r="2.6" opacity="0.4"/><circle cx="380" cy="300" r="2.6" opacity="0.45"/><circle cx="380" cy="400" r="2.6" opacity="0.4"/>
+                <circle cx="460" cy="280" r="2" opacity="0.28"/><circle cx="460" cy="320" r="2" opacity="0.28"/>
+              </g>
+            </svg>
+          </div>
+          <div class="v2-clause">What matters most <em>comes back to you</em>.</div>
+        </div>
+      </div>
+      <div class="v2-tag"><span class="ln"></span>n is the engine: networked reciprocity.<span class="ln"></span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ── V3 · ORBITAL: gold orbit ring around n with 'NETWORKED RECIPROCITY' as curved orbit text ── -->
+<style>
+  #cs-brand-V3 .v3-stage { position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 56px;width:100%; }
+  #cs-brand-V3 .v3-row { display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;width:min(1700px,98%); }
+  #cs-brand-V3 .v3-gcell { text-align:right;display:flex;flex-direction:column;align-items:flex-end; }
+  #cs-brand-V3 .v3-rcell { text-align:left;display:flex;flex-direction:column;align-items:flex-start; }
+  #cs-brand-V3 .v3-ncell { display:flex;flex-direction:column;align-items:center;justify-content:center; }
+  #cs-brand-V3 .v3-G, #cs-brand-V3 .v3-R { font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(10rem,20vw,18rem);line-height:0.9;letter-spacing:-0.04em;position:relative;z-index:3; }
+  #cs-brand-V3 .v3-G { color:#4d82c6;text-shadow:0 10px 50px rgba(77,130,198,0.4); }
+  #cs-brand-V3 .v3-R { color:#c94d32;text-shadow:0 10px 50px rgba(201,77,50,0.4); }
+  #cs-brand-V3 .v3-letter-row { position:relative;display:flex;align-items:center;width:100%; }
+  #cs-brand-V3 .v3-gcell .v3-letter-row { justify-content:flex-end; }
+  #cs-brand-V3 .v3-rcell .v3-letter-row { justify-content:flex-start; }
+  #cs-brand-V3 .v3-burst { position:absolute;top:50%;width:55%;height:160%;transform:translateY(-50%);pointer-events:none;z-index:1;overflow:visible; }
+  #cs-brand-V3 .v3-burst.left { right:60%; }
+  #cs-brand-V3 .v3-burst.right { left:60%; }
+  #cs-brand-V3 .v3-clause { font-family:'Fraunces','Playfair Display',serif;font-size:clamp(1.1rem,1.55vw,1.4rem);font-weight:600;color:#1a1612;line-height:1.32;margin-top:18px;max-width:480px;letter-spacing:-0.012em; }
+  #cs-brand-V3 .v3-clause em { font-style:italic;font-weight:500;color:#b8954a; }
+  #cs-brand-V3 .v3-tag { margin-top:42px;display:flex;align-items:center;gap:18px;font-family:'Manrope',sans-serif;font-size:.85rem;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a; }
+  #cs-brand-V3 .v3-tag .ln { width:60px;height:1px;background:rgba(184,149,74,0.55); }
+  #cs-brand-V3 .v3-orbit-svg { width:clamp(280px,28vw,400px);height:clamp(280px,28vw,400px); }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-V3" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand · Variant 3 · Orbital ring</div>
+  <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+    <div class="v3-stage">
+      <div class="v3-row">
+        <div class="v3-gcell">
+          <div class="v3-letter-row">
+            <svg class="v3-burst left" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#4d82c6">
+                <circle cx="600" cy="300" r="6"/><circle cx="540" cy="220" r="5"/><circle cx="540" cy="380" r="5"/><circle cx="490" cy="160" r="4.5"/><circle cx="490" cy="300" r="4.5"/><circle cx="490" cy="440" r="4.5"/><circle cx="430" cy="110" r="4"/><circle cx="430" cy="240" r="4"/><circle cx="430" cy="360" r="4"/><circle cx="430" cy="490" r="4"/>
+                <circle cx="370" cy="80" r="3.6" opacity="0.7"/><circle cx="370" cy="180" r="3.6" opacity="0.7"/><circle cx="370" cy="300" r="3.6" opacity="0.7"/><circle cx="370" cy="420" r="3.6" opacity="0.7"/><circle cx="370" cy="520" r="3.6" opacity="0.7"/>
+                <circle cx="300" cy="60" r="3" opacity="0.55"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.55"/><circle cx="300" cy="360" r="3" opacity="0.55"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.55"/>
+              </g>
+            </svg>
+            <span class="v3-G">G</span>
+          </div>
+          <div class="v3-clause">When you show up <em>fully</em>, give <em>freely</em>, be <em>you</em>.</div>
+        </div>
+        <div class="v3-ncell">
+          <svg class="v3-orbit-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="v3orbglow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#b8954a" stop-opacity="0.35"/>
+                <stop offset="60%" stop-color="#b8954a" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+              </radialGradient>
+              <!-- Path for curved text — clockwise circle starting at top, going right -->
+              <path id="v3orbitpath" d="M 200,200 m -160,0 a 160,160 0 1,1 320,0 a 160,160 0 1,1 -320,0" fill="none"/>
+            </defs>
+            <!-- Soft glow halo -->
+            <circle cx="200" cy="200" r="180" fill="url(#v3orbglow)"/>
+            <!-- Main orbit ring -->
+            <circle cx="200" cy="200" r="160" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-dasharray="4 5" opacity="0.7"/>
+            <!-- Inner ring -->
+            <circle cx="200" cy="200" r="120" fill="none" stroke="rgba(184,149,74,0.35)" stroke-width="1" opacity="0.6"/>
+            <!-- Curved orbit text -->
+            <text font-family="Manrope,sans-serif" font-size="22" font-weight="800" letter-spacing="9" fill="#b8954a">
+              <textPath href="#v3orbitpath" startOffset="0%">NETWORKED &middot; RECIPROCITY &middot; NETWORKED &middot; RECIPROCITY &middot;</textPath>
+            </text>
+            <!-- Center: italic n -->
+            <text x="200" y="232" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="160" font-weight="500" fill="#1a1612">n</text>
+            <!-- Orbital dots: 4 small markers along the orbit -->
+            <g fill="#b8954a">
+              <circle cx="200" cy="40" r="4"/>
+              <circle cx="360" cy="200" r="4"/>
+              <circle cx="200" cy="360" r="4"/>
+              <circle cx="40" cy="200" r="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="v3-rcell">
+          <div class="v3-letter-row">
+            <span class="v3-R">R</span>
+            <svg class="v3-burst right" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#c94d32">
+                <circle cx="0" cy="300" r="6"/><circle cx="60" cy="220" r="5"/><circle cx="60" cy="380" r="5"/><circle cx="110" cy="160" r="4.5"/><circle cx="110" cy="300" r="4.5"/><circle cx="110" cy="440" r="4.5"/><circle cx="170" cy="110" r="4"/><circle cx="170" cy="240" r="4"/><circle cx="170" cy="360" r="4"/><circle cx="170" cy="490" r="4"/>
+                <circle cx="230" cy="80" r="3.6" opacity="0.7"/><circle cx="230" cy="180" r="3.6" opacity="0.7"/><circle cx="230" cy="300" r="3.6" opacity="0.7"/><circle cx="230" cy="420" r="3.6" opacity="0.7"/><circle cx="230" cy="520" r="3.6" opacity="0.7"/>
+                <circle cx="300" cy="60" r="3" opacity="0.55"/><circle cx="300" cy="140" r="3" opacity="0.55"/><circle cx="300" cy="240" r="3" opacity="0.55"/><circle cx="300" cy="360" r="3" opacity="0.55"/><circle cx="300" cy="460" r="3" opacity="0.55"/><circle cx="300" cy="540" r="3" opacity="0.55"/>
+              </g>
+            </svg>
+          </div>
+          <div class="v3-clause">What matters most <em>comes back to you</em>.</div>
+        </div>
+      </div>
+      <div class="v3-tag"><span class="ln"></span>The n orbits: networked reciprocity, always running.<span class="ln"></span></div>
+    </div>
+  </section>
+</div>
+
+
 <!-- ===== cs-brand-A/B/C/D · BRAND CONCEPT ALTERNATIVES — Dave 2026-05-06 PM
      Goal: land 3 things on ONE slide:
      (1) The brand IS the mechanic — G = give, n = networked reciprocity, R = receive
@@ -16827,11 +17091,12 @@ const TOTAL = SLIDE_ORDER.length;
 // Alt dots at REVIEW_POSITION render RED (matching primary review dot) — these are
 // "still uncertain, multiple candidates." Alt dots at non-review positions render gold.
 const SLIDE_ALTS = {
-  // 2026-05-06 PM v5: cs-12m2 promoted to slot 12 primary; cs-hc3 retired from main flow. No more slot-12 alts.
+  // 2026-05-06 PM v15: 3 brand variants for slot 12 review per Dave (loved variant #1 from his image grid — placed networked reciprocity right next to the n)
+  12: ['cs-brand-V1', 'cs-brand-V2', 'cs-brand-V3'],
 };
-const REVIEW_POSITION = -1; // disabled — slot 12 locked on cs-12m2 (infinity loop)
-// LOCKED_POSITIONS: slot 12 re-locked 2026-05-06 PM v5 (cs-12m2 chosen, cs-hc3 retired).
-const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const REVIEW_POSITION = 12; // re-enabled — Dave reviewing 3 brand variants for slot 12
+// LOCKED_POSITIONS: slot 12 unlocked while Dave reviews variants (will re-lock once he picks)
+const LOCKED_POSITIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 // Appendix navigation order — Dave 2026-04-29: The Ask is the FIRST appendix slide
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
