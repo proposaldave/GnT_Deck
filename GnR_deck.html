@@ -12701,6 +12701,30 @@ html, body, html body{
   /* Pulse on the n */
   @keyframes v8Pulse { 0%,100% { box-shadow:inset 0 0 60px rgba(184,149,74,0.3),0 0 80px rgba(184,149,74,0.25); } 50% { box-shadow:inset 0 0 80px rgba(184,149,74,0.45),0 0 110px rgba(184,149,74,0.4); } }
   #cs-brand-V8 .v8-ncell::before { animation:v8Pulse 4s ease-in-out infinite; }
+
+  /* Particle galaxy entrance animations [Dave 2026-05-07 PM]: dots flow into the n on slide load.
+     Blue galaxy (left) drifts left→right (toward n from the give side).
+     Red galaxy (right) drifts right→left (toward n from the receive side).
+     Replays each visit via .casey-entered class. */
+  #cs-brand-V8 .v8-particles g { opacity: 0; }
+  #cs-brand-V8 .v8-galaxy-row svg.v8-particles:first-of-type g { transform: translateX(-44px); }
+  #cs-brand-V8 .v8-galaxy-row svg.v8-particles:last-of-type  g { transform: translateX(44px); }
+  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type g { animation: v8GalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  g { animation: v8GalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  @keyframes v8GalaxyInL { from { opacity:0; transform: translateX(-44px); } to { opacity:1; transform: translateX(0); } }
+  @keyframes v8GalaxyInR { from { opacity:0; transform: translateX(44px);  } to { opacity:1; transform: translateX(0); } }
+  /* Each individual dot drifts subtly + continuously (atmospheric, not spinny) */
+  @keyframes v8DotDriftR { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+  @keyframes v8DotDriftL { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
+  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:first-of-type circle { animation: v8DotDriftR 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  #cs-brand-V8.casey-entered .v8-galaxy-row svg.v8-particles:last-of-type  circle { animation: v8DotDriftL 5s ease-in-out infinite; animation-delay: 2.2s; transform-box: fill-box; transform-origin: center; }
+  /* Stagger the per-dot drift so the galaxy feels alive, not synchronized */
+  #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+1)  { animation-delay: 2.2s; }
+  #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n+2)  { animation-delay: 2.6s; animation-duration: 5.6s; }
+  #cs-brand-V8.casey-entered .v8-particles circle:nth-child(3n)    { animation-delay: 3.0s; animation-duration: 6.2s; }
+  /* Export mode (PDF) shows final state instantly */
+  html[data-export="1"] #cs-brand-V8 .v8-particles g { opacity:1 !important; transform: translateX(0) !important; animation:none !important; }
+  html[data-export="1"] #cs-brand-V8 .v8-particles circle { animation:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-V8">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand</div>
@@ -17788,8 +17812,8 @@ html, body, html body{
         </div>
         <!-- BOTTOM SECTION — fades in AFTER right card flip [Dave 2026-04-30 PM] -->
         <div class="ti-bottom" style="display:flex;flex-direction:column;align-items:center;gap:6px;width:100%">
-          <!-- Headline (verdict) BELOW the chart — Dave 2026-05-06 PM v5: reduced size + manual line break for clean 2-line layout. Line 1 = gold lead phrase, Line 2 = red italic punchline + closer. -->
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.15rem,1.95vw,1.6rem);font-weight:700;color:#1a1612;line-height:1.22;text-align:center;margin-top:8px;max-width:1100px;padding:0 16px">
+          <!-- Headline (verdict) BELOW the chart [Dave 2026-05-07 PM v6]: reduced font-size further so line 2 fits on a single line. With 'human connection' (longer than old 'real connection'), line 2 was wrapping to 3 lines total. Now fits on 2. -->
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(0.95rem,1.55vw,1.3rem);font-weight:700;color:#1a1612;line-height:1.25;text-align:center;margin-top:8px;max-width:1100px;padding:0 8px">
             <span style="color:#b8954a;font-weight:800">#1 predictor of a fulfilling life</span><br>
             is feeling <em style="font-style:italic;font-weight:500;color:#c8462c">human connection</em> — science proved it.
           </div>
