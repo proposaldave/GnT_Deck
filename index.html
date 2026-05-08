@@ -11333,12 +11333,13 @@ html, body, html body{
 </style>
 <div class="casey-slide ds-focus" id="cs-onandoff" data-shown="0" onclick="csOnandoffAdvance();event.stopPropagation()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">On the Court &middot; Off the Court</div>
+  <!-- [Dave 2026-05-08 v3] Eyebrow rewritten: 'On the Court · Off the Court' didn't capture the slide's actual arc (coordination → social network). New eyebrow lands the transformation. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Coordination Becomes the Network</div>
 
-  <!-- [Dave 2026-05-08] inner padding tightened (80→48) so the headline-only stage 0 sits at proper visual center instead of jamming up high. Combined with .oo-rest max-height collapse, content now centers naturally at every stage. -->
-  <div class="inner" style="padding:48px 56px 40px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
-    <!-- Hero headline [Dave 2026-05-08 v4 — 'rebuilt on' → 'reinvented for' per Dave: 'rebuilt on' implied teardown of the existing system; 'reinvented for' implies a fresh purpose without destroying what's there. Sharper.] -->
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem, 3.4vw, 3.3rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1260px;margin:0 auto">
+  <!-- [Dave 2026-05-08 v3] Padding tightened further per Dave: 'content is taking up too much of the page'. -->
+  <div class="inner" style="padding:32px 56px 28px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
+    <!-- Hero headline [Dave 2026-05-08 v5 — clamp tightened from 2.0/3.4vw/3.3rem → 1.7/2.9vw/2.7rem so content fits within slide envelope per Dave: 'content is taking up too much of the page'] -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem, 2.9vw, 2.7rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1260px;margin:0 auto">
       A pickleball community's <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:600">coordination system</span>,<br>
       reinvented for <span style="color:#b8954a;font-weight:800">human connection</span>,<br>
       <span style="font-style:italic;color:#1a1612">becomes its</span> <span style="color:#5B8FD4;font-weight:800">social network.</span>
@@ -11349,38 +11350,45 @@ html, body, html body{
       <svg width="18" height="18" viewBox="0 0 14 14"><path d="M2 5 L7 10 L12 5" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
 
-    <!-- REVEAL: on-court → off-court arc -->
-    <div class="oo-rest" style="margin-top:34px">
+    <!-- REVEAL: on-court → off-court arc [Dave 2026-05-08 v5 — margin-top tightened 34→18] -->
+    <div class="oo-rest" style="margin-top:18px">
 
-      <!-- [Dave 2026-05-08 jaw-drop] SVG: graph in pickleball court → SAME graph extending across off-court canvas with lifestyle nodes (coffee · gift · home · gathering). Lines stroke-draw across the off-court zone on stage-1 reveal. Player nodes pulse subtly. The visualization makes the headline literal. -->
-      <svg class="oo-graph-svg" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid meet" style="margin-bottom:22px;max-height:230px">
-        <!-- LEFT ZONE: pickleball court -->
+      <!-- [Dave 2026-05-08 v3] SVG: proper pickleball court (vertical kitchen lines parallel to net + service lines) → SAME graph extending across off-court canvas. max-height tightened to 200px to compress slide content. -->
+      <svg class="oo-graph-svg" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid meet" style="margin-bottom:14px;max-height:200px">
+        <!-- LEFT ZONE: pickleball court (proper layout — net center, kitchen lines parallel to net 7ft each side, service lines split back courts) -->
         <g>
           <text x="200" y="34" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#5B8FD4">ON THE COURT</text>
+          <!-- Outer court boundary -->
           <rect x="60" y="58" width="280" height="170" rx="3" fill="rgba(91,143,212,0.05)" stroke="#5B8FD4" stroke-width="1.6"/>
-          <line x1="60" y1="118" x2="340" y2="118" stroke="#5B8FD4" stroke-width="1" opacity="0.5"/>
-          <line x1="60" y1="168" x2="340" y2="168" stroke="#5B8FD4" stroke-width="1" opacity="0.5"/>
-          <line x1="200" y1="58" x2="200" y2="228" stroke="#5B8FD4" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.7"/>
+          <!-- Kitchen zone shading (lighter blue band on each side of net) -->
+          <rect x="156" y="58" width="44" height="170" fill="rgba(91,143,212,0.08)"/>
+          <rect x="200" y="58" width="44" height="170" fill="rgba(91,143,212,0.08)"/>
+          <!-- Kitchen lines (vertical, parallel to net, 7ft each side ≈ 44px) -->
+          <line x1="156" y1="58" x2="156" y2="228" stroke="#5B8FD4" stroke-width="1.2" opacity="0.65"/>
+          <line x1="244" y1="58" x2="244" y2="228" stroke="#5B8FD4" stroke-width="1.2" opacity="0.65"/>
+          <!-- Center net (solid, thicker — the actual net) -->
+          <line x1="200" y1="58" x2="200" y2="228" stroke="#5B8FD4" stroke-width="2.2"/>
+          <!-- Service centerlines (only between baseline and kitchen line — splits back court into L/R service boxes) -->
+          <line x1="60" y1="143" x2="156" y2="143" stroke="#5B8FD4" stroke-width="1" opacity="0.55"/>
+          <line x1="244" y1="143" x2="340" y2="143" stroke="#5B8FD4" stroke-width="1" opacity="0.55"/>
           <!-- Court connection lines (the graph in-court) -->
-          <line class="oo-line" x1="130" y1="92" x2="270" y2="92" stroke="#b8954a" stroke-width="1.5" opacity="0.7"/>
-          <line class="oo-line" x1="130" y1="194" x2="270" y2="194" stroke="#c8462c" stroke-width="1.5" opacity="0.7"/>
-          <line class="oo-line" x1="130" y1="92" x2="130" y2="194" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
-          <line class="oo-line" x1="270" y1="92" x2="270" y2="194" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
-          <line class="oo-line" x1="130" y1="92" x2="270" y2="194" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
-          <line class="oo-line" x1="270" y1="92" x2="130" y2="194" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
-          <!-- 4 player nodes -->
-          <circle class="oo-pulse" cx="130" cy="92" r="9" fill="#b8954a"/>
-          <circle class="oo-pulse" cx="270" cy="92" r="9" fill="#5B8FD4"/>
-          <circle class="oo-pulse" cx="130" cy="194" r="9" fill="#c8462c"/>
-          <circle class="oo-pulse" cx="270" cy="194" r="9" fill="#1a1612"/>
+          <line class="oo-line" x1="110" y1="100" x2="290" y2="100" stroke="#b8954a" stroke-width="1.5" opacity="0.7"/>
+          <line class="oo-line" x1="110" y1="186" x2="290" y2="186" stroke="#c8462c" stroke-width="1.5" opacity="0.7"/>
+          <line class="oo-line" x1="110" y1="100" x2="110" y2="186" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
+          <line class="oo-line" x1="290" y1="100" x2="290" y2="186" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
+          <line class="oo-line" x1="110" y1="100" x2="290" y2="186" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
+          <line class="oo-line" x1="290" y1="100" x2="110" y2="186" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
+          <!-- 4 player nodes — positioned in the 4 service boxes (back courts) -->
+          <circle class="oo-pulse" cx="110" cy="100" r="9" fill="#b8954a"/>
+          <circle class="oo-pulse" cx="290" cy="100" r="9" fill="#5B8FD4"/>
+          <circle class="oo-pulse" cx="110" cy="186" r="9" fill="#c8462c"/>
+          <circle class="oo-pulse" cx="290" cy="186" r="9" fill="#1a1612"/>
         </g>
 
-        <!-- BRIDGE: same graph → wider room -->
+        <!-- BRIDGE: arrow only, no text [Dave 2026-05-08: 'you dont need the text here'] -->
         <g>
-          <text x="420" y="115" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="#b8954a" font-weight="600">same graph</text>
           <path d="M 360 143 L 480 143" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
           <polyline points="468,135 480,143 468,151" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="420" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="#b8954a" font-weight="600">wider room</text>
         </g>
 
         <!-- RIGHT ZONE: real-life canvas (no boundary) -->
@@ -11461,17 +11469,18 @@ html, body, html body{
         </g>
       </svg>
 
-      <div style="display:flex;justify-content:center;align-items:stretch;gap:18px;max-width:1200px;margin:0 auto 24px;flex-wrap:wrap">
-        <div style="flex:1;min-width:280px;max-width:340px;padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.28);text-align:left">
-          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:8px">On the court</div>
-          <div style="font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:700;color:#1a1612;line-height:1.35">Every invitation, RSVP, partner choice <span style="color:#b8954a">=</span> signal.</div>
-          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:rgba(26,22,18,0.62);margin-top:6px;line-height:1.45">The community's graph builds itself &mdash; weekly, in the background.</div>
+      <!-- [Dave 2026-05-08 v5] Panels compressed: padding 18→12, font sizes -10%, gaps tightened. -->
+      <div style="display:flex;justify-content:center;align-items:stretch;gap:14px;max-width:1100px;margin:0 auto 14px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px;max-width:320px;padding:12px 16px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.28);text-align:left">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:5px">On the court</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.88rem;font-weight:700;color:#1a1612;line-height:1.3">Every invitation, RSVP, partner choice <span style="color:#b8954a">=</span> signal.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.72rem;color:rgba(26,22,18,0.62);margin-top:4px;line-height:1.4">The community's graph builds itself &mdash; weekly, in the background.</div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;color:#b8954a;font-weight:700">→</div>
-        <div style="flex:1;min-width:280px;max-width:340px;padding:18px 20px;border-radius:10px;background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;text-align:left;box-shadow:0 0 0 3px rgba(184,149,74,0.06)">
-          <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#8a6d2e;margin-bottom:8px">Off the court</div>
-          <div style="font-family:'Playfair Display',serif;font-size:0.98rem;font-weight:700;color:#1a1612;line-height:1.35">That same graph powers <em style="font-style:italic;color:#b8954a">invitations · gatherings · gifts · life</em>.</div>
-          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.8rem;color:rgba(26,22,18,0.7);margin-top:6px;line-height:1.45">Same fabric. Same trust. Wider room.</div>
+        <div style="display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.3rem;color:#b8954a;font-weight:700">→</div>
+        <div style="flex:1;min-width:260px;max-width:320px;padding:12px 16px;border-radius:10px;background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;text-align:left;box-shadow:0 0 0 3px rgba(184,149,74,0.06)">
+          <div style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#8a6d2e;margin-bottom:5px">Off the court</div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.88rem;font-weight:700;color:#1a1612;line-height:1.3">That same graph powers <em style="font-style:italic;color:#b8954a">invitations · gatherings · gifts · life</em>.</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.72rem;color:rgba(26,22,18,0.7);margin-top:4px;line-height:1.4">Same fabric. Same trust. Wider room.</div>
         </div>
       </div>
 
