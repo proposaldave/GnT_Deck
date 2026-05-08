@@ -10530,6 +10530,127 @@ html, body, html body{
 </section>
 </div>
 
+<!-- ===== cs-lab — THE FOUNDER METHOD · THE LIVING LAB (Dave 2026-05-08)
+     Brief: a team slide that emphasizes (1) what Dave does at NEPC — talking with players
+     on the courts and iterating, (2) why a founder with that supervision/idea-mate
+     capability is critical for a new frontier this poorly understood, (3) the value of
+     NEPC as Dave's hired-domain-expert lab, and (4) the strategic move of turning down
+     the DUPR acquisition to BUILD that lab instead.
+     Sits between cs-18 (founder personal story) and cs-27 (CTO Steve solo).
+     cs-18 = WHY (the decision). cs-lab = HOW (method + lab + team). cs-27 = the tech hire.
+-->
+<style>
+  #cs-lab .lb-rest { opacity: 0; transition: opacity 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+  #cs-lab[data-shown="1"] .lb-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-lab .lb-hint { display: flex; align-items: center; justify-content: center; margin-top: 22px; opacity: 0.7; animation: lbHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-lab[data-shown="1"] .lb-hint { opacity: 0; pointer-events: none; animation: none; }
+  @keyframes lbHintPulse { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
+  html[data-export="1"] #cs-lab .lb-rest { opacity: 1 !important; pointer-events: auto !important; }
+  html[data-export="1"] #cs-lab .lb-hint { display: none !important; }
+  #cs-lab .lb-block { padding:18px 20px; border-radius:10px; background:rgba(91,143,212,0.04); border:1px solid rgba(91,143,212,0.22); text-align:left; display:flex; flex-direction:column; gap:10px; }
+  #cs-lab .lb-block.lb-center { background:rgba(184,149,74,0.10); border:1.6px solid #b8954a; box-shadow:0 0 0 3px rgba(184,149,74,0.06); }
+  #cs-lab .lb-block-eyebrow { font-family:'Manrope',sans-serif; font-size:0.55rem; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:rgba(91,143,212,0.85); }
+  #cs-lab .lb-block.lb-center .lb-block-eyebrow { color:#8a6d2e; }
+  #cs-lab .lb-block-head { font-family:'Playfair Display',serif; font-size:0.95rem; font-weight:800; color:#1a1612; line-height:1.32; }
+  #cs-lab .lb-list { display:flex; flex-direction:column; gap:6px; }
+  #cs-lab .lb-list li { list-style:none; font-family:'Manrope',sans-serif; font-size:0.72rem; font-weight:600; color:rgba(26,22,18,0.78); line-height:1.4; padding-left:14px; position:relative; }
+  #cs-lab .lb-list li:before { content:""; position:absolute; left:0; top:0.6em; width:5px; height:5px; border-radius:50%; background:#b8954a; }
+  #cs-lab .lb-team-row { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:6px; }
+  #cs-lab .lb-team { padding:10px 10px; border-radius:8px; background:rgba(251,247,239,0.6); border:1px solid rgba(184,149,74,0.32); text-align:center; }
+  #cs-lab .lb-team-name { font-family:'Playfair Display',serif; font-size:0.82rem; font-weight:800; color:#1a1612; line-height:1.15; }
+  #cs-lab .lb-team-role { font-family:'Manrope',sans-serif; font-size:0.55rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(26,22,18,0.6); margin-top:4px; line-height:1.3; }
+  #cs-lab .lb-stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:4px; }
+  #cs-lab .lb-stat { text-align:center; padding:6px 4px; border-left:1px solid rgba(184,149,74,0.32); }
+  #cs-lab .lb-stat:first-child { border-left:none; }
+  #cs-lab .lb-stat-num { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:800; color:#b8954a; line-height:1; }
+  #cs-lab .lb-stat-label { font-family:'Manrope',sans-serif; font-size:0.55rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(26,22,18,0.55); margin-top:4px; line-height:1.3; }
+</style>
+<div class="casey-slide ds-focus" id="cs-lab" data-shown="0" onclick="csLabAdvance();event.stopPropagation()" style="cursor:pointer">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:#c8462c;z-index:10">The Founder Method &middot; The Living Lab</div>
+
+  <div class="inner" style="padding:80px 56px 50px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
+
+    <!-- HERO HEADLINE (always visible) -->
+    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem,3.5vw,3.3rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1240px;margin:0 auto">
+      Most founders build <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:600">from a desk.</span><br>
+      I build from <span style="color:#b8954a;font-weight:800;font-style:italic">the court.</span>
+    </div>
+
+    <!-- Subhead -->
+    <div style="margin-top:18px;font-family:'Playfair Display',serif;font-size:clamp(0.95rem,1.35vw,1.25rem);font-style:italic;color:rgba(26,22,18,0.72);line-height:1.45;max-width:1080px;margin-left:auto;margin-right:auto">
+      I turned down DUPR's acquisition because I needed <em style="color:#1a1612;font-weight:600">my own laboratory</em>.<br>
+      A frontier this new isn't specced into existence &mdash; it's <em style="color:#1a1612;font-weight:600">iterated</em> into existence. Every week. On real courts. With real players.
+    </div>
+
+    <!-- Click hint -->
+    <div class="lb-hint">
+      <span style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a">Click to reveal the method</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" style="margin-left:6px"><path d="M2 5 L7 10 L12 5" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <!-- REVEAL -->
+    <div class="lb-rest" style="margin-top:36px">
+
+      <div style="display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;max-width:1280px;margin:0 auto 26px">
+
+        <!-- BLOCK 1: THE METHOD -->
+        <div class="lb-block">
+          <div class="lb-block-eyebrow">The Method</div>
+          <div class="lb-block-head">Iteration runs through me &mdash; on the floor.</div>
+          <ul class="lb-list">
+            <li>Conversations with members every week</li>
+            <li>Hypothesize &middot; test &middot; encode &middot; repeat</li>
+            <li>Idea-mate to my own product</li>
+            <li>Frontier intuition, sharpened weekly</li>
+          </ul>
+        </div>
+
+        <!-- BLOCK 2: THE LAB (centerpiece) -->
+        <div class="lb-block lb-center">
+          <div class="lb-block-eyebrow">The Lab &middot; NEPC</div>
+          <div class="lb-block-head">I turned down the exit. I built the lab.</div>
+          <div class="lb-stat-grid">
+            <div class="lb-stat"><div class="lb-stat-num">500+</div><div class="lb-stat-label">members</div></div>
+            <div class="lb-stat"><div class="lb-stat-num">$2M</div><div class="lb-stat-label">ARR</div></div>
+            <div class="lb-stat"><div class="lb-stat-num">2</div><div class="lb-stat-label">clubs</div></div>
+            <div class="lb-stat"><div class="lb-stat-num">20+</div><div class="lb-stat-label">employees</div></div>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.78rem;color:rgba(26,22,18,0.7);line-height:1.5;text-align:center;margin-top:4px">
+            Daily iteration cycles. Live coordination. Real reciprocity. <span style="color:#b8954a;font-weight:700;font-style:normal">The proof runs every day.</span>
+          </div>
+        </div>
+
+        <!-- BLOCK 3: THE TEAM -->
+        <div class="lb-block">
+          <div class="lb-block-eyebrow">The Team</div>
+          <div class="lb-block-head">Domain experts hired to test, iterate, <em style="font-style:italic;color:#b8954a">prove</em>.</div>
+          <ul class="lb-list">
+            <li><strong style="color:#1a1612;font-weight:800">Krista</strong> &middot; GM, coordination judgment</li>
+            <li><strong style="color:#1a1612;font-weight:800">Casey</strong> &middot; Teaching pro + product</li>
+            <li><strong style="color:#1a1612;font-weight:800">Ryann</strong> &middot; Operations + academy</li>
+            <li><strong style="color:#1a1612;font-weight:800">Samara</strong> &middot; Middleton community</li>
+            <li><strong style="color:#1a1612;font-weight:800">Steve</strong> &middot; CTO &middot; <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:500">next slide</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- CLOSER -->
+      <div style="border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1080px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.4rem);font-style:italic;font-weight:600;color:#1a1612;line-height:1.4;text-align:center">
+        The founder, the lab, and the team that proves it &mdash;<br>
+        <span style="color:#c8462c;font-style:normal;font-weight:700">all under one roof.</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="casey-pagenum"><span class="cn-cur"></span> / <span class="cn-tot"></span></div>
+  <div class="casey-wordmark"><span class="wm-g">G</span><span class="wm-n">n</span><span class="wm-r">R</span></div>
+</section>
+</div>
+
 <!-- ===== Founder · Steve Callan (mirror of cs-18 Dave layout, paper-mode). Dave 2026-04-29 ===== -->
 <div class="casey-slide ds-focus" id="cs-27">
 <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.62rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--mint,#49b4a0);z-index:10;">CTO &middot; Steve Callan</div>
@@ -18731,6 +18852,263 @@ html, body, html body{
 <!-- "The Graphics Vault" slide DELETED 2026-04-29 per Dave -->
 
 
+<!-- ===========================================================================
+     PINK REVIEW BLOCK · PHONE CALLS / GnR INTELLIGENCE I/O · Dave 2026-05-08
+     4 candidate visualizations of "phone calls feeding the graph" + every other
+     input → GnR Intelligence → every outcome. PINK eyebrow + PINK top border on
+     each so Dave can spot them in appendix nav. Pick one, promote to main flow.
+     =========================================================================== -->
+
+<!-- ===== cs-pc1 — INPUTS · GnR INTELLIGENCE · OUTPUTS (Hub & Spoke) ===== -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-pc1" style="display:none;border-top:6px solid #EC4899">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div class="slide-eyebrow" style="color:#EC4899 !important">★ PINK REVIEW · GnR Intelligence I/O · Variant 1 of 4 — Hub &amp; Spoke</div>
+
+<div class="inner" style="display:flex;flex-direction:column;align-items:center;gap:24px;padding:90px 56px 60px;width:100%;max-width:1480px;box-sizing:border-box">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#1a1612;line-height:1.18;text-align:center;letter-spacing:-0.005em">
+    Phone calls feed the graph. <em style="font-style:italic;color:#EC4899">So does everything else.</em>
+  </div>
+  <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.62);text-align:center;letter-spacing:0.02em">Every input compounds. Click any to drill in.</div>
+
+  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:32px;align-items:center;width:100%;margin-top:8px">
+    <!-- LEFT: Inputs -->
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:right;margin-bottom:4px">Inputs &rarr;</div>
+      <div style="background:#fff5fa;border:1.5px solid #EC4899;border-radius:11px;padding:12px 16px;box-shadow:0 0 18px rgba(236,72,153,0.18);cursor:pointer">
+        <div style="display:flex;align-items:center;gap:10px;justify-content:flex-end">
+          <span style="font-family:'Manrope',sans-serif;font-size:0.88rem;font-weight:700;color:#1a1612">📞 Phone calls</span>
+          <span style="background:#EC4899;color:#fff;font-family:var(--ui,'Manrope',sans-serif);font-size:0.55rem;font-weight:800;letter-spacing:0.12em;padding:3px 7px;border-radius:6px">CLICK</span>
+        </div>
+        <div style="font-family:'Manrope',sans-serif;font-size:0.72rem;color:rgba(26,22,18,0.62);text-align:right;margin-top:3px">8+ data points / 5 min</div>
+      </div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">🧠 Krista corrections</span></div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">🎙️ Pro voice notes</span></div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">📋 Wish-list answers</span></div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">✅ Player check-ins</span></div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">📅 Event rosters</span></div>
+      <div style="background:rgba(26,22,18,0.04);border-left:3px solid #b8954a;border-radius:0 8px 8px 0;padding:9px 14px;text-align:right"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">⭐ Pro observations</span></div>
+    </div>
+
+    <!-- CENTER: GnR Intelligence orb -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div style="width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#fde7f0 50%,#EC4899 110%);box-shadow:0 0 60px rgba(236,72,153,0.35),inset 0 0 30px rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center">
+        <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#1a1612;line-height:0.95;text-align:center">G<span style="font-style:italic;color:#EC4899">n</span>R<br><span style="font-family:'Manrope',sans-serif;font-size:0.55rem;font-weight:800;letter-spacing:0.18em;color:rgba(26,22,18,0.62);text-transform:uppercase">Intelligence</span></div>
+      </div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:center">player graph &middot; matchmaker &middot; learning loop</div>
+    </div>
+
+    <!-- RIGHT: Outputs -->
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);text-align:left;margin-bottom:4px">&rarr; Outputs</div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">👥 Group composition</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">🎯 Fill suggestions</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">🤝 Standing-pair detection</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">📚 Lesson-pipeline routing</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">⏰ Off-peak fill candidates</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">💳 Membership conversion</span></div>
+      <div style="background:rgba(200,70,44,0.06);border-right:3px solid #c8462c;border-radius:8px 0 0 8px;padding:9px 14px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:#1a1612">📈 Retention signals</span></div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+
+<!-- ===== cs-pc2 — EVERY SIGNAL · ONE ENGINE · EVERY OUTCOME (Pipeline) ===== -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-pc2" style="display:none;border-top:6px solid #EC4899">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div class="slide-eyebrow" style="color:#EC4899 !important">★ PINK REVIEW · GnR Intelligence I/O · Variant 2 of 4 — Pipeline</div>
+
+<div class="inner" style="display:flex;flex-direction:column;gap:18px;padding:90px 56px 56px;width:100%;max-width:1480px;box-sizing:border-box">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:800;color:#1a1612;line-height:1.18;text-align:center;letter-spacing:-0.005em">
+    Every signal. <em style="font-style:italic;color:#EC4899">One engine.</em> Every outcome.
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 0.9fr 1fr;gap:24px;align-items:stretch;margin-top:10px">
+    <!-- LEFT COLUMN -->
+    <div style="background:#fffaf6;border:1px solid rgba(184,149,74,0.28);border-radius:14px;padding:18px 18px 22px">
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#b8954a;margin-bottom:10px;text-align:center">INPUTS</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="background:#fff;border-left:4px solid #EC4899;border-radius:0 7px 7px 0;padding:9px 12px;box-shadow:0 0 14px rgba(236,72,153,0.18)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="font-family:'Manrope',sans-serif;font-size:0.84rem;font-weight:700;color:#1a1612">📞 Phone calls</span>
+            <span style="background:#EC4899;color:#fff;font-size:0.55rem;font-weight:800;letter-spacing:0.1em;padding:2px 6px;border-radius:5px">CLICK</span>
+          </div>
+        </div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">🧠 Krista corrections</div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">🎙️ Voice-note debriefs</div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">⭐ Pro observations</div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">📋 Wish-list answers</div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">✅ Player check-ins</div>
+        <div style="background:#fff;border-left:3px solid #b8954a;border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">📅 Event rosters</div>
+        <div style="background:rgba(26,22,18,0.04);border-left:3px solid rgba(26,22,18,0.18);border-radius:0 7px 7px 0;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.45);text-decoration:line-through">📊 Surveys (zero predictive lift)</div>
+      </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div style="background:linear-gradient(180deg,#fff 0%,#fde7f0 100%);border:1.5px solid #EC4899;border-radius:14px;padding:24px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 36px rgba(236,72,153,0.18)">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#1a1612;line-height:0.95;text-align:center">G<span style="font-style:italic;color:#EC4899">n</span>R</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#1a1612;margin:8px 0;text-align:center">Intelligence</div>
+      <!-- mini graph -->
+      <svg viewBox="0 0 220 130" style="width:100%;max-width:220px;margin-top:12px">
+        <line x1="40" y1="40" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <line x1="180" y1="42" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <line x1="35" y1="95" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <line x1="180" y1="100" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <line x1="110" y1="20" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <line x1="110" y1="115" x2="110" y2="65" stroke="#EC4899" stroke-width="1" opacity="0.55"/>
+        <circle cx="110" cy="65" r="9" fill="#EC4899"/>
+        <circle cx="40" cy="40" r="5" fill="#b8954a"/>
+        <circle cx="180" cy="42" r="5" fill="#b8954a"/>
+        <circle cx="35" cy="95" r="5" fill="#b8954a"/>
+        <circle cx="180" cy="100" r="5" fill="#b8954a"/>
+        <circle cx="110" cy="20" r="5" fill="#b8954a"/>
+        <circle cx="110" cy="115" r="5" fill="#b8954a"/>
+      </svg>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.7rem;color:rgba(26,22,18,0.62);margin-top:14px;text-align:center;line-height:1.4">player graph<br>+ matchmaker<br>+ learning loop</div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div style="background:#fff8f5;border:1px solid rgba(200,70,44,0.28);border-radius:14px;padding:18px 18px 22px">
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#c8462c;margin-bottom:10px;text-align:center">OUTPUTS</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">👥 Group composition recs</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">🎯 Fill suggestions to Krista</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">🤝 Standing-pair detection</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">📚 Lesson-pipeline routing</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">⏰ Off-peak fill candidates</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">💳 Membership conversion</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">📈 Retention signals</div>
+        <div style="background:#fff;border-right:3px solid #c8462c;border-radius:7px 0 0 7px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:0.79rem;color:#1a1612">🎪 Event proposals</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+
+<!-- ===== cs-pc3 — ONE 5-MIN PHONE CALL · FIVE OUTCOMES (Phone hero) ===== -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-pc3" style="display:none;border-top:6px solid #EC4899">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div class="slide-eyebrow" style="color:#EC4899 !important">★ PINK REVIEW · GnR Intelligence I/O · Variant 3 of 4 — Phone-Call Hero</div>
+
+<div class="inner" style="display:flex;flex-direction:column;align-items:center;gap:24px;padding:90px 56px 60px;width:100%;max-width:1380px;box-sizing:border-box">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+    <div style="width:96px;height:96px;border-radius:50%;background:#fff5fa;border:2.5px solid #EC4899;display:flex;align-items:center;justify-content:center;box-shadow:0 0 36px rgba(236,72,153,0.32);font-size:46px">📞</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:800;color:#1a1612;line-height:1.15;text-align:center;letter-spacing:-0.005em">
+      One 5-minute phone call.<br><em style="font-style:italic;color:#EC4899">Five outcomes.</em>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;width:100%;margin-top:8px">
+    <div style="background:#fff;border:1.5px solid #EC4899;border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 0 18px rgba(236,72,153,0.12)">
+      <div style="font-size:24px;margin-bottom:8px">🤝</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#EC4899;margin-bottom:6px">Relationship</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.4">Founder-personal touch on a player Krista can't see daily.</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid #EC4899;border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 0 18px rgba(236,72,153,0.12)">
+      <div style="font-size:24px;margin-bottom:8px">💳</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#EC4899;margin-bottom:6px">Membership</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.4">~$1,800 ARR per converted Non-Member.</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid #EC4899;border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 0 18px rgba(236,72,153,0.12)">
+      <div style="font-size:24px;margin-bottom:8px">📚</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#EC4899;margin-bottom:6px">Lesson</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.4">$2,400+/yr per standing weekly pro slot.</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid #EC4899;border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 0 18px rgba(236,72,153,0.12)">
+      <div style="font-size:24px;margin-bottom:8px">⏰</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#EC4899;margin-bottom:6px">Off-peak fill</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.4">$264/event near-pure margin off dead court hours.</div>
+    </div>
+    <div style="background:#fff;border:1.5px solid #EC4899;border-radius:14px;padding:18px 14px;text-align:center;box-shadow:0 0 18px rgba(236,72,153,0.12)">
+      <div style="font-size:24px;margin-bottom:8px">🌐</div>
+      <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#EC4899;margin-bottom:6px">Referral</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.4">Peer-recruit edge added to graph. Compounds.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;width:100%;background:rgba(26,22,18,0.04);border-radius:12px;padding:18px 22px">
+    <div style="font-family:var(--ui,'Manrope',sans-serif);font-size:0.6rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:10px;text-align:center">And one input among many — every signal feeds the graph</div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px">
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">🧠 Krista corrections</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">🎙️ Voice debriefs</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">⭐ Pro observations</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">📋 Wish lists</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">✅ Check-ins</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">📅 Event rosters</span>
+      <span style="background:#fff;border:1px solid rgba(184,149,74,0.4);border-radius:14px;padding:5px 11px;font-family:'Manrope',sans-serif;font-size:0.7rem;color:#1a1612">📲 Text replies</span>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+
+<!-- ===== cs-pc4 — SIGNAL DENSITY (Comparison · why phone calls win) ===== -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-pc4" style="display:none;border-top:6px solid #EC4899">
+<section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+<div class="slide-eyebrow" style="color:#EC4899 !important">★ PINK REVIEW · GnR Intelligence I/O · Variant 4 of 4 — Signal Density</div>
+
+<div class="inner" style="display:flex;flex-direction:column;gap:22px;padding:90px 56px 56px;width:100%;max-width:1380px;box-sizing:border-box">
+  <div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.8vw,2.3rem);font-weight:800;color:#1a1612;line-height:1.18;letter-spacing:-0.005em">
+      Why phone calls? <em style="font-style:italic;color:#EC4899">Signal density.</em>
+    </div>
+    <div style="font-family:'Manrope',sans-serif;font-size:0.86rem;color:rgba(26,22,18,0.7);margin-top:10px;line-height:1.55;max-width:920px">
+      Survey data has zero predictive lift (Steve's analysis, Mar 2026). The graph is fed by what we capture in the call &mdash; not what gets ticked on a form.
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
+    <!-- Each row: input name, bar, density label -->
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:rgba(26,22,18,0.55);text-decoration:line-through">📊 Player surveys</div>
+      <div style="height:22px;background:rgba(26,22,18,0.06);border-radius:6px;position:relative"><div style="width:2%;height:100%;background:rgba(26,22,18,0.25);border-radius:6px"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:rgba(26,22,18,0.55)"><strong>0</strong> predictive</div>
+    </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:#1a1612">📲 App tap / RSVP</div>
+      <div style="height:22px;background:rgba(26,22,18,0.06);border-radius:6px;position:relative"><div style="width:10%;height:100%;background:#b8954a;border-radius:6px;opacity:0.5"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:rgba(26,22,18,0.7)"><strong>1</strong> data point</div>
+    </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:#1a1612">✅ Court check-in</div>
+      <div style="height:22px;background:rgba(26,22,18,0.06);border-radius:6px;position:relative"><div style="width:18%;height:100%;background:#b8954a;border-radius:6px;opacity:0.65"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:rgba(26,22,18,0.7)"><strong>2</strong> data points</div>
+    </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:#1a1612">🧠 Krista correction</div>
+      <div style="height:22px;background:rgba(26,22,18,0.06);border-radius:6px;position:relative"><div style="width:42%;height:100%;background:#b8954a;border-radius:6px"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:rgba(26,22,18,0.85)"><strong>5</strong> data points</div>
+    </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:#1a1612">🎙️ Voice-note debrief</div>
+      <div style="height:22px;background:rgba(26,22,18,0.06);border-radius:6px;position:relative"><div style="width:65%;height:100%;background:#c8462c;border-radius:6px"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612"><strong>8</strong> data points</div>
+    </div>
+    <div style="display:grid;grid-template-columns:200px 1fr 110px;align-items:center;gap:14px">
+      <div style="font-family:'Manrope',sans-serif;font-size:0.92rem;font-weight:800;color:#EC4899">📞 Phone call (5 min)</div>
+      <div style="height:28px;background:rgba(236,72,153,0.10);border-radius:7px;position:relative;box-shadow:0 0 18px rgba(236,72,153,0.22)"><div style="width:92%;height:100%;background:#EC4899;border-radius:7px"></div></div>
+      <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;font-weight:800;color:#EC4899"><strong>10+</strong> data points</div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.4);border-radius:12px;padding:16px 22px">
+    <div style="font-family:'Manrope',sans-serif;font-size:0.84rem;color:#1a1612;line-height:1.55">
+      <strong>Captured per call:</strong> wish-list answer · off-peak availability · players-they-love · 3 personality reads · pricing signal · lesson interest · peer-referral volunteer · "what would tip you to yes"
+    </div>
+    <div style="font-family:'Manrope',sans-serif;font-size:0.78rem;color:rgba(26,22,18,0.7);margin-top:8px">
+      &rarr; All flow into the GnR graph. Outputs: composition · fill · lesson routing · off-peak fill · membership conversion · retention.
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+<!-- ===== END PINK REVIEW BLOCK ===== -->
+
 
 <nav class="casey-nav" id="cnav"></nav>
 
@@ -18801,8 +19179,10 @@ const SLIDE_ORDER = [
   'cs-future',// 18 Future of our communities · 5 verbs ("When you digitize human connection, you can") — verb 5 lands "Make it abundant"
   // cs-8b (Abundance hero) → APPENDIX 2026-05-04 per Dave: too many "abundance" beats in back half (cs-future verb 5 + cs-8b + cs-mv6 mission). Setup-and-payoff structure works better with just 2: cs-future (outcome) + cs-mv6 (mission).
   // cs-a7 ("Social media is a very narrow view of human connection technology") MOVED BACK to APPENDIX 2026-05-03 PM per Dave
-  'cs-18',    // 17 Founder · CEO · Dave Velardo
-  'cs-27',    // 18 CTO · Steve Callan
+  'cs-18',    // 17 Founder · CEO · Dave Velardo (personal story + DUPR pivot)
+  // [Dave 2026-05-08] cs-lab inserted between cs-18 and cs-27. cs-18 = WHY (decision); cs-lab = HOW (method + lab + team); cs-27 = the CTO. Brief: 'team slide that emphasizes what I do at NEPC — talking with players on the courts, iterating' + value of NEPC as Dave's hired-domain-expert lab + DUPR-rejection strategic move.
+  'cs-lab',   // 18 The Founder Method · The Living Lab — Dave's iteration loop + NEPC team
+  'cs-27',    // 19 CTO · Steve Callan
   // cs-4 (Moat) → at slot 5
   // cs-16 (Every signal) → APPENDIX
   // cs-a3 (Pickleball TAM original) MOVED to APPENDIX 2026-05-03 PM per Dave
@@ -18890,6 +19270,14 @@ const LOCKED_POSITIONS = [];
 // (so when investor clicks Appendix, they see the ask immediately if they ask "what are you raising?").
 const APPENDIX_ORDER = [
   'cs-hc11',      // FIRST appendix slide — ECONOMY · 'Attention concentrates / Connection distributes' creator-economy power-law vs flat [moved from main slot 23 to appendix per Dave 2026-05-07 PM: 'move this to be the first appendix slide']
+  // ===== PINK REVIEW BLOCK · GnR Intelligence I/O · Phone calls + every other input feeding the graph (Dave 2026-05-08) =====
+  // 4 candidate visualizations of "all inputs → GnR Intelligence → all outputs" with phone calls clickable.
+  // PINK eyebrow + PINK top border on each so Dave can spot in appendix nav. Pick one, promote to main flow.
+  'cs-pc1',       // Variant 1 — Hub & Spoke (GnR brain in center, inputs left, outputs right; phone-calls chip pulses pink)
+  'cs-pc2',       // Variant 2 — Pipeline (3-column: 8 inputs + animated graph + 8 outputs; phone-calls row glows pink)
+  'cs-pc3',       // Variant 3 — Phone-Call Hero ("One 5-min call. Five outcomes." with the other inputs as small chips below)
+  'cs-pc4',       // Variant 4 — Signal Density bars (survey 0 → phone call 10+; why phone calls win)
+  // ===== END PINK REVIEW BLOCK =====
   // BRAND CONCEPT ALTERNATIVES (Dave 2026-05-06 PM) — 4 designs to land 'n=networked reciprocity' + the promise. Pick one, promote to slot 12.
   'cs-brand-V16', // 'Open Heart' brand variant ('Give from an open heart. / Receive from an open community.') [Dave 2026-05-07: 'really good but move it to the first appendix slide']
   'cs-hc9',      // 'We feel most alive when we're free, generous, spontaneously ourselves' — MOVED from main slot 14 to appendix per Dave 2026-05-07
@@ -19136,6 +19524,21 @@ window.csOnandoffAdvance = function() {
 };
 window.csOnandoffReverse = function() {
   const slide = document.getElementById('cs-onandoff');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '0') return false;
+  slide.dataset.shown = '0';
+  return true;
+};
+// cs-lab — The Founder Method · The Living Lab [Dave 2026-05-08]
+window.csLabAdvance = function() {
+  const slide = document.getElementById('cs-lab');
+  if (!slide || !slide.classList.contains('active')) return false;
+  if (slide.dataset.shown === '1') return false;
+  slide.dataset.shown = '1';
+  return true;
+};
+window.csLabReverse = function() {
+  const slide = document.getElementById('cs-lab');
   if (!slide || !slide.classList.contains('active')) return false;
   if (slide.dataset.shown === '0') return false;
   slide.dataset.shown = '0';
@@ -19794,7 +20197,8 @@ const slideLabels = [
   'Mapping human connection · Pickleball TAM',       // 16 cs-tv
   'Future of our communities',                       // 17 cs-future
   'Started → love for the problem · Dave Velardo',   // 16 cs-18
-  'CTO · Steve Callan',                              // 17 cs-27
+  'The Founder Method · The Living Lab',             // 17 cs-lab [NEW Dave 2026-05-08 — Dave\'s iteration method + NEPC domain-expert team]
+  'CTO · Steve Callan',                              // 18 cs-27
   // 'Mission · variant A' label removed — cs-mv6-altA deleted from main flow 2026-05-06 PM (10x version moved to appendix as cs-mv6-app)
   'Mission · run on abundant human connection',      // 19 cs-mv6 (era-cards version restored to main flow per Dave 2026-05-07)
   'Our Promise',                                     // 21 cs-prom (now last main slide)
@@ -19942,6 +20346,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureAdvance && window.csMeasureAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductAdvance && window.csByproductAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-lab' && window.csLabAdvance && window.csLabAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Advance    && window.cs4Advance())    return;
@@ -19964,6 +20369,7 @@ document.addEventListener('keydown', e => {
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-measure' && window.csMeasureReverse && window.csMeasureReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-byproduct' && window.csByproductReverse && window.csByproductReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-lab' && window.csLabReverse && window.csLabReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-4'    && window.cs4Reverse    && window.cs4Reverse())    return;
@@ -20045,6 +20451,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-lab' && window.csLabAdvance && window.csLabAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
   }
   else if (e.deltaY < 0) {
@@ -20103,6 +20513,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-lab' && window.csLabReverse && window.csLabReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
   }
   setTimeout(() => { wheelLock = false; }, 400);
@@ -20132,6 +20546,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-measure' && window.csMeasureAdvance && window.csMeasureAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-byproduct' && window.csByproductAdvance && window.csByproductAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffAdvance && window.csOnandoffAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-lab' && window.csLabAdvance && window.csLabAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cAdvance   && window.cs2cAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrAdvance  && window.csGnrAdvance())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bAdvance   && window.cs2bAdvance())   { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -20151,6 +20566,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-measure' && window.csMeasureReverse && window.csMeasureReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-byproduct' && window.csByproductReverse && window.csByproductReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-onandoff' && window.csOnandoffReverse && window.csOnandoffReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
+      if (!inAppendix && slideId === 'cs-lab' && window.csLabReverse && window.csLabReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2c'   && window.cs2cReverse   && window.cs2cReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-gnr'  && window.csGnrReverse  && window.csGnrReverse())  { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-2b'   && window.cs2bReverse   && window.cs2bReverse())   { setTimeout(() => { touchLock = false; }, 400); return; }
