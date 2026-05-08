@@ -11112,25 +11112,63 @@ html, body, html body{
 </section>
 </div>
 
-<!-- ===== cs-onandoff — ON THE COURT · OFF THE COURT (Dave 2026-05-08) ===== -->
+<!-- ===== cs-onandoff — ON THE COURT · OFF THE COURT (Dave 2026-05-08) =====
+     [v5 2026-05-08] 2-stage reveal: stage 1 = SVG visual + panels; stage 2 = Krista Slack proof.
+     Plus jaw-drop visual: graph of relationships starts inside court boundary, then SAME graph
+     extends across off-court canvas with lifestyle nodes (coffee · home · gift · gathering).
+     The visualization is the headline made literal: 'same graph, wider room.' -->
 <style>
+  /* Stage 1 reveal: SVG + panels */
   #cs-onandoff .oo-rest { opacity: 0; transition: opacity 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
-  #cs-onandoff[data-shown="1"] .oo-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  #cs-onandoff[data-shown="1"] .oo-rest,
+  #cs-onandoff[data-shown="2"] .oo-rest { opacity: 1; pointer-events: auto; transition-delay: 0.05s; }
+  /* Stage 2 reveal: Krista Slack proof block */
+  #cs-onandoff .oo-slack { opacity: 0; transform: translateY(8px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+  #cs-onandoff[data-shown="2"] .oo-slack { opacity: 1; transform: translateY(0); pointer-events: auto; transition-delay: 0.1s; }
+  /* Hint pulses through stage 0 + 1, hides at stage 2 */
   #cs-onandoff .oo-hint { display: flex; align-items: center; justify-content: center; margin-top: 24px; opacity: 0.7; animation: ooHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
-  #cs-onandoff[data-shown="1"] .oo-hint { opacity: 0; pointer-events: none; animation: none; }
+  #cs-onandoff[data-shown="2"] .oo-hint { opacity: 0; pointer-events: none; animation: none; }
   @keyframes ooHintPulse { 0%, 100% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(4px); } }
-  html[data-export="1"] #cs-onandoff .oo-rest { opacity: 1 !important; pointer-events: auto !important; }
+  /* Visual SVG: court → real-life graph extension */
+  #cs-onandoff .oo-graph-svg { display:block; width:100%; max-width:1200px; height:auto; margin:0 auto; }
+  #cs-onandoff .oo-graph-svg .oo-line { stroke-linecap:round; }
+  #cs-onandoff .oo-graph-svg .oo-pulse { animation: ooNodePulse 3.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  #cs-onandoff .oo-graph-svg .oo-pulse:nth-of-type(2) { animation-delay: 0.4s; }
+  #cs-onandoff .oo-graph-svg .oo-pulse:nth-of-type(3) { animation-delay: 0.8s; }
+  #cs-onandoff .oo-graph-svg .oo-pulse:nth-of-type(4) { animation-delay: 1.2s; }
+  @keyframes ooNodePulse { 0%,100% { transform: scale(1); opacity:1; } 50% { transform: scale(1.15); opacity:0.85; } }
+  /* When stage 1 lands, animate the lines drawing across the off-court zone */
+  #cs-onandoff .oo-graph-svg .oo-real-line { stroke-dasharray: 240; stroke-dashoffset: 240; transition: stroke-dashoffset 1.4s cubic-bezier(.22,1,.36,1); }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line,
+  #cs-onandoff[data-shown="2"] .oo-graph-svg .oo-real-line { stroke-dashoffset: 0; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line:nth-child(2) { transition-delay:0.1s; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line:nth-child(3) { transition-delay:0.2s; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line:nth-child(4) { transition-delay:0.3s; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line:nth-child(5) { transition-delay:0.4s; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-line:nth-child(6) { transition-delay:0.5s; }
+  /* Off-court icons + labels fade in with stage 1 */
+  #cs-onandoff .oo-graph-svg .oo-real-icon,
+  #cs-onandoff .oo-graph-svg .oo-real-node { opacity:0; transition: opacity 0.6s ease; }
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-icon,
+  #cs-onandoff[data-shown="2"] .oo-graph-svg .oo-real-icon,
+  #cs-onandoff[data-shown="1"] .oo-graph-svg .oo-real-node,
+  #cs-onandoff[data-shown="2"] .oo-graph-svg .oo-real-node { opacity:1; transition-delay:0.6s; }
+  html[data-export="1"] #cs-onandoff .oo-rest,
+  html[data-export="1"] #cs-onandoff .oo-slack { opacity: 1 !important; transform:none !important; pointer-events: auto !important; }
   html[data-export="1"] #cs-onandoff .oo-hint { display: none !important; }
+  html[data-export="1"] #cs-onandoff .oo-graph-svg .oo-real-line { stroke-dashoffset: 0 !important; }
+  html[data-export="1"] #cs-onandoff .oo-graph-svg .oo-real-icon,
+  html[data-export="1"] #cs-onandoff .oo-graph-svg .oo-real-node { opacity:1 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-onandoff" data-shown="0" onclick="csOnandoffAdvance();event.stopPropagation()" style="cursor:pointer">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">On the Court &middot; Off the Court</div>
 
   <div class="inner" style="padding:80px 56px 56px;text-align:center;max-width:1320px;margin:0 auto;width:100%">
-    <!-- Hero headline [Dave 2026-05-08 v3 — RESTORED v1 headline per Dave: 'the slide where you have the text below can be the main slide 13'. v2 'Pickleball is just the first court' was a rewrite I did when v1 got rejected; Dave then circled back and asked for v1 to be the primary slot 13 headline. Restored.] -->
+    <!-- Hero headline [Dave 2026-05-08 v4 — 'rebuilt on' → 'reinvented for' per Dave: 'rebuilt on' implied teardown of the existing system; 'reinvented for' implies a fresh purpose without destroying what's there. Sharper.] -->
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2rem, 3.4vw, 3.3rem);font-weight:700;line-height:1.16;letter-spacing:-0.02em;color:#1a1612;max-width:1260px;margin:0 auto">
       A pickleball community's <span style="color:rgba(26,22,18,0.5);font-style:italic;font-weight:600">coordination system</span>,<br>
-      rebuilt on <span style="color:#b8954a;font-weight:800">human connection</span>,<br>
+      reinvented for <span style="color:#b8954a;font-weight:800">human connection</span>,<br>
       <span style="font-style:italic;color:#1a1612">becomes its</span> <span style="color:#5B8FD4;font-weight:800">social network.</span>
     </div>
 
@@ -11141,7 +11179,100 @@ html, body, html body{
     </div>
 
     <!-- REVEAL: on-court → off-court arc -->
-    <div class="oo-rest" style="margin-top:40px">
+    <div class="oo-rest" style="margin-top:34px">
+
+      <!-- [Dave 2026-05-08 jaw-drop] SVG: graph in pickleball court → SAME graph extending across off-court canvas with lifestyle nodes (coffee · gift · home · gathering). Lines stroke-draw across the off-court zone on stage-1 reveal. Player nodes pulse subtly. The visualization makes the headline literal. -->
+      <svg class="oo-graph-svg" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMid meet" style="margin-bottom:22px;max-height:230px">
+        <!-- LEFT ZONE: pickleball court -->
+        <g>
+          <text x="200" y="34" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#5B8FD4">ON THE COURT</text>
+          <rect x="60" y="58" width="280" height="170" rx="3" fill="rgba(91,143,212,0.05)" stroke="#5B8FD4" stroke-width="1.6"/>
+          <line x1="60" y1="118" x2="340" y2="118" stroke="#5B8FD4" stroke-width="1" opacity="0.5"/>
+          <line x1="60" y1="168" x2="340" y2="168" stroke="#5B8FD4" stroke-width="1" opacity="0.5"/>
+          <line x1="200" y1="58" x2="200" y2="228" stroke="#5B8FD4" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.7"/>
+          <!-- Court connection lines (the graph in-court) -->
+          <line class="oo-line" x1="130" y1="92" x2="270" y2="92" stroke="#b8954a" stroke-width="1.5" opacity="0.7"/>
+          <line class="oo-line" x1="130" y1="194" x2="270" y2="194" stroke="#c8462c" stroke-width="1.5" opacity="0.7"/>
+          <line class="oo-line" x1="130" y1="92" x2="130" y2="194" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
+          <line class="oo-line" x1="270" y1="92" x2="270" y2="194" stroke="rgba(26,22,18,0.35)" stroke-width="1.2" opacity="0.55"/>
+          <line class="oo-line" x1="130" y1="92" x2="270" y2="194" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
+          <line class="oo-line" x1="270" y1="92" x2="130" y2="194" stroke="rgba(184,149,74,0.45)" stroke-width="1" opacity="0.5"/>
+          <!-- 4 player nodes -->
+          <circle class="oo-pulse" cx="130" cy="92" r="9" fill="#b8954a"/>
+          <circle class="oo-pulse" cx="270" cy="92" r="9" fill="#5B8FD4"/>
+          <circle class="oo-pulse" cx="130" cy="194" r="9" fill="#c8462c"/>
+          <circle class="oo-pulse" cx="270" cy="194" r="9" fill="#1a1612"/>
+        </g>
+
+        <!-- BRIDGE: same graph → wider room -->
+        <g>
+          <text x="420" y="115" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="#b8954a" font-weight="600">same graph</text>
+          <path d="M 360 143 L 480 143" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <polyline points="468,135 480,143 468,151" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="420" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="14" fill="#b8954a" font-weight="600">wider room</text>
+        </g>
+
+        <!-- RIGHT ZONE: real-life canvas (no boundary) -->
+        <g>
+          <text x="800" y="34" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="800" letter-spacing="3" fill="#b8954a">OFF THE COURT</text>
+
+          <!-- Connection lines (drawn on stage 1 reveal) -->
+          <line class="oo-line oo-real-line" x1="540" y1="100" x2="700" y2="80" stroke="#b8954a" stroke-width="1.5" opacity="0.65"/>
+          <line class="oo-line oo-real-line" x1="700" y1="80" x2="900" y2="60" stroke="#b8954a" stroke-width="1.5" opacity="0.6"/>
+          <line class="oo-line oo-real-line" x1="980" y1="120" x2="900" y2="60" stroke="#5B8FD4" stroke-width="1.5" opacity="0.65"/>
+          <line class="oo-line oo-real-line" x1="980" y1="120" x2="850" y2="220" stroke="#5B8FD4" stroke-width="1.5" opacity="0.55"/>
+          <line class="oo-line oo-real-line" x1="600" y1="220" x2="700" y2="180" stroke="#c8462c" stroke-width="1.5" opacity="0.65"/>
+          <line class="oo-line oo-real-line" x1="600" y1="220" x2="850" y2="220" stroke="#c8462c" stroke-width="1.5" opacity="0.55"/>
+          <line class="oo-line oo-real-line" x1="1090" y1="190" x2="850" y2="220" stroke="rgba(26,22,18,0.4)" stroke-width="1.3" opacity="0.55"/>
+
+          <!-- Same 4 player nodes, repositioned in wider canvas -->
+          <circle class="oo-pulse" cx="540" cy="100" r="9" fill="#b8954a"/>
+          <circle class="oo-pulse" cx="980" cy="120" r="9" fill="#5B8FD4"/>
+          <circle class="oo-pulse" cx="600" cy="220" r="9" fill="#c8462c"/>
+          <circle class="oo-pulse" cx="1090" cy="190" r="9" fill="#1a1612"/>
+
+          <!-- Lifestyle off-court icons -->
+          <!-- coffee cup -->
+          <g class="oo-real-icon" transform="translate(700, 80)">
+            <g stroke="#b8954a" stroke-width="1.4" fill="rgba(184,149,74,0.06)" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M -10 -4 L -10 8 Q -10 14 -5 14 L 5 14 Q 10 14 10 8 L 10 -4 Z"/>
+              <path d="M 10 0 Q 16 0 16 5 Q 16 10 10 10" fill="none"/>
+              <path d="M -5 -10 Q -5 -7 -3 -5" fill="none"/>
+              <path d="M 0 -10 Q 0 -7 2 -5" fill="none"/>
+            </g>
+          </g>
+          <text class="oo-real-node" x="700" y="110" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">coffee</text>
+
+          <!-- home -->
+          <g class="oo-real-icon" transform="translate(850, 220)">
+            <g stroke="#5B8FD4" stroke-width="1.4" fill="rgba(91,143,212,0.06)" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M -12 4 L 0 -8 L 12 4 L 12 14 L -12 14 Z"/>
+              <rect x="-3" y="6" width="6" height="8" fill="rgba(91,143,212,0.15)"/>
+            </g>
+          </g>
+          <text class="oo-real-node" x="850" y="246" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">home</text>
+
+          <!-- gift -->
+          <g class="oo-real-icon" transform="translate(700, 180)">
+            <g stroke="#c8462c" stroke-width="1.4" fill="rgba(200,70,44,0.06)" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="-10" y="-2" width="20" height="14"/>
+              <line x1="0" y1="-2" x2="0" y2="12" fill="none"/>
+              <path d="M -10 -2 Q -10 -8 -5 -8 Q 0 -8 0 -2" fill="none"/>
+              <path d="M 10 -2 Q 10 -8 5 -8 Q 0 -8 0 -2" fill="none"/>
+            </g>
+          </g>
+          <text class="oo-real-node" x="700" y="206" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">gift</text>
+
+          <!-- gathering (3 dots) -->
+          <g class="oo-real-icon" transform="translate(900, 60)">
+            <circle cx="-8" cy="0" r="4.5" fill="#1a1612" opacity="0.65"/>
+            <circle cx="0" cy="-3" r="4.5" fill="#1a1612" opacity="0.75"/>
+            <circle cx="8" cy="0" r="4.5" fill="#1a1612" opacity="0.65"/>
+          </g>
+          <text class="oo-real-node" x="900" y="86" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">gathering</text>
+        </g>
+      </svg>
+
       <div style="display:flex;justify-content:center;align-items:stretch;gap:18px;max-width:1200px;margin:0 auto 24px;flex-wrap:wrap">
         <div style="flex:1;min-width:280px;max-width:340px;padding:18px 20px;border-radius:10px;background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.28);text-align:left">
           <div style="font-family:'Manrope',sans-serif;font-size:0.58rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#5B8FD4;margin-bottom:8px">On the court</div>
@@ -11156,8 +11287,8 @@ html, body, html body{
         </div>
       </div>
 
-      <!-- KRISTA SLACK PROOF BLOCK [Dave 2026-05-08] — concrete proof off-court is already happening. Real Slack message from Krista using GnR invite system for a SURPRISE PARTY for a NEPC member who completed cancer radiation. Steve react: 'That's amazing, love it'. Lands the punch: this isn't roadmap, it's already running. -->
-      <div style="max-width:880px;margin:18px auto 14px;padding:18px 20px;background:#fff;border:1px solid rgba(26,22,18,0.10);border-radius:10px;box-shadow:0 4px 14px rgba(26,22,18,0.05);text-align:left">
+      <!-- KRISTA SLACK PROOF BLOCK [Dave 2026-05-08 v2] — moved to STAGE 2 reveal per Dave: 'make this a click/mouse scroll to animate. i don't want it visible on slide load'. Class oo-slack triggers second-stage fade-in. Real Slack message from Krista using GnR invite system for a SURPRISE PARTY for a NEPC member who completed cancer radiation. Steve react. Lands the punch: this isn't roadmap, it's already running. -->
+      <div class="oo-slack" style="max-width:880px;margin:18px auto 14px;padding:18px 20px;background:#fff;border:1px solid rgba(26,22,18,0.10);border-radius:10px;box-shadow:0 4px 14px rgba(26,22,18,0.05);text-align:left">
         <!-- ['★ Already happening · NEPC Slack · this week' eyebrow DELETED 2026-05-08 per Dave: 'delete this'.] -->
 
         <!-- Krista message -->
@@ -19535,18 +19666,21 @@ window.csByproductReverse = function() {
   slide.dataset.shown = '0';
   return true;
 };
+// [v2 2026-05-08] cs-onandoff 3-state advance: 0 (headline) → 1 (SVG + panels) → 2 (Krista Slack proof).
 window.csOnandoffAdvance = function() {
   const slide = document.getElementById('cs-onandoff');
   if (!slide || !slide.classList.contains('active')) return false;
-  if (slide.dataset.shown === '1') return false;
-  slide.dataset.shown = '1';
+  const cur = parseInt(slide.dataset.shown || '0', 10);
+  if (cur >= 2) return false;
+  slide.dataset.shown = String(cur + 1);
   return true;
 };
 window.csOnandoffReverse = function() {
   const slide = document.getElementById('cs-onandoff');
   if (!slide || !slide.classList.contains('active')) return false;
-  if (slide.dataset.shown === '0') return false;
-  slide.dataset.shown = '0';
+  const cur = parseInt(slide.dataset.shown || '0', 10);
+  if (cur <= 0) return false;
+  slide.dataset.shown = String(cur - 1);
   return true;
 };
 // cs-lab — The Founder Method · The Living Lab [Dave 2026-05-08]
