@@ -11441,6 +11441,23 @@ html, body, html body{
             <circle cx="8" cy="0" r="4.5" fill="#1a1612" opacity="0.65"/>
           </g>
           <text class="oo-real-node" x="900" y="86" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">gathering</text>
+
+          <!-- [Dave 2026-05-08] PARTY icon — gold balloons + pom on top. Positioned lower-right canvas where space was open. Connection from black/ink player → party. -->
+          <line class="oo-line oo-real-line" x1="1090" y1="190" x2="1010" y2="245" stroke="#b8954a" stroke-width="1.5" opacity="0.6"/>
+          <line class="oo-line oo-real-line" x1="850" y1="220" x2="1010" y2="245" stroke="#b8954a" stroke-width="1.4" opacity="0.55"/>
+          <g class="oo-real-icon" transform="translate(1010, 245)">
+            <g stroke="#b8954a" stroke-width="1.4" fill="rgba(184,149,74,0.10)" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Two balloons -->
+              <ellipse cx="-4" cy="-4" rx="3.6" ry="4.6"/>
+              <ellipse cx="4" cy="-3" rx="3.2" ry="4.2"/>
+              <!-- Strings -->
+              <line x1="-4" y1="0.6" x2="-2" y2="10" fill="none"/>
+              <line x1="4" y1="1.2" x2="2" y2="10" fill="none"/>
+              <!-- Tied knot -->
+              <circle cx="0" cy="10" r="0.9" fill="#b8954a"/>
+            </g>
+          </g>
+          <text class="oo-real-node" x="1010" y="270" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" fill="rgba(26,22,18,0.6)" font-style="italic" font-weight="600">party</text>
         </g>
       </svg>
 
@@ -11501,7 +11518,7 @@ html, body, html body{
 
   <!-- TOP main header [Dave 2026-05-06 PM v4 simplified]: 'clearest path' moved from bottom culmination card up to TOP — that IS the slide's point -->
   <div style="font-family:'Playfair Display',serif;font-size:clamp(2rem,3.55vw,3rem);font-weight:800;line-height:1.14;color:#1a1612;letter-spacing:-0.018em;max-width:1320px;margin:0 auto 14px;text-align:center">
-    Pickleball is the clearest path to the first <em style="font-style:italic;color:#b8954a">network of real human connection.</em>
+    Pickleball is the clearest path to the first <em style="font-style:italic;color:#b8954a">autonomous network of real human connection.</em>
   </div>
   <!-- Subhead 'Pickleball is the most community-oriented sport ever invented' DELETED 2026-05-07 per Dave -->
 
@@ -11737,96 +11754,22 @@ html, body, html body{
             </svg>
           </div>
           <div class="c25-title" style="color:#7a4a8c;line-height:1.22">Already a social<br>network beyond<br>the courts.</div>
-          <!-- Bottom-strip CTA [Dave 2026-05-07 PM]: visually delineates the bottom 1/3 click zone (opens proof modal). Top 2/3 click zone flips card back to front. -->
-          <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(122,74,140,0.10);border-top:1px solid rgba(122,74,140,0.28);font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(122,74,140,0.85);text-align:center">see here &rarr;</div>
+          <!-- ['see here →' bottom strip + Krista Slack modal REMOVED from cs-25 2026-05-08 per Dave: 'you can remove what i'm attaching from the why pickleball first slide since that's going in a different slide'. The Krista Slack proof now lives on cs-onandoff (slot 13) as its 2nd-stage reveal. Card #5 still flips and shows this teaser back face — but no modal popup.] -->
         </div>
       </div>
     </div>
 
   </div>
 
-  <!-- ====== KRISTA SLACK PROOF MODAL [Dave 2026-05-07 PM] ======
-       Designed recreation of the actual Slack thread where Krista mentions using GnR invites for a cancer-recovery surprise party.
-       Triggered by clicking the back of card #5 ('Already a social network beyond the courts.'). -->
-  <style>
-    #cs25SocialProof { position:absolute;inset:0;background:rgba(26,22,18,0.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;z-index:50;padding:40px;cursor:pointer; }
-    #cs25SocialProof[data-open="1"] { display:flex;animation:cs25ProofFade 0.32s cubic-bezier(.45,.05,.18,1) both; }
-    @keyframes cs25ProofFade { from { opacity:0; } to { opacity:1; } }
-    #cs25SocialProof .proof-card { max-width:760px;width:100%;background:#ffffff;border-radius:14px;padding:32px 36px 28px;box-shadow:0 30px 80px rgba(0,0,0,0.45);font-family:'Inter','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;cursor:default;animation:cs25ProofRise 0.42s cubic-bezier(.22,1,.36,1) both; }
-    @keyframes cs25ProofRise { from { opacity:0; transform:translateY(20px) scale(0.97); } to { opacity:1; transform:translateY(0) scale(1); } }
-    #cs25SocialProof .proof-eyebrow { display:flex;align-items:center;gap:10px;font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#7a4a8c;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(0,0,0,0.06); }
-    #cs25SocialProof .proof-eyebrow svg { width:14px;height:14px;flex-shrink:0; }
-    #cs25SocialProof .proof-msg { display:flex;gap:12px;align-items:flex-start;margin-bottom:18px; }
-    #cs25SocialProof .proof-avatar { width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:700;color:#fff;flex-shrink:0; }
-    #cs25SocialProof .proof-avatar.k { background:linear-gradient(135deg,#7a4a8c 0%,#a65bbf 100%); }
-    /* Steve avatar [Dave 2026-05-07 PM v2]: switched from teal to a clear deep blue so it reads as a distinct second person at a glance — was too close to background tones. */
-    #cs25SocialProof .proof-avatar.s { background:linear-gradient(135deg,#2a5fa3 0%,#4a82c6 100%); }
-    #cs25SocialProof .proof-author { font-family:'Inter',sans-serif;font-weight:900;color:#1d1c1d;font-size:.95rem; }
-    #cs25SocialProof .proof-time { font-family:'Inter',sans-serif;font-weight:400;color:#616061;font-size:.78rem;margin-left:8px; }
-    #cs25SocialProof .proof-text { font-family:'Inter',sans-serif;color:#1d1c1d;font-size:.94rem;line-height:1.5;margin-top:2px; }
-    #cs25SocialProof .proof-reactions { display:flex;gap:6px;margin-top:8px; }
-    #cs25SocialProof .proof-react { display:inline-flex;align-items:center;gap:4px;padding:3px 8px;background:#f8f8f8;border:1px solid #e8e8e8;border-radius:12px;font-family:'Inter',sans-serif;font-size:.75rem;color:#616061; }
-    #cs25SocialProof .proof-react.heart { color:#c8462c; background:rgba(200,70,44,0.06);border-color:rgba(200,70,44,0.18); }
-    #cs25SocialProof .proof-close { position:absolute;top:14px;right:18px;font-family:'Manrope',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);background:none;border:none;cursor:pointer;padding:6px 10px; }
-    #cs25SocialProof .proof-close:hover { color:#fff; }
-    #cs25SocialProof .proof-caption { margin-top:18px;padding-top:14px;border-top:1px solid rgba(0,0,0,0.06);font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:#7a4a8c;text-align:center;line-height:1.4; }
-  </style>
-  <div id="cs25SocialProof" onclick="if(event.target===this){this.dataset.open='0';}">
-    <button class="proof-close" onclick="document.getElementById('cs25SocialProof').dataset.open='0'">&times; close</button>
-    <div class="proof-card" onclick="event.stopPropagation()">
-      <!-- Eyebrow 'From Krista · NEPC GM · Slack' DELETED 2026-05-07 PM per Dave. Modal now opens directly to the message thread. -->
-      <!-- Krista's message -->
-      <div class="proof-msg">
-        <div class="proof-avatar k">K</div>
-        <div style="flex:1;min-width:0">
-          <div><span class="proof-author">Krista Trefethen</span><span class="proof-time">11:29 AM</span></div>
-          <div class="proof-text">FYI I'm using the invite for a surprise party next Friday for one of our members that just completed radiation for cancer &mdash; it's not a playing event, but I've done this occasionally for members to help facilitate gatherings that have been born from their pickleball connections.</div>
-          <div class="proof-reactions">
-            <span class="proof-react heart">&hearts; 1</span>
-          </div>
-        </div>
-      </div>
-      <!-- Steve's reply -->
-      <div class="proof-msg" style="margin-bottom:0">
-        <div class="proof-avatar s">S</div>
-        <div style="flex:1;min-width:0">
-          <div><span class="proof-author">Steve</span><span class="proof-time">12:32 PM</span></div>
-          <div class="proof-text">That's amazing, love it</div>
-        </div>
-      </div>
-      <!-- Caption 'The invitation surface isn't just for pickleball...' DELETED 2026-05-07 PM per Dave. Slack thread speaks for itself. -->
-    </div>
-  </div>
+  <!-- ====== KRISTA SLACK PROOF MODAL — REMOVED 2026-05-08 per Dave ======
+       Modal duplicated content that's now on cs-onandoff slot 13 as the 2nd-stage reveal.
+       Original modal HTML retained in git history (commits b050b33, c523400). -->
+  <!-- [2026-05-08] Krista Slack modal styles + HTML + ESC handler REMOVED per Dave: the proof now lives on cs-onandoff (slot 13) as its 2nd-stage reveal. -->
   <script>
-    // Click handler for card #5 [Dave 2026-05-07 PM v2 — split-zone behavior]:
-    //   - Front face: any click → flip to back.
-    //   - Back face:
-    //       Top 2/3 of card → flip back to front (so the user can re-read the headline / bail out)
-    //       Bottom 1/3 of card → open the Slack proof modal (the 'see here →' strip is in this zone)
+    // [Dave 2026-05-08] Simplified click handler for card #5: just toggle flip front↔back. Modal trigger removed.
     window.cs25SocialNetworkClick = function(card, event) {
-      if (card.dataset.flipped === '0') {
-        card.dataset.flipped = '1';
-        return;
-      }
-      // Currently showing back face. Decide based on click Y-position.
-      const rect = card.getBoundingClientRect();
-      const clickY = event.clientY - rect.top;
-      if (clickY > rect.height * (2/3)) {
-        // Bottom 1/3 → open proof modal
-        const modal = document.getElementById('cs25SocialProof');
-        if (modal) modal.dataset.open = '1';
-      } else {
-        // Top 2/3 → flip back to front
-        card.dataset.flipped = '0';
-      }
+      card.dataset.flipped = card.dataset.flipped === '1' ? '0' : '1';
     };
-    // ESC closes the modal
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const m = document.getElementById('cs25SocialProof');
-        if (m && m.dataset.open === '1') { m.dataset.open = '0'; e.stopImmediatePropagation(); }
-      }
-    }, true);
   </script>
 
   <!-- 6th CULMINATION CARD REMOVED 2026-05-06 PM v4 per Dave (simplification): 'clearest path' moved to top as main header. -->
@@ -11879,7 +11822,7 @@ html, body, html body{
       <!-- BACK: the culmination text -->
       <div class="c25-culm-back" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:18px;background:linear-gradient(180deg,rgba(184,149,74,0.18) 0%,rgba(184,149,74,0.06) 100%);border:1.5px solid rgba(184,149,74,0.65);box-shadow:0 0 56px rgba(184,149,74,0.25);padding:38px 44px;display:flex;align-items:center;justify-content:center;text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:clamp(1.65rem,2.95vw,2.45rem);font-weight:800;line-height:1.16;color:#1a1612;letter-spacing:-0.014em;max-width:1180px">
-          Pickleball is the clearest path to the first <em style="font-style:italic;color:#b8954a">network of real human connection.</em>
+          Pickleball is the clearest path to the first <em style="font-style:italic;color:#b8954a">autonomous network of real human connection.</em>
         </div>
       </div>
     </div>
