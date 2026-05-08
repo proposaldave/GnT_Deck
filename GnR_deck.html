@@ -7316,16 +7316,18 @@ html, body, html body{
      hierarchical closing line.
 ═══════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
-  [id^="cs-thegap"] .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:48px 64px 48px; gap:8px; text-align:center; }
-  [id^="cs-thegap"] .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.5rem,4.4vw,3.95rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
+  /* [Dave 2026-05-08] Compressed to match other slides' envelope per Dave: 'visual problem with this slide is the content takes up too much space compared to other slides'. Padding tightened, headline+subhead trimmed, SVG height capped, gaps reduced. */
+  [id^="cs-thegap"] .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:32px 56px 28px; gap:4px; text-align:center; }
+  [id^="cs-thegap"] .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2rem,3.6vw,3.15rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
   [id^="cs-thegap"] .tg-head em { font-style:italic; font-weight:600; color:#c8462c; }
-  [id^="cs-thegap"] .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(1.25rem,1.85vw,1.55rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1280px; margin:12px auto 0; }
+  [id^="cs-thegap"] .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(1rem,1.5vw,1.3rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1280px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
-  [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1560px; margin:16px auto 0; }
+  [id^="cs-thegap"] .tg-svg-wrap { width:100%; max-width:1380px; margin:6px auto 0; }
+  [id^="cs-thegap"] .tg-svg-wrap svg { max-height:48vh; width:100%; height:auto; display:block; margin:0 auto; }
 
   /* Closing line — single red caps punchline (icon strip + bold black line removed 2026-05-04) */
-  [id^="cs-thegap"] .tg-close { margin-top:18px; }
-  [id^="cs-thegap"] .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(1.1rem,1.55vw,1.4rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:#c8462c; }
+  [id^="cs-thegap"] .tg-close { margin-top:8px; }
+  [id^="cs-thegap"] .tg-close-2 { font-family:'Manrope',sans-serif; font-size:clamp(.85rem,1.1vw,1.05rem); font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:#c8462c; }
 
   /* ─── ENTRANCE STAGGER [Dave 2026-05-07 v2 — TONED DOWN] ─────────────────────
      Cut from 7 staged beats to 3. Per Dave: 'TOO many animations - will look
@@ -7538,11 +7540,11 @@ html, body, html body{
         </svg>
       </div>
 
-      <!-- [Dave 2026-05-08] Bottom-half closer upgraded from single utility-caps line to two-beat resolution: diagnostic + GnR punchline. The visualization lands the texting-by-hand reality; the closer lands the SCALING WALL + the GnR answer. -->
-      <div class="tg-close" style="display:flex;flex-direction:column;align-items:center;gap:6px">
-        <div class="tg-close-2" style="font-family:'Manrope',sans-serif;font-size:clamp(.95rem,1.25vw,1.15rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#c8462c">The graph dies in transit. One text at a time.</div>
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.95vw,1.85rem);font-weight:700;font-style:italic;color:#1a1612;line-height:1.25;margin-top:4px;text-align:center">
-          <span style="color:#5B8FD4;font-weight:900;font-style:normal">G</span><span style="color:#b8954a;font-weight:900">n</span><span style="color:#c8462c;font-weight:900;font-style:normal">R</span> <span style="color:#1a1612">keeps every signal.</span><br><span style="color:#b8954a">The community finally compounds.</span>
+      <!-- [Dave 2026-05-08 v2] Bottom-half closer — compressed sizes per Dave: 'content takes up too much space compared to other slides'. Two-beat resolution: diagnostic + GnR punchline. -->
+      <div class="tg-close" style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div class="tg-close-2" style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,1vw,.95rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#c8462c">The graph dies in transit. One text at a time.</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.45rem);font-weight:700;font-style:italic;color:#1a1612;line-height:1.25;margin-top:2px;text-align:center">
+          <span style="color:#5B8FD4;font-weight:900;font-style:normal">G</span><span style="color:#b8954a;font-weight:900">n</span><span style="color:#c8462c;font-weight:900;font-style:normal">R</span> <span style="color:#1a1612">keeps every signal.</span> <span style="color:#b8954a">The community finally compounds.</span>
         </div>
       </div>
     </div>
