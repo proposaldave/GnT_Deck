@@ -5435,7 +5435,8 @@ html, body, html body{
      wordmark (blue Give + ink italic n + red Receive), gold leaf accent for emphasis.
      Strict: no "No. 01" stamps, no "An operating system" subhead, no clutter.
      Just wordmark + tagline + a single thin gold rule. -->
-<div class="casey-slide ds-measure active" id="cs-1" data-revealed="0" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- [Dave 2026-05-09] cs-1 demoted from slot 1 to LAST appendix slide. Removed 'active' class so the new primary (cs-1m5) shows on load. data-revealed reset behavior unchanged. -->
+<div class="casey-slide ds-measure appendix-slide" id="cs-1" data-revealed="0" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <style>
     /* cs-1 click-reveal [Dave 2026-05-07 v3]: hide descriptor + tagline on initial load; pulsing down-arrow indicates click-to-reveal. Right-arrow / scroll / swipe-up reveals.
        v3: collapse to max-height:0 when hidden (zero layout space) so the arrow sits right beneath the wordmark.
@@ -5720,7 +5721,8 @@ html, body, html body{
   html[data-export="1"] #cs-1m5 .m5-stage1, html[data-export="1"] #cs-1m5 .m5-stage2 { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m5 .m5-hint { display:none !important }
 </style>
-<div class="casey-slide ds-measure" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide. Removed display:none, added active class so it shows on initial load. -->
+<div class="casey-slide ds-measure active" id="cs-1m5" data-stage="0" onclick="this.dataset.stage = Math.min(2, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-09: renamed from 'Generational Consumer Brand Opportunity' to 'The future of real-world social communities'] -->
@@ -5736,10 +5738,10 @@ html, body, html body{
         <circle cx="442" cy="52" r="3.6" fill="#5B8FD4"/>
         <circle cx="498" cy="52" r="3.6" fill="#c8462c"/>
       </svg>
-      <!-- STAGE 1 reveal: 'The Network / Sees. Measures. Reciprocates.' (lifted from V8 center n orb) -->
+      <!-- STAGE 1 reveal: 'The Network / Sees. Measures.' [Dave 2026-05-09: 'Reciprocates.' dropped (the give/receive caption row covers reciprocation in stage 2). Color changed to ink #1a1612 since this text refers to the italic n in the Give n Receive wordmark, which is also ink.] -->
       <div class="m5-stage1" style="margin-bottom:32px">
-        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-bottom:8px">The Network</div>
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#b8954a;line-height:1.3">Sees. Measures. Reciprocates.</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
       </div>
       <!-- STAGE 2 reveal: V8 caption row (give-side + receive-side) -->
       <div class="m5-stage2" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
@@ -5810,7 +5812,8 @@ window.cs1m5Reverse = function() {
   #cs-1m6 .m6-cap-body em { font-style:italic;font-weight:700 }
   #cs-1m6 .m6-tagline { margin-top:60px;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.5);text-align:center }
 </style>
-<div class="casey-slide ds-focus" id="cs-1m6" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<!-- [Dave 2026-05-09] cs-1m6 MOVED from slot 1 alts to LAST appendix slide. Added appendix-slide class. -->
+<div class="casey-slide ds-focus appendix-slide" id="cs-1m6" style="display:none;background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Generational Consumer Brand Opportunity</div>
@@ -21375,7 +21378,8 @@ const SLIDE_ORDER = [
   // 2026-04-29 v8: slides 1-7 LOCKED. AI-driven full reorder of remaining slides.
   // Story arc: Wedge (7) -> Moat -> Engine -> Origin/Story -> Founder -> Vision -> TAM -> Model -> Credibility -> Ask -> Promise -> Closer.
   // Slides moved to appendix: cs-7, cs-8, cs-14, cs-16, cs-17, cs-20, cs-21, cs-1a.
-  'cs-1',     //  1 Title
+  // [Dave 2026-05-09] cs-1m5 PROMOTED to slot 1 primary title slide ('this is our new title slide'). Old cs-1 ('TO LEAD THE NEXT FRONTIER' click-reveal title) MOVED to last appendix slide. cs-1m6 (G·n·R Equation) ALSO MOVED to appendix.
+  'cs-1m5',   //  1 NEW TITLE · The future of real-world social communities · wordmark + click-to-reveal stages (Network line → caption row)
   'cs-a7',    //  2 Social media is a very narrow view of human connection technology [Dave 2026-05-07: moved from appendix to main slot 2 — sets the frame right after title]
   // 2026-04-30 PM v3: cs-1b + cs-0a Values side MERGED into cs-1bm1 (and 2 alts).
   // Dave's directive: "save current two slides to appendix, then merge — try 2-3 attempts I'll pick best."
@@ -21488,13 +21492,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-07 PM v13] V16 'Open Heart' MOVED from alts to first appendix slide per Dave: 'really good but move it to the first appendix slide'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-07 PM v14] V15 'Time, Care, Ideas, Love' MOVED from alts to END of appendix per Dave: 'move this slide to the end of the appendix'. Now lives in APPENDIX_ORDER, not as alt dot.
   // [Dave 2026-05-09] Slot 1 title-slide review — RED-DOT candidates defining 'what is Give n Receive'.
-  //   cs-1m1 = Brand-led merge [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
-  //   cs-1m2 = Two-beat stack [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
-  //   cs-1m3 = Minimal merge [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
-  //   cs-1m4 = BRAND DEF v1 · single line 'What you give fuels the network.' [DELETED 2026-05-09 per Dave: 'delete this'. HTML retained as silent backup.]
-  //   cs-1m5 = BRAND DEF v2 · V8 caption row pair w/ click-to-reveal stages [eyebrow 'The future of real-world social communities'; +Network line]
-  //   cs-1m6 = BRAND DEF v3 · G·n·R Equation (3 big letters as wordmark, sub-captions define each)
-  1: ['cs-1m5', 'cs-1m6'],
+  //   cs-1m1 = Brand-led merge [DELETED 2026-05-09 per Dave]
+  //   cs-1m2 = Two-beat stack [DELETED 2026-05-09 per Dave]
+  //   cs-1m3 = Minimal merge [DELETED 2026-05-09 per Dave]
+  //   cs-1m4 = BRAND DEF v1 · single line [DELETED 2026-05-09 per Dave]
+  //   cs-1m5 = PROMOTED to slot 1 primary 2026-05-09 ('this is our new title slide'). No longer an alt.
+  //   cs-1m6 = G·n·R Equation [MOVED to last appendix slide 2026-05-09 per Dave: 'move this to be the last slide in the appendix']
+  1: [],
   12: [],
   // [Dave 2026-05-08 v6] cs-merge3 ADDED as 3rd candidate at slot 13. Dave: 'try a new slide, make it a pink dot next to the red dots, where the krista steve graphic is clickable into if we click on party and where under the court and coffee gift home party graphic, you add the five cards (identical to as you have them now) from the why pickleball first slide.' cs-merge3 = pink-dot variant (vs red for merge1+merge2).
   13: ['cs-merge1', 'cs-merge2', 'cs-merge3'],
@@ -21523,7 +21527,7 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
-const REVIEW_POSITION = 1; // [Dave 2026-05-09] Active review shifted to SLOT 1 — Dave reviewing 3 title-slide merge candidates (cs-1m1/2/3) that merge cs-1's product-anchor copy with cs-brand-V8's brand DNA. Other slots' alts (slot 13 cs-merge*, slot 16 cs-18-alt*, slot 17 positioning alts) render gold while this review is active.
+const REVIEW_POSITION = 0; // [Dave 2026-05-09] Slot 1 title-slide review CLOSED — cs-1m5 promoted to primary, cs-1 + cs-1m6 moved to appendix. No active review for now.
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -21609,7 +21613,10 @@ const APPENDIX_ORDER = [
   'cs-brand-V15', // Brand Opportunity · 'Open Heart Hybrid' (V10 wisps + V9 captions) — moved from main slot 12 to appendix per Dave 2026-05-07 PM
   'cs-brand-V1',  // Brand Opportunity · V1 (G/n/R + 3-pillar captions WHAT YOU GIVE / THE NETWORK / WHAT COMES BACK) — moved from slot 12 alts to appendix end per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix').
   'cs-once',     // Once in Civilization · the first network for real human connection — MOVED from main slot 6 to appendix per Dave 2026-05-07 PM: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
-  'cs-frontier', // LAST · The Next Frontier · Real-world social networking — MOVED from main slot 13 to LAST appendix slide per Dave 2026-05-07 PM: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
+  'cs-frontier', // The Next Frontier · Real-world social networking — MOVED from main slot 13 to appendix per Dave 2026-05-07 PM: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'.
+  // [Dave 2026-05-09] cs-1m6 (G·n·R Equation) and cs-1 (original 'TO LEAD THE NEXT FRONTIER' click-reveal title) BOTH moved to end of appendix in this order. cs-1 takes the LAST position per Dave's chronological 'move this to be the last slide in the appendix' messages — m6 first, then cs-1, so cs-1 sits at the very end.
+  'cs-1m6',      // G·n·R Equation backup — 3 big letters with V8 sub-captions
+  'cs-1',        // ORIGINAL TITLE backup · 'TO LEAD THE NEXT FRONTIER' eyebrow + Give n Receive wordmark + click-reveal 'Invitation-based matchmaking for our communities'. Now the LAST appendix slide.
 ];
 const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 let current = 1;
