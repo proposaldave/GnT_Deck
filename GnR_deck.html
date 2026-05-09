@@ -2,8 +2,59 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Give n Receive &mdash; Pitch Deck</title>
+<!-- ════════════════════════════════════════════════════════════════════════════════
+     RESPONSIVE DECK SCALING [Dave 2026-05-09]
+     The deck is designed at a fixed 1920×1080 viewport. We scale the body to fit any
+     screen (phone, tablet, laptop, 4K) while preserving 16:9 aspect ratio. Letterbox
+     bg = ink so the deck reads as projector-framed on small/wide viewports.
+     - --deck-scale is updated by JS on resize/orientationchange below
+     - Position:fixed elements (nav, bar, count) stay anchored to the scaled body's
+       edges (transform creates a containing block for fixed children)
+     - Touch swipe handlers already exist for slide nav + reveal advance
+     - PDF export via puppeteer uses fixed 1920×1080 viewport so scale = 1, no impact
+     ════════════════════════════════════════════════════════════════════════════════ -->
+<style>
+  html.deck-responsive { background: #1a1612 !important; overflow: hidden !important; height: 100vh !important; width: 100vw !important; }
+  html.deck-responsive body {
+    width: 1920px !important;
+    height: 1080px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform-origin: center center !important;
+    transform: translate(-50%, -50%) scale(var(--deck-scale, 1)) !important;
+  }
+  /* Export mode (PDF) — viewport is exactly 1920×1080 so scale stays at 1, but disable position:absolute centering so puppeteer captures from 0,0. */
+  html[data-export="1"] body { transform: none !important; position: static !important; left: auto !important; top: auto !important; }
+</style>
+<script>
+(function(){
+  // Set --deck-scale = min(viewportW/1920, viewportH/1080). Runs ASAP to avoid flash of unscaled content.
+  function updateDeckScale() {
+    var scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    document.documentElement.style.setProperty('--deck-scale', scale);
+  }
+  // Add the responsive class on html (so styles activate) — use a class so we can disable in export mode by removing it.
+  function init() {
+    if (document.documentElement.dataset.export !== '1') {
+      document.documentElement.classList.add('deck-responsive');
+    }
+    updateDeckScale();
+  }
+  // Defer until DOMContentLoaded so dataset.export (set by export-detection script earlier) is final.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  window.addEventListener('resize', updateDeckScale);
+  window.addEventListener('orientationchange', function(){ setTimeout(updateDeckScale, 100); });
+})();
+</script>
 <!-- Favicon — inline SVG GnR wordmark [Dave 2026-05-09]: prevents browser inheriting cached 4D favicon from sibling proposaldave repos -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23f3ead8' rx='10'/><text x='4' y='46' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%235B8FD4'>G</text><text x='30' y='46' font-family='Georgia,serif' font-size='30' font-style='italic' fill='%231a1612'>n</text><text x='44' y='46' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23c8462c'>R</text></svg>">
 <!-- ?export=1 detection: set data-export attribute and neuter requestAnimationFrame so
