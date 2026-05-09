@@ -5914,7 +5914,7 @@ window.cs1m5Reverse = function() {
   #cs-1m7 { cursor:pointer }
   /* Wordmark: each letter is an inline-block span. Transforms don't affect document flow, so siblings stay in place when ive/eceive collapse. */
   #cs-1m7 .m7-wordmark { position:relative;display:flex;align-items:baseline;justify-content:center;width:auto;margin:0 auto;line-height:1 }
-  #cs-1m7 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition: transform 1.4s cubic-bezier(.22,1,.36,1), opacity 0.7s ease }
+  #cs-1m7 .wm-letter { display:inline-block;font-family:'Fraunces','Playfair Display',Georgia,serif;line-height:1;transition: transform 1.4s cubic-bezier(.22,1,.36,1), opacity 0.7s ease, padding 1.4s cubic-bezier(.22,1,.36,1) }
   #cs-1m7 .wm-G { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:right center }
   #cs-1m7 .wm-ive { font-size:178px;font-weight:500;color:#5B8FD4;letter-spacing:-3px;transform-origin:left center }
   /* [Dave 2026-05-09] padding bumped 12px → 40px each side so the italic n has more breathing room from the 'e' of Give and the 'R' of Receive at large display sizes */
@@ -5924,19 +5924,20 @@ window.cs1m5Reverse = function() {
   #cs-1m7 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc — absolutely positioned over the n's center, scales with n */
   #cs-1m7 .wm-arc { position:absolute;left:50%;top:18px;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
-  /* Stage 1+: split animation */
-  #cs-1m7[data-stage="1"] .wm-ive, #cs-1m7[data-stage="2"] .wm-ive { opacity:0;transform:scaleX(0) }
+  /* Stage 1+: split animation. [Dave 2026-05-09] To center G/n/R around slide center, we add padding-right to wm-ive that compensates for 'Give' (G+ive=4 chars) being narrower than 'Receive' (eceive+R=7 chars). With ive's box growing 170px wider on stage advance (smoothly via transition), the flex row becomes symmetric and n_wrap lands at slide center; G and R end up symmetric around it after their equal±opposite translations. */
+  #cs-1m7[data-stage="1"] .wm-ive, #cs-1m7[data-stage="2"] .wm-ive { opacity:0;transform:scaleX(0);padding-right:170px }
   #cs-1m7[data-stage="1"] .wm-eceive, #cs-1m7[data-stage="2"] .wm-eceive { opacity:0;transform:scaleX(0) }
   #cs-1m7[data-stage="1"] .wm-G, #cs-1m7[data-stage="2"] .wm-G { transform:translateX(-180px) scale(1.55) }
   #cs-1m7[data-stage="1"] .wm-R, #cs-1m7[data-stage="2"] .wm-R { transform:translateX(180px) scale(1.55) }
   #cs-1m7[data-stage="1"] .wm-n-wrap, #cs-1m7[data-stage="2"] .wm-n-wrap { transform:scale(1.3) }
   #cs-1m7[data-stage="1"] .wm-arc, #cs-1m7[data-stage="2"] .wm-arc { transform:translateX(-50%) translateY(-12px) }
-  /* Stage 1 reveal: Network line — delayed so split animation lands first */
+  /* [Dave 2026-05-09] REVEAL ORDER SWAPPED: caption row reveals FIRST at stage 1 (immediately after split animation); Network line reveals SECOND at stage 2. Per Dave: 'The Network / Sees. Measures. should not animate in before What you give / fuels the network on this slide'. */
+  /* m7-stage1 div contains 'The Network / Sees. Measures.' — now reveals at stage 2 only (after caption row) */
   #cs-1m7 .m7-stage1 { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m7[data-stage="1"] .m7-stage1, #cs-1m7[data-stage="2"] .m7-stage1 { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 1.1s, transform 0.7s ease 1.1s, max-height 0.7s cubic-bezier(.22,1,.36,1) 1.1s, visibility 0s linear 1.1s }
-  /* Stage 2 reveal: caption row */
+  #cs-1m7[data-stage="2"] .m7-stage1 { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, max-height 0.7s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  /* m7-stage2 div contains the caption row — now reveals at stage 1 (delayed 1.1s for split animation to land first) and persists through stage 2 */
   #cs-1m7 .m7-stage2 { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m7[data-stage="2"] .m7-stage2 { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 0.15s, transform 0.75s ease 0.15s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  #cs-1m7[data-stage="1"] .m7-stage2, #cs-1m7[data-stage="2"] .m7-stage2 { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 1.1s, transform 0.75s ease 1.1s, max-height 0.75s cubic-bezier(.22,1,.36,1) 1.1s, visibility 0s linear 1.1s }
   /* Hint — visible only at stage 0 */
   #cs-1m7 .m7-hint { display:flex;align-items:center;justify-content:center;opacity:1;visibility:visible;transition:opacity 0.4s ease, visibility 0s linear 0s }
   #cs-1m7[data-stage="1"] .m7-hint, #cs-1m7[data-stage="2"] .m7-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
@@ -5944,7 +5945,8 @@ window.cs1m5Reverse = function() {
   #cs-1m7 .m7-hint svg { animation:m7HintBob 2.2s ease-in-out infinite }
   #cs-1m7[data-stage="1"] .m7-hint svg, #cs-1m7[data-stage="2"] .m7-hint svg { animation:none }
   /* Export mode: jump to final state, no animation */
-  html[data-export="1"] #cs-1m7 .wm-ive, html[data-export="1"] #cs-1m7 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
+  html[data-export="1"] #cs-1m7 .wm-ive { opacity:0 !important;transform:scaleX(0) !important;padding-right:170px !important }
+  html[data-export="1"] #cs-1m7 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
   html[data-export="1"] #cs-1m7 .wm-G { transform:translateX(-180px) scale(1.55) !important }
   html[data-export="1"] #cs-1m7 .wm-R { transform:translateX(180px) scale(1.55) !important }
   html[data-export="1"] #cs-1m7 .wm-n-wrap { transform:scale(1.3) !important }
