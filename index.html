@@ -5766,7 +5766,7 @@ html, body, html body{
   #cs-1m5 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m5 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc above n — now positioned inside wm-n-wrap so it tracks the n exactly. Dave: 'the graphic above the black n should be perfectly centered above the black n'. wm-n-wrap is position:relative, so absolute children align to its box. left:50% of n_wrap puts arc at the n's center (n is centered in n_wrap by padding 0 40px). top:8% puts it above the n's top stem. */
-  #cs-1m5 .wm-arc { position:absolute;left:50%;top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m5 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
   /* Stage 1+: split layout via CSS GRID matching the caption row's 1fr/1fr/140-gap/1300-max-width grid. This GUARANTEES alignment: G lands in left column (centered above 'WHAT YOU GIVE'), R lands in right column (centered above 'YOUR PEOPLE · YOUR MOMENTS'), n_wrap absolutely positioned at horizontal slide center. ive + eceive get display:none (instant collapse, no width-estimation math). Trade-off: the smooth letter-by-letter split animation is replaced by a snap to grid positions. Dave's priority was 'all content perfectly centered' — alignment correctness > smoothness. */
   #cs-1m5[data-stage="1"] .m5-wordmark, #cs-1m5[data-stage="2"] .m5-wordmark {
     display: grid !important;
@@ -5894,7 +5894,7 @@ window.cs1m5Reverse = function() {
   #cs-1m8 .wm-n { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:128px;font-weight:400;font-style:italic;color:#1a1612;line-height:1 }
   #cs-1m8 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
-  #cs-1m8 .wm-arc { position:absolute;left:50%;top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m8 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
   /* STAGE 1 reveal: HUMAN TRUTH — 'We feel our best when we give. Science says so.' */
   #cs-1m8 .m8-truth { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
   #cs-1m8[data-stage="1"] .m8-truth { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s, max-height 0.7s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
@@ -6096,7 +6096,7 @@ window.cs1m8Reverse = function() {
   #cs-1m7 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m7 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   /* Gold arc — absolutely positioned over the n's center, scales with n */
-  #cs-1m7 .wm-arc { position:absolute;left:50%;top:18px;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
+  #cs-1m7 .wm-arc { position:absolute;left:calc(50% + 7px);top:18px;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
   /* Stage 1+: split animation. [Dave 2026-05-09] To center G/n/R around slide center, we add padding-right to wm-ive that compensates for 'Give' (G+ive=4 chars) being narrower than 'Receive' (eceive+R=7 chars). With ive's box growing 170px wider on stage advance (smoothly via transition), the flex row becomes symmetric and n_wrap lands at slide center; G and R end up symmetric around it after their equal±opposite translations. */
   #cs-1m7[data-stage="1"] .wm-ive, #cs-1m7[data-stage="2"] .wm-ive { opacity:0;transform:scaleX(0);padding-right:170px }
   #cs-1m7[data-stage="1"] .wm-eceive, #cs-1m7[data-stage="2"] .wm-eceive { opacity:0;transform:scaleX(0) }
