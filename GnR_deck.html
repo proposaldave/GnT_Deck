@@ -11174,103 +11174,84 @@ window.cs1m7Reverse = function() {
 </section>
 </div>
 
-<!-- Founder Journey (Dave Velardo) — Dave 2026-05-06 PM v4: combined founder + DUPR All-In manifesto.
-     Eyebrow "All In", sub-eyebrow "Dave Velardo · Founder · CEO", new manifesto wording, DUPR logo, timeline kept.
-     Closing italic line removed per Dave. -->
+<!-- Founder Journey (Dave Velardo) ? merged final Wheelhouse slide [Dave 2026-05-10].
+     Consolidates primary cs-18 + cs-18-alt1 + cs-18-alt3 into one main-deck founder-fit slide.
+     One investor answer: Dave lived the idea maze, built the lab, recruited the CTO, and is all-in on GnR. -->
+<style>
+  #cs-18 .dv-stage { position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:78px 56px 54px;text-align:center;overflow:hidden; }
+  #cs-18 .dv-stage:before { content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 47%, rgba(184,149,74,0.16), transparent 38%), radial-gradient(circle at 78% 70%, rgba(91,143,212,0.08), transparent 28%);pointer-events:none; }
+  #cs-18 .dv-wrap { position:relative;z-index:1;width:min(1280px,100%);margin:0 auto; }
+  #cs-18 .dv-name { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:18px; }
+  #cs-18 .dv-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,4.15vw,3.85rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;color:#1a1612;max-width:1180px;margin:0 auto; }
+  #cs-18 .dv-hero em { font-style:italic;color:#b8954a;font-weight:800; }
+  #cs-18 .dv-hero .red { color:#c8462c; }
+  #cs-18 .dv-hero .blue { color:#5B8FD4; }
+  #cs-18 .dv-proof { margin:38px auto 30px;display:grid;grid-template-columns:1.02fr .9fr 1.02fr;align-items:center;gap:20px;max-width:1220px; }
+  #cs-18 .dv-panel { min-height:172px;padding:22px 22px;border-radius:10px;background:rgba(251,247,239,0.62);border:1.2px solid rgba(184,149,74,0.30);box-shadow:0 14px 42px rgba(26,22,18,0.045);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px; }
+  #cs-18 .dv-panel.blue { border-color:rgba(91,143,212,0.34);background:rgba(91,143,212,0.045); }
+  #cs-18 .dv-panel.red { border-color:rgba(200,70,44,0.34);background:rgba(200,70,44,0.045); }
+  #cs-18 .dv-panel .k { font-family:'Manrope',sans-serif;font-size:.56rem;font-weight:900;letter-spacing:.26em;text-transform:uppercase;color:rgba(26,22,18,0.50); }
+  #cs-18 .dv-panel .v { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.18rem,1.65vw,1.55rem);font-weight:800;line-height:1.12;color:#1a1612; }
+  #cs-18 .dv-panel .v em { font-style:italic;color:#b8954a;font-weight:800; }
+  #cs-18 .dv-panel .sub { font-family:'Playfair Display',serif;font-size:.84rem;font-style:italic;font-weight:600;line-height:1.35;color:rgba(26,22,18,0.62); }
+  #cs-18 .dv-core { position:relative;height:250px;display:grid;place-items:center; }
+  #cs-18 .dv-ring { position:absolute;inset:0;margin:auto;border-radius:50%;border:1px solid rgba(184,149,74,0.28); }
+  #cs-18 .dv-ring.r1 { width:248px;height:248px;border-style:dashed; }
+  #cs-18 .dv-ring.r2 { width:182px;height:182px;background:rgba(184,149,74,0.06); }
+  #cs-18 .dv-ring.r3 { width:114px;height:114px;border-color:rgba(200,70,44,0.24); }
+  #cs-18 .dv-core-word { position:relative;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.95rem,3.1vw,2.75rem);font-weight:900;line-height:.95;color:#1a1612; }
+  #cs-18 .dv-core-word .g { color:#5B8FD4; } #cs-18 .dv-core-word .n { font-style:italic;font-size:.74em;font-weight:700; } #cs-18 .dv-core-word .r { color:#c8462c; }
+  #cs-18 .dv-core-label { position:absolute;bottom:48px;left:0;right:0;font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:#b8954a; }
+  #cs-18 .dv-maze { display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:1180px;margin:0 auto 24px; }
+  #cs-18 .dv-step { position:relative;min-height:98px;padding:14px 12px 12px;border-radius:8px;background:rgba(184,149,74,0.055);border:1px solid rgba(184,149,74,0.25);display:flex;flex-direction:column;justify-content:center;gap:6px; }
+  #cs-18 .dv-step:after { content:"";position:absolute;right:-10px;top:50%;width:10px;height:1px;background:rgba(184,149,74,0.45); }
+  #cs-18 .dv-step:last-child:after { display:none; }
+  #cs-18 .dv-step.hot { background:rgba(200,70,44,0.065);border-color:rgba(200,70,44,0.45); }
+  #cs-18 .dv-step.now { background:rgba(73,180,160,0.08);border-color:rgba(73,180,160,0.50);box-shadow:0 0 0 3px rgba(73,180,160,0.05); }
+  #cs-18 .dv-year { font-family:'Playfair Display',serif;font-size:.78rem;font-weight:900;color:#b8954a;line-height:1; }
+  #cs-18 .dv-step.hot .dv-year { color:#c8462c; } #cs-18 .dv-step.now .dv-year { color:#168651; }
+  #cs-18 .dv-step-text { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;line-height:1.28;color:rgba(26,22,18,0.82); }
+  #cs-18 .dv-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1040px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.45rem);font-style:italic;font-weight:650;line-height:1.36;color:#1a1612; }
+  #cs-18 .dv-closer strong { color:#c8462c;font-style:normal;font-weight:900; }
+</style>
 <div class="casey-slide ds-focus" id="cs-18">
-<!-- [Dave 2026-05-08] eyebrow updated 'Started → love for the problem' → 'My Wheelhouse' per Dave: 'definitely top left label text for dave velardo slide is going to be my wheelhouse'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">My Wheelhouse</div>
-<section style="position:relative;width:100%;min-height:100%;display:flex;align-items:center;justify-content:center;padding:60px 40px 48px">
-  <div style="text-align:center;max-width:1180px;width:100%">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;">My Wheelhouse</div>
+  <section class="dv-stage">
+    <div class="dv-wrap">
+      <div class="dv-name">Dave Velardo &middot; Founder &middot; CEO</div>
+      <div class="dv-hero">I didn&rsquo;t find the idea. <em>I built the world</em> where it had to exist.</div>
 
-    <!-- Sub-eyebrow: name (combined founder identity) -->
-    <div style="font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-bottom:16px">Dave Velardo &middot; Founder &middot; CEO</div>
+      <div class="dv-proof">
+        <div class="dv-panel red">
+          <div class="k">The bet</div>
+          <div class="v">Turned down <span class="red">DUPR</span></div>
+          <div class="sub">because skill ratings were the wrong map.</div>
+        </div>
+        <div class="dv-core" aria-label="Dave's wheelhouse converges into GnR">
+          <div class="dv-ring r1"></div><div class="dv-ring r2"></div><div class="dv-ring r3"></div>
+          <div class="dv-core-word"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+          <div class="dv-core-label">the thesis</div>
+        </div>
+        <div class="dv-panel blue">
+          <div class="k">The lab</div>
+          <div class="v"><em>$2M ARR</em> NEPC</div>
+          <div class="sub">500 members, 20+ employees, two live communities.</div>
+        </div>
+      </div>
 
-    <!-- HERO MANIFESTO [Dave 2026-05-07 PM v2 — design rework]:
-         Was a slab of equal-weight bold black serif (3 lines, all 700-weight, all clamp 1.85-2.95rem).
-         Read as a wall, not a narrative. Rebuilt with hierarchy:
-           Line 1 (rejection): smaller, ink, DUPR red-accented
-           Line 2 (proof):    medium, ink, $2M ARR gold-accented, NEPC italic
-           Line 3 (the bet):  largest, italic, gold-accented climax
-         Weight reduced 700→600 base. Line-height tightened. Builds: setup → setup → punchline. -->
-    <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-weight:600;line-height:1.2;letter-spacing:-0.018em;color:#1a1612;text-align:center;max-width:1180px;margin:0 auto 28px">
-      <div style="font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:6px">
-        Turned down <span style="color:#c8462c;font-weight:700">DUPR</span>.
+      <div class="dv-maze">
+        <div class="dv-step"><div class="dv-year">2020</div><div class="dv-step-text">#27 pro tour</div></div>
+        <div class="dv-step"><div class="dv-year">2020</div><div class="dv-step-text">Computer vision founder</div></div>
+        <div class="dv-step hot"><div class="dv-year">2021</div><div class="dv-step-text">DUPR offer declined</div></div>
+        <div class="dv-step"><div class="dv-year">2022</div><div class="dv-step-text">Built NEPC Rye</div></div>
+        <div class="dv-step"><div class="dv-year">2024</div><div class="dv-step-text">Built Middleton</div></div>
+        <div class="dv-step now"><div class="dv-year">2025</div><div class="dv-step-text">Steve joins as CTO</div></div>
       </div>
-      <div style="font-size:clamp(1.55rem,2.8vw,2.25rem);margin-bottom:10px">
-        Then built <span style="color:#b8954a;font-weight:800">$2M ARR</span> <em style="font-style:italic;font-weight:500">NEPC testbed</em> without it.
-      </div>
-      <div style="font-size:clamp(1.55rem,2.85vw,2.3rem);font-style:italic;font-weight:500;line-height:1.25">
-        Now betting <span style="font-style:italic;font-weight:600">both clubs</span>
-        <span style="font-size:0.7em;font-style:italic;color:rgba(26,22,18,0.6);font-weight:500;letter-spacing:0">&nbsp;&rarr;&nbsp;500 members, 20+ employees&nbsp;&rarr;&nbsp;</span>
-        on <span style="font-style:normal;color:#5B8FD4;font-weight:900">G</span><span style="font-style:italic;color:#1a1612;font-weight:700">n</span><span style="font-style:normal;color:#c8462c;font-weight:900">R</span>.
-      </div>
+
+      <div class="dv-closer">The founder, the lab, the domain, and the CTO are already in one place. <strong>Now the graph scales.</strong></div>
     </div>
-
-    <!-- DUPR LOGO BLOCK REMOVED 2026-05-06 PM per Dave -->
-
-    <!-- TIMELINE — horizontal, with connector line, readable labels [Dave 2026-05-08: 'Wanderer' added as the FIRST beat — pre-pickleball searching/exploring phase that led him to the problem.] -->
-    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:12px;max-width:1240px;margin:0 auto 50px;position:relative">
-      <div style="position:absolute;top:9px;left:8%;right:8%;height:1.5px;background:linear-gradient(90deg,transparent 0%,rgba(212,168,83,0.4) 12%,rgba(212,168,83,0.55) 50%,rgba(73,180,160,0.55) 88%,transparent 100%);z-index:0"></div>
-      <!-- 'Wanderer' beat — the pre-pickleball searching phase. Italic, gold, sets up the destiny narrative -->
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5);opacity:0.7"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-style:italic;font-weight:700;color:#b8954a;line-height:1;margin-bottom:8px;opacity:0.85">Pre-2020</div>
-        <div style="font-family:'Playfair Display',serif;font-size:0.95rem;font-style:italic;font-weight:700;color:#b8954a;line-height:1.4">Wanderer</div>
-      </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#b8954a;line-height:1;margin-bottom:8px">2020</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500">#27 ranked<br>pro tour</div>
-      </div>
-      <!-- New 2020 milestone added 2026-05-07 per Dave: 'Pickleball Computer Vision founder' (just before 2021 DUPR offer) -->
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#b8954a;line-height:1;margin-bottom:8px">2020</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500">Pickleball Computer<br>Vision founder</div>
-      </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#b8954a;line-height:1;margin-bottom:8px">2021</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500">DUPR acquisition<br>offer declined</div>
-      </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#b8954a;line-height:1;margin-bottom:8px">2022</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500">Built <strong style="color:#1a1612;font-weight:700">NEPC Rye</strong></div>
-        <!-- '$2M+ ARR testbed communities / 500 members / 20+ employees' DELETED 2026-05-07 per Dave (now folded into the headline 'Then built $2M ARR NEPC without it.') -->
-      </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#d4a853;margin:2px auto 14px;box-shadow:0 0 14px rgba(212,168,83,0.5)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#b8954a;line-height:1;margin-bottom:8px">2024</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500">Pivot: invitation-feed<br><strong style="color:#1a1612;font-weight:700">Built NEPC Middleton</strong></div>
-      </div>
-      <div style="text-align:center;position:relative;z-index:1">
-        <div style="width:14px;height:14px;border-radius:50%;background:#49b4a0;margin:2px auto 14px;box-shadow:0 0 16px rgba(73,180,160,0.65)"></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:#49b4a0;line-height:1;margin-bottom:8px">2025</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:0.85rem;color:rgba(26,22,18,0.82);line-height:1.45;font-weight:500"><strong style="color:#1a1612;font-weight:700">Steve (CTO)</strong> joins</div>
-      </div>
-    </div>
-
-    <!-- STATS GRID DELETED 2026-04-29 per Dave — $2M+ moved into the 2022 NEPC timeline cell. -->
-
-  </div>
-</section>
+  </section>
 </div>
-
-<!-- ============================================================================
-     SLOT 17 REVIEW · ABOUT-ME ALTERNATIVES (Dave 2026-05-08)
-     cs-18 stays as primary. These two alts iterate on Dave's brief:
-       'How can I make it more crystal clear that my strategy was literally to
-        believe in myself for the long run, that I was the perfect person to
-        solve this? Finally I found the problem to solve... fell in love with
-        the problem, vision, solution, journey... turned down acquisition
-        because it was a dead end... built my own pickleball club to LEARN
-        the problem first, then copy and paste.'
-     Two distinct angles:
-       cs-18-alt1 = MY WHEELHOUSE · structural / methodological / journey arc
-       cs-18-alt2 = FINALLY · emotional / declarative / 4-loves manifesto
-============================================================================ -->
 
 <!-- ===== cs-18-alt1 — MY WHEELHOUSE · THE IDEA MAZE (Dave 2026-05-08) ===== -->
 <style>
@@ -20560,7 +20541,7 @@ const SLIDE_ALTS = {
   //   cs-18-alt1 = MY WHEELHOUSE · idea-maze journey arc
   //   cs-18-alt2 = FINALLY · emotional / 4-loves manifesto [DELETED 2026-05-08, HTML retained]
   //   cs-18-alt3 = STRATEGY · 'I figure out the next frontier + I have my lab'
-  17: ['cs-18-alt1', 'cs-18-alt3'],
+  17: [],
   // Slot 18 positioning alts CLEARED 2026-05-10 after cs-wedge1 promotion and Dave deletes.
   18: [],
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
