@@ -19605,7 +19605,7 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-10] grid simplified from '1fr 80px 1fr' (with center bridge) → '1fr 1fr' (bridge deleted) */
   #cs-a7m1 .a7m1-grid { display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch;width:min(1700px,100%) }
   /* CARDS */
-  #cs-a7m1 .a7m1-card { padding:30px 28px;border-radius:14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;position:relative }
+  #cs-a7m1 .a7m1-card { padding:30px 28px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;position:relative }
   #cs-a7m1 .a7m1-card.old { background:rgba(91,143,212,0.05);border:1px solid rgba(91,143,212,0.28) }
   #cs-a7m1 .a7m1-card.new { background:rgba(184,149,74,0.10);border:1.6px solid #b8954a;box-shadow:0 0 0 4px rgba(184,149,74,0.06),0 0 32px rgba(184,149,74,0.18) }
   #cs-a7m1 .a7m1-eye { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.36em;text-transform:uppercase }
@@ -19630,7 +19630,7 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .a7m1-card.new { perspective: 1400px; cursor: pointer; padding-top: 22px }
   #cs-a7m1 .a7m1-flip-inner { position: relative; width: 100%; min-height: 380px; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(.4,0,.2,1) }
   #cs-a7m1 .a7m1-card.new[data-flipped="1"] .a7m1-flip-inner { transform: rotateY(180deg) }
-  #cs-a7m1 .a7m1-flip-front, #cs-a7m1 .a7m1-flip-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center }
+  #cs-a7m1 .a7m1-flip-front, #cs-a7m1 .a7m1-flip-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center }
   #cs-a7m1 .a7m1-flip-back { transform: rotateY(180deg) }
   /* Invitation feed graphic — stack of 3 mini invitation cards */
   #cs-a7m1 .a7m1-feed { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 320px; margin: 0 auto }
@@ -19724,12 +19724,21 @@ window.cs1m7Reverse = function() {
               <!-- [Dave 2026-05-11] Three-people graphic — INLINE SVG (was a blurry PNG before; vector stays crisp). Brand colors blue/gold/red for the three figures, gold dashed arc above showing the connection, subtle ground line beneath. Matches the deck design system. -->
               <div class="a7m1-people-svg">
                 <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Subtle dashed background ring -->
-                  <circle cx="100" cy="108" r="80" fill="rgba(184,149,74,0.04)" stroke="rgba(184,149,74,0.22)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <!-- Soft inner glow disc — matches left orb's radial-gradient feel -->
+                  <defs>
+                    <radialGradient id="a7m1RightGlow" cx="50%" cy="48%" r="55%">
+                      <stop offset="0%" stop-color="rgba(255,250,240,0.85)"/>
+                      <stop offset="65%" stop-color="rgba(243,234,216,0.45)"/>
+                      <stop offset="100%" stop-color="rgba(243,234,216,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="100" cy="108" r="86" fill="url(#a7m1RightGlow)"/>
+                  <!-- Outer dashed ring (boosted to match left orb's dashed border visibility) -->
+                  <circle cx="100" cy="108" r="86" fill="none" stroke="rgba(184,149,74,0.42)" stroke-width="1" stroke-dasharray="3 4"/>
                   <!-- Connection arc above the three figures -->
-                  <path d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.55)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+                  <path d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.65)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
                   <!-- Subtle inner ground line -->
-                  <line x1="48" y1="146" x2="152" y2="146" stroke="rgba(184,149,74,0.28)" stroke-width="1" stroke-linecap="round"/>
+                  <line x1="44" y1="146" x2="156" y2="146" stroke="rgba(184,149,74,0.38)" stroke-width="1" stroke-linecap="round"/>
                   <!-- Person 1 — blue (left) -->
                   <line x1="62" y1="142" x2="62" y2="112" stroke="#5B8FD4" stroke-width="3.4" stroke-linecap="round"/>
                   <circle cx="62" cy="103" r="10" fill="#5B8FD4"/>
