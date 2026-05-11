@@ -6048,9 +6048,13 @@ window.cs1m5Reverse = function() {
   #cs-1m8 .wm-eceive { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:right center }
   #cs-1m8 .wm-R { font-size:178px;font-weight:500;color:#c8462c;letter-spacing:-3px;transform-origin:left center }
   #cs-1m8 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition: transform 1.4s cubic-bezier(.22,1,.36,1) }
-  /* [Dave 2026-05-11] Truth statement DELETED. cs-1m8 collapsed from 3 stages to 2 (wordmark → split). */
-  /* STAGE 2: split wordmark via grid (same as cs-1m5) + caption row + Network line */
-  #cs-1m8[data-stage="1"] .m8-wordmark {
+  /* [Dave 2026-05-11 LATE] cs-1m8 expanded to 4 stages (0/1/2/3) per Dave:
+       Stage 0: wordmark only + pulsing arrow
+       Stage 1: + split + LEFT caption ('What you give / fuels the network / We're all wired') · arrow continues
+       Stage 2: + 'The Network / Sees. Measures.' line · arrow continues
+       Stage 3: + RIGHT caption ('Your People · Your Moments / Reciprocated back to you.') · arrow hides */
+  /* WORDMARK SPLIT — applies at stage 1+ (any stage other than 0) */
+  #cs-1m8:not([data-stage="0"]) .m8-wordmark {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 140px !important;
@@ -6058,23 +6062,27 @@ window.cs1m5Reverse = function() {
     margin: 0 auto 32px auto !important;
     position: relative !important;
   }
-  #cs-1m8[data-stage="1"] .wm-ive, #cs-1m8[data-stage="1"] .wm-eceive { display: none !important }
-  #cs-1m8[data-stage="1"] .wm-G { grid-column: 1; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
-  #cs-1m8[data-stage="1"] .wm-R { grid-column: 2; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
-  #cs-1m8[data-stage="1"] .wm-n-wrap { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) scale(1.3); transform-origin: center bottom; z-index: 2 }
-  #cs-1m8[data-stage="1"] .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) }
-  /* Caption row + Network line reveal at stage 2 simultaneously, delayed for split */
+  #cs-1m8:not([data-stage="0"]) .wm-ive, #cs-1m8:not([data-stage="0"]) .wm-eceive { display: none !important }
+  #cs-1m8:not([data-stage="0"]) .wm-G { grid-column: 1; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
+  #cs-1m8:not([data-stage="0"]) .wm-R { grid-column: 2; justify-self: center; transform: scale(1.4); transform-origin: center bottom }
+  #cs-1m8:not([data-stage="0"]) .wm-n-wrap { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%) scale(1.3); transform-origin: center bottom; z-index: 2 }
+  #cs-1m8:not([data-stage="0"]) .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) }
+  /* CAPTION GRID parent — visible at stage 1+ (collapsed at stage 0 to keep wordmark vertically centered) */
   #cs-1m8 .m8-caption { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m8[data-stage="1"] .m8-caption { opacity:1;visibility:visible;transform:none;max-height:300px;transition:opacity 0.75s ease 0.6s, transform 0.75s ease 0.6s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.6s, visibility 0s linear 0.6s }
+  #cs-1m8:not([data-stage="0"]) .m8-caption { opacity:1;visibility:visible;transform:none;max-height:400px;transition:opacity 0.75s ease 0.6s, transform 0.75s ease 0.6s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.6s, visibility 0s linear 0s }
+  /* RIGHT cap cell — invisible until stage 3 (reserves grid space so LEFT stays positioned) */
+  #cs-1m8 .m8-cap-right { opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity 0.55s ease, transform 0.55s ease, visibility 0s linear 0.55s }
+  #cs-1m8[data-stage="3"] .m8-cap-right { opacity:1;visibility:visible;transform:none;transition:opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s, visibility 0s linear 0s }
+  /* NETWORK line — fades in at stage 2+ */
   #cs-1m8 .m8-network { opacity:0;visibility:hidden;transform:translateY(8px);max-height:0;overflow:hidden;transition:opacity 0.55s ease, transform 0.55s ease, max-height 0.6s cubic-bezier(.22,1,.36,1), visibility 0s linear 0.55s }
-  #cs-1m8[data-stage="1"] .m8-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.75s ease 0.6s, transform 0.75s ease 0.6s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.6s, visibility 0s linear 0.6s }
-  /* Pulsing arrow visible at stages 0 and 1, hides at stage 2 */
+  #cs-1m8[data-stage="2"] .m8-network, #cs-1m8[data-stage="3"] .m8-network { opacity:1;visibility:visible;transform:none;max-height:200px;transition:opacity 0.75s ease 0.15s, transform 0.75s ease 0.15s, max-height 0.75s cubic-bezier(.22,1,.36,1) 0.15s, visibility 0s linear 0s }
+  /* Pulsing arrow — visible at stages 0/1/2 (still more to come), hides at stage 3 (final state) */
   #cs-1m8 .m8-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
-  #cs-1m8[data-stage="1"] .m8-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  #cs-1m8[data-stage="3"] .m8-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
   @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
-  #cs-1m8[data-stage="1"] .m8-hint svg { animation:none }
-  /* Export mode: jump to terminal state (stage 2 layout, all reveals visible) */
+  #cs-1m8[data-stage="3"] .m8-hint svg { animation:none }
+  /* Export mode: jump to terminal state (all reveals visible) */
   html[data-export="1"] #cs-1m8 .m8-wordmark { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 140px !important; width: min(1300px, 92%) !important; margin: 0 auto 32px auto !important; position: relative !important }
   html[data-export="1"] #cs-1m8 .wm-ive, html[data-export="1"] #cs-1m8 .wm-eceive { display: none !important }
   html[data-export="1"] #cs-1m8 .wm-G { grid-column: 1 !important; justify-self: center !important; transform: scale(1.4) !important; transform-origin: center bottom !important }
@@ -6082,10 +6090,10 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8 .wm-n-wrap { position: absolute !important; left: 50% !important; bottom: 0 !important; transform: translateX(-50%) scale(1.3) !important; transform-origin: center bottom !important; z-index: 2 !important }
   html[data-export="1"] #cs-1m8 .wm-arc { transform: translateX(-50%) translateY(-12px) scale(1.3) !important }
   html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
-  html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
+  html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
 </style>
-<div class="casey-slide ds-measure active" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(1, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
+<div class="casey-slide ds-measure active" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-11]: 'Brand' → 'Brand Promise' -->
@@ -6096,20 +6104,20 @@ window.cs1m5Reverse = function() {
       <div class="m8-wordmark">
         <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
       </div>
-      <!-- [Dave 2026-05-11] Truth statement DELETED. Slide is now 2-stage: wordmark → split + captions. -->
-      <!-- STAGE 1 reveal: V8 caption row (give-side + receive-side) — same as cs-1m5 -->
+      <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
+      <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
-        <div style="text-align:center">
+        <div class="m8-cap-left" style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#3a73b8;line-height:1.3;margin-bottom:10px">What you give</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#5B8FD4">fuels</em> the network.</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.92rem,1.15vw,1.12rem);font-weight:500;font-style:italic;color:rgba(26,22,18,0.62);line-height:1.32;margin-top:10px">We&rsquo;re all <em style="font-style:italic;font-weight:700;color:#3a73b8">wired</em> for this.</div>
         </div>
-        <div style="text-align:center">
+        <div class="m8-cap-right" style="text-align:center">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#c94d32;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back to you.</div>
         </div>
       </div>
-      <!-- STAGE 2 reveal: 'The Network / Sees. Measures.' — appears alongside captions -->
+      <!-- STAGE 2: 'The Network / Sees. Measures.' line -->
       <div class="m8-network" style="margin-top:24px">
         <div style="font-family:'Manrope',sans-serif;font-size:clamp(.7rem,.86vw,.9rem);font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The Network</div>
         <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures.</div>
@@ -6130,12 +6138,12 @@ window.cs1m5Reverse = function() {
   </div>
 </div>
 <script>
-// [Dave 2026-05-11] cs-1m8 collapsed to 2 stages (0/1) after truth statement deletion.
+// [Dave 2026-05-11 LATE] cs-1m8 expanded to 4 stages (0/1/2/3): wordmark → +LEFT cap → +network line → +RIGHT cap.
 window.cs1m8Advance = function() {
   const s = document.getElementById('cs-1m8');
   if (!s) return false;
   const stage = parseInt(s.dataset.stage) || 0;
-  if (stage >= 1) return false;
+  if (stage >= 3) return false;
   s.dataset.stage = String(stage + 1);
   return true;
 };
