@@ -463,12 +463,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:transparent;color:#1
 .casey-dot.on{background:#d4a853;box-shadow:0 0 10px rgba(212,168,83,0.6);height:18px;border-radius:4px}
 .casey-dot.review{background:#e04040 !important;box-shadow:0 0 14px rgba(224,64,64,0.85) !important;animation:reviewPulse 1.6s ease-in-out infinite}
 .casey-dot.review.on{background:#e04040 !important}
+.casey-dot.orange-review{background:#f28c28 !important;box-shadow:0 0 14px rgba(242,140,40,0.78) !important;animation:orangePulse 1.8s ease-in-out infinite}
+.casey-dot.orange-review.on{background:#f28c28 !important}
 .casey-dot.locked{background:#3dff7a !important;box-shadow:0 0 12px rgba(61,255,122,0.7) !important}
 .casey-dot.locked.on{background:#3dff7a !important;box-shadow:0 0 16px rgba(61,255,122,0.85) !important}
 /* [Dave 2026-05-08] Alt dots now stack to the LEFT of their parent dot (was below). Positioned via JS using the .right property — see the altDot.style.right loop. */
 .casey-dot.alt{position:absolute;top:50%;transform:translateY(-50%);right:18px;width:7px !important;height:7px !important;background:rgba(212,168,83,0.55);border:1px solid rgba(212,168,83,0.85);box-shadow:0 0 6px rgba(212,168,83,0.4)}
 .casey-dot.alt.review{background:#e04040 !important;border:1px solid #e04040 !important;box-shadow:0 0 8px rgba(224,64,64,0.95) !important}
+.casey-dot.alt.orange-review{background:#f28c28 !important;border:1px solid #f28c28 !important;box-shadow:0 0 9px rgba(242,140,40,0.95) !important;animation:orangePulse 1.8s ease-in-out infinite}
 @keyframes reviewPulse{0%,100%{box-shadow:0 0 14px rgba(224,64,64,0.85)}50%{box-shadow:0 0 22px rgba(224,64,64,1)}}
+@keyframes orangePulse{0%,100%{box-shadow:0 0 10px rgba(242,140,40,0.70)}50%{box-shadow:0 0 18px rgba(242,140,40,1)}}
 .casey-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,#d4a853,#e04040,#3dff7a);z-index:999;transition:width 0.5s ease}
 .casey-count{position:fixed;top:12px;right:20px;font-size:12px;font-weight:600;color:rgba(26,22,18,0.7);letter-spacing:1.5px;z-index:999;font-family:'DM Sans',sans-serif}
 
@@ -5842,31 +5846,31 @@ html, body, html body{
   #cs-1m9 .wm-arc { position:absolute;left:calc(50% + 7px);top:8%;width:60px;height:30px;transform:translateX(-50%);pointer-events:none;transition:transform var(--m9-dur) var(--m9-ease);will-change:transform }
 
   /* STAGE 2 — wordmark splits (same transforms as cs-1m5 stage 1) */
-  #cs-1m9[data-stage="2"] .m9-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
+  #cs-1m9[data-stage="2"] .m9-wordmark { transform:translateY(-150px) translateX(-46px) scale(.94) !important }
   #cs-1m9[data-stage="2"] .wm-ive { opacity:0;transform:translateX(-24px) scaleX(.05) }
   #cs-1m9[data-stage="2"] .wm-eceive { opacity:0;transform:translateX(24px) scaleX(.05) }
-  #cs-1m9[data-stage="2"] .wm-G { transform:translateX(60px) scale(1.28) }
-  #cs-1m9[data-stage="2"] .wm-R { transform:translateX(272px) scale(1.28) }
-  #cs-1m9[data-stage="2"] .wm-n-wrap { transform:translateX(90px) scale(1.18) }
-  #cs-1m9[data-stage="2"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) }
+  #cs-1m9[data-stage="2"] .wm-G { transform:translateX(81px) scale(1.36) }
+  #cs-1m9[data-stage="2"] .wm-R { transform:translateX(316px) scale(1.36) }
+  #cs-1m9[data-stage="2"] .wm-n-wrap { transform:translateX(105px) scale(1.2) }
+  #cs-1m9[data-stage="2"] .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) }
 
   /* WHO GIVES — appears at stage 1 only, fades out at stage 2 */
-  #cs-1m9 .m9-whogives { position:absolute;left:0;right:0;top:calc(50% + 130px);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,2.7vw,2.4rem);font-style:italic;font-weight:500;color:#1a1612;text-align:center;letter-spacing:-0.012em;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity 720ms ease, transform 720ms var(--m9-ease), visibility 0s linear 720ms }
+  #cs-1m9 .m9-whogives { position:absolute;left:0;right:0;top:calc(50% + 130px);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.7rem,2.7vw,2.4rem);font-style:italic;font-weight:500;color:#1a1612;text-align:center;letter-spacing:-0.012em;opacity:0 !important;visibility:hidden;transform:translateY(14px);transition:opacity 520ms ease, transform 640ms var(--m9-ease), visibility 0s linear 520ms;z-index:3;pointer-events:none;will-change:opacity,transform }
   #cs-1m9 .m9-whogives .gives { color:#b8954a;font-weight:700;font-style:italic }
-  #cs-1m9[data-stage="1"] .m9-whogives { opacity:1;visibility:visible;transform:translateY(0);transition:opacity 720ms ease 200ms, transform 720ms var(--m9-ease) 200ms, visibility 0s linear 0s }
-  #cs-1m9[data-stage="2"] .m9-whogives { opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity 360ms ease, transform 360ms var(--m9-ease), visibility 0s linear 360ms }
+  #cs-1m9[data-stage="1"] .m9-whogives { opacity:1 !important;visibility:visible;transform:translateY(0);transition:opacity 620ms ease 180ms, transform 700ms var(--m9-ease) 180ms, visibility 0s linear 0s }
+  #cs-1m9[data-stage="2"] .m9-whogives { opacity:0 !important;visibility:hidden;transform:translateY(-18px) scale(.98);transition:opacity 200ms ease, transform 260ms var(--m9-ease), visibility 0s linear 200ms }
 
   /* CAP ROW — bulletproof centering (margin-auto on absolute) — appears at stage 2 only */
-  #cs-1m9 .m9-cap-row { position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;top:calc(50% + 180px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1180px,90%);align-items:start;opacity:0;visibility:hidden;transform:translateY(18px);transition:opacity 720ms ease, transform 920ms var(--m9-ease), visibility 0s linear 1050ms;will-change:opacity,transform }
-  #cs-1m9[data-stage="2"] .m9-cap-row { opacity:1;visibility:visible;transform:translateY(0);transition:opacity 720ms ease 300ms, transform 920ms var(--m9-ease) 300ms, visibility 0s linear 0s }
+  #cs-1m9 .m9-cap-row { position:absolute;left:0;right:0;margin-left:auto;margin-right:auto;top:calc(50% + 128px);display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1180px,90%);align-items:start;opacity:0 !important;visibility:hidden;transform:translateY(18px);transition:opacity 520ms ease, transform 760ms var(--m9-ease), visibility 0s linear 520ms;z-index:2;pointer-events:none;will-change:opacity,transform }
+  #cs-1m9[data-stage="2"] .m9-cap-row { opacity:1 !important;visibility:visible;transform:translateY(0);transition:opacity 560ms ease 680ms, transform 760ms var(--m9-ease) 680ms, visibility 0s linear 0s }
 
   /* NETWORK line under n — appears at stage 2 only */
-  #cs-1m9 .m9-stage-network { position:absolute;left:0;right:0;top:calc(50% + 90px);opacity:0;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 700ms ease, transform 900ms var(--m9-ease), visibility 0s linear 990ms;will-change:opacity,transform }
-  #cs-1m9[data-stage="2"] .m9-stage-network { opacity:1;visibility:visible;transform:translateY(0) scale(1);transition:opacity 700ms ease 190ms, transform 900ms var(--m9-ease) 190ms, visibility 0s linear 0s }
+  #cs-1m9 .m9-stage-network { position:absolute;left:0;right:0;top:calc(50% + 20px);opacity:0 !important;visibility:hidden;transform:translateY(16px) scale(.985);overflow:visible;max-height:none;transition:opacity 520ms ease, transform 760ms var(--m9-ease), visibility 0s linear 520ms;z-index:2;pointer-events:none;will-change:opacity,transform }
+  #cs-1m9[data-stage="2"] .m9-stage-network { opacity:1 !important;visibility:visible;transform:translateY(0) scale(1);transition:opacity 560ms ease 520ms, transform 760ms var(--m9-ease) 520ms, visibility 0s linear 0s }
 
   /* CLICK HINT — visible at stage 0 only */
-  #cs-1m9 .m9-hint { position:absolute;left:50%;top:calc(50% + 118px);display:flex;align-items:center;justify-content:center;margin-top:0;opacity:1;visibility:visible;transform:translateX(-50%);transition:opacity 420ms ease, transform 520ms var(--m9-ease), visibility 0s linear 0s }
-  #cs-1m9[data-stage="1"] .m9-hint, #cs-1m9[data-stage="2"] .m9-hint { opacity:0;visibility:hidden;transform:translateX(-50%) translateY(10px);transition:opacity 360ms ease, transform 520ms var(--m9-ease), visibility 0s linear 360ms }
+  #cs-1m9 .m9-hint { position:absolute;left:calc(50% - 15px);top:calc(50% + 118px);width:30px;height:30px;display:flex;align-items:center;justify-content:center;margin-top:0;opacity:1 !important;visibility:visible;transform:translateY(0);transition:opacity 420ms ease, transform 520ms var(--m9-ease), visibility 0s linear 0s;z-index:2;pointer-events:none;will-change:opacity,transform }
+  #cs-1m9[data-stage="1"] .m9-hint, #cs-1m9[data-stage="2"] .m9-hint { opacity:0 !important;visibility:hidden;transform:translateY(10px);transition:opacity 220ms ease, transform 360ms var(--m9-ease), visibility 0s linear 220ms }
   @keyframes m9HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m9 .m9-hint svg { animation:m9HintBob 2.2s ease-in-out infinite }
   #cs-1m9[data-stage="1"] .m9-hint svg, #cs-1m9[data-stage="2"] .m9-hint svg { animation:none }
@@ -5874,11 +5878,11 @@ html, body, html body{
   /* Export mode — jump to final stage 2 layout */
   html[data-export="1"] #cs-1m9 .wm-ive,
   html[data-export="1"] #cs-1m9 .wm-eceive { opacity:0 !important;transform:scaleX(0) !important }
-  html[data-export="1"] #cs-1m9 .m9-wordmark { transform:translateY(-210px) translateX(-40px) scale(.92) !important }
-  html[data-export="1"] #cs-1m9 .wm-G { transform:translateX(60px) scale(1.28) !important }
-  html[data-export="1"] #cs-1m9 .wm-R { transform:translateX(272px) scale(1.28) !important }
-  html[data-export="1"] #cs-1m9 .wm-n-wrap { transform:translateX(90px) scale(1.18) !important }
-  html[data-export="1"] #cs-1m9 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.18) !important }
+  html[data-export="1"] #cs-1m9 .m9-wordmark { transform:translateY(-150px) translateX(-46px) scale(.94) !important }
+  html[data-export="1"] #cs-1m9 .wm-G { transform:translateX(81px) scale(1.36) !important }
+  html[data-export="1"] #cs-1m9 .wm-R { transform:translateX(316px) scale(1.36) !important }
+  html[data-export="1"] #cs-1m9 .wm-n-wrap { transform:translateX(105px) scale(1.2) !important }
+  html[data-export="1"] #cs-1m9 .wm-arc { transform:translateX(-50%) translateY(-10px) scale(1.2) !important }
   html[data-export="1"] #cs-1m9 .m9-cap-row, html[data-export="1"] #cs-1m9 .m9-stage-network { opacity:1 !important;visibility:visible !important;max-height:none !important }
   html[data-export="1"] #cs-1m9 .m9-stage-network { transform:translateY(0) scale(1) !important }
   html[data-export="1"] #cs-1m9 .m9-cap-row { transform:translateY(0) !important }
@@ -11429,7 +11433,7 @@ window.cs1m7Reverse = function() {
   #cs-18 .dv-hero em { font-style:italic;color:#b8954a;font-weight:800; }
   #cs-18 .dv-hero .red { color:#c8462c; }
   #cs-18 .dv-hero .blue { color:#5B8FD4; }
-  #cs-18 .dv-proof { margin:38px auto 30px;display:grid;grid-template-columns:1.02fr .9fr 1.02fr;align-items:center;gap:20px;max-width:1220px; }
+  #cs-18 .dv-proof { margin:34px auto 24px;display:grid;grid-template-columns:1.02fr .9fr 1.02fr;align-items:center;gap:20px;max-width:1220px; }
   #cs-18 .dv-panel { min-height:172px;padding:22px 22px;border-radius:10px;background:rgba(251,247,239,0.62);border:1.2px solid rgba(184,149,74,0.30);box-shadow:0 14px 42px rgba(26,22,18,0.045);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px; }
   #cs-18 .dv-panel.blue { border-color:rgba(91,143,212,0.34);background:rgba(91,143,212,0.045); }
   #cs-18 .dv-panel.red { border-color:rgba(200,70,44,0.34);background:rgba(200,70,44,0.045); }
@@ -11445,15 +11449,21 @@ window.cs1m7Reverse = function() {
   #cs-18 .dv-core-word { position:relative;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.95rem,3.1vw,2.75rem);font-weight:900;line-height:.95;color:#1a1612; }
   #cs-18 .dv-core-word .g { color:#5B8FD4; } #cs-18 .dv-core-word .n { font-style:italic;font-size:.74em;font-weight:700; } #cs-18 .dv-core-word .r { color:#c8462c; }
   #cs-18 .dv-core-label { position:absolute;bottom:48px;left:0;right:0;font-family:'Manrope',sans-serif;font-size:.54rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:#b8954a; }
-  #cs-18 .dv-maze { display:grid;grid-template-columns:repeat(6,1fr);gap:10px;max-width:1180px;margin:0 auto 24px; }
-  #cs-18 .dv-step { position:relative;min-height:98px;padding:14px 12px 12px;border-radius:8px;background:rgba(184,149,74,0.055);border:1px solid rgba(184,149,74,0.25);display:flex;flex-direction:column;justify-content:center;gap:6px; }
+  #cs-18 .dv-maze { display:grid;grid-template-columns:repeat(7,1fr);gap:8px;max-width:1320px;margin:0 auto 22px; }
+  #cs-18 .dv-step { position:relative;min-height:112px;padding:12px 9px 10px;border-radius:8px;background:rgba(184,149,74,0.055);border:1px solid rgba(184,149,74,0.25);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px; }
   #cs-18 .dv-step:after { content:"";position:absolute;right:-10px;top:50%;width:10px;height:1px;background:rgba(184,149,74,0.45); }
   #cs-18 .dv-step:last-child:after { display:none; }
   #cs-18 .dv-step.hot { background:rgba(200,70,44,0.065);border-color:rgba(200,70,44,0.45); }
   #cs-18 .dv-step.now { background:rgba(73,180,160,0.08);border-color:rgba(73,180,160,0.50);box-shadow:0 0 0 3px rgba(73,180,160,0.05); }
+  #cs-18 .dv-step.trial { background:rgba(184,149,74,0.10);border-color:rgba(184,149,74,0.58);box-shadow:0 0 0 3px rgba(184,149,74,0.06); }
+  #cs-18 .dv-icon { width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1.3px solid rgba(184,149,74,0.52);background:rgba(251,247,239,0.78);color:#b8954a; }
+  #cs-18 .dv-step.hot .dv-icon { border-color:rgba(200,70,44,0.58);color:#c8462c;background:rgba(200,70,44,0.06); }
+  #cs-18 .dv-step.now .dv-icon { border-color:rgba(73,180,160,0.58);color:#168651;background:rgba(73,180,160,0.08); }
+  #cs-18 .dv-step.trial .dv-icon { width:auto;min-width:72px;height:28px;border-radius:999px;padding:0 9px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.72rem;font-weight:900;letter-spacing:.02em;color:#1a1612;border-color:rgba(26,22,18,0.24);background:#fff8eb; }
+  #cs-18 .dv-icon svg { width:16px;height:16px;display:block;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round; }
   #cs-18 .dv-year { font-family:'Playfair Display',serif;font-size:.78rem;font-weight:900;color:#b8954a;line-height:1; }
-  #cs-18 .dv-step.hot .dv-year { color:#c8462c; } #cs-18 .dv-step.now .dv-year { color:#168651; }
-  #cs-18 .dv-step-text { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:800;line-height:1.28;color:rgba(26,22,18,0.82); }
+  #cs-18 .dv-step.hot .dv-year { color:#c8462c; } #cs-18 .dv-step.now .dv-year { color:#168651; } #cs-18 .dv-step.trial .dv-year { color:#b8954a; }
+  #cs-18 .dv-step-text { font-family:'Manrope',sans-serif;font-size:.6rem;font-weight:800;line-height:1.22;color:rgba(26,22,18,0.82); }
   #cs-18 .dv-closer { border-top:1px solid rgba(184,149,74,0.32);padding-top:18px;max-width:1040px;margin:0 auto;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.55vw,1.45rem);font-style:italic;font-weight:650;line-height:1.36;color:#1a1612; }
   #cs-18 .dv-closer strong { color:#c8462c;font-style:normal;font-weight:900; }
 </style>
@@ -11483,12 +11493,13 @@ window.cs1m7Reverse = function() {
       </div>
 
       <div class="dv-maze">
-        <div class="dv-step"><div class="dv-year">2020</div><div class="dv-step-text">#27 pro tour</div></div>
-        <div class="dv-step"><div class="dv-year">2020</div><div class="dv-step-text">Computer vision founder</div></div>
-        <div class="dv-step hot"><div class="dv-year">2021</div><div class="dv-step-text">DUPR offer declined</div></div>
-        <div class="dv-step"><div class="dv-year">2022</div><div class="dv-step-text">Built NEPC Rye</div></div>
-        <div class="dv-step"><div class="dv-year">2024</div><div class="dv-step-text">Built Middleton</div></div>
-        <div class="dv-step now"><div class="dv-year">2025</div><div class="dv-step-text">Steve joins as CTO</div></div>
+        <div class="dv-step"><div class="dv-icon"><svg viewBox="0 0 24 24"><path d="M6 17l4-10 4 10"/><path d="M8 13h4"/><path d="M16 8l2 2 2-2"/><path d="M18 10v7"/></svg></div><div class="dv-year">2020</div><div class="dv-step-text">#27 pro tour</div></div>
+        <div class="dv-step"><div class="dv-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 10h8"/></svg></div><div class="dv-year">2020</div><div class="dv-step-text">Computer vision founder</div></div>
+        <div class="dv-step hot"><div class="dv-icon"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg></div><div class="dv-year">2021</div><div class="dv-step-text">DUPR offer declined</div></div>
+        <div class="dv-step"><div class="dv-icon"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/><path d="M4 19h16"/></svg></div><div class="dv-year">2022</div><div class="dv-step-text">Built NEPC Rye</div></div>
+        <div class="dv-step"><div class="dv-icon"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-5 8 5v10"/><path d="M8 19v-5h3v5"/><path d="M13 19v-7h3v7"/><path d="M4 19h16"/></svg></div><div class="dv-year">2024</div><div class="dv-step-text">Built Middleton</div></div>
+        <div class="dv-step now"><div class="dv-icon"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M7 8h10"/><path d="M7 16h10"/><path d="M5 12h14"/></svg></div><div class="dv-year">2025</div><div class="dv-step-text">Steve joins as CTO</div></div>
+        <div class="dv-step trial"><div class="dv-icon">Racketeer</div><div class="dv-year">2026</div><div class="dv-step-text">Wants GnR trial</div></div>
       </div>
 
       <div class="dv-closer">The founder, the lab, the domain, and the CTO are already in one place. <strong>Now the graph scales.</strong></div>
@@ -19419,6 +19430,9 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .a7m1-feed-line.full { width: 100% }
   #cs-a7m1 .a7m1-feed-line.short { width: 62% }
   #cs-a7m1 .a7m1-feed-icon { color: #b8954a; font-size: 14px; flex-shrink: 0 }
+  /* [Dave 2026-05-11] PNG asset replaced with inline SVG — was rendering blurry due to raster scaling inside backface-visibility:hidden 3D context + clip-path antialiasing. SVG is vector, stays crisp at any size. */
+  #cs-a7m1 .a7m1-people-svg { width:clamp(180px,17vw,240px);height:clamp(180px,17vw,240px);display:block;margin:0 auto;filter:drop-shadow(0 14px 28px rgba(184,149,74,0.14)) }
+  #cs-a7m1 .a7m1-people-svg svg { width:100%;height:100%;display:block;overflow:visible }
   /* Tap-to-flip hint on front */
   #cs-a7m1 .a7m1-flip-hint { font-family: 'Manrope', sans-serif; font-size: .58rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: rgba(184,149,74,0.85); display: flex; align-items: center; gap: 8px; margin-top: 4px }
   #cs-a7m1 .a7m1-flip-hint svg { fill: none; stroke: #b8954a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round }
@@ -19436,7 +19450,7 @@ window.cs1m7Reverse = function() {
       <div class="a7m1-grid">
         <!-- LEFT CARD — LONELINESS / NARROW VIEW (old) -->
         <div class="a7m1-card old">
-          <div class="a7m1-eye">Loneliness · The Narrow View</div>
+          <!-- [Dave 2026-05-10] Card eyebrow deleted. -->
           <div class="a7m1-orb">
             <!-- Lifted from cs-a7: figure with phone, scroll-alone -->
             <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
@@ -19467,7 +19481,7 @@ window.cs1m7Reverse = function() {
           <div class="a7m1-flip-inner">
             <!-- FRONT FACE — simple invitation feed graphic (visible on slide load) -->
             <div class="a7m1-flip-front">
-              <div class="a7m1-feed">
+              <div class="a7m1-feed" style="display:none">
                 <div class="a7m1-feed-card faded">
                   <div class="a7m1-feed-avatar" style="background:rgba(91,143,212,0.55)"></div>
                   <div class="a7m1-feed-content">
@@ -19494,7 +19508,27 @@ window.cs1m7Reverse = function() {
                 </div>
               </div>
               <!-- [Dave 2026-05-10 PM] 'The invitation feed.' label DELETED per Dave (slide promoted to slot 2) -->
-              <div class="a7m1-flip-hint">
+              <!-- [Dave 2026-05-11] Three-people graphic — INLINE SVG (was a blurry PNG before; vector stays crisp). Brand colors blue/gold/red for the three figures, gold dashed arc above showing the connection, subtle ground line beneath. Matches the deck design system. -->
+              <div class="a7m1-people-svg">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Subtle dashed background ring -->
+                  <circle cx="100" cy="108" r="80" fill="rgba(184,149,74,0.04)" stroke="rgba(184,149,74,0.22)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <!-- Connection arc above the three figures -->
+                  <path d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.55)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+                  <!-- Subtle inner ground line -->
+                  <line x1="48" y1="146" x2="152" y2="146" stroke="rgba(184,149,74,0.28)" stroke-width="1" stroke-linecap="round"/>
+                  <!-- Person 1 — blue (left) -->
+                  <line x1="62" y1="142" x2="62" y2="112" stroke="#5B8FD4" stroke-width="3.4" stroke-linecap="round"/>
+                  <circle cx="62" cy="103" r="10" fill="#5B8FD4"/>
+                  <!-- Person 2 — gold (center, slightly taller as 'host') -->
+                  <line x1="100" y1="146" x2="100" y2="104" stroke="#b8954a" stroke-width="4" stroke-linecap="round"/>
+                  <circle cx="100" cy="93" r="12" fill="#b8954a"/>
+                  <!-- Person 3 — red (right) -->
+                  <line x1="138" y1="142" x2="138" y2="112" stroke="#c8462c" stroke-width="3.4" stroke-linecap="round"/>
+                  <circle cx="138" cy="103" r="10" fill="#c8462c"/>
+                </svg>
+              </div>
+              <div class="a7m1-flip-hint" style="display:none">
                 <svg width="14" height="14" viewBox="0 0 14 14"><path d="M 2 7 Q 7 11 12 7"/><path d="M 9 4.5 L 12 7 L 9 9.5"/></svg>
               </div>
             </div>
@@ -21445,7 +21479,9 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
-const REVIEW_POSITION = 1; // [Dave 2026-05-09 EVENING] Slot 1 review reopened — cs-1m8 new red-dot alt with human-truth opener. Dave reviewing whether to lead the deck with the 'we feel our best when we give' framing before promoting to primary.
+const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
+const ORANGE_REVIEW_POSITIONS = [];
+const ORANGE_REVIEW_ALTS = ['cs-1m8', 'cs-merge1', 'cs-merge3'];
 // LOCKED_POSITIONS: emptied per Dave 2026-05-07 — green dots removed from nav, red review dot kept.
 // Locked-state still tracked in comments/git; just no longer rendered as a UI marker.
 const LOCKED_POSITIONS = [];
@@ -22459,8 +22495,10 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
   const pos = parseInt(posKey);
   const wrap = nav.children[pos - 1];
   if (!wrap) return;
-  // If this position is the REVIEW slot, the alts are also RED (multiple uncertain options).
-  // Otherwise alts render gold (alternative-but-not-under-review).
+  // Dot semantics:
+  //   red = decided not main deck.
+  //   orange = review for possible main-deck inclusion.
+  //   gold = stored alternate / reference.
   const isReviewSlot = (pos === REVIEW_POSITION);
   SLIDE_ALTS[posKey].forEach((altId, i) => {
     const altDot = document.createElement('button');
@@ -22469,10 +22507,11 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     const isPinkAlt = (altId === 'cs-merge3');
     const isBlueAlt = (altId === 'cs-wedge1');
+    const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     const isRedAlt = (altId === 'cs-1' || altId === 'cs-16old' || altId === 'cs-lab');
-    altDot.className = 'casey-dot alt' + (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : (isRedAlt ? ' review' : (isReviewSlot ? ' review' : ''))));
+    altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : ''))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
@@ -22506,6 +22545,15 @@ if (Array.isArray(LOCKED_POSITIONS)) {
     const lockedWrap = nav.children[pos - 1];
     if (lockedWrap) {
       lockedWrap.querySelectorAll('.casey-dot').forEach(d => d.classList.add('locked'));
+    }
+  });
+}
+// Apply ORANGE marker to positions that need review for possible main-deck inclusion.
+if (Array.isArray(ORANGE_REVIEW_POSITIONS)) {
+  ORANGE_REVIEW_POSITIONS.forEach(pos => {
+    const orangeWrap = nav.children[pos - 1];
+    if (orangeWrap) {
+      orangeWrap.querySelectorAll('.casey-dot:not(.alt)').forEach(d => { d.classList.remove('locked', 'review'); d.classList.add('orange-review'); });
     }
   });
 }
