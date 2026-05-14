@@ -7876,16 +7876,15 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-14] Single closing line replaced with a 3-line diagnostic stack: operational failure → social failure → relational failure. Third line is mine — captures Dave's "NO TRUSTED RECIPROCITY" insight: in communities without infrastructure, trust + giving only happens inside close circles (cliques), so beyond them people retreat to self-interest. "Beyond cliques" hooks directly to line 2 so the three beats compound.
            [Dave 2026-05-14 PM] Refactored from identical-class flat stack (read as wall-of-text) to numbered beats with arrow separators between, telegraphing the causal chain. Numbers anchor each beat, arrows convey "this causes the next." -->
       <div class="tg-close">
+        <!-- [Dave 2026-05-14] Arrow separators removed — numbered beats stand on their own. -->
         <div class="tg-close-beat">
           <span class="tg-close-num">1</span>
           <span class="tg-close-text">Coordination done by hand</span>
         </div>
-        <div class="tg-close-arrow">↓</div>
         <div class="tg-close-beat">
           <span class="tg-close-num">2</span>
           <span class="tg-close-text">Communities devolve into cliques</span>
         </div>
-        <div class="tg-close-arrow">↓</div>
         <div class="tg-close-beat">
           <span class="tg-close-num">3</span>
           <span class="tg-close-text">No trusted reciprocity</span>
@@ -16966,11 +16965,13 @@ window.cs1m7Reverse = function() {
   #cs-a7m1 .gnrmark .gG { color:#5B8FD4;font-weight:700 }
   #cs-a7m1 .gnrmark .gn { color:#1a1612;font-style:italic;font-weight:500;padding:0 1px }
   #cs-a7m1 .gnrmark .gR { color:#c8462c;font-weight:700 }
-  /* [Dave 2026-05-10] Flip-card mechanism on the RIGHT (Give n Receive vision) card. Front = simple invitation feed graphic; back = current content (4-figure network + caption). User clicks the card to flip it over. The eyebrow stays static above the flip-inner so it doesn't rotate. */
-  /* [Dave 2026-05-14 REVERT] Left-card flip rule removed — left card is back to non-flippable graphic+caption layout. Only the .new (right) card flips. */
-  #cs-a7m1 .a7m1-card.new { perspective: 1400px; cursor: pointer; padding-top: 22px }
+  /* [Dave 2026-05-10] Flip-card mechanism on the RIGHT (Give n Receive vision) card. */
+  /* [Dave 2026-05-14 v3] LEFT card also flippable — front = orb ONLY, back = orb + caption. User wants the graphic visible on slide load AND on the back (no text-only side). */
+  #cs-a7m1 .a7m1-card.new,
+  #cs-a7m1 .a7m1-card.old { perspective: 1400px; cursor: pointer; padding-top: 22px }
   #cs-a7m1 .a7m1-flip-inner { position: relative; width: 100%; min-height: 380px; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(.4,0,.2,1) }
-  #cs-a7m1 .a7m1-card.new[data-flipped="1"] .a7m1-flip-inner { transform: rotateY(180deg) }
+  #cs-a7m1 .a7m1-card.new[data-flipped="1"] .a7m1-flip-inner,
+  #cs-a7m1 .a7m1-card.old[data-flipped="1"] .a7m1-flip-inner { transform: rotateY(180deg) }
   #cs-a7m1 .a7m1-flip-front, #cs-a7m1 .a7m1-flip-back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center }
   #cs-a7m1 .a7m1-flip-back { transform: rotateY(180deg) }
   /* Invitation feed graphic — stack of 3 mini invitation cards */
@@ -17016,27 +17017,50 @@ window.cs1m7Reverse = function() {
       <!-- [Dave 2026-05-10] Headline 'Social media was a sliver. The whole frontier of human connection technology is open.' DELETED — eyebrow + cards carry the message. -->
 
       <div class="a7m1-grid">
-        <!-- LEFT CARD — LONELINESS / NARROW VIEW (old) · [Dave 2026-05-14 REVERT] Flip behavior removed per Dave: 'this should have the graphic on it'. Back to original layout — graphic + caption stacked, both visible on slide load. -->
-        <div class="a7m1-card old">
-          <div class="a7m1-orb">
-            <!-- Lifted from cs-a7: figure with phone, scroll-alone -->
-            <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
-              <circle cx="26" cy="26" r="22" fill="rgba(91,143,212,0.04)"/>
-              <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.42)"/>
-              <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.36)" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-              <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round"/>
-              <rect x="30" y="22" width="7" height="12" rx="1.5" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.5)" stroke-width="0.9"/>
-              <rect x="31" y="23.5" width="5" height="9" rx="0.6" fill="rgba(91,143,212,0.32)"/>
-              <line x1="31.6" y1="25.2" x2="35.4" y2="25.2" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
-              <line x1="31.6" y1="27" x2="34.5" y2="27" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
-              <line x1="31.6" y1="28.8" x2="35.4" y2="28.8" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
-              <line x1="31.6" y1="30.6" x2="34" y2="30.6" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
-              <circle cx="33.5" cy="28" r="9" fill="rgba(91,143,212,0.05)"/>
-            </svg>
-          </div>
-          <div class="a7m1-cap">
-            Social media is <em>a narrow view</em> of<br>human connection technology.
+        <!-- LEFT CARD — LONELINESS / NARROW VIEW (old) · [Dave 2026-05-14 v3] FLIPPABLE: front = orb only, back = orb + caption. On slide load only the graphic shows; click reveals the caption alongside the same graphic on the back. -->
+        <div class="a7m1-card old" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <div class="a7m1-flip-inner">
+            <!-- FRONT FACE — orb only -->
+            <div class="a7m1-flip-front">
+              <div class="a7m1-orb">
+                <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
+                  <circle cx="26" cy="26" r="22" fill="rgba(91,143,212,0.04)"/>
+                  <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.42)"/>
+                  <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.36)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+                  <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round"/>
+                  <rect x="30" y="22" width="7" height="12" rx="1.5" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.5)" stroke-width="0.9"/>
+                  <rect x="31" y="23.5" width="5" height="9" rx="0.6" fill="rgba(91,143,212,0.32)"/>
+                  <line x1="31.6" y1="25.2" x2="35.4" y2="25.2" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="27" x2="34.5" y2="27" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="28.8" x2="35.4" y2="28.8" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="30.6" x2="34" y2="30.6" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <circle cx="33.5" cy="28" r="9" fill="rgba(91,143,212,0.05)"/>
+                </svg>
+              </div>
+            </div>
+            <!-- BACK FACE — orb + caption (the previous full layout) -->
+            <div class="a7m1-flip-back">
+              <div class="a7m1-orb">
+                <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
+                  <circle cx="26" cy="26" r="22" fill="rgba(91,143,212,0.04)"/>
+                  <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.42)"/>
+                  <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.36)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+                  <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round"/>
+                  <rect x="30" y="22" width="7" height="12" rx="1.5" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.5)" stroke-width="0.9"/>
+                  <rect x="31" y="23.5" width="5" height="9" rx="0.6" fill="rgba(91,143,212,0.32)"/>
+                  <line x1="31.6" y1="25.2" x2="35.4" y2="25.2" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="27" x2="34.5" y2="27" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="28.8" x2="35.4" y2="28.8" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="30.6" x2="34" y2="30.6" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <circle cx="33.5" cy="28" r="9" fill="rgba(91,143,212,0.05)"/>
+                </svg>
+              </div>
+              <div class="a7m1-cap">
+                Social media is <em>a narrow view</em> of<br>human connection technology.
+              </div>
+            </div>
           </div>
         </div>
 
