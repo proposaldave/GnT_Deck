@@ -6275,135 +6275,226 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
 </style>
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     cs-intro6 · NEW SLIDE 1 [Dave 2026-05-14]
-     Cinematic science-proof opener that sets up the deck's whole premise BEFORE
-     the brand wordmark. Per Dave: 'take the attached image and figure out how to
-     leverage it to create a new slide just before the title slide for our new
-     slide 1'. Hero line states the #1 predictor of a fulfilling life; bottom
-     band carries the 4-field convergence (Neuroscience · Public Health ·
-     Epidemiology · Longitudinal). Background is a stylized golden-hour scene
-     (sunset gradient + 5 figure silhouettes from behind looking at a city) — no
-     external image dependency, scales crisp at any viewport.
+     cs-intro6 · SLIDE 1 [Dave 2026-05-14 v2 — REBUILT after first version was rejected]
+     Layout:
+       • LEFT 44%: cream wash + big editorial typography
+       • RIGHT 56%: cinematic photo / SVG fallback of 5 people looking out at sunset
+       • Vertical gold hairline divider between text + image
+       • Bottom band (full width, floats over photo bottom): 4-field science card
+     Photo: drops in if `intro-people.jpg` exists in the pitch_visuals folder.
+     Otherwise, an upgraded SVG fallback renders — varied figure silhouettes with
+     hair shapes, proper proportions, rim-lighting from the sun, atmospheric haze.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
+  /* ── cs-intro6 v2 — editorial photo-driven opener ─────────────────────────── */
   #cs-intro6{overflow:hidden}
-  #cs-intro6 .i6-stage{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end}
-  /* Background SVG fills the slide */
-  #cs-intro6 .i6-art{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+  #cs-intro6 .i6-stage{position:absolute;inset:0;display:grid;grid-template-columns:44% 56%;grid-template-rows:1fr auto}
+  /* LEFT pane — typography on cream */
+  #cs-intro6 .i6-text-pane{grid-column:1;grid-row:1 / span 2;position:relative;display:flex;flex-direction:column;justify-content:center;padding:8% 6% 18%;background:linear-gradient(180deg, #fbf7ef 0%, #f7eee0 100%);z-index:5}
+  #cs-intro6 .i6-text-pane::after{content:"";position:absolute;top:8%;bottom:8%;right:0;width:1px;background:linear-gradient(to bottom, transparent, rgba(184,149,74,0.55) 18%, rgba(184,149,74,0.55) 82%, transparent);z-index:6}
+  /* Subtle paper-texture grain on cream side */
+  #cs-intro6 .i6-text-pane::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0);background-size:4px 4px;opacity:0.6;pointer-events:none;mix-blend-mode:multiply}
+  #cs-intro6 .i6-eye{font-family:'Manrope',sans-serif;font-size:clamp(.62rem,.85vw,.78rem);font-weight:800;letter-spacing:.36em;text-transform:uppercase;color:#b8954a;margin-bottom:32px;position:relative;padding-left:46px}
+  #cs-intro6 .i6-eye::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:34px;height:1.6px;background:#b8954a}
+  #cs-intro6 .i6-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.65vw,3.85rem);font-weight:800;color:#1a1612;line-height:1.05;letter-spacing:-0.028em;margin-bottom:26px;max-width:14ch}
+  #cs-intro6 .i6-hero .i6-num{color:#b8954a;font-style:normal;font-weight:800}
+  #cs-intro6 .i6-hero .i6-action{display:block;font-style:italic;font-weight:600;color:#c8462c;margin-top:2px;letter-spacing:-0.025em}
+  #cs-intro6 .i6-divider{width:88px;height:2px;background:linear-gradient(90deg,#b8954a,rgba(184,149,74,0));margin-bottom:18px}
+  #cs-intro6 .i6-sub{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.0rem,1.2vw,1.18rem);font-weight:500;font-style:italic;color:rgba(26,22,18,0.7);line-height:1.45;max-width:30ch}
+  /* RIGHT pane — cinematic image area */
+  #cs-intro6 .i6-image-pane{grid-column:2;grid-row:1 / span 2;position:relative;overflow:hidden;background:linear-gradient(115deg, #f5d4a0 0%, #e8a76a 38%, #c87648 64%, #8c3f24 100%)}
+  /* Photo loads if intro-people.jpg exists in the pitch_visuals folder. Otherwise SVG fallback is visible underneath. */
+  #cs-intro6 .i6-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:3}
+  #cs-intro6 .i6-photo.failed{display:none}
+  /* SVG fallback art layer */
+  #cs-intro6 .i6-art{position:absolute;inset:0;width:100%;height:100%;z-index:2}
   #cs-intro6 .i6-art svg{width:100%;height:100%;display:block}
-  /* Soft warm-light gradient overlay anchored to the LEFT so the hero text reads on a calm cream wash */
-  #cs-intro6 .i6-art::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,0.96) 0%,rgba(251,247,239,0.86) 22%,rgba(251,247,239,0.55) 38%,rgba(251,247,239,0.22) 52%,rgba(251,247,239,0) 68%);pointer-events:none}
-  /* Hero block — left half, vertically centered above the band */
-  #cs-intro6 .i6-hero-block{position:absolute;top:14%;left:6%;max-width:46%;z-index:5;display:flex;flex-direction:column;gap:18px}
-  #cs-intro6 .i6-eye{font-family:'Manrope',sans-serif;font-size:clamp(.6rem,.85vw,.78rem);font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:rgba(184,149,74,0.95)}
-  #cs-intro6 .i6-hero{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.4vw,3.4rem);font-weight:700;color:#1a1612;line-height:1.13;letter-spacing:-0.022em}
-  #cs-intro6 .i6-hero .i6-num{font-style:normal;font-weight:800;color:#b8954a}
-  #cs-intro6 .i6-hero .i6-action{font-style:italic;font-weight:600;color:#c8462c;display:block}
-  #cs-intro6 .i6-divider{width:96px;height:1.4px;background:linear-gradient(90deg,rgba(184,149,74,0.85),rgba(184,149,74,0));margin-top:6px}
-  #cs-intro6 .i6-sub{font-family:'Fraunces',Georgia,serif;font-size:clamp(.95rem,1.2vw,1.2rem);font-weight:500;font-style:italic;color:rgba(26,22,18,0.72);line-height:1.4;max-width:30ch}
-  /* Bottom science band — 4 columns on a warm-cream card */
-  #cs-intro6 .i6-band{position:relative;z-index:5;margin:0 5% 28px;padding:26px 36px 28px;background:rgba(251,247,239,0.96);border:1px solid rgba(184,149,74,0.32);border-radius:14px;box-shadow:0 20px 60px rgba(26,22,18,0.16),0 6px 14px rgba(26,22,18,0.06);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;backdrop-filter:blur(2px)}
-  #cs-intro6 .i6-col{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:0 14px;position:relative}
-  #cs-intro6 .i6-col + .i6-col::before{content:"";position:absolute;left:0;top:14%;bottom:14%;width:1px;background:linear-gradient(to bottom, transparent, rgba(184,149,74,0.32) 40%, rgba(184,149,74,0.32) 60%, transparent)}
-  #cs-intro6 .i6-ico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#b8954a;opacity:0.9}
-  #cs-intro6 .i6-ico svg{width:32px;height:32px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  #cs-intro6 .i6-field{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.7vw,.62rem);font-weight:800;letter-spacing:.30em;text-transform:uppercase;color:rgba(184,149,74,0.95)}
-  #cs-intro6 .i6-claim{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,1.3vw,1.25rem);font-weight:700;color:#1a1612;line-height:1.18;letter-spacing:-0.01em;margin-top:2px}
-  #cs-intro6 .i6-sub-claim{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.65vw,.58rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,70,44,0.78);margin-top:2px}
-  /* Entrance animations on .casey-entered */
-  #cs-intro6 .i6-hero-block, #cs-intro6 .i6-band, #cs-intro6 .i6-silhouettes, #cs-intro6 .i6-citylights{opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1)}
-  #cs-intro6 .i6-hero-block{transform:translateY(14px)}
-  #cs-intro6 .i6-band{transform:translateY(20px)}
-  #cs-intro6.casey-entered .i6-citylights{opacity:1;transition-delay:.15s}
-  #cs-intro6.casey-entered .i6-silhouettes{opacity:1;transition-delay:.30s}
-  #cs-intro6.casey-entered .i6-hero-block{opacity:1;transform:none;transition-delay:.45s}
-  #cs-intro6.casey-entered .i6-band{opacity:1;transform:none;transition-delay:.85s}
-  html[data-export="1"] #cs-intro6 .i6-hero-block,
+  /* Soft cream-feather fade on the LEFT edge of the image so it bleeds into the text pane */
+  #cs-intro6 .i6-image-pane::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(247,238,224,0.65) 0%, rgba(247,238,224,0) 14%);z-index:4;pointer-events:none}
+  /* Top + bottom vignette inside image pane */
+  #cs-intro6 .i6-image-pane::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(26,22,18,0.12) 0%, rgba(26,22,18,0) 26%, rgba(26,22,18,0) 60%, rgba(26,22,18,0.42) 100%);z-index:5;pointer-events:none}
+  /* Science band — full-width, floats over the bottom of both panes */
+  #cs-intro6 .i6-band{grid-column:1 / span 2;grid-row:2;justify-self:center;align-self:end;width:min(1440px, 92%);margin:0 0 4%;padding:22px 36px;background:rgba(251,247,239,0.97);border:1px solid rgba(184,149,74,0.36);border-radius:14px;box-shadow:0 28px 70px rgba(26,22,18,0.22),0 8px 18px rgba(26,22,18,0.08);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;backdrop-filter:blur(3px);position:relative;z-index:8}
+  #cs-intro6 .i6-col{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:0 18px;position:relative}
+  #cs-intro6 .i6-col + .i6-col::before{content:"";position:absolute;left:0;top:14%;bottom:14%;width:1px;background:linear-gradient(to bottom, transparent, rgba(184,149,74,0.36) 30%, rgba(184,149,74,0.36) 70%, transparent)}
+  #cs-intro6 .i6-ico{width:38px;height:38px;display:flex;align-items:center;justify-content:center;color:#b8954a;margin-bottom:2px}
+  #cs-intro6 .i6-ico svg{width:28px;height:28px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  #cs-intro6 .i6-field{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.7vw,.62rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#b8954a}
+  #cs-intro6 .i6-claim{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.0rem,1.25vw,1.18rem);font-weight:700;color:#1a1612;line-height:1.18;letter-spacing:-0.012em;margin-top:1px}
+  #cs-intro6 .i6-sub-claim{font-family:'Manrope',sans-serif;font-size:clamp(.5rem,.65vw,.58rem);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,70,44,0.78);margin-top:1px}
+  /* Entrance cascade */
+  #cs-intro6 .i6-eye, #cs-intro6 .i6-hero, #cs-intro6 .i6-divider, #cs-intro6 .i6-sub, #cs-intro6 .i6-band, #cs-intro6 .i6-art, #cs-intro6 .i6-photo{opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1)}
+  #cs-intro6 .i6-hero, #cs-intro6 .i6-band{transform:translateY(14px)}
+  #cs-intro6.casey-entered .i6-art{opacity:1;transition-delay:.05s}
+  #cs-intro6.casey-entered .i6-photo{opacity:1;transition-delay:.05s}
+  #cs-intro6.casey-entered .i6-eye{opacity:1;transition-delay:.35s}
+  #cs-intro6.casey-entered .i6-hero{opacity:1;transform:none;transition-delay:.50s}
+  #cs-intro6.casey-entered .i6-divider{opacity:1;transition-delay:.75s}
+  #cs-intro6.casey-entered .i6-sub{opacity:1;transition-delay:.85s}
+  #cs-intro6.casey-entered .i6-band{opacity:1;transform:none;transition-delay:1.05s}
+  html[data-export="1"] #cs-intro6 .i6-eye,
+  html[data-export="1"] #cs-intro6 .i6-hero,
+  html[data-export="1"] #cs-intro6 .i6-divider,
+  html[data-export="1"] #cs-intro6 .i6-sub,
   html[data-export="1"] #cs-intro6 .i6-band,
-  html[data-export="1"] #cs-intro6 .i6-silhouettes,
-  html[data-export="1"] #cs-intro6 .i6-citylights{opacity:1 !important;transform:none !important;transition:none !important}
-  /* Small-viewport adjustments */
-  @media (max-width: 980px){
-    #cs-intro6 .i6-hero-block{max-width:88%;top:8%}
-    #cs-intro6 .i6-band{grid-template-columns:repeat(2,1fr);row-gap:18px}
+  html[data-export="1"] #cs-intro6 .i6-art,
+  html[data-export="1"] #cs-intro6 .i6-photo{opacity:1 !important;transform:none !important;transition:none !important}
+  /* Small viewports: stack vertically */
+  @media (max-width:980px){
+    #cs-intro6 .i6-stage{grid-template-columns:1fr;grid-template-rows:1fr 1fr auto}
+    #cs-intro6 .i6-text-pane{grid-column:1;grid-row:1;padding:8% 6% 4%}
+    #cs-intro6 .i6-text-pane::after{display:none}
+    #cs-intro6 .i6-image-pane{grid-column:1;grid-row:2}
+    #cs-intro6 .i6-band{grid-column:1;grid-row:3;grid-template-columns:repeat(2,1fr);row-gap:18px;margin-bottom:18px}
     #cs-intro6 .i6-col + .i6-col::before{display:none}
   }
 </style>
-<div class="casey-slide ds-focus active" id="cs-intro6" style="background:linear-gradient(105deg, #fbf7ef 0%, #f5e9d2 42%, #e8b277 70%, #c87f4a 100%) !important;">
+<div class="casey-slide ds-focus active" id="cs-intro6">
   <section class="i6-stage">
 
-    <!-- Background art: distant city lights + 5 figure silhouettes looking out -->
-    <div class="i6-art">
-      <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="i6Glow" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0" stop-color="rgba(26,22,18,0.32)"/>
-            <stop offset="0.55" stop-color="rgba(26,22,18,0.06)"/>
-            <stop offset="1" stop-color="rgba(26,22,18,0)"/>
-          </linearGradient>
-          <radialGradient id="i6Sun" cx="0.78" cy="0.46" r="0.42">
-            <stop offset="0" stop-color="rgba(255,213,140,0.55)"/>
-            <stop offset="0.45" stop-color="rgba(232,178,119,0.18)"/>
-            <stop offset="1" stop-color="rgba(232,178,119,0)"/>
-          </radialGradient>
-        </defs>
-        <!-- soft sun bloom -->
-        <rect width="1920" height="1080" fill="url(#i6Sun)"/>
-        <!-- horizon haze -->
-        <rect x="0" y="620" width="1920" height="200" fill="rgba(200,127,74,0.18)"/>
-        <!-- ground vignette -->
-        <rect x="0" y="650" width="1920" height="430" fill="url(#i6Glow)"/>
-
-        <!-- City lights — twinkling dots along horizon, denser on the right where the sun sits -->
-        <g class="i6-citylights" fill="#fff5dc">
-          <circle cx="1080" cy="676" r="1.4" opacity="0.7"/><circle cx="1112" cy="672" r="1.2" opacity="0.6"/><circle cx="1148" cy="680" r="1.6" opacity="0.75"/>
-          <circle cx="1184" cy="674" r="1.3" opacity="0.65"/><circle cx="1216" cy="678" r="1.6" opacity="0.7"/><circle cx="1252" cy="671" r="1.5" opacity="0.78"/>
-          <circle cx="1290" cy="676" r="1.3" opacity="0.55"/><circle cx="1326" cy="682" r="1.7" opacity="0.85"/><circle cx="1364" cy="678" r="1.4" opacity="0.7"/>
-          <circle cx="1402" cy="673" r="1.6" opacity="0.8"/><circle cx="1438" cy="680" r="1.3" opacity="0.62"/><circle cx="1476" cy="676" r="1.5" opacity="0.72"/>
-          <circle cx="1514" cy="679" r="1.7" opacity="0.85"/><circle cx="1552" cy="674" r="1.4" opacity="0.65"/><circle cx="1590" cy="682" r="1.6" opacity="0.8"/>
-          <circle cx="1628" cy="678" r="1.3" opacity="0.6"/><circle cx="1666" cy="675" r="1.5" opacity="0.75"/><circle cx="1704" cy="681" r="1.6" opacity="0.8"/>
-          <circle cx="1742" cy="676" r="1.3" opacity="0.62"/><circle cx="1780" cy="679" r="1.5" opacity="0.7"/><circle cx="1818" cy="674" r="1.4" opacity="0.68"/>
-          <!-- second band, slightly lower -->
-          <circle cx="1100" cy="692" r="1.2" opacity="0.5"/><circle cx="1145" cy="697" r="1.4" opacity="0.62"/><circle cx="1198" cy="694" r="1.2" opacity="0.55"/>
-          <circle cx="1244" cy="699" r="1.5" opacity="0.68"/><circle cx="1296" cy="694" r="1.3" opacity="0.58"/><circle cx="1352" cy="697" r="1.4" opacity="0.6"/>
-          <circle cx="1410" cy="692" r="1.5" opacity="0.7"/><circle cx="1466" cy="697" r="1.3" opacity="0.6"/><circle cx="1522" cy="694" r="1.4" opacity="0.62"/>
-          <circle cx="1578" cy="699" r="1.5" opacity="0.7"/><circle cx="1632" cy="692" r="1.3" opacity="0.55"/><circle cx="1686" cy="696" r="1.4" opacity="0.65"/>
-          <circle cx="1742" cy="699" r="1.2" opacity="0.5"/><circle cx="1796" cy="694" r="1.5" opacity="0.7"/>
-        </g>
-
-        <!-- 5 figure silhouettes from behind — heads + shoulders, anchored to the ground. Slightly overlapping. Heights vary for realism. -->
-        <g class="i6-silhouettes" fill="#1a1410">
-          <!-- Figure 1 (leftmost) -->
-          <ellipse cx="1080" cy="640" rx="34" ry="42"/>
-          <path d="M 1010 1080 C 1010 880 1010 770 1040 740 C 1055 728 1080 720 1080 720 C 1080 720 1105 728 1120 740 C 1150 770 1150 880 1150 1080 Z"/>
-          <!-- Figure 2 -->
-          <ellipse cx="1190" cy="625" rx="36" ry="44"/>
-          <path d="M 1118 1080 C 1118 870 1118 760 1148 728 C 1166 716 1190 706 1190 706 C 1190 706 1214 716 1232 728 C 1262 760 1262 870 1262 1080 Z"/>
-          <!-- Figure 3 (center, slightly taller — the anchor) -->
-          <ellipse cx="1310" cy="615" rx="38" ry="46"/>
-          <path d="M 1234 1080 C 1234 860 1234 750 1266 720 C 1284 706 1310 696 1310 696 C 1310 696 1336 706 1354 720 C 1386 750 1386 860 1386 1080 Z"/>
-          <!-- Figure 4 -->
-          <ellipse cx="1430" cy="625" rx="36" ry="44"/>
-          <path d="M 1358 1080 C 1358 870 1358 760 1388 728 C 1406 716 1430 706 1430 706 C 1430 706 1454 716 1472 728 C 1502 760 1502 870 1502 1080 Z"/>
-          <!-- Figure 5 (rightmost) -->
-          <ellipse cx="1540" cy="635" rx="34" ry="42"/>
-          <path d="M 1470 1080 C 1470 880 1470 770 1500 740 C 1515 728 1540 720 1540 720 C 1540 720 1565 728 1580 740 C 1610 770 1610 880 1610 1080 Z"/>
-        </g>
-      </svg>
-    </div>
-
-    <!-- Hero text block, anchored top-left -->
-    <div class="i6-hero-block">
+    <!-- LEFT: editorial text pane -->
+    <div class="i6-text-pane">
       <div class="i6-eye">An incredible truth</div>
-      <div class="i6-hero">
+      <h1 class="i6-hero">
         The <span class="i6-num">#1 predictor</span> of a fulfilling life:
         <span class="i6-action">openly giving and receiving</span> human connection.
-      </div>
+      </h1>
       <div class="i6-divider"></div>
       <div class="i6-sub">Four independent fields converge on one truth.</div>
     </div>
 
-    <!-- Science band — 4 fields across the bottom -->
+    <!-- RIGHT: cinematic image pane -->
+    <div class="i6-image-pane">
+      <!-- Photo: load if file exists; onerror gracefully hides so SVG fallback renders. Save the photo as `intro-people.jpg` in the same folder as GnR_deck.html. -->
+      <img class="i6-photo" src="intro-people.jpg" alt="" onerror="this.classList.add('failed');this.onerror=null">
+      <!-- SVG fallback — improved silhouettes with hair, varied heights, atmospheric haze, rim lighting -->
+      <div class="i6-art">
+        <svg viewBox="0 0 1100 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <!-- sunset sky vertical gradient -->
+            <linearGradient id="i6sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f5d4a0"/>
+              <stop offset="0.42" stop-color="#e8a76a"/>
+              <stop offset="0.72" stop-color="#c87648"/>
+              <stop offset="1" stop-color="#7a3320"/>
+            </linearGradient>
+            <!-- sun bloom -->
+            <radialGradient id="i6sun" cx="0.62" cy="0.42" r="0.4">
+              <stop offset="0" stop-color="rgba(255,228,170,0.85)"/>
+              <stop offset="0.35" stop-color="rgba(255,200,140,0.4)"/>
+              <stop offset="1" stop-color="rgba(255,200,140,0)"/>
+            </radialGradient>
+            <!-- rim light on figure tops (highlights from setting sun) -->
+            <linearGradient id="i6rim" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(255,210,160,0.65)"/>
+              <stop offset="0.18" stop-color="rgba(255,210,160,0)"/>
+            </linearGradient>
+            <!-- ground vignette -->
+            <linearGradient id="i6ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(26,12,8,0)"/>
+              <stop offset="1" stop-color="rgba(20,8,4,0.6)"/>
+            </linearGradient>
+            <!-- haze band -->
+            <linearGradient id="i6haze" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(232,178,119,0)"/>
+              <stop offset="0.5" stop-color="rgba(232,178,119,0.45)"/>
+              <stop offset="1" stop-color="rgba(232,178,119,0)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Sky -->
+          <rect width="1100" height="1080" fill="url(#i6sky)"/>
+          <!-- Sun bloom -->
+          <rect width="1100" height="1080" fill="url(#i6sun)"/>
+          <!-- Distant atmospheric haze layer at horizon -->
+          <rect x="0" y="540" width="1100" height="220" fill="url(#i6haze)"/>
+          <!-- Faint distant mountains silhouette -->
+          <path d="M 0 720 L 80 690 L 160 705 L 240 680 L 320 700 L 400 685 L 480 698 L 560 678 L 640 695 L 720 685 L 820 700 L 920 682 L 1100 698 L 1100 760 L 0 760 Z" fill="rgba(60,28,18,0.42)"/>
+          <!-- Mid-distance softer ridge -->
+          <path d="M 0 760 L 90 748 L 170 758 L 280 742 L 380 754 L 500 740 L 620 752 L 780 738 L 920 750 L 1100 740 L 1100 800 L 0 800 Z" fill="rgba(40,18,12,0.55)"/>
+
+          <!-- CITY LIGHTS — denser cluster, multiple bands, twinkling along horizon -->
+          <g fill="#fff5dc">
+            <!-- Band 1 (sharpest) -->
+            <circle cx="180" cy="770" r="1.4" opacity="0.85"/><circle cx="220" cy="772" r="1.2" opacity="0.7"/><circle cx="266" cy="768" r="1.6" opacity="0.85"/>
+            <circle cx="310" cy="774" r="1.3" opacity="0.7"/><circle cx="354" cy="770" r="1.7" opacity="0.9"/><circle cx="398" cy="773" r="1.4" opacity="0.78"/>
+            <circle cx="440" cy="769" r="1.5" opacity="0.82"/><circle cx="486" cy="775" r="1.3" opacity="0.7"/><circle cx="528" cy="770" r="1.6" opacity="0.85"/>
+            <circle cx="572" cy="774" r="1.4" opacity="0.75"/><circle cx="618" cy="769" r="1.5" opacity="0.85"/><circle cx="664" cy="773" r="1.7" opacity="0.92"/>
+            <circle cx="708" cy="770" r="1.3" opacity="0.7"/><circle cx="754" cy="774" r="1.6" opacity="0.88"/><circle cx="800" cy="770" r="1.4" opacity="0.78"/>
+            <circle cx="846" cy="773" r="1.5" opacity="0.82"/><circle cx="892" cy="769" r="1.6" opacity="0.88"/><circle cx="938" cy="772" r="1.3" opacity="0.72"/>
+            <circle cx="984" cy="770" r="1.5" opacity="0.82"/><circle cx="1030" cy="774" r="1.4" opacity="0.78"/><circle cx="1076" cy="770" r="1.6" opacity="0.85"/>
+            <!-- Band 2 -->
+            <circle cx="200" cy="786" r="1.2" opacity="0.55"/><circle cx="260" cy="790" r="1.4" opacity="0.65"/><circle cx="318" cy="788" r="1.3" opacity="0.6"/>
+            <circle cx="376" cy="792" r="1.5" opacity="0.7"/><circle cx="430" cy="788" r="1.3" opacity="0.6"/><circle cx="490" cy="790" r="1.4" opacity="0.65"/>
+            <circle cx="550" cy="788" r="1.5" opacity="0.7"/><circle cx="608" cy="791" r="1.3" opacity="0.6"/><circle cx="670" cy="787" r="1.4" opacity="0.65"/>
+            <circle cx="730" cy="790" r="1.5" opacity="0.7"/><circle cx="790" cy="787" r="1.3" opacity="0.6"/><circle cx="850" cy="791" r="1.4" opacity="0.65"/>
+            <circle cx="910" cy="788" r="1.5" opacity="0.7"/><circle cx="970" cy="791" r="1.3" opacity="0.6"/><circle cx="1030" cy="788" r="1.4" opacity="0.65"/>
+            <!-- Band 3 (faintest, deeper) -->
+            <circle cx="240" cy="802" r="1.1" opacity="0.4"/><circle cx="318" cy="804" r="1.2" opacity="0.45"/><circle cx="396" cy="803" r="1.1" opacity="0.4"/>
+            <circle cx="474" cy="805" r="1.3" opacity="0.5"/><circle cx="552" cy="803" r="1.1" opacity="0.4"/><circle cx="630" cy="805" r="1.2" opacity="0.45"/>
+            <circle cx="708" cy="803" r="1.1" opacity="0.4"/><circle cx="786" cy="805" r="1.3" opacity="0.5"/><circle cx="864" cy="803" r="1.1" opacity="0.4"/>
+            <circle cx="942" cy="805" r="1.2" opacity="0.45"/><circle cx="1020" cy="803" r="1.1" opacity="0.4"/>
+          </g>
+
+          <!-- Ground vignette over the lower band -->
+          <rect x="0" y="780" width="1100" height="300" fill="url(#i6ground)"/>
+
+          <!-- ── 5 FIGURES from behind. Each = head with hair + torso with shoulders. Heights vary, profiles touch realistically. ── -->
+
+          <!-- FIGURE 1 — short hair, slightly shorter -->
+          <g>
+            <!-- torso/shoulders (rounded triangle going to bottom edge) -->
+            <path d="M 110 1080 L 110 880 C 110 818 138 776 180 760 C 220 748 250 760 268 776 C 296 800 310 860 310 1080 Z" fill="#0e0805"/>
+            <!-- head with hair (slight afro shape — taller than wide) -->
+            <path d="M 184 800 C 158 798 144 778 144 754 C 144 720 162 698 188 696 C 218 692 240 716 240 750 C 240 776 224 800 200 800 Z" fill="#0e0805"/>
+            <!-- rim lighting on top -->
+            <path d="M 152 728 C 156 712 168 700 188 698 C 218 696 236 716 238 740" stroke="rgba(255,210,160,0.42)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            <!-- subtle shoulder rim -->
+            <path d="M 130 830 C 140 802 162 786 180 778" stroke="rgba(255,200,150,0.25)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- FIGURE 2 — longer hair (waves on shoulders), woman silhouette -->
+          <g>
+            <path d="M 280 1080 L 280 870 C 280 808 308 766 354 750 C 388 740 416 752 436 770 C 462 794 478 854 478 1080 Z" fill="#0a0604"/>
+            <!-- hair flows down to shoulders -->
+            <path d="M 332 778 C 318 770 308 752 310 728 C 314 692 340 670 372 670 C 410 670 432 696 432 736 C 434 758 422 772 408 778 C 414 802 414 838 408 866 L 408 866 L 392 868 L 392 866 C 388 838 386 808 388 786 C 378 794 358 794 348 786 C 350 808 348 838 344 866 L 330 866 L 330 866 C 326 836 326 800 332 778 Z" fill="#0a0604"/>
+            <!-- subtle rim -->
+            <path d="M 322 706 C 332 686 354 670 376 670 C 406 670 426 690 432 716" stroke="rgba(255,210,160,0.5)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M 295 836 C 308 802 326 786 348 778" stroke="rgba(255,200,150,0.28)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- FIGURE 3 — CENTER, tallest. Mid-length hair. The anchor. -->
+          <g>
+            <path d="M 470 1080 L 470 850 C 470 786 498 744 548 728 C 588 716 620 728 642 748 C 670 774 686 836 686 1080 Z" fill="#080503"/>
+            <!-- head (medium hair, slight back-of-the-head wave) -->
+            <path d="M 528 750 C 510 740 498 720 500 694 C 504 658 530 632 566 630 C 608 628 634 656 634 698 C 634 720 622 738 604 750 C 612 766 612 778 608 786 L 528 786 C 526 778 524 766 528 750 Z" fill="#080503"/>
+            <!-- top-of-head rim (more pronounced — closest to sun) -->
+            <path d="M 506 668 C 518 644 542 628 568 628 C 604 628 630 654 634 690" stroke="rgba(255,225,180,0.65)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <path d="M 478 810 C 494 768 522 750 552 742" stroke="rgba(255,210,160,0.35)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- FIGURE 4 — ponytail/long hair pulled back -->
+          <g>
+            <path d="M 660 1080 L 660 870 C 660 808 686 766 730 750 C 766 740 794 752 814 770 C 838 794 854 854 854 1080 Z" fill="#0a0604"/>
+            <!-- head + hair pulled back (shape protrudes slightly back/down behind head) -->
+            <path d="M 716 776 C 700 764 692 744 694 720 C 698 686 720 666 752 666 C 786 666 808 690 808 724 C 808 748 798 766 782 776 C 786 798 790 832 786 866 L 770 866 C 766 832 762 802 768 782 L 738 782 C 740 802 740 832 738 866 L 720 866 C 718 832 716 800 720 776 Z M 754 776 C 758 786 768 800 776 820" fill="#0a0604"/>
+            <path d="M 698 700 C 708 680 730 666 752 666 C 782 666 802 686 808 712" stroke="rgba(255,210,160,0.5)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <path d="M 668 838 C 682 800 702 784 724 776" stroke="rgba(255,200,150,0.26)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- FIGURE 5 — rightmost, short hair, slight lean toward center -->
+          <g>
+            <path d="M 830 1080 L 830 880 C 830 818 854 778 894 762 C 928 752 958 764 976 780 C 1002 802 1018 858 1018 1080 Z" fill="#0c0704"/>
+            <path d="M 894 800 C 870 794 858 776 858 752 C 858 720 880 700 910 700 C 942 700 962 722 962 752 C 962 778 948 798 924 802 Z" fill="#0c0704"/>
+            <path d="M 866 730 C 874 712 892 700 912 700 C 940 700 958 720 962 744" stroke="rgba(255,210,160,0.46)" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+            <path d="M 842 836 C 856 802 876 786 894 778" stroke="rgba(255,200,150,0.25)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+          </g>
+
+        </svg>
+      </div>
+    </div>
+
+    <!-- Bottom science band — floats over both panes -->
     <div class="i6-band">
       <div class="i6-col">
         <div class="i6-ico"><svg viewBox="0 0 24 24"><path d="M9 4c-2 0-3.6 1.5-3.6 3.4 0 .8.3 1.6.7 2.1-.7.5-1.1 1.4-1.1 2.3 0 1 .5 1.9 1.3 2.4-.4.5-.7 1.2-.7 2 0 1.9 1.6 3.4 3.6 3.4 1.1 0 2.1-.5 2.8-1.3.6.8 1.7 1.3 2.8 1.3 2 0 3.6-1.5 3.6-3.4 0-.8-.3-1.5-.7-2 .8-.5 1.3-1.4 1.3-2.4 0-.9-.4-1.8-1.1-2.3.4-.5.7-1.3.7-2.1C18.6 5.5 17 4 15 4c-1.1 0-2.2.5-2.8 1.3C11.5 4.5 10.4 4 9.4 4z"/><path d="M12 8v8"/></svg></div>
