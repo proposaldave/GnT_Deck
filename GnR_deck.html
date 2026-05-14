@@ -10699,6 +10699,20 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-step.now .now-tag { display:inline-block;font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:#168651;background:rgba(22,134,81,0.10);border:1px solid rgba(22,134,81,0.40);border-radius:99px;padding:2px 8px;margin-top:6px; }
   @keyframes v5NowPulse { 0%,100% { box-shadow:0 0 0 6px rgba(22,134,81,0.14), 0 0 18px rgba(22,134,81,0.45); } 50% { box-shadow:0 0 0 10px rgba(22,134,81,0.10), 0 0 26px rgba(22,134,81,0.62); } }
   html[data-export="1"] #cs-18-vd4 .v5-step.now .dot { animation:none !important; }
+  /* [Dave 2026-05-14 PM] Timeline cascade — 6 steps animate in left-to-right on slide entry. Rail draws after dot 1 lands. */
+  @keyframes v5StepIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+  @keyframes v5RailDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  #cs-18-vd4 .v5-timeline::before { transform-origin: left center; }
+  #cs-18-vd4 .v5-step { opacity: 0; will-change: opacity, transform; }
+  #cs-18-vd4.casey-entered .v5-timeline::before { animation: v5RailDraw 1.2s cubic-bezier(.22,1,.36,1) backwards 1.55s; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(1) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.40s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(2) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.58s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(3) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.76s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(4) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 1.94s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(5) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.12s; opacity:1; }
+  #cs-18-vd4.casey-entered .v5-step:nth-child(6) { animation: v5StepIn .55s cubic-bezier(.22,1,.36,1) backwards 2.30s; opacity:1; }
+  html[data-export="1"] #cs-18-vd4 .v5-step,
+  html[data-export="1"] #cs-18-vd4 .v5-timeline::before { opacity:1 !important; transform:none !important; animation:none !important; }
   /* [Dave 2026-05-14] Simple on-load animation for the 'Dave Velardo · Founder & CEO' name: letter-spacing 'settles in' from wider to its final value while fading up. Runs once on slide entry, skipped in export mode. */
   @keyframes vd4NameIntro {
     0%   { opacity: 0; transform: translateY(8px); letter-spacing: 0.62em; }
@@ -12551,10 +12565,8 @@ window.cs1m7Reverse = function() {
       <!-- Category chips lifted from cs-position1 (deleted 2026-05-09 per Dave: 'figure out how to take valuable information from the attached slide, merge it into the Wedge Into Human Connection slide, and then delete the attached slide'). 3 distinct claims that complement the wedge visual. -->
       <!-- [Dave 2026-05-14] wd-chips block DELETED — 'Real human connection · finally measured / Unique human value · finally seen / Real-world social networking · finally solved' removed per Dave. -->
 
-      <!-- [Dave 2026-05-14 v2] Bottom line demoted to small italic caption (was big uppercase headline). text-transform:none + nowrap so the line stays on ONE line. -->
-      <div class="wd-headline" style="text-transform:none;font-size:clamp(.95rem,1.3vw,1.2rem);font-weight:600;font-style:italic;line-height:1.32;letter-spacing:0;white-space:nowrap;color:#1a1612;margin-top:6px">
-        Soon, everyone will have a <span style="font-family:'Playfair Display',serif"><span style="color:#5B8FD4;font-weight:800;font-style:normal">Give</span> <em style="font-style:italic;font-weight:600;color:#b8954a">n</em> <span style="color:#c8462c;font-weight:800;font-style:normal">Receive</span></span> <em style="font-style:italic;font-weight:700;color:#b8954a">feed</em>.
-      </div>
+      <!-- [Dave 2026-05-14 PM] 'Soon, everyone will have a Give n Receive feed.' line DELETED per Dave. -->
+
 
 
       <!-- [Dave 2026-05-11] Closer 'The category isn't sports. It's civilization.' DELETED per Dave. -->
@@ -13791,7 +13803,7 @@ window.cs1m7Reverse = function() {
             <text x="172" y="106" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.08em" fill="#c8462c" text-anchor="middle">REGULAR</text>
           </g>
         </svg>
-        <div class="mg-outcome">Optimizes <strong>what sells</strong>.</div>
+        <div class="mg-outcome">Fills the room. <em>Compounds.</em></div>
       </div>
 
     </div>
