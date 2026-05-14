@@ -6652,8 +6652,8 @@ window.cs1m5Reverse = function() {
           <text x="380" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2007</text>
           <text x="380" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">SMARTPHONE</text>
 
-          <!-- 2015 -->
-          <circle class="fr-era-dot d3" cx="690" cy="282" r="6" fill="#d18a3a"/>
+          <!-- 2015 — cy corrected from 282 → 275 to land ON the curve (the Q-bezier at x=690 evaluates to y≈275). -->
+          <circle class="fr-era-dot d3" cx="690" cy="275" r="6" fill="#d18a3a"/>
           <text x="690" y="350" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="rgba(26,22,18,0.55)">2015</text>
           <text x="690" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="9" font-weight="600" letter-spacing="2.0" fill="rgba(26,22,18,0.35)">ATTENTION ECONOMY</text>
 
@@ -6668,10 +6668,9 @@ window.cs1m5Reverse = function() {
           <text x="1180" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11" font-weight="900" letter-spacing="2.4" fill="rgba(200,70,44,0.95)">AGE OF AI</text>
         </g>
 
-        <!-- [Dave 2026-05-14] Future trajectory — dashed continuation of the curve past NOW, accelerating up-and-right beyond the viewBox edge. Tells the eye "this keeps going." -->
+        <!-- [Dave 2026-05-14] Future trajectory — dashed continuation of the curve past NOW. 'accelerating' label deleted per Dave; arrow alone carries the meaning. -->
         <g class="fr-future-trajectory">
           <path d="M 1180 60 Q 1216 28 1260 0 T 1310 -38" stroke="#c8462c" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="7 6" opacity="0.78" marker-end="url(#frFutureArrow)"/>
-          <text x="1300" y="22" text-anchor="end" font-family="Fraunces,Playfair Display,Georgia,serif" font-style="italic" font-size="15" font-weight="700" fill="#c8462c" opacity="0.92">accelerating</text>
         </g>
 
         <!-- [Dave 2026-05-14] 'going parabolic' annotation DELETED — the curve speaks for itself. -->
