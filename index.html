@@ -10954,15 +10954,16 @@ window.cs1m7Reverse = function() {
               <g stroke="rgba(184,149,74,0.16)" stroke-width="0.6" stroke-dasharray="2 4" fill="none">
                 <line x1="14" y1="100" x2="290" y2="100"/>
               </g>
-              <polyline points="22 100, 60 100, 60 82, 110 82, 110 62, 160 62, 160 42, 210 42, 210 22, 278 22" fill="none" stroke="#c8462c" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <g fill="#c8462c"><circle cx="60" cy="82" r="3.2"/><circle cx="110" cy="62" r="3.2"/><circle cx="160" cy="42" r="3.2"/><circle cx="210" cy="22" r="3.2"/></g>
+              <!-- [Dave 2026-05-14] Staircase polyline + dots recolored red → blue to match the rest of the vision pillar's blue treatment. -->
+              <polyline points="22 100, 60 100, 60 82, 110 82, 110 62, 160 62, 160 42, 210 42, 210 22, 278 22" fill="none" stroke="#5B8FD4" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="#5B8FD4"><circle cx="60" cy="82" r="3.2"/><circle cx="110" cy="62" r="3.2"/><circle cx="160" cy="42" r="3.2"/><circle cx="210" cy="22" r="3.2"/></g>
               <circle class="start" cx="22" cy="100" r="8"/>
               <circle class="end" cx="278" cy="22" r="9" fill="#b8954a" stroke="#8a6d2e" stroke-width="2"/>
               <circle cx="278" cy="22" r="15" fill="none" stroke="#b8954a" stroke-width="1" stroke-dasharray="2 3" opacity="0.55"/>
             </svg>
             <div class="word">Next frontier in human connection technology</div>
           </div>
-          <div class="title">Rapid, <em>continuous iteration</em>.</div>
+          <div class="title">Six years + <em>continuous iteration</em></div>
         </div>
         <!-- PILLAR 2 · STARTING POINT -->
         <div class="strength foundation">
@@ -18586,7 +18587,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-12] cs-18-vd4 promoted to PRIMARY → removed from alts. cs-18 (former primary), cs-lab, cs-18-vd1, cs-18-vd3 are all RED-DOT alts per Dave: 'put the dots to the left of it as red text'.
   // [Dave 2026-05-12 LATEST] cs-18-vd3 DELETED per Dave: 'delete this' (the 'Two strengths' alt). cs-18-vd1 retained as red-dot alt.
   // [Dave 2026-05-14 MERGE] Wheelhouse alts now at slot 16 (cs-18-vd4 was 17; -1 after intro6 + frontier merged into one slot-1).
-  16: ['cs-18-vd5', 'cs-18', 'cs-lab', 'cs-18-vd1'],
+  // [Dave 2026-05-14] cs-18-vd1, cs-lab, cs-18 DELETED per Dave (3× 'delete this slide' for the wheelhouse-alt variants). Only cs-18-vd5 retained as the lone red-dot alt.
+  16: ['cs-18-vd5'],
   // Slot 18 (cs-wedge1; was 19).
   18: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference. [Dave 2026-05-11] Key shifted 20→19 after cs-a7 moved to appendix.
