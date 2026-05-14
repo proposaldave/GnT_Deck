@@ -10666,7 +10666,8 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-badge.red { background:#c8462c; }
   #cs-18-vd4 .v5-badge.gold { background:#b8954a; }
   /* [Dave 2026-05-14] Mission pillar badge recolored red (was blue #3a6dad). Class name kept .blue to avoid HTML churn elsewhere; only the actual background color changed. */
-  #cs-18-vd4 .v5-badge.blue { background:#c8462c; }
+  /* [Dave 2026-05-14 PM] Fixed copy-paste bug — '.v5-badge.blue' was set to #c8462c (red) so the Clarity pillar's badge rendered red even though the class was 'blue'. Restored to brand navy-blue #3a6dad. */
+  #cs-18-vd4 .v5-badge.blue { background:#3a6dad; }
   #cs-18-vd4 .v5-badge svg { width:62px;height:62px;display:block; }
   /* Pillar text */
   #cs-18-vd4 .v5-num { font-family:'Manrope',sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.22em;color:rgba(26,22,18,0.42);margin-top:6px; }
