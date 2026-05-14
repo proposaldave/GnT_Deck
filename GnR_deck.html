@@ -6273,6 +6273,14 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
   html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
+  /* [Dave 2026-05-14 PM] Simple entry animation when the slide loads — wordmark fades up + slight scale, hint arrow lands last. Fixes the abrupt static-load feeling coming in from the previous slide. */
+  @keyframes m8WordmarkEntry { from { opacity:0; transform: translateY(14px) scale(.97); } to { opacity:1; transform: translateY(0) scale(1); } }
+  @keyframes m8FadeIn { from { opacity:0 } to { opacity:1 } }
+  #cs-1m8[data-stage="0"] .m8-wordmark { opacity:0; will-change:opacity,transform }
+  #cs-1m8[data-stage="0"] .m8-hint { opacity:0; will-change:opacity }
+  #cs-1m8.casey-entered[data-stage="0"] .m8-wordmark { animation: m8WordmarkEntry .9s cubic-bezier(.22,1,.36,1) backwards .25s; opacity:1 }
+  #cs-1m8.casey-entered[data-stage="0"] .m8-hint { animation: m8FadeIn .55s ease-out backwards .85s; opacity:1 }
+  html[data-export="1"] #cs-1m8 .m8-wordmark { opacity:1 !important; transform:none !important; animation:none !important }
 </style>
 <!-- ═══════════════════════════════════════════════════════════════════════════
      cs-intro6 · SLIDE 1 [Dave 2026-05-14 v2 — REBUILT after first version was rejected]
