@@ -13390,6 +13390,17 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-closer .sc-c1{color:#1a1612}
   #cs-samecourt .sc-closer .sc-c2{color:#5B8FD4;font-weight:600}
   #cs-samecourt .sc-closer .sc-c3{color:#b8954a;font-weight:600}
+  /* [Dave 2026-05-14 PM] Community-shape parallel to cs-magnetic's twin-court — LEFT shows the community FRAGMENTED into isolated cliques (rating-driven), RIGHT shows the same community NETWORKED into a vibrant web (GnR-driven). Sits at the top of each column, above the character bubble. */
+  #cs-samecourt .sc-community { width:100%; max-width:380px; align-self:center; margin-bottom:6px; padding:14px 18px 12px; border-radius:12px; position:relative }
+  #cs-samecourt .sc-col.red .sc-community { background:rgba(26,22,18,0.025); border:1px solid rgba(26,22,18,0.10) }
+  #cs-samecourt .sc-col.blue .sc-community { background:rgba(184,149,74,0.07); border:1.4px solid rgba(184,149,74,0.40); box-shadow:0 10px 26px rgba(184,149,74,0.12) }
+  #cs-samecourt .sc-community-label { font-family:'Manrope',sans-serif; font-size:.54rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; text-align:center; margin-bottom:6px }
+  #cs-samecourt .sc-col.red .sc-community-label { color:rgba(26,22,18,0.45) }
+  #cs-samecourt .sc-col.blue .sc-community-label { color:#b8954a }
+  #cs-samecourt .sc-community-svg { width:100%; height:auto; display:block }
+  @keyframes scGlowPulse { 0%,100% { box-shadow:0 10px 26px rgba(184,149,74,0.12) } 50% { box-shadow:0 12px 38px rgba(184,149,74,0.24), 0 0 0 1px rgba(212,168,83,0.28) inset } }
+  #cs-samecourt .sc-col.blue .sc-community { animation: scGlowPulse 4.2s ease-in-out 1.6s infinite }
+  html[data-export="1"] #cs-samecourt .sc-col.blue .sc-community { animation: none !important }
 </style>
 <div class="casey-slide ds-focus" id="cs-samecourt">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Example: ratings are failing social players</div>
@@ -13400,6 +13411,51 @@ window.cs1m7Reverse = function() {
       <div class="sc-split">
         <!-- LEFT · THE RATING TRAINS — with target icon [Dave 2026-05-12 LATEST] -->
         <div class="sc-col red">
+          <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's court: shows the community FRAGMENTED into 3 isolated cliques. No inter-cluster edges. Visualizes what rating-driven incentives DO to a community. -->
+          <div class="sc-community">
+            <div class="sc-community-label">Rating-driven community</div>
+            <svg class="sc-community-svg" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Fragmented community — 3 isolated cliques">
+              <!-- Clique 1 (top-left) -->
+              <g stroke="rgba(200,70,44,0.42)" stroke-width="0.8" fill="rgba(200,70,44,0.55)">
+                <line x1="30" y1="28" x2="55" y2="22"/>
+                <line x1="55" y1="22" x2="45" y2="44"/>
+                <line x1="30" y1="28" x2="45" y2="44"/>
+                <line x1="30" y1="28" x2="20" y2="46"/>
+                <line x1="20" y1="46" x2="45" y2="44"/>
+                <circle cx="30" cy="28" r="3.4"/>
+                <circle cx="55" cy="22" r="3.4"/>
+                <circle cx="45" cy="44" r="3.4"/>
+                <circle cx="20" cy="46" r="3.4"/>
+              </g>
+              <!-- Clique 2 (top-right) -->
+              <g stroke="rgba(200,70,44,0.42)" stroke-width="0.8" fill="rgba(200,70,44,0.55)">
+                <line x1="170" y1="24" x2="195" y2="32"/>
+                <line x1="195" y1="32" x2="215" y2="24"/>
+                <line x1="170" y1="24" x2="190" y2="48"/>
+                <line x1="215" y1="24" x2="190" y2="48"/>
+                <line x1="195" y1="32" x2="190" y2="48"/>
+                <circle cx="170" cy="24" r="3.4"/>
+                <circle cx="195" cy="32" r="3.4"/>
+                <circle cx="215" cy="24" r="3.4"/>
+                <circle cx="190" cy="48" r="3.4"/>
+              </g>
+              <!-- Clique 3 (bottom-center) -->
+              <g stroke="rgba(200,70,44,0.42)" stroke-width="0.8" fill="rgba(200,70,44,0.55)">
+                <line x1="95" y1="92" x2="120" y2="86"/>
+                <line x1="120" y1="86" x2="145" y2="92"/>
+                <line x1="95" y1="92" x2="120" y2="108"/>
+                <line x1="145" y1="92" x2="120" y2="108"/>
+                <line x1="120" y1="86" x2="120" y2="108"/>
+                <circle cx="95" cy="92" r="3.4"/>
+                <circle cx="120" cy="86" r="3.4"/>
+                <circle cx="145" cy="92" r="3.4"/>
+                <circle cx="120" cy="108" r="3.4"/>
+              </g>
+              <!-- Stray isolated dot (top-center) — the disconnected new face -->
+              <circle cx="120" cy="40" r="3" fill="rgba(26,22,18,0.32)" stroke="rgba(26,22,18,0.40)" stroke-width="0.7"/>
+              <!-- INTENTIONALLY NO INTER-CLIQUE EDGES — this is the visual punch -->
+            </svg>
+          </div>
           <!-- [Dave 2026-05-12] Identity bubble — rating-trained player identifies WITH THE NUMBER. -->
           <div class="sc-char">
             <div class="sc-head red">
@@ -13429,6 +13485,62 @@ window.cs1m7Reverse = function() {
 
         <!-- RIGHT · GIVE N RECEIVE TRAINS — with handshake/community icon [Dave 2026-05-12 LATEST] -->
         <div class="sc-col blue">
+          <!-- [Dave 2026-05-14 PM] COMMUNITY-LEVEL graphic — parallel to cs-magnetic's marketplace court: shows the SAME community NETWORKED into a dense web. Same number of nodes as the left side, now connected by reciprocity edges through a warm glow. Visualizes what GnR-driven incentives DO to a community. -->
+          <div class="sc-community">
+            <div class="sc-community-label">GnR-driven community</div>
+            <svg class="sc-community-svg" viewBox="0 0 240 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Networked community — every node connected through reciprocity">
+              <defs>
+                <radialGradient id="scGlowGrad" cx="50%" cy="50%" r="55%">
+                  <stop offset="0%" stop-color="rgba(255,235,170,0.50)"/>
+                  <stop offset="55%" stop-color="rgba(212,168,83,0.18)"/>
+                  <stop offset="100%" stop-color="rgba(184,149,74,0)"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="120" cy="65" rx="135" ry="70" fill="url(#scGlowGrad)"/>
+              <!-- Dense web of reciprocity edges -->
+              <g stroke="rgba(184,149,74,0.50)" stroke-width="0.7" stroke-dasharray="2 1.6" fill="none">
+                <line x1="30" y1="28" x2="55" y2="22"/>
+                <line x1="55" y1="22" x2="120" y2="40"/>
+                <line x1="30" y1="28" x2="120" y2="40"/>
+                <line x1="55" y1="22" x2="120" y2="65"/>
+                <line x1="30" y1="28" x2="120" y2="65"/>
+                <line x1="170" y1="24" x2="195" y2="32"/>
+                <line x1="195" y1="32" x2="215" y2="24"/>
+                <line x1="170" y1="24" x2="120" y2="40"/>
+                <line x1="215" y1="24" x2="120" y2="40"/>
+                <line x1="195" y1="32" x2="120" y2="65"/>
+                <line x1="120" y1="40" x2="120" y2="65"/>
+                <line x1="95" y1="92" x2="120" y2="65"/>
+                <line x1="120" y1="86" x2="120" y2="65"/>
+                <line x1="145" y1="92" x2="120" y2="65"/>
+                <line x1="95" y1="92" x2="120" y2="108"/>
+                <line x1="145" y1="92" x2="120" y2="108"/>
+                <line x1="95" y1="92" x2="45" y2="44"/>
+                <line x1="145" y1="92" x2="190" y2="48"/>
+                <line x1="45" y1="44" x2="120" y2="65"/>
+                <line x1="190" y1="48" x2="120" y2="65"/>
+                <line x1="20" y1="46" x2="45" y2="44"/>
+                <line x1="20" y1="46" x2="95" y2="92"/>
+              </g>
+              <!-- Nodes — same positions as left side, now colored with the brand palette to show diversity -->
+              <circle cx="30" cy="28" r="3.4" fill="#5B8FD4"/>
+              <circle cx="55" cy="22" r="3.4" fill="#b8954a"/>
+              <circle cx="45" cy="44" r="3.4" fill="#168651"/>
+              <circle cx="20" cy="46" r="3.4" fill="#c8462c"/>
+              <circle cx="170" cy="24" r="3.4" fill="#b8954a"/>
+              <circle cx="195" cy="32" r="3.4" fill="#5B8FD4"/>
+              <circle cx="215" cy="24" r="3.4" fill="#168651"/>
+              <circle cx="190" cy="48" r="3.4" fill="#c8462c"/>
+              <circle cx="95" cy="92" r="3.4" fill="#b8954a"/>
+              <circle cx="120" cy="86" r="3.4" fill="#5B8FD4"/>
+              <circle cx="145" cy="92" r="3.4" fill="#c8462c"/>
+              <circle cx="120" cy="108" r="3.4" fill="#168651"/>
+              <!-- Formerly stray dot — now connected, gold to mark the central hub -->
+              <circle cx="120" cy="40" r="3.6" fill="#b8954a" stroke="#b8954a" stroke-width="0.8"/>
+              <!-- Center waypoint -->
+              <circle cx="120" cy="65" r="2.8" fill="rgba(184,149,74,0.55)" stroke="#b8954a" stroke-width="0.8"/>
+            </svg>
+          </div>
           <!-- [Dave 2026-05-12] Identity bubble — GnR-trained player identifies WITH THE COMMUNITY. -->
           <div class="sc-char">
             <div class="sc-head blue">
