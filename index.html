@@ -8252,7 +8252,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-pbfirst .pb-flip-inner{transform:rotateY(180deg) !important;transition:none !important}
 </style>
 <div class="casey-slide ds-focus" id="cs-pbfirst">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">GnR&rsquo;s #1 secret</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Give n Receive&rsquo;s #1 secret</div>
   <section class="pb-stage">
     <div class="pb-wrap">
       <div class="pb-head">Pickleball is the clearest path to the world&rsquo;s first <em>autonomous human value exchange network</em>.</div>
@@ -8260,14 +8260,25 @@ window.cs1m7Reverse = function() {
       <div class="pb-cards">
         <!-- [Dave 2026-05-12 LATEST] Cards now FLIP per Dave: 'let's make them cards that have to be flipped over to view the text'. Front face = colored icon + tap hint. Back face = title + body, centered. Each card has data-flipped="0" and click toggles to "1". -->
 
-        <!-- Card 1 — RED · Coordination stack stuck in 2005 (with callout arrow) -->
-        <div class="pb-card pb-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <!-- [Dave 2026-05-12 EVENING] Callout text + arrow DELETED. The "desperately needs" idea now lives ON the card itself as the front-face label per Dave: 'front of this card say something like: Max coordination pain / Desperately needed'. -->
+        <!-- [Dave 2026-05-14] Card 5 (PURPLE · Already a social network beyond the courts) PROMOTED to first card position per Dave. Color/class stay (pb-c5 = purple); only DOM order changes so card flow now opens with the "secret" beat (already a social network) → coordination stack → market → social signal → cold-start data. -->
+        <!-- Card 1 (was Card 5) — PURPLE · Already a social network beyond the courts -->
+        <div class="pb-card pb-c5" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="pb-flip-inner">
+            <div class="pb-face pb-front">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+            </div>
+            <div class="pb-face pb-back">
+              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+              <div class="pb-title">Already a social network<br>beyond the courts.</div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Card 2 (was Card 1) — RED · Coordination stack stuck in 2005 -->
+        <div class="pb-card pb-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
               <div class="pb-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/></svg></div>
-              <!-- [Dave 2026-05-12 EVENING] Front-face label per Dave — front of card now says what the card stands for so the flip mechanic isn't blind. -->
               <div class="pb-title">Max coordination pain.<br><em style="font-style:italic;font-weight:600">Desperately needed.</em></div>
             </div>
             <div class="pb-face pb-back">
@@ -8282,7 +8293,7 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- Card 2 — GOLD · Fastest-growing sport -->
+        <!-- Card 3 (was Card 2) — GOLD · Fastest-growing sport -->
         <div class="pb-card pb-c2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
@@ -8296,7 +8307,7 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- Card 3 — BLUE · Wildly social -->
+        <!-- Card 4 (was Card 3) — BLUE · Wildly social -->
         <div class="pb-card pb-c3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
@@ -8309,7 +8320,7 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- Card 4 — GREEN · Cold-start data cracked -->
+        <!-- Card 5 (was Card 4) — GREEN · Cold-start data cracked -->
         <div class="pb-card pb-c4" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
           <div class="pb-flip-inner">
             <div class="pb-face pb-front">
@@ -8322,18 +8333,7 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <!-- Card 5 — PURPLE · Already a social network beyond the courts -->
-        <div class="pb-card pb-c5" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="pb-flip-inner">
-            <div class="pb-face pb-front">
-              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-            </div>
-            <div class="pb-face pb-back">
-              <div class="pb-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-              <div class="pb-title">Already a social network<br>beyond the courts.</div>
-            </div>
-          </div>
-        </div>
+        <!-- [Dave 2026-05-14] Original Card 5 (Already a social network) DELETED from end of row — it's now promoted to first card position at the top. -->
       </div>
     </div>
   </section>
