@@ -30,6 +30,10 @@ Hero subject = ONE mythic gesture or moment, not a wide establishing shot. Ambig
 
 Permanent banned aesthetics across all hero imagery: two-people-on-porch / Hallmark / memoir / senior-living-brochure register, Mediterranean / villa / terra cotta / olive, Anthropologie catalog vibe, sunset-as-melancholy, photorealism, digital-flat illustration, cartoon, stock "diversity poster" staging, paddle-cluster or four-paddle-flower compositions, paddle-only product shots, faces / eyes / smiles in mythic close-ups.
 
+### STANDING - hands must read capable, not creepy
+
+When hands are the hero subject, they must read active, capable, warm, and alive. Maturity can show through posture, gesture, sun, and texture, but not through exaggerated veins, skeletal knuckles, claw-like fingers, bruised color, or frailty. "Older" should never become the first thing the viewer notices.
+
 ### Suburban American anchor is non-negotiable for community/wedge imagery
 
 No Mediterranean, no villa, no European architecture, no terra cotta, no olive trees, no cosmopolitan-cafe register. GnR's wedge is suburban American pickleball clubs. Every hero image should be unmistakably set there or in a register compatible with it.
