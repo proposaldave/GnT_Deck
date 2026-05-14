@@ -10678,7 +10678,8 @@ window.cs1m7Reverse = function() {
   #cs-18-vd4 .v5-pillar.p3 .v5-body em { color:#c8462c; }
   /* NEPC logo badge — replaces the gold/R-M circle on Pillar 2 */
   /* [Dave 2026-05-12] NEPC badge enlarged so the visible logo matches the 118px solid red/blue circles. The PNG carries its own transparent padding, so the container needs to be ~165px for the logo to read at the same visible diameter as the other two pillars. */
-  #cs-18-vd4 .v5-badge.nepc { background:transparent;box-shadow:none;width:165px;height:165px;padding:0;margin:-23px 0; }
+  /* [Dave 2026-05-14 PM] Bumped 165→210 so the visible NEPC logo (which has transparent PNG padding around it) reads at the same visual diameter as the solid 118px red badges on pillars 1 + 3. */
+  #cs-18-vd4 .v5-badge.nepc { background:transparent;box-shadow:none;width:210px;height:210px;padding:0;margin:-46px 0; }
   #cs-18-vd4 .v5-badge.nepc img { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 28px rgba(184,149,74,0.22)); }
   /* Starting Point sub-meta line — small caps-tracked stats below the body */
   #cs-18-vd4 .v5-meta { font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.06em;line-height:1.5;color:rgba(26,22,18,0.62);max-width:300px;margin-top:6px;text-align:center; }
@@ -16654,7 +16655,7 @@ window.cs1m7Reverse = function() {
       <line x1="-58" y1="30" x2="58" y2="30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.35"/>
       <line x1="-58" y1="45" x2="58" y2="45" stroke="#5B8FD4" stroke-width="0.9" opacity="0.3"/>
       <!-- Label [sizes bumped 2026-05-03] -->
-      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">COLDSTART DATA</text>
+      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">COLDSTART</text>
       <text x="0" y="80" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">historical scheduling</text>
       <text x="0" y="98" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">+ private booking data</text>
     </g>
@@ -16700,8 +16701,8 @@ window.cs1m7Reverse = function() {
         <circle cx="4" cy="4" r="1.9" fill="#2a8a4f"/>
       </g>
     </g>
-    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes (was visibly smaller). Badge shifted further left to clear the wider rect. -->
-    <g class="fw1-anim fw1-n4" transform="translate(100, 300)">
+    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes. [Dave 2026-05-14 PM] Translate shifted 100→70 so the oval's right edge doesn't touch the center engine circle (was only 2px clearance — now ~32px). -->
+    <g class="fw1-anim fw1-n4" transform="translate(70, 300)">
       <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
       <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
       <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">engagement · player growth · trusted reciprocity</text>
