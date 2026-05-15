@@ -1,0 +1,145 @@
+<!-- timestamp: 20260514-202815; slide-id: cs-fw1; description: SLIDE_ORDER slide -->
+<div class="casey-slide ds-focus" id="cs-fw1" data-stage="0" onclick="csFw1Advance();event.stopPropagation()" style="cursor:pointer">
+<section style="position:relative;min-height:100%;width:100%">
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Autonomous social coordination</div>
+<div class="inner" style="padding:50px 32px 24px;text-align:center;max-width:1180px;margin:0 auto">
+
+  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,3.2vw,2.5rem);font-weight:700;color:#1a1612;line-height:1.15;letter-spacing:-0.018em;max-width:1080px;margin:0 auto">
+    Imagine dropping <span style="font-family:'Playfair Display',serif;font-style:normal"><span style="color:#4d82c6;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;font-size:0.78em;padding:0 0.04em">n</span><span style="color:#c94d32;font-weight:700">R</span></span> into any pickleball club.<br>
+    <em style="font-style:italic;font-weight:500;color:#b8954a">And it just works &mdash; compounds forever &mdash; at AI speed.</em>
+  </div>
+
+  <svg viewBox="-260 0 1060 600" style="width:min(1100px,98%);max-width:1100px;height:auto;display:block;margin:8px auto 0">
+    <defs>
+      <marker id="fw1Arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#b8954a"/>
+      </marker>
+      <marker id="fw1ArrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#5B8FD4"/>
+      </marker>
+      <radialGradient id="fw1EngineGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#f0c040" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Center engine -->
+    <g class="fw1-anim fw1-engine">
+      <circle cx="360" cy="300" r="170" fill="url(#fw1EngineGlow)"/>
+      <circle cx="360" cy="300" r="108" fill="rgba(255,247,224,0.55)" stroke="#b8954a" stroke-width="2.4"/>
+      <circle cx="360" cy="300" r="92" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="1"/>
+      <g stroke="#b8954a" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
+        <line x1="360" y1="195" x2="360" y2="207"/>
+        <line x1="412" y1="210" x2="408" y2="222"/>
+        <line x1="450" y1="248" x2="441" y2="255"/>
+        <line x1="465" y1="300" x2="453" y2="300"/>
+        <line x1="450" y1="352" x2="441" y2="345"/>
+        <line x1="412" y1="390" x2="408" y2="378"/>
+        <line x1="360" y1="405" x2="360" y2="393"/>
+        <line x1="308" y1="390" x2="312" y2="378"/>
+        <line x1="270" y1="352" x2="279" y2="345"/>
+        <line x1="255" y1="300" x2="267" y2="300"/>
+        <line x1="270" y1="248" x2="279" y2="255"/>
+        <line x1="308" y1="210" x2="312" y2="222"/>
+      </g>
+      <!-- "Self-improving community intelligence" stacked on 3 lines + GnR mark, vertically centered inside the engine circle [Dave 2026-05-03 PM v2 — was top-heavy, shifted down ~22px to true-center] -->
+      <text x="360" y="268" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="800" letter-spacing="2.4" fill="rgba(26,22,18,0.55)">SELF-IMPROVING</text>
+      <text x="360" y="288" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#b8954a">COMMUNITY</text>
+      <text x="360" y="306" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#b8954a">INTELLIGENCE</text>
+      <text x="338" y="346" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#5B8FD4">G</text>
+      <text x="362" y="346" text-anchor="middle" font-family="Playfair Display,serif" font-size="28" font-weight="500" font-style="italic" fill="#1a1612">n</text>
+      <text x="386" y="346" text-anchor="middle" font-family="Playfair Display,serif" font-size="38" font-weight="900" fill="#c8462c">R</text>
+      <!-- 'AT AI SPEED' duplicate removed Dave 2026-05-02 — only appears once now (in headline above). -->
+    </g>
+
+    <!-- LEFT JUMPSTART (Dave 2026-05-02): historical scheduling + private booking data feeds the wheel.
+         Solves the cold-start problem — drop into ANY existing pickleball community and the wheel
+         spins from day one because we ingest their existing operational data. -->
+    <g class="fw1-anim fw1-feed" transform="translate(-180, 300)">
+      <!-- Database / records canister -->
+      <rect x="-72" y="-58" width="144" height="116" rx="8" fill="rgba(91,143,212,0.06)" stroke="#5B8FD4" stroke-width="1.7" stroke-dasharray="4 2.5"/>
+      <ellipse cx="0" cy="-58" rx="72" ry="10" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="1.7"/>
+      <ellipse cx="0" cy="-58" rx="72" ry="10" fill="none" stroke="#5B8FD4" stroke-width="1.7"/>
+      <!-- Database row stripes -->
+      <line x1="-58" y1="-30" x2="58" y2="-30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.55"/>
+      <line x1="-58" y1="-15" x2="58" y2="-15" stroke="#5B8FD4" stroke-width="0.9" opacity="0.5"/>
+      <line x1="-58" y1="0" x2="58" y2="0" stroke="#5B8FD4" stroke-width="0.9" opacity="0.45"/>
+      <line x1="-58" y1="15" x2="58" y2="15" stroke="#5B8FD4" stroke-width="0.9" opacity="0.4"/>
+      <line x1="-58" y1="30" x2="58" y2="30" stroke="#5B8FD4" stroke-width="0.9" opacity="0.35"/>
+      <line x1="-58" y1="45" x2="58" y2="45" stroke="#5B8FD4" stroke-width="0.9" opacity="0.3"/>
+      <!-- Label [sizes bumped 2026-05-03] -->
+      <text x="0" y="-80" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12.5" font-weight="800" letter-spacing="2.4" fill="#5B8FD4">COLDSTART</text>
+      <text x="0" y="80" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">historical scheduling</text>
+      <text x="0" y="98" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">+ private booking data</text>
+    </g>
+    <!-- Jumpstart arrow from feeder INTO the PERSONALIZED INVITATION FEED rectangle (TOP node), not the engine center [Dave 2026-05-03 PM]. Arcs over the COMPOUNDING VALUE oval. 'cold start, solved' label removed per Dave. -->
+    <path class="fw1-anim fw1-jumpstart" d="M -100 285 Q 90 95 215 70" stroke="#5B8FD4" stroke-width="2.6" fill="none" opacity="0.78" marker-end="url(#fw1ArrowBlue)" stroke-dasharray="7 4"/>
+
+    <!-- 4 outer nodes — each rect has a small icon-badge positioned radially OUTWARD from the engine [icons added Dave 2026-05-03 PM] -->
+    <!-- TOP: Personalized Invitations (blue) -->
+    <g class="fw1-anim fw1-n1" transform="translate(360, 70)">
+      <rect x="-145" y="-30" width="290" height="60" rx="30" fill="rgba(91,143,212,0.08)" stroke="#5B8FD4" stroke-width="1.7"/>
+      <text x="0" y="-3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#3a7da3">PERSONALIZED INVITATION FEED</text>
+      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">sequential · referrals · curated</text>
+      <!-- Envelope icon ABOVE the rect -->
+      <g transform="translate(0, -52)">
+        <circle cx="0" cy="0" r="14" fill="rgba(91,143,212,0.10)" stroke="#5B8FD4" stroke-width="1.5"/>
+        <rect x="-7" y="-5" width="14" height="10" rx="1.5" fill="none" stroke="#3a7da3" stroke-width="1.5"/>
+        <path d="M -7 -5 L 0 1 L 7 -5" fill="none" stroke="#3a7da3" stroke-width="1.5" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <!-- RIGHT: RSVPs + Feedback (gold) — [Dave 2026-05-14 PM v4] translate 620→613 to equalize the left/right gaps around the engine core (was 10px left vs 24px right; now both 17px). -->
+    <g class="fw1-anim fw1-n2" transform="translate(613, 300)">
+      <rect x="-128" y="-30" width="256" height="60" rx="30" fill="rgba(184,149,74,0.08)" stroke="#b8954a" stroke-width="1.7"/>
+      <text x="0" y="-3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#b8954a">RSVPs &amp; ROUND SELECTION</text>
+      <text x="0" y="18" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">partners · opponents · wishlist</text>
+      <!-- Checkmark badge to the RIGHT of the rect -->
+      <g transform="translate(155, 0)">
+        <circle cx="0" cy="0" r="14" fill="rgba(184,149,74,0.10)" stroke="#b8954a" stroke-width="1.5"/>
+        <path d="M -6 0 L -2 4 L 6 -5" fill="none" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+    <!-- BOTTOM: Filled Courts, Better Matches (green) -->
+    <g class="fw1-anim fw1-n3" transform="translate(360, 530)">
+      <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(42,138,79,0.08)" stroke="#2a8a4f" stroke-width="1.7"/>
+      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#2a8a4f">FILLED COURTS · BETTER MATCHES</text>
+      <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">right people, right time</text>
+      <!-- 4 dots in court badge BELOW the rect -->
+      <g transform="translate(0, 52)">
+        <circle cx="0" cy="0" r="14" fill="rgba(42,138,79,0.10)" stroke="#2a8a4f" stroke-width="1.5"/>
+        <line x1="-9" y1="0" x2="9" y2="0" stroke="#2a8a4f" stroke-width="0.8" opacity="0.55"/>
+        <circle cx="-4" cy="-4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="4" cy="-4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="-4" cy="4" r="1.9" fill="#2a8a4f"/>
+        <circle cx="4" cy="4" r="1.9" fill="#2a8a4f"/>
+      </g>
+    </g>
+    <!-- LEFT: Compounding Community Value (coral) — [Dave 2026-05-14] rect widened 276→300 + eyebrow restored to 13/2.2 to match the other 3 nodes. [Dave 2026-05-14 PM] Translate shifted 100→70 so the oval's right edge doesn't touch the center engine circle. [Dave 2026-05-14 PM v3] Translate shifted 70→92 + growth-arrow badge moved from -184 → -168 + badge radius 14 → 12 so the badge no longer overlaps the COLDSTART cylinder. [Dave 2026-05-14 PM v4] Translate 92→85 to equalize left/right gaps around the engine (now 17px each side, matching RSVPs). -->
+    <g class="fw1-anim fw1-n4" transform="translate(85, 300)">
+      <rect x="-150" y="-30" width="300" height="60" rx="30" fill="rgba(200,70,44,0.06)" stroke="#c8462c" stroke-width="1.7"/>
+      <text x="0" y="-6" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="#c8462c">COMPOUNDING COMMUNITY VALUE</text>
+      <text x="0" y="15" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="13" fill="rgba(26,22,18,0.7)">engagement · player growth · trusted reciprocity</text>
+      <!-- Upward growth-curve badge to the LEFT of the rect -->
+      <g transform="translate(-168, 0)">
+        <circle cx="0" cy="0" r="12" fill="rgba(200,70,44,0.10)" stroke="#c8462c" stroke-width="1.5"/>
+        <path d="M -7 5 L -2.5 1 L 1.5 3.5 L 7 -4.5" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 2.5 -4.5 L 7 -4.5 L 7 0" fill="none" stroke="#c8462c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+
+    <!-- Clockwise arrows -->
+    <path class="fw1-anim fw1-a1" d="M 510 96 Q 580 130 595 252" stroke="#b8954a" stroke-width="2" fill="none" opacity="0.65" marker-end="url(#fw1Arrow)"/>
+    <path class="fw1-anim fw1-a2" d="M 600 350 Q 575 478 510 504" stroke="#b8954a" stroke-width="2" fill="none" opacity="0.65" marker-end="url(#fw1Arrow)"/>
+    <path class="fw1-anim fw1-a3" d="M 210 504 Q 145 478 125 350" stroke="#b8954a" stroke-width="2" fill="none" opacity="0.65" marker-end="url(#fw1Arrow)"/>
+    <path class="fw1-anim fw1-a4" d="M 120 252 Q 145 130 210 96" stroke="#b8954a" stroke-width="2" fill="none" opacity="0.65" marker-end="url(#fw1Arrow)"/>
+
+    <!-- HCD external feeder DELETED 2026-05-01 per Dave — was right-shifting the wheel on the slide. Cold-start narrative now lives on cs-rcp (Receipts) + cs-kl (Krista Loop). -->
+  </svg>
+
+  <!-- 'Click to reveal' hint DELETED 2026-05-03 PM per Dave -->
+
+  <!-- "Networked reciprocity" chip + "GnR value-exchange communities" line REMOVED 2026-05-03 PM per Dave —
+       'Networked reciprocity' is now its OWN dedicated slide (cs-nr) for proper explanation. -->
+</div>
+</section>
+</div>

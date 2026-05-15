@@ -1,0 +1,176 @@
+<!-- timestamp: 20260514-202815; slide-id: cs-3; description: SLIDE_ORDER slide -->
+<div class="casey-slide ds-focus" id="cs-3" data-shown="0" onclick="cs3Toggle()" style="cursor:pointer">
+<style>
+    /* cs-3 v2 — Codex redesign 2026-04-30 (week-grid: 24 rounds across TUE/THU/SAT). */
+    /* Click-to-reveal: 4 .cs3-round.scored cards + closer text hidden on page load.
+       Click anywhere on slide to reveal them. [Dave 2026-05-01] */
+    #cs-3 .cs3-round.scored { opacity: 0; transition: opacity 0.65s cubic-bezier(.45,.05,.18,1); pointer-events: none; }
+    #cs-3[data-shown="1"] .cs3-round.scored { opacity: 1; pointer-events: auto; }
+    #cs-3 .cs3-round.scored:nth-child(1) { transition-delay: 0.10s; }
+    #cs-3 .cs3-round.scored:nth-child(2) { transition-delay: 0.18s; }
+    #cs-3 .cs3-round.scored:nth-child(3) { transition-delay: 0.26s; }
+    #cs-3 .cs3-round.scored:nth-child(4) { transition-delay: 0.34s; }
+    #cs-3 .cs3-closer { opacity: 0 !important; transition: opacity 0.7s 0.50s cubic-bezier(.45,.05,.18,1); }
+    #cs-3[data-shown="1"] .cs3-closer { opacity: 1 !important; }
+    #cs-3 .cs3-hint { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 18px auto 0; font: 600 .58rem/1 'Manrope', sans-serif; letter-spacing: .22em; text-transform: uppercase; color: rgba(184,149,74,0.82); animation: cs3HintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+    #cs-3[data-shown="1"] .cs3-hint { opacity: 0; pointer-events: none; animation: none; }
+    @keyframes cs3HintPulse { 0%,100% { opacity: .55 } 50% { opacity: 1 } }
+    @keyframes cs3HintBounce { 0%,100% { transform: translateY(0) } 50% { transform: translateY(3px) } }
+    #cs-3 .cs3-hint svg { animation: cs3HintBounce 1.6s ease-in-out infinite; }
+    html[data-export="1"] #cs-3 .cs3-round.scored,
+    html[data-export="1"] #cs-3 .cs3-closer { opacity: 1 !important; transition: none !important; }
+    html[data-export="1"] #cs-3 .cs3-hint { opacity: 0 !important; }
+    /* Kicker matches the standard slide-kicker size/letter-spacing used everywhere else, but ink (not gold) per Dave 2026-04-30 PM evening */
+    #cs-3 .cs3-eyebrow {
+      position: absolute; top: 28px; left: 48px;
+      font-family: 'Manrope', system-ui, sans-serif;
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #1a1612;
+      z-index: 10;
+    }
+    /* Load animations: headline lands first, then 3 day columns stagger in, then closer */
+    @keyframes cs3FadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    #cs-3 .cs3-anim { opacity: 0; }
+    #cs-3.active .cs3-anim { animation: cs3FadeUp 0.65s cubic-bezier(.45,.05,.18,1) forwards; }
+    #cs-3.active .cs3-headline { animation-delay: 0.10s; }
+    #cs-3.active .cs3-day.tue  { animation-delay: 0.45s; }
+    #cs-3.active .cs3-day.thu  { animation-delay: 0.65s; }
+    #cs-3.active .cs3-day.sat  { animation-delay: 0.85s; }
+    #cs-3.active .cs3-closer   { animation-delay: 1.20s; }
+    html[data-export="1"] #cs-3 .cs3-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
+    #cs-3 .cs3-headline {
+      width: min(1180px, 92%);
+      margin: 64px auto 22px;
+      text-align: center;
+      font: 800 clamp(1.6rem, 3.4vw, 2.7rem)/1.1 'Playfair Display', Georgia, serif;
+      letter-spacing: -.015em;
+      color: #1a1612;
+    }
+    #cs-3 .cs3-headline em { color: #2a8a4f; font-style: italic; }
+    #cs-3 .cs3-grid {
+      display: grid;
+      grid-template-columns: .5fr 1fr .5fr 1fr .5fr 1fr .5fr;
+      gap: 14px; align-items: stretch;
+      max-width: 1620px; margin: 0 auto;
+      padding: 0 32px;
+    }
+    #cs-3 .cs3-day { min-width: 0; position: relative; padding: 0 6px; }
+    #cs-3 .cs3-day.active { border-left: 1px solid rgba(184,149,74,.18); border-right: 1px solid rgba(184,149,74,.18); }
+    #cs-3 .cs3-day.inactive { opacity: .28; display: flex; flex-direction: column; align-items: center; }
+    #cs-3 .cs3-dayhead { height: 50px; text-align: center; font: 800 14px/1 'Manrope', system-ui, sans-serif; letter-spacing: .2em; }
+    #cs-3 .cs3-dayhead span { display: block; margin-top: 7px; font-size: 11px; letter-spacing: .16em; color: #b8954a; }
+    #cs-3 .tue .cs3-dayhead,
+    #cs-3 .thu .cs3-dayhead,
+    #cs-3 .sat .cs3-dayhead { color: #1a1612; }
+    #cs-3 .inactive .cs3-dayhead { color: rgba(26,22,18,.6); margin-top: 0; }
+    #cs-3 .cs3-sunmark { margin: auto 0; width: 56px; height: 56px; border: 1px solid rgba(26,22,18,.24); border-radius: 999px; position: relative; }
+    #cs-3 .cs3-sunmark:before { content: ""; position: absolute; inset: -12px; border: 1px dashed rgba(26,22,18,.18); border-radius: 999px; }
+    #cs-3 .cs3-rounds { display: grid; grid-template-rows: repeat(8, 1fr); gap: 5px; }
+    #cs-3 .cs3-round { display: grid; grid-template-columns: 22px 1fr 56px; gap: 7px; align-items: center; min-height: 0; padding: 4px 5px; border: 1px solid rgba(61,255,122,.42); background: rgba(61,255,122,.045); border-radius: 7px; }
+    #cs-3 .cs3-round.scored { border-color: #c8462c; background: rgba(200,70,44,.055); }
+    #cs-3 .cs3-idx { font: 700 10px/1 'Manrope', system-ui, sans-serif; color: rgba(184,149,74,.95); text-align: right; }
+    #cs-3 svg.cs3-court { width: 100%; height: 38px; display: block; }
+    #cs-3 .cs3-court-bg { fill: rgba(26,22,18,.045); stroke: rgba(26,22,18,.18); }
+    #cs-3 .cs3-court-line { stroke: rgba(26,22,18,.2); stroke-width: 1; }
+    #cs-3 .cs3-partner { fill: #fbf7ef; stroke-width: 2.2; }
+    #cs-3 .cs3-conn { fill: none; stroke-width: 1.3; opacity: .72; }
+    /* Animation only on social courts — scored stays static (the story is "scores don't measure connection") */
+    #cs-3 .cs3-round.social .cs3-conn {
+      animation: cs3Pulse 2.9s ease-in-out infinite;
+      transform-origin: center;
+    }
+    #cs-3 .cs3-round.scored .cs3-conn { opacity: .42; animation: none; }
+    @keyframes cs3Pulse {
+      0%,100% { opacity: .42; stroke-width: 1.0; }
+      50% { opacity: .92; stroke-width: 1.6; }
+    }
+    #cs-3 .cs3-bars { display: grid; grid-template-columns: repeat(3, 7px); gap: 4px; align-items: end; justify-content: center; height: 24px; }
+    #cs-3 .cs3-bars i { display: block; width: 7px; border-radius: 2px 2px 0 0; }
+    #cs-3 .b1 { background: #5B8FD4; height: 16px; }
+    #cs-3 .b2 { background: #2a8a4f; height: 22px; }
+    #cs-3 .b3 { background: #c8462c; height: 13px; }
+    #cs-3 .cs3-pct { text-align: center; margin-top: 2px; font: 700 11px/1 'Manrope', system-ui, sans-serif; color: rgba(26,22,18,.62); letter-spacing: .03em; }
+    #cs-3 .cs3-score { justify-self: center; min-width: 50px; padding: 7px 6px; border-radius: 4px; background: #17130f; color: #fff7ea; text-align: center; font: 800 17px/1 'Playfair Display', Georgia, serif; letter-spacing: .03em; }
+    #cs-3 .cs3-dayfoot { height: 50px; text-align: center; padding-top: 10px; color: #b8954a; font: 800 13px/1 'Manrope', system-ui, sans-serif; letter-spacing: .2em; }
+    #cs-3 .cs3-dayfoot span { display: block; margin-top: 7px; color: rgba(26,22,18,.5); font-size: 10px; letter-spacing: .22em; }
+    #cs-3 .cs3-closer { width: min(1100px, 92%); margin: 24px auto 0; text-align: center; font: 800 clamp(1.1rem, 2.4vw, 1.7rem)/1.2 'Playfair Display', Georgia, serif; color: #1a1612; }
+    #cs-3 .cs3-closer em { color: #2a8a4f; font-style: italic; }
+</style>
+
+<!-- cs3 eyebrow uses inline style identical to every other slide's top-left label spec [Dave 2026-05-03 PM] -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">24 unique social experiences per week</div>
+
+<div class="cs3-headline cs3-anim">
+    Pickleball is the <em>fastest-growing, highest-velocity,<br>
+    densest social-signal</em> community, ever.
+</div>
+
+<!-- Click hint — visible until first click [Dave 2026-05-01] -->
+<div class="cs3-hint">
+    <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke="#b8954a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+
+<div class="cs3-grid">
+    <div class="cs3-day inactive"><div class="cs3-dayhead">MON<span>—</span></div><div class="cs3-sunmark"></div></div>
+
+    <div class="cs3-day cs3-anim active tue">
+        <div class="cs3-dayhead">TUE<span>10 AM</span></div>
+        <div class="cs3-rounds">
+            <div class="cs3-round social"><div class="cs3-idx">01</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 14L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div><div class="cs3-pct">72%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">02</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#6ccbb0" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#6ccbb0" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:21px"></i><i class="b3" style="height:11px"></i></div><div class="cs3-pct">68%</div></div></div>
+            <div class="cs3-round scored"><div class="cs3-idx">03</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="34" r="4"/></svg><div class="cs3-score">11-7</div></div>
+            <div class="cs3-round social"><div class="cs3-idx">04</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#2a8a4f" d="M35 16L114 12M35 34L114 30"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="16" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="12" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#6ccbb0" cx="114" cy="30" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:10px"></i><i class="b2" style="height:19px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">71%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">05</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#7d529f" d="M35 14L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:11px"></i><i class="b2" style="height:16px"></i><i class="b3" style="height:11px"></i></div><div class="cs3-pct">65%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">06</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#b8954a" d="M35 15L114 35M35 35L114 15"/><circle class="cs3-partner" stroke="#b8954a" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#d3c26d" cx="35" cy="35" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="35" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:14px"></i><i class="b2" style="height:20px"></i><i class="b3" style="height:16px"></i></div><div class="cs3-pct">76%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">07</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#7d529f" d="M35 14L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:22px"></i><i class="b3" style="height:12px"></i></div><div class="cs3-pct">69%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">08</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 34L114 14M35 14L114 34"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:10px"></i><i class="b2" style="height:17px"></i><i class="b3" style="height:13px"></i></div><div class="cs3-pct">61%</div></div></div>
+        </div>
+        <div class="cs3-dayfoot">NOON<span>2 HR · 8 GAMES</span></div>
+    </div>
+
+    <div class="cs3-day inactive"><div class="cs3-dayhead">WED<span>—</span></div><div class="cs3-sunmark"></div></div>
+
+    <div class="cs3-day cs3-anim active thu">
+        <div class="cs3-dayhead">THU<span>10 AM</span></div>
+        <div class="cs3-rounds">
+            <div class="cs3-round social"><div class="cs3-idx">01</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 14L114 34M35 34L114 34"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1"></i><i class="b2" style="height:21px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">74%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">02</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 14L114 14M35 34L114 20"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#6ccbb0" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#d3c26d" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:15px"></i><i class="b2" style="height:18px"></i><i class="b3" style="height:10px"></i></div><div class="cs3-pct">70%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">03</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#b8954a" d="M35 15L114 34M35 34L114 15"/><circle class="cs3-partner" stroke="#b8954a" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:12px"></i><i class="b2" style="height:18px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">69%</div></div></div>
+            <div class="cs3-round scored"><div class="cs3-idx">04</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 16L114 16M35 34L114 34"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="16" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="16" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="34" r="4"/></svg><div class="cs3-score">11-9</div></div>
+            <div class="cs3-round social"><div class="cs3-idx">05</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#2a8a4f" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:21px"></i><i class="b3" style="height:11px"></i></div><div class="cs3-pct">73%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">06</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#7d529f" d="M35 14L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#d3c26d" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#6ccbb0" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:14px"></i><i class="b2" style="height:18px"></i><i class="b3" style="height:13px"></i></div><div class="cs3-pct">71%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">07</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#7d529f" d="M35 15L114 35M35 35L114 14"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="35" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="35" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:19px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">71%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">08</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 34L114 14M35 14L114 34"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:11px"></i><i class="b2" style="height:17px"></i><i class="b3" style="height:12px"></i></div><div class="cs3-pct">63%</div></div></div>
+        </div>
+        <div class="cs3-dayfoot">NOON<span>2 HR · 8 GAMES</span></div>
+    </div>
+
+    <div class="cs3-day inactive"><div class="cs3-dayhead">FRI<span>—</span></div><div class="cs3-sunmark"></div></div>
+
+    <div class="cs3-day cs3-anim active sat">
+        <div class="cs3-dayhead">SAT<span>10 AM</span></div>
+        <div class="cs3-rounds">
+            <div class="cs3-round social"><div class="cs3-idx">01</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#7d529f" d="M35 15L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:15px"></i><i class="b2" style="height:21px"></i><i class="b3" style="height:13px"></i></div><div class="cs3-pct">76%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">02</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#2a8a4f" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:20px"></i><i class="b3" style="height:10px"></i></div><div class="cs3-pct">68%</div></div></div>
+            <div class="cs3-round scored"><div class="cs3-idx">03</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#7d529f" cx="114" cy="34" r="4"/></svg><div class="cs3-score">11-5</div></div>
+            <div class="cs3-round social"><div class="cs3-idx">04</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#b8954a" d="M35 15L114 35M35 35L114 15"/><circle class="cs3-partner" stroke="#b8954a" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="35" cy="35" r="4"/><circle class="cs3-partner" stroke="#b8954a" cx="114" cy="35" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:12px"></i><i class="b2" style="height:18px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">72%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">05</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#5B8FD4" d="M35 34L114 14M35 14L114 34"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:11px"></i><i class="b2" style="height:18px"></i><i class="b3" style="height:11px"></i></div><div class="cs3-pct">69%</div></div></div>
+            <div class="cs3-round social"><div class="cs3-idx">06</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 14L114 14M35 34L114 34"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:13px"></i><i class="b2" style="height:19px"></i><i class="b3" style="height:14px"></i></div><div class="cs3-pct">77%</div></div></div>
+            <div class="cs3-round scored"><div class="cs3-idx">07</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#c8462c" d="M35 15L114 15M35 35L114 35"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="15" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="15" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="35" cy="35" r="4"/><circle class="cs3-partner" stroke="#c8462c" cx="114" cy="35" r="4"/></svg><div class="cs3-score">11-3</div></div>
+            <div class="cs3-round social"><div class="cs3-idx">08</div><svg class="cs3-court" viewBox="0 0 150 50"><rect class="cs3-court-bg" x="3" y="4" width="144" height="42" rx="5"/><path class="cs3-court-line" d="M75 5v40M4 25h142M38 5v40M112 5v40"/><path class="cs3-conn" stroke="#2a8a4f" d="M35 14L114 34M35 34L114 14"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="14" r="4"/><circle class="cs3-partner" stroke="#5B8FD4" cx="114" cy="14" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="35" cy="34" r="4"/><circle class="cs3-partner" stroke="#2a8a4f" cx="114" cy="34" r="4"/></svg><div><div class="cs3-bars"><i class="b1" style="height:10px"></i><i class="b2" style="height:16px"></i><i class="b3" style="height:11px"></i></div><div class="cs3-pct">64%</div></div></div>
+        </div>
+        <div class="cs3-dayfoot">NOON<span>2 HR · 8 GAMES</span></div>
+    </div>
+
+    <div class="cs3-day inactive"><div class="cs3-dayhead">SUN<span>—</span></div><div class="cs3-sunmark"></div></div>
+</div>
+
+<div class="cs3-closer cs3-anim">
+    50+ racquet sports league, tournament, and ratings products track the score.<br>
+    <em>None measure the people, the connection, the community&rsquo;s reality.</em>
+</div>
+
+</div>

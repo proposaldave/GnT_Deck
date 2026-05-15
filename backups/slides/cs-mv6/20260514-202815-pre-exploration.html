@@ -1,0 +1,98 @@
+<!-- timestamp: 20260514-202815; slide-id: cs-mv6; description: SLIDE_ORDER slide -->
+<div class="casey-slide ds-focus" id="cs-mv6">
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Mission</div>
+  <section class="mv6-stage">
+
+    <h1 class="mv6-head">The next great <em>network</em>.</h1>
+    <!-- [Dave 2026-05-14 PM v4 c] Sub-line 'Each layer built on the last...' DELETED per Dave. -->
+
+
+    <div class="mv6-canvas">
+      <svg viewBox="0 70 580 610" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mv6BlockBlue" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#6BA0DD"/>
+            <stop offset="100%" stop-color="#3D6FA8"/>
+          </linearGradient>
+          <linearGradient id="mv6BlockBlueDark" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#4E84BD"/>
+            <stop offset="100%" stop-color="#2A5181"/>
+          </linearGradient>
+          <linearGradient id="mv6BlockGold" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#f0c040"/>
+            <stop offset="55%" stop-color="#d4a853"/>
+            <stop offset="100%" stop-color="#b8954a"/>
+          </linearGradient>
+          <radialGradient id="mv6SunGlow" cx="50%" cy="42%" r="60%">
+            <stop offset="0%" stop-color="#f8dc82" stop-opacity="0.62"/>
+            <stop offset="55%" stop-color="#d4a853" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="mv6GnrHalo" cx="50%" cy="50%" r="55%">
+            <stop offset="0%" stop-color="#f0c040" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="mv6BeamGrad" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#f0c040"/>
+            <stop offset="100%" stop-color="#d4a853"/>
+          </linearGradient>
+          <filter id="mv6BlockGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- ═══ LEFT: TECH STACK (5 cool-blue layers + 1 gold GnR layer on top) ═══ -->
+        <!-- COMPUTING (bottom) -->
+        <g class="mv6-block-tech" data-i="1">
+          <rect x="120" y="600" width="340" height="60" rx="6" fill="url(#mv6BlockBlueDark)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <text x="290" y="638" text-anchor="middle" font-family="Manrope,sans-serif" font-size="19" font-weight="800" letter-spacing="4.8" fill="rgba(255,255,255,0.92)">COMPUTING</text>
+        </g>
+        <!-- THE INTERNET -->
+        <g class="mv6-block-tech" data-i="2">
+          <rect x="120" y="510" width="340" height="60" rx="6" fill="url(#mv6BlockBlueDark)" stroke="rgba(255,255,255,0.20)" stroke-width="1"/>
+          <text x="290" y="548" text-anchor="middle" font-family="Manrope,sans-serif" font-size="19" font-weight="800" letter-spacing="4.8" fill="rgba(255,255,255,0.94)">THE INTERNET</text>
+        </g>
+        <!-- SMARTPHONES -->
+        <g class="mv6-block-tech" data-i="3">
+          <rect x="120" y="420" width="340" height="60" rx="6" fill="url(#mv6BlockBlue)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+          <text x="290" y="458" text-anchor="middle" font-family="Manrope,sans-serif" font-size="19" font-weight="800" letter-spacing="4.8" fill="rgba(255,255,255,0.95)">SMARTPHONES</text>
+        </g>
+        <!-- SOCIAL MEDIA -->
+        <g class="mv6-block-tech" data-i="4">
+          <rect x="120" y="330" width="340" height="60" rx="6" fill="url(#mv6BlockBlue)" stroke="rgba(255,255,255,0.24)" stroke-width="1"/>
+          <text x="290" y="368" text-anchor="middle" font-family="Manrope,sans-serif" font-size="19" font-weight="800" letter-spacing="4.8" fill="rgba(255,255,255,0.96)">SOCIAL MEDIA</text>
+        </g>
+        <!-- AI -->
+        <g class="mv6-block-tech" data-i="5">
+          <rect x="120" y="240" width="340" height="60" rx="6" fill="url(#mv6BlockBlue)" stroke="rgba(255,255,255,0.34)" stroke-width="1.4" filter="url(#mv6BlockGlow)"/>
+          <text x="290" y="282" text-anchor="middle" font-family="Manrope,sans-serif" font-size="24" font-weight="900" letter-spacing="6" fill="#ffffff">AI</text>
+        </g>
+        <!-- GnR · AUTONOMOUS SOCIAL COORDINATION (top — gold, glowing, taller) -->
+        <g class="mv6-block-gnr">
+          <!-- Outer glow halo around the GnR block -->
+          <ellipse cx="290" cy="155" rx="240" ry="90" fill="url(#mv6GnrHalo)"/>
+          <!-- Block -->
+          <rect x="105" y="100" width="370" height="110" rx="10" fill="url(#mv6BlockGold)" stroke="rgba(255,247,224,0.7)" stroke-width="2" filter="url(#mv6BlockGlow)"/>
+          <!-- G n R wordmark — large, centered -->
+          <g transform="translate(290, 148)">
+            <text text-anchor="middle" font-family="'Playfair Display','Fraunces',Georgia,serif" font-size="40" font-weight="900" fill="#fbf7ef" letter-spacing="-0.02em" y="0">
+              <tspan>G</tspan><tspan font-style="italic" font-weight="500" font-size="0.78em" dy="-3">n</tspan><tspan dy="3">R</tspan>
+            </text>
+          </g>
+          <!-- Sub-label -->
+          <text x="290" y="190" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="900" letter-spacing="3.6" fill="rgba(251,247,239,0.96)">AUTONOMOUS SOCIAL COORDINATION</text>
+        </g>
+
+      </svg>
+    </div>
+
+    <div class="mv6-mission">
+      <span class="mv6-mission-eye">Mission</span> for all our lives to run on <em>autonomous, abundant connection</em>.
+    </div>
+
+  </section>
+</div>
