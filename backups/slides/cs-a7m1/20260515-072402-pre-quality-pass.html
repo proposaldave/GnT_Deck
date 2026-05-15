@@ -1,0 +1,204 @@
+<!-- timestamp: 20260515-072402 | slide-id: cs-a7m1 | description: pre-quality-pass -->
+<div class="casey-slide ds-focus" id="cs-a7m1">
+  <!-- Eyebrow [Dave 2026-05-12: 'Human connection technology' → 'Human connection'] -->
+  <div class="a7m1-eyebrow" style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Tech&rsquo;s biggest unsolved category</div>
+  <!-- [Dave 2026-05-12] Page-load animation — staggered fade-in of outer ring, then 3 figures (blue/gold/red L→R), then arc, then left-card lonely figure + caption. Safe pattern: default state visible, .casey-entered re-runs intro. -->
+  <style>
+    @keyframes a7m1FadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes a7m1FadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    /* [Dave 2026-05-14 PM v4 g] Re-sequenced: TOP/OLD card now lands first (0.10-0.30s), then NEW card cascade fires (0.55s onward). Bug fix: .a7m1-ring had fired at 0.18s — earlier than the OLD card's orb at 0.20s — so the bottom card visibly started animating before the top. Now the OLD card fully appears, THEN the NEW card builds. */
+    #cs-a7m1.casey-entered .a7m1-eyebrow { animation: a7m1FadeIn 0.45s ease-out backwards 0.05s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-orb { animation: a7m1FadeIn 0.55s ease-out backwards 0.10s; }
+    #cs-a7m1.casey-entered .a7m1-card.old .a7m1-cap { animation: a7m1FadeUp 0.55s ease-out backwards 0.25s; }
+    #cs-a7m1.casey-entered .a7m1-ring  { animation: a7m1FadeIn 0.6s ease-out backwards 0.55s; transform-origin: center; }
+    #cs-a7m1.casey-entered .a7m1-fig-blue { animation: a7m1FadeIn 0.5s ease-out backwards 0.72s; }
+    #cs-a7m1.casey-entered .a7m1-fig-gold { animation: a7m1FadeIn 0.5s ease-out backwards 0.88s; }
+    #cs-a7m1.casey-entered .a7m1-fig-red  { animation: a7m1FadeIn 0.5s ease-out backwards 1.04s; }
+    #cs-a7m1.casey-entered .a7m1-ground { animation: a7m1FadeIn 0.6s ease-out backwards 0.95s; }
+    #cs-a7m1.casey-entered .a7m1-arc    { animation: a7m1FadeIn 0.75s ease-out backwards 1.22s; }
+  </style>
+  <section style="position:relative;width:100%;min-height:100%">
+    <div class="a7m1-stage">
+      <!-- [Dave 2026-05-10] Headline 'Social media was a sliver. The whole frontier of human connection technology is open.' DELETED — eyebrow + cards carry the message. -->
+
+      <div class="a7m1-grid">
+        <!-- LEFT CARD — LONELINESS / NARROW VIEW (old) · [Dave 2026-05-14 v3] FLIPPABLE: front = orb only, back = orb + caption. On slide load only the graphic shows; click reveals the caption alongside the same graphic on the back. -->
+        <div class="a7m1-card old" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <div class="a7m1-flip-inner">
+            <!-- FRONT FACE — orb only -->
+            <div class="a7m1-flip-front">
+              <div class="a7m1-orb">
+                <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
+                  <circle cx="26" cy="26" r="22" fill="rgba(91,143,212,0.04)"/>
+                  <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.42)"/>
+                  <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.36)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+                  <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round"/>
+                  <rect x="30" y="22" width="7" height="12" rx="1.5" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.5)" stroke-width="0.9"/>
+                  <rect x="31" y="23.5" width="5" height="9" rx="0.6" fill="rgba(91,143,212,0.32)"/>
+                  <line x1="31.6" y1="25.2" x2="35.4" y2="25.2" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="27" x2="34.5" y2="27" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="28.8" x2="35.4" y2="28.8" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="30.6" x2="34" y2="30.6" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <circle cx="33.5" cy="28" r="9" fill="rgba(91,143,212,0.05)"/>
+                </svg>
+              </div>
+            </div>
+            <!-- BACK FACE — orb + caption (the previous full layout) -->
+            <div class="a7m1-flip-back">
+              <div class="a7m1-orb">
+                <svg width="62%" height="62%" viewBox="0 0 52 52" fill="none">
+                  <circle cx="26" cy="26" r="22" fill="rgba(91,143,212,0.04)"/>
+                  <circle cx="26" cy="14" r="5" fill="rgba(26,22,18,0.42)"/>
+                  <path d="M26 20 L26 34" stroke="rgba(26,22,18,0.36)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M20 26 L26 23 L32 26" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+                  <path d="M22 34 L26 34 L30 34" stroke="rgba(26,22,18,0.30)" stroke-width="1.7" stroke-linecap="round"/>
+                  <rect x="30" y="22" width="7" height="12" rx="1.5" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.5)" stroke-width="0.9"/>
+                  <rect x="31" y="23.5" width="5" height="9" rx="0.6" fill="rgba(91,143,212,0.32)"/>
+                  <line x1="31.6" y1="25.2" x2="35.4" y2="25.2" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="27" x2="34.5" y2="27" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="28.8" x2="35.4" y2="28.8" stroke="rgba(26,22,18,0.5)" stroke-width="0.4"/>
+                  <line x1="31.6" y1="30.6" x2="34" y2="30.6" stroke="rgba(26,22,18,0.35)" stroke-width="0.4"/>
+                  <circle cx="33.5" cy="28" r="9" fill="rgba(91,143,212,0.05)"/>
+                </svg>
+              </div>
+              <div class="a7m1-cap">
+                Social media is <em>a narrow view</em> of<br>human connection technology.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- [Dave 2026-05-10] Bridge deleted. Grid now 1fr 1fr (two cards). -->
+
+        <!-- RIGHT CARD — GIVE 'N RECEIVE / OUR VISION · FLIPPABLE [Dave 2026-05-10] -->
+        <div class="a7m1-card new" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'; event.stopPropagation()">
+          <!-- [Dave 2026-05-10 PM] Eyebrow 'Our Vision · Give n Receive' DELETED per Dave (slide promoted to slot 2) -->
+          <div class="a7m1-flip-inner">
+            <!-- FRONT FACE — simple invitation feed graphic (visible on slide load) -->
+            <div class="a7m1-flip-front">
+              <div class="a7m1-feed" style="display:none">
+                <div class="a7m1-feed-card faded">
+                  <div class="a7m1-feed-avatar" style="background:rgba(91,143,212,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="#b8954a" stroke-width="1.2"/><path d="M 1.5 3 L 7 7.5 L 12.5 3" stroke="#b8954a" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+                <div class="a7m1-feed-card featured">
+                  <div class="a7m1-feed-avatar" style="background:rgba(200,70,44,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3.5" width="13" height="9" rx="1.2" stroke="#b8954a" stroke-width="1.4"/><path d="M 1.5 3.5 L 8 8.5 L 14.5 3.5" stroke="#b8954a" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+                <div class="a7m1-feed-card faded">
+                  <div class="a7m1-feed-avatar" style="background:rgba(122,74,140,0.55)"></div>
+                  <div class="a7m1-feed-content">
+                    <div class="a7m1-feed-line full"></div>
+                    <div class="a7m1-feed-line short"></div>
+                  </div>
+                  <svg class="a7m1-feed-icon" width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="#b8954a" stroke-width="1.2"/><path d="M 1.5 3 L 7 7.5 L 12.5 3" stroke="#b8954a" stroke-width="1.2" stroke-linejoin="round" fill="none"/></svg>
+                </div>
+              </div>
+              <!-- [Dave 2026-05-10 PM] 'The invitation feed.' label DELETED per Dave (slide promoted to slot 2) -->
+              <!-- [Dave 2026-05-14 REVERT] Life's Scorecard reverted to the original 3-stick-figure graphic per Dave: 'i did not ask you to change the graphic here. this graphic was perfect! revert!' Restoring blue/gold/red figures + connection arc + ground line + dashed ring. -->
+              <div class="a7m1-people-svg">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Soft inner glow disc — matches left orb's radial-gradient feel -->
+                  <defs>
+                    <radialGradient id="a7m1RightGlow" cx="50%" cy="48%" r="55%">
+                      <stop offset="0%" stop-color="rgba(255,250,240,0.85)"/>
+                      <stop offset="65%" stop-color="rgba(243,234,216,0.45)"/>
+                      <stop offset="100%" stop-color="rgba(243,234,216,0)"/>
+                    </radialGradient>
+                  </defs>
+                  <circle class="a7m1-ring" cx="100" cy="108" r="86" fill="url(#a7m1RightGlow)"/>
+                  <!-- Outer dashed ring (boosted to match left orb's dashed border visibility) -->
+                  <circle class="a7m1-ring" cx="100" cy="108" r="86" fill="none" stroke="rgba(184,149,74,0.42)" stroke-width="1" stroke-dasharray="3 4"/>
+                  <!-- Connection arc above the three figures -->
+                  <path class="a7m1-arc" d="M 60 116 Q 100 70 140 116" stroke="rgba(184,149,74,0.65)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="3 3"/>
+                  <!-- Subtle inner ground line -->
+                  <line class="a7m1-ground" x1="44" y1="146" x2="156" y2="146" stroke="rgba(184,149,74,0.38)" stroke-width="1" stroke-linecap="round"/>
+                  <!-- Person 1 — blue (left) · proper stick figure: head + torso + arms + legs -->
+                  <g class="a7m1-fig-blue" stroke="#5B8FD4" stroke-width="2.6" stroke-linecap="round" fill="none">
+                    <line x1="62" y1="112" x2="62" y2="128"/><!-- torso -->
+                    <line x1="62" y1="116" x2="51" y2="124"/><!-- left arm -->
+                    <line x1="62" y1="116" x2="73" y2="124"/><!-- right arm -->
+                    <line x1="62" y1="128" x2="54" y2="144"/><!-- left leg -->
+                    <line x1="62" y1="128" x2="70" y2="144"/><!-- right leg -->
+                  </g>
+                  <circle class="a7m1-fig-blue" cx="62" cy="103" r="10" fill="#5B8FD4"/>
+                  <!-- Person 2 — gold (center, slightly taller as 'host') -->
+                  <g class="a7m1-fig-gold" stroke="#b8954a" stroke-width="3" stroke-linecap="round" fill="none">
+                    <line x1="100" y1="105" x2="100" y2="124"/><!-- torso -->
+                    <line x1="100" y1="110" x2="87" y2="120"/><!-- left arm -->
+                    <line x1="100" y1="110" x2="113" y2="120"/><!-- right arm -->
+                    <line x1="100" y1="124" x2="91" y2="144"/><!-- left leg -->
+                    <line x1="100" y1="124" x2="109" y2="144"/><!-- right leg -->
+                  </g>
+                  <circle class="a7m1-fig-gold" cx="100" cy="93" r="12" fill="#b8954a"/>
+                  <!-- Person 3 — red (right) -->
+                  <g class="a7m1-fig-red" stroke="#c8462c" stroke-width="2.6" stroke-linecap="round" fill="none">
+                    <line x1="138" y1="112" x2="138" y2="128"/><!-- torso -->
+                    <line x1="138" y1="116" x2="127" y2="124"/><!-- left arm -->
+                    <line x1="138" y1="116" x2="149" y2="124"/><!-- right arm -->
+                    <line x1="138" y1="128" x2="130" y2="144"/><!-- left leg -->
+                    <line x1="138" y1="128" x2="146" y2="144"/><!-- right leg -->
+                  </g>
+                  <circle class="a7m1-fig-red" cx="138" cy="103" r="10" fill="#c8462c"/>
+                </svg>
+              </div>
+              <div class="a7m1-flip-hint" style="display:none">
+                <svg width="14" height="14" viewBox="0 0 14 14"><path d="M 2 7 Q 7 11 12 7"/><path d="M 9 4.5 L 12 7 L 9 9.5"/></svg>
+              </div>
+            </div>
+            <!-- BACK FACE — current GnR vision (4-figure network + caption) -->
+            <div class="a7m1-flip-back">
+              <!-- [Dave 2026-05-14 PM v4] Replaced the 3-card invitation-feed graphic with a STACKED-ENVELOPES graphic per Dave's reference image. 4 blue outlined envelopes nested in a stack, each progressively larger going down toward the viewer. Front envelope is fully opaque + prominent; rear envelopes fade out into the stack. Reads as 'pile of invitations' at a single glance. -->
+              <div class="a7m1-orb">
+                <svg width="86%" height="86%" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Stack of invitations">
+                  <!-- Envelope 1 (top of stack — smallest, most faded, sits in back) -->
+                  <g opacity="0.30">
+                    <rect x="42" y="10" width="36" height="20" rx="1.6" stroke="#5B8FD4" stroke-width="1.2" fill="rgba(91,143,212,0.04)"/>
+                    <path d="M 42 10 L 60 22 L 78 10" stroke="#5B8FD4" stroke-width="1.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                  </g>
+                  <!-- Envelope 2 -->
+                  <g opacity="0.50">
+                    <rect x="33" y="25" width="54" height="24" rx="2" stroke="#5B8FD4" stroke-width="1.3" fill="rgba(91,143,212,0.05)"/>
+                    <path d="M 33 25 L 60 40 L 87 25" stroke="#5B8FD4" stroke-width="1.3" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                  </g>
+                  <!-- Envelope 3 -->
+                  <g opacity="0.72">
+                    <rect x="22" y="43" width="76" height="29" rx="2.4" stroke="#4078b8" stroke-width="1.4" fill="rgba(91,143,212,0.08)"/>
+                    <path d="M 22 43 L 60 62 L 98 43" stroke="#4078b8" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                  </g>
+                  <!-- Envelope 4 (front — largest, full opacity, most prominent) -->
+                  <g>
+                    <rect x="9" y="65" width="102" height="38" rx="3" stroke="#3a6dad" stroke-width="1.8" fill="rgba(91,143,212,0.12)"/>
+                    <path d="M 9 65 L 60 89 L 111 65" stroke="#3a6dad" stroke-width="1.8" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+                  </g>
+                </svg>
+              </div>
+              <!-- [Dave 2026-05-14] white-space:nowrap removed + max-width re-applied + size eased so the headline lives inside the card instead of running off the right edge. -->
+              <div class="a7m1-cap" style="max-width:min(1080px,92%);width:100%;padding:0 24px;margin-left:auto;margin-right:auto">
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.05rem,1.45vw,1.42rem);font-weight:700;line-height:1.24;letter-spacing:-0.018em;color:#1a1612;margin-bottom:12px">
+                  <em style="font-style:italic;font-weight:600;color:#b8954a">Autonomous, abundant human connection</em> for our communities.
+                </div>
+                <!-- [Dave 2026-05-14] Font reduced so the line stays on ONE line at any viewport (was clamp(.95rem,1.18vw,1.12rem); now clamp(.72rem,.88vw,.92rem)). -->
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.72rem,.88vw,.92rem);font-weight:500;line-height:1.38;color:#1a1612;font-style:italic;white-space:nowrap">
+                  Our connection and unique value to each other &mdash; <strong style="font-style:normal;font-weight:700;color:#c8462c">measured, multiplied, made abundant</strong>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- [Dave 2026-05-10] Closer 'Social media broadcasts. GnR connects — by what each person uniquely gives.' DELETED. -->
+
+    </div>
+  </section>
+</div>

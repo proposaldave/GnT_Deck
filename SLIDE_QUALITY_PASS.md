@@ -50,7 +50,7 @@ Will not touch: both flippable card structures, front/back content, restored 3-s
 
 ### After
 
-Pending.
+Tightened the stacked-card gap from 28px to 24px, strengthened the dashed ring language on both cards, and slightly increased caption weight/line rhythm for readability. Preserved both flip-card structures, the restored 3-stick-figure SVG, the stacked-envelope back face, and the newer staggered entry animation sequence.
 
 ## cs-1bm1
 
