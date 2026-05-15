@@ -58,6 +58,14 @@ When hands are the hero subject, they must read active, capable, warm, and alive
 
 Typography audit is mandatory on every slide rebuild. When a slide's image, layout, or background changes, Codex MUST review the typography against the new context and propose improvements, not preserve as-is. Audit checklist: line breaks must avoid orphaned punctuation and mid-phrase breaks; contrast must read clearly against the new background using text-shadow or tuned color saturation when brand colors fade; hierarchy must weight title size appropriately for slide importance (opener > internal > footer); position must place type in a deliberate quiet zone of the painting, not floating arbitrarily; brand colors stay preserved (#1 predictor gold, "giving" blue, "receiving" rust) but can be tuned for contrast against the new background.
 
+### STANDING - quality pass preserves slide mechanics
+
+A quality pass is polish, not reinvention. Preserve all active slide content, dated iteration comments, click states, controller hooks, and SVG/chart structures unless Dave explicitly asks for a rebuild. Sharpen typography, contrast, spacing, and visual hierarchy inside the existing system; defer tempting content or concept changes for Dave decision.
+
+### STANDING - structured slides use contrast and rhythm, not hero treatment
+
+For structured comparison, chart, title, data, and spec slides, the strongest quality moves are exact brand-color normalization, tighter line rhythm, clearer dashed/void states, and better card spacing. Do not import hero-slide full-bleed imagery or painterly treatment into these slides.
+
 ### STANDING - first slide is universal, not the wedge
 
 The first slide must not use pickleball, racquet sports, courts, nets, paddles, balls, club scenes, or other proving-ground imagery. The opener sells the universal human truth before the wedge appears. Use a mythic, non-sport human gesture that lets the thesis text carry the claim: "The #1 predictor of a fulfilling life: openly giving and receiving real connection."
