@@ -6,6 +6,22 @@
 
 Every Dave rejection of a generated image or layout = new active rule. When Dave says "awful," "bad," "I don't like this," or rejects without elaborating, infer the underlying aesthetic principle that was violated, propose a candidate rule, and write it into `LEARNINGS.md`. Surface the new rule back to Dave in plain language so he can confirm or refine. Never let a rejection pass without a written rule.
 
+### STANDING - design system first
+
+Before ANY image generation or slide visual edit, Codex must read `DESIGN_SYSTEM.md` and explicitly reference which rules are being applied. No silent drift from the system.
+
+### STANDING - slide backup protocol
+
+Before any edit to a slide, save current state to `backups/slides/[slide-id]/[timestamp]-pre-[description].html` and update `backups/slides/_index.json`.
+
+### STANDING - specific vs autonomous mode
+
+If the prompt names exact creative direction, follow as spec. If the prompt says "make this slide great," "your best shot," "brainstorm and ship," or equivalent, enter creative director mode: read `DESIGN_SYSTEM.md`, identify the slide's strategic role, synthesize ONE strong concept, generate it, deploy it, and report what changed and why. Never return a menu of 5 options when asked for autonomous mode.
+
+### STANDING - design system reference in prompts
+
+Every image generation prompt and slide edit must reference `DESIGN_SYSTEM.md`. No image generation prompt may contradict the locked palette, aesthetic, layout, or banned aesthetics.
+
 ### Opener and hero slides require ICONIC register, not LITERAL depiction
 
 The headline states a claim; the image must embody that claim at mythic scale, not illustrate it. Example: headline "the #1 predictor of a fulfilling life" -> wrong response is "two people connecting." Right response is a single specific gesture that operates as a flag-plant. Before generating any hero image, ask: "what is the tattoo version of this idea, not the brochure version?"
