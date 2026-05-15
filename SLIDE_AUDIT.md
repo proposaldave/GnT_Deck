@@ -1,0 +1,45 @@
+# Slide Audit
+
+## Executive Summary
+
+- Total runtime slides in `SLIDE_ORDER`: 21.
+- Hero / mission / big-moment candidates: 6. Supporting / structured slides: 15.
+- Full-bleed violators among opener/mission/closer: cs-mv6, cs-brand-V8. `cs-frontier-iconic` is full-bleed; its CSS sits outside the extracted div block.
+- Top 3 next moves: lock the opener after Dave judges v5; use the mission exploration set to rebuild `cs-mv6`; then choose whether `cs-thegap` needs an image or should stay as a sharp problem diagram.
+
+## Top Cut Candidates
+
+- `cs-a7m1` - Potential overlap with cs-1bm1 if both explain the same old-vs-new context.
+- `cs-magnetic` - May duplicate cs-samecourt incentive contrast; keep only if the marketplace mechanic lands cleaner.
+- `cs-19` - Business-case proof may overlap cs-11e; decide which revenue slide carries the investor proof.
+- `cs-fv6` - Category-definition slide risks abstraction after product/wedge proof.
+- `cs-wedge1` - May be redundant with cs-pbfirst unless it clearly expands beyond pickleball.
+- `cs-18-vd4` - Founder fit is useful, but green checks/legacy design may feel off-system.
+- `cs-16` - Training-loop detail could move appendix if main story needs speed.
+- `cs-27` - CTO credibility can be compressed if time is tight.
+
+## Per-Slide Audit
+
+| # | ID | Headline / Manifest | Role | Visual Treatment | Full-Bleed | Typography Health | Brand Color Drift | Content Health | Strategic Weight | Recommended Next Move |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | `cs-frontier-iconic` | Science has proven the #1 predictor of a fulfilling life: openly giving and receiving real connection. | opener | image-led | Yes | Strong emphasis colors; verify line breaks after any copy change. | Within current brand range or neutral. | Clear enough for current flow. | High | Judge v5 opener live; keep v2 unless Dave rejects. |
+| 2 | `cs-1m8` | The next frontier: technology that connects us G ive n R eceive What we give fuels our communities. Your Peopl | title | SVG/diagram | Yes/static likely | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 3 | `cs-a7m1` | Tech's biggest unsolved category Social media is a narrow view of human connection technology. Autonomous, abu | problem/context | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 4 | `cs-1bm1` | Modern life Two imbalances rule our lives, and have driven us apart. Technology ? scroll alone. information sh | problem | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 5 | `cs-2c` | What's community? Community brings us together. Social Sports 🎓 College 🏘️ Neighborhoods 🧘 Fitness & Gym Gr | market/community | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 6 | `cs-thegap` | The most valuable, networkable, untapped dataset on earth But our communities don't have a like button . Our p | problem | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | High | Consider problem image if current 3-panel feels too diagrammatic. |
+| 7 | `cs-gnr` | Introducing Give n Receive The rise of the personalized invitation feed Joining you Experience the envelope Yo | solution | image-led | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 8 | `cs-11d` | The secret behind the invitation G n R learns what we'd never say out loud 0.6% decline with people feedback r | product insight | image-led | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 9 | `cs-3` | 24 unique social experiences per week Pickleball is the fastest-growing, highest-velocity, densest social-sign | market/activity | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 10 | `cs-magnetic` | Pickleball is a human value marketplace Social pull. A rating balances a foursome, maybe. 3.5 3.5? 3.5 Balance | market mechanism | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 11 | `cs-samecourt` | Example: ratings are failing social players Flip the incentives ? Unleash the community Rating-driven communit | comparison | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | High | Consider split incentive visual if current cards feel too didactic. |
+| 12 | `cs-19` | Transform your community 3&times; your community +$210K ARR Today club court fees $350K net profit Stage 1 man | business case | typographic editorial | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 13 | `cs-pbfirst` | Give n Receive's #1 secret Pickleball is the clearest path to the world's first autonomous human value exchang | wedge | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | High | Pick a wedge visual only after opener/mission are settled. |
+| 14 | `cs-fw1` | Autonomous social coordination Imagine dropping G n R into any pickleball club. And it just works ? compounds  | flywheel | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 15 | `cs-18-vd4` | My Wheelhouse Dave Velardo &middot; Founder & CEO Three strengths &darr; do-able mission. 01 Clarity Next fron | team/founder | image-led | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 16 | `cs-fv6` | Abundance ? programmable What is real human connection technology ? Measure. ? Test. ? Graph. ? Sell. ? Coordi | category definition | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | Medium | Hold. |
+| 17 | `cs-wedge1` | Not a &ldquo;sports&rdquo; bet Everyone wants autonomous, abundant Give n Receive . Schools Country Clubs Neig | wedge vision | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 18 | `cs-16` | Autonomous Community Intelligence Every touchpoint becomes training data . Invitations Calls + corrections Rou | data/training loop | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 19 | `cs-27` | CTO &middot; Steve Callan Building the AI layer that turns 480K+ real-world signals into scheduling decisions. | team/CTO | card/grid editorial | No or partial | Generally serviceable; audit before visual rebuild. | Contains legacy green or green-like token; avoid adding more and consider brand cleanup. | Clear enough for current flow. | Medium | Hold. |
+| 20 | `cs-mv6` | Mission The next great network . COMPUTING THE INTERNET SMARTPHONES SOCIAL MEDIA AI G n R AUTONOMOUS SOCIAL CO | mission | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | High | Use exploration set to replace mission image treatment. |
+| 21 | `cs-brand-V8` | Generational Consumer Brand Opportunity Most human value is invisible. So it never returns. G n The Network Se | closer | SVG/diagram | No or partial | Generally serviceable; audit before visual rebuild. | Within current brand range or neutral. | Clear enough for current flow. | High | Audit closer for emotional aftertaste after mission imagery lands. |
