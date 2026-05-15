@@ -34,6 +34,10 @@ Permanent banned aesthetics across all hero imagery: two-people-on-porch / Hallm
 
 When hands are the hero subject, they must read active, capable, warm, and alive. Maturity can show through posture, gesture, sun, and texture, but not through exaggerated veins, skeletal knuckles, claw-like fingers, bruised color, or frailty. "Older" should never become the first thing the viewer notices.
 
+### STANDING - typography audit after every slide rebuild
+
+Typography audit is mandatory on every slide rebuild. When a slide's image, layout, or background changes, Codex MUST review the typography against the new context and propose improvements, not preserve as-is. Audit checklist: line breaks must avoid orphaned punctuation and mid-phrase breaks; contrast must read clearly against the new background using text-shadow or tuned color saturation when brand colors fade; hierarchy must weight title size appropriately for slide importance (opener > internal > footer); position must place type in a deliberate quiet zone of the painting, not floating arbitrarily; brand colors stay preserved (#1 predictor gold, "giving" blue, "receiving" rust) but can be tuned for contrast against the new background.
+
 ### Suburban American anchor is non-negotiable for community/wedge imagery
 
 No Mediterranean, no villa, no European architecture, no terra cotta, no olive trees, no cosmopolitan-cafe register. GnR's wedge is suburban American pickleball clubs. Every hero image should be unmistakably set there or in a register compatible with it.
