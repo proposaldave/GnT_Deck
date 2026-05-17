@@ -10025,14 +10025,14 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-front">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Stuck in 2005</div>
+              <div class="wpc-front-teaser">Max pain + hatred</div>
             </div>
             <div class="wpc-card-num">03</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Coordination stack stuck in 2005</div>
+              <div class="wpc-card-lede">Max pain + hatred for ratings + booking courts</div>
               <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:3px;margin-top:4px">
                 <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">industry stuck in <em style="font-style:italic;font-weight:850">ratings, ego</em></div>
                 <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850">reality (human connection)</em></div>
@@ -14035,7 +14035,45 @@ window.cs1m7Reverse = function() {
   #cs-wedge1 .wd-svg-wrap { width:100%;max-width:1240px;margin:6px auto; }
   #cs-wedge1 .wd-svg-wrap svg { width:100%;height:auto;max-height:480px;display:block;margin:0 auto; }
   #cs-wedge1 .wd-icon-circle { fill:rgba(243,234,216,0.92);stroke-width:1.5; }
-  #cs-wedge1 .wd-stream { fill:none;stroke-width:1;opacity:0.55; }
+  #cs-wedge1 .wd-stream { fill:none;stroke-width:1.2;opacity:0.55; }
+  /* [Dave 2026-05-17 LATEST jaw-drop] FLOWING STREAMS — dashed lines that travel inward toward COMMUNITY, making each thread feel like a live signal carrying human-connection data from real-world places into the network center. */
+  #cs-wedge1 .wd-stream { stroke-dasharray:6 10;stroke-linecap:round; }
+  @keyframes wdStreamFlow { from { stroke-dashoffset:0; } to { stroke-dashoffset:-160; } }
+  #cs-wedge1.casey-entered .wd-stream { animation:wdStreamFlow 6s linear infinite; }
+  /* Staggered start so all 13 streams don't pulse in lockstep — feels organic */
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(1)  { animation-delay:0s; animation-duration:5.6s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(2)  { animation-delay:-0.4s; animation-duration:6.2s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(3)  { animation-delay:-0.8s; animation-duration:5.8s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(4)  { animation-delay:-1.2s; animation-duration:6.4s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(5)  { animation-delay:-1.6s; animation-duration:5.4s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(6)  { animation-delay:-2.0s; animation-duration:6.8s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(7)  { animation-delay:-0.6s; animation-duration:6.0s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(8)  { animation-delay:-1.0s; animation-duration:5.7s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(9)  { animation-delay:-1.4s; animation-duration:6.3s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(10) { animation-delay:-1.8s; animation-duration:6.6s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(11) { animation-delay:-2.2s; animation-duration:5.5s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(12) { animation-delay:-0.2s; animation-duration:6.1s; }
+  #cs-wedge1.casey-entered .wd-stream:nth-of-type(13) { animation-delay:-1.5s; animation-duration:5.9s; }
+  html[data-export="1"] #cs-wedge1 .wd-stream { animation:none !important;stroke-dasharray:none !important; }
+  /* COMMUNITY orb breathing — the gold center pulses subtly so the entire constellation feels alive */
+  @keyframes wdOrbBreath { 0%,100% { opacity:0.78; } 50% { opacity:1; } }
+  #cs-wedge1.casey-entered .wd-orb-bg { animation:wdOrbBreath 5.2s ease-in-out infinite 1.2s; transform-origin:600px 220px; }
+  html[data-export="1"] #cs-wedge1 .wd-orb-bg { animation:none !important;opacity:0.85 !important; }
+  /* Constellation backdrop — faint gold stardust beyond the visible icon ring */
+  #cs-wedge1 .wd-stage { position:relative; }
+  #cs-wedge1 .wd-stage::before { content:"";position:absolute;inset:0;background:
+    radial-gradient(circle 1.5px at 8% 18%,  rgba(184,149,74,0.18) 50%, transparent 51%),
+    radial-gradient(circle 1.5px at 18% 32%, rgba(184,149,74,0.14) 50%, transparent 51%),
+    radial-gradient(circle 1.2px at 28% 12%, rgba(184,149,74,0.20) 50%, transparent 51%),
+    radial-gradient(circle 1.5px at 88% 20%, rgba(184,149,74,0.16) 50%, transparent 51%),
+    radial-gradient(circle 1.2px at 78% 38%, rgba(184,149,74,0.14) 50%, transparent 51%),
+    radial-gradient(circle 1.4px at 94% 48%, rgba(184,149,74,0.18) 50%, transparent 51%),
+    radial-gradient(circle 1.3px at 4% 60%,  rgba(184,149,74,0.12) 50%, transparent 51%),
+    radial-gradient(circle 1.5px at 14% 80%, rgba(184,149,74,0.16) 50%, transparent 51%),
+    radial-gradient(circle 1.2px at 92% 78%, rgba(184,149,74,0.14) 50%, transparent 51%);
+    pointer-events:none;z-index:0;opacity:0;transition:opacity 1.6s cubic-bezier(.22,1,.36,1) 0.8s; }
+  #cs-wedge1.casey-entered .wd-stage::before { opacity:1; }
+  html[data-export="1"] #cs-wedge1 .wd-stage::before { opacity:1 !important;transition:none !important; }
   #cs-wedge1 .wd-court { fill:rgba(184,149,74,0.10);stroke:#b8954a;stroke-width:1.6; }
   #cs-wedge1 .wd-court-line { stroke:#b8954a;stroke-width:1;opacity:0.55; }
   #cs-wedge1 .wd-court-glow { fill:url(#wdCourtGlow); }
@@ -18728,6 +18766,23 @@ window.cs1m7Reverse = function() {
   @keyframes mg2EndPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.16); } }
   #cs-mv6-merge .mg2-end-pt { transform-origin:center;transform-box:fill-box; }
   #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 3.4s; }
+  /* [Dave 2026-05-17 LATEST jaw-drop] Outer halo behind the endpoint — slower, larger breath, suggesting the future radiating outward. */
+  @keyframes mg2HaloBreath { 0%,100% { opacity:0.55; transform:scale(0.92); } 50% { opacity:1; transform:scale(1.18); } }
+  #cs-mv6-merge .mg2-end-halo-outer { transform-origin:center;transform-box:fill-box;opacity:0; }
+  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.0s; }
+  /* "YOU ARE HERE · 2026" marker — sits on the curve between AI (2022) and HUMAN CONNECTION (2030). Lands LAST so the audience reads the chart fully before locating themselves on it. */
+  #cs-mv6-merge .mg2-here { opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:3.8s; }
+  @keyframes mg2HereDotPulse { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.45);opacity:0.65; } }
+  #cs-mv6-merge .mg2-here-dot { transform-origin:center;transform-box:fill-box; }
+  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.2s; }
+  /* Cosmic gold backdrop at top-right of chart — suggests "the future is being born here" without adding clutter. */
+  #cs-mv6-merge .mg2-stage::after { content:"";position:absolute;top:36px;right:28px;width:38%;height:50%;background:radial-gradient(ellipse 60% 70% at 78% 28%, rgba(255,220,140,0.18) 0%, rgba(232,180,80,0.08) 35%, rgba(184,149,74,0) 70%);pointer-events:none;z-index:0;opacity:0;transition:opacity 1.4s cubic-bezier(.22,1,.36,1) 1.0s; }
+  #cs-mv6-merge.casey-entered .mg2-stage::after { opacity:1; }
+  html[data-export="1"] #cs-mv6-merge .mg2-end-halo-outer,
+  html[data-export="1"] #cs-mv6-merge .mg2-here,
+  html[data-export="1"] #cs-mv6-merge .mg2-here-dot { opacity:1 !important;transform:none !important;animation:none !important; }
+  html[data-export="1"] #cs-mv6-merge .mg2-stage::after { opacity:1 !important;transition:none !important; }
   html[data-export="1"] #cs-mv6-merge .mg2-head,
   html[data-export="1"] #cs-mv6-merge .mg2-sub,
   html[data-export="1"] #cs-mv6-merge .mg2-chart,
@@ -18874,8 +18929,22 @@ window.cs1m7Reverse = function() {
 
         <!-- 6: GnR (2030) — peak with glowing gold halo + GnR brand mark in chip ABOVE the endpoint
              [Dave 2026-05-17 v3] Per Dave: 'the human connection graphic should go in place of where you have the gold dot (like the others)'. Floating right-side GnR mark moved to the SAME chip-above-the-dot pattern as Microsoft/Google/Apple/Facebook/OpenAI milestones. Endpoint dot retained (peak signal). Chip is rendered slightly taller + gold-bordered to read as the brand signature at the peak. -->
+        <!-- [Dave 2026-05-17 LATEST jaw-drop] YOU ARE HERE · 2026 marker on the curve between AI (1250,217) and GnR (1480,46). Position derived by sampling the cubic bezier at t≈0.45: x≈1378, y≈110. The marker tells the audience "this is your moment" — they're standing at the foot of the exponential. -->
+        <g class="mg2-here">
+          <!-- Connector line from dot to label -->
+          <line x1="1378" y1="110" x2="1378" y2="60" stroke="rgba(26,22,18,0.34)" stroke-width="1" stroke-dasharray="2 2"/>
+          <!-- Label chip -->
+          <rect x="1320" y="34" width="116" height="30" rx="6" fill="rgba(26,22,18,0.92)" stroke="#b8954a" stroke-width="0.9"/>
+          <text x="1378" y="49" text-anchor="middle" font-family="Inter,'DM Sans',sans-serif" font-size="9.5" font-weight="700" letter-spacing="2.4" fill="#ffffff">YOU ARE HERE</text>
+          <text x="1378" y="60" text-anchor="middle" font-family="Inter,'DM Sans',sans-serif" font-size="8" font-weight="600" letter-spacing="2.2" fill="#b8954a">2026</text>
+          <!-- Pulsing dot ON the curve -->
+          <circle class="mg2-here-dot" cx="1378" cy="110" r="6.5" fill="#fff" stroke="#c8462c" stroke-width="2.4"/>
+        </g>
+
         <g>
           <line x1="1480" y1="46" x2="1480" y2="400" stroke="rgba(184,149,74,0.34)" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <!-- [Dave 2026-05-17 LATEST jaw-drop] Outer breathing halo — much larger than the inner one, slower pulse, lower opacity. Reads as the future radiating outward beyond the chart. -->
+          <circle class="mg2-end-halo-outer" cx="1480" cy="46" r="68" fill="url(#mg2EndGlow)"/>
           <!-- Halo around endpoint -->
           <circle cx="1480" cy="46" r="32" fill="url(#mg2EndGlow)"/>
           <!-- [Dave 2026-05-17 v11] Chip's brand-mark graphic (arc + blue/red dots) replaced with literal "GnR" wordmark per Dave 'remove the graphic icon logo thing there and replace it with "GnR"'. Letters use the GnR brand color triad: blue G, italic gold n, red R. -->
