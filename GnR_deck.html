@@ -9783,20 +9783,20 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-17 v10] wf-head forced to one line per Dave 'text should all fit on one line'. Shrunk font 3.5rem → 2.3rem peak + nowrap + bumped max-width to 1700 so the whole sentence reads as a single horizontal line at 1920 width. */
   #cs-wedgefunnel .wf-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.6rem,2.5vw,2.3rem); font-weight:850; line-height:1.06; letter-spacing:-0.024em; color:#1a1612; max-width:1700px; text-align:center; margin:0 0 38px; white-space:nowrap; }
   #cs-wedgefunnel .wf-head em { font-style:italic; color:#b8954a; font-weight:850; }
-  /* THE FUNNEL — single centered column, big, brand-color cascade */
-  #cs-wedgefunnel .wf-bands { display:flex; flex-direction:column; gap:8px; padding:0; position:relative; width:min(960px, 88%); margin:0 auto; }
-  #cs-wedgefunnel .wf-band { position:relative; height:90px; display:flex; align-items:center; justify-content:center; gap:18px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.1rem,1.6vw,1.55rem); font-weight:850; letter-spacing:-0.014em; color:#fbf7ef; text-align:center; }
-  #cs-wedgefunnel .wf-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
-  #cs-wedgefunnel .wf-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
-  /* Social Sports — BRAND RED (Receive) */
-  #cs-wedgefunnel .wf-band-3 { width:66%;   clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); margin:0 auto; box-shadow:0 14px 30px rgba(200,70,44,0.20); }
-  /* Pickleball — BRAND BLUE (Give) */
-  #cs-wedgefunnel .wf-band-4 { width:48%;   clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 100%); background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); margin:0 auto; box-shadow:0 16px 34px rgba(91,143,212,0.22); }
-  /* NEPC — GOLD tip with radiant halo */
-  #cs-wedgefunnel .wf-band-5 { width:28%;   clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%); background:linear-gradient(180deg, #f5cf6a 0%, #d4a85a 48%, #a87a35 100%); margin:0 auto; position:relative; color:#3a2a14; font-weight:900; }
-  @keyframes wfNepcPulse { 0%,100% { filter:drop-shadow(0 0 22px rgba(240,196,96,0.55)); } 50% { filter:drop-shadow(0 0 48px rgba(240,196,96,0.95)); } }
-  #cs-wedgefunnel .wf-band-5::before { content:""; position:absolute; left:-40%; right:-40%; top:-26px; bottom:-30px; background:radial-gradient(ellipse at center, rgba(240,196,96,0.55) 0%, rgba(212,168,83,0.18) 40%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(2px); }
-  #cs-wedgefunnel .wf-band-icon svg { width:22px; height:22px; opacity:0.92; flex-shrink:0; }
+  /* THE FUNNEL — [Dave 2026-05-17 v22 10x REBUILD] Sharper trapezoid convergence (top 100% → tip 18% instead of 28%), stronger drop-shadows on EVERY band (not just 3/4/5), inset top-highlight for 3D ribbon feel, larger NEPC halo, refined typography (size step DOWN each band so the wedge feels like it tapers in copy too). */
+  #cs-wedgefunnel .wf-bands { display:flex; flex-direction:column; gap:5px; padding:32px 0 56px; position:relative; width:min(1040px, 90%); margin:0 auto; filter:drop-shadow(0 26px 50px rgba(26,22,18,0.10)); }
+  #cs-wedgefunnel .wf-band { position:relative; display:flex; align-items:center; justify-content:center; gap:18px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:850; letter-spacing:-0.016em; color:#fbf7ef; text-align:center; text-shadow:0 1px 2px rgba(0,0,0,0.18); }
+  /* Inset top highlight on every band — gives 3D ribbon feel */
+  #cs-wedgefunnel .wf-band::after { content:""; position:absolute; left:5%; right:5%; top:0; height:2px; background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.32) 50%, transparent 100%); pointer-events:none; }
+  #cs-wedgefunnel .wf-band-1 { height:102px; font-size:clamp(1.25rem,1.78vw,1.7rem); width:100%; clip-path: polygon(0 0, 100% 0, 96.5% 100%, 3.5% 100%); background:linear-gradient(180deg, #d4bfa6 0%, #a89378 100%); box-shadow:0 8px 22px rgba(168,147,120,0.34); }
+  #cs-wedgefunnel .wf-band-2 { height:96px;  font-size:clamp(1.2rem,1.68vw,1.6rem); width:82%; clip-path: polygon(0 0, 100% 0, 95.5% 100%, 4.5% 100%); background:linear-gradient(180deg, #95805e 0%, #6e5a3f 100%); margin:0 auto; box-shadow:0 10px 24px rgba(110,90,63,0.34); }
+  #cs-wedgefunnel .wf-band-3 { height:90px;  font-size:clamp(1.15rem,1.58vw,1.5rem); width:64%; clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #a8331a 100%); margin:0 auto; box-shadow:0 14px 30px rgba(200,70,44,0.30); }
+  #cs-wedgefunnel .wf-band-4 { height:86px;  font-size:clamp(1.1rem,1.5vw,1.42rem); width:46%; clip-path: polygon(0 0, 100% 0, 88.5% 100%, 11.5% 100%); background:linear-gradient(180deg, #7baee2 0%, #3870bd 100%); margin:0 auto; box-shadow:0 16px 34px rgba(91,143,212,0.32); }
+  #cs-wedgefunnel .wf-band-5 { height:96px;  font-size:clamp(1.15rem,1.55vw,1.5rem); width:30%; clip-path: polygon(0 0, 100% 0, 76% 100%, 24% 100%); background:linear-gradient(180deg, #ffdc7a 0%, #d4a85a 42%, #a87a35 100%); margin:0 auto; position:relative; color:#3a2a14; font-weight:900; text-shadow:0 1px 2px rgba(255,235,170,0.6); box-shadow:0 20px 44px rgba(212,168,83,0.45); }
+  /* NEPC big radial halo — much larger, brighter, behind the gold tip */
+  #cs-wedgefunnel .wf-band-5::before { content:""; position:absolute; left:-100%; right:-100%; top:-46px; bottom:-50px; background:radial-gradient(ellipse at center, rgba(255,220,122,0.62) 0%, rgba(212,168,83,0.24) 38%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(4px); }
+  @keyframes wfNepcPulse { 0%,100% { filter:drop-shadow(0 0 28px rgba(255,220,122,0.55)); } 50% { filter:drop-shadow(0 0 56px rgba(255,220,122,1)); } }
+  #cs-wedgefunnel .wf-band-icon svg { width:24px; height:24px; opacity:0.95; flex-shrink:0; filter:drop-shadow(0 1px 1px rgba(0,0,0,0.18)); }
   /* [Dave 2026-05-17 v10] Callout REDESIGNED — previous v8 version looked awful. Now anchored as a sibling-row INSIDE the bands flex column, sitting directly to the RIGHT of band-3 (Social Sports). Uses absolute positioning relative to .wf-bands so it tracks the band geometry precisely. A short red connector line points from the band edge to the callout. */
   #cs-wedgefunnel .wf-myth-break { position:absolute; left:calc(100% + 24px); top:calc(64px + 90px + 8px + 90px + 8px); height:90px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:6px; padding:14px 20px; background:rgba(251,247,239,0.98); border-left:4px solid #c8462c; border-radius:0 12px 12px 0; box-shadow:0 12px 28px rgba(26,22,18,0.10); width:300px; z-index:4; }
   /* Connector line from band-3 right edge into the callout's left red bar */
@@ -9899,35 +9899,48 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-band-5 img { height:56px; width:auto; mix-blend-mode:multiply; }
   #cs-wedgepb-combo .wpc-band-5 .wpc-band-nepc-text { font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:900; font-size:clamp(1.3rem,1.6vw,1.55rem); letter-spacing:0.06em; color:#3a2a14; }
 
-  /* RIGHT — 5 rationale cards [Dave 2026-05-17 v21]
-     v16 had a faint blue vertical line as the only signal that the cards pertain to pickleball
-     — Dave: 'make more clear in the PDF that the items on the right pertain to pickleball'.
-     v21: add a clear pickleball-blue eyebrow header above the cards ("WHY PICKLEBALL ↗") +
-     beefed-up vertical connector line (thicker + more saturated). */
+  /* RIGHT — 5 FLIPPABLE rationale cards [Dave 2026-05-17 v22]
+     Flip mechanic RESTORED per Dave 'these are supposed to be cards that i can flip over'.
+     Smooth 3D rotateY animation. Each card 70px tall with perspective on parent.
+     Front face: thematic icon + serif italic teaser word in card color + "FLIP →" hint.
+     Back face: same icon + full lede + clarifier + ordinal num (the v16 design).
+     Card 3 RED-FILLED on both faces — the "problem beat" foil. */
   #cs-wedgepb-combo .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; }
   #cs-wedgepb-combo .wpc-cards-header { display:flex; align-items:center; gap:10px; padding-left:6px; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.32em; text-transform:uppercase; color:#5B8FD4; }
   #cs-wedgepb-combo .wpc-cards-header svg { width:14px; height:14px; flex-shrink:0; }
-  #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
+  #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; perspective:1200px; }
   #cs-wedgepb-combo .wpc-cards::before { content:""; position:absolute; left:-18px; top:0; bottom:0; width:3px; border-radius:1.5px; background:linear-gradient(180deg, rgba(91,143,212,0.95) 0%, rgba(91,143,212,0.75) 50%, rgba(91,143,212,0.4) 100%); z-index:0; }
-  #cs-wedgepb-combo .wpc-card { display:flex; align-items:center; gap:18px; padding:16px 22px 16px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); position:relative; transition:transform 0.2s ease, box-shadow 0.2s ease; }
-  #cs-wedgepb-combo .wpc-card:hover { transform:translateX(2px); box-shadow:0 8px 22px rgba(26,22,18,0.10); }
-  #cs-wedgepb-combo .wpc-card-ico { width:44px; height:44px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--wpc-bg); color:var(--wpc-color); border:1.5px solid var(--wpc-color); }
-  #cs-wedgepb-combo .wpc-card-ico svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
-  #cs-wedgepb-combo .wpc-card-body { display:flex; flex-direction:column; gap:2px; flex:1; min-width:0; }
-  #cs-wedgepb-combo .wpc-card-lede { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.32vw,1.25rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
-  #cs-wedgepb-combo .wpc-card-clarify { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.85rem,1.05vw,1rem); font-weight:600; line-height:1.25; color:rgba(26,22,18,0.72); }
+  #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; transform-style:preserve-3d; transition:transform 0.85s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgepb-combo .wpc-card[data-flipped="1"] { transform:rotateY(180deg); }
+  #cs-wedgepb-combo .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+  #cs-wedgepb-combo .wpc-back { transform:rotateY(180deg); }
+  /* FRONT face — teaser */
+  #cs-wedgepb-combo .wpc-front-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
+  #cs-wedgepb-combo .wpc-front-teaser { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.25rem,1.55vw,1.48rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
+  #cs-wedgepb-combo .wpc-front-hint { font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.36); display:flex; align-items:center; gap:5px; }
+  #cs-wedgepb-combo .wpc-front-hint svg { width:8px; height:8px; opacity:0.7; }
+  /* BACK face — full statement */
+  #cs-wedgepb-combo .wpc-card-ico { width:42px; height:42px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--wpc-bg); color:var(--wpc-color); border:1.5px solid var(--wpc-color); }
+  #cs-wedgepb-combo .wpc-card-ico svg { width:21px; height:21px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-wedgepb-combo .wpc-card-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
+  #cs-wedgepb-combo .wpc-card-lede { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem,1.3vw,1.22rem); font-weight:850; font-style:italic; line-height:1.1; color:var(--wpc-color); letter-spacing:-0.012em; }
+  #cs-wedgepb-combo .wpc-card-clarify { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.85rem,1.02vw,.98rem); font-weight:600; line-height:1.25; color:rgba(26,22,18,0.72); }
   #cs-wedgepb-combo .wpc-card-num { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.30em; color:rgba(26,22,18,0.28); flex-shrink:0; align-self:center; }
   #cs-wedgepb-combo .wpc-c1 { --wpc-color:#7d529f; --wpc-bg:rgba(125,82,159,0.10); }
   #cs-wedgepb-combo .wpc-c2 { --wpc-color:#b8954a; --wpc-bg:rgba(184,149,74,0.12); }
   #cs-wedgepb-combo .wpc-c3 { --wpc-color:#c8462c; --wpc-bg:rgba(200,70,44,0.14); }
   #cs-wedgepb-combo .wpc-c4 { --wpc-color:#5B8FD4; --wpc-bg:rgba(91,143,212,0.10); }
   #cs-wedgepb-combo .wpc-c5 { --wpc-color:#168651; --wpc-bg:rgba(22,134,81,0.10); }
-  /* Card 3 — RED-FILLED problem-beat card */
-  #cs-wedgepb-combo .wpc-c3 { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); border-color:rgba(200,70,44,0.6); border-left-color:#7d2410; box-shadow:0 10px 24px rgba(200,70,44,0.26); }
+  /* Card 3 — RED-FILLED problem-beat card (both faces) */
+  #cs-wedgepb-combo .wpc-c3 .wpc-face { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); border-color:rgba(200,70,44,0.6); border-left-color:#7d2410; box-shadow:0 10px 24px rgba(200,70,44,0.26); }
+  #cs-wedgepb-combo .wpc-c3 .wpc-front-teaser { color:#fff5d8; }
+  #cs-wedgepb-combo .wpc-c3 .wpc-front-hint { color:rgba(251,247,239,0.62); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-ico { background:rgba(251,247,239,0.18); color:#fff5d8; border-color:rgba(251,247,239,0.55); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-lede { color:#fff5d8; }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-clarify { color:rgba(251,247,239,0.88); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-num { color:rgba(251,247,239,0.55); }
+  /* Export/PDF: snap every card to BACK so the printed deck shows full text content */
+  html[data-export="1"] #cs-wedgepb-combo .wpc-card { transform:rotateY(180deg) !important; transition:none !important; }
 
   /* Entry stagger */
   #cs-wedgepb-combo .wpc-head, #cs-wedgepb-combo .wpc-sub, #cs-wedgepb-combo .wpc-band, #cs-wedgepb-combo .wpc-card { opacity:0; transform:translateY(8px); transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
@@ -9976,50 +9989,100 @@ window.cs1m7Reverse = function() {
         </div>
       <div class="wpc-cards">
 
-        <div class="wpc-card wpc-c1">
-          <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-          <div class="wpc-card-body">
-            <div class="wpc-card-lede">Already a social network</div>
-            <div class="wpc-card-clarify">&mdash; beyond the courts.</div>
+        <div class="wpc-card wpc-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Social network</div>
+              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
+            </div>
+            <div class="wpc-card-num">01</div>
           </div>
-          <div class="wpc-card-num">01</div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Already a social network</div>
+              <div class="wpc-card-clarify">&mdash; beyond the courts.</div>
+            </div>
+            <div class="wpc-card-num">01</div>
+          </div>
         </div>
 
-        <div class="wpc-card wpc-c2">
-          <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
-          <div class="wpc-card-body">
-            <div class="wpc-card-lede">Fastest-growing sport</div>
-            <div class="wpc-card-clarify">in U.S. history.</div>
+        <div class="wpc-card wpc-c2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Fastest-growing</div>
+              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
+            </div>
+            <div class="wpc-card-num">02</div>
           </div>
-          <div class="wpc-card-num">02</div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Fastest-growing sport</div>
+              <div class="wpc-card-clarify">in U.S. history.</div>
+            </div>
+            <div class="wpc-card-num">02</div>
+          </div>
         </div>
 
         <!-- CARD 3 — RED-FILLED problem beat -->
-        <div class="wpc-card wpc-c3">
-          <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
-          <div class="wpc-card-body">
-            <div class="wpc-card-lede">Stuck in 2005</div>
-            <div class="wpc-card-clarify">&mdash; coordination stack hasn&rsquo;t moved.</div>
+        <div class="wpc-card wpc-c3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Stuck in 2005</div>
+              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
+            </div>
+            <div class="wpc-card-num">03</div>
           </div>
-          <div class="wpc-card-num">03</div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Stuck in 2005</div>
+              <div class="wpc-card-clarify">&mdash; coordination stack hasn&rsquo;t moved.</div>
+            </div>
+            <div class="wpc-card-num">03</div>
+          </div>
         </div>
 
-        <div class="wpc-card wpc-c4">
-          <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
-          <div class="wpc-card-body">
-            <div class="wpc-card-lede">Wildly social</div>
-            <div class="wpc-card-clarify">&mdash; high-velocity experiences.</div>
+        <div class="wpc-card wpc-c4" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Wildly social</div>
+              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
+            </div>
+            <div class="wpc-card-num">04</div>
           </div>
-          <div class="wpc-card-num">04</div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Wildly social</div>
+              <div class="wpc-card-clarify">&mdash; high-velocity experiences.</div>
+            </div>
+            <div class="wpc-card-num">04</div>
+          </div>
         </div>
 
-        <div class="wpc-card wpc-c5">
-          <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
-          <div class="wpc-card-body">
-            <div class="wpc-card-lede">Cold-start data cracked</div>
-            <div class="wpc-card-clarify">at NEPC.</div>
+        <div class="wpc-card wpc-c5" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+          <div class="wpc-face wpc-front">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
+            <div class="wpc-front-body">
+              <div class="wpc-front-teaser">Cold-start cracked</div>
+              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
+            </div>
+            <div class="wpc-card-num">05</div>
           </div>
-          <div class="wpc-card-num">05</div>
+          <div class="wpc-face wpc-back">
+            <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
+            <div class="wpc-card-body">
+              <div class="wpc-card-lede">Cold-start data cracked</div>
+              <div class="wpc-card-clarify">at NEPC.</div>
+            </div>
+            <div class="wpc-card-num">05</div>
+          </div>
         </div>
 
       </div>
@@ -15675,8 +15738,9 @@ window.cs1m7Reverse = function() {
        (3) ANCHOR pulls in REFERRER (green edge flashes → REFERRER pops)
        (4) REFERRER brings in REFERRED (blue edge flashes + envelope flies → REFERRED pops)
      Replayable: clicking the right court re-triggers the full sequence. */
-  @keyframes mgPlayerIn { from { opacity:0; transform:scale(.35); } 60% { opacity:1; transform:scale(1.18); } to { opacity:1; transform:scale(1); } }
-  @keyframes mgEdgeFlash { 0% { stroke-opacity:0; stroke-width:0.8; } 30% { stroke-opacity:0.95; stroke-width:2.2; } 100% { stroke-opacity:0; stroke-width:0.8; } }
+  /* [Dave 2026-05-17 v22] Animation smoothed per Dave 'a bit jarring and jagged and not smooth and imperfect'. Removed the scale(1.18) overshoot (was creating the bounce), eased opacity ramp, and softened the edge-flash stroke-width transition. Now uses a clean ease-out curve with no overshoot. */
+  @keyframes mgPlayerIn { 0% { opacity:0; transform:scale(.7); } 100% { opacity:1; transform:scale(1); } }
+  @keyframes mgEdgeFlash { 0% { stroke-opacity:0; stroke-width:1; } 35% { stroke-opacity:0.9; stroke-width:2; } 100% { stroke-opacity:0; stroke-width:1; } }
   @keyframes mgEnvelopeFly {
     0%   { opacity:0; transform: translate(48px, 85px); }
     15%  { opacity:1; }
@@ -15698,21 +15762,21 @@ window.cs1m7Reverse = function() {
      to ~0.45s. Total runtime: 4.75s → 3.05s. Slide-entry animation uses the same tightened
      timeline (no separate selector needed). */
   #cs-magnetic.casey-entered .mg-side.right .mg-player-anchor,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-player-anchor   { animation: mgPlayerIn 0.50s cubic-bezier(.34,1.4,.5,1) backwards 0.10s; opacity:1; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-player-anchor   { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 0.10s; opacity:1; }
   #cs-magnetic.casey-entered .mg-side.right .mg-edge-anchor-regular,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-regular   { animation: mgEdgeFlash 0.55s ease-out 0.55s 1 both; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-regular   { animation: mgEdgeFlash 0.70s cubic-bezier(.22,1,.36,1) 0.55s 1 both; }
   #cs-magnetic.casey-entered .mg-side.right .mg-player-regular,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-player-regular  { animation: mgPlayerIn 0.50s cubic-bezier(.34,1.4,.5,1) backwards 0.75s; opacity:1; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-player-regular  { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 0.75s; opacity:1; }
   #cs-magnetic.casey-entered .mg-side.right .mg-edge-anchor-referrer,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-referrer  { animation: mgEdgeFlash 0.55s ease-out 1.20s 1 both; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-anchor-referrer  { animation: mgEdgeFlash 0.70s cubic-bezier(.22,1,.36,1) 1.20s 1 both; }
   #cs-magnetic.casey-entered .mg-side.right .mg-player-referrer,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-player-referrer { animation: mgPlayerIn 0.50s cubic-bezier(.34,1.4,.5,1) backwards 1.40s; opacity:1; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-player-referrer { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 1.40s; opacity:1; }
   #cs-magnetic.casey-entered .mg-side.right .mg-edge-referrer-referred,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-referrer-referred { animation: mgEdgeFlash 0.65s ease-out 1.90s 1 both; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-edge-referrer-referred { animation: mgEdgeFlash 0.80s cubic-bezier(.22,1,.36,1) 1.90s 1 both; }
   #cs-magnetic.casey-entered .mg-side.right .mg-invite-envelope,
   #cs-magnetic .mg-side.right.mg-replaying .mg-invite-envelope { animation: mgEnvelopeFly 0.80s cubic-bezier(.45,.05,.55,.95) 1.90s 1 both; }
   #cs-magnetic.casey-entered .mg-side.right .mg-player-referred,
-  #cs-magnetic .mg-side.right.mg-replaying .mg-player-referred { animation: mgPlayerIn 0.50s cubic-bezier(.34,1.4,.5,1) backwards 2.55s; opacity:1; }
+  #cs-magnetic .mg-side.right.mg-replaying .mg-player-referred { animation: mgPlayerIn 0.65s cubic-bezier(.22,1,.36,1) backwards 2.55s; opacity:1; }
 
   /* Export mode — snap to final state, no animations (printed deck shows all 4 roles + faint web) */
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-player,
@@ -20693,7 +20757,7 @@ window.csA7m1Reverse = function() {
   #cs-2c-v2 .c2cv2-copy,
   #cs-2c-v2 > section > * { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-2c-v2" style="display:none">
+<div class="casey-slide ds-focus" id="cs-2c-v2" style="display:none !important" data-deleted="1">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">What&rsquo;s community?</div>
   <section class="c2cv2-stage" style="position:absolute;inset:0;padding:0;">
     <!-- [Dave 2026-05-17 BUG FIX] Image fallback chain — primary watercolor file doesn't exist yet on disk; fall back to the existing community_builders watercolor so the slide isn't blank. Drop the new community-listening.png into assets/ to swap in the intended image. -->
@@ -21716,8 +21780,8 @@ const SLIDE_ALTS = {
   // Slot 3 alts (cs-a7m1 primary; was slot 4) — keys shifted 4 → 3.
   // [Dave 2026-05-17 v5] cs-1 MOVED to appendix per Dave 'move this slide to the appendix'. SLIDE_ALTS[3] now empty; cs-1 lives in APPENDIX_ORDER.
   3: [],
-  // Slot 5 alts (cs-2c) — [Dave 2026-05-15] cs-2c-v2 added as red-dot alt: image-led version using watercolor of a community listening circle (typography overlay on the empty cream-space side of the painting).
-  5: ['cs-2c-v2'],
+  // [Dave 2026-05-17 v22] cs-2c-v2 DELETED per Dave 'delete this slide'. cs-2c is the lone primary at slot 5.
+  5: [],
   // Slot 12 (cs-magnetic PRIMARY restored 2026-05-15 after cs-magnetic-v2 deletion). No alts.
   12: [],
   // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
