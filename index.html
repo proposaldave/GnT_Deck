@@ -9913,8 +9913,11 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; transform-style:preserve-3d; transition:transform 0.85s cubic-bezier(.22,1,.36,1); }
   /* [Dave 2026-05-17 LATEST] Card 3 (red problem-beat) is now taller to fit 3 red callout pills inline (matching the reference card style with industry stuck in ratings/doesn't measure reality/manual scheduling). */
   #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
-  #cs-wedgepb-combo .wpc-card[data-flipped="1"] { transform:rotateY(180deg); }
+  /* [Dave 2026-05-17 LATEST] Flip mechanism switched from data-flipped attribute to .flipped class + classList.toggle in onclick. More reliable across browsers — attribute-selector recomputation was failing silently for some users. */
+  #cs-wedgepb-combo .wpc-card.flipped { transform:rotateY(180deg); }
   #cs-wedgepb-combo .wpc-face { position:absolute; inset:0; display:flex; align-items:center; gap:18px; padding:14px 22px 14px 20px; background:rgba(251,247,239,0.96); border:1px solid rgba(184,149,74,0.30); border-left:4px solid var(--wpc-color); border-radius:0 12px 12px 0; box-shadow:0 6px 16px rgba(26,22,18,0.06); backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+  /* [Dave 2026-05-17 LATEST] Front faces on Cards 1/2/4/5 are icon-only — center the lone icon horizontally. Card 3 keeps left-aligned multi-element front. */
+  #cs-wedgepb-combo .wpc-face.wpc-front-iconly { justify-content:center; padding:14px 16px; }
   #cs-wedgepb-combo .wpc-back { transform:rotateY(180deg); }
   /* FRONT face — teaser */
   #cs-wedgepb-combo .wpc-front-body { display:flex; flex-direction:column; gap:1px; flex:1; min-width:0; }
@@ -9941,7 +9944,7 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-c3 .wpc-card-lede { color:#fff5d8; }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-clarify { color:rgba(251,247,239,0.88); }
   #cs-wedgepb-combo .wpc-c3 .wpc-card-num { color:rgba(251,247,239,0.55); }
-  /* Export/PDF: snap every card to BACK so the printed deck shows full text content */
+  /* Export/PDF: snap every card to BACK so the printed deck shows full text content. [Dave 2026-05-17 LATEST] Updated selector still works because rotateY(180deg) is applied regardless of the .flipped state in export mode. */
   html[data-export="1"] #cs-wedgepb-combo .wpc-card { transform:rotateY(180deg) !important; transition:none !important; }
 
   /* Entry stagger */
@@ -9991,14 +9994,9 @@ window.cs1m7Reverse = function() {
         </div>
       <div class="wpc-cards">
 
-        <div class="wpc-card wpc-c1" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="wpc-face wpc-front">
+        <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
-            <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Social network</div>
-              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
-            </div>
-            <div class="wpc-card-num">01</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12 H20"/><path d="M12 4 C8 8 8 16 12 20 C16 16 16 8 12 4"/></svg></div>
@@ -10009,14 +10007,9 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <div class="wpc-card wpc-c2" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="wpc-face wpc-front">
+        <div class="wpc-card wpc-c2" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
-            <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Fastest-growing</div>
-              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
-            </div>
-            <div class="wpc-card-num">02</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><path d="M12 3 L13.7 8.7 L19.5 8.7 L14.9 12.4 L16.6 18.1 L12 14.6 L7.4 18.1 L9.1 12.4 L4.5 8.7 L10.3 8.7 Z"/></svg></div>
@@ -10028,12 +10021,11 @@ window.cs1m7Reverse = function() {
         </div>
 
         <!-- CARD 3 — RED-FILLED problem beat -->
-        <div class="wpc-card wpc-c3" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
+        <div class="wpc-card wpc-c3" onclick="this.classList.toggle('flipped');event.stopPropagation()">
           <div class="wpc-face wpc-front">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-front-body">
               <div class="wpc-front-teaser">Stuck in 2005</div>
-              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
             </div>
             <div class="wpc-card-num">03</div>
           </div>
@@ -10051,14 +10043,9 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <div class="wpc-card wpc-c4" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="wpc-face wpc-front">
+        <div class="wpc-card wpc-c4" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
-            <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Wildly social</div>
-              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
-            </div>
-            <div class="wpc-card-num">04</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><line x1="12" y1="12" x2="5" y2="6"/><line x1="12" y1="12" x2="19" y2="6"/><line x1="12" y1="12" x2="5" y2="18"/><line x1="12" y1="12" x2="19" y2="18"/></svg></div>
@@ -10069,14 +10056,9 @@ window.cs1m7Reverse = function() {
           </div>
         </div>
 
-        <div class="wpc-card wpc-c5" data-flipped="0" onclick="this.dataset.flipped = this.dataset.flipped === '1' ? '0' : '1'">
-          <div class="wpc-face wpc-front">
+        <div class="wpc-card wpc-c5" onclick="this.classList.toggle('flipped');event.stopPropagation()">
+          <div class="wpc-face wpc-front wpc-front-iconly">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
-            <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Cold-start cracked</div>
-              <div class="wpc-front-hint">Flip <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 2, 7 5, 3 8"/></svg></div>
-            </div>
-            <div class="wpc-card-num">05</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.4"/><path d="M5 6 L5 18 C5 19.3 8.1 20.4 12 20.4 C15.9 20.4 19 19.3 19 18 L19 6"/><path d="M5 12 C5 13.3 8.1 14.4 12 14.4 C15.9 14.4 19 13.3 19 12"/></svg></div>
@@ -12228,7 +12210,7 @@ window.cs1m7Reverse = function() {
           <div class="vd-card-title">The idea maze is <em>so big</em> most people cannot see the whole thing.</div>
         </div>
         <div class="vd-card lab">
-          <div class="vd-card-eye">Strength 02 &middot; Starting Point</div>
+          <div class="vd-card-eye">Strength 02 &middot; Blaze new trail</div>
           <div class="vd-lab-visual">
             <div class="vd-thread"></div><div class="vd-tiny t1"></div><div class="vd-tiny t2"></div><div class="vd-tiny t3"></div>
             <div class="vd-platform">NEPC</div>
@@ -12272,7 +12254,7 @@ window.cs1m7Reverse = function() {
           <div class="sub">A giant human-connection category before it has a map.</div>
         </div>
         <div class="strength foundation">
-          <div class="num">02 &middot; Starting Point</div>
+          <div class="num">02 &middot; Blaze new trail</div>
           <div class="v3-lab">
             <div class="lab-line"></div>
             <div class="lab-dot d1"></div><div class="lab-dot d2"></div><div class="lab-dot d3"></div>
@@ -12378,7 +12360,7 @@ window.cs1m7Reverse = function() {
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">02</div>
-              <div class="v5-eye">Starting Point</div>
+              <div class="v5-eye">Blaze new trail</div>
               <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand.</em></div>
               <div class="v5-meta"><strong>NEPC</strong> &middot; 500&nbsp;members &middot; 20+&nbsp;employees<br>Domain expert community building talent</div>
             </div>
@@ -12418,8 +12400,8 @@ window.cs1m7Reverse = function() {
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
-              <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified ("Demonstrate: we're wired to give first." → "We're wired to give first."). -->
-              <div class="v5-eye">GnR Growth &amp; Mission</div>
+              <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
+              <div class="v5-eye"><span style="color:#5B8FD4;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500">n</span><span style="color:#c8462c;font-weight:700">R</span> Growth &amp; Mission</div>
               <div class="v5-body"><em>We&rsquo;re wired to give first.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
@@ -12782,7 +12764,7 @@ window.cs1m7Reverse = function() {
         <!-- PILLAR 2 · STARTING POINT -->
         <div class="strength foundation">
           <div class="pillar-nepc-logo"><img src="nepc-logo.png" alt="NEPC logo"/></div>
-          <div class="num">02 &middot; Starting Point</div>
+          <div class="num">02 &middot; Blaze new trail</div>
           <div class="v4-vis lab">
             <div class="line"></div>
             <div class="club rye"><div class="city">Rye</div><div class="tag">Club 01</div></div>
