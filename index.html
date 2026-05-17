@@ -12607,30 +12607,46 @@ window.cs1m7Reverse = function() {
      demoted back to RED-DOT alt to the LEFT.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-givefirst-art { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
-  #cs-givefirst-art .gfa-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:1; display:block; opacity:0.96; }
-  #cs-givefirst-art .gfa-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-start; padding:80px 56px 64px; z-index:2; }
-  /* [Dave 2026-05-17 v2] LEFT column now stacks the quote (top) + the two-hearts graphic (bottom), all over the cream-space side of the watercolor. */
-  #cs-givefirst-art .gfa-col { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:18px; max-width:660px; padding:28px 32px; }
-  #cs-givefirst-art .gfa-copy { font-family:'Fraunces','Playfair Display',Georgia,serif; line-height:1.05; letter-spacing:-0.022em; }
-  #cs-givefirst-art .gfa-line { margin:0; font-size:clamp(2.4rem,4.1vw,3.8rem); font-weight:800; color:#1a1612; }
-  #cs-givefirst-art .gfa-muted { color:rgba(26,22,18,0.5); font-weight:600; font-size:clamp(2.1rem,3.7vw,3.4rem); margin-bottom:4px; }
-  #cs-givefirst-art .gfa-muted em { font-style:italic; font-weight:700; }
-  #cs-givefirst-art .gfa-hearts { width:100%; max-width:580px; margin-top:6px; }
-  #cs-givefirst-art .gfa-hearts svg { width:100%; height:auto; display:block; }
+  /* [Dave 2026-05-17 LATEST] Selectors expanded to cover BOTH cs-givefirst-art (slot 18) AND cs-givefirst-slide2 (NEW slot 2) per Dave 'make a duplicate and make it slide 2'. Shared styles via [id^="cs-givefirst-"] but with slide-2 ::after pseudo getting its own image source. */
+  #cs-givefirst-art, #cs-givefirst-slide2 { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
+  #cs-givefirst-art .gfa-image,
+  #cs-givefirst-slide2 .gfa-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:1; display:block; opacity:0.96; }
+  #cs-givefirst-art .gfa-stage,
+  #cs-givefirst-slide2 .gfa-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-start; padding:80px 56px 64px; z-index:2; }
+  #cs-givefirst-art .gfa-col,
+  #cs-givefirst-slide2 .gfa-col { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:18px; max-width:660px; padding:28px 32px; }
+  #cs-givefirst-art .gfa-copy,
+  #cs-givefirst-slide2 .gfa-copy { font-family:'Fraunces','Playfair Display',Georgia,serif; line-height:1.05; letter-spacing:-0.022em; }
+  #cs-givefirst-art .gfa-line,
+  #cs-givefirst-slide2 .gfa-line { margin:0; font-size:clamp(2.4rem,4.1vw,3.8rem); font-weight:800; color:#1a1612; }
+  #cs-givefirst-art .gfa-muted,
+  #cs-givefirst-slide2 .gfa-muted { color:rgba(26,22,18,0.5); font-weight:600; font-size:clamp(2.1rem,3.7vw,3.4rem); margin-bottom:4px; }
+  #cs-givefirst-art .gfa-muted em,
+  #cs-givefirst-slide2 .gfa-muted em { font-style:italic; font-weight:700; }
+  #cs-givefirst-art .gfa-hearts,
+  #cs-givefirst-slide2 .gfa-hearts { width:100%; max-width:580px; margin-top:6px; }
+  #cs-givefirst-art .gfa-hearts svg,
+  #cs-givefirst-slide2 .gfa-hearts svg { width:100%; height:auto; display:block; }
   /* Soft cream wash behind the entire left column so quote + hearts stay readable over the painting */
-  #cs-givefirst-art .gfa-col::before { content:""; position:absolute; inset:-14px -26px; background:radial-gradient(ellipse at 32% 50%, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.78) 55%, rgba(251,247,239,0) 100%); z-index:-1; border-radius:16px; }
+  #cs-givefirst-art .gfa-col::before,
+  #cs-givefirst-slide2 .gfa-col::before { content:""; position:absolute; inset:-14px -26px; background:radial-gradient(ellipse at 32% 50%, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.78) 55%, rgba(251,247,239,0) 100%); z-index:-1; border-radius:16px; }
   /* Entry stagger */
-  #cs-givefirst-art .gfa-image, #cs-givefirst-art .gfa-muted, #cs-givefirst-art .gfa-line, #cs-givefirst-art .gfa-hearts { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
-  #cs-givefirst-art.casey-entered .gfa-image  { opacity:0.96; transform:none; transition-delay:0.15s; }
-  #cs-givefirst-art.casey-entered .gfa-muted  { opacity:1; transform:none; transition-delay:0.50s; }
-  #cs-givefirst-art.casey-entered .gfa-line   { opacity:1; transform:none; transition-delay:0.75s; }
-  #cs-givefirst-art.casey-entered .gfa-hearts { opacity:1; transform:none; transition-delay:1.00s; }
+  #cs-givefirst-art .gfa-image, #cs-givefirst-art .gfa-muted, #cs-givefirst-art .gfa-line, #cs-givefirst-art .gfa-hearts,
+  #cs-givefirst-slide2 .gfa-image, #cs-givefirst-slide2 .gfa-muted, #cs-givefirst-slide2 .gfa-line, #cs-givefirst-slide2 .gfa-hearts { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-givefirst-art.casey-entered .gfa-image,  #cs-givefirst-slide2.casey-entered .gfa-image  { opacity:0.96; transform:none; transition-delay:0.15s; }
+  #cs-givefirst-art.casey-entered .gfa-muted,  #cs-givefirst-slide2.casey-entered .gfa-muted  { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-givefirst-art.casey-entered .gfa-line,   #cs-givefirst-slide2.casey-entered .gfa-line   { opacity:1; transform:none; transition-delay:0.75s; }
+  #cs-givefirst-art.casey-entered .gfa-hearts, #cs-givefirst-slide2.casey-entered .gfa-hearts { opacity:1; transform:none; transition-delay:1.00s; }
   html[data-export="1"] #cs-givefirst-art .gfa-image,
   html[data-export="1"] #cs-givefirst-art .gfa-muted,
   html[data-export="1"] #cs-givefirst-art .gfa-line,
-  html[data-export="1"] #cs-givefirst-art .gfa-hearts { opacity:1 !important; transform:none !important; transition:none !important; }
-  html[data-export="1"] #cs-givefirst-art .gfa-image { opacity:0.96 !important; }
+  html[data-export="1"] #cs-givefirst-art .gfa-hearts,
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-image,
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-muted,
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-line,
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-hearts { opacity:1 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-givefirst-art .gfa-image,
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-image { opacity:0.96 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-givefirst-art">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
@@ -12690,6 +12706,69 @@ window.cs1m7Reverse = function() {
           <!-- Return arc (red → blue) -->
           <path d="M 284 256 Q 240 286 196 256" stroke="#c8462c" stroke-width="1.6" fill="none" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.75" marker-end="url(#gfaArrowRed)"/>
           <!-- Center "n" -->
+          <text x="240" y="190" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a">n</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-givefirst-slide2 · DUPLICATE of cs-givefirst-art placed at slot 2 [Dave 2026-05-17 LATEST]
+     Per Dave: 'the "How GnR Growth actually works" slide, i want you to make a
+     duplicate and make it slide 2, except use attached image as background.'
+     Same eyebrow + quote + hearts-choreography graphic, but a fresh background
+     image. Drop the new attached image at: assets/cs-givefirst-slide2.png.
+     Fallback chain → cs-givefirst-art-community.png (same scene already in deck)
+     so the slide always renders even before the new asset lands on disk.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-givefirst-slide2">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <img class="gfa-image" src="assets/cs-givefirst-slide2.png" alt="A man kneels to tie another man's boot while a small community gathers around with warm smiles — watercolor depiction of give-first as the cause of community." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-community.png';this.onerror=function(){this.onerror=null;this.src='assets/cs-givefirst-art-dancing.png'}"/>
+  <section class="gfa-stage">
+    <div class="gfa-col">
+      <div class="gfa-copy">
+        <p class="gfa-line gfa-muted">You can&rsquo;t <em>tell</em> someone</p>
+        <p class="gfa-line">to open their heart.</p>
+      </div>
+      <div class="gfa-hearts">
+        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" aria-label="Blue heart opens first with outward pulses; red heart receives and opens back">
+          <defs>
+            <radialGradient id="gfa2HaloBlue" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="rgba(91,143,212,0.32)"/>
+              <stop offset="100%" stop-color="rgba(91,143,212,0)"/>
+            </radialGradient>
+            <radialGradient id="gfa2HaloRed" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="rgba(200,70,44,0.28)"/>
+              <stop offset="100%" stop-color="rgba(200,70,44,0)"/>
+            </radialGradient>
+            <marker id="gfa2ArrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+            <marker id="gfa2ArrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#c8462c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <g transform="translate(140, 178)">
+            <circle r="92" fill="url(#gfa2HaloBlue)"/>
+            <circle class="gf-pulse-l"   cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.6"/>
+            <circle class="gf-pulse-l-2" cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.4"/>
+            <circle class="gf-pulse-l-3" cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.2"/>
+            <path d="M 0 26 C -16 16 -34 4 -34 -10 C -34 -24 -18 -26 -2 -12 C -1 -11 1 -11 2 -12 C 18 -26 34 -24 34 -10 C 34 4 16 16 0 26 Z" fill="#5B8FD4"/>
+            <path d="M -18 -14 C -22 -8 -18 -2 -12 -4" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+            <text y="68" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="900" letter-spacing="3.4" fill="#3a73b8">YOU OPEN FIRST</text>
+          </g>
+          <path d="M 196 142 Q 240 110 284 142" stroke="#b8954a" stroke-width="1.8" fill="none" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.85" marker-end="url(#gfa2ArrowGold)"/>
+          <g transform="translate(340, 178)">
+            <circle r="82" fill="url(#gfa2HaloRed)"/>
+            <circle class="gf-pulse-r"   cx="0" cy="0" r="34" fill="none" stroke="#c8462c" stroke-width="1.5"/>
+            <circle class="gf-pulse-r-2" cx="0" cy="0" r="34" fill="none" stroke="#c8462c" stroke-width="1.3"/>
+            <path d="M 0 26 C -16 16 -34 4 -34 -10 C -34 -24 -18 -26 -2 -12 C -1 -11 1 -11 2 -12 C 18 -26 34 -24 34 -10 C 34 4 16 16 0 26 Z" fill="#c8462c"/>
+            <path d="M -18 -14 C -22 -8 -18 -2 -12 -4" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+            <text y="68" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="900" letter-spacing="3.4" fill="#a8351f">THEIRS OPENS BACK</text>
+          </g>
+          <path d="M 284 256 Q 240 286 196 256" stroke="#c8462c" stroke-width="1.6" fill="none" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.75" marker-end="url(#gfa2ArrowRed)"/>
           <text x="240" y="190" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a">n</text>
         </svg>
       </div>
@@ -21734,7 +21813,9 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
   'cs-frontier-iconic', //  1 PRIMARY · Science has proven the #1 predictor of a fulfilling life: openly giving and receiving real connection. Full-bleed universal welcome image, no sports/wedge imagery.
-  'cs-1m8',   //  2 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-17 LATEST] cs-givefirst-slide2 INSERTED at slot 2 per Dave 'the "How GnR Growth actually works" slide, i want you to make a duplicate and make it slide 2, except use attached image as background'. Duplicate of cs-givefirst-art (slot 19 now) with its own background image at assets/cs-givefirst-slide2.png. All slots past 1 shift +1.
+  'cs-givefirst-slide2', //  2 NEW · How GnR Growth actually works · give-first quote + hearts choreography over fresh codex watercolor
+  'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -21883,17 +21964,19 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to primary (see SLIDE_ORDER above). cs-frontier (former primary, with hero text + curve + era labels + 4-sciences strip) now sits as the FIRST red-dot alt — one step left of the new primary so it's the closest neighbor.
   // [Dave 2026-05-17 v6] cs-frontier AND cs-intro6 MOVED to appendix per Dave (consecutive 'move this slide to appendix' on both slot-1 red-dot alts). Slot 1 now has no alts; cs-frontier-iconic stands alone as the opener.
   1: [],
-  // Slot 2 (cs-1m8 title) has no alts.
+  // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   2: [],
-  // Slot 3 alts (cs-a7m1 primary; was slot 4) — keys shifted 4 → 3.
-  // [Dave 2026-05-17 v5] cs-1 MOVED to appendix per Dave 'move this slide to the appendix'. SLIDE_ALTS[3] now empty; cs-1 lives in APPENDIX_ORDER.
+  // Slot 3 (cs-1m8 title — was slot 2) has no alts.
   3: [],
-  // [Dave 2026-05-17 v22] cs-2c-v2 DELETED per Dave 'delete this slide'. cs-2c is the lone primary at slot 5.
-  5: [],
-  // Slot 12 (cs-magnetic PRIMARY restored 2026-05-15 after cs-magnetic-v2 deletion). No alts.
-  12: [],
+  // Slot 4 alts (cs-a7m1 primary — was slot 3) — no alts.
+  4: [],
+  // Slot 6 (cs-2c — was slot 5) — no alts.
+  6: [],
+  // Slot 13 (cs-samecourt — was slot 12) — no alts.
+  13: [],
   // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
-  13: ['cs-magnetic-orig', 'cs-merge3'],
+  // Slot 14 (cs-magnetic — was slot 13) — red-dot + pink-dot alts
+  14: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -21914,22 +21997,19 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14 MERGE] Wheelhouse alts now at slot 16 (cs-18-vd4 was 17; -1 after intro6 + frontier merged into one slot-1).
   // [Dave 2026-05-14] cs-18-vd1, cs-lab, cs-18 DELETED per Dave (3× 'delete this slide' for the wheelhouse-alt variants). Only cs-18-vd5 retained as the lone red-dot alt.
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
-  15: ['cs-pbfirst'],  // [Dave 2026-05-17 LATEST] cs-wedgefunnel REMOVED — Dave 'delete this slide' (the inverted-pyramid funnel "Pickleball is the wedge. Human connection is the category."). HTML retained as silent backup.
-  // [Dave 2026-05-14 PM v4] cs-18-vd5 also DELETED per Dave 'delete this slide'. Slot 16 now has no alts. HTML retained for rollback.
-  16: [],
-  // [Dave 2026-05-17 v10] cs-givefirst DELETED per Dave 'delete this slide' (the text-only two-hearts alt at slot 18). cs-givefirst-art (watercolor) remains as the lone primary.
-  // [Dave 2026-05-17 LATEST] cs-16 ADDED as PINK-DOT alt at slot 18 (left of cs-fw1 flywheel slide) per Dave 'Make this slide a pink dot slide that goes to the left of the slide with the following text: Imagine dropping GnR into any pickleball community. And it just works — compounding forever — at AI speed.'
-  18: ['cs-16'],
-  // [Dave 2026-05-17 v11] cs-fv6-img ADDED as PINK-DOT alt at slot 19 per Dave 'create a new different version of this slide that uses one of the codex background images, add it as a pink dot slide to the left of this one'. Image-led variant with gnr_vnext_real_world_graph.png background + cream wash + same 9-verb workflow row.
-  19: [],  // [Dave 2026-05-17 LATEST] cs-fv6-img PROMOTED to primary; cs-fv6 typographic version removed from nav (HTML retained as silent backup).
+  // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
+  16: ['cs-pbfirst'],
+  // Slot 17 (cs-18-vd4 Wheelhouse — was slot 16) — no alts
+  17: [],
+  // Slot 19 (cs-fw1 flywheel — was slot 18) — cs-16 pink-dot alt
+  19: ['cs-16'],
+  // Slot 20 (cs-fv6-img — was slot 19) — no alts
+  20: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
   // [Dave 2026-05-17 LATEST] Key shifted 20 → 21 after cs-mv6 moved UP to slot 20 (was 23). cs-16 + cs-27 + cs-wedge1 all shift +1.
-  // [Dave 2026-05-17 LATEST] slot 21 alts removed (cs-16 was removed from main flow). cs-16old and cs-funnel HTML retained as silent backups.
-  // [Dave 2026-05-17 v3] cs-mv6 MOVED to appendix per Dave 'move this slide to the appendix'.
-  // [Dave 2026-05-17 v4] cs-mv6-demand DELETED per Dave 'delete this slide'. SLIDE_ALTS[20] now empty.
-  20: [],
+  // [Dave 2026-05-17 LATEST] After inserting cs-givefirst-slide2 at slot 2, the previous slots 20+ shifted to 21+. Slot 21 + slot 22 (formerly cs-mv6-merge + cs-wedge1) carry no alts. Duplicate `20: []` key removed.
   // [Dave 2026-05-12 LATEST] cs-prom-merge DELETED + cs-prom DELETED per Dave (consecutive 'delete this slide' on both). The promise content now lives inside cs-brand-V8 captions, so cs-prom and cs-prom-merge are both redundant.
   // cs-brand-V1 MOVED to last appendix slide per Dave 2026-05-07 PM ('move this slide to the last slide in the appendix'). Slot 12 alts now EMPTY — V8 is the lone brand-opportunity slide in main flow; brand variants V9/V15/V1 all live in appendix end.
   // cs-brand-V5 ('WHEN you're free, generous, spontaneously yourself / THEN your community rises with you / Aliveness spreads. Reciprocity compounds.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
