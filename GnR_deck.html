@@ -6569,15 +6569,21 @@ window.cs1m5Reverse = function() {
   @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
   #cs-1m8[data-stage="3"] .m8-hint svg { animation:none }
-  /* Export mode: jump to terminal state. [Dave 2026-05-17 v18 BUGFIX] Previous export-mode rules forced the live-deck "G n R" SPREAD state, which produced asymmetric wordmark in PDF (G way left, n close to R) — Dave 'NEPC logo on #1 secret slide is still too small and... investor tonight'. Export mode now spells out the full "Give n Receive" wordmark (identical to the data-pdf override below) so PDF readers without voice-over context see the company name properly. */
+  /* Export mode: jump to terminal state. [Dave 2026-05-17 v18 BUGFIX] Previous export-mode rules forced the live-deck "G n R" SPREAD state, which produced asymmetric wordmark in PDF (G way left, n close to R) — Dave 'NEPC logo on #1 secret slide is still too small and... investor tonight'. Export mode now spells out the full "Give n Receive" wordmark (identical to the data-pdf override below) so PDF readers without voice-over context see the company name properly.
+     [v20] Caption grid TIGHTENED for full-wordmark layout: previous 1300px width put the left+right caption column centers ~360px outside the actual "Give" and "Receive" letter centers (775 and 1175 on slide), so "fuels our communities" floated under empty space far left of "Give" and "Reciprocated back" floated far right of "Receive". New: width 820px gap 80px, plus translateX nudges to lock columns directly under the letter groups. */
   html[data-export="1"] #cs-1m8 .wm-ive,
   html[data-export="1"] #cs-1m8 .wm-eceive { opacity: 1 !important; transform: none !important; }
   html[data-export="1"] #cs-1m8 .wm-G,
   html[data-export="1"] #cs-1m8 .wm-R,
   html[data-export="1"] #cs-1m8 .wm-n-wrap { transform: none !important; }
   html[data-export="1"] #cs-1m8 .wm-arc { transform: translateX(-50%) !important }
-  html[data-export="1"] #cs-1m8 .m8-cap-left,
-  html[data-export="1"] #cs-1m8 .m8-cap-right { transform: none !important; }
+  html[data-export="1"] #cs-1m8 .m8-caption {
+    width: 820px !important;
+    gap: 80px !important;
+  }
+  html[data-export="1"] #cs-1m8 .m8-cap-left { transform: translateX(40px) !important; }
+  html[data-export="1"] #cs-1m8 .m8-cap-right { transform: translateX(-10px) !important; }
+  html[data-export="1"] #cs-1m8 .m8-network { transform: translateX(0) !important; }
   html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
   html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
@@ -14009,7 +14015,8 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-wedge1">
   <!-- [Dave 2026-05-09] Eyebrow + hero refocused from 'human connection' to 'real-world social communities'. Sub line + Workplaces + Dating + Family icons + '★ The Network That Wins' DELETED. Pickleball court fixed to proper 44:20 (220:100) ratio with proper kitchen/net/centerline. Padel/Tennis/Golf/Social Sports added as expansion siblings beneath pickleball. -->
   <!-- [Dave 2026-05-17 v8] Eyebrow forced to single line per Dave 'the text below should fit on one line'. White-space:nowrap + slightly tighter letter-spacing so the full sentence reads on one row at 1920 width. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#c8462c;z-index:10;white-space:nowrap">Pickleball is the wedge. Human connection is the category.</div>
+  <!-- [Dave 2026-05-17 v20] Eyebrow shortened to "Human connection is the category" per Dave. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Human connection is the category</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="wd-stage">
       <!-- [Dave 2026-05-14 v2] TOP text is now the HEADER (bigger), bottom becomes the small caption — size hierarchy inverted per Dave. -->
