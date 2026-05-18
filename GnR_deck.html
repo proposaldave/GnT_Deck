@@ -9838,15 +9838,34 @@ window.cs1m7Reverse = function() {
   #cs-wedgefunnel .wf-band { position:relative; display:flex; align-items:center; justify-content:center; gap:18px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-weight:850; letter-spacing:-0.016em; color:#fbf7ef; text-align:center; text-shadow:0 1px 2px rgba(0,0,0,0.18); }
   /* Inset top highlight on every band — gives 3D ribbon feel */
   #cs-wedgefunnel .wf-band::after { content:""; position:absolute; left:5%; right:5%; top:0; height:2px; background:linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.32) 50%, transparent 100%); pointer-events:none; }
-  #cs-wedgefunnel .wf-band-1 { height:102px; font-size:clamp(1.25rem,1.78vw,1.7rem); width:100%; clip-path: polygon(0 0, 100% 0, 96.5% 100%, 3.5% 100%); background:linear-gradient(180deg, #d4bfa6 0%, #a89378 100%); box-shadow:0 8px 22px rgba(168,147,120,0.34); }
-  #cs-wedgefunnel .wf-band-2 { height:96px;  font-size:clamp(1.2rem,1.68vw,1.6rem); width:82%; clip-path: polygon(0 0, 100% 0, 95.5% 100%, 4.5% 100%); background:linear-gradient(180deg, #95805e 0%, #6e5a3f 100%); margin:0 auto; box-shadow:0 10px 24px rgba(110,90,63,0.34); }
-  #cs-wedgefunnel .wf-band-3 { height:90px;  font-size:clamp(1.15rem,1.58vw,1.5rem); width:64%; clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(180deg, #d65a3a 0%, #a8331a 100%); margin:0 auto; box-shadow:0 14px 30px rgba(200,70,44,0.30); }
-  #cs-wedgefunnel .wf-band-4 { height:86px;  font-size:clamp(1.1rem,1.5vw,1.42rem); width:46%; clip-path: polygon(0 0, 100% 0, 88.5% 100%, 11.5% 100%); background:linear-gradient(180deg, #7baee2 0%, #3870bd 100%); margin:0 auto; box-shadow:0 16px 34px rgba(91,143,212,0.32); }
-  #cs-wedgefunnel .wf-band-5 { height:96px;  font-size:clamp(1.15rem,1.55vw,1.5rem); width:30%; clip-path: polygon(0 0, 100% 0, 76% 100%, 24% 100%); background:linear-gradient(180deg, #ffdc7a 0%, #d4a85a 42%, #a87a35 100%); margin:0 auto; position:relative; color:#3a2a14; font-weight:900; text-shadow:0 1px 2px rgba(255,235,170,0.6); box-shadow:0 20px 44px rgba(212,168,83,0.45); }
+  /* [Dave 2026-05-17 PM JAW-DROP REDESIGN] Per Dave 'find top synthetic ai designer in world and make this look jaw droppingly better'. Upgrade vector: stronger physical depth (multi-layer drop shadow + inner highlight + soft inset on each band), refined gradients (each band has a slight cross-shine), gold thread connector running through the centerline (the brand's golden continuity from category → proof point), side-annotation badges on the right of each band (TAM / scale / proof), refined NEPC capstone with gold ring + embossed depth + larger glow halo, atmospheric radial up-glow from the foundation suggesting NEPC RADIATES the brand upward. */
+  #cs-wedgefunnel .wf-band-1 { height:106px; font-size:clamp(1.30rem,1.88vw,1.78rem); width:100%; clip-path: polygon(0 0, 100% 0, 96.5% 100%, 3.5% 100%); background:linear-gradient(170deg, #dccbb3 0%, #c0a98a 38%, #98815f 100%); box-shadow:0 12px 28px rgba(120,98,68,0.38), inset 0 1px 0 rgba(255,255,255,0.32), inset 0 -8px 18px rgba(70,52,30,0.18); }
+  #cs-wedgefunnel .wf-band-2 { height:98px;  font-size:clamp(1.22rem,1.70vw,1.62rem); width:82%; clip-path: polygon(0 0, 100% 0, 95.5% 100%, 4.5% 100%); background:linear-gradient(170deg, #a08967 0%, #816a48 45%, #5a4628 100%); margin:0 auto; box-shadow:0 14px 32px rgba(110,90,63,0.42), inset 0 1px 0 rgba(255,255,255,0.26), inset 0 -8px 18px rgba(40,28,12,0.22); }
+  #cs-wedgefunnel .wf-band-3 { height:92px;  font-size:clamp(1.18rem,1.60vw,1.52rem); width:64%; clip-path: polygon(0 0, 100% 0, 93% 100%, 7% 100%); background:linear-gradient(170deg, #e26545 0%, #c84a2a 45%, #8e2810 100%); margin:0 auto; box-shadow:0 18px 38px rgba(200,70,44,0.36), inset 0 1px 0 rgba(255,235,210,0.32), inset 0 -8px 18px rgba(70,18,6,0.22); }
+  #cs-wedgefunnel .wf-band-4 { height:88px;  font-size:clamp(1.12rem,1.52vw,1.44rem); width:46%; clip-path: polygon(0 0, 100% 0, 88.5% 100%, 11.5% 100%); background:linear-gradient(170deg, #8fbdee 0%, #5B8FD4 45%, #2d5f9f 100%); margin:0 auto; box-shadow:0 20px 42px rgba(91,143,212,0.42), inset 0 1px 0 rgba(255,255,255,0.36), inset 0 -8px 18px rgba(20,42,80,0.24); }
+  #cs-wedgefunnel .wf-band-5 { height:104px; font-size:clamp(1.22rem,1.62vw,1.58rem); width:32%; clip-path: polygon(0 0, 100% 0, 76% 100%, 24% 100%); background:linear-gradient(168deg, #ffe093 0%, #f5cf6a 32%, #d4a85a 64%, #a87a35 100%); margin:0 auto; position:relative; color:#3a2a14; font-weight:900; text-shadow:0 1px 2px rgba(255,238,180,0.7); box-shadow:0 26px 52px rgba(212,168,83,0.55), inset 0 1px 0 rgba(255,250,230,0.65), inset 0 -10px 22px rgba(120,80,18,0.25); }
   /* NEPC big radial halo — much larger, brighter, behind the gold tip */
-  #cs-wedgefunnel .wf-band-5::before { content:""; position:absolute; left:-100%; right:-100%; top:-46px; bottom:-50px; background:radial-gradient(ellipse at center, rgba(255,220,122,0.62) 0%, rgba(212,168,83,0.24) 38%, rgba(184,149,74,0) 70%); z-index:-1; filter:blur(4px); }
-  @keyframes wfNepcPulse { 0%,100% { filter:drop-shadow(0 0 28px rgba(255,220,122,0.55)); } 50% { filter:drop-shadow(0 0 56px rgba(255,220,122,1)); } }
-  #cs-wedgefunnel .wf-band-icon svg { width:24px; height:24px; opacity:0.95; flex-shrink:0; filter:drop-shadow(0 1px 1px rgba(0,0,0,0.18)); }
+  #cs-wedgefunnel .wf-band-5::before { content:""; position:absolute; left:-130%; right:-130%; top:-58px; bottom:-64px; background:radial-gradient(ellipse at center, rgba(255,228,140,0.72) 0%, rgba(220,180,90,0.30) 32%, rgba(184,149,74,0.10) 56%, rgba(184,149,74,0) 76%); z-index:-1; filter:blur(6px); }
+  @keyframes wfNepcPulse { 0%,100% { filter:drop-shadow(0 0 30px rgba(255,220,122,0.58)); } 50% { filter:drop-shadow(0 0 64px rgba(255,220,122,1)); } }
+  #cs-wedgefunnel .wf-band-icon svg { width:26px; height:26px; opacity:0.95; flex-shrink:0; filter:drop-shadow(0 1px 1.5px rgba(0,0,0,0.25)); }
+  /* CENTER GOLD THREAD — connects all 5 bands vertically like a continuous spine, suggesting the funnel is one piece of brand continuity rather than 5 disconnected stripes */
+  #cs-wedgefunnel .wf-bands::before { content:""; position:absolute; left:50%; top:32px; bottom:56px; width:2px; background:linear-gradient(180deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.40) 12%, rgba(212,168,83,0.65) 50%, rgba(255,220,122,0.95) 92%, rgba(255,220,122,0) 100%); transform:translateX(-50%); z-index:0; pointer-events:none; box-shadow:0 0 12px rgba(255,220,122,0.4); }
+  /* Centerline jewel dots on each band — beads on the thread, lining up vertically through the funnel */
+  #cs-wedgefunnel .wf-band-jewel { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:9px; height:9px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #fff7d8 0%, #e8b95e 55%, #a87a35 100%); box-shadow:0 0 0 2px rgba(251,247,239,0.55), 0 0 14px rgba(255,220,122,0.55); z-index:3; pointer-events:none; }
+  /* RIGHT-SIDE ANNOTATION BADGES — proof-points hanging off each band so the funnel reads as both narrative AND scale evidence at the same glance. Annotations live in a sibling .wf-row wrapper so the .wf-band's clip-path doesn't clip them. */
+  #cs-wedgefunnel .wf-bands { overflow:visible; }
+  #cs-wedgefunnel .wf-row { position:relative; width:100%; display:flex; align-items:center; justify-content:center; }
+  #cs-wedgefunnel .wf-band-annot { position:absolute; left:calc(50% + var(--band-w, 50%) + 16px); top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:2px; align-items:flex-start; white-space:nowrap; pointer-events:none; z-index:5; }
+  #cs-wedgefunnel .wf-row .wf-band-annot .wf-annot-num { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.92rem,1.10vw,1.10rem); font-weight:850; font-style:italic; color:#1a1612; letter-spacing:-0.01em; line-height:1.1; }
+  #cs-wedgefunnel .wf-row .wf-band-annot .wf-annot-cap { font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:800; letter-spacing:.26em; text-transform:uppercase; color:rgba(26,22,18,0.50); line-height:1.1; }
+  /* Tiny tick-line from the band edge into the annotation */
+  #cs-wedgefunnel .wf-band-annot::before { content:""; position:absolute; left:-14px; top:50%; transform:translateY(-50%); width:12px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0.65) 0%, rgba(184,149,74,0.10) 100%); }
+  /* Per-row annotation offsets — each row's annotation aligns with the band's outer right edge */
+  #cs-wedgefunnel .wf-row.r1 { --band-w: 50%; }
+  #cs-wedgefunnel .wf-row.r2 { --band-w: 41%; }
+  #cs-wedgefunnel .wf-row.r3 { --band-w: 32%; }
+  #cs-wedgefunnel .wf-row.r4 { --band-w: 23%; }
+  #cs-wedgefunnel .wf-row.r5 { --band-w: 16%; }
   /* [Dave 2026-05-17 v10] Callout REDESIGNED — previous v8 version looked awful. Now anchored as a sibling-row INSIDE the bands flex column, sitting directly to the RIGHT of band-3 (Social Sports). Uses absolute positioning relative to .wf-bands so it tracks the band geometry precisely. A short red connector line points from the band edge to the callout. */
   #cs-wedgefunnel .wf-myth-break { position:absolute; left:calc(100% + 24px); top:calc(64px + 90px + 8px + 90px + 8px); height:90px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:6px; padding:14px 20px; background:rgba(251,247,239,0.98); border-left:4px solid #c8462c; border-radius:0 12px 12px 0; box-shadow:0 12px 28px rgba(26,22,18,0.10); width:300px; z-index:4; }
   /* Connector line from band-3 right edge into the callout's left red bar */
@@ -9856,17 +9875,30 @@ window.cs1m7Reverse = function() {
   #cs-wedgefunnel .wf-myth-strike { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.85rem,1vw,1rem); font-weight:700; color:rgba(26,22,18,0.42); text-decoration:line-through; text-decoration-color:#c8462c; text-decoration-thickness:2px; line-height:1.2; white-space:nowrap; }
   #cs-wedgefunnel .wf-myth-arrow { color:#b8954a; font-size:1.1em; font-weight:500; line-height:1; }
   #cs-wedgefunnel .wf-myth-right { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1rem,1.25vw,1.2rem); font-weight:850; color:#c8462c; font-style:italic; line-height:1.2; white-space:nowrap; }
-  /* Entry stagger — bands cascade top → tip */
-  #cs-wedgefunnel .wf-head, #cs-wedgefunnel .wf-band, #cs-wedgefunnel .wf-myth-break { opacity:0; transform:translateY(10px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  /* Entry stagger — bands cascade top → tip, annotations follow ~0.15s behind each band */
+  #cs-wedgefunnel .wf-head, #cs-wedgefunnel .wf-band, #cs-wedgefunnel .wf-myth-break, #cs-wedgefunnel .wf-band-annot { opacity:0; transform:translateY(10px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-wedgefunnel .wf-band-jewel { opacity:0; transform:translate(-50%,-50%) scale(0.4); transition: opacity 0.5s cubic-bezier(.22,1,.36,1), transform 0.5s cubic-bezier(.34,1.56,.64,1); }
   #cs-wedgefunnel.casey-entered .wf-head { opacity:1; transform:none; transition-delay:0.10s; }
   #cs-wedgefunnel.casey-entered .wf-band-1 { opacity:1; transform:none; transition-delay:0.30s; }
+  #cs-wedgefunnel.casey-entered .r1 .wf-band-annot { opacity:1; transform:translateY(-50%); transition-delay:0.42s; }
+  #cs-wedgefunnel.casey-entered .r1 .wf-band-jewel { opacity:1; transform:translate(-50%,-50%) scale(1); transition-delay:0.50s; }
   #cs-wedgefunnel.casey-entered .wf-band-2 { opacity:1; transform:none; transition-delay:0.45s; }
+  #cs-wedgefunnel.casey-entered .r2 .wf-band-annot { opacity:1; transform:translateY(-50%); transition-delay:0.58s; }
+  #cs-wedgefunnel.casey-entered .r2 .wf-band-jewel { opacity:1; transform:translate(-50%,-50%) scale(1); transition-delay:0.66s; }
   #cs-wedgefunnel.casey-entered .wf-band-3 { opacity:1; transform:none; transition-delay:0.60s; }
+  #cs-wedgefunnel.casey-entered .r3 .wf-band-annot { opacity:1; transform:translateY(-50%); transition-delay:0.74s; }
+  #cs-wedgefunnel.casey-entered .r3 .wf-band-jewel { opacity:1; transform:translate(-50%,-50%) scale(1); transition-delay:0.82s; }
   #cs-wedgefunnel.casey-entered .wf-band-4 { opacity:1; transform:none; transition-delay:0.75s; }
+  #cs-wedgefunnel.casey-entered .r4 .wf-band-annot { opacity:1; transform:translateY(-50%); transition-delay:0.90s; }
+  #cs-wedgefunnel.casey-entered .r4 .wf-band-jewel { opacity:1; transform:translate(-50%,-50%) scale(1); transition-delay:0.98s; }
   #cs-wedgefunnel.casey-entered .wf-band-5 { opacity:1; transform:none; transition-delay:0.92s; }
-  #cs-wedgefunnel.casey-entered .wf-myth-break { opacity:1; transform:none; transition-delay:1.20s; }
+  #cs-wedgefunnel.casey-entered .r5 .wf-band-annot { opacity:1; transform:translateY(-50%); transition-delay:1.08s; }
+  #cs-wedgefunnel.casey-entered .r5 .wf-band-jewel { opacity:1; transform:translate(-50%,-50%) scale(1); transition-delay:1.18s; }
+  #cs-wedgefunnel.casey-entered .wf-myth-break { opacity:1; transform:none; transition-delay:1.40s; }
   #cs-wedgefunnel.casey-entered .wf-band-5 { animation: wfNepcPulse 3.2s ease-in-out infinite 2.0s; }
-  html[data-export="1"] #cs-wedgefunnel .wf-head, html[data-export="1"] #cs-wedgefunnel .wf-band, html[data-export="1"] #cs-wedgefunnel .wf-myth-break { opacity:1 !important; transform:none !important; transition:none !important; animation:none !important; }
+  html[data-export="1"] #cs-wedgefunnel .wf-head, html[data-export="1"] #cs-wedgefunnel .wf-band, html[data-export="1"] #cs-wedgefunnel .wf-myth-break, html[data-export="1"] #cs-wedgefunnel .wf-band-annot, html[data-export="1"] #cs-wedgefunnel .wf-band-jewel { opacity:1 !important; transform:translateY(-50%) !important; transition:none !important; animation:none !important; }
+  html[data-export="1"] #cs-wedgefunnel .wf-band, html[data-export="1"] #cs-wedgefunnel .wf-head, html[data-export="1"] #cs-wedgefunnel .wf-myth-break { transform:none !important; }
+  html[data-export="1"] #cs-wedgefunnel .wf-band-jewel { transform:translate(-50%,-50%) scale(1) !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-wedgefunnel">
   <!-- [Dave 2026-05-17 v8] Eyebrow shortened to "Right wedge · Right time" per Dave. -->
@@ -9879,26 +9911,60 @@ window.cs1m7Reverse = function() {
          duplicate left column, no right stats column, no capstone line. Brand-color
          cascade: neutral → mid → RED (Social Sports) → BLUE (Pickleball) → GOLD (NEPC). -->
     <div class="wf-bands">
-      <div class="wf-band wf-band-1">
-        <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="4"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span>
-        <span>Human Connection Technology</span>
+      <div class="wf-row r1">
+        <div class="wf-band wf-band-1">
+          <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="9" ry="4"/><line x1="3" y1="12" x2="21" y2="12"/></svg></span>
+          <span>Human Connection Technology</span>
+          <span class="wf-band-jewel"></span>
+        </div>
+        <div class="wf-band-annot">
+          <div class="wf-annot-num">The defining category</div>
+          <div class="wf-annot-cap">Next decade</div>
+        </div>
       </div>
-      <div class="wf-band wf-band-2">
-        <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="12" cy="16" r="3"/><line x1="9.4" y1="11" x2="11" y2="13.4"/><line x1="14.6" y1="11" x2="13" y2="13.4"/></svg></span>
-        <span>Communities</span>
+      <div class="wf-row r2">
+        <div class="wf-band wf-band-2">
+          <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="12" cy="16" r="3"/><line x1="9.4" y1="11" x2="11" y2="13.4"/><line x1="14.6" y1="11" x2="13" y2="13.4"/></svg></span>
+          <span>Communities</span>
+          <span class="wf-band-jewel"></span>
+        </div>
+        <div class="wf-band-annot">
+          <div class="wf-annot-num">Where real connection forms</div>
+          <div class="wf-annot-cap">The atomic unit</div>
+        </div>
       </div>
-      <div class="wf-band wf-band-3">
-        <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><circle cx="12" cy="12" r="2"/></svg></span>
-        <span>Social Sports</span>
+      <div class="wf-row r3">
+        <div class="wf-band wf-band-3">
+          <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <span>Social Sports</span>
+          <span class="wf-band-jewel"></span>
+        </div>
+        <div class="wf-band-annot">
+          <div class="wf-annot-num">Highest-velocity communities</div>
+          <div class="wf-annot-cap">Density &middot; signal</div>
+        </div>
       </div>
-      <div class="wf-band wf-band-4">
-        <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="12" cy="12" r="7"/><circle cx="9" cy="9" r="0.6" fill="#fbf7ef"/><circle cx="14" cy="10" r="0.6" fill="#fbf7ef"/><circle cx="10" cy="14" r="0.6" fill="#fbf7ef"/><circle cx="15" cy="14" r="0.6" fill="#fbf7ef"/></svg></span>
-        <span>Pickleball</span>
+      <div class="wf-row r4">
+        <div class="wf-band wf-band-4">
+          <span class="wf-band-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="1.6"><circle cx="12" cy="12" r="7"/><circle cx="9" cy="9" r="0.6" fill="#fbf7ef"/><circle cx="14" cy="10" r="0.6" fill="#fbf7ef"/><circle cx="10" cy="14" r="0.6" fill="#fbf7ef"/><circle cx="15" cy="14" r="0.6" fill="#fbf7ef"/></svg></span>
+          <span>Pickleball</span>
+          <span class="wf-band-jewel"></span>
+        </div>
+        <div class="wf-band-annot">
+          <div class="wf-annot-num">13M+ players &middot; fastest-growing</div>
+          <div class="wf-annot-cap">The wedge</div>
+        </div>
       </div>
       <!-- [Dave 2026-05-17 v11] NEPC logo bumped MUCH larger (48px → 80px) + "NEPC" letterform added alongside per Dave 'logo needs to be much larger and also you should say "NEPC"'. -->
-      <div class="wf-band wf-band-5" style="gap:14px">
-        <img src="nepc-logo.png" alt="NEPC logo" style="height:80px;width:auto;display:block;mix-blend-mode:multiply"/>
-        <span style="letter-spacing:0.06em;color:#3a2a14;font-weight:900">NEPC</span>
+      <div class="wf-row r5">
+        <div class="wf-band wf-band-5" style="gap:14px">
+          <img src="nepc-logo.png" alt="NEPC logo" style="height:80px;width:auto;display:block;mix-blend-mode:multiply"/>
+          <span style="letter-spacing:0.06em;color:#3a2a14;font-weight:900">NEPC</span>
+        </div>
+        <div class="wf-band-annot">
+          <div class="wf-annot-num">$2M ARR &middot; 6 years &middot; live proof</div>
+          <div class="wf-annot-cap">The foundation</div>
+        </div>
       </div>
     </div>
 
@@ -10031,7 +10097,7 @@ window.cs1m7Reverse = function() {
 
     <!-- [Dave 2026-05-17 v12] "Pickleball is the wedge. Human connection is the category." headline DELETED from visible slide + moved to speaker notes per Dave. Sub-headline ("Pickleball → fastest path...") remains as the lead-in. -->
     <div class="speaker-notes" data-slide="cs-wedgepb-combo" style="display:none">Pickleball is the wedge. Human connection is the category.</div>
-    <p class="wpc-sub">Pickleball &rarr; fastest path to the world&rsquo;s <em>first autonomous human value exchange network</em>.</p>
+    <p class="wpc-sub"><strong style="color:#5B8FD4;font-weight:850;font-style:normal">Pickleball</strong> &rarr; fastest path to the world&rsquo;s <em>first autonomous human value exchange network</em>.</p>
 
     <div class="wpc-grid">
 
@@ -10086,18 +10152,18 @@ window.cs1m7Reverse = function() {
           <div class="wpc-face wpc-front">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-front-body">
-              <div class="wpc-front-teaser">Social coordination stack max pain</div>
+              <div class="wpc-front-teaser">Social coordination max pain</div>
             </div>
             <div class="wpc-card-num">03</div>
           </div>
           <div class="wpc-face wpc-back">
             <div class="wpc-card-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="1.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14" r="0.9" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg></div>
             <div class="wpc-card-body">
-              <div class="wpc-card-lede">Social coordination stack max pain</div>
-              <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:3px;margin-top:4px">
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">industry stuck in <em style="font-style:italic;font-weight:850">ratings, ego</em></div>
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850">reality (human connection)</em></div>
-                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.78rem;font-weight:650;line-height:1.2;color:rgba(251,247,239,0.96);background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.18);border-radius:5px;padding:3px 8px"><em style="font-style:italic;font-weight:850">manual</em> club calendar creation &amp; signup</div>
+              <div class="wpc-card-lede">Social coordination max pain</div>
+              <div class="wpc-c3-pills" style="display:flex;flex-direction:column;gap:4px;margin-top:5px">
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">industry stuck in <em style="font-style:italic;font-weight:850;color:#ffe7c7">ratings, ego</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)">doesn&rsquo;t measure <em style="font-style:italic;font-weight:850;color:#ffe7c7">reality (human connection)</em></div>
+                <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:.86rem;font-weight:700;line-height:1.22;color:#fff;background:rgba(125,36,16,0.62);border:1.2px solid rgba(255,245,216,0.55);border-radius:6px;padding:4px 10px;text-shadow:0 1px 1px rgba(0,0,0,0.30)"><em style="font-style:italic;font-weight:850;color:#ffe7c7">manual</em> club calendar creation &amp; signup</div>
               </div>
             </div>
             <div class="wpc-card-num">03</div>
@@ -12464,7 +12530,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
               <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
-              <div class="v5-eye"><span style="color:#5B8FD4;font-weight:700">G</span><span style="color:#b8954a;font-style:italic;font-weight:500">n</span><span style="color:#c8462c;font-weight:700">R</span> Growth &amp; Mission</div>
+              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.18em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
               <div class="v5-body"><em>We&rsquo;re wired to give first.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
@@ -16663,8 +16729,17 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-edge,
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-invite-envelope { opacity:1 !important; transform:none !important; animation:none !important; stroke-opacity:0 !important; }
   html[data-export="1"] #cs-magnetic .mg-side.right .mg-invite-envelope { opacity:0 !important; }
+  /* [Dave 2026-05-17 PM] Full-bleed bg image (watercolor — outdoor pickleball club, players gathering / welcoming pose / golden hour). Save attached image to assets/cs-magnetic-bg.png. Cream wash overlays so content stays legible. */
+  #cs-magnetic { background:#f3ead8 !important; overflow:hidden; }
+  #cs-magnetic .mgbg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.72; }
+  #cs-magnetic .mgbg-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.90) 0%, rgba(251,247,239,0.78) 22%, rgba(251,247,239,0.62) 45%, rgba(251,247,239,0.55) 100%); }
+  #cs-magnetic .mg-stage { position:relative; z-index:2; }
+  html[data-export="1"] #cs-magnetic .mgbg { opacity:0.72 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
+  <!-- [Dave 2026-05-17 PM] Full-bleed bg image. Save attached image to assets/cs-magnetic-bg.png. Fallback chain → cs-samecourt-pink3.png → gnr_vnext_community_builders.png. -->
+  <img class="mgbg" src="assets/cs-magnetic-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div class="mgbg-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-14 PM v4] Eyebrow and master header SWAPPED per Dave. Eyebrow now carries the long category claim ('PICKLEBALL IS A HUMAN VALUE MARKETPLACE') as a quiet banner; master header below is the short punchy phrase 'Social pull.' -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull</div>
   <section class="mg-stage">
