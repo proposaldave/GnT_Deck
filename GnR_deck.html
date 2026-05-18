@@ -10030,7 +10030,11 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-grid { display:grid; grid-template-columns: 1fr 1.05fr; gap:36px; align-items:center; width:100%; max-width:1640px; margin-top:8px; }
 
   /* LEFT — funnel */
-  #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:7px; width:100%; max-width:620px; margin:0 auto; }
+  #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:7px; width:100%; max-width:620px; margin:0 auto; position:relative; overflow:visible; }
+  /* [Dave 2026-05-17 LATEST v2] Pickleball→cards connector REBUILT — Dave: "the blue arrow there looks absolutely terrible and out of place. the goal is to link the 5 cards on the right with the blue pickleball block on the left". Connector now lives INSIDE the funnel column, anchored vertically to the Pickleball band-4's exact center (266px from funnel top = 70px×3 bands + 7px×3 gaps + 70px/2 = 266px) and extends rightward past the funnel edge into the cards column. Originating dot sits AT the Pickleball band; line travels horizontally across the grid gap; chevron lands AT the cards' vertical bar. */
+  #cs-wedgepb-combo .wpc-pb-link { position:absolute; top:266px; left:72%; transform:translateY(-50%); width:380px; height:24px; z-index:6; pointer-events:none; overflow:visible; }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:#5B8FD4; stroke-width:3.5; fill:none; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.25)); }
+  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; filter:drop-shadow(0 1px 2px rgba(91,143,212,0.25)); }
   #cs-wedgepb-combo .wpc-band { position:relative; height:70px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.18vw,1.15rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10052,11 +10056,6 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-combo .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-combo .wpc-cards::before { content:""; position:absolute; left:-18px; top:0; bottom:0; width:3px; border-radius:1.5px; background:linear-gradient(180deg, rgba(91,143,212,0.95) 0%, rgba(91,143,212,0.75) 50%, rgba(91,143,212,0.4) 100%); z-index:0; }
-  /* [Dave 2026-05-17 LATEST] Horizontal Pickleball-blue connector stub at the top of the cards bar — visually links these five cards back to the blue Pickleball band of the funnel (left column). Replaces the deleted "Why pickleball" text header. */
-  #cs-wedgepb-combo .wpc-pb-link { position:absolute; z-index:6; pointer-events:none; left:-128px; top:-6px; width:140px; height:30px; overflow:visible; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-line { stroke:#5B8FD4; stroke-width:3; fill:none; stroke-linecap:round; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-dot { fill:#5B8FD4; }
-  #cs-wedgepb-combo .wpc-pb-link .wpc-pb-link-arrow { stroke:#5B8FD4; stroke-width:3; fill:none; stroke-linecap:round; stroke-linejoin:round; }
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
   /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
   #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
@@ -10139,6 +10138,15 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
+        <!-- [Dave 2026-05-17 LATEST v2] Pickleball→cards connector — anchored vertically to band-4's center (top:266px set in CSS), extends rightward into the cards column. Originating dot SITS ON the Pickleball band's right edge; line crosses the grid gap; chevron points into the cards stack. -->
+        <svg class="wpc-pb-link" viewBox="0 0 380 24" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Origin dot — anchored to Pickleball band right edge -->
+          <circle class="wpc-pb-link-dot" cx="6" cy="12" r="5.5"/>
+          <!-- Horizontal line extending rightward across grid gap into cards area -->
+          <path class="wpc-pb-link-line" d="M 11 12 L 365 12"/>
+          <!-- Chevron pointing → toward cards -->
+          <polyline class="wpc-pb-link-line" points="355 5, 374 12, 355 19"/>
+        </svg>
       </div>
 
       <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 LATEST]
@@ -10148,14 +10156,6 @@ window.cs1m7Reverse = function() {
            Replaced with a horizontal Pickleball-blue connector stub at the top of the cards
            vertical bar — visually arrows back toward the funnel's blue Pickleball band. -->
       <div class="wpc-cards-wrap">
-        <svg class="wpc-pb-link" viewBox="0 0 140 30" aria-hidden="true">
-          <!-- dot anchored on the cards-bar side -->
-          <circle class="wpc-pb-link-dot" cx="135" cy="15" r="4"/>
-          <!-- horizontal line extending leftward toward the Pickleball block -->
-          <path class="wpc-pb-link-line" d="M 18 15 L 131 15"/>
-          <!-- chevron pointing LEFT toward Pickleball -->
-          <polyline class="wpc-pb-link-arrow" points="14 8, 5 15, 14 22"/>
-        </svg>
       <div class="wpc-cards">
 
         <div class="wpc-card wpc-c1" onclick="this.classList.toggle('flipped');event.stopPropagation()">
