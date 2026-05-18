@@ -17154,7 +17154,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-brand-mono .bm-kicker { opacity:1 !important; transform:none !important; letter-spacing:.62em !important; animation:none !important; }
   html[data-export="1"] #cs-brand-mono .bm-mark { letter-spacing:-0.04em !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-brand-mono" style="display:none">
+<!-- [Dave 2026-05-18 LATEST] cs-brand-mono DELETED per Dave 'delete this slide' (was the BRAND MONUMENT pink-dot alt at slot 2 — massive BRAND header + big G·n·R wordmark + 'A life of autonomous, abundant connection.' tagline + SEES · MEASURES · RECIPROCATES kicker). Hidden via display:none !important + data-deleted="1"; removed from SLIDE_ALTS[2] and isPinkAlt detection below. -->
+<div class="casey-slide ds-focus" id="cs-brand-mono" style="display:none !important" data-deleted="1">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
   <section class="bm-stage">
     <h2 class="bm-header">Brand</h2>
@@ -17352,7 +17353,8 @@ window.cs1m7Reverse = function() {
   <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone spilling profile cards into isolated, faceless figures (the social-media view of human connection); right half warm gold with handshakes, friends at a glowing dinner table, and pickleball courts activated under string lights (the Give 'n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <!-- Eyebrow keeps the global top-left position; the cream top-band brings the brand promise as the slide's hero line. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand &middot; The narrow view &rarr; the abundant one</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow shortened per Dave 'change "Brand · The narrow view → the abundant one" to "Brings real connection to our digital world."'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real connection to our digital world.</div>
 
   <!-- TOP BAND · brand promise -->
   <div class="bc-top-band">
@@ -17390,6 +17392,308 @@ window.cs1m7Reverse = function() {
     <p class="bc-env-title"><em>Invitation-based</em> matchmaking.</p>
     <div class="bc-env-rule"></div>
   </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-codexmerge · PINK-DOT ALT [Dave 2026-05-18 LATEST]
+     Per Dave: 'i want you to attempt to build a brand new slide as a pink dot
+     slide next to slide two that combines what i'm showing attached (and using
+     the following as the background image: assets/cs-brand-codex.png)'. Combines
+     three previously-separate brand beats into one composite:
+       (a) cs-brand-V8 top band — BRAND → Live a life of abundant, autonomous
+           connection. (the brand promise hero line)
+       (b) cs-brand-codex codex split-watercolor bg + the left "Social media is
+           a narrow view of human connection technology." cream tablet
+       (c) cs-1m8 G·n·R three-column diptych — "What we give / fuels our
+           communities." (left) | "THE NETWORK / Sees. Measures. Reciprocates."
+           (middle) | "Your people · Your moments / Reciprocated back." (right)
+     Registered as a pink-dot alt at slot 2 (cs-1m8 primary).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-1m8-codexmerge { background:#1a1612 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-1m8-codexmerge .cm-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:1; display:block; }
+  /* Top + bottom cream gradient bands so the overlay typography breathes off the painting without smothering it. */
+  #cs-1m8-codexmerge .cm-top-band {
+    position:absolute; top:0; left:0; right:0;
+    background:linear-gradient(180deg, rgba(251,247,239,0.97) 0%, rgba(251,247,239,0.88) 60%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:84px 56px 44px; text-align:center; pointer-events:none;
+  }
+  #cs-1m8-codexmerge .cm-top-eye {
+    font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:#a87a35;
+    margin:0 0 10px;
+  }
+  #cs-1m8-codexmerge .cm-top-head {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.85rem, 2.85vw, 2.55rem);
+    font-weight:850; line-height:1.06; letter-spacing:-0.024em;
+    color:#1a1612; margin:0; max-width:1320px; margin-left:auto; margin-right:auto;
+  }
+  #cs-1m8-codexmerge .cm-top-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  /* Left tablet — sits over the painting's upper-left cream blank space. */
+  #cs-1m8-codexmerge .cm-left-quote {
+    position:absolute; top:30%; left:4%;
+    z-index:3; max-width:30%;
+    padding:14px 18px;
+    background:linear-gradient(180deg, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.85) 100%);
+    border:1.2px solid rgba(91,143,212,0.35);
+    border-radius:14px;
+    box-shadow:0 12px 28px rgba(26,22,18,0.16);
+  }
+  #cs-1m8-codexmerge .cm-left-quote p {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.05rem, 1.45vw, 1.40rem);
+    font-style:italic; font-weight:600; line-height:1.24;
+    letter-spacing:-0.012em; color:#1a1612; margin:0;
+  }
+  #cs-1m8-codexmerge .cm-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
+  /* Bottom band — cream gradient + G·n·R diptych captions. */
+  #cs-1m8-codexmerge .cm-bottom-band {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(0deg, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.84) 60%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:56px 64px 44px; pointer-events:none;
+  }
+  #cs-1m8-codexmerge .cm-cap-row {
+    display:grid; grid-template-columns:1fr auto 1fr; gap:48px; align-items:center; width:100%;
+  }
+  #cs-1m8-codexmerge .cm-cap { display:flex; flex-direction:column; gap:6px; }
+  #cs-1m8-codexmerge .cm-cap-l { text-align:right; }
+  #cs-1m8-codexmerge .cm-cap-r { text-align:left; }
+  #cs-1m8-codexmerge .cm-cap-eye {
+    font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:900;
+    letter-spacing:.32em; text-transform:uppercase; margin:0;
+  }
+  #cs-1m8-codexmerge .cm-cap-l .cm-cap-eye { color:#5B8FD4; }
+  #cs-1m8-codexmerge .cm-cap-r .cm-cap-eye { color:#c8462c; }
+  #cs-1m8-codexmerge .cm-cap-body {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.15rem, 1.55vw, 1.50rem);
+    font-style:italic; font-weight:500; line-height:1.22; color:#1a1612; margin:0;
+  }
+  #cs-1m8-codexmerge .cm-cap-l .cm-cap-body em { font-style:italic; font-weight:800; color:#5B8FD4; }
+  #cs-1m8-codexmerge .cm-cap-r .cm-cap-body em { font-style:italic; font-weight:800; color:#c8462c; }
+  /* Center N-cell — the gold sphere "THE NETWORK" hub. */
+  #cs-1m8-codexmerge .cm-ncell {
+    position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    width:clamp(110px, 9vw, 130px); height:clamp(110px, 9vw, 130px); flex-shrink:0; padding:8px;
+  }
+  #cs-1m8-codexmerge .cm-ncell::before {
+    content:''; position:absolute; inset:0; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,250,240,0.95) 0%, rgba(243,234,216,0.55) 55%, rgba(243,234,216,0) 100%);
+    box-shadow:inset 0 0 30px rgba(184,149,74,0.30), 0 0 36px rgba(184,149,74,0.20);
+    z-index:0;
+  }
+  #cs-1m8-codexmerge .cm-ncell .cm-n {
+    position:relative; z-index:1;
+    font-family:'Playfair Display',serif; font-style:italic; font-weight:500;
+    color:#b8954a; font-size:clamp(2.4rem, 3.2vw, 2.9rem); line-height:0.9;
+  }
+  #cs-1m8-codexmerge .cm-ncell .cm-n-label {
+    position:relative; z-index:1;
+    font-family:'Manrope',sans-serif; font-size:clamp(.50rem, .58vw, .60rem);
+    font-weight:800; letter-spacing:.42em; text-transform:uppercase;
+    color:#b8954a; margin-top:2px;
+  }
+  #cs-1m8-codexmerge .cm-ncell .cm-n-sub {
+    position:relative; z-index:1;
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.62rem, .76vw, .76rem);
+    font-style:italic; font-weight:500; color:#b8954a; line-height:1.2;
+    margin-top:2px; text-align:center;
+  }
+  /* Entrance animations */
+  #cs-1m8-codexmerge .cm-top-band, #cs-1m8-codexmerge .cm-left-quote, #cs-1m8-codexmerge .cm-bottom-band {
+    opacity:0; transform:translateY(10px);
+    transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-1m8-codexmerge.casey-entered .cm-top-band    { opacity:1; transform:none; transition-delay:0.15s; }
+  #cs-1m8-codexmerge.casey-entered .cm-left-quote  { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-1m8-codexmerge.casey-entered .cm-bottom-band { opacity:1; transform:none; transition-delay:0.85s; }
+  html[data-export="1"] #cs-1m8-codexmerge .cm-top-band,
+  html[data-export="1"] #cs-1m8-codexmerge .cm-left-quote,
+  html[data-export="1"] #cs-1m8-codexmerge .cm-bottom-band {
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+</style>
+<div class="casey-slide ds-focus" id="cs-1m8-codexmerge" style="display:none">
+  <img class="cm-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone spilling profile cards into isolated, faceless figures (social-media view of human connection); right half warm gold with handshakes, friends at a glowing dinner table, and pickleball courts activated under string lights (the Give 'n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand &middot; Live a life of abundant, autonomous connection</div>
+
+  <!-- TOP BAND · brand promise -->
+  <div class="cm-top-band">
+    <p class="cm-top-eye">Brand</p>
+    <h1 class="cm-top-head">Live a life of <em>abundant, autonomous connection.</em></h1>
+  </div>
+
+  <!-- LEFT TABLET · social-media-is-a-narrow-view -->
+  <div class="cm-left-quote">
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <!-- BOTTOM BAND · G·n·R diptych captions -->
+  <div class="cm-bottom-band">
+    <div class="cm-cap-row">
+      <div class="cm-cap cm-cap-l">
+        <p class="cm-cap-eye">What we give</p>
+        <p class="cm-cap-body"><em>fuels</em> our communities.</p>
+      </div>
+
+      <div class="cm-ncell" aria-hidden="true">
+        <span class="cm-n">n</span>
+        <span class="cm-n-label">The Network</span>
+        <span class="cm-n-sub">Sees. Measures.<br>Reciprocates.</span>
+      </div>
+
+      <div class="cm-cap cm-cap-r">
+        <p class="cm-cap-eye">Your People &middot; Your Moments</p>
+        <p class="cm-cap-body"><em>Reciprocated</em> back.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-envelopes · PINK-DOT ALT [Dave 2026-05-18 LATEST]
+     Per Dave: 'also try a different version of that (and create yet another
+     new pink dot slide left of slide two) that attemps that i just gave you
+     as well as the content that i'm attaching'. Combines everything in
+     cs-1m8-codexmerge PLUS: (a) a stacked-envelopes graphic at center (4
+     nested envelopes reading as "an invitation that keeps reciprocating"),
+     (b) the headline "Autonomous, abundant human connection for communities.",
+     (c) the supporting line "Our connection and unique value to each other —
+     measured, multiplied, made abundant."
+     Registered as a pink-dot alt at slot 2 (cs-1m8 primary).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-1m8-envelopes { background:#1a1612 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-1m8-envelopes .ev-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:1; display:block; opacity:0.65; }
+  /* A heavier cream wash covers the entire slide so the envelope stack + body copy reads as the hero, with the painting whispering underneath. */
+  #cs-1m8-envelopes .ev-wash { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.78) 0%, rgba(251,247,239,0.68) 30%, rgba(251,247,239,0.72) 70%, rgba(251,247,239,0.88) 100%); }
+  #cs-1m8-envelopes .ev-stage { position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:84px 56px 56px; gap:20px; }
+  /* Top band — brand promise (same as codexmerge) */
+  #cs-1m8-envelopes .ev-top-eye {
+    font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:#a87a35; margin:0 0 6px;
+  }
+  #cs-1m8-envelopes .ev-top-head {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.70rem, 2.65vw, 2.40rem);
+    font-weight:850; line-height:1.06; letter-spacing:-0.024em;
+    color:#1a1612; margin:0; max-width:1320px; text-align:center;
+  }
+  #cs-1m8-envelopes .ev-top-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  /* Nested envelopes graphic — 4 envelopes stacked, smallest on top, all sharing a circular halo. */
+  #cs-1m8-envelopes .ev-stack-wrap {
+    position:relative; width:clamp(340px, 28vw, 440px); height:clamp(340px, 28vw, 440px);
+    display:flex; align-items:center; justify-content:center;
+  }
+  #cs-1m8-envelopes .ev-stack-wrap::before {
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background:radial-gradient(circle, rgba(184,149,74,0.16) 0%, rgba(184,149,74,0.06) 50%, rgba(184,149,74,0) 75%);
+    border:1px dashed rgba(184,149,74,0.28);
+    pointer-events:none;
+  }
+  #cs-1m8-envelopes .ev-stack-wrap svg { position:relative; z-index:1; width:100%; height:100%; }
+  /* Hero headline + supporting line */
+  #cs-1m8-envelopes .ev-hero {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.80rem, 2.65vw, 2.40rem);
+    font-weight:850; line-height:1.10; letter-spacing:-0.022em;
+    color:#1a1612; margin:0; text-align:center; max-width:1300px;
+  }
+  #cs-1m8-envelopes .ev-hero em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-1m8-envelopes .ev-sub {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(1.05rem, 1.40vw, 1.30rem);
+    font-style:italic; font-weight:500; line-height:1.32;
+    color:rgba(26,22,18,0.78); margin:0; text-align:center; max-width:1100px;
+  }
+  #cs-1m8-envelopes .ev-sub strong { font-style:normal; font-weight:850; color:#c8462c; }
+  /* Left tablet — same as codexmerge */
+  #cs-1m8-envelopes .ev-left-quote {
+    position:absolute; top:21%; left:3%;
+    z-index:4; max-width:28%;
+    padding:12px 16px;
+    background:linear-gradient(180deg, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.85) 100%);
+    border:1.2px solid rgba(91,143,212,0.35);
+    border-radius:12px;
+    box-shadow:0 10px 24px rgba(26,22,18,0.14);
+  }
+  #cs-1m8-envelopes .ev-left-quote p {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(.95rem, 1.30vw, 1.20rem);
+    font-style:italic; font-weight:600; line-height:1.22;
+    letter-spacing:-0.012em; color:#1a1612; margin:0;
+  }
+  #cs-1m8-envelopes .ev-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
+  /* Entrance animations */
+  #cs-1m8-envelopes .ev-stage > *, #cs-1m8-envelopes .ev-left-quote {
+    opacity:0; transform:translateY(10px);
+    transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+  }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.20s; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.40s; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(3) { opacity:1; transform:none; transition-delay:1.05s; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(4) { opacity:1; transform:none; transition-delay:1.45s; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(5) { opacity:1; transform:none; transition-delay:1.65s; }
+  #cs-1m8-envelopes.casey-entered .ev-left-quote { opacity:1; transform:none; transition-delay:0.65s; }
+  html[data-export="1"] #cs-1m8-envelopes .ev-stage > *,
+  html[data-export="1"] #cs-1m8-envelopes .ev-left-quote {
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+</style>
+<div class="casey-slide ds-focus" id="cs-1m8-envelopes" style="display:none">
+  <img class="ev-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div class="ev-wash" aria-hidden="true"></div>
+
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand &middot; Live a life of abundant, autonomous connection</div>
+
+  <!-- LEFT TABLET · social-media-is-a-narrow-view -->
+  <div class="ev-left-quote">
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
+  </div>
+
+  <section class="ev-stage">
+    <!-- Top band (inline, no separate band container — it sits in the stage flow) -->
+    <p class="ev-top-eye">Brand</p>
+    <h1 class="ev-top-head">Live a life of <em>abundant, autonomous connection.</em></h1>
+
+    <!-- Nested envelopes graphic — 4 envelopes inside a circular halo. -->
+    <div class="ev-stack-wrap" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Envelope 1 — TOP (smallest), apex of the stack -->
+        <g transform="translate(140, 60)" stroke="#5B8FD4" stroke-width="2" fill="rgba(91,143,212,0.06)" stroke-linejoin="round">
+          <rect x="0" y="0" width="120" height="56" rx="2"/>
+          <path d="M 0 0 L 60 36 L 120 0" fill="none"/>
+        </g>
+        <!-- Envelope 2 -->
+        <g transform="translate(120, 110)" stroke="#5B8FD4" stroke-width="2.2" fill="rgba(91,143,212,0.08)" stroke-linejoin="round">
+          <rect x="0" y="0" width="160" height="70" rx="2"/>
+          <path d="M 0 0 L 80 46 L 160 0" fill="none"/>
+        </g>
+        <!-- Envelope 3 -->
+        <g transform="translate(95, 175)" stroke="#5B8FD4" stroke-width="2.4" fill="rgba(91,143,212,0.10)" stroke-linejoin="round">
+          <rect x="0" y="0" width="210" height="92" rx="2"/>
+          <path d="M 0 0 L 105 60 L 210 0" fill="none"/>
+        </g>
+        <!-- Envelope 4 — BOTTOM (largest, OPEN flap — invitation arriving) -->
+        <g transform="translate(60, 260)" stroke="#1f5fab" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round">
+          <rect x="0" y="0" width="280" height="110" rx="2" fill="rgba(91,143,212,0.14)"/>
+          <!-- Open flap (envelope is opening up — invitation accepted) -->
+          <path d="M 0 0 L 140 78 L 280 0" fill="rgba(91,143,212,0.06)"/>
+          <!-- Subtle inner peek to feel like a card is inside -->
+          <rect x="22" y="22" width="236" height="64" rx="2" fill="rgba(251,247,239,0.55)" stroke="rgba(184,149,74,0.45)" stroke-width="1.2"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Hero headline -->
+    <h2 class="ev-hero"><em>Autonomous, abundant</em> human connection for communities.</h2>
+    <!-- Supporting line -->
+    <p class="ev-sub">Our connection and unique value to each other &mdash; <strong>measured, multiplied, made abundant.</strong></p>
+  </section>
 </div>
 
 
@@ -24800,8 +25104,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
-  // [Dave 2026-05-18 LATEST] cs-brand-V8 MOVED to slot 3 per Dave 'make the brand slide the third slide'. Brand thesis now lands as the third beat: opener → title → BRAND ("Most human value is invisible. So it never returns.") → old-vs-new → modern-life → ... Its purple-dot alts (att3 + att5) follow via SLIDE_ALTS[3].
-  'cs-brand-V8',   // slot 3 · Brand: 'Most human value is invisible. So it never returns.' (G·n·R particle galaxy + diptych captions)
+  // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
   'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
@@ -24944,23 +25247,22 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] Brand-slide review batch — 4 PURPLE-DOT alts of cs-brand-V8 originally.
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
-  // [Dave 2026-05-18 LATEST] cs-fw1 is now the FINAL slide (slot 25). cs-16 ('Every touchpoint becomes training data') sits as the PINK-DOT alt to its left per Dave 'move "Every touchpoint becomes training data." as a pink dot slide to the left of the "Imagine dropping GnR into any pickleball community." slide'.
-  25: ['cs-16'],
+  // [Dave 2026-05-18 LATEST v6] cs-fw1 was slot 25; now slot 24 after cs-brand-V8 demotion. cs-16 stays as PINK-DOT alt to its left.
+  24: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
-  // [Dave 2026-05-18 LATEST v5] Brand pink-dot alts moved here from slot 3. cs-1m8-fuels = new particle-galaxy variant; cs-brand-codex = codex split-watercolor variant; cs-brand-mono = brand-monument variant. Order in array maps LEFT→RIGHT in the dot strip (index 0 = leftmost / furthest from primary), so cs-1m8-fuels sits leftmost, cs-brand-mono rightmost (closest to primary).
-  2: ['cs-1m8-fuels', 'cs-brand-codex', 'cs-brand-mono'],
-  // Slot 3 (cs-brand-V8) — see slot 3 entry below; brand pink-dot alts relocated to slot 2.
+  // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here per Dave 'move this as a pink dot slide to the left of slide 2'. Two NEW codex-merge variants added: cs-1m8-codexmerge (codex bg + cs-brand-V8 top + cs-1m8 diptych + left tablet) and cs-1m8-envelopes (same + nested envelopes graphic + autonomous-abundant captions). cs-brand-mono REMOVED per Dave 'delete this slide'. Order in array maps LEFT→RIGHT in the dot strip (index 0 = leftmost / furthest from primary).
+  2: ['cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST v6] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 because cs-brand-V8 was removed from the main flow at old slot 3. Slot 3 (formerly cs-brand-V8) now = cs-a7m1; slot 4 = cs-1bm1; slot 5 = cs-2c; ... slot 24 = cs-fw1.
+  // Slot 3 (cs-a7m1 — was slot 4) — no alts.
   3: [],
-  // Slot 4 alts (cs-a7m1 primary — was slot 3) — no alts.
-  4: [],
-  // Slot 6 (cs-2c — was slot 5) — no alts.
-  6: [],
-  // Slot 13 (cs-samecourt — was slot 12) — no alts.
-  // [Dave 2026-05-17 PM v2] pink3 PROMOTED INTO primary per Dave: 'i like this. use this to replace the current "Flip the incentive → Unleash connection & community" slide that's in the main deck.' The cs-samecourt primary now carries the bg-image + cream-wash treatment that pink3 had. Slot 13 alts now empty. pink1/pink2/pink3 HTML all retained as silent backups.
-  13: [],
-  // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
-  // Slot 14 (cs-magnetic — was slot 13) — red-dot + pink-dot alts
-  16: ['cs-magnetic-orig', 'cs-merge3'],
+  // Slot 5 (cs-2c — was slot 6) — no alts.
+  5: [],
+  // Slot 12 (cs-samecourt — was slot 13) — no alts.
+  // [Dave 2026-05-17 PM v2] pink3 PROMOTED INTO primary per Dave: 'i like this. use this to replace the current "Flip the incentive → Unleash connection & community" slide that's in the main deck.' The cs-samecourt primary now carries the bg-image + cream-wash treatment that pink3 had. pink1/pink2/pink3 HTML all retained as silent backups.
+  12: [],
+  // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 14 (was 15, was 16) per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. cs-merge3 retained as pink-dot drift alt.
+  // Slot 14 (cs-magnetic — was slot 15, was slot 16) — red-dot + pink-dot alts
+  15: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -24983,8 +25285,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  // [Dave 2026-05-18 LATEST] cs-pbfirst DELETED per Dave 'delete this slide' (the 17/25 alt with 'Pickleball → fastest path to the world's first autonomous human value exchange network' + 5-card wedge). Slot 17 alts now empty; black-dot registration removed below.
-  17: [],
+  // [Dave 2026-05-18 LATEST] cs-pbfirst DELETED per Dave 'delete this slide'. Slot 16 alts now empty (was slot 17 before cs-brand-V8 demotion).
+  16: [],
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -25011,12 +25313,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment.
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
-  3: [],
-  15: ['cs-givefirst-brand'],
+  // [Dave 2026-05-18 LATEST v6] These late-file SLIDE_ALTS overrides ran AFTER the earlier ones; with cs-brand-V8 demoted to alt, all keys past slot 2 shift -1. Old 15 → new 14 (cs-givefirst-art alts). Old 19 → 18, old 20 → 19, old 21 → 20 — all empty.
+  // NB: JS object-literal duplicate keys: the last one wins. The `15:` further up is now `14:` and lives in the main block above; the duplicate `15:` slot here is removed to avoid clobbering it.
+  14: ['cs-givefirst-brand'],
+  18: [],
   19: [],
+  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk). HTML retained as silent backup. Slot 20 was 21 before.
   20: [],
-  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk; entry-animation CSS keeps content opacity:0 until .casey-entered fires). HTML retained as silent backup.
-  21: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -26220,7 +26523,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels');
+    // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-codexmerge' || altId === 'cs-1m8-envelopes');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
