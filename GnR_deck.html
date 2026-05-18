@@ -10082,7 +10082,33 @@ window.cs1m7Reverse = function() {
      Card 3 RED-FILLED on both faces — the "problem beat" foil. */
   #cs-wedgepb-combo .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-combo .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
-  #cs-wedgepb-combo .wpc-cards::before { content:""; position:absolute; left:-18px; top:0; bottom:0; width:3px; border-radius:1.5px; background:linear-gradient(180deg, rgba(91,143,212,0.95) 0%, rgba(91,143,212,0.75) 50%, rgba(91,143,212,0.4) 100%); z-index:0; }
+  /* [Dave 2026-05-18 v7] Funnel→cards CONNECTOR rebuilt as an editorial BRACKET. Previous attempts (dotted line + paired dots, gradient arrow, color-only-no-connector) all felt either crude flowchart or invisible. New design: the cards' left rail becomes a Pickleball-blue OPEN-RIGHT bracket "[" with top + bottom arms wrapping the card stack (structural — says "all five = pickleball"), plus a single horizontal STUB exiting the bracket's mid-left edge and reaching toward the Pickleball band (directional — says "this comes FROM pickleball"). Bracket weight matches the funnel band stroke; stub ends ~24px short of the funnel column so it's clearly a callout, not a flowchart wire. */
+  #cs-wedgepb-combo .wpc-cards::before {
+    content:"";
+    position:absolute;
+    left:-22px;
+    top:-6px;
+    bottom:-6px;
+    width:16px;
+    border:3px solid #5B8FD4;
+    border-right:0;
+    border-radius:8px 0 0 8px;
+    box-shadow:0 6px 18px rgba(91,143,212,0.18);
+    z-index:0;
+  }
+  #cs-wedgepb-combo .wpc-cards::after {
+    content:"";
+    position:absolute;
+    left:-46px;
+    top:50%;
+    transform:translateY(-50%);
+    width:28px;
+    height:3px;
+    background:#5B8FD4;
+    border-radius:2px;
+    box-shadow:0 0 0 4px rgba(91,143,212,0.10);
+    z-index:0;
+  }
   #cs-wedgepb-combo .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
   /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
   #cs-wedgepb-combo .wpc-card.wpc-c3 { height:142px; }
@@ -17696,14 +17722,14 @@ window.cs1m7Reverse = function() {
           <g class="mg-player mg-player-anchor">
             <circle cx="48" cy="45" r="11" fill="none" stroke="rgba(184,149,74,0.45)" stroke-width="0.9" stroke-dasharray="2 1.6"/>
             <circle cx="48" cy="45" r="8" fill="#b8954a"/>
-            <text x="48" y="29" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.08em" fill="#b8954a" text-anchor="middle">ANCHOR</text>
+            <text x="48" y="29" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.06em" fill="#b8954a" text-anchor="middle">VIBES ANCHOR</text>
           </g>
 
           <!-- PLAYER 4 · REGULAR (red) — bottom-right · shows up second, pulled in by ANCHOR's gravity -->
           <g class="mg-player mg-player-regular">
             <circle cx="172" cy="85" r="11" fill="none" stroke="rgba(200,70,44,0.42)" stroke-width="0.9" stroke-dasharray="2 1.6"/>
             <circle cx="172" cy="85" r="8" fill="#c8462c"/>
-            <text x="172" y="106" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.08em" fill="#c8462c" text-anchor="middle">GREAT VIBES</text>
+            <text x="172" y="106" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.08em" fill="#c8462c" text-anchor="middle">REGULAR</text>
           </g>
 
           <!-- PLAYER 2 · REFERRER (green) — bottom-left · shows up third, also pulled in by anchor; their role is to bring others -->
@@ -17720,20 +17746,23 @@ window.cs1m7Reverse = function() {
             <text x="172" y="29" font-family="Manrope,sans-serif" font-size="6.6" font-weight="900" letter-spacing="0.06em" fill="#3a7da3" text-anchor="middle">NEW REFERRAL</text>
           </g>
 
-          <!-- [Dave 2026-05-18] BIG CENTERED INVITATION envelope per Dave 'centered in the court here i want an envelope to be more visible/obvious'. Sits at court center (110, 65), painted ABOVE the players + edges so it always draws the eye. Cream paper, bold Pickleball-blue stroke, gold halo behind, gentle pulse animation. Inline G/n/R mark on the flap so the envelope unmistakably reads as a "GnR invitation in flight". -->
+          <!-- [Dave 2026-05-18 v2 — VISUAL FIX] Envelope was rendering so small the GnR mark (blue+gold+red) read as a tiny UK flag from a distance. Enlarged ~1.6× and bumped GnR font so the brand mark is unmistakable. Also added a small gold wax-seal disc on the flap to break the flag pattern visually — the seal anchors the eye to one shape, then the GnR reads as a wordmark below. -->
           <g class="mg-center-env" transform="translate(110, 65)">
             <!-- soft gold halo radiating outward — pulses subtly via CSS -->
-            <ellipse class="mg-center-env-halo" cx="0" cy="0" rx="26" ry="17" fill="rgba(255,222,140,0.42)"/>
-            <ellipse class="mg-center-env-halo-inner" cx="0" cy="0" rx="18" ry="12" fill="rgba(255,222,140,0.30)"/>
+            <ellipse class="mg-center-env-halo" cx="0" cy="0" rx="38" ry="25" fill="rgba(255,222,140,0.42)"/>
+            <ellipse class="mg-center-env-halo-inner" cx="0" cy="0" rx="26" ry="17" fill="rgba(255,222,140,0.30)"/>
             <!-- subtle drop shadow under the envelope -->
-            <rect x="-13" y="-7.5" width="26" height="15" rx="1.6" fill="rgba(26,22,18,0.18)" transform="translate(0.8, 1.2)"/>
+            <rect x="-21" y="-12" width="42" height="24" rx="2.2" fill="rgba(26,22,18,0.20)" transform="translate(1.2, 1.6)"/>
             <!-- envelope body — cream paper, bold Pickleball-blue stroke -->
-            <rect x="-13" y="-7.5" width="26" height="15" rx="1.6" fill="#fbf7ef" stroke="#3a73b8" stroke-width="1.4"/>
+            <rect x="-21" y="-12" width="42" height="24" rx="2.2" fill="#fbf7ef" stroke="#3a73b8" stroke-width="1.8"/>
             <!-- envelope back flap (faint inside) -->
-            <path d="M -13 -7.5 L 0 1.6 L 13 -7.5" fill="rgba(91,143,212,0.10)" stroke="#3a73b8" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- GnR mini-mark on the front — unmistakable that this is a GnR invitation -->
-            <g transform="translate(0, 2.4)">
-              <text x="0" y="0" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="4.4" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic">n</tspan><tspan fill="#c8462c">R</tspan></text>
+            <path d="M -21 -12 L 0 2.6 L 21 -12" fill="rgba(91,143,212,0.10)" stroke="#3a73b8" stroke-width="1.8" stroke-linejoin="round"/>
+            <!-- Gold wax-seal disc on the flap — breaks up the red/white/blue pattern that was reading as a UK flag -->
+            <circle cx="0" cy="-2.4" r="3.6" fill="#d4a85a" stroke="#a87a35" stroke-width="0.6"/>
+            <text x="0" y="-1" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="3.4" font-weight="900" text-anchor="middle" fill="#fbf7ef" letter-spacing="-0.02em">★</text>
+            <!-- GnR wordmark below the seal — bigger, clearly a brand mark, not flag stripes -->
+            <g transform="translate(0, 8.2)">
+              <text x="0" y="0" font-family="Fraunces, Playfair Display, Georgia, serif" font-size="7" font-weight="900" text-anchor="middle" letter-spacing="-0.04em"><tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic">n</tspan><tspan fill="#c8462c">R</tspan></text>
             </g>
           </g>
         </svg>
@@ -17870,7 +17899,7 @@ window.cs1m7Reverse = function() {
           <g>
             <circle cx="48" cy="45" r="12" fill="none" stroke="rgba(184,149,74,0.50)" stroke-width="1" stroke-dasharray="2 1.6"/>
             <circle cx="48" cy="45" r="9" fill="#b8954a"/>
-            <text x="48" y="29" font-family="Manrope,sans-serif" font-size="7" font-weight="900" letter-spacing="0.10em" fill="#b8954a" text-anchor="middle">ANCHOR</text>
+            <text x="48" y="29" font-family="Manrope,sans-serif" font-size="6.2" font-weight="900" letter-spacing="0.06em" fill="#b8954a" text-anchor="middle">VIBES ANCHOR</text>
           </g>
           <!-- PLAYER 2 · REFERRER (green) -->
           <g>
