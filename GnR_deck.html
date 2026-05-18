@@ -14333,6 +14333,8 @@ window.cs1m7Reverse = function() {
   .casey-dot.alt.pink-alt { background:#ff4d8f !important; border:1px solid #ff4d8f !important; box-shadow:0 0 8px rgba(255,77,143,0.85) !important; animation:reviewPulse 1.6s ease-in-out infinite; }
   /* [Dave 2026-05-08] Blue-dot alts for slot 17 (cs-quadrant1, cs-arch1, cs-cat1) */
   .casey-dot.alt.blue-alt { background:#5B8FD4 !important; border:1px solid #5B8FD4 !important; box-shadow:0 0 8px rgba(91,143,212,0.85) !important; animation:reviewPulse 1.6s ease-in-out infinite; }
+  /* [Dave 2026-05-18] Purple-dot alts — brand-slide review attempts (cs-brand-att1/2/3/4 under cs-brand-V8). Distinct enough from pink/blue/orange that Dave can spot the "needs brand review" slots at a glance. */
+  .casey-dot.alt.purple-alt { background:#8B5CF6 !important; border:1px solid #8B5CF6 !important; box-shadow:0 0 8px rgba(139,92,246,0.90) !important; animation:reviewPulse 1.6s ease-in-out infinite; }
 </style>
 <div class="casey-slide ds-focus" id="cs-merge3" data-krista="0">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Real-world social networking</div>
@@ -15844,6 +15846,332 @@ window.cs1m7Reverse = function() {
       The first <strong>consumer brand</strong> of real connection.<br><em style="font-style:italic;font-weight:500;color:rgba(26,22,18,0.62);font-size:.86em;letter-spacing:0">Generational opportunity. Built on a generational need.</em>
     </div>
 
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     BRAND SLIDE ATTEMPTS — PURPLE-DOT REVIEW BATCH [Dave 2026-05-18]
+     Per Dave: "build out a bunch of brand new brand slides and put them in the
+     deck wherever you think they should go, and make them make the dots colored
+     in purple, which is how I'll identify that I know I need to review them."
+
+     Anchored to the central brand question Dave surfaced:
+       "What does it mean to live a life of autonomous, abundant human connection?"
+     And the answer Dave wrote:
+       "It means you have the tech. AND it means the open heart."
+
+     Brand canon source: C:/Users/dave/CLAUDE COWORK/BRAND.md
+       Essence: Community over competition.
+       Cornerstones: Fair Since Day One · With, Not At · Alignment.
+       Voice: high conviction · short sentences · warm + future-facing.
+
+     Four attempts, each self-scoped (.b1-*, .b2-*, .b3-*, .b4-*) so they can't
+     collide. All registered as purple-dot alts of cs-brand-V8 (SLIDE_ALTS[24]).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ─── ATTEMPT 1 · "The Question" — central brand question as the whole slide ─── -->
+<style>
+  #cs-brand-att1 { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-brand-att1::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0); background-size:4px 4px; opacity:0.5; pointer-events:none; mix-blend-mode:multiply; z-index:1; }
+  #cs-brand-att1::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 38%, rgba(184,149,74,0.16) 0%, rgba(184,149,74,0.04) 50%, transparent 75%); pointer-events:none; z-index:1; }
+  #cs-brand-att1 .b1-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 80px 60px; z-index:2; }
+  #cs-brand-att1 .b1-eye { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.40em; text-transform:uppercase; color:#b8954a; margin-bottom:36px; }
+  #cs-brand-att1 .b1-q { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.6rem, 4.4vw, 4.4rem); font-weight:850; line-height:1.08; letter-spacing:-0.030em; color:#1a1612; text-align:center; max-width:1480px; margin:0; }
+  #cs-brand-att1 .b1-q .em1 { font-style:italic; font-weight:850; color:#5B8FD4; }
+  #cs-brand-att1 .b1-q .em2 { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att1 .b1-q .em3 { font-style:italic; font-weight:850; color:#c8462c; }
+  #cs-brand-att1 .b1-mark { display:flex; align-items:center; gap:14px; margin-top:38px; }
+  #cs-brand-att1 .b1-rule { width:64px; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, #b8954a 50%, rgba(184,149,74,0) 100%); }
+  #cs-brand-att1 .b1-wordmark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:850; letter-spacing:-0.012em; }
+  #cs-brand-att1 .b1-wordmark .g { color:#5B8FD4; }
+  #cs-brand-att1 .b1-wordmark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
+  #cs-brand-att1 .b1-wordmark .r { color:#c8462c; }
+  #cs-brand-att1 .b1-footer { font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:700; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.42); margin-top:14px; }
+  #cs-brand-att1 .b1-eye, #cs-brand-att1 .b1-q, #cs-brand-att1 .b1-mark, #cs-brand-att1 .b1-footer { opacity:0; transform:translateY(10px); transition:opacity 0.85s cubic-bezier(.22,1,.36,1), transform 0.85s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-att1.casey-entered .b1-eye { opacity:1; transform:none; transition-delay:0.25s; }
+  #cs-brand-att1.casey-entered .b1-q { opacity:1; transform:none; transition-delay:0.65s; }
+  #cs-brand-att1.casey-entered .b1-mark { opacity:1; transform:none; transition-delay:1.55s; }
+  #cs-brand-att1.casey-entered .b1-footer { opacity:1; transform:none; transition-delay:1.85s; }
+  html[data-export="1"] #cs-brand-att1 .b1-eye,
+  html[data-export="1"] #cs-brand-att1 .b1-q,
+  html[data-export="1"] #cs-brand-att1 .b1-mark,
+  html[data-export="1"] #cs-brand-att1 .b1-footer { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-att1" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Brand Question</div>
+  <section class="b1-stage">
+    <div class="b1-eye">The question that names the decade</div>
+    <h1 class="b1-q">What does it mean to live a life of <span class="em1">autonomous</span>, <span class="em2">abundant</span>, <span class="em3">real human connection?</span></h1>
+    <div class="b1-mark">
+      <span class="b1-rule"></span>
+      <span class="b1-wordmark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>
+      <span class="b1-rule"></span>
+    </div>
+    <div class="b1-footer">Give &lsquo;n Receive &middot; the brand that answers</div>
+  </section>
+</div>
+
+
+<!-- ─── ATTEMPT 2 · "Tech AND Open Heart" — the diptych answer ─── -->
+<style>
+  #cs-brand-att2 { background:radial-gradient(ellipse at 50% 50%, #fbf7ef 0%, #f3ead8 70%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-brand-att2::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0); background-size:4px 4px; opacity:0.5; pointer-events:none; z-index:1; }
+  #cs-brand-att2 .b2-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 64px 56px; z-index:2; gap:32px; }
+  #cs-brand-att2 .b2-q { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem, 2.35vw, 2.10rem); font-weight:600; font-style:italic; line-height:1.32; color:rgba(26,22,18,0.78); text-align:center; max-width:1280px; margin:0; }
+  #cs-brand-att2 .b2-q em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att2 .b2-diptych { display:grid; grid-template-columns:1fr auto 1fr; gap:48px; width:100%; max-width:1520px; align-items:stretch; }
+  #cs-brand-att2 .b2-panel { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:42px 36px 40px; border-radius:18px; box-shadow:0 18px 48px rgba(26,22,18,0.08); }
+  #cs-brand-att2 .b2-panel.left { background:linear-gradient(180deg, rgba(91,143,212,0.10) 0%, rgba(91,143,212,0.02) 100%); border:1.4px solid rgba(91,143,212,0.42); }
+  #cs-brand-att2 .b2-panel.right { background:linear-gradient(180deg, rgba(200,70,44,0.10) 0%, rgba(200,70,44,0.02) 100%); border:1.4px solid rgba(200,70,44,0.42); }
+  #cs-brand-att2 .b2-icon { width:88px; height:88px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
+  #cs-brand-att2 .b2-panel.left .b2-icon { background:rgba(91,143,212,0.14); border:1.6px solid rgba(91,143,212,0.55); }
+  #cs-brand-att2 .b2-panel.right .b2-icon { background:rgba(200,70,44,0.14); border:1.6px solid rgba(200,70,44,0.55); }
+  #cs-brand-att2 .b2-icon svg { width:44px; height:44px; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-brand-att2 .b2-panel.left .b2-icon svg { stroke:#3a73b8; }
+  #cs-brand-att2 .b2-panel.right .b2-icon svg { stroke:#c8462c; }
+  #cs-brand-att2 .b2-cap-eye { font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.36em; text-transform:uppercase; margin-bottom:14px; }
+  #cs-brand-att2 .b2-panel.left .b2-cap-eye { color:#3a73b8; }
+  #cs-brand-att2 .b2-panel.right .b2-cap-eye { color:#a8351f; }
+  #cs-brand-att2 .b2-headline { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem, 2.65vw, 2.45rem); font-weight:850; line-height:1.10; letter-spacing:-0.022em; color:#1a1612; text-align:center; margin:0 0 14px; }
+  #cs-brand-att2 .b2-headline em { font-style:italic; font-weight:850; }
+  #cs-brand-att2 .b2-panel.left .b2-headline em { color:#3a73b8; }
+  #cs-brand-att2 .b2-panel.right .b2-headline em { color:#c8462c; }
+  #cs-brand-att2 .b2-body { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem, 1.32vw, 1.25rem); font-weight:500; font-style:italic; line-height:1.4; color:rgba(26,22,18,0.74); text-align:center; max-width:380px; }
+  #cs-brand-att2 .b2-amp { display:flex; align-items:center; justify-content:center; }
+  #cs-brand-att2 .b2-amp-glyph { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.6rem,5.4vw,4.8rem); font-weight:850; font-style:italic; color:#b8954a; }
+  #cs-brand-att2 .b2-closer { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.4rem, 1.95vw, 1.85rem); font-weight:850; line-height:1.18; letter-spacing:-0.018em; color:#1a1612; text-align:center; max-width:1100px; margin:0; }
+  #cs-brand-att2 .b2-closer em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att2 .b2-q, #cs-brand-att2 .b2-panel, #cs-brand-att2 .b2-amp, #cs-brand-att2 .b2-closer { opacity:0; transform:translateY(10px); transition:opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-att2.casey-entered .b2-q { opacity:1; transform:none; transition-delay:0.20s; }
+  #cs-brand-att2.casey-entered .b2-panel.left { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-brand-att2.casey-entered .b2-amp { opacity:1; transform:none; transition-delay:0.80s; }
+  #cs-brand-att2.casey-entered .b2-panel.right { opacity:1; transform:none; transition-delay:1.10s; }
+  #cs-brand-att2.casey-entered .b2-closer { opacity:1; transform:none; transition-delay:1.55s; }
+  html[data-export="1"] #cs-brand-att2 .b2-q,
+  html[data-export="1"] #cs-brand-att2 .b2-panel,
+  html[data-export="1"] #cs-brand-att2 .b2-amp,
+  html[data-export="1"] #cs-brand-att2 .b2-closer { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-att2" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Brand Answer &middot; Tech &amp; Open Heart</div>
+  <section class="b2-stage">
+    <p class="b2-q">What does a life of <em>autonomous, abundant connection</em> actually take?</p>
+
+    <div class="b2-diptych">
+      <!-- LEFT · TECH -->
+      <div class="b2-panel left">
+        <div class="b2-icon">
+          <svg viewBox="0 0 48 48">
+            <!-- Network node graph — 4 outer nodes + 1 center + connecting lines -->
+            <circle cx="24" cy="24" r="3.4"/>
+            <circle cx="10" cy="12" r="2.4"/>
+            <circle cx="38" cy="12" r="2.4"/>
+            <circle cx="10" cy="36" r="2.4"/>
+            <circle cx="38" cy="36" r="2.4"/>
+            <line x1="24" y1="24" x2="10" y2="12"/>
+            <line x1="24" y1="24" x2="38" y2="12"/>
+            <line x1="24" y1="24" x2="10" y2="36"/>
+            <line x1="24" y1="24" x2="38" y2="36"/>
+          </svg>
+        </div>
+        <div class="b2-cap-eye">The Tech</div>
+        <h2 class="b2-headline">A network that <em>sees</em>.</h2>
+        <p class="b2-body">Invitations, fairness, signal, fill. The infrastructure that turns small giving into a community that compounds &mdash; <em style="font-style:italic;font-weight:700">at AI speed</em>.</p>
+      </div>
+
+      <!-- AMPERSAND -->
+      <div class="b2-amp"><span class="b2-amp-glyph">&amp;</span></div>
+
+      <!-- RIGHT · OPEN HEART -->
+      <div class="b2-panel right">
+        <div class="b2-icon">
+          <svg viewBox="0 0 48 48">
+            <!-- Heart silhouette + small open-radiance dots -->
+            <path d="M 24 40 C 14 32 4 24 4 14 C 4 8 8 4 12 4 C 16 4 20 6 24 12 C 28 6 32 4 36 4 C 40 4 44 8 44 14 C 44 24 34 32 24 40 Z"/>
+            <circle cx="9" cy="9" r="0.9" fill="currentColor"/>
+            <circle cx="39" cy="9" r="0.9" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="b2-cap-eye">The Open Heart</div>
+        <h2 class="b2-headline">A people who <em>give first</em>.</h2>
+        <p class="b2-body">You can&rsquo;t tell someone to open their heart. You open <em style="font-style:italic;font-weight:700">yours</em> first. Theirs opens back. That&rsquo;s the engine no algorithm can build alone.</p>
+      </div>
+    </div>
+
+    <p class="b2-closer">Give &lsquo;n Receive is <em>both</em>. <span style="color:rgba(26,22,18,0.55);font-style:italic;font-weight:600">The tech, and the people who use it that way.</span></p>
+  </section>
+</div>
+
+
+<!-- ─── ATTEMPT 3 · "What it means" — the answer broken into 4 truths ─── -->
+<style>
+  #cs-brand-att3 { background:radial-gradient(ellipse at 50% 30%, #fbf7ef 0%, #f3ead8 60%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-brand-att3::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0); background-size:4px 4px; opacity:0.55; pointer-events:none; z-index:1; }
+  #cs-brand-att3 .b3-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 60px 56px; z-index:2; gap:28px; }
+  #cs-brand-att3 .b3-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem, 3.0vw, 2.85rem); font-weight:850; line-height:1.08; letter-spacing:-0.024em; color:#1a1612; text-align:center; max-width:1380px; margin:0; }
+  #cs-brand-att3 .b3-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att3 .b3-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.05rem, 1.32vw, 1.22rem); font-style:italic; font-weight:550; line-height:1.4; color:rgba(26,22,18,0.66); text-align:center; max-width:1000px; margin:0; }
+  #cs-brand-att3 .b3-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; width:100%; max-width:1620px; margin-top:6px; }
+  #cs-brand-att3 .b3-card { position:relative; display:flex; flex-direction:column; padding:24px 22px 22px; background:rgba(251,247,239,0.92); border:1px solid rgba(184,149,74,0.32); border-top:3px solid var(--b3-c, #b8954a); border-radius:10px; box-shadow:0 8px 22px rgba(26,22,18,0.06); }
+  #cs-brand-att3 .b3-num { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.36em; text-transform:uppercase; color:var(--b3-c, #b8954a); margin-bottom:14px; }
+  #cs-brand-att3 .b3-head-card { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.22rem, 1.55vw, 1.45rem); font-weight:850; line-height:1.12; letter-spacing:-0.014em; color:#1a1612; margin-bottom:10px; }
+  #cs-brand-att3 .b3-head-card em { font-style:italic; font-weight:850; color:var(--b3-c, #b8954a); }
+  #cs-brand-att3 .b3-body-card { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.92rem, 1.05vw, 1.04rem); font-weight:500; line-height:1.42; color:rgba(26,22,18,0.74); }
+  #cs-brand-att3 .b3-body-card em { font-style:italic; font-weight:700; color:#1a1612; }
+  #cs-brand-att3 .b3-closer { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.20rem, 1.55vw, 1.42rem); font-weight:600; font-style:italic; line-height:1.32; color:rgba(26,22,18,0.80); text-align:center; max-width:1180px; margin:8px 0 0; padding-top:18px; border-top:1px solid rgba(184,149,74,0.32); }
+  #cs-brand-att3 .b3-closer strong { font-style:normal; font-weight:850; color:#b8954a; }
+  #cs-brand-att3 .b3-head, #cs-brand-att3 .b3-sub, #cs-brand-att3 .b3-card, #cs-brand-att3 .b3-closer { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-att3.casey-entered .b3-head { opacity:1; transform:none; transition-delay:0.20s; }
+  #cs-brand-att3.casey-entered .b3-sub { opacity:1; transform:none; transition-delay:0.45s; }
+  #cs-brand-att3.casey-entered .b3-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.70s; }
+  #cs-brand-att3.casey-entered .b3-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.85s; }
+  #cs-brand-att3.casey-entered .b3-card:nth-child(3) { opacity:1; transform:none; transition-delay:1.00s; }
+  #cs-brand-att3.casey-entered .b3-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.15s; }
+  #cs-brand-att3.casey-entered .b3-closer { opacity:1; transform:none; transition-delay:1.55s; }
+  html[data-export="1"] #cs-brand-att3 .b3-head,
+  html[data-export="1"] #cs-brand-att3 .b3-sub,
+  html[data-export="1"] #cs-brand-att3 .b3-card,
+  html[data-export="1"] #cs-brand-att3 .b3-closer { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-att3" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Brand Answer &middot; Four Truths</div>
+  <section class="b3-stage">
+    <h1 class="b3-head">A life of <em>autonomous, abundant human connection</em> is four things at once.</h1>
+    <p class="b3-sub">Take any one away and the life collapses. Give &lsquo;n Receive is the only brand that holds all four together.</p>
+
+    <div class="b3-grid">
+
+      <div class="b3-card" style="--b3-c:#5B8FD4">
+        <div class="b3-num">01 &middot; Seen</div>
+        <div class="b3-head-card">Your <em>giving</em> is measured.</div>
+        <div class="b3-body-card">Small repeated acts &mdash; invitations, fills, rides, a remembered preference &mdash; <em>add up</em> instead of disappearing into the void.</div>
+      </div>
+
+      <div class="b3-card" style="--b3-c:#b8954a">
+        <div class="b3-num">02 &middot; Returned</div>
+        <div class="b3-head-card">Your community <em>gives back</em>.</div>
+        <div class="b3-body-card">Reciprocity becomes the default, not the exception. The platform makes sure that when you give, value finds its way back to <em>you</em>.</div>
+      </div>
+
+      <div class="b3-card" style="--b3-c:#c8462c">
+        <div class="b3-num">03 &middot; Belonging</div>
+        <div class="b3-head-card">You feel <em>known</em> &mdash; at every level.</div>
+        <div class="b3-body-card">Across rating bands, across age groups, across rooms. The community sees who you actually are, not the <em>number</em> on your name.</div>
+      </div>
+
+      <div class="b3-card" style="--b3-c:#7d529f">
+        <div class="b3-num">04 &middot; Free</div>
+        <div class="b3-head-card">It happens <em>autonomously</em>.</div>
+        <div class="b3-body-card">No coordinator burning out. No spreadsheet. No WhatsApp at midnight. The AI carries the load so the <em>humans</em> stay open-hearted.</div>
+      </div>
+
+    </div>
+
+    <p class="b3-closer">Tech alone gets you a network. Open hearts alone get you a moment. <br><strong>Both</strong> get you the life.</p>
+  </section>
+</div>
+
+
+<!-- ─── ATTEMPT 4 · "Humanity. Community. Technology." — triple pillar ─── -->
+<style>
+  #cs-brand-att4 { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 60%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-brand-att4::before { content:""; position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0); background-size:4px 4px; opacity:0.5; pointer-events:none; z-index:1; }
+  #cs-brand-att4 .b4-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 56px 56px; z-index:2; gap:30px; }
+  #cs-brand-att4 .b4-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem, 3.2vw, 3.0rem); font-weight:850; line-height:1.08; letter-spacing:-0.024em; color:#1a1612; text-align:center; max-width:1480px; margin:0; }
+  #cs-brand-att4 .b4-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att4 .b4-trio { display:grid; grid-template-columns:repeat(3, 1fr); gap:36px; width:100%; max-width:1480px; align-items:stretch; position:relative; }
+  #cs-brand-att4 .b4-trio::before { content:""; position:absolute; left:14%; right:14%; top:32%; height:1px; background:linear-gradient(90deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.45) 30%, rgba(184,149,74,0.45) 70%, rgba(184,149,74,0) 100%); z-index:0; }
+  #cs-brand-att4 .b4-col { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:18px; padding:24px 22px 26px; background:rgba(251,247,239,0.92); border:1px solid rgba(184,149,74,0.28); border-radius:12px; box-shadow:0 10px 26px rgba(26,22,18,0.06); }
+  #cs-brand-att4 .b4-badge { width:78px; height:78px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  #cs-brand-att4 .b4-badge svg { width:38px; height:38px; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  #cs-brand-att4 .b4-col.humanity .b4-badge { background:rgba(200,70,44,0.12); border:1.6px solid rgba(200,70,44,0.55); }
+  #cs-brand-att4 .b4-col.humanity .b4-badge svg { stroke:#c8462c; }
+  #cs-brand-att4 .b4-col.community .b4-badge { background:rgba(184,149,74,0.14); border:1.6px solid rgba(184,149,74,0.55); }
+  #cs-brand-att4 .b4-col.community .b4-badge svg { stroke:#a87a35; }
+  #cs-brand-att4 .b4-col.technology .b4-badge { background:rgba(91,143,212,0.12); border:1.6px solid rgba(91,143,212,0.55); }
+  #cs-brand-att4 .b4-col.technology .b4-badge svg { stroke:#3a73b8; }
+  #cs-brand-att4 .b4-word { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.38em; text-transform:uppercase; }
+  #cs-brand-att4 .b4-col.humanity .b4-word { color:#c8462c; }
+  #cs-brand-att4 .b4-col.community .b4-word { color:#a87a35; }
+  #cs-brand-att4 .b4-col.technology .b4-word { color:#3a73b8; }
+  #cs-brand-att4 .b4-claim { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.22rem, 1.55vw, 1.45rem); font-weight:850; line-height:1.14; letter-spacing:-0.014em; color:#1a1612; text-align:center; max-width:280px; }
+  #cs-brand-att4 .b4-claim em { font-style:italic; font-weight:850; }
+  #cs-brand-att4 .b4-col.humanity .b4-claim em { color:#c8462c; }
+  #cs-brand-att4 .b4-col.community .b4-claim em { color:#a87a35; }
+  #cs-brand-att4 .b4-col.technology .b4-claim em { color:#3a73b8; }
+  #cs-brand-att4 .b4-detail { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.92rem, 1.05vw, 1.04rem); font-weight:500; line-height:1.4; color:rgba(26,22,18,0.72); text-align:center; max-width:280px; font-style:italic; }
+  #cs-brand-att4 .b4-closer { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.40rem, 1.95vw, 1.85rem); font-weight:850; line-height:1.18; letter-spacing:-0.018em; color:#1a1612; text-align:center; max-width:1280px; margin:0; padding-top:18px; border-top:1px solid rgba(184,149,74,0.32); }
+  #cs-brand-att4 .b4-closer em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-att4 .b4-head, #cs-brand-att4 .b4-col, #cs-brand-att4 .b4-closer { opacity:0; transform:translateY(10px); transition:opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+  #cs-brand-att4.casey-entered .b4-head { opacity:1; transform:none; transition-delay:0.20s; }
+  #cs-brand-att4.casey-entered .b4-col.humanity { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-brand-att4.casey-entered .b4-col.community { opacity:1; transform:none; transition-delay:0.70s; }
+  #cs-brand-att4.casey-entered .b4-col.technology { opacity:1; transform:none; transition-delay:0.90s; }
+  #cs-brand-att4.casey-entered .b4-closer { opacity:1; transform:none; transition-delay:1.30s; }
+  html[data-export="1"] #cs-brand-att4 .b4-head,
+  html[data-export="1"] #cs-brand-att4 .b4-col,
+  html[data-export="1"] #cs-brand-att4 .b4-closer { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-brand-att4" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The Brand &middot; Humanity, Community, Technology</div>
+  <section class="b4-stage">
+    <h1 class="b4-head">Give &lsquo;n Receive is as much about <em>humanity</em> and <em>community</em><br>as it is about <em>technology</em>.</h1>
+
+    <div class="b4-trio">
+
+      <div class="b4-col humanity">
+        <div class="b4-badge">
+          <!-- Open heart -->
+          <svg viewBox="0 0 48 48">
+            <path d="M 24 40 C 14 32 4 24 4 14 C 4 8 8 4 12 4 C 16 4 20 6 24 12 C 28 6 32 4 36 4 C 40 4 44 8 44 14 C 44 24 34 32 24 40 Z"/>
+          </svg>
+        </div>
+        <div class="b4-word">Humanity</div>
+        <p class="b4-claim">Built on the <em>open heart</em>.</p>
+        <p class="b4-detail">You open yours first. Theirs opens back. The causal mechanism of real connection &mdash; the same in every century.</p>
+      </div>
+
+      <div class="b4-col community">
+        <div class="b4-badge">
+          <!-- Community — 3 figures linked -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="14" cy="14" r="4"/>
+            <circle cx="34" cy="14" r="4"/>
+            <circle cx="24" cy="32" r="4"/>
+            <line x1="14" y1="18" x2="24" y2="28"/>
+            <line x1="34" y1="18" x2="24" y2="28"/>
+            <line x1="14" y1="14" x2="34" y2="14"/>
+          </svg>
+        </div>
+        <div class="b4-word">Community</div>
+        <p class="b4-claim">Built <em>with</em>, not at.</p>
+        <p class="b4-detail">Members are not users. The line between staff and members is thin by design. The club is something the community <em>makes together</em>.</p>
+      </div>
+
+      <div class="b4-col technology">
+        <div class="b4-badge">
+          <!-- Network nodes -->
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="3.4"/>
+            <circle cx="10" cy="12" r="2.4"/>
+            <circle cx="38" cy="12" r="2.4"/>
+            <circle cx="10" cy="36" r="2.4"/>
+            <circle cx="38" cy="36" r="2.4"/>
+            <line x1="24" y1="24" x2="10" y2="12"/>
+            <line x1="24" y1="24" x2="38" y2="12"/>
+            <line x1="24" y1="24" x2="10" y2="36"/>
+            <line x1="24" y1="24" x2="38" y2="36"/>
+          </svg>
+        </div>
+        <div class="b4-word">Technology</div>
+        <p class="b4-claim">Carries the <em>load</em>, never the warmth.</p>
+        <p class="b4-detail">AI in the engine, never in the headline. It does the spreadsheet work so the humans stay free to be <em>generous</em>.</p>
+      </div>
+
+    </div>
+
+    <p class="b4-closer">The brand only works because all <em>three</em> work.</p>
   </section>
 </div>
 
@@ -23358,6 +23686,12 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   1: [],
+  // [Dave 2026-05-18] Brand-slide review batch — 4 PURPLE-DOT alts of cs-brand-V8 (slot 24). Dave: "build out a bunch of brand new brand slides... make the dots colored in purple, which is how I'll identify that I know I need to review them."
+  //   cs-brand-att1 — "The Question" (central brand question, full-bleed)
+  //   cs-brand-att2 — "Tech & Open Heart" (diptych answer)
+  //   cs-brand-att3 — "Four Truths" (broken-down answer in 4 cards)
+  //   cs-brand-att4 — "Humanity / Community / Technology" (triple pillar)
+  24: ['cs-brand-att1', 'cs-brand-att2', 'cs-brand-att3', 'cs-brand-att4'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   2: [],
   // Slot 3 (cs-1m8 title — was slot 2) has no alts.
@@ -24585,13 +24919,15 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink');
+    // [Dave 2026-05-18] Purple-dot alts — 4 new brand-slide attempts under cs-brand-V8 for review.
+    const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     const isBlueAlt = (altId === 'cs-wedge1');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-magnetic-orig' || altId === 'cs-wedgefunnel' || altId === 'cs-pbfirst'); // [Dave 2026-05-17 v14] cs-pbfirst added — second red-dot alt at slot 15.
-    altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : ''))));
+    altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : '')))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
