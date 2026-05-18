@@ -7202,8 +7202,8 @@ window.cs1m5Reverse = function() {
 <div class="casey-slide ds-measure" id="cs-1m8" data-stage="0" onclick="this.dataset.stage = Math.min(3, (parseInt(this.dataset.stage)||0) + 1)" style="background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important;">
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
-  <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand'. [Dave 2026-05-14]: → 'The next frontier of technology that connects us' → 'The next frontier: technology that connects us'. [Dave 2026-05-18 LATEST]: → 'Bringing real human connection to our digital world' → 'Introducing Give n Receive' per Dave 'replace "Bringing real human connection to our digital world" with "Introducing Give n Receive"'. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Introducing Give n Receive</div>
+  <!-- Eyebrow [Dave 2026-05-12]: 'Brand Promise' → 'Brand'. [Dave 2026-05-14]: → 'The next frontier of technology that connects us'. [Dave 2026-05-18 LATEST]: → 'Bringing real human connection to our digital world' → 'Introducing Give n Receive'. [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Mixed-case (not uppercased) by overriding text-transform on the inline string since Manrope eyebrow CSS would otherwise SHOUT IT and the period would look loud. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><span style="text-transform:uppercase;letter-spacing:.22em;font-weight:800">Brand</span> &rarr; <em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
       <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
@@ -7263,6 +7263,172 @@ window.cs1m8Reverse = function() {
   return true;
 };
 </script>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-1m8-fuels · PINK-DOT ALT for cs-1m8 [Dave 2026-05-18 LATEST]
+     Per Dave: 'i really like this visual here. i'd like you to create a new
+     slide, just trying something, so i can just delete the slide if i dont
+     like it — use the visuals that you see attached, trying to leverage them
+     in the animation on the slide with the text below: What we give fuels
+     our communities.'
+     Combines:
+       • The cs-brand-mono BRAND rule treatment (horizontal rules + "BRAND" label)
+       • The cs-brand-V8 dot-galaxy + big G/n/R + central n-cell visual
+       • cs-1m8's anchor caption ("What we give · fuels our communities." +
+         "Your people · Your moments · Reciprocated back.")
+     Registered as a pink-dot alt at slot 2 (cs-1m8 primary) — see SLIDE_ALTS[2].
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-1m8-fuels { background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; position:relative; }
+  /* Faint dot grid + warm radial glow — matches cs-1m8 / cs-brand-V8 textures so the alt feels of-a-piece. */
+  #cs-1m8-fuels .pf-grid { position:absolute; inset:0; background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0); background-size:4px 4px; opacity:0.55; pointer-events:none; mix-blend-mode:multiply; }
+  #cs-1m8-fuels .pf-glow { position:absolute; inset:0; background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%); pointer-events:none; }
+  #cs-1m8-fuels .pf-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:88px 56px 60px; z-index:2; gap:24px; }
+  /* BRAND rule eyebrow — cs-brand-mono treatment promoted INTO the slide center as a brand monument label. */
+  #cs-1m8-fuels .pf-brand-rule {
+    display:flex; align-items:center; justify-content:center; gap:18px;
+    font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:#a87a35; margin:0 0 4px;
+  }
+  #cs-1m8-fuels .pf-brand-rule::before,
+  #cs-1m8-fuels .pf-brand-rule::after {
+    content:""; display:block; width:72px; height:1.4px;
+    background:linear-gradient(90deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.78) 50%, rgba(184,149,74,0) 100%);
+  }
+  /* Headline anchor — cs-1m8's "What we give fuels our communities." promoted to the slide's hero line. */
+  #cs-1m8-fuels .pf-head {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-size:clamp(2.2rem, 3.6vw, 3.35rem);
+    font-weight:850; line-height:1.06; letter-spacing:-0.026em;
+    color:#1a1612; text-align:center; margin:0; max-width:1480px;
+  }
+  #cs-1m8-fuels .pf-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-1m8-fuels .pf-head .blue { color:#5B8FD4; font-style:normal; font-weight:850; }
+  #cs-1m8-fuels .pf-head .red  { color:#c8462c; font-style:normal; font-weight:850; }
+  /* Galaxy row — clone of cs-brand-V8's v8-galaxy-row, scoped to this slide. */
+  #cs-1m8-fuels .pf-galaxy-row { position:relative; display:flex; align-items:center; justify-content:center; width:min(1700px,98%); margin-top:8px; }
+  #cs-1m8-fuels .pf-particles { width:42%; height:clamp(280px,28vw,400px); }
+  #cs-1m8-fuels .pf-G, #cs-1m8-fuels .pf-R {
+    position:absolute; top:50%; transform:translateY(-50%);
+    font-family:'Playfair Display',serif; font-weight:900;
+    font-size:clamp(7rem,11vw,10rem); line-height:0.9; letter-spacing:-0.04em;
+    z-index:2; pointer-events:none;
+  }
+  #cs-1m8-fuels .pf-G { left:2%;  color:#4d82c6; text-shadow:0 8px 50px rgba(77,130,198,0.45); }
+  #cs-1m8-fuels .pf-R { right:2%; color:#c94d32; text-shadow:0 8px 50px rgba(201,77,50,0.45); }
+  #cs-1m8-fuels .pf-ncell { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:clamp(180px,15vw,220px); height:clamp(180px,15vw,220px); flex-shrink:0; z-index:5; margin:0 -2%; }
+  #cs-1m8-fuels .pf-ncell::before { content:''; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle,rgba(255,250,240,0.95) 0%, rgba(243,234,216,0.55) 55%, rgba(243,234,216,0) 100%); box-shadow:inset 0 0 60px rgba(184,149,74,0.3), 0 0 80px rgba(184,149,74,0.25); z-index:-1; }
+  #cs-1m8-fuels .pf-n { font-family:'Playfair Display',serif; font-style:italic; font-weight:500; color:#b8954a; font-size:clamp(4rem,7vw,6rem); line-height:0.9; z-index:3; }
+  #cs-1m8-fuels .pf-n-label { font-family:'Manrope',sans-serif; font-size:clamp(.62rem,.72vw,.78rem); font-weight:800; letter-spacing:.42em; text-transform:uppercase; color:#b8954a; text-align:center; line-height:1.3; margin-top:6px; z-index:3; }
+  #cs-1m8-fuels .pf-n-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.15vw,1.15rem); font-weight:500; font-style:italic; color:#b8954a; line-height:1.3; text-align:center; margin-top:4px; z-index:3; }
+  /* Bottom caption row — cs-1m8's left+right captions adapted for the broader galaxy width. */
+  #cs-1m8-fuels .pf-cap-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:120px;
+    width:min(1500px,96%); align-items:start; margin-top:16px;
+  }
+  #cs-1m8-fuels .pf-cap { text-align:center; }
+  #cs-1m8-fuels .pf-cap-eye { font-family:'Manrope',sans-serif; font-size:clamp(.78rem,.92vw,.92rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; line-height:1.3; margin-bottom:8px; }
+  #cs-1m8-fuels .pf-cap-l .pf-cap-eye { color:#5B8FD4; }
+  #cs-1m8-fuels .pf-cap-r .pf-cap-eye { color:#c8462c; }
+  #cs-1m8-fuels .pf-cap-body { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.25rem,1.7vw,1.75rem); font-weight:500; font-style:italic; color:#1a1612; line-height:1.3; }
+  #cs-1m8-fuels .pf-cap-l .pf-cap-body em { font-style:italic; font-weight:700; color:#5B8FD4; }
+  #cs-1m8-fuels .pf-cap-r .pf-cap-body em { font-style:italic; font-weight:700; color:#c8462c; }
+  /* Particle drift animation — copies cs-brand-V8's v8DotDrift pattern so the galaxy breathes the same way Dave already likes. */
+  #cs-1m8-fuels .pf-particles g { opacity:0; }
+  #cs-1m8-fuels .pf-galaxy-row svg.pf-particles:first-of-type g { transform:translateX(-44px); }
+  #cs-1m8-fuels .pf-galaxy-row svg.pf-particles:last-of-type  g { transform:translateX(44px); }
+  #cs-1m8-fuels.casey-entered .pf-galaxy-row svg.pf-particles:first-of-type g { animation:pfGalaxyInL 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  #cs-1m8-fuels.casey-entered .pf-galaxy-row svg.pf-particles:last-of-type  g { animation:pfGalaxyInR 1.6s cubic-bezier(.22,1,.36,1) 0.45s forwards; }
+  @keyframes pfGalaxyInL { to { opacity:1; transform:translateX(0); } }
+  @keyframes pfGalaxyInR { to { opacity:1; transform:translateX(0); } }
+  #cs-1m8-fuels.casey-entered .pf-galaxy-row svg.pf-particles:first-of-type circle { animation:pfDotDriftR 5s ease-in-out infinite; animation-delay:2.2s; transform-box:fill-box; transform-origin:center; }
+  #cs-1m8-fuels.casey-entered .pf-galaxy-row svg.pf-particles:last-of-type  circle { animation:pfDotDriftL 5s ease-in-out infinite; animation-delay:2.2s; transform-box:fill-box; transform-origin:center; }
+  @keyframes pfDotDriftR { 0%,100% { transform:translateX(0); } 50% { transform:translateX(6px); } }
+  @keyframes pfDotDriftL { 0%,100% { transform:translateX(0); } 50% { transform:translateX(-6px); } }
+  /* Staggered fade-ups for headline + caption row */
+  #cs-1m8-fuels .pf-brand-rule, #cs-1m8-fuels .pf-head, #cs-1m8-fuels .pf-cap-row { opacity:0; transform:translateY(10px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  #cs-1m8-fuels.casey-entered .pf-brand-rule { opacity:1; transform:none; transition-delay:0.15s; }
+  #cs-1m8-fuels.casey-entered .pf-head       { opacity:1; transform:none; transition-delay:0.30s; }
+  #cs-1m8-fuels.casey-entered .pf-cap-row    { opacity:1; transform:none; transition-delay:1.40s; }
+  html[data-export="1"] #cs-1m8-fuels .pf-brand-rule,
+  html[data-export="1"] #cs-1m8-fuels .pf-head,
+  html[data-export="1"] #cs-1m8-fuels .pf-cap-row,
+  html[data-export="1"] #cs-1m8-fuels .pf-particles g { opacity:1 !important; transform:none !important; transition:none !important; animation:none !important; }
+  html[data-export="1"] #cs-1m8-fuels .pf-particles circle { animation:none !important; }
+</style>
+<div class="casey-slide ds-measure" id="cs-1m8-fuels" style="display:none">
+  <div class="pf-grid"></div>
+  <div class="pf-glow"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><span style="text-transform:uppercase;letter-spacing:.22em;font-weight:800">Brand</span> &rarr; <em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
+  <section class="pf-stage">
+    <!-- BRAND rule eyebrow (monument treatment). -->
+    <div class="pf-brand-rule">Brand</div>
+
+    <!-- Headline anchor — Dave's "What we give fuels our communities." promoted to the slide's hero line. -->
+    <h1 class="pf-head"><span class="blue">What we give</span> <em>fuels</em> our communities.</h1>
+
+    <!-- Galaxy row — G (blue cap) · blue dot stream · n-orb · red dot stream · R (red cap). -->
+    <div class="pf-galaxy-row">
+      <span class="pf-G">G</span>
+      <svg class="pf-particles" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+        <g fill="#4d82c6">
+          <circle cx="600" cy="200" r="6" opacity="0.92"/>
+          <circle cx="560" cy="170" r="5.4" opacity="0.85"/><circle cx="560" cy="230" r="5.4" opacity="0.85"/>
+          <circle cx="520" cy="140" r="4.8" opacity="0.78"/><circle cx="520" cy="200" r="4.8" opacity="0.82"/><circle cx="520" cy="260" r="4.8" opacity="0.78"/>
+          <circle cx="480" cy="110" r="4.4" opacity="0.72"/><circle cx="480" cy="180" r="4.4" opacity="0.75"/><circle cx="480" cy="220" r="4.4" opacity="0.75"/><circle cx="480" cy="290" r="4.4" opacity="0.72"/>
+          <circle cx="440" cy="80"  r="4" opacity="0.65"/><circle cx="440" cy="160" r="4" opacity="0.68"/><circle cx="440" cy="200" r="4" opacity="0.72"/><circle cx="440" cy="240" r="4" opacity="0.68"/><circle cx="440" cy="320" r="4" opacity="0.65"/>
+          <circle cx="400" cy="60" r="3.6" opacity="0.55"/><circle cx="400" cy="130" r="3.6" opacity="0.6"/><circle cx="400" cy="200" r="3.6" opacity="0.65"/><circle cx="400" cy="270" r="3.6" opacity="0.6"/><circle cx="400" cy="340" r="3.6" opacity="0.55"/>
+          <circle cx="350" cy="50" r="3.2" opacity="0.5"/><circle cx="350" cy="110" r="3.2" opacity="0.52"/><circle cx="350" cy="180" r="3.2" opacity="0.58"/><circle cx="350" cy="220" r="3.2" opacity="0.58"/><circle cx="350" cy="290" r="3.2" opacity="0.52"/><circle cx="350" cy="350" r="3.2" opacity="0.5"/>
+          <circle cx="300" cy="80" r="2.8" opacity="0.42"/><circle cx="300" cy="150" r="2.8" opacity="0.46"/><circle cx="300" cy="200" r="2.8" opacity="0.5"/><circle cx="300" cy="250" r="2.8" opacity="0.46"/><circle cx="300" cy="320" r="2.8" opacity="0.42"/>
+          <circle cx="250" cy="100" r="2.4" opacity="0.36"/><circle cx="250" cy="200" r="2.4" opacity="0.42"/><circle cx="250" cy="300" r="2.4" opacity="0.36"/>
+          <circle cx="200" cy="130" r="2" opacity="0.3"/><circle cx="200" cy="200" r="2" opacity="0.34"/><circle cx="200" cy="270" r="2" opacity="0.3"/>
+          <circle cx="150" cy="160" r="1.7" opacity="0.24"/><circle cx="150" cy="240" r="1.7" opacity="0.24"/>
+          <circle cx="100" cy="200" r="1.5" opacity="0.18"/>
+          <circle cx="50"  cy="180" r="1.2" opacity="0.12"/><circle cx="50"  cy="220" r="1.2" opacity="0.12"/>
+        </g>
+      </svg>
+
+      <div class="pf-ncell">
+        <span class="pf-n">n</span>
+        <div class="pf-n-label">The Network</div>
+        <div class="pf-n-sub">Sees. Measures. Reciprocates.</div>
+      </div>
+
+      <svg class="pf-particles" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+        <g fill="#c94d32">
+          <circle cx="0" cy="200" r="6" opacity="0.92"/>
+          <circle cx="40" cy="170" r="5.4" opacity="0.85"/><circle cx="40" cy="230" r="5.4" opacity="0.85"/>
+          <circle cx="80" cy="140" r="4.8" opacity="0.78"/><circle cx="80" cy="200" r="4.8" opacity="0.82"/><circle cx="80" cy="260" r="4.8" opacity="0.78"/>
+          <circle cx="120" cy="110" r="4.4" opacity="0.72"/><circle cx="120" cy="180" r="4.4" opacity="0.75"/><circle cx="120" cy="220" r="4.4" opacity="0.75"/><circle cx="120" cy="290" r="4.4" opacity="0.72"/>
+          <circle cx="160" cy="80"  r="4" opacity="0.65"/><circle cx="160" cy="160" r="4" opacity="0.68"/><circle cx="160" cy="200" r="4" opacity="0.72"/><circle cx="160" cy="240" r="4" opacity="0.68"/><circle cx="160" cy="320" r="4" opacity="0.65"/>
+          <circle cx="200" cy="60" r="3.6" opacity="0.55"/><circle cx="200" cy="130" r="3.6" opacity="0.6"/><circle cx="200" cy="200" r="3.6" opacity="0.65"/><circle cx="200" cy="270" r="3.6" opacity="0.6"/><circle cx="200" cy="340" r="3.6" opacity="0.55"/>
+          <circle cx="250" cy="50" r="3.2" opacity="0.5"/><circle cx="250" cy="110" r="3.2" opacity="0.52"/><circle cx="250" cy="180" r="3.2" opacity="0.58"/><circle cx="250" cy="220" r="3.2" opacity="0.58"/><circle cx="250" cy="290" r="3.2" opacity="0.52"/><circle cx="250" cy="350" r="3.2" opacity="0.5"/>
+          <circle cx="300" cy="80" r="2.8" opacity="0.42"/><circle cx="300" cy="150" r="2.8" opacity="0.46"/><circle cx="300" cy="200" r="2.8" opacity="0.5"/><circle cx="300" cy="250" r="2.8" opacity="0.46"/><circle cx="300" cy="320" r="2.8" opacity="0.42"/>
+          <circle cx="350" cy="100" r="2.4" opacity="0.36"/><circle cx="350" cy="200" r="2.4" opacity="0.42"/><circle cx="350" cy="300" r="2.4" opacity="0.36"/>
+          <circle cx="400" cy="130" r="2" opacity="0.3"/><circle cx="400" cy="200" r="2" opacity="0.34"/><circle cx="400" cy="270" r="2" opacity="0.3"/>
+          <circle cx="450" cy="160" r="1.7" opacity="0.24"/><circle cx="450" cy="240" r="1.7" opacity="0.24"/>
+          <circle cx="500" cy="200" r="1.5" opacity="0.18"/>
+          <circle cx="550" cy="180" r="1.2" opacity="0.12"/><circle cx="550" cy="220" r="1.2" opacity="0.12"/>
+        </g>
+      </svg>
+      <span class="pf-R">R</span>
+    </div>
+
+    <!-- Bottom caption row — cs-1m8's promise diptych. -->
+    <div class="pf-cap-row">
+      <div class="pf-cap pf-cap-l">
+        <div class="pf-cap-eye">What we give</div>
+        <div class="pf-cap-body"><em>fuels</em> our communities.</div>
+      </div>
+      <div class="pf-cap pf-cap-r">
+        <div class="pf-cap-eye">Your people &middot; Your moments</div>
+        <div class="pf-cap-body"><em>Reciprocated</em> back.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
 
 <!-- ───── cs-1m6 · BRAND DEF v3 · G·n·R EQUATION [3 big letters as wordmark + sub-captions] ─────
      The 3 letters spread out as the brand mark itself, each labeled with its V8 caption.
@@ -12540,8 +12706,8 @@ window.cs1m7Reverse = function() {
               <div class="v5-badge nepc">
                 <img src="nepc-logo.png" alt="New England Pickleball Club logo"/>
               </div>
-              <!-- [Dave 2026-05-18 LATEST] Front label simplified per Dave 'change "social pickleball community builder" to "social community builder"'. -->
-              <div class="v5-front-label">Social<br>community builder</div>
+              <!-- [Dave 2026-05-18 LATEST v2] Front label restacked into 3 lines per Dave: 'change this text positioning so it's: Social / community / builder'. -->
+              <div class="v5-front-label">Social<br>community<br>builder</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -13313,8 +13479,8 @@ window.cs1m7Reverse = function() {
   <section class="rka-stage">
     <div class="rka-head-row">
       <div class="rka-head-text">
-        <h1 class="rka-hero">One Zoom call &mdash; <em>the whole story.</em></h1>
-        <div class="rka-sub">Incumbent broken &rarr; running it by hand &rarr; first reaction to GnR.</div>
+        <!-- [Dave 2026-05-18 LATEST] Hero retitled "One Zoom call — the whole story." → "Our product today isn't just for pickleball." per Dave. Sub-line "Incumbent broken → running it by hand → first reaction to GnR." DELETED per Dave 'delete this'. -->
+        <h1 class="rka-hero">Our product today <em>isn&rsquo;t just for pickleball.</em></h1>
       </div>
       <div class="rka-attr">
         <img src="assets/racketeer-logo.png" alt="Racketeer Padel Club" onerror="this.style.display='none'"/>
@@ -15243,8 +15409,8 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:1080px;line-height:1.5">The next great network is the one that helps us find ourselves and find each other</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="wd-stage">
-      <!-- [Dave 2026-05-18 LATEST] Header REPLACED — the pickleball-coordination-stack line (was the bottom closer) is now the SOLE header above the graphic. Old "next great network" tagline moved to top-left eyebrow above. -->
-      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.20;letter-spacing:-0.015em;max-width:1500px;margin:0 auto 14px;text-align:center">A pickleball community&rsquo;s <em style="font-style:italic;font-weight:850;color:#5B8FD4">coordination stack</em>, rewired for <em style="font-style:italic;font-weight:850;color:#b8954a">autonomous, abundant connection</em>, becomes its <em style="font-style:italic;font-weight:850;color:#c8462c">social network</em>.</div>
+      <!-- [Dave 2026-05-18 LATEST] Header REPLACED — the pickleball-coordination-stack line is the SOLE header above the graphic. [Dave 2026-05-18 LATEST v2] Forced into 3 lines per Dave (break after "stack," and again after "connection,"). -->
+      <div class="wd-tagline" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.45rem,2.3vw,2.15rem);font-style:italic;font-weight:700;color:#1a1612;line-height:1.20;letter-spacing:-0.015em;max-width:1500px;margin:0 auto 14px;text-align:center">A pickleball community&rsquo;s <em style="font-style:italic;font-weight:850;color:#5B8FD4">coordination stack</em>,<br>rewired for <em style="font-style:italic;font-weight:850;color:#b8954a">autonomous, abundant connection</em>,<br>becomes its <em style="font-style:italic;font-weight:850;color:#c8462c">social network</em>.</div>
       <div class="speaker-notes" data-slide="cs-wedge1" style="display:none">GnR is how every community and every person is already wired to function.</div>
 
       <div class="wd-svg-wrap">
@@ -16860,8 +17026,8 @@ window.cs1m7Reverse = function() {
 
 
 <div class="casey-slide ds-focus" id="cs-brand-V8">
-  <!-- [Dave 2026-05-18 LATEST] Eyebrow simplified to "Brand". New big serif header "A life of autonomous, abundant connection." promoted ABOVE the galaxy. Old v8-claim ('Most human value is invisible. So it never returns.') MOVED to BOTTOM of slide as a quiet kicker line below the diptych captions. [Dave 2026-05-18 LATEST v2]: Eyebrow → 'Introducing Give n Receive' per Dave's latest positioning-eyebrow text (replaces the earlier 'Bringing real human connection to our digital world' proposal). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Introducing Give n Receive</div>
+  <!-- Eyebrow history: "Brand" → "Introducing Give n Receive". [Dave 2026-05-18 LATEST v3]: → 'Brand → live a life of abundant, autonomous connection.' per Dave's latest positioning eyebrow. Same mixed-case treatment as cs-1m8 above so the two slides share an identical eyebrow voice. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><span style="text-transform:uppercase;letter-spacing:.22em;font-weight:800">Brand</span> &rarr; <em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
   <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
     <div class="v8-stage">
       <!-- [Dave 2026-05-18 LATEST v3] Header rewritten per Dave: '"A life of autonomous, abundant connection." → "Brand → live a life of abundant, autonomous connection."'. The "Brand →" prefix makes the slide self-identify even more clearly; word order flipped to "abundant, autonomous" per the new copy. -->
@@ -16997,110 +17163,124 @@ window.cs1m7Reverse = function() {
 
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     cs-brand-codex · PINK-DOT ALT for cs-brand-V8 [Dave 2026-05-18 LATEST]
-     Per Dave: 'try building a new brand pink dot slide to the left of current
-     brand slide and you have to use attached image'. Image is a single watercolor
-     that splits L→R: LEFT half cool/blue (a phone with profile cards spilling
-     into isolated, faceless figures — the social-media stand-in) and RIGHT half
-     warm gold (real-world handshakes, friends at a table, pickleball courts
-     activated under string lights — the GnR future). Typography overlays each
-     half — left names the problem ("Social media is a narrow view of human
-     connection technology."), right names what GnR builds instead.
-     Registered as the LEFTMOST pink-dot alt at slot 3 (cs-brand-V8 primary)
-     ahead of cs-brand-mono — see SLIDE_ALTS[3] further below.
+     cs-brand-codex · PINK-DOT ALT [Dave 2026-05-18 LATEST v2 — REBUILD]
+     Per Dave: 'this looks good but you didnt create the slide really that i
+     asked for so brainstorm / try more try creating another... review exactly
+     what i said'. Re-reading the original ask:
+       1. "you HAVE to use attached image" — the codex watercolor must be the
+          hero, not background texture under typography. v1 buried it under
+          heavy cream washes; v2 lets the painting carry the story.
+       2. "left side can say 'Social media is a narrow view of human connection
+          technology.'" — small caption labeling the LEFT half of the painting.
+       3. "right side can be anything around" abundance / measured-multiplied /
+          live-a-life-of-abundant-autonomous-connection — also a small caption,
+          not a competing headline.
+     v2 design:
+       • Image runs full-bleed at FULL opacity (no wash over the painting).
+       • Top-band brand promise — the cs-brand-V8 / cs-brand-mono hero line
+         "Brand → live a life of abundant, autonomous connection." in a thin
+         cream ribbon at the top edge.
+       • Bottom-band two-column footer — left caption sits over the cool/phone
+         half, right caption over the warm/community half. Both small,
+         bottom-anchored, in a faint cream tablet so they read but don't
+         shout. The painting is the slide.
+     Registered as PINK-DOT alt at slot 2 (cs-1m8 primary) — see SLIDE_ALTS[2].
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-brand-codex { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-brand-codex { background:#1a1612 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  /* Image is the slide — full opacity, no wash. */
   #cs-brand-codex .bc-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:1; display:block; }
-  /* Twin washes — soft cream over each typography zone so the overlay copy reads cleanly while the watercolor still breathes between them. */
-  #cs-brand-codex .bc-wash-left  { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(243,234,216,0.78) 0%, rgba(243,234,216,0.55) 18%, rgba(243,234,216,0.15) 32%, rgba(243,234,216,0) 44%); }
-  #cs-brand-codex .bc-wash-right { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(270deg, rgba(243,234,216,0.78) 0%, rgba(243,234,216,0.55) 18%, rgba(243,234,216,0.15) 32%, rgba(243,234,216,0) 44%); }
-  /* Eyebrow stays in its global spot (top:28px;left:48px) — appended inline below. */
-  /* Two copy blocks — one anchored to each side. Vertical positions intentionally offset so they don't collide with the central handshake focal point of the painting. */
-  #cs-brand-codex .bc-copy-left {
-    position:absolute; top:30%; left:5%; transform:translateY(-50%);
-    z-index:3; max-width:34%;
+  /* Thin top ribbon — cream over the top edge so the brand promise reads cleanly without smothering the painting. */
+  #cs-brand-codex .bc-top-band {
+    position:absolute; top:0; left:0; right:0;
+    background:linear-gradient(180deg, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.86) 60%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:84px 56px 56px; text-align:center; pointer-events:none;
   }
-  #cs-brand-codex .bc-copy-right {
-    position:absolute; bottom:8%; right:5%;
-    z-index:3; max-width:36%; text-align:right;
+  #cs-brand-codex .bc-top-eye {
+    font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:#a87a35;
+    margin:0 0 12px;
   }
-  #cs-brand-codex .bc-eye {
-    font-family:'Manrope',sans-serif;
-    font-size:.62rem; font-weight:800;
-    letter-spacing:.32em; text-transform:uppercase;
-    margin:0 0 14px;
-  }
-  #cs-brand-codex .bc-copy-left  .bc-eye { color:#3a73b8; }
-  #cs-brand-codex .bc-copy-right .bc-eye { color:#a8351f; }
-  #cs-brand-codex .bc-head {
+  #cs-brand-codex .bc-top-head {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
-    font-size:clamp(1.7rem, 2.5vw, 2.35rem);
-    font-weight:800; line-height:1.16;
-    letter-spacing:-0.018em;
-    color:#1a1612;
-    margin:0;
-    text-shadow:0 1px 3px rgba(251,247,239,0.55);
+    font-size:clamp(1.9rem, 3.0vw, 2.7rem);
+    font-weight:850; line-height:1.06; letter-spacing:-0.024em;
+    color:#1a1612; margin:0; max-width:1320px; margin-left:auto; margin-right:auto;
   }
-  #cs-brand-codex .bc-head em { font-style:italic; font-weight:850; }
-  #cs-brand-codex .bc-copy-left  .bc-head em { color:#3a73b8; }
-  #cs-brand-codex .bc-copy-right .bc-head em { color:#b8954a; }
-  /* The right-side sub-line sells the GnR future a level more specifically. */
-  #cs-brand-codex .bc-sub {
-    margin:14px 0 0;
+  #cs-brand-codex .bc-top-head em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-brand-codex .bc-top-head .arrow { color:#b8954a; font-weight:600; padding:0 0.10em; }
+  /* Bottom footer — twin captions over the two halves of the painting. Cream tablet under each so the copy reads off the busy watercolor. */
+  #cs-brand-codex .bc-bottom-band {
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(0deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.74) 60%, rgba(251,247,239,0) 100%);
+    z-index:3; padding:56px 64px 44px; pointer-events:none;
+  }
+  #cs-brand-codex .bc-cap-row {
+    display:grid; grid-template-columns:1fr auto 1fr; gap:36px; align-items:center; width:100%;
+  }
+  #cs-brand-codex .bc-cap { display:flex; flex-direction:column; gap:8px; }
+  #cs-brand-codex .bc-cap-l { text-align:left; }
+  #cs-brand-codex .bc-cap-r { text-align:right; }
+  #cs-brand-codex .bc-cap-eye {
+    font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; margin:0;
+  }
+  #cs-brand-codex .bc-cap-l .bc-cap-eye { color:#3a73b8; }
+  #cs-brand-codex .bc-cap-r .bc-cap-eye { color:#a8351f; }
+  #cs-brand-codex .bc-cap-body {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
-    font-size:clamp(.98rem, 1.30vw, 1.22rem);
-    font-style:italic; font-weight:500;
-    line-height:1.38;
-    color:rgba(26,22,18,0.78);
-    text-shadow:0 1px 2px rgba(251,247,239,0.40);
+    font-size:clamp(1.25rem, 1.85vw, 1.75rem);
+    font-weight:700; line-height:1.18; letter-spacing:-0.014em;
+    color:#1a1612; margin:0; max-width:560px;
   }
-  #cs-brand-codex .bc-sub strong { font-style:normal; font-weight:850; color:#c8462c; }
-  /* Center arrow — quiet directional cue between the two halves so the reader feels the L→R "before/after" of the painting. */
-  #cs-brand-codex .bc-arrow {
-    position:absolute; left:50%; top:48%; transform:translate(-50%,-50%);
-    z-index:3; font-family:'Manrope',sans-serif;
-    font-size:.58rem; font-weight:800; letter-spacing:.42em; text-transform:uppercase;
-    color:rgba(184,149,74,0.78);
-    display:flex; flex-direction:column; align-items:center; gap:6px;
-    pointer-events:none;
-  }
-  #cs-brand-codex .bc-arrow svg { width:36px; height:14px; }
-  /* Entrance animations — fade up each copy zone. Skip in export mode. */
-  #cs-brand-codex .bc-copy-left, #cs-brand-codex .bc-copy-right, #cs-brand-codex .bc-arrow {
+  #cs-brand-codex .bc-cap-r .bc-cap-body { margin-left:auto; }
+  #cs-brand-codex .bc-cap-body em { font-style:italic; font-weight:850; }
+  #cs-brand-codex .bc-cap-l .bc-cap-body em { color:#3a73b8; }
+  #cs-brand-codex .bc-cap-r .bc-cap-body em { color:#b8954a; }
+  /* Center arrow between captions — same as the v1 directional cue but smaller and quieter. */
+  #cs-brand-codex .bc-cap-arrow { display:flex; align-items:center; justify-content:center; }
+  #cs-brand-codex .bc-cap-arrow svg { width:44px; height:18px; }
+  /* Animations — fade up bands. */
+  #cs-brand-codex .bc-top-band, #cs-brand-codex .bc-bottom-band {
     opacity:0; transform:translateY(10px);
-    transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+    transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
   }
-  #cs-brand-codex.casey-entered .bc-copy-left  { opacity:1; transform:none; transition-delay:0.20s; }
-  #cs-brand-codex.casey-entered .bc-arrow      { opacity:1; transform:translate(-50%,-50%); transition-delay:0.55s; }
-  #cs-brand-codex.casey-entered .bc-copy-right { opacity:1; transform:none; transition-delay:0.85s; }
-  html[data-export="1"] #cs-brand-codex .bc-copy-left,
-  html[data-export="1"] #cs-brand-codex .bc-copy-right,
-  html[data-export="1"] #cs-brand-codex .bc-arrow {
+  #cs-brand-codex.casey-entered .bc-top-band    { opacity:1; transform:none; transition-delay:0.15s; }
+  #cs-brand-codex.casey-entered .bc-bottom-band { opacity:1; transform:none; transition-delay:0.55s; }
+  html[data-export="1"] #cs-brand-codex .bc-top-band,
+  html[data-export="1"] #cs-brand-codex .bc-bottom-band {
     opacity:1 !important; transform:none !important; transition:none !important;
   }
-  html[data-export="1"] #cs-brand-codex .bc-arrow { transform:translate(-50%,-50%) !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-brand-codex" style="display:none">
-  <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone and isolated profile figures (the social-media view of connection); right half warm gold with handshakes, friends at a glowing dinner table, and an active pickleball community under string lights (the Give 'n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
-  <div class="bc-wash-left"  aria-hidden="true"></div>
-  <div class="bc-wash-right" aria-hidden="true"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand &middot; The narrow view &rarr; the abundant one</div>
+  <img class="bc-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — left half cool-toned with a smartphone spilling profile cards into isolated, faceless figures (the social-media view of human connection); right half warm gold with handshakes, friends at a glowing dinner table, and pickleball courts activated under string lights (the Give 'n Receive future)." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
-  <div class="bc-copy-left">
-    <p class="bc-eye">Today &middot; The narrow view</p>
-    <h2 class="bc-head"><em>Social media</em> is a narrow view of human connection <em>technology</em>.</h2>
+  <!-- Eyebrow keeps the global top-left position; the cream top-band brings the brand promise as the slide's hero line. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand</div>
+
+  <!-- TOP BAND · brand promise -->
+  <div class="bc-top-band">
+    <p class="bc-top-eye">Brand</p>
+    <h1 class="bc-top-head">Live a life of <em>abundant, autonomous connection.</em></h1>
   </div>
 
-  <div class="bc-arrow" aria-hidden="true">
-    <svg viewBox="0 0 36 14" fill="none"><path d="M2 7 H30" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round"/><polyline points="24 2, 30 7, 24 12" stroke="#b8954a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span>G n R</span>
-  </div>
+  <!-- BOTTOM BAND · twin captions naming each half of the painting -->
+  <div class="bc-bottom-band">
+    <div class="bc-cap-row">
+      <div class="bc-cap bc-cap-l">
+        <p class="bc-cap-eye">Today &middot; The narrow view</p>
+        <p class="bc-cap-body"><em>Social media</em> is a narrow view of human connection technology.</p>
+      </div>
 
-  <div class="bc-copy-right">
-    <p class="bc-eye">With Give &lsquo;n Receive</p>
-    <h2 class="bc-head"><em>Autonomous, abundant</em> human connection &mdash; for every community.</h2>
-    <p class="bc-sub">Our connection and unique value to each other &mdash; <strong>measured, multiplied, made abundant.</strong></p>
+      <div class="bc-cap-arrow" aria-hidden="true">
+        <svg viewBox="0 0 44 18" fill="none"><path d="M2 9 H36" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/><polyline points="30 3, 36 9, 30 15" stroke="#b8954a" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="bc-cap bc-cap-r">
+        <p class="bc-cap-eye">With Give &lsquo;n Receive</p>
+        <p class="bc-cap-body">Our connection &amp; unique value to each other &mdash; <em>measured, multiplied, made abundant.</em></p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -17163,8 +17343,9 @@ window.cs1m7Reverse = function() {
     gap:12px; padding:24px 22px;
     border-radius:14px;
   }
-  #cs-ask .ask-path.left  { border:1.4px solid rgba(91,143,212,0.42); background:linear-gradient(180deg,rgba(91,143,212,0.08) 0%, rgba(91,143,212,0.014) 100%); }
-  #cs-ask .ask-path.right { border:1.4px solid rgba(200,70,44,0.42); background:linear-gradient(180deg,rgba(200,70,44,0.08) 0%, rgba(200,70,44,0.014) 100%); }
+  /* [Dave 2026-05-18 LATEST] Card backgrounds OPAQUE per Dave 'make the backgrounds of these two cards opaque'. Was a low-alpha tinted gradient that let the steakhouse watercolor bleed through behind BE A FOUNDING PARTNER / CONNECT ME TO ONE — now solid cream with a subtle blue/red tint so the cards punch off the bg. Added a soft warm shadow so they read as elevated above the painting instead of pasted on. */
+  #cs-ask .ask-path.left  { border:1.4px solid rgba(91,143,212,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(91,143,212,0.10) inset; }
+  #cs-ask .ask-path.right { border:1.4px solid rgba(200,70,44,0.55); background:linear-gradient(180deg, #fbf7ef 0%, #f3ead8 100%); box-shadow:0 10px 24px rgba(26,22,18,0.10), 0 0 0 1px rgba(200,70,44,0.10) inset; }
   #cs-ask .ask-path-icon {
     width:60px; height:60px; border-radius:50%;
     display:grid; place-items:center; flex-shrink:0;
@@ -17361,12 +17542,11 @@ window.cs1m7Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Ask</div>
   <section class="ask-stage">
 
-    <!-- [Dave 2026-05-18 LATEST v2] Headline broken into 4 lines per Dave: 'Dinner tonight: / Discuss NEPC and pickleball — / the perfect outlier wedge into a / new economy of human connection.' -->
+    <!-- [Dave 2026-05-18 LATEST v3] Trimmed per Dave — "Discuss NEPC and pickleball — the perfect outlier wedge into a new economy of human connection." → "Discuss the perfect outlier wedge into a new economy of human connection." The NEPC/pickleball detail dropped so the dinner headline reads as a clean wedge-of-an-economy ask. -->
     <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.20">
       Dinner tonight:<br>
-      Discuss <em>NEPC and pickleball</em> &mdash;<br>
-      the perfect outlier wedge into a<br>
-      <em>new economy of human connection.</em>
+      Discuss the perfect outlier wedge into<br>
+      <em>a new economy of human connection.</em>
     </h1>
 
     <div class="ask-paths">
@@ -20961,7 +21141,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-mv6 .mv6-mission { opacity:1 !important; transform:none !important; animation:none !important; stroke-dasharray:none !important; stroke-dashoffset:0 !important; }
 </style>
 <div class="casey-slide ds-focus appendix-slide" id="cs-mv6" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;max-width:880px;line-height:1.4">Powering the future of how we connect off screen</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;max-width:880px;line-height:1.4">The future of off-screen connection</div>
   <section class="mv6-stage">
 
     <h1 class="mv6-head">The most incredible <em>technology revolution</em>.</h1>
@@ -21371,7 +21551,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-mv6-merge .mg2-end-pt { opacity:1 !important;animation:none !important;transform:none !important;stroke-dashoffset:0 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Powering the future of how we connect off screen</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of off-screen connection</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
@@ -21606,7 +21786,7 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-mv6-pink" style="display:none">
   <img class="mgp-bg" src="assets/cs-mv6-pink.png" alt="Two hands reaching toward each other in warm golden light — watercolor Sistine-Chapel-esque depiction of connection." onerror="this.onerror=null;this.style.display='none'"/>
   <div class="mgp-wash"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Powering the future of how we connect off screen</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of off-screen connection</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
@@ -24640,8 +24820,9 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST] cs-fw1 is now the FINAL slide (slot 25). cs-16 ('Every touchpoint becomes training data') sits as the PINK-DOT alt to its left per Dave 'move "Every touchpoint becomes training data." as a pink dot slide to the left of the "Imagine dropping GnR into any pickleball community." slide'.
   25: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
-  2: [],
-  // Slot 3 (cs-1m8 title — was slot 2) has no alts.
+  // [Dave 2026-05-18 LATEST v5] Brand pink-dot alts moved here from slot 3. cs-1m8-fuels = new particle-galaxy variant; cs-brand-codex = codex split-watercolor variant; cs-brand-mono = brand-monument variant. Order in array maps LEFT→RIGHT in the dot strip (index 0 = leftmost / furthest from primary), so cs-1m8-fuels sits leftmost, cs-brand-mono rightmost (closest to primary).
+  2: ['cs-1m8-fuels', 'cs-brand-codex', 'cs-brand-mono'],
+  // Slot 3 (cs-brand-V8) — see slot 3 entry below; brand pink-dot alts relocated to slot 2.
   3: [],
   // Slot 4 alts (cs-a7m1 primary — was slot 3) — no alts.
   4: [],
@@ -24700,9 +24881,10 @@ const SLIDE_ALTS = {
   //   22: cs-27              (no alts)
   //   23: cs-ask             (no alts)
   //   24: cs-fw1             (pink-dot: cs-16)
-  // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment: massive "BRAND" header + unified G·n·R wordmark.
-  // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt per Dave 'try building a new brand pink dot slide to the left of current brand slide and you have to use attached image'. Listed FIRST in this array so it renders LEFTMOST in the alt-dot row (the SLIDE_ALTS array order maps left→right in the dot strip, so index 0 = furthest from primary).
-  3: ['cs-brand-codex', 'cs-brand-mono'],
+  // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment.
+  // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
+  // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
+  3: [],
   15: ['cs-givefirst-brand'],
   19: [],
   20: [],
@@ -25905,7 +26087,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono' || altId === 'cs-brand-codex');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-mono' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
