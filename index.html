@@ -27,11 +27,13 @@
   }
   .casey-slide img, .casey-slide svg { -webkit-touch-callout: none; }
 
-  /* [Dave 2026-05-17 v19] PHONE PORTRAIT ROTATION PROMPT
-     The deck is a fixed 1920×1080 canvas — on a phone in portrait orientation it scales to
-     ~20% of screen height (unreadable letterbox). Show a friendly overlay asking the viewer
-     to rotate. Targets: portrait orientation AND viewport width ≤ 600px (phones only —
-     tablets in portrait are fine at scale ~0.5). Hidden in export mode (PDF capture). */
+  /* [Dave 2026-05-17 v19 → 2026-05-18 LATEST] PHONE + TABLET PORTRAIT ROTATION PROMPT
+     The deck is a fixed 1920×1080 canvas. On any portrait device it letterboxes hard.
+     Per Dave 'make every slide optimized for laptop and tablet view': the prompt now
+     covers PHONES (orientation:portrait, max-width 600) AND TABLETS in portrait
+     (orientation:portrait, max-width 1180 — covers iPad portrait 768/834/1024 and
+     iPad Pro 11" portrait at 1024). Laptops/desktops are never portrait so they
+     never see this. Hidden in export/PDF mode. */
   .gnr-rotate-prompt {
     display: none;
     position: fixed;
@@ -47,7 +49,7 @@
     text-align: center;
     font-family: 'Manrope', system-ui, sans-serif;
   }
-  @media (orientation: portrait) and (max-width: 600px) {
+  @media (orientation: portrait) and (max-width: 1180px) {
     .gnr-rotate-prompt { display: flex; }
   }
   html[data-export="1"] .gnr-rotate-prompt { display: none !important; }
@@ -117,11 +119,37 @@
   /* Export mode (PDF) — viewport is exactly 1920×1080 so scale stays at 1, but disable position:absolute centering so puppeteer captures from 0,0. */
   html[data-export="1"] body { transform: none !important; position: static !important; left: auto !important; top: auto !important; }
 
-  /* [Dave 2026-05-17 v19] Phone-portrait override: undo the body scale + hide all slides so the
-     rotate-prompt overlay takes the full viewport. (Without this, the prompt would be a child
-     of the scaled body and render at ~20% size.) Only applies to phones (≤600px wide AND
-     portrait); tablets stay in responsive mode. */
-  @media (orientation: portrait) and (max-width: 600px) {
+  /* [Dave 2026-05-18] LAPTOP + TABLET LANDSCAPE OPTIMIZATIONS — explicit rules to make every
+     slide feel polished across the common 16:9 / 16:10 / 3:2 viewports clubs/investors use.
+     The transform-scale handles the math; these rules clean up the secondary edges. */
+  /* 1. Snap-fit on common laptop sizes (1366×768, 1440×900, 1920×1080) — the body scale
+        already handles this, but enforce no-flash via opacity on first paint. */
+  html.deck-responsive body { will-change: transform; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  /* 2. Touch-friendly hover fallback — :hover doesn't fire on touch, so make `cursor:pointer`
+        elements also respond to taps with the same visual via :active. Applied broadly across
+        the deck so any clickable card/dot feels alive on iPad. */
+  @media (hover: none) and (pointer: coarse) {
+    .casey-slide [onclick]:active,
+    .casey-slide [data-flipped]:active,
+    .casey-slide .casey-dot:active { filter: brightness(1.06); transform: scale(0.985); transition: transform 0.12s ease, filter 0.12s ease; }
+    /* New brand-attempt slides (cs-brand-att1/2/3/4) — touch-fallback hover behavior. */
+    #cs-brand-att2 .b2-panel:active,
+    #cs-brand-att3 .b3-card:active,
+    #cs-brand-att4 .b4-col:active { transform: translateY(-2px) scale(0.995); transition: transform 0.12s ease; }
+  }
+  /* 3. Prevent iOS double-tap zoom on slide bodies (we already swipe-nav). */
+  .casey-slide { touch-action: pan-y; }
+  /* 4. Tablet landscape ≤1100px-wide window (rare but possible — e.g. iPad Pro split-view):
+        ensure swipe gesture has comfortable hit area by removing pointer-events hint. */
+  @media (max-width: 1100px) {
+    .casey-slide { -webkit-tap-highlight-color: transparent; }
+  }
+
+  /* [Dave 2026-05-17 v19 → 2026-05-18 LATEST] Portrait override extended to TABLETS too.
+     Undo the body scale + hide all slides so the rotate-prompt overlay takes the full
+     viewport on any portrait device up to 1180px wide (phones AND tablets). Laptops
+     never trigger this because they're not portrait. */
+  @media (orientation: portrait) and (max-width: 1180px) {
     html.deck-responsive { background: #1a1612 !important; }
     html.deck-responsive body {
       width: 100vw !important;
