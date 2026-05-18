@@ -7056,36 +7056,42 @@ window.cs1m5Reverse = function() {
      a single word.
      ════════════════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-frontier-iconic { background:#f3ead8 !important; overflow:hidden; }
-  #cs-frontier-iconic .fi-stage { position:absolute; inset:0; padding:0; }
+  #cs-frontier-iconic, #cs-frontier-pink1, #cs-frontier-pink2 { background:#f3ead8 !important; overflow:hidden; }
+  #cs-frontier-iconic .fi-stage, #cs-frontier-pink1 .fi-stage, #cs-frontier-pink2 .fi-stage { position:absolute; inset:0; padding:0; }
   /* [Dave 2026-05-17 LATEST] Cream wash now top-down (was left-right) so a FULL-WIDTH headline across the top reads cleanly over the watercolor regardless of where the image's dark detail sits. Strongest cream at the very top (where the headline lives), tapering to fully transparent by ~58% so the painting still breathes through the lower half. */
-  #cs-frontier-iconic .fi-stage::before { content:""; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.72) 18%, rgba(251,247,239,0.28) 38%, rgba(251,247,239,0) 58%); }
+  #cs-frontier-iconic .fi-stage::before, #cs-frontier-pink1 .fi-stage::before, #cs-frontier-pink2 .fi-stage::before { content:""; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.72) 18%, rgba(251,247,239,0.28) 38%, rgba(251,247,239,0) 58%); }
   /* [Dave 2026-05-17 LATEST] Headline PROMOTED to full-width hero across the top of the page — bigger (clamp 2.8 → 4.7rem), center-aligned, spans 92% width. Reads as the single dominant beat of slide 1. */
-  #cs-frontier-iconic .fi-headline { position:absolute; top:7.6%; left:4%; right:4%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.65rem,4.6vw,4.85rem); font-weight:850; line-height:1.04; letter-spacing:-0.028em; color:#1a1612; text-align:center; max-width:none; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(251,247,239,0.55),0 2px 12px rgba(251,247,239,0.32); }
-  #cs-frontier-iconic .fi-headline .fi-line { display:block; }
-  #cs-frontier-iconic .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#8a6420; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
+  #cs-frontier-iconic .fi-headline, #cs-frontier-pink1 .fi-headline, #cs-frontier-pink2 .fi-headline { position:absolute; top:7.6%; left:4%; right:4%; z-index:3; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.65rem,4.6vw,4.85rem); font-weight:850; line-height:1.04; letter-spacing:-0.028em; color:#1a1612; text-align:center; max-width:none; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(251,247,239,0.55),0 2px 12px rgba(251,247,239,0.32); }
+  #cs-frontier-iconic .fi-headline .fi-line, #cs-frontier-pink1 .fi-headline .fi-line, #cs-frontier-pink2 .fi-headline .fi-line { display:block; }
+  #cs-frontier-iconic .fi-headline .fi-predictor, #cs-frontier-pink1 .fi-headline .fi-predictor, #cs-frontier-pink2 .fi-headline .fi-predictor { font-style:italic; font-weight:850; color:#8a6420; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   /* [Dave 2026-05-17 LATEST] Science-disciplines strip — small caps below the headline naming the 4 fields that agree. Cream-tinted ink so it reads against the watercolor, brand-gold middle-dot separator. */
-  #cs-frontier-iconic .fi-science-strip { position:absolute; top:calc(7.2% + 9rem); left:5.8%; z-index:3; font-family:'Inter','DM Sans',sans-serif; font-size:clamp(.72rem,.92vw,.88rem); font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.62); max-width:930px; opacity:0; transform:translateY(6px); text-shadow:0 1px 2px rgba(251,247,239,0.55); }
-  #cs-frontier-iconic .fi-science-strip .dot { color:#b8954a; padding:0 .35em; font-weight:700; }
+  #cs-frontier-iconic .fi-science-strip, #cs-frontier-pink1 .fi-science-strip, #cs-frontier-pink2 .fi-science-strip { position:absolute; top:calc(7.2% + 9rem); left:5.8%; z-index:3; font-family:'Inter','DM Sans',sans-serif; font-size:clamp(.72rem,.92vw,.88rem); font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.62); max-width:930px; opacity:0; transform:translateY(6px); text-shadow:0 1px 2px rgba(251,247,239,0.55); }
+  #cs-frontier-iconic .fi-science-strip .dot, #cs-frontier-pink1 .fi-science-strip .dot, #cs-frontier-pink2 .fi-science-strip .dot { color:#b8954a; padding:0 .35em; font-weight:700; }
   @keyframes fiStripIn { 0% { opacity:0; transform:translateY(8px); } 100% { opacity:1; transform:translateY(0); } }
-  #cs-frontier-iconic.casey-entered .fi-science-strip { animation: fiStripIn .7s cubic-bezier(.22,1,.36,1) .85s both; }
-  html[data-export="1"] #cs-frontier-iconic .fi-science-strip { opacity:1 !important; transform:none !important; animation:none !important; }
-  #cs-frontier-iconic .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
-  #cs-frontier-iconic .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
-  #cs-frontier-iconic .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
-  #cs-frontier-iconic .fi-hero-img { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; object-position:center center; opacity:0; transform:scale(1.015); }
+  #cs-frontier-iconic.casey-entered .fi-science-strip, #cs-frontier-pink1.casey-entered .fi-science-strip, #cs-frontier-pink2.casey-entered .fi-science-strip { animation: fiStripIn .7s cubic-bezier(.22,1,.36,1) .85s both; }
+  html[data-export="1"] #cs-frontier-iconic .fi-science-strip,
+  html[data-export="1"] #cs-frontier-pink1 .fi-science-strip,
+  html[data-export="1"] #cs-frontier-pink2 .fi-science-strip { opacity:1 !important; transform:none !important; animation:none !important; }
+  #cs-frontier-iconic .fi-headline .fi-give, #cs-frontier-pink1 .fi-headline .fi-give, #cs-frontier-pink2 .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
+  #cs-frontier-iconic .fi-headline .fi-receive, #cs-frontier-pink1 .fi-headline .fi-receive, #cs-frontier-pink2 .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
+  #cs-frontier-iconic .fi-canvas, #cs-frontier-pink1 .fi-canvas, #cs-frontier-pink2 .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
+  #cs-frontier-iconic .fi-hero-img, #cs-frontier-pink1 .fi-hero-img, #cs-frontier-pink2 .fi-hero-img { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; object-position:center center; opacity:0; transform:scale(1.015); }
   /* [Dave 2026-05-15] Removed rendered GnR mark overlay because the selected Human Constellation artwork already carries the mark; no duplicate logos on opener. */
-  #cs-frontier-iconic .fi-mark { display:none; position:absolute; top:32px; right:42px; z-index:4; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; letter-spacing:-0.035em; opacity:.86; text-shadow:0 1px 2px rgba(255,255,255,.36); }
-  #cs-frontier-iconic .fi-mark .g { color:#5B8FD4; }
-  #cs-frontier-iconic .fi-mark .n { color:#b8954a; font-style:italic; font-weight:650; padding:0 .03em; }
-  #cs-frontier-iconic .fi-mark .r { color:#c8462c; }
+  #cs-frontier-iconic .fi-mark, #cs-frontier-pink1 .fi-mark, #cs-frontier-pink2 .fi-mark { display:none; position:absolute; top:32px; right:42px; z-index:4; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.08rem; font-weight:800; letter-spacing:-0.035em; opacity:.86; text-shadow:0 1px 2px rgba(255,255,255,.36); }
+  #cs-frontier-iconic .fi-mark .g, #cs-frontier-pink1 .fi-mark .g, #cs-frontier-pink2 .fi-mark .g { color:#5B8FD4; }
+  #cs-frontier-iconic .fi-mark .n, #cs-frontier-pink1 .fi-mark .n, #cs-frontier-pink2 .fi-mark .n { color:#b8954a; font-style:italic; font-weight:650; padding:0 .03em; }
+  #cs-frontier-iconic .fi-mark .r, #cs-frontier-pink1 .fi-mark .r, #cs-frontier-pink2 .fi-mark .r { color:#c8462c; }
   /* Entry animation — image settles in, headline lands over the negative space. */
   @keyframes fiArrowIn { 0% { opacity:0; transform:translate(-12px,18px); } 100% { opacity:1; transform:translate(0,0); } }
   @keyframes fiHeroIn { 0% { opacity:0; transform:scale(1.015); } 100% { opacity:1; transform:scale(1); } }
-  #cs-frontier-iconic.casey-entered .fi-headline { animation: fiArrowIn .8s cubic-bezier(.22,1,.36,1) 0.15s both; }
-  #cs-frontier-iconic.casey-entered .fi-hero-img { animation: fiHeroIn 1.1s cubic-bezier(.22,1,.36,1) .35s both; }
+  #cs-frontier-iconic.casey-entered .fi-headline, #cs-frontier-pink1.casey-entered .fi-headline, #cs-frontier-pink2.casey-entered .fi-headline { animation: fiArrowIn .8s cubic-bezier(.22,1,.36,1) 0.15s both; }
+  #cs-frontier-iconic.casey-entered .fi-hero-img, #cs-frontier-pink1.casey-entered .fi-hero-img, #cs-frontier-pink2.casey-entered .fi-hero-img { animation: fiHeroIn 1.1s cubic-bezier(.22,1,.36,1) .35s both; }
   html[data-export="1"] #cs-frontier-iconic .fi-headline,
-  html[data-export="1"] #cs-frontier-iconic .fi-hero-img { opacity:1 !important; transform:none !important; animation:none !important; }
+  html[data-export="1"] #cs-frontier-iconic .fi-hero-img,
+  html[data-export="1"] #cs-frontier-pink1 .fi-headline,
+  html[data-export="1"] #cs-frontier-pink1 .fi-hero-img,
+  html[data-export="1"] #cs-frontier-pink2 .fi-headline,
+  html[data-export="1"] #cs-frontier-pink2 .fi-hero-img { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
 <div class="casey-slide ds-focus active casey-entered" id="cs-frontier-iconic">
   <!-- [Dave 2026-05-17 LATEST] Eyebrow now carries the four science-discipline tags (Neuroscience · Longitudinal · Public Health · Epidemiology) — the standalone disciplines strip below the headline has been removed in favor of this single eyebrow line. Letter-spacing tightened .22em → .16em so the full 4-discipline string fits on one row at the standard eyebrow size. Gold middle-dot separators for rhythm against the red ink. -->
@@ -7095,6 +7101,42 @@ window.cs1m5Reverse = function() {
     <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="A warm human constellation of connection across a neighborhood">
+    </div>
+    <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-frontier-pink1 · PINK-DOT ALT of cs-frontier-iconic [Dave 2026-05-17 LATEST]
+     Per Dave: 'create two new pink-dot alt slides to the left of the frontier-iconic
+     slide; identical content, different background images'. This alt swaps the bg
+     image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
+     Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-frontier-pink1" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Inter','DM Sans',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
+  <section class="fi-stage">
+    <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <div class="fi-canvas">
+      <img class="fi-hero-img" src="assets/cs-frontier-pink1.png" alt="A small town at golden-hour sunset — porches, churches, a quiet street with people gathering" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
+    </div>
+    <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-frontier-pink2 · SECOND PINK-DOT ALT of cs-frontier-iconic [Dave 2026-05-17 LATEST]
+     Bg image: assets/cs-frontier-pink2.png (golden-hour porches at sunset with people).
+     Fallback chain → cs-frontier-iconic-hero.png.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-frontier-pink2" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Inter','DM Sans',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
+  <section class="fi-stage">
+    <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <div class="fi-canvas">
+      <img class="fi-hero-img" src="assets/cs-frontier-pink2.png" alt="Golden-hour porches at sunset with people gathering — watercolor depiction of warm neighborhood evening connection" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png'"/>
     </div>
     <div class="fi-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   </section>
@@ -12608,35 +12650,47 @@ window.cs1m7Reverse = function() {
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
   /* [Dave 2026-05-17 LATEST] Selectors expanded to cover BOTH cs-givefirst-art (slot 18) AND cs-givefirst-slide2 (NEW slot 2) per Dave 'make a duplicate and make it slide 2'. Shared styles via [id^="cs-givefirst-"] but with slide-2 ::after pseudo getting its own image source. */
-  #cs-givefirst-art, #cs-givefirst-slide2 { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
+  /* [Dave 2026-05-17 PINK] cs-givefirst-pink added as pink-dot alt of cs-givefirst-art — same styles, different bg. */
+  #cs-givefirst-art, #cs-givefirst-slide2, #cs-givefirst-pink { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; }
   #cs-givefirst-art .gfa-image,
-  #cs-givefirst-slide2 .gfa-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:1; display:block; opacity:0.96; }
+  #cs-givefirst-slide2 .gfa-image,
+  #cs-givefirst-pink .gfa-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:1; display:block; opacity:0.96; }
   #cs-givefirst-art .gfa-stage,
-  #cs-givefirst-slide2 .gfa-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-start; padding:80px 56px 64px; z-index:2; }
+  #cs-givefirst-slide2 .gfa-stage,
+  #cs-givefirst-pink .gfa-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-start; padding:80px 56px 64px; z-index:2; }
   #cs-givefirst-art .gfa-col,
-  #cs-givefirst-slide2 .gfa-col { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:18px; max-width:660px; padding:28px 32px; }
+  #cs-givefirst-slide2 .gfa-col,
+  #cs-givefirst-pink .gfa-col { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:18px; max-width:660px; padding:28px 32px; }
   #cs-givefirst-art .gfa-copy,
-  #cs-givefirst-slide2 .gfa-copy { font-family:'Fraunces','Playfair Display',Georgia,serif; line-height:1.05; letter-spacing:-0.022em; }
+  #cs-givefirst-slide2 .gfa-copy,
+  #cs-givefirst-pink .gfa-copy { font-family:'Fraunces','Playfair Display',Georgia,serif; line-height:1.05; letter-spacing:-0.022em; }
   #cs-givefirst-art .gfa-line,
-  #cs-givefirst-slide2 .gfa-line { margin:0; font-size:clamp(2.4rem,4.1vw,3.8rem); font-weight:800; color:#1a1612; }
+  #cs-givefirst-slide2 .gfa-line,
+  #cs-givefirst-pink .gfa-line { margin:0; font-size:clamp(2.4rem,4.1vw,3.8rem); font-weight:800; color:#1a1612; }
   #cs-givefirst-art .gfa-muted,
-  #cs-givefirst-slide2 .gfa-muted { color:rgba(26,22,18,0.5); font-weight:600; font-size:clamp(2.1rem,3.7vw,3.4rem); margin-bottom:4px; }
+  #cs-givefirst-slide2 .gfa-muted,
+  #cs-givefirst-pink .gfa-muted { color:rgba(26,22,18,0.5); font-weight:600; font-size:clamp(2.1rem,3.7vw,3.4rem); margin-bottom:4px; }
   #cs-givefirst-art .gfa-muted em,
-  #cs-givefirst-slide2 .gfa-muted em { font-style:italic; font-weight:700; }
+  #cs-givefirst-slide2 .gfa-muted em,
+  #cs-givefirst-pink .gfa-muted em { font-style:italic; font-weight:700; }
   #cs-givefirst-art .gfa-hearts,
-  #cs-givefirst-slide2 .gfa-hearts { width:100%; max-width:580px; margin-top:6px; }
+  #cs-givefirst-slide2 .gfa-hearts,
+  #cs-givefirst-pink .gfa-hearts { width:100%; max-width:580px; margin-top:6px; }
   #cs-givefirst-art .gfa-hearts svg,
-  #cs-givefirst-slide2 .gfa-hearts svg { width:100%; height:auto; display:block; }
+  #cs-givefirst-slide2 .gfa-hearts svg,
+  #cs-givefirst-pink .gfa-hearts svg { width:100%; height:auto; display:block; }
   /* Soft cream wash behind the entire left column so quote + hearts stay readable over the painting */
   #cs-givefirst-art .gfa-col::before,
-  #cs-givefirst-slide2 .gfa-col::before { content:""; position:absolute; inset:-14px -26px; background:radial-gradient(ellipse at 32% 50%, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.78) 55%, rgba(251,247,239,0) 100%); z-index:-1; border-radius:16px; }
+  #cs-givefirst-slide2 .gfa-col::before,
+  #cs-givefirst-pink .gfa-col::before { content:""; position:absolute; inset:-14px -26px; background:radial-gradient(ellipse at 32% 50%, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.78) 55%, rgba(251,247,239,0) 100%); z-index:-1; border-radius:16px; }
   /* Entry stagger */
   #cs-givefirst-art .gfa-image, #cs-givefirst-art .gfa-muted, #cs-givefirst-art .gfa-line, #cs-givefirst-art .gfa-hearts,
-  #cs-givefirst-slide2 .gfa-image, #cs-givefirst-slide2 .gfa-muted, #cs-givefirst-slide2 .gfa-line, #cs-givefirst-slide2 .gfa-hearts { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
-  #cs-givefirst-art.casey-entered .gfa-image,  #cs-givefirst-slide2.casey-entered .gfa-image  { opacity:0.96; transform:none; transition-delay:0.15s; }
-  #cs-givefirst-art.casey-entered .gfa-muted,  #cs-givefirst-slide2.casey-entered .gfa-muted  { opacity:1; transform:none; transition-delay:0.50s; }
-  #cs-givefirst-art.casey-entered .gfa-line,   #cs-givefirst-slide2.casey-entered .gfa-line   { opacity:1; transform:none; transition-delay:0.75s; }
-  #cs-givefirst-art.casey-entered .gfa-hearts, #cs-givefirst-slide2.casey-entered .gfa-hearts { opacity:1; transform:none; transition-delay:1.00s; }
+  #cs-givefirst-slide2 .gfa-image, #cs-givefirst-slide2 .gfa-muted, #cs-givefirst-slide2 .gfa-line, #cs-givefirst-slide2 .gfa-hearts,
+  #cs-givefirst-pink .gfa-image, #cs-givefirst-pink .gfa-muted, #cs-givefirst-pink .gfa-line, #cs-givefirst-pink .gfa-hearts { opacity:0; transform:translateY(8px); transition:opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-givefirst-art.casey-entered .gfa-image,  #cs-givefirst-slide2.casey-entered .gfa-image,  #cs-givefirst-pink.casey-entered .gfa-image  { opacity:0.96; transform:none; transition-delay:0.15s; }
+  #cs-givefirst-art.casey-entered .gfa-muted,  #cs-givefirst-slide2.casey-entered .gfa-muted,  #cs-givefirst-pink.casey-entered .gfa-muted  { opacity:1; transform:none; transition-delay:0.50s; }
+  #cs-givefirst-art.casey-entered .gfa-line,   #cs-givefirst-slide2.casey-entered .gfa-line,   #cs-givefirst-pink.casey-entered .gfa-line   { opacity:1; transform:none; transition-delay:0.75s; }
+  #cs-givefirst-art.casey-entered .gfa-hearts, #cs-givefirst-slide2.casey-entered .gfa-hearts, #cs-givefirst-pink.casey-entered .gfa-hearts { opacity:1; transform:none; transition-delay:1.00s; }
   html[data-export="1"] #cs-givefirst-art .gfa-image,
   html[data-export="1"] #cs-givefirst-art .gfa-muted,
   html[data-export="1"] #cs-givefirst-art .gfa-line,
@@ -12644,9 +12698,14 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-givefirst-slide2 .gfa-image,
   html[data-export="1"] #cs-givefirst-slide2 .gfa-muted,
   html[data-export="1"] #cs-givefirst-slide2 .gfa-line,
-  html[data-export="1"] #cs-givefirst-slide2 .gfa-hearts { opacity:1 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-hearts,
+  html[data-export="1"] #cs-givefirst-pink .gfa-image,
+  html[data-export="1"] #cs-givefirst-pink .gfa-muted,
+  html[data-export="1"] #cs-givefirst-pink .gfa-line,
+  html[data-export="1"] #cs-givefirst-pink .gfa-hearts { opacity:1 !important; transform:none !important; transition:none !important; }
   html[data-export="1"] #cs-givefirst-art .gfa-image,
-  html[data-export="1"] #cs-givefirst-slide2 .gfa-image { opacity:0.96 !important; }
+  html[data-export="1"] #cs-givefirst-slide2 .gfa-image,
+  html[data-export="1"] #cs-givefirst-pink .gfa-image { opacity:0.96 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-givefirst-art">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
@@ -12706,6 +12765,68 @@ window.cs1m7Reverse = function() {
           <!-- Return arc (red → blue) -->
           <path d="M 284 256 Q 240 286 196 256" stroke="#c8462c" stroke-width="1.6" fill="none" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.75" marker-end="url(#gfaArrowRed)"/>
           <!-- Center "n" -->
+          <text x="240" y="190" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a">n</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-givefirst-pink · PINK-DOT ALT of cs-givefirst-art [Dave 2026-05-17 LATEST]
+     Per Dave: 'create a pink-dot alt of the give-first slide with a different
+     background image'. Identical content (eyebrow + quote + hearts choreography),
+     swapped bg image at assets/cs-givefirst-pink.png. Fallback chain →
+     cs-givefirst-art-community.png so slide always renders. Unique gfp-* prefix
+     on SVG marker IDs to avoid collisions with cs-givefirst-art's gfa* + cs-givefirst-slide2's gfa2*.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-givefirst-pink" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">How GnR Growth actually works</div>
+  <img class="gfa-image" src="assets/cs-givefirst-pink.png" alt="Watercolor depiction of give-first as the cause of community — pink-dot alt background variant." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-community.png';this.onerror=function(){this.onerror=null;this.src='assets/cs-givefirst-art-dancing.png'}"/>
+  <section class="gfa-stage">
+    <div class="gfa-col">
+      <div class="gfa-copy">
+        <p class="gfa-line gfa-muted">You can&rsquo;t <em>tell</em> someone</p>
+        <p class="gfa-line">to open their heart.</p>
+      </div>
+      <div class="gfa-hearts">
+        <svg viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" aria-label="Blue heart opens first with outward pulses; red heart receives and opens back">
+          <defs>
+            <radialGradient id="gfpHaloBlue" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="rgba(91,143,212,0.32)"/>
+              <stop offset="100%" stop-color="rgba(91,143,212,0)"/>
+            </radialGradient>
+            <radialGradient id="gfpHaloRed" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="rgba(200,70,44,0.28)"/>
+              <stop offset="100%" stop-color="rgba(200,70,44,0)"/>
+            </radialGradient>
+            <marker id="gfpArrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#b8954a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+            <marker id="gfpArrowRed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#c8462c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <g transform="translate(140, 178)">
+            <circle r="92" fill="url(#gfpHaloBlue)"/>
+            <circle class="gf-pulse-l"   cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.6"/>
+            <circle class="gf-pulse-l-2" cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.4"/>
+            <circle class="gf-pulse-l-3" cx="0" cy="0" r="38" fill="none" stroke="#5B8FD4" stroke-width="1.2"/>
+            <path d="M 0 26 C -16 16 -34 4 -34 -10 C -34 -24 -18 -26 -2 -12 C -1 -11 1 -11 2 -12 C 18 -26 34 -24 34 -10 C 34 4 16 16 0 26 Z" fill="#5B8FD4"/>
+            <path d="M -18 -14 C -22 -8 -18 -2 -12 -4" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+            <text y="68" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="900" letter-spacing="3.4" fill="#3a73b8">YOU OPEN FIRST</text>
+          </g>
+          <path d="M 196 142 Q 240 110 284 142" stroke="#b8954a" stroke-width="1.8" fill="none" stroke-dasharray="5 4" stroke-linecap="round" opacity="0.85" marker-end="url(#gfpArrowGold)"/>
+          <g transform="translate(340, 178)">
+            <circle r="82" fill="url(#gfpHaloRed)"/>
+            <circle class="gf-pulse-r"   cx="0" cy="0" r="34" fill="none" stroke="#c8462c" stroke-width="1.5"/>
+            <circle class="gf-pulse-r-2" cx="0" cy="0" r="34" fill="none" stroke="#c8462c" stroke-width="1.3"/>
+            <path d="M 0 26 C -16 16 -34 4 -34 -10 C -34 -24 -18 -26 -2 -12 C -1 -11 1 -11 2 -12 C 18 -26 34 -24 34 -10 C 34 4 16 16 0 26 Z" fill="#c8462c"/>
+            <path d="M -18 -14 C -22 -8 -18 -2 -12 -4" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/>
+            <text y="68" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="900" letter-spacing="3.4" fill="#a8351f">THEIRS OPENS BACK</text>
+          </g>
+          <path d="M 284 256 Q 240 286 196 256" stroke="#c8462c" stroke-width="1.6" fill="none" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.75" marker-end="url(#gfpArrowRed)"/>
           <text x="240" y="190" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a">n</text>
         </svg>
       </div>
@@ -15804,6 +15925,83 @@ window.cs1m7Reverse = function() {
 </div>
 
 
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-samecourt-pink1 + cs-samecourt-pink2 · TWO PINK-DOT ALTS for cs-samecourt
+     [Dave 2026-05-17 LATEST]
+     Per Dave: 'two new reduced-content pink alts at slot 13 (cs-samecourt) that
+     leverage an attached pickleball-court watercolor as the full-bleed background.'
+     The image itself splits visually — LEFT half cool/desaturated (isolated player,
+     people apart), RIGHT half warm gold (handshakes, smiles, walking off court
+     together). The picture IS the story.
+       • pink1 = MINIMAL — eyebrow + headline + image + RATINGS/RECIPROCITY chips
+       • pink2 = LIGHT — adds two quote bubbles (left: "I'm a 3.9." red, right:
+                          "I'm part of NEPC." blue) overlaid on each half
+     Self-scoped scp-* classes so cs-samecourt's existing .sc-* rules aren't touched.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-samecourt-pink1, #cs-samecourt-pink2 { background:#f3ead8 !important; overflow:hidden; }
+  #cs-samecourt-pink1 .scp-stage, #cs-samecourt-pink2 .scp-stage { position:absolute; inset:0; padding:0; }
+  /* Full-bleed image */
+  #cs-samecourt-pink1 .scp-bg, #cs-samecourt-pink2 .scp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0; transform:scale(1.015); }
+  /* Top-down cream wash so headline reads against image */
+  #cs-samecourt-pink1 .scp-stage::before, #cs-samecourt-pink2 .scp-stage::before { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.68) 18%, rgba(251,247,239,0.18) 35%, rgba(251,247,239,0) 55%); }
+  /* Headline — centered across the top */
+  #cs-samecourt-pink1 .scp-headline, #cs-samecourt-pink2 .scp-headline { position:absolute; top:8.4%; left:4%; right:4%; z-index:4; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.1rem,3.6vw,3.55rem); font-weight:850; line-height:1.06; letter-spacing:-0.026em; color:#1a1612; text-align:center; max-width:none; margin:0; opacity:0; transform:translateY(8px); text-shadow:0 1px 3px rgba(251,247,239,0.55),0 2px 12px rgba(251,247,239,0.35); }
+  #cs-samecourt-pink1 .scp-headline em, #cs-samecourt-pink2 .scp-headline em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-samecourt-pink1 .scp-arr, #cs-samecourt-pink2 .scp-arr { color:#c8462c; font-weight:700; padding:0 .12em; }
+  /* RATINGS / RECIPROCITY chips floating over each half */
+  #cs-samecourt-pink1 .scp-chip, #cs-samecourt-pink2 .scp-chip { position:absolute; z-index:5; font-family:'Inter','DM Sans',sans-serif; font-size:clamp(.62rem,.78vw,.78rem); font-weight:800; letter-spacing:.32em; text-transform:uppercase; padding:7px 13px; border-radius:999px; background:rgba(251,247,239,0.88); backdrop-filter:blur(4px); border:1.4px solid #b8954a; box-shadow:0 6px 18px rgba(26,22,18,0.10); opacity:0; transform:translateY(6px); }
+  #cs-samecourt-pink1 .scp-chip.left, #cs-samecourt-pink2 .scp-chip.left { top:32%; left:8%; color:rgba(26,22,18,0.62); border-color:rgba(200,70,44,0.45); }
+  #cs-samecourt-pink1 .scp-chip.right, #cs-samecourt-pink2 .scp-chip.right { top:32%; right:8%; color:#a87a35; border-color:#b8954a; }
+  /* Eyebrow — same style as primary, sits at standard position */
+  #cs-samecourt-pink1 .scp-eyebrow, #cs-samecourt-pink2 .scp-eyebrow { position:absolute; top:28px; left:48px; z-index:10; font-family:var(--ui,'Manrope',sans-serif); font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; }
+  /* Quote bubbles for pink2 */
+  #cs-samecourt-pink2 .scp-bubble { position:absolute; z-index:6; padding:14px 22px; border-radius:18px; backdrop-filter:blur(5px); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.1rem,1.5vw,1.5rem); font-style:italic; font-weight:600; line-height:1.25; opacity:0; transform:translateY(8px); }
+  #cs-samecourt-pink2 .scp-bubble strong { font-style:normal; font-weight:850; }
+  #cs-samecourt-pink2 .scp-bubble.left { left:7%; top:54%; max-width:300px; background:rgba(251,247,239,0.86); border:1.4px solid rgba(200,70,44,0.45); color:#a8351f; box-shadow:0 10px 24px rgba(200,70,44,0.10); }
+  #cs-samecourt-pink2 .scp-bubble.right { right:7%; top:54%; max-width:330px; background:rgba(251,247,239,0.92); border:1.6px solid #5B8FD4; color:#3a73b8; box-shadow:0 12px 30px rgba(91,143,212,0.22), 0 0 0 4px rgba(91,143,212,0.08); }
+  /* Animations */
+  @keyframes scpFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scpHeroIn { from { opacity:0; transform:scale(1.015); } to { opacity:0.96; transform:scale(1); } }
+  #cs-samecourt-pink1.casey-entered .scp-bg, #cs-samecourt-pink2.casey-entered .scp-bg { animation: scpHeroIn 1.0s cubic-bezier(.22,1,.36,1) .15s both; }
+  #cs-samecourt-pink1.casey-entered .scp-headline, #cs-samecourt-pink2.casey-entered .scp-headline { animation: scpFadeUp .8s cubic-bezier(.22,1,.36,1) .35s both; }
+  #cs-samecourt-pink1.casey-entered .scp-chip.left, #cs-samecourt-pink2.casey-entered .scp-chip.left { animation: scpFadeUp .65s cubic-bezier(.22,1,.36,1) .75s both; }
+  #cs-samecourt-pink1.casey-entered .scp-chip.right, #cs-samecourt-pink2.casey-entered .scp-chip.right { animation: scpFadeUp .65s cubic-bezier(.22,1,.36,1) .95s both; }
+  #cs-samecourt-pink2.casey-entered .scp-bubble.left { animation: scpFadeUp .7s cubic-bezier(.22,1,.36,1) 1.15s both; }
+  #cs-samecourt-pink2.casey-entered .scp-bubble.right { animation: scpFadeUp .7s cubic-bezier(.22,1,.36,1) 1.40s both; }
+  /* Export-mode static */
+  html[data-export="1"] #cs-samecourt-pink1 .scp-bg,
+  html[data-export="1"] #cs-samecourt-pink2 .scp-bg { opacity:0.96 !important; transform:none !important; animation:none !important; }
+  html[data-export="1"] #cs-samecourt-pink1 .scp-headline,
+  html[data-export="1"] #cs-samecourt-pink1 .scp-chip,
+  html[data-export="1"] #cs-samecourt-pink2 .scp-headline,
+  html[data-export="1"] #cs-samecourt-pink2 .scp-chip,
+  html[data-export="1"] #cs-samecourt-pink2 .scp-bubble { opacity:1 !important; transform:none !important; animation:none !important; }
+</style>
+
+<div class="casey-slide ds-focus" id="cs-samecourt-pink1" style="display:none">
+  <div class="scp-eyebrow">Ratings fail social players and social sports communities</div>
+  <section class="scp-stage">
+    <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+    <h1 class="scp-headline">Flip the incentive <span class="scp-arr">&rarr;</span> <em>Unleash connection &amp; community</em></h1>
+    <div class="scp-chip left">Ratings</div>
+    <div class="scp-chip right">Reciprocity</div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-samecourt-pink2" style="display:none">
+  <div class="scp-eyebrow">Ratings fail social players and social sports communities</div>
+  <section class="scp-stage">
+    <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+    <h1 class="scp-headline">Flip the incentive <span class="scp-arr">&rarr;</span> <em>Unleash connection &amp; community</em></h1>
+    <div class="scp-chip left">Ratings</div>
+    <div class="scp-chip right">Reciprocity</div>
+    <div class="scp-bubble left">I&rsquo;m a <strong>3.9</strong>.</div>
+    <div class="scp-bubble right">I&rsquo;m part of <strong>NEPC</strong>.</div>
+  </section>
+</div>
+
+
 <!-- cs-magnetic-v2 (THEN/NOW two-column "rating era / marketplace era" slide) FULLY DELETED 2026-05-15 per Dave 'you can probably just delete this slide'. ~215 lines of style + HTML removed. cs-magnetic (twin-courts version) restored as the slot-12 primary in SLIDE_ORDER + SLIDE_ALTS[12] emptied. -->
 <!-- End cs-magnetic-v2 deletion marker. -->
 
@@ -17627,59 +17825,62 @@ window.cs1m7Reverse = function() {
      9-verb workflow row floating above the wash. Self-scoped fvi-* styles.
      ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
-  #cs-fv6-img { background:#fbf7ef !important; }
+  #cs-fv6-img, #cs-fv6-pink { background:#fbf7ef !important; }
   /* [Dave 2026-05-17 v17] Reverse direction: previous v14 wash buried the watercolor entirely (Dave: 'the background image isn't nearly visible enough, make it much more visible'). Wash now LIGHT across the whole slide so the painting reads, with a tight cream pool ONLY behind the title block (positioned higher up — y=22% — so the rest of the painting breathes). */
-  #cs-fv6-img .fvi-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:1; }
-  #cs-fv6-img .fvi-wash { position:absolute;inset:0;z-index:1;background:
+  #cs-fv6-img .fvi-bg, #cs-fv6-pink .fvi-bg { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:1; }
+  #cs-fv6-img .fvi-wash, #cs-fv6-pink .fvi-wash { position:absolute;inset:0;z-index:1;background:
     radial-gradient(ellipse 52% 22% at 50% 22%, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.55) 55%, rgba(251,247,239,0) 100%),
     linear-gradient(180deg, rgba(251,247,239,0.42) 0%, rgba(251,247,239,0.12) 20%, rgba(251,247,239,0) 40%, rgba(251,247,239,0) 70%, rgba(251,247,239,0.18) 100%);pointer-events:none; }
   /* [Dave 2026-05-17 v17] Content shifted UP — justify-content:flex-start with bigger top padding so headline + verb row sit in the upper third (where the cream wash pool is), leaving the painting's lower 60% fully visible. */
-  #cs-fv6-img .fvi-stage { position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:64px 56px 28px;text-align:center;gap:16px;z-index:2; }
-  #cs-fv6-img .fvi-arc { display:block;margin:0 auto 6px; }
+  #cs-fv6-img .fvi-stage, #cs-fv6-pink .fvi-stage { position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:64px 56px 28px;text-align:center;gap:16px;z-index:2; }
+  #cs-fv6-img .fvi-arc, #cs-fv6-pink .fvi-arc { display:block;margin:0 auto 6px; }
   /* [Dave 2026-05-17 v14] Headline tightened + subtle cream text-shadow on the italic gold for extra readability against the warm watercolor. */
-  #cs-fv6-img .fvi-head { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.9vw,2.7rem);font-weight:800;line-height:1.08;letter-spacing:-0.022em;color:#1a1612;max-width:1480px;margin:0;text-align:center;text-shadow:0 1px 0 rgba(251,247,239,0.7); }
-  #cs-fv6-img .fvi-head em { font-style:italic;font-weight:850;color:#a87a35;text-shadow:0 1px 2px rgba(251,247,239,0.85); }
-  #cs-fv6-img .fvi-sub { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.3vw,1.25rem);font-style:italic;font-weight:550;color:rgba(26,22,18,0.72);line-height:1.4;max-width:1180px;margin:0; }
-  #cs-fv6-img .fvi-sub em { font-style:italic;font-weight:800;color:#c8462c; }
+  #cs-fv6-img .fvi-head, #cs-fv6-pink .fvi-head { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.9vw,2.7rem);font-weight:800;line-height:1.08;letter-spacing:-0.022em;color:#1a1612;max-width:1480px;margin:0;text-align:center;text-shadow:0 1px 0 rgba(251,247,239,0.7); }
+  #cs-fv6-img .fvi-head em, #cs-fv6-pink .fvi-head em { font-style:italic;font-weight:850;color:#a87a35;text-shadow:0 1px 2px rgba(251,247,239,0.85); }
+  #cs-fv6-img .fvi-sub, #cs-fv6-pink .fvi-sub { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.3vw,1.25rem);font-style:italic;font-weight:550;color:rgba(26,22,18,0.72);line-height:1.4;max-width:1180px;margin:0; }
+  #cs-fv6-img .fvi-sub em, #cs-fv6-pink .fvi-sub em { font-style:italic;font-weight:800;color:#c8462c; }
   /* Verb row — re-uses fv-* visual language but on a slightly stronger background tint so it floats clearly over the watercolor wash */
-  #cs-fv6-img .fvi-row { display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:1820px;margin-top:4px;flex-wrap:nowrap; }
-  #cs-fv6-img .fvi-card { background:rgba(251,247,239,0.94);border:1px solid rgba(184,149,74,0.32);border-radius:14px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:0;box-shadow:0 4px 14px rgba(26,22,18,0.06); }
+  #cs-fv6-img .fvi-row, #cs-fv6-pink .fvi-row { display:flex;align-items:center;justify-content:center;gap:6px;width:100%;max-width:1820px;margin-top:4px;flex-wrap:nowrap; }
+  #cs-fv6-img .fvi-card, #cs-fv6-pink .fvi-card { background:rgba(251,247,239,0.94);border:1px solid rgba(184,149,74,0.32);border-radius:14px;padding:14px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:0;box-shadow:0 4px 14px rgba(26,22,18,0.06); }
 
   /* [Dave 2026-05-17 LATEST] Measure (start) + Abundance (end) cards bumped LARGER than the middle 6 cards — emphasizes the workflow's two anchors. Done by increasing flex-grow + padding + verb font-size on those two cards specifically. */
-  #cs-fv6-img .fvi-c0, #cs-fv6-img .fvi-c6 { flex:1.65; padding:20px 12px; gap:11px; box-shadow:0 8px 22px rgba(26,22,18,0.10); border-width:1.5px; }
-  #cs-fv6-img .fvi-c0 .fvi-ico, #cs-fv6-img .fvi-c6 .fvi-ico { width:50px; height:50px; }
-  #cs-fv6-img .fvi-c0 .fvi-ico svg, #cs-fv6-img .fvi-c6 .fvi-ico svg { width:26px; height:26px; }
-  #cs-fv6-img .fvi-c0 .fvi-verb, #cs-fv6-img .fvi-c6 .fvi-verb { font-size:clamp(1.05rem,1.35vw,1.3rem); }
-  #cs-fv6-img .fvi-ico { width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--fvi-bg);color:var(--fvi-c); }
-  #cs-fv6-img .fvi-ico svg { width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
-  #cs-fv6-img .fvi-verb { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.85rem,1.05vw,1rem);font-weight:850;color:var(--fvi-c);letter-spacing:-0.01em; }
-  #cs-fv6-img .fvi-arrow { font-family:'Manrope',sans-serif;color:rgba(184,149,74,0.7);font-size:1.1rem;font-weight:500;flex-shrink:0; }
-  #cs-fv6-img .fvi-c0 { --fvi-c:#1a1612; --fvi-bg:rgba(26,22,18,0.06); }
-  #cs-fv6-img .fvi-c1 { --fvi-c:#7d529f; --fvi-bg:rgba(125,82,159,0.10); }
-  #cs-fv6-img .fvi-c2 { --fvi-c:#3a73b8; --fvi-bg:rgba(91,143,212,0.10); }
-  #cs-fv6-img .fvi-c-mkt { --fvi-c:#c0397c; --fvi-bg:rgba(192,57,124,0.10); }
-  #cs-fv6-img .fvi-c3 { --fvi-c:#a87a35; --fvi-bg:rgba(184,149,74,0.12); }
-  #cs-fv6-img .fvi-c-recip { --fvi-c:#d65a3a; --fvi-bg:rgba(214,90,58,0.10); }
-  #cs-fv6-img .fvi-c5 { --fvi-c:#168651; --fvi-bg:rgba(22,134,81,0.10); }
-  #cs-fv6-img .fvi-c4 { --fvi-c:#5B8FD4; --fvi-bg:rgba(91,143,212,0.10); }
-  #cs-fv6-img .fvi-c6 { --fvi-c:#c8462c; --fvi-bg:rgba(200,70,44,0.10); }
+  #cs-fv6-img .fvi-c0, #cs-fv6-img .fvi-c6, #cs-fv6-pink .fvi-c0, #cs-fv6-pink .fvi-c6 { flex:1.65; padding:20px 12px; gap:11px; box-shadow:0 8px 22px rgba(26,22,18,0.10); border-width:1.5px; }
+  #cs-fv6-img .fvi-c0 .fvi-ico, #cs-fv6-img .fvi-c6 .fvi-ico, #cs-fv6-pink .fvi-c0 .fvi-ico, #cs-fv6-pink .fvi-c6 .fvi-ico { width:50px; height:50px; }
+  #cs-fv6-img .fvi-c0 .fvi-ico svg, #cs-fv6-img .fvi-c6 .fvi-ico svg, #cs-fv6-pink .fvi-c0 .fvi-ico svg, #cs-fv6-pink .fvi-c6 .fvi-ico svg { width:26px; height:26px; }
+  #cs-fv6-img .fvi-c0 .fvi-verb, #cs-fv6-img .fvi-c6 .fvi-verb, #cs-fv6-pink .fvi-c0 .fvi-verb, #cs-fv6-pink .fvi-c6 .fvi-verb { font-size:clamp(1.05rem,1.35vw,1.3rem); }
+  #cs-fv6-img .fvi-ico, #cs-fv6-pink .fvi-ico { width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--fvi-bg);color:var(--fvi-c); }
+  #cs-fv6-img .fvi-ico svg, #cs-fv6-pink .fvi-ico svg { width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
+  #cs-fv6-img .fvi-verb, #cs-fv6-pink .fvi-verb { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.85rem,1.05vw,1rem);font-weight:850;color:var(--fvi-c);letter-spacing:-0.01em; }
+  #cs-fv6-img .fvi-arrow, #cs-fv6-pink .fvi-arrow { font-family:'Manrope',sans-serif;color:rgba(184,149,74,0.7);font-size:1.1rem;font-weight:500;flex-shrink:0; }
+  #cs-fv6-img .fvi-c0, #cs-fv6-pink .fvi-c0 { --fvi-c:#1a1612; --fvi-bg:rgba(26,22,18,0.06); }
+  #cs-fv6-img .fvi-c1, #cs-fv6-pink .fvi-c1 { --fvi-c:#7d529f; --fvi-bg:rgba(125,82,159,0.10); }
+  #cs-fv6-img .fvi-c2, #cs-fv6-pink .fvi-c2 { --fvi-c:#3a73b8; --fvi-bg:rgba(91,143,212,0.10); }
+  #cs-fv6-img .fvi-c-mkt, #cs-fv6-pink .fvi-c-mkt { --fvi-c:#c0397c; --fvi-bg:rgba(192,57,124,0.10); }
+  #cs-fv6-img .fvi-c3, #cs-fv6-pink .fvi-c3 { --fvi-c:#a87a35; --fvi-bg:rgba(184,149,74,0.12); }
+  #cs-fv6-img .fvi-c-recip, #cs-fv6-pink .fvi-c-recip { --fvi-c:#d65a3a; --fvi-bg:rgba(214,90,58,0.10); }
+  #cs-fv6-img .fvi-c5, #cs-fv6-pink .fvi-c5 { --fvi-c:#168651; --fvi-bg:rgba(22,134,81,0.10); }
+  #cs-fv6-img .fvi-c4, #cs-fv6-pink .fvi-c4 { --fvi-c:#5B8FD4; --fvi-bg:rgba(91,143,212,0.10); }
+  #cs-fv6-img .fvi-c6, #cs-fv6-pink .fvi-c6 { --fvi-c:#c8462c; --fvi-bg:rgba(200,70,44,0.10); }
   /* Entry stagger */
-  #cs-fv6-img .fvi-bg, #cs-fv6-img .fvi-arc, #cs-fv6-img .fvi-head, #cs-fv6-img .fvi-sub, #cs-fv6-img .fvi-card { opacity:0;transition:opacity 0.7s cubic-bezier(.22,1,.36,1); }
-  #cs-fv6-img.casey-entered .fvi-bg   { opacity:0.96;transition-delay:0.15s; }
-  #cs-fv6-img.casey-entered .fvi-arc  { opacity:1;transition-delay:0.40s; }
-  #cs-fv6-img.casey-entered .fvi-head { opacity:1;transition-delay:0.55s; }
-  #cs-fv6-img.casey-entered .fvi-sub  { opacity:1;transition-delay:0.75s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(1)  { opacity:1;transition-delay:0.90s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(3)  { opacity:1;transition-delay:1.00s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(5)  { opacity:1;transition-delay:1.10s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(7)  { opacity:1;transition-delay:1.20s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(9)  { opacity:1;transition-delay:1.30s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(11) { opacity:1;transition-delay:1.40s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(13) { opacity:1;transition-delay:1.50s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(15) { opacity:1;transition-delay:1.60s; }
-  #cs-fv6-img.casey-entered .fvi-card:nth-child(17) { opacity:1;transition-delay:1.70s; }
-  html[data-export="1"] #cs-fv6-img .fvi-bg { opacity:0.96 !important;transition:none !important; }
-  html[data-export="1"] #cs-fv6-img .fvi-arc, html[data-export="1"] #cs-fv6-img .fvi-head, html[data-export="1"] #cs-fv6-img .fvi-sub, html[data-export="1"] #cs-fv6-img .fvi-card { opacity:1 !important;transition:none !important; }
+  #cs-fv6-img .fvi-bg, #cs-fv6-img .fvi-arc, #cs-fv6-img .fvi-head, #cs-fv6-img .fvi-sub, #cs-fv6-img .fvi-card,
+  #cs-fv6-pink .fvi-bg, #cs-fv6-pink .fvi-arc, #cs-fv6-pink .fvi-head, #cs-fv6-pink .fvi-sub, #cs-fv6-pink .fvi-card { opacity:0;transition:opacity 0.7s cubic-bezier(.22,1,.36,1); }
+  #cs-fv6-img.casey-entered .fvi-bg, #cs-fv6-pink.casey-entered .fvi-bg   { opacity:0.96;transition-delay:0.15s; }
+  #cs-fv6-img.casey-entered .fvi-arc, #cs-fv6-pink.casey-entered .fvi-arc  { opacity:1;transition-delay:0.40s; }
+  #cs-fv6-img.casey-entered .fvi-head, #cs-fv6-pink.casey-entered .fvi-head { opacity:1;transition-delay:0.55s; }
+  #cs-fv6-img.casey-entered .fvi-sub, #cs-fv6-pink.casey-entered .fvi-sub  { opacity:1;transition-delay:0.75s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(1), #cs-fv6-pink.casey-entered .fvi-card:nth-child(1)  { opacity:1;transition-delay:0.90s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(3), #cs-fv6-pink.casey-entered .fvi-card:nth-child(3)  { opacity:1;transition-delay:1.00s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(5), #cs-fv6-pink.casey-entered .fvi-card:nth-child(5)  { opacity:1;transition-delay:1.10s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(7), #cs-fv6-pink.casey-entered .fvi-card:nth-child(7)  { opacity:1;transition-delay:1.20s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(9), #cs-fv6-pink.casey-entered .fvi-card:nth-child(9)  { opacity:1;transition-delay:1.30s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(11), #cs-fv6-pink.casey-entered .fvi-card:nth-child(11) { opacity:1;transition-delay:1.40s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(13), #cs-fv6-pink.casey-entered .fvi-card:nth-child(13) { opacity:1;transition-delay:1.50s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(15), #cs-fv6-pink.casey-entered .fvi-card:nth-child(15) { opacity:1;transition-delay:1.60s; }
+  #cs-fv6-img.casey-entered .fvi-card:nth-child(17), #cs-fv6-pink.casey-entered .fvi-card:nth-child(17) { opacity:1;transition-delay:1.70s; }
+  html[data-export="1"] #cs-fv6-img .fvi-bg,
+  html[data-export="1"] #cs-fv6-pink .fvi-bg { opacity:0.96 !important;transition:none !important; }
+  html[data-export="1"] #cs-fv6-img .fvi-arc, html[data-export="1"] #cs-fv6-img .fvi-head, html[data-export="1"] #cs-fv6-img .fvi-sub, html[data-export="1"] #cs-fv6-img .fvi-card,
+  html[data-export="1"] #cs-fv6-pink .fvi-arc, html[data-export="1"] #cs-fv6-pink .fvi-head, html[data-export="1"] #cs-fv6-pink .fvi-sub, html[data-export="1"] #cs-fv6-pink .fvi-card { opacity:1 !important;transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-img" style="display:none">
   <!-- [Dave 2026-05-17 LATEST] Eyebrow recolored to WHITE per Dave + font upgraded Manrope → Inter (600 weight, slightly looser .26em letter-spacing). Adds a soft drop-shadow so the white type reads cleanly over the watercolor regardless of background detail. -->
@@ -17700,6 +17901,47 @@ window.cs1m7Reverse = function() {
       <div class="fvi-card fvi-c0"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="3" y="9.5" width="18" height="5" rx="0.5"/><line x1="6" y1="9.5" x2="6" y2="12.5"/><line x1="9" y1="9.5" x2="9" y2="11.5"/><line x1="12" y1="9.5" x2="12" y2="12.5"/><line x1="15" y1="9.5" x2="15" y2="11.5"/><line x1="18" y1="9.5" x2="18" y2="12.5"/></svg></div><div class="fvi-verb">Measure.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <!-- [Dave 2026-05-17 v17] Test. card removed. -->
+      <div class="fvi-card fvi-c2"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><line x1="12" y1="8.4" x2="6.8" y2="15"/><line x1="12" y1="8.4" x2="17.2" y2="15"/><line x1="8.2" y1="17" x2="15.8" y2="17"/></svg></div><div class="fvi-verb">Graph.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c-mkt"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M3 10 L3 14 L8 14 L18 19 L18 5 L8 10 Z"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="20" y1="15" x2="22" y2="15"/></svg></div><div class="fvi-verb">Sell.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c3"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="1.6"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="9" y1="3" x2="9" y2="8"/><line x1="15" y1="3" x2="15" y2="8"/><circle cx="9" cy="14.5" r="0.85" fill="currentColor"/><circle cx="13" cy="14.5" r="0.85" fill="currentColor"/><circle cx="17" cy="14.5" r="0.85" fill="currentColor"/></svg></div><div class="fvi-verb">Coordinate.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c-recip"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M 5 8 L 17 8"/><polyline points="14 5, 17 8, 14 11"/><path d="M 19 16 L 7 16"/><polyline points="10 19, 7 16, 10 13"/></svg></div><div class="fvi-verb">Reciprocate.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c5"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M 12 20 C 7 17 2 13 2 8 C 2 5 4 3.5 6 3.5 C 8.4 3.5 10.5 4.8 12 7 C 13.5 4.8 15.6 3.5 18 3.5 C 20 3.5 22 5 22 8 C 22 13 17 17 12 20 Z"/></svg></div><div class="fvi-verb">Incentivize.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c4"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><path d="M12 3 L12 5.6 M12 18.4 L12 21 M3 12 L5.6 12 M18.4 12 L21 12 M5.6 5.6 L7.5 7.5 M16.5 16.5 L18.4 18.4 M5.6 18.4 L7.5 16.5 M16.5 7.5 L18.4 5.6"/><circle cx="12" cy="12" r="6.4"/></svg></div><div class="fvi-verb">Automate.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
+      <div class="fvi-card fvi-c6"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.9" y1="4.9" x2="7" y2="7"/><line x1="17" y1="17" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="7" y2="17"/><line x1="17" y1="7" x2="19.1" y2="4.9"/></svg></div><div class="fvi-verb">Abundance.</div></div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-fv6-pink · PINK-DOT ALT of cs-fv6-img [Dave 2026-05-17 LATEST]
+     Per Dave: 'create a pink-dot alt of the fv6 / what is real human connection
+     technology slide with a different background image'. Identical content
+     (eyebrow + arc + headline + 8-card workflow row), swapped bg image at
+     assets/cs-fv6-pink.png (handshake watercolor — two hands clasped in warm
+     golden light). Fallback chain → gnr_vnext_real_world_graph.png.
+     Shares all fvi-* styles (selectors extended above).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<div class="casey-slide ds-focus" id="cs-fv6-pink" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Inter','DM Sans',sans-serif;font-size:.60rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#ffffff;z-index:10;text-shadow:0 1px 4px rgba(26,22,18,0.65),0 1px 1px rgba(26,22,18,0.55)">What is real human connection technology?</div>
+  <img class="fvi-bg" src="assets/cs-fv6-pink.png" alt="Two hands clasped in warm golden light — watercolor handshake depicting human connection technology." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <div class="fvi-wash"></div>
+  <section class="fvi-stage">
+    <svg class="fvi-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
+      <path d="M 8 22 Q 40 -4 72 22" stroke="rgba(184,149,74,0.85)" stroke-width="1.5" fill="none"/>
+      <circle cx="8" cy="22" r="3.8" fill="#5B8FD4"/>
+      <circle cx="72" cy="22" r="3.8" fill="#c8462c"/>
+    </svg>
+    <h1 class="fvi-head">Technology for our <em>deepest, most networkable, untapped human-social data</em>.</h1>
+    <div class="fvi-row">
+      <div class="fvi-card fvi-c0"><div class="fvi-ico"><svg viewBox="0 0 24 24"><rect x="3" y="9.5" width="18" height="5" rx="0.5"/><line x1="6" y1="9.5" x2="6" y2="12.5"/><line x1="9" y1="9.5" x2="9" y2="11.5"/><line x1="12" y1="9.5" x2="12" y2="12.5"/><line x1="15" y1="9.5" x2="15" y2="11.5"/><line x1="18" y1="9.5" x2="18" y2="12.5"/></svg></div><div class="fvi-verb">Measure.</div></div>
+      <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c2"><div class="fvi-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><line x1="12" y1="8.4" x2="6.8" y2="15"/><line x1="12" y1="8.4" x2="17.2" y2="15"/><line x1="8.2" y1="17" x2="15.8" y2="17"/></svg></div><div class="fvi-verb">Graph.</div></div>
       <div class="fvi-arrow">&rarr;</div>
       <div class="fvi-card fvi-c-mkt"><div class="fvi-ico"><svg viewBox="0 0 24 24"><path d="M3 10 L3 14 L8 14 L18 19 L18 5 L8 10 Z"/><line x1="20" y1="9" x2="22" y2="9"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="20" y1="15" x2="22" y2="15"/></svg></div><div class="fvi-verb">Sell.</div></div>
@@ -19071,6 +19313,218 @@ window.cs1m7Reverse = function() {
     </div>
 
     <!-- [Dave 2026-05-17 v2] Jobs strip (Community Founder · Builder · Contributor) DELETED — the slide is now the MISSION slide; jobs framing belongs elsewhere. -->
+
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-mv6-pink · PINK-DOT ALT of cs-mv6-merge [Dave 2026-05-17 LATEST]
+     Per Dave: 'create a pink-dot alt of the mission slide with a 'hands reaching
+     toward each other' watercolor (Sistine-Chapel-esque, warm golden light) as a
+     full-bleed bg image behind the chart.' Identical content (MISSION eyebrow +
+     headline + exponential demand curve SVG chart + era markers + YOU ARE HERE
+     2026 marker), but adds a full-bleed bg image with a strong top-down cream
+     wash so the chart still reads cleanly on top.
+     Self-scoped mgp-* CSS (bg image + wash overlay only) — chart structure
+     re-uses mg2-* via dual selectors. SVG defs IDs prefixed mgp- to avoid
+     collisions with cs-mv6-merge's mg2 IDs.
+     No image fallback — slide gracefully degrades to cream gradient bg.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  /* Bg image + cream wash — light enough for the painting to read, strong enough at the top so the headline + chart text stay legible. */
+  #cs-mv6-pink { background:radial-gradient(ellipse at 50% 42%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; position:relative; overflow:hidden; }
+  #cs-mv6-pink .mgp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; opacity:0; transform:scale(1.015); transition:opacity 1.0s cubic-bezier(.22,1,.36,1), transform 1.0s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-pink.casey-entered .mgp-bg { opacity:0.92; transform:scale(1); transition-delay:0.10s; }
+  /* Strong top-down cream wash so chart + headline read */
+  #cs-mv6-pink .mgp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.92) 0%, rgba(251,247,239,0.65) 40%, rgba(251,247,239,0.35) 80%, rgba(251,247,239,0) 100%); }
+  /* Lift the section + headline + chart above the bg image */
+  #cs-mv6-pink .mg2-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 56px 36px; text-align:center; gap:12px; z-index:2; }
+  #cs-mv6-pink .mg2-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.95rem,3.3vw,3.05rem); font-weight:850; line-height:1.06; letter-spacing:-0.026em; color:#1a1612; margin:0; max-width:1400px; text-shadow:0 1px 3px rgba(251,247,239,0.65); }
+  #cs-mv6-pink .mg2-head em { font-style:italic; font-weight:850; color:#c8462c; }
+  #cs-mv6-pink .mg2-chart { width:100%; max-width:1580px; margin:36px auto 0; }
+  #cs-mv6-pink .mg2-chart svg { width:100%; height:auto; display:block; }
+  /* Entry stagger — head + chart fade up after bg lands */
+  #cs-mv6-pink .mg2-head, #cs-mv6-pink .mg2-chart { opacity:0; transform:translateY(14px); transition:opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-pink.casey-entered .mg2-head  { opacity:1; transform:translateY(0); transition-delay:0.45s; }
+  #cs-mv6-pink.casey-entered .mg2-chart { opacity:1; transform:translateY(0); transition-delay:0.85s; }
+  #cs-mv6-pink .mg2-mission-eye { display:inline-block; opacity:0; transform:translateY(6px); letter-spacing:0.38em; transition:opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1), letter-spacing 0.65s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-pink.casey-entered .mg2-mission-eye { opacity:1; transform:translateY(0); letter-spacing:0.26em; transition-delay:0.30s; }
+  @keyframes mgpCurveDraw { from { stroke-dashoffset:2400; } to { stroke-dashoffset:0; } }
+  #cs-mv6-pink .mgp-curve-path { stroke-dasharray:2400; stroke-dashoffset:2400; }
+  #cs-mv6-pink.casey-entered .mgp-curve-path { animation:mgpCurveDraw 2.4s cubic-bezier(.55,0,.65,.55) forwards 1.1s; }
+  @keyframes mgpEndPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.16); } }
+  #cs-mv6-pink .mgp-end-pt { transform-origin:center; transform-box:fill-box; }
+  #cs-mv6-pink.casey-entered .mgp-end-pt { animation:mgpEndPulse 2.4s ease-in-out infinite 3.6s; }
+  @keyframes mgpHaloBreath { 0%,100% { opacity:0.55; transform:scale(0.92); } 50% { opacity:1; transform:scale(1.18); } }
+  #cs-mv6-pink .mgp-end-halo-outer { transform-origin:center; transform-box:fill-box; opacity:0; }
+  #cs-mv6-pink.casey-entered .mgp-end-halo-outer { animation:mgpHaloBreath 4.4s ease-in-out infinite 3.2s; }
+  #cs-mv6-pink .mgp-here { opacity:0; transition:opacity 0.85s cubic-bezier(.22,1,.36,1); }
+  #cs-mv6-pink.casey-entered .mgp-here { opacity:1; transition-delay:4.0s; }
+  @keyframes mgpHereDotPulse { 0%,100% { transform:scale(1); opacity:1; } 50% { transform:scale(1.45); opacity:0.65; } }
+  #cs-mv6-pink .mgp-here-dot { transform-origin:center; transform-box:fill-box; }
+  #cs-mv6-pink.casey-entered .mgp-here-dot { animation:mgpHereDotPulse 1.8s ease-in-out infinite 4.4s; }
+  html[data-export="1"] #cs-mv6-pink .mgp-bg { opacity:0.92 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-mv6-pink .mg2-head,
+  html[data-export="1"] #cs-mv6-pink .mg2-chart,
+  html[data-export="1"] #cs-mv6-pink .mg2-mission-eye,
+  html[data-export="1"] #cs-mv6-pink .mgp-curve-path,
+  html[data-export="1"] #cs-mv6-pink .mgp-end-pt,
+  html[data-export="1"] #cs-mv6-pink .mgp-end-halo-outer,
+  html[data-export="1"] #cs-mv6-pink .mgp-here,
+  html[data-export="1"] #cs-mv6-pink .mgp-here-dot { opacity:1 !important; transform:none !important; animation:none !important; transition:none !important; stroke-dashoffset:0 !important; letter-spacing:0.26em !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-mv6-pink" style="display:none">
+  <img class="mgp-bg" src="assets/cs-mv6-pink.png" alt="Two hands reaching toward each other in warm golden light — watercolor Sistine-Chapel-esque depiction of connection." onerror="this.onerror=null;this.style.display='none'"/>
+  <div class="mgp-wash"></div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Powering the future of how we connect off screen</div>
+  <section class="mg2-stage">
+
+    <h1 class="mg2-head"><span class="mg2-mission-eye" style="font-family:'Inter','DM Sans',sans-serif;font-size:0.42em;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a;vertical-align:0.18em">Mission</span> &nbsp;for all our lives to run on <em>autonomous, abundant connection</em>.</h1>
+
+    <div class="mg2-chart">
+      <svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" aria-label="Six tech-wave eras across the x-axis with an exponential demand-for-real-connection curve climbing through them, peaking at GnR.">
+        <defs>
+          <linearGradient id="mgpFillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(200,70,44,0.32)"/>
+            <stop offset="100%" stop-color="rgba(200,70,44,0)"/>
+          </linearGradient>
+          <radialGradient id="mgpEndGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(184,149,74,0.55)"/>
+            <stop offset="100%" stop-color="rgba(184,149,74,0)"/>
+          </radialGradient>
+          <linearGradient id="mgpGnRBlock" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#d4a85a"/>
+            <stop offset="100%" stop-color="#a87a35"/>
+          </linearGradient>
+        </defs>
+
+        <text x="100" y="180" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">Demand for real</text>
+        <text x="100" y="238" text-anchor="start" font-family="Fraunces,'Playfair Display',Georgia,serif" font-size="58" font-style="italic" font-weight="850" fill="#c8462c" letter-spacing="-0.01em">connection.</text>
+
+        <g stroke="rgba(26,22,18,0.06)" stroke-width="1" stroke-dasharray="3 5" fill="none">
+          <line x1="60" y1="60"  x2="1560" y2="60"/>
+          <line x1="60" y1="140" x2="1560" y2="140"/>
+          <line x1="60" y1="220" x2="1560" y2="220"/>
+          <line x1="60" y1="300" x2="1560" y2="300"/>
+          <line x1="60" y1="380" x2="1560" y2="380"/>
+        </g>
+
+        <line x1="60" y1="400" x2="1560" y2="400" stroke="rgba(26,22,18,0.22)" stroke-width="1.4"/>
+
+        <path d="M 100 388 Q 240 388, 380 386 Q 550 384, 720 378 Q 870 370, 1000 347 Q 1130 318, 1250 217 C 1370 116, 1475 80, 1480 46 L 1480 400 L 100 400 Z" fill="url(#mgpFillGrad)"/>
+
+        <path class="mgp-curve-path" d="M 100 388 Q 240 388, 380 386 Q 550 384, 720 378 Q 870 370, 1000 347 Q 1130 318, 1250 217 C 1370 116, 1475 80, 1480 46"
+              fill="none" stroke="#c8462c" stroke-width="3.6" stroke-linecap="round"/>
+
+        <!-- 1: COMPUTING — Microsoft (1980) -->
+        <g>
+          <line x1="100" y1="388" x2="100" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="2 3"/>
+          <g transform="translate(100, 346)">
+            <rect x="-32" y="-24" width="64" height="50" rx="7" fill="rgba(251,247,239,0.96)" stroke="rgba(26,22,18,0.18)" stroke-width="1.2"/>
+            <g transform="translate(-11, -11)">
+              <rect x="0"  y="0"  width="10" height="10" fill="#F25022"/>
+              <rect x="12" y="0"  width="10" height="10" fill="#7FBA00"/>
+              <rect x="0"  y="12" width="10" height="10" fill="#00A4EF"/>
+              <rect x="12" y="12" width="10" height="10" fill="#FFB900"/>
+            </g>
+          </g>
+          <circle cx="100" cy="388" r="7" fill="#b8954a"/>
+          <text x="100" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.7)">COMPUTING</text>
+          <text x="100" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="rgba(26,22,18,0.48)">1980</text>
+        </g>
+
+        <!-- 2: INTERNET — Google G (1995) -->
+        <g>
+          <line x1="380" y1="386" x2="380" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="2 3"/>
+          <g transform="translate(380, 344)">
+            <rect x="-32" y="-24" width="64" height="50" rx="7" fill="rgba(251,247,239,0.96)" stroke="rgba(26,22,18,0.18)" stroke-width="1.2"/>
+            <g transform="translate(-13, -12) scale(1.08)">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </g>
+          </g>
+          <circle cx="380" cy="386" r="7" fill="#b8954a"/>
+          <text x="380" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.7)">INTERNET</text>
+          <text x="380" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="rgba(26,22,18,0.48)">1995</text>
+        </g>
+
+        <!-- 3: SMARTPHONES — Apple (2007) -->
+        <g>
+          <line x1="720" y1="378" x2="720" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="2 3"/>
+          <g transform="translate(720, 336)">
+            <rect x="-32" y="-24" width="64" height="50" rx="7" fill="rgba(251,247,239,0.96)" stroke="rgba(26,22,18,0.18)" stroke-width="1.2"/>
+            <g transform="translate(0, 4)" fill="#1a1612" stroke="none">
+              <path d="M 8.5 1.4 C 8.5 -2 6.3 -3.4 4.2 -3.4 C 2.1 -3.4 0.9 -2.2 -0.3 -2.2 C -1.5 -2.2 -3 -3.4 -5.1 -3.4 C -7.6 -3.4 -10 -1.4 -10 3.2 C -10 8.4 -6.4 13 -4 13 C -2.5 13 -1.2 12 0 12 C 1.2 12 2.7 13 4.4 13 C 6.7 13 9.6 8.5 10.8 4.6 C 8.1 3.6 8.5 0.4 8.5 1.4 Z" transform="scale(1.15)"/>
+              <path d="M 2 -6 C 2.8 -8.4 5 -9.5 6.5 -9.5 C 6.2 -7 4.6 -5.4 2 -6 Z" transform="scale(1.15)"/>
+            </g>
+          </g>
+          <circle cx="720" cy="378" r="7.5" fill="#c8462c"/>
+          <text x="720" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.7)">SMARTPHONES</text>
+          <text x="720" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="rgba(26,22,18,0.48)">2007</text>
+        </g>
+
+        <!-- 4: SOCIAL MEDIA — Facebook (2012) -->
+        <g>
+          <line x1="1000" y1="347" x2="1000" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="2 3"/>
+          <g transform="translate(1000, 305)">
+            <rect x="-32" y="-24" width="64" height="50" rx="7" fill="rgba(251,247,239,0.96)" stroke="rgba(26,22,18,0.18)" stroke-width="1.2"/>
+            <g transform="translate(0, 1)">
+              <rect x="-14" y="-14" width="28" height="28" rx="5" fill="#1877F2" stroke="none"/>
+              <g transform="translate(-10, -10) scale(0.84)">
+                <path fill="#ffffff" d="M15.997 3.985h2.191V.169C17.81.117 16.51 0 14.996 0c-3.159 0-5.323 1.987-5.323 5.639V9H6.187v4.266h3.486V24h4.274V13.267h3.345l.531-4.266h-3.877V6.062c.001-1.233.333-2.077 2.051-2.077z"/>
+              </g>
+            </g>
+          </g>
+          <circle cx="1000" cy="347" r="7.5" fill="#c8462c"/>
+          <text x="1000" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.7)">SOCIAL MEDIA</text>
+          <text x="1000" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="rgba(26,22,18,0.48)">2012</text>
+        </g>
+
+        <!-- 5: AI — OpenAI petals (2022) -->
+        <g>
+          <line x1="1250" y1="217" x2="1250" y2="400" stroke="rgba(26,22,18,0.18)" stroke-width="1" stroke-dasharray="2 3"/>
+          <g transform="translate(1250, 175)">
+            <rect x="-32" y="-24" width="64" height="50" rx="7" fill="rgba(251,247,239,0.96)" stroke="rgba(26,22,18,0.18)" stroke-width="1.2"/>
+            <g transform="translate(0, 2)" fill="none" stroke="#1a1612" stroke-width="2">
+              <ellipse cx="0" cy="0" rx="13" ry="4.6"/>
+              <ellipse cx="0" cy="0" rx="13" ry="4.6" transform="rotate(60)"/>
+              <ellipse cx="0" cy="0" rx="13" ry="4.6" transform="rotate(120)"/>
+            </g>
+          </g>
+          <circle cx="1250" cy="217" r="8" fill="#c8462c"/>
+          <text x="1250" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="800" letter-spacing="2.2" fill="rgba(26,22,18,0.7)">AI</text>
+          <text x="1250" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.6" fill="rgba(26,22,18,0.48)">2022</text>
+        </g>
+
+        <!-- YOU ARE HERE · 2026 marker -->
+        <g class="mgp-here">
+          <line x1="1378" y1="110" x2="1378" y2="60" stroke="rgba(26,22,18,0.34)" stroke-width="1" stroke-dasharray="2 2"/>
+          <rect x="1320" y="34" width="116" height="30" rx="6" fill="rgba(26,22,18,0.92)" stroke="#b8954a" stroke-width="0.9"/>
+          <text x="1378" y="49" text-anchor="middle" font-family="Inter,'DM Sans',sans-serif" font-size="9.5" font-weight="700" letter-spacing="2.4" fill="#ffffff">YOU ARE HERE</text>
+          <text x="1378" y="60" text-anchor="middle" font-family="Inter,'DM Sans',sans-serif" font-size="8" font-weight="600" letter-spacing="2.2" fill="#b8954a">2026</text>
+          <circle class="mgp-here-dot" cx="1378" cy="110" r="6.5" fill="#fff" stroke="#c8462c" stroke-width="2.4"/>
+        </g>
+
+        <!-- 6: GnR (2030) — peak -->
+        <g>
+          <line x1="1480" y1="46" x2="1480" y2="400" stroke="rgba(184,149,74,0.34)" stroke-width="1.2" stroke-dasharray="2 3"/>
+          <circle class="mgp-end-halo-outer" cx="1480" cy="46" r="68" fill="url(#mgpEndGlow)"/>
+          <circle cx="1480" cy="46" r="32" fill="url(#mgpEndGlow)"/>
+          <g transform="translate(1480, 22)">
+            <rect x="-36" y="-18" width="72" height="40" rx="7" fill="rgba(251,247,239,0.98)" stroke="#b8954a" stroke-width="1.6"/>
+            <text x="0" y="10" text-anchor="middle" font-family="Fraunces,'Playfair Display',Georgia,serif" font-weight="900" font-size="26" letter-spacing="-0.02em">
+              <tspan fill="#5B8FD4">G</tspan><tspan fill="#b8954a" font-style="italic" font-weight="500" font-size="22" dx="1">n</tspan><tspan fill="#c8462c" dx="1">R</tspan>
+            </text>
+          </g>
+          <circle class="mgp-end-pt" cx="1480" cy="46" r="8" fill="#b8954a"/>
+          <text x="1480" y="426" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="800" letter-spacing="2.2" fill="#b8954a">HUMAN CONNECTION</text>
+          <text x="1480" y="446" text-anchor="middle" font-family="Manrope,sans-serif" font-size="10" font-weight="800" letter-spacing="1.6" fill="#b8954a">2030</text>
+        </g>
+      </svg>
+    </div>
 
   </section>
 </div>
@@ -21963,7 +22417,8 @@ const SLIDE_ALTS = {
   // Slot 1 (cs-frontier — merged opener) has cs-intro6 as red-dot review alt. [cs-magcover removed 2026-05-15 per Dave]
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to primary (see SLIDE_ORDER above). cs-frontier (former primary, with hero text + curve + era labels + 4-sciences strip) now sits as the FIRST red-dot alt — one step left of the new primary so it's the closest neighbor.
   // [Dave 2026-05-17 v6] cs-frontier AND cs-intro6 MOVED to appendix per Dave (consecutive 'move this slide to appendix' on both slot-1 red-dot alts). Slot 1 now has no alts; cs-frontier-iconic stands alone as the opener.
-  1: [],
+  // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
+  1: ['cs-frontier-pink1', 'cs-frontier-pink2'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   2: [],
   // Slot 3 (cs-1m8 title — was slot 2) has no alts.
@@ -21973,7 +22428,8 @@ const SLIDE_ALTS = {
   // Slot 6 (cs-2c — was slot 5) — no alts.
   6: [],
   // Slot 13 (cs-samecourt — was slot 12) — no alts.
-  13: [],
+  // [Dave 2026-05-17 LATEST PINK] Two REDUCED-CONTENT pink-dot alts added at slot 13 — cs-samecourt-pink1 (MINIMAL: image-led + RATINGS/RECIPROCITY chips), cs-samecourt-pink2 (LIGHT: adds two quote bubbles "I'm a 3.9." / "I'm part of NEPC."). Pickleball-court watercolor bg carries the paradigm story visually; minimal text overlay.
+  13: ['cs-samecourt-pink1', 'cs-samecourt-pink2'],
   // [Dave 2026-05-17 v7] cs-magnetic-orig added as RED-DOT alt at slot 13 per Dave 'add a red dot slide to left of social pull slide which was the original social pull slide where you had the ratings court on the right with the three questions'. Restores the older twin-court layout (marketplace LEFT + ratings RIGHT with Balanced/Fun/Filled questions). cs-merge3 retained as pink-dot drift alt.
   // Slot 14 (cs-magnetic — was slot 13) — red-dot + pink-dot alts
   14: ['cs-magnetic-orig', 'cs-merge3'],
@@ -22001,10 +22457,15 @@ const SLIDE_ALTS = {
   16: ['cs-pbfirst'],
   // Slot 17 (cs-18-vd4 Wheelhouse — was slot 16) — no alts
   17: [],
+  // [Dave 2026-05-17 LATEST PINK] cs-givefirst-pink added — pink-dot alt of cs-givefirst-art (slot 18) with a different bg image. Same eyebrow + quote + hearts choreography, swapped img.
+  18: ['cs-givefirst-pink'],
   // Slot 19 (cs-fw1 flywheel — was slot 18) — cs-16 pink-dot alt
   19: ['cs-16'],
   // Slot 20 (cs-fv6-img — was slot 19) — no alts
-  20: [],
+  // [Dave 2026-05-17 LATEST PINK] cs-fv6-pink added — pink-dot alt of cs-fv6-img with handshake watercolor bg (two hands clasped in warm golden light). Identical content (headline + 8-card workflow row), swapped bg image.
+  20: ['cs-fv6-pink'],
+  // [Dave 2026-05-17 LATEST PINK] cs-mv6-pink added — pink-dot alt of cs-mv6-merge (slot 21, MISSION slide) with a 'hands reaching toward each other' watercolor bg (Sistine-Chapel-esque, warm golden light). Same MISSION eyebrow + headline + exponential demand curve chart + era markers + YOU ARE HERE 2026 marker, now layered over a full-bleed bg image with a top-down cream wash so the chart still reads. Self-scoped mgp-* CSS + prefixed SVG defs IDs to avoid collisions with cs-mv6-merge's mg2-* IDs.
+  21: ['cs-mv6-pink'],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -23183,7 +23644,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-merge3 = pink (newer candidate at slot 13)
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel).
+    //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21.
     const isBlueAlt = (altId === 'cs-wedge1');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
