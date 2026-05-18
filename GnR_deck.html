@@ -12305,8 +12305,8 @@ window.cs1m7Reverse = function() {
   [id^="cs-18-vd4"] .vd-stage { padding: 64px 56px 48px; }
   [id^="cs-18-vd4"] .vd-wrap { display:flex;flex-direction:column;align-items:center;gap:32px;width:100%;max-width:1380px;margin:0 auto; }
   [id^="cs-18-vd4"] .vd-name { font-family:'Manrope',sans-serif;font-size:clamp(.72rem,.92vw,.88rem);font-weight:700;letter-spacing:.42em;text-transform:uppercase;color:rgba(26,22,18,0.62);text-align:center; }
-  /* [Dave 2026-05-18] vd-hero font size REDUCED so the Steve Jobs quote sits on 2 lines instead of 3 (was clamp(2.5rem,4.2vw,4rem)). */
-  [id^="cs-18-vd4"] .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.55rem,2.6vw,2.45rem);font-weight:800;line-height:1.18;letter-spacing:-0.022em;color:#1a1612;text-align:center;max-width:1340px; }
+  /* [Dave 2026-05-18 v2] vd-hero font size TUNED UP so the Steve Jobs quote sits on exactly 2 lines (v1 at 2.45rem peak was too small — 3 lines). New peak 3.05rem + max-width 1640px gives breathing room for "...work backwards to the / technology — Steve Jobs". */
+  [id^="cs-18-vd4"] .vd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.95rem,3.05vw,2.95rem);font-weight:800;line-height:1.16;letter-spacing:-0.022em;color:#1a1612;text-align:center;max-width:1640px; }
   [id^="cs-18-vd4"] .vd-hero em { display:block;font-style:italic;font-weight:850;color:#b8954a;margin-top:6px; }
   /* 3-pillar row */
   [id^="cs-18-vd4"] .v5-pillars { display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;width:100%;max-width:1180px;align-items:stretch;margin-top:12px; }
@@ -12484,7 +12484,7 @@ window.cs1m7Reverse = function() {
      Vision (idea maze) + Foundation (NEPC lab) + Network (pickleball world trust + lifelong commitment). -->
 <div class="casey-slide ds-focus" id="cs-18-vd4">
   <!-- [Dave 2026-05-18] Eyebrow + hero + timeline-2024 edits per Dave. Previous version preserved as pink-dot alt cs-18-vd4-pink below. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Solving GnR &rarr; understanding community and connection</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">My wheelhouse: community and connection in social pickleball clubs &rarr; next frontier</div>
   <section class="vd-stage">
     <div class="vd-wrap">
       <div class="vd-name">Dave Velardo &middot; Founder &amp; CEO</div>
@@ -12604,7 +12604,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-num">03</div>
               <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
               <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
-              <div class="v5-body"><em>We&rsquo;re wired to give.</em></div>
+              <div class="v5-body"><em>We&rsquo;re wired to give &amp; receive.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
           </div>
@@ -12616,8 +12616,8 @@ window.cs1m7Reverse = function() {
         <!-- [Dave 2026-05-14 PM v4 f] New FIRST bullet — the founding insight that ratings were the wrong paradigm for a wildly social sport. Pre-dates the rest of the timeline. -->
         <div class="v5-step"><div class="yr">2019</div><div class="dot"></div><div class="txt">Problem</div></div>
         <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">#27 pro tour</div></div>
-        <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">Pickleball computer vision</div></div>
-        <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition declined</div></div>
+        <div class="v5-step"><div class="yr">2020</div><div class="dot"></div><div class="txt">Pickleball<br>computer vision</div></div>
+        <div class="v5-step"><div class="yr">2021</div><div class="dot"></div><div class="txt">DUPR acquisition<br>declined</div></div>
         <div class="v5-step"><div class="yr">2022</div><div class="dot"></div><div class="txt">Founded NEPC</div></div>
         <div class="v5-step"><div class="yr">2024</div><div class="dot"></div><div class="txt"><strong style="font-weight:800;color:#1a1612">Core Product Pivot:</strong> invitations</div></div>
         <div class="v5-step now"><div class="yr">2025</div><div class="dot"></div><div class="txt">CTO Steve joins</div><div class="sub">60 GnR invitation courts</div></div>
@@ -12842,101 +12842,30 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-racketeer .rk-attribution { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-racketeer" style="display:none">
-  <!-- [Dave 2026-05-18 v2] REDESIGNED to surface the Krista↔Marcos parallel — same instincts, same manual workarounds, same missing tool, two countries / two sports. Validates that GnR's wedge isn't NEPC-specific; it's a universal community-operator pattern. Right panel keeps the Racketeer logo + Marcos info + hero pull-quote + video frame placeholder. -->
+  <!-- [Dave 2026-05-18 v3 — LEAN PRIMARY] Dave: "far, far too much text and content on this slide". v2 dense comparison version retained as PURPLE-DOT alt (cs-racketeer-att-dense). Two more alt approaches added: cs-racketeer-att-pattern (Krista=Marcos minimal) and cs-racketeer-att-video (video-centerpiece). This primary is the QUOTE-LED minimal version — one pull-quote does the work. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">First external club &middot; London &middot; May 18, 2026</div>
   <section class="rk-stage">
-    <h1 class="rk-hero">Same <em>instinct</em>. Same <em>workarounds</em>. Two countries. Two sports.</h1>
-    <div class="rk-sub"><strong>Krista</strong> runs NEPC operations. <strong>Marcos</strong> founded Racketeer. Both already build community by hand &mdash; because the tool to do it well <em style="font-style:italic;color:#b8954a;font-weight:800">doesn&rsquo;t exist</em>.</div>
+    <h1 class="rk-hero">Same as <em>Krista</em>. Different country.</h1>
+    <div class="rk-sub"><strong>Marcos Garcia</strong> &middot; Racketeer Paddle Club (London) &middot; first prospective customer outside NEPC.</div>
 
-    <div class="rk-grid">
+    <!-- LEAN body: one editorial pull-quote on the left, compact Racketeer/video panel on the right. -->
+    <div class="rk-lean-grid" style="display:grid;grid-template-columns:1.4fr 1fr;gap:40px;width:100%;max-width:1560px;align-items:center;margin-top:14px">
 
-      <!-- LEFT · Krista ↔ Marcos PARALLEL COMPARISON PANEL -->
-      <div class="rk-parallel">
-
-        <!-- Operator-pair header row -->
-        <div class="rk-ops-row">
-          <div class="rk-op krista">
-            <div class="rk-op-avatar">K</div>
-            <div class="rk-op-name">Krista</div>
-            <div class="rk-op-role">Operations Manager</div>
-            <div class="rk-op-club">NEPC</div>
-            <div class="rk-op-loc">Rye, NH &middot; Pickleball</div>
-          </div>
-          <div class="rk-vs">
-            <span class="rk-vs-glyph">=</span>
-            <span class="rk-vs-label">Same job</span>
-          </div>
-          <div class="rk-op marcos">
-            <div class="rk-op-avatar">M</div>
-            <div class="rk-op-name">Marcos</div>
-            <div class="rk-op-role">Founder &amp; Director</div>
-            <div class="rk-op-club">Racketeer Paddle Club</div>
-            <div class="rk-op-loc">London, UK &middot; Padel</div>
-          </div>
-        </div>
-
-        <!-- Behavior parallel table -->
-        <div class="rk-compare">
-          <div class="rk-compare-head">
-            <div class="rk-h">What she/he does</div>
-            <div class="rk-h" style="color:#3a73b8">Krista's workaround</div>
-            <div></div>
-            <div class="rk-h" style="color:#a8351f">Marcos's workaround</div>
-          </div>
-
-          <div class="rk-compare-row">
-            <div class="rk-r-label">Invitations</div>
-            <div class="rk-r-val krista"><em>Custom</em>, by hand, daily</div>
-            <div class="rk-r-eq">=</div>
-            <div class="rk-r-val marcos"><em>Custom</em>, by hand, weekly</div>
-          </div>
-
-          <div class="rk-compare-row">
-            <div class="rk-r-label">Matchmaking</div>
-            <div class="rk-r-val krista">From <em>memory</em> &amp; spreadsheet</div>
-            <div class="rk-r-eq">=</div>
-            <div class="rk-r-val marcos">From <em>memory</em> &amp; WhatsApp</div>
-          </div>
-
-          <div class="rk-compare-row">
-            <div class="rk-r-label">Coordination</div>
-            <div class="rk-r-val krista">Slack + texts + DMs</div>
-            <div class="rk-r-eq">=</div>
-            <div class="rk-r-val marcos">WhatsApp groups + DMs</div>
-          </div>
-
-          <div class="rk-compare-row">
-            <div class="rk-r-label">Their tool</div>
-            <div class="rk-r-val krista"><em>Doesn&rsquo;t exist.</em></div>
-            <div class="rk-r-eq">=</div>
-            <div class="rk-r-val marcos"><em>Doesn&rsquo;t exist.</em></div>
-          </div>
-        </div>
-
-        <!-- Synthesis -->
-        <div class="rk-synth">
-          <div class="rk-synth-eye">The wedge</div>
-          <div class="rk-synth-body">One missing product. <em>Two clubs</em> already running its workaround. Same instincts, two countries. The wedge isn&rsquo;t NEPC &mdash; it&rsquo;s <em>every community operator</em>.</div>
-        </div>
-
+      <!-- LEFT · ONE big quote -->
+      <div class="rk-lean-quote" style="position:relative;padding:30px 40px 30px 60px;background:linear-gradient(180deg, rgba(212,168,83,0.16) 0%, rgba(251,247,239,0.96) 100%);border:1.6px solid rgba(184,149,74,0.55);border-left:6px solid #b8954a;border-radius:14px;box-shadow:0 16px 38px rgba(184,149,74,0.18)">
+        <div style="position:absolute;top:-12px;left:14px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:5rem;font-style:italic;font-weight:850;color:rgba(184,149,74,0.48);line-height:1">&ldquo;</div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.65rem,2.45vw,2.30rem);font-weight:700;line-height:1.20;color:#1a1612;letter-spacing:-0.012em">Genuinely surprised <em style="font-style:italic;font-weight:850;color:#a87a35">how complete it is.</em></div>
+        <div style="font-family:'Manrope',sans-serif;font-size:.68rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,0.55);margin-top:18px">&mdash; Marcos Garcia &middot; first reaction to Give &lsquo;n Receive</div>
       </div>
 
-      <!-- RIGHT · validation panel: logo + club info + Marcos quote + video frame -->
-      <div class="rk-panel">
-        <div class="rk-logo-wrap">
-          <!-- Save the Racketeer logo from racketeerpaddle.club to assets/racketeer-logo.png. Falls back to a styled text mark below. -->
-          <img class="rk-logo" src="assets/racketeer-logo.png" alt="Racketeer Paddle Club" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <!-- RIGHT · compact Racketeer panel + video frame -->
+      <div class="rk-panel" style="gap:10px;padding:18px 18px 18px">
+        <div class="rk-logo-wrap" style="min-height:64px">
+          <img class="rk-logo" src="assets/racketeer-logo.png" alt="Racketeer Paddle Club" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" style="max-height:64px"/>
           <div class="rk-logo-fallback" style="display:none">RACKETEER<span class="rk-mark">Paddle Club</span></div>
         </div>
-        <div class="rk-club">Racketeer Paddle Club</div>
-        <div class="rk-loc">London &middot; UK</div>
+        <div class="rk-club">Racketeer Paddle Club &middot; London</div>
         <div class="rk-divider" aria-hidden="true"></div>
-        <!-- Marcos's strongest quote — the PMF money line -->
-        <div class="rk-q">
-          <div class="rk-q-text">Genuinely surprised <em>how complete it is.</em></div>
-          <div class="rk-q-attr">&mdash; Marcos Garcia, first reaction to Give &lsquo;n Receive</div>
-        </div>
-        <!-- Video placeholder · Dave will replace .rk-video-placeholder with <video src="assets/marcos-clip.mp4" controls poster="…"></video> once the Zoom clip is exported. -->
         <div class="rk-video">
           <div class="rk-video-placeholder">
             <div class="rk-video-play">
@@ -12951,6 +12880,148 @@ window.cs1m7Reverse = function() {
     </div>
 
     <div class="rk-attribution"><strong>Marcos Garcia</strong> &middot; Racketeer (UK paddle club, prospective customer) &middot; May 18, 2026</div>
+  </section>
+</div>
+
+
+<!-- ─── cs-racketeer-att-dense · PURPLE-DOT ALT · Full Krista↔Marcos comparison panel [Dave 2026-05-18 v3] ─── -->
+<style>
+  #cs-racketeer-att-dense { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-racketeer-att-dense::before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 18% 30%, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 40%, transparent 65%); pointer-events:none; z-index:1; }
+  #cs-racketeer-att-dense .rkd-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 56px 44px; z-index:2; gap:14px; }
+  #cs-racketeer-att-dense .rkd-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,2.95vw,2.65rem); font-weight:850; line-height:1.08; letter-spacing:-0.024em; color:#1a1612; text-align:center; max-width:1380px; margin:0; }
+  #cs-racketeer-att-dense .rkd-hero em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-racketeer-att-dense .rkd-sub { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.0rem,1.28vw,1.18rem); font-style:italic; font-weight:550; color:rgba(26,22,18,0.68); text-align:center; max-width:1040px; margin:0; line-height:1.40; }
+  #cs-racketeer-att-dense .rkd-sub strong { font-style:normal; font-weight:800; color:#1a1612; }
+  #cs-racketeer-att-dense .rkd-panel { display:flex; flex-direction:column; gap:14px; padding:22px 24px 22px; background:rgba(251,247,239,0.88); border:1.4px solid rgba(184,149,74,0.36); border-radius:12px; box-shadow:0 10px 28px rgba(26,22,18,0.08); width:100%; max-width:1560px; margin-top:6px; }
+  #cs-racketeer-att-dense .rkd-ops-row { display:grid; grid-template-columns:1fr auto 1fr; gap:18px; align-items:stretch; }
+  #cs-racketeer-att-dense .rkd-op { display:flex; flex-direction:column; align-items:center; gap:4px; padding:14px 14px 12px; border-radius:10px; }
+  #cs-racketeer-att-dense .rkd-op.krista { background:linear-gradient(180deg, rgba(91,143,212,0.10) 0%, rgba(91,143,212,0.02) 100%); border:1.2px solid rgba(91,143,212,0.42); }
+  #cs-racketeer-att-dense .rkd-op.marcos { background:linear-gradient(180deg, rgba(200,70,44,0.10) 0%, rgba(200,70,44,0.02) 100%); border:1.2px solid rgba(200,70,44,0.42); }
+  #cs-racketeer-att-dense .rkd-op-avatar { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.32rem; font-weight:850; color:#fbf7ef; }
+  #cs-racketeer-att-dense .rkd-op.krista .rkd-op-avatar { background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); }
+  #cs-racketeer-att-dense .rkd-op.marcos .rkd-op-avatar { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); }
+  #cs-racketeer-att-dense .rkd-op-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.10rem,1.40vw,1.32rem); font-weight:850; color:#1a1612; }
+  #cs-racketeer-att-dense .rkd-op-role { font-family:'Manrope',sans-serif; font-size:.56rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; }
+  #cs-racketeer-att-dense .rkd-op.krista .rkd-op-role { color:#3a73b8; }
+  #cs-racketeer-att-dense .rkd-op.marcos .rkd-op-role { color:#a8351f; }
+  #cs-racketeer-att-dense .rkd-op-loc { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.85rem; font-style:italic; font-weight:500; color:rgba(26,22,18,0.60); }
+  #cs-racketeer-att-dense .rkd-vs { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  #cs-racketeer-att-dense .rkd-vs-glyph { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.95rem; font-weight:850; font-style:italic; color:#b8954a; }
+  #cs-racketeer-att-dense .rkd-vs-label { font-family:'Manrope',sans-serif; font-size:.50rem; font-weight:900; letter-spacing:.36em; text-transform:uppercase; color:rgba(184,149,74,0.85); margin-top:4px; }
+  #cs-racketeer-att-dense .rkd-compare { display:grid; grid-template-columns: minmax(120px,0.7fr) 1fr auto 1fr; column-gap:14px; row-gap:8px; align-items:center; padding:6px 4px 4px; border-top:1px solid rgba(184,149,74,0.32); border-bottom:1px solid rgba(184,149,74,0.32); margin:6px 0 2px; }
+  #cs-racketeer-att-dense .rkd-h { font-family:'Manrope',sans-serif; font-size:.52rem; font-weight:900; letter-spacing:.30em; text-transform:uppercase; color:rgba(26,22,18,0.45); padding:6px 0; }
+  #cs-racketeer-att-dense .rkd-r-label { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,0.55); }
+  #cs-racketeer-att-dense .rkd-r-val { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.05vw,1.08rem); font-weight:600; line-height:1.28; color:#1a1612; padding:8px 12px; border-radius:6px; }
+  #cs-racketeer-att-dense .rkd-r-val.krista { background:rgba(91,143,212,0.08); border-left:2.5px solid #5B8FD4; }
+  #cs-racketeer-att-dense .rkd-r-val.marcos { background:rgba(200,70,44,0.08); border-left:2.5px solid #c8462c; }
+  #cs-racketeer-att-dense .rkd-r-val em { font-style:italic; font-weight:800; }
+  #cs-racketeer-att-dense .rkd-r-val.krista em { color:#3a73b8; }
+  #cs-racketeer-att-dense .rkd-r-val.marcos em { color:#c8462c; }
+  #cs-racketeer-att-dense .rkd-r-eq { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.10rem; font-weight:600; color:rgba(184,149,74,0.85); text-align:center; }
+  #cs-racketeer-att-dense .rkd-synth { display:flex; align-items:center; gap:14px; margin-top:8px; padding:10px 14px; background:linear-gradient(180deg, rgba(212,168,83,0.16) 0%, rgba(212,168,83,0.04) 100%); border:1.2px solid rgba(184,149,74,0.50); border-radius:8px; }
+  #cs-racketeer-att-dense .rkd-synth-eye { font-family:'Manrope',sans-serif; font-size:.55rem; font-weight:900; letter-spacing:.34em; text-transform:uppercase; color:#a87a35; flex-shrink:0; }
+  #cs-racketeer-att-dense .rkd-synth-body { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.15vw,1.12rem); font-weight:700; font-style:italic; line-height:1.28; color:#1a1612; }
+  #cs-racketeer-att-dense .rkd-synth-body em { font-style:italic; font-weight:850; color:#b8954a; }
+</style>
+<div class="casey-slide ds-focus" id="cs-racketeer-att-dense" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer alt &middot; full comparison</div>
+  <section class="rkd-stage">
+    <h1 class="rkd-hero">Same <em>instinct</em>. Same <em>workarounds</em>. Two countries. Two sports.</h1>
+    <div class="rkd-sub"><strong>Krista</strong> runs NEPC operations. <strong>Marcos</strong> founded Racketeer. Both already build community by hand &mdash; because the tool to do it well <em style="font-style:italic;color:#b8954a;font-weight:800">doesn&rsquo;t exist</em>.</div>
+    <div class="rkd-panel">
+      <div class="rkd-ops-row">
+        <div class="rkd-op krista"><div class="rkd-op-avatar">K</div><div class="rkd-op-name">Krista</div><div class="rkd-op-role">Operations Manager &middot; NEPC</div><div class="rkd-op-loc">Rye, NH &middot; Pickleball</div></div>
+        <div class="rkd-vs"><span class="rkd-vs-glyph">=</span><span class="rkd-vs-label">Same job</span></div>
+        <div class="rkd-op marcos"><div class="rkd-op-avatar">M</div><div class="rkd-op-name">Marcos</div><div class="rkd-op-role">Founder &middot; Racketeer</div><div class="rkd-op-loc">London, UK &middot; Padel</div></div>
+      </div>
+      <div class="rkd-compare">
+        <div style="display:contents"><div class="rkd-h">What she/he does</div><div class="rkd-h" style="color:#3a73b8">Krista's workaround</div><div></div><div class="rkd-h" style="color:#a8351f">Marcos's workaround</div></div>
+        <div style="display:contents"><div class="rkd-r-label">Invitations</div><div class="rkd-r-val krista"><em>Custom</em>, by hand, daily</div><div class="rkd-r-eq">=</div><div class="rkd-r-val marcos"><em>Custom</em>, by hand, weekly</div></div>
+        <div style="display:contents"><div class="rkd-r-label">Matchmaking</div><div class="rkd-r-val krista">From <em>memory</em></div><div class="rkd-r-eq">=</div><div class="rkd-r-val marcos">From <em>memory</em> &amp; WhatsApp</div></div>
+        <div style="display:contents"><div class="rkd-r-label">Their tool</div><div class="rkd-r-val krista"><em>Doesn&rsquo;t exist.</em></div><div class="rkd-r-eq">=</div><div class="rkd-r-val marcos"><em>Doesn&rsquo;t exist.</em></div></div>
+      </div>
+      <div class="rkd-synth"><div class="rkd-synth-eye">The wedge</div><div class="rkd-synth-body">One missing product. <em>Two clubs</em> already running its workaround. The wedge isn&rsquo;t NEPC &mdash; it&rsquo;s <em>every community operator</em>.</div></div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ─── cs-racketeer-att-pattern · PURPLE-DOT ALT · Minimal Krista=Marcos pattern [Dave 2026-05-18 v3] ─── -->
+<style>
+  #cs-racketeer-att-pattern { background:radial-gradient(ellipse at 50% 50%, #fbf7ef 0%, #f3ead8 70%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-racketeer-att-pattern .rkp-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:88px 64px 64px; z-index:2; gap:42px; }
+  #cs-racketeer-att-pattern .rkp-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.6rem,4.2vw,4.0rem); font-weight:850; line-height:1.04; letter-spacing:-0.030em; color:#1a1612; text-align:center; margin:0; }
+  #cs-racketeer-att-pattern .rkp-hero .km { color:#5B8FD4; font-style:italic; }
+  #cs-racketeer-att-pattern .rkp-hero .eq { color:#b8954a; font-style:italic; padding:0 .25em; }
+  #cs-racketeer-att-pattern .rkp-hero .mm { color:#c8462c; font-style:italic; }
+  #cs-racketeer-att-pattern .rkp-pair { display:grid; grid-template-columns:1fr auto 1fr; gap:36px; align-items:center; width:100%; max-width:1280px; }
+  #cs-racketeer-att-pattern .rkp-card { display:flex; flex-direction:column; align-items:center; gap:10px; padding:36px 28px 30px; border-radius:18px; }
+  #cs-racketeer-att-pattern .rkp-card.k { background:linear-gradient(180deg, rgba(91,143,212,0.12) 0%, rgba(91,143,212,0.02) 100%); border:1.6px solid rgba(91,143,212,0.55); box-shadow:0 16px 38px rgba(91,143,212,0.14); }
+  #cs-racketeer-att-pattern .rkp-card.m { background:linear-gradient(180deg, rgba(200,70,44,0.12) 0%, rgba(200,70,44,0.02) 100%); border:1.6px solid rgba(200,70,44,0.55); box-shadow:0 16px 38px rgba(200,70,44,0.14); }
+  #cs-racketeer-att-pattern .rkp-avatar { width:84px; height:84px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.2rem; font-weight:850; color:#fbf7ef; margin-bottom:6px; }
+  #cs-racketeer-att-pattern .rkp-card.k .rkp-avatar { background:linear-gradient(180deg, #6fa2de 0%, #4878bf 100%); box-shadow:0 10px 22px rgba(91,143,212,0.32); }
+  #cs-racketeer-att-pattern .rkp-card.m .rkp-avatar { background:linear-gradient(180deg, #d65a3a 0%, #b53e22 100%); box-shadow:0 10px 22px rgba(200,70,44,0.30); }
+  #cs-racketeer-att-pattern .rkp-name { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.65rem,2.20vw,2.05rem); font-weight:850; color:#1a1612; }
+  #cs-racketeer-att-pattern .rkp-meta { font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.26em; text-transform:uppercase; text-align:center; }
+  #cs-racketeer-att-pattern .rkp-card.k .rkp-meta { color:#3a73b8; }
+  #cs-racketeer-att-pattern .rkp-card.m .rkp-meta { color:#a8351f; }
+  #cs-racketeer-att-pattern .rkp-club { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:.95rem; font-style:italic; font-weight:500; color:rgba(26,22,18,0.62); margin-top:2px; }
+  #cs-racketeer-att-pattern .rkp-eq { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.2rem,4.6vw,4.4rem); font-weight:850; font-style:italic; color:#b8954a; line-height:1; }
+  #cs-racketeer-att-pattern .rkp-foot { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.20rem,1.65vw,1.55rem); font-weight:600; font-style:italic; line-height:1.32; color:rgba(26,22,18,0.78); text-align:center; max-width:1180px; margin:0; }
+  #cs-racketeer-att-pattern .rkp-foot strong { font-style:normal; font-weight:850; color:#b8954a; }
+</style>
+<div class="casey-slide ds-focus" id="cs-racketeer-att-pattern" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer alt &middot; pattern match</div>
+  <section class="rkp-stage">
+    <h1 class="rkp-hero"><span class="km">Krista</span> <span class="eq">=</span> <span class="mm">Marcos</span></h1>
+    <div class="rkp-pair">
+      <div class="rkp-card k">
+        <div class="rkp-avatar">K</div>
+        <div class="rkp-name">Krista</div>
+        <div class="rkp-meta">Operations &middot; NEPC</div>
+        <div class="rkp-club">Rye, NH &middot; Pickleball</div>
+      </div>
+      <div class="rkp-eq">=</div>
+      <div class="rkp-card m">
+        <div class="rkp-avatar">M</div>
+        <div class="rkp-name">Marcos</div>
+        <div class="rkp-meta">Founder &middot; Racketeer</div>
+        <div class="rkp-club">London &middot; Padel</div>
+      </div>
+    </div>
+    <p class="rkp-foot">Same job. Same workarounds. <strong>The tool doesn&rsquo;t exist anywhere.</strong></p>
+  </section>
+</div>
+
+
+<!-- ─── cs-racketeer-att-video · PURPLE-DOT ALT · Video centerpiece [Dave 2026-05-18 v3] ─── -->
+<style>
+  #cs-racketeer-att-video { background:radial-gradient(ellipse at 50% 38%, #fbf7ef 0%, #f3ead8 65%, #e9dcc4 100%) !important; overflow:hidden; }
+  #cs-racketeer-att-video .rkv-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:74px 80px 56px; z-index:2; gap:22px; }
+  #cs-racketeer-att-video .rkv-hero { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.0rem,3.0vw,2.85rem); font-weight:850; line-height:1.08; letter-spacing:-0.024em; color:#1a1612; text-align:center; margin:0; }
+  #cs-racketeer-att-video .rkv-hero em { font-style:italic; font-weight:850; color:#b8954a; }
+  #cs-racketeer-att-video .rkv-video { width:100%; max-width:1280px; aspect-ratio:16/9; position:relative; background:linear-gradient(180deg, #1a1612 0%, #2a2218 100%); border:1.6px solid rgba(184,149,74,0.55); border-radius:14px; overflow:hidden; box-shadow:0 22px 60px rgba(26,22,18,0.20); }
+  #cs-racketeer-att-video .rkv-video-ph { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; }
+  #cs-racketeer-att-video .rkv-video-play { width:96px; height:96px; border-radius:50%; background:rgba(212,168,83,0.20); border:2px solid rgba(212,168,83,0.72); display:flex; align-items:center; justify-content:center; }
+  #cs-racketeer-att-video .rkv-video-play svg { width:42px; height:42px; margin-left:5px; }
+  #cs-racketeer-att-video .rkv-video-label { font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.34em; text-transform:uppercase; color:rgba(212,168,83,0.92); }
+  #cs-racketeer-att-video .rkv-video-note { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.0rem; font-style:italic; color:rgba(251,247,239,0.65); margin-top:-4px; }
+  #cs-racketeer-att-video .rkv-foot { font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,0.55); text-align:center; }
+  #cs-racketeer-att-video .rkv-foot strong { color:#1a1612; }
+</style>
+<div class="casey-slide ds-focus" id="cs-racketeer-att-video" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer alt &middot; the Zoom call</div>
+  <section class="rkv-stage">
+    <h1 class="rkv-hero">London just said <em>yes</em>.</h1>
+    <div class="rkv-video">
+      <div class="rkv-video-ph">
+        <div class="rkv-video-play"><svg viewBox="0 0 24 24" fill="none"><polygon points="9,6 9,18 18,12" fill="#d4a85a"/></svg></div>
+        <div class="rkv-video-label">Marcos Garcia &middot; Racketeer Paddle Club</div>
+        <div class="rkv-video-note">Zoom call clip drops in here</div>
+      </div>
+    </div>
+    <div class="rkv-foot"><strong>Marcos Garcia</strong> &middot; Racketeer (UK paddle club, prospective customer) &middot; May 18, 2026</div>
   </section>
 </div>
 
@@ -23839,8 +23910,13 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-14] cs-18-vd1, cs-lab, cs-18 DELETED per Dave (3× 'delete this slide' for the wheelhouse-alt variants). Only cs-18-vd5 retained as the lone red-dot alt.
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
-  // [Dave 2026-05-18] cs-18-vd4-pink ADDED as pink-dot revert backup of the wheelhouse slide per Dave 'save current version as a pink dot slide in case we want to revert'. Carries pre-edit eyebrow/hero/timeline copy.
-  16: ['cs-pbfirst', 'cs-18-vd4-pink'],
+  // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
+  16: ['cs-pbfirst'],
+  // [Dave 2026-05-18] cs-racketeer (slot 19) now has 3 PURPLE-DOT review alts after Dave 'There's far, far too much text and content on this slide, and I asked you to attempt at least a few different versions':
+  //   cs-racketeer-att-dense   — full Krista↔Marcos comparison (the previous primary content)
+  //   cs-racketeer-att-pattern — minimal Krista=Marcos pattern-match (one-liner + two badges)
+  //   cs-racketeer-att-video   — video centerpiece, minimal chrome
+  19: ['cs-racketeer-att-dense', 'cs-racketeer-att-pattern', 'cs-racketeer-att-video'],
   // Slot 17 (cs-18-vd4 Wheelhouse — was slot 16) — no alts
   17: [],
   // [Dave 2026-05-17 PM] cs-givefirst-pink DELETED from nav per Dave: 'delete this slide' — was rendering blank because bg image asset was never saved to disk and slide had no fallback content beyond the bg image. HTML retained as silent backup.
@@ -25032,8 +25108,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink');
-    // [Dave 2026-05-18] Purple-dot alts — 4 new brand-slide attempts under cs-brand-V8 for review.
-    const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
+    // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
+    const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-video'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     const isBlueAlt = (altId === 'cs-wedge1');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
