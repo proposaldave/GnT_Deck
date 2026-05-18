@@ -12620,7 +12620,7 @@ window.cs1m7Reverse = function() {
                   </g>
                 </svg>
               </div>
-              <div class="v5-front-label">Mission</div>
+              <div class="v5-front-label">Brand &amp; Mission</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -13592,6 +13592,81 @@ window.cs1m7Reverse = function() {
           <!-- Center "n" -->
           <text x="240" y="190" text-anchor="middle" font-family="Fraunces,Playfair Display,serif" font-size="22" font-style="italic" font-weight="600" fill="#b8954a">n</text>
         </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     cs-givefirst-brand · PINK-DOT ALT of cs-givefirst-art [Dave 2026-05-18 LATEST]
+     Per Dave: 'try creating brand new slide as pink dot slide to the left of how
+     gnr growth actually works slide that merges the attached slides, as the
+     brand slide'. MERGES cs-givefirst-art (warm pickleball community watercolor
+     + "You can't tell someone to open their heart" intimacy) WITH cs-brand-V8
+     (the "Most human value is invisible. So it never returns." brand thesis +
+     G·n·R mark + diptych captions). New slide is positioned AS the brand slide
+     — eyebrow becomes the brand line, three-beat headline carries the merged
+     narrative (invisible → open heart can't be commanded → GnR makes it return).
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<style>
+  #cs-givefirst-brand { background:radial-gradient(ellipse at 22% 50%, #fbf7ef 0%, #f3ead8 60%, #ebd9b7 100%) !important; overflow:hidden; }
+  #cs-givefirst-brand .gfb-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:1; display:block; opacity:0.92; }
+  #cs-givefirst-brand .gfb-stage { position:absolute; inset:0; display:flex; align-items:center; justify-content:flex-start; padding:74px 56px 56px; z-index:2; }
+  #cs-givefirst-brand .gfb-col { position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:18px; max-width:740px; padding:36px 36px 32px; }
+  #cs-givefirst-brand .gfb-col::before { content:""; position:absolute; inset:-14px -28px; background:radial-gradient(ellipse at 32% 50%, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.86) 55%, rgba(251,247,239,0) 100%); z-index:-1; border-radius:18px; }
+  #cs-givefirst-brand .gfb-beats { display:flex; flex-direction:column; gap:14px; }
+  #cs-givefirst-brand .gfb-beat { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.85rem,3.05vw,2.80rem); font-weight:850; line-height:1.06; letter-spacing:-0.024em; margin:0; }
+  #cs-givefirst-brand .gfb-beat em { font-style:italic; font-weight:850; }
+  #cs-givefirst-brand .gfb-b1 { color:rgba(26,22,18,0.42); }
+  #cs-givefirst-brand .gfb-b1 em { color:rgba(26,22,18,0.42); }
+  #cs-givefirst-brand .gfb-b2 { color:#1a1612; }
+  #cs-givefirst-brand .gfb-b2 em { color:#c8462c; }
+  #cs-givefirst-brand .gfb-b3 { color:#1a1612; }
+  #cs-givefirst-brand .gfb-b3 em { color:#b8954a; }
+  /* G·n·R brand mark inline */
+  #cs-givefirst-brand .gfb-mark { display:flex; align-items:center; gap:14px; margin-top:6px; }
+  #cs-givefirst-brand .gfb-mark-letter { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.4rem,3.4vw,3.0rem); font-weight:850; line-height:1; letter-spacing:-0.02em; }
+  #cs-givefirst-brand .gfb-mark-letter.g { color:#5B8FD4; }
+  #cs-givefirst-brand .gfb-mark-letter.n { color:#b8954a; font-style:italic; font-weight:500; }
+  #cs-givefirst-brand .gfb-mark-letter.r { color:#c8462c; }
+  #cs-givefirst-brand .gfb-mark-tag { font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:800; letter-spacing:.30em; text-transform:uppercase; color:#a87a35; padding-left:8px; border-left:1.5px solid rgba(184,149,74,0.45); }
+  /* Bottom diptych captions (from cs-brand-V8) */
+  #cs-givefirst-brand .gfb-dip { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:14px; padding-top:18px; border-top:1px solid rgba(184,149,74,0.32); width:100%; }
+  #cs-givefirst-brand .gfb-dip-l, #cs-givefirst-brand .gfb-dip-r { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(.95rem,1.18vw,1.10rem); font-weight:700; line-height:1.28; color:#1a1612; }
+  #cs-givefirst-brand .gfb-dip-l em, #cs-givefirst-brand .gfb-dip-r em { font-style:italic; font-weight:850; }
+  #cs-givefirst-brand .gfb-dip-l .lead { color:#5B8FD4; font-style:normal; font-weight:800; }
+  #cs-givefirst-brand .gfb-dip-r .lead { color:#c8462c; font-style:normal; font-weight:800; }
+  /* Entry stagger */
+  #cs-givefirst-brand .gfb-image, #cs-givefirst-brand .gfb-beat, #cs-givefirst-brand .gfb-mark, #cs-givefirst-brand .gfb-dip { opacity:0; transform:translateY(10px); transition:opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1); }
+  #cs-givefirst-brand.casey-entered .gfb-image { opacity:0.92; transform:none; transition-delay:0.15s; }
+  #cs-givefirst-brand.casey-entered .gfb-b1    { opacity:1; transform:none; transition-delay:0.40s; }
+  #cs-givefirst-brand.casey-entered .gfb-b2    { opacity:1; transform:none; transition-delay:0.85s; }
+  #cs-givefirst-brand.casey-entered .gfb-b3    { opacity:1; transform:none; transition-delay:1.30s; }
+  #cs-givefirst-brand.casey-entered .gfb-mark  { opacity:1; transform:none; transition-delay:1.65s; }
+  #cs-givefirst-brand.casey-entered .gfb-dip   { opacity:1; transform:none; transition-delay:1.90s; }
+  html[data-export="1"] #cs-givefirst-brand .gfb-image { opacity:0.92 !important; transform:none !important; transition:none !important; }
+  html[data-export="1"] #cs-givefirst-brand .gfb-beat,
+  html[data-export="1"] #cs-givefirst-brand .gfb-mark,
+  html[data-export="1"] #cs-givefirst-brand .gfb-dip { opacity:1 !important; transform:none !important; transition:none !important; }
+</style>
+<div class="casey-slide ds-focus" id="cs-givefirst-brand" style="display:none">
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand: live a life of abundant, autonomous connection</div>
+  <img class="gfb-image" src="assets/cs-givefirst-art-community.png" alt="Warm pickleball community gathering — watercolor depiction of give-first as the cause of community." onerror="this.onerror=null;this.src='assets/cs-givefirst-art-dancing.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
+  <section class="gfb-stage">
+    <div class="gfb-col">
+      <div class="gfb-beats">
+        <p class="gfb-beat gfb-b1">Most human value is <em>invisible.</em></p>
+        <p class="gfb-beat gfb-b2">You can&rsquo;t <em>tell</em> someone to open their heart.</p>
+        <p class="gfb-beat gfb-b3">Give &lsquo;n Receive makes it <em>return.</em></p>
+      </div>
+      <div class="gfb-mark">
+        <span class="gfb-mark-letter g">G</span><span class="gfb-mark-letter n">n</span><span class="gfb-mark-letter r">R</span>
+        <span class="gfb-mark-tag">Sees &middot; Measures &middot; Reciprocates</span>
+      </div>
+      <div class="gfb-dip">
+        <div class="gfb-dip-l"><span class="lead">Your community</span> gets the most out of <em>you</em>.</div>
+        <div class="gfb-dip-r"><span class="lead">You</span> get the most out of <em>your community</em>.</div>
       </div>
     </div>
   </section>
@@ -17027,7 +17102,8 @@ window.cs1m7Reverse = function() {
   #cs-ask > div[style*="top:28px"][style*="left:48px"] { color:#d4a85a !important; text-shadow:0 1px 2px rgba(0,0,0,0.55), 0 0 8px rgba(0,0,0,0.35) !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-ask">
-  <!-- [Dave 2026-05-18 LATEST] PNG image dependency REMOVED. The steakhouse scene is now painted inline (CSS layers above + inline SVG below) so the bg renders bulletproof — no missing-file failure mode. Scene composition: window on right with NYC night skyline (rectangular building silhouettes + scattered warm windows + moon glow); table edge + plate + candle/wineglass hint at bottom; warm sconce glow on left; deep wood elsewhere. -->
+  <!-- [Dave 2026-05-18 LATEST v3] HYBRID bg: PNG override layer (Dave's ChatGPT-generated steakhouse image) layered ABOVE the inline SVG fallback. If assets/cs-ask-bg.png exists on disk, it covers the SVG entirely. If missing, onerror hides it and the SVG scene paints through. Both render at full bleed. 🎯 ACTION REQUIRED: drop the ChatGPT image at C:\Users\dave\CLAUDE COWORK\07_PRODUCT\pitch_visuals\assets\cs-ask-bg.png. -->
+  <img src="assets/cs-ask-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:1;display:block" onerror="this.style.display='none'"/>
   <div class="ask-bg" aria-hidden="true">
     <svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;display:block">
       <defs>
@@ -17129,11 +17205,13 @@ window.cs1m7Reverse = function() {
     </svg>
   </div>
   <div class="ask-bg-wash" aria-hidden="true"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Ask</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Next</div>
   <section class="ask-stage">
 
-    <h1 class="ask-headline">
-      <span style="font-family:'Manrope',sans-serif;font-size:0.42em;font-weight:850;letter-spacing:0.26em;text-transform:uppercase;color:#b8954a;vertical-align:0.22em">Next, discuss:</span>
+    <!-- [Dave 2026-05-18 LATEST] Headline rewritten per Dave: '"Next, discuss:" → "Dinner tonight to discuss NEPC and pickleball, the perfect outlier wedge into a new economy of human connection."'. Length forces a multi-line reflow — kept serif italic for the framing words. -->
+    <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.16">
+      Dinner tonight to discuss <em>NEPC and pickleball</em> &mdash;<br>
+      the perfect outlier wedge into <em>a new economy of human connection.</em>
     </h1>
 
     <div class="ask-paths">
@@ -24473,8 +24551,8 @@ const SLIDE_ALTS = {
   //   cs-racketeer-att-manual    — TODAY-IS-MANUAL beat: "All manual. WhatsApp groups, my memory, people I know"
   //   cs-racketeer-att-arc       — vertical NARRATIVE ARC: all 3 quotes stacked top-to-bottom
   19: ['cs-racketeer-att-dense', 'cs-racketeer-att-pattern', 'cs-racketeer-att-triptych', 'cs-racketeer-att-incumbent', 'cs-racketeer-att-manual', 'cs-racketeer-att-arc'],
-  // Slot 17 (cs-18-vd4 Wheelhouse — was slot 16) — no alts
-  17: [],
+  // [Dave 2026-05-18 LATEST] Slot 17 = cs-givefirst-art ('How GnR Growth actually works'). New pink-dot alt cs-givefirst-brand added — merges the warm watercolor community bg + "You can't tell someone to open their heart" line WITH the cs-brand-V8 brand thesis ("Most human value is invisible. So it never returns." + G·n·R + diptych captions). Positioned as a SECONDARY brand-slide candidate using the warm imagery as backdrop.
+  17: ['cs-givefirst-brand'],
   // [Dave 2026-05-17 PM] cs-givefirst-pink DELETED from nav per Dave: 'delete this slide' — was rendering blank because bg image asset was never saved to disk and slide had no fallback content beyond the bg image. HTML retained as silent backup.
   18: [],
   // Slot 19 (cs-fw1 flywheel — was slot 18) — cs-16 pink-dot alt
@@ -25663,7 +25741,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   cs-16 = pink (Every touchpoint becomes training data — alt to left of cs-fw1 flywheel)
     //   cs-quadrant1, cs-arch1, cs-cat1 = blue (slot 17 source-material variants)
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
