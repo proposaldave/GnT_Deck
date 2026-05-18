@@ -17227,11 +17227,11 @@ window.cs1m7Reverse = function() {
   }
   #cs-brand-codex .bc-top-head em { font-style:italic; font-weight:850; color:#b8954a; }
 
-  /* LEFT CAPTION — floats high over the painting's upper-left blank cream area. No eyebrow. Cream tablet so the copy punches off whatever the painting has up there. */
+  /* LEFT CAPTION — floats high over the painting's upper-left blank cream area. No eyebrow. Cream tablet so the copy punches off whatever the painting has up there. [Dave 2026-05-18 LATEST v4] Rectangle shrunk: max-width 38% → 30%, padding tightened, line break forced after "view" via inline <br> so the copy sits on two short lines rather than wrapping at the long-line midpoint. */
   #cs-brand-codex .bc-left-quote {
     position:absolute; top:24%; left:4%;
-    z-index:3; max-width:38%;
-    padding:18px 22px;
+    z-index:3; max-width:30%;
+    padding:14px 18px;
     background:linear-gradient(180deg, rgba(251,247,239,0.94) 0%, rgba(251,247,239,0.85) 100%);
     border:1.2px solid rgba(91,143,212,0.35);
     border-radius:14px;
@@ -17241,86 +17241,78 @@ window.cs1m7Reverse = function() {
   }
   #cs-brand-codex .bc-left-quote p {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
-    font-size:clamp(1.10rem, 1.55vw, 1.50rem);
+    font-size:clamp(1.05rem, 1.45vw, 1.40rem);
     font-style:italic; font-weight:600; line-height:1.24;
     letter-spacing:-0.012em; color:#1a1612; margin:0;
   }
   #cs-brand-codex .bc-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
 
-  /* RIGHT ENVELOPE — opaque cream card styled as a physical invitation envelope, anchored over the warm/community half. Introduces "Give 'n Receive — invitation-based matchmaking". */
+  /* RIGHT ENVELOPE — opaque cream card styled as a physical invitation envelope, anchored over the warm/community half. Introduces "Give 'n Receive — invitation-based matchmaking". [Dave 2026-05-18 LATEST v3] Two changes: (1) Flap drawn as a real visible triangle with explicit diagonal fold lines (was nearly invisible — just a faint gradient at top). (2) Postmark stamp DELETED per Dave 'you can delete the "give n receive invitation first-class"'. */
   #cs-brand-codex .bc-envelope {
     position:absolute;
     top:50%; right:5%;
     transform:translateY(-50%) rotate(-1.5deg);
-    width:min(440px, 36%);
+    width:min(460px, 38%);
     z-index:4;
     background:#fbf7ef;
-    border:1.6px solid rgba(184,149,74,0.55);
+    border:1.8px solid rgba(184,149,74,0.62);
     border-radius:6px;
     box-shadow:
       0 18px 48px rgba(26,22,18,0.28),
       0 4px 12px rgba(26,22,18,0.14),
       inset 0 0 0 6px rgba(251,247,239,1),
-      inset 0 0 0 7px rgba(184,149,74,0.32);
-    padding:46px 36px 38px;
+      inset 0 0 0 7px rgba(184,149,74,0.30);
+    padding:104px 36px 38px;
   }
-  /* Envelope flap — triangle on top, like a closed letter */
-  #cs-brand-codex .bc-envelope::before {
-    content:""; position:absolute;
-    top:-1.6px; left:-1.6px; right:-1.6px;
-    height:62px;
-    background:
-      linear-gradient(180deg, rgba(184,149,74,0.10) 0%, rgba(184,149,74,0) 100%);
-    clip-path:polygon(0 0, 50% 100%, 100% 0);
-    border-left:1.6px solid rgba(184,149,74,0.55);
-    border-right:1.6px solid rgba(184,149,74,0.55);
-    pointer-events:none;
+  /* Envelope FLAP — visible triangle that occupies the upper portion of the envelope. Uses SVG-style clip-path for crisp diagonals + a slightly darker cream fill so the flap reads as a distinct paper layer folded down over the body. */
+  #cs-brand-codex .bc-env-flap {
+    position:absolute;
+    top:0; left:0; right:0; height:130px;
+    z-index:1; pointer-events:none;
+    overflow:visible;
   }
-  /* Wax-seal stamp at top — small circle with the G·n·R wordmark */
+  #cs-brand-codex .bc-env-flap svg { display:block; width:100%; height:100%; }
+  /* Wax-seal stamp at top — small circle with the G·n·R wordmark, sits ON the folded flap point */
   #cs-brand-codex .bc-env-seal {
-    position:absolute; top:-22px; left:50%; transform:translateX(-50%);
-    width:62px; height:62px; border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #c8462c 0%, #a8351f 70%, #7a1f10 100%);
-    border:1.4px solid rgba(122,31,16,0.65);
-    box-shadow:0 6px 14px rgba(26,22,18,0.30), inset 0 -3px 6px rgba(0,0,0,0.18);
+    position:absolute; top:96px; left:50%; transform:translate(-50%,-50%);
+    width:78px; height:78px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #d2553c 0%, #b8412a 55%, #7a1f10 100%);
+    border:1.6px solid rgba(90,20,10,0.85);
+    box-shadow:
+      0 6px 14px rgba(26,22,18,0.34),
+      inset 0 -3px 6px rgba(0,0,0,0.22),
+      inset 0 2px 4px rgba(255,255,255,0.18);
     display:flex; align-items:center; justify-content:center;
-    z-index:2;
+    z-index:3;
+  }
+  /* Decorative scalloped inner ring on the wax seal */
+  #cs-brand-codex .bc-env-seal::before {
+    content:""; position:absolute; inset:6px;
+    border-radius:50%;
+    border:1px dashed rgba(255,235,210,0.42);
+    pointer-events:none;
   }
   #cs-brand-codex .bc-env-seal .seal-mark {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
-    font-weight:900; font-size:1.30rem; letter-spacing:-0.04em;
+    font-weight:900; font-size:1.50rem; letter-spacing:-0.04em;
     color:#fbf7ef; line-height:1;
+    text-shadow:0 1px 2px rgba(0,0,0,0.35);
   }
   #cs-brand-codex .bc-env-seal .seal-mark .n { font-style:italic; font-weight:500; padding:0 0.04em; }
-  /* Postmark stamp — upper-right inside the envelope */
-  #cs-brand-codex .bc-env-postmark {
-    position:absolute; top:12px; right:14px;
-    display:flex; flex-direction:column; align-items:center; gap:1px;
-    font-family:'Manrope',sans-serif;
-    border:1.2px solid rgba(26,22,18,0.42);
-    padding:5px 9px;
-    border-radius:3px;
-    transform:rotate(8deg);
-    color:rgba(26,22,18,0.62);
-  }
-  #cs-brand-codex .bc-env-postmark .pm-top {
-    font-size:.50rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase;
-  }
-  #cs-brand-codex .bc-env-postmark .pm-bot {
-    font-size:.42rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-  }
   /* Envelope copy */
   #cs-brand-codex .bc-env-eye {
     font-family:'Manrope',sans-serif;
     font-size:.62rem; font-weight:900;
     letter-spacing:.42em; text-transform:uppercase;
     color:#a87a35; margin:6px 0 12px; text-align:center;
+    position:relative; z-index:2;
   }
   #cs-brand-codex .bc-env-mark {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(2.6rem, 4.0vw, 3.5rem);
     font-weight:900; letter-spacing:-0.04em; line-height:0.95;
     text-align:center; margin:0 0 6px;
+    position:relative; z-index:2;
   }
   #cs-brand-codex .bc-env-mark .g { color:#5B8FD4; }
   #cs-brand-codex .bc-env-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
@@ -17330,12 +17322,14 @@ window.cs1m7Reverse = function() {
     font-size:clamp(1.10rem, 1.45vw, 1.40rem);
     font-style:italic; font-weight:700; line-height:1.20;
     color:#1a1612; text-align:center; margin:4px 0 0;
+    position:relative; z-index:2;
   }
   #cs-brand-codex .bc-env-title em { font-style:italic; font-weight:850; color:#b8954a; }
   /* A thin gold rule under the title to anchor the bottom of the card */
   #cs-brand-codex .bc-env-rule {
     margin:14px auto 0; width:80px; height:1.4px;
     background:linear-gradient(90deg, rgba(184,149,74,0) 0%, rgba(184,149,74,0.65) 50%, rgba(184,149,74,0) 100%);
+    position:relative; z-index:2;
   }
 
   /* Animations — fade up bands and envelope. */
@@ -17366,21 +17360,30 @@ window.cs1m7Reverse = function() {
     <h1 class="bc-top-head">Live a life of <em>abundant, autonomous connection.</em></h1>
   </div>
 
-  <!-- LEFT CAPTION · floats in the upper-left cream space of the painting. Eyebrow ("Today · The narrow view") deleted per Dave; body line stays in italic serif. -->
+  <!-- LEFT CAPTION · floats in the upper-left cream space of the painting. Eyebrow ("Today · The narrow view") deleted per Dave. [Dave 2026-05-18 LATEST v4] Line break forced after "view" per Dave 'change "Social media is a narrow view of human connection / technology." to "Social media is a narrow view / of human connection technology."' so the copy reads as two balanced short lines. -->
   <div class="bc-left-quote">
-    <p><em>Social media</em> is a narrow view of human connection technology.</p>
+    <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
   </div>
 
-  <!-- RIGHT ENVELOPE · introduces Give 'n Receive invitation-based matchmaking. Cream paper, gold border, wax-seal stamp on the flap, postmark in the upper-right. -->
+  <!-- RIGHT ENVELOPE · introduces Give 'n Receive invitation-based matchmaking. [v3] Visible triangular flap drawn in SVG (two diagonal fold lines meet at center) + wax-seal stamp sitting on the flap's apex. Postmark stamp DELETED per Dave 'you can delete the "give n receive invitation first-class"'. -->
   <div class="bc-envelope" aria-label="Introducing Give n Receive — invitation-based matchmaking">
-    <!-- Wax seal on the envelope flap -->
+    <!-- Envelope flap — SVG draws the triangular flap shape with visible diagonal fold lines. Subtle warm cream fill so the flap reads as a distinct paper layer over the body. -->
+    <div class="bc-env-flap" aria-hidden="true">
+      <svg viewBox="0 0 460 130" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Flap triangle fill — slightly warmer cream than the body so it reads as a folded paper layer. -->
+        <polygon points="0,0 230,128 460,0" fill="#f5e7c8" opacity="0.55"/>
+        <!-- Soft shadow at the flap's lower edge (the fold line) — subtle so it doesn't read as a hard line. -->
+        <polygon points="6,4 230,128 454,4" fill="none" stroke="rgba(184,149,74,0.42)" stroke-width="1.4"/>
+        <!-- Two diagonal fold-edge highlights — gold strokes so the flap reads as creased paper -->
+        <line x1="0"   y1="0"   x2="230" y2="128" stroke="rgba(184,149,74,0.78)" stroke-width="1.6"/>
+        <line x1="460" y1="0"   x2="230" y2="128" stroke="rgba(184,149,74,0.78)" stroke-width="1.6"/>
+        <!-- Subtle highlight catch along the upper edge -->
+        <line x1="0"   y1="0.8" x2="460" y2="0.8" stroke="rgba(255,255,255,0.55)" stroke-width="1.0"/>
+      </svg>
+    </div>
+    <!-- Wax seal on the flap's apex (where the two diagonals meet) -->
     <div class="bc-env-seal" aria-hidden="true">
       <span class="seal-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>
-    </div>
-    <!-- Postmark stamp -->
-    <div class="bc-env-postmark" aria-hidden="true">
-      <span class="pm-top">Give &lsquo;n Receive</span>
-      <span class="pm-bot">Invitation &middot; First-class</span>
     </div>
     <p class="bc-env-eye">Introducing</p>
     <div class="bc-env-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
