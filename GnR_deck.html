@@ -5907,7 +5907,7 @@ html, body, html body{
 
 <!-- [Dave 2026-05-14 PM v4] Slide search â€” visible only when Z is pressed (NOT in presenter-mode). Searches eyebrow + headline + body text across main + appendix slides. -->
 <div id="slideSearch">
-  <input type="text" class="ss-input" id="slideSearchInput" placeholder="Search slidesâ€¦" autocomplete="off" spellcheck="false"/>
+  <input type="text" class="ss-input" id="slideSearchInput" placeholder="Search slides..." autocomplete="off" spellcheck="false"/>
   <div class="ss-results" id="slideSearchResults"></div>
 </div>
 
@@ -30128,6 +30128,7 @@ window.addEventListener('resize',drawLoop);
     user-select: none;
   }
   #speakerNotesBtn:hover { transform: scale(1.08); background: #1a1612; }
+  #speakerNotesBtn svg { width: 22px; height: 22px; display: block; }
   #speakerNotesOverlay {
     position: fixed; inset: 0;
     background: rgba(26,22,18,0.78);
@@ -30250,13 +30251,19 @@ window.addEventListener('resize',drawLoop);
   <div class="rv-preview" id="rvPreview"><iframe title="Backup preview" id="rvPreviewFrame"></iframe></div>
 </div>
 
-<div id="speakerNotesBtn" onclick="openSpeakerNotes()" title="Speaker notes (N)">ðŸ“</div>
+<div id="speakerNotesBtn" onclick="openSpeakerNotes()" title="Speaker notes (N)" aria-label="Speaker notes">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6 3.5h8.2L18 7.3V20.5H6V3.5Z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+    <path d="M14 3.5V8h4" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+    <path d="M8.8 11h6.4M8.8 14.2h6.4M8.8 17.4h4.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  </svg>
+</div>
 <div id="speakerNotesOverlay" onclick="if(event.target===this) closeSpeakerNotes()">
   <div id="speakerNotesPanel">
-    <div class="close-btn" onclick="closeSpeakerNotes()">Ã—</div>
+    <div class="close-btn" onclick="closeSpeakerNotes()">&times;</div>
     <div class="label" id="snLabel">Slide</div>
-    <div class="title" id="snTitle">â€”</div>
-    <div class="one-line" id="snOneLine">â€”</div>
+    <div class="title" id="snTitle">&mdash;</div>
+    <div class="one-line" id="snOneLine">&mdash;</div>
     <div class="body" id="snBody"></div>
     <div class="hint">Press <kbd>N</kbd> to toggle &middot; <kbd>Esc</kbd> to close</div>
   </div>
