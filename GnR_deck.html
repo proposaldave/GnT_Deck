@@ -7475,7 +7475,8 @@ window.csVd4Reverse = function() { return false; };
   html[data-export="1"] #cs-1m8-fuels .pf-particles g { opacity:1 !important; transform:none !important; transition:none !important; animation:none !important; }
   html[data-export="1"] #cs-1m8-fuels .pf-particles circle { animation:none !important; }
 </style>
-<div class="casey-slide ds-measure" id="cs-1m8-fuels" style="display:none">
+<!-- [Dave 2026-05-19] cs-1m8-fuels DELETED per Dave: broken blank slide at slot 2 alt. Removed from SLIDE_ALTS[2] and pink-dot classification; hidden here as a rollback stub. -->
+<div class="casey-slide ds-measure" id="cs-1m8-fuels" data-deleted="1" style="display:none !important">
   <div class="pf-grid"></div>
   <div class="pf-glow"></div>
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:none;color:#c8462c;z-index:10;max-width:980px;line-height:1.5"><em style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.4em;font-style:italic;font-weight:700;color:#1a1612">Live a life of <span style="color:#b8954a">abundant, autonomous connection</span>.</em></div>
@@ -26122,7 +26123,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFTâ†’RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots â€” color groups stay contiguous.
   // [Dave 2026-05-18 LATEST v6] cs-1m8-codexmerge removed from slot 2 alts per Dave. cs-1m8-title-A remains primary. Order LEFTâ†’RIGHT: red dots first, then blue, then pink.
-  2: ['cs-1m8-title-A', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-fuels', 'cs-brand-codex'],
+  2: ['cs-1m8-title-A', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4â†’3 (v6) â†’still 3 with v9, 5â†’5 still, 6â†’5 (v6), 14â†’13 (v6)â†’12 (v9), 15â†’14, 16â†’15, 24â†’23.
   // Slot 3 (cs-1bm1 â€” was cs-a7m1) â€” no alts.
   3: [],
@@ -27393,7 +27394,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) Â· cs-samecourt-pink1/pink2 (slot 13) Â· cs-givefirst-pink (slot 18) Â· cs-fv6-pink (slot 20) Â· cs-mv6-pink (slot 21) â€” all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 â†’ pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 â€” same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-1m8-fuels' || altId === 'cs-brand-V8' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-1m8-envelopes' || altId === 'cs-wedgepb-codex');
     // [Dave 2026-05-18] Purple-dot alts â€” 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added â€” pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 â€” FULL-content variant at slot 13 with warehouse bg image.
