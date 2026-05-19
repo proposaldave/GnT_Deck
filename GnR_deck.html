@@ -8539,12 +8539,12 @@ window.cs1m7Reverse = function() {
        data-shown="2" → Panel 2 (Communities → Cliques) joins
        data-shown="3" → Panel 3 (No Trusted Reciprocity) joins. Hint fades out.
      Each click/scroll-down/swipe-up advances one stage. Audience can't read ahead. */
-  /* [Dave 2026-05-17 v3] tg-sub now appears AFTER the trapped-wrap graphic — reordered DOM places sub line UNDER the graphic, so reveal timing also shifts: tg-trapped-wrap reveals at 0.35s, tg-sub at 0.85s (caption-after-visual). */
-  #cs-thegap .tg-sub      { opacity: 0; transition: opacity 0.55s cubic-bezier(.22,1,.36,1); }
-  #cs-thegap .tg-svg-wrap { opacity: 0; transition: opacity 0.65s cubic-bezier(.22,1,.36,1); }
+  /* [Dave 2026-05-18 LATEST] Animations SMOOTHED per Dave 'try to make the animations on the "But real communities don't have a like button." slide even smoother'. Three tweaks: (1) Transitions lengthened (0.55-0.65s → 0.85-1.0s) so motion lingers. (2) Easing curve switched to ease-out-quart-like (.16,1,.30,1) — gentler trail-off. (3) Subtle Y-rise on tg-sub for parity with the other beats. */
+  #cs-thegap .tg-sub      { opacity: 0; transform: translateY(8px); transition: opacity 0.85s cubic-bezier(.16,1,.30,1), transform 0.85s cubic-bezier(.16,1,.30,1); }
+  #cs-thegap .tg-svg-wrap { opacity: 0; transition: opacity 0.95s cubic-bezier(.16,1,.30,1); }
   /* Sub line + SVG canvas appear on slide load via casey-entered (no click needed) */
-  #cs-thegap.casey-entered .tg-sub      { opacity: 1; transition-delay: 0.85s; }
-  #cs-thegap.casey-entered .tg-svg-wrap { opacity: 1; transition-delay: 0.55s; }
+  #cs-thegap.casey-entered .tg-sub      { opacity: 1; transform: translateY(0); transition-delay: 0.95s; }
+  #cs-thegap.casey-entered .tg-svg-wrap { opacity: 1; transition-delay: 0.65s; }
 
   /* [Dave 2026-05-17 v3] ADDITIVE TRANSITION — Dave: "I don't want you to remove anything
      that you see in the attached image. I want you to just add the bottom graphics to the
@@ -8557,14 +8557,14 @@ window.cs1m7Reverse = function() {
      Both states co-exist on the final view. */
   #cs-thegap .tg-trapped-wrap {
     width:100%; max-width:1380px; margin:8px auto 0;
-    opacity: 0; transform: translateY(0); transform-origin: center top;
-    transition: opacity 0.65s cubic-bezier(.22,1,.36,1);
+    opacity: 0; transform: translateY(12px) scale(0.985); transform-origin: center top;
+    transition: opacity 0.95s cubic-bezier(.16,1,.30,1), transform 0.95s cubic-bezier(.16,1,.30,1);
   }
   #cs-thegap .tg-trapped-wrap svg {
     width:100%; height:auto; max-height:48vh; display:block; margin:0 auto;
-    transition: max-height 0.65s cubic-bezier(.22,1,.36,1);
+    transition: max-height 0.95s cubic-bezier(.16,1,.30,1);
   }
-  #cs-thegap.casey-entered .tg-trapped-wrap { opacity: 1; transition-delay: 0.65s; }
+  #cs-thegap.casey-entered .tg-trapped-wrap { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.75s; }
   /* When user advances (data-shown="1"), trapped graphic SHRINKS but stays visible */
   #cs-thegap[data-shown="1"] .tg-trapped-wrap svg,
   #cs-thegap[data-shown="2"] .tg-trapped-wrap svg,
@@ -8572,20 +8572,20 @@ window.cs1m7Reverse = function() {
     max-height: 22vh;
   }
 
-  /* 3 panels SLIDE UP FROM BELOW + fade in, staggered */
+  /* 3 panels SLIDE UP FROM BELOW + fade in, staggered. [Dave 2026-05-18 LATEST] Smoother easing + wider per-panel gaps (was 0.40/0.55/0.70 → now 0.40/0.75/1.10) + longer transitions (0.65-0.70s → 0.95s) so each panel arrives on its own clear beat instead of overlapping. */
   #cs-thegap [data-panel] {
-    opacity: 0; transform: translateY(36px); transform-box: fill-box;
-    transition: opacity 0.65s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.34,1.2,.5,1);
+    opacity: 0; transform: translateY(42px); transform-box: fill-box;
+    transition: opacity 0.95s cubic-bezier(.16,1,.30,1), transform 1.05s cubic-bezier(.16,1,.30,1);
   }
   #cs-thegap[data-shown="1"] [data-panel="1"],
   #cs-thegap[data-shown="2"] [data-panel="1"],
   #cs-thegap[data-shown="3"] [data-panel="1"] { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
   #cs-thegap[data-shown="1"] [data-panel="2"],
   #cs-thegap[data-shown="2"] [data-panel="2"],
-  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
+  #cs-thegap[data-shown="3"] [data-panel="2"] { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
   #cs-thegap[data-shown="1"] [data-panel="3"],
   #cs-thegap[data-shown="2"] [data-panel="3"],
-  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 0.70s; }
+  #cs-thegap[data-shown="3"] [data-panel="3"] { opacity: 1; transform: translateY(0); transition-delay: 1.10s; }
   /* svg-wrap (containing the 3 panels) — hidden by default, visible after click. Shrunk so it
      coexists with the (now-also-shrunk) trapped graphic above it. */
   #cs-thegap .tg-svg-wrap { display: none; }
@@ -12998,7 +12998,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">01</div>
               <div class="v5-eye">Blaze new trail</div>
-              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand.</em></div>
+              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand &rarr; <strong style="font-style:normal;color:#1a1612">Product</strong>.</em></div>
               <div class="v5-meta"><strong>NEPC</strong> &middot; 500&nbsp;members &middot; 20+&nbsp;employees<br>Domain expert community building talent</div>
             </div>
           </div>
@@ -13026,8 +13026,8 @@ window.cs1m7Reverse = function() {
                   <circle cx="54" cy="72" r="2.8" fill="white"/>
                 </svg>
               </div>
-              <!-- [Dave 2026-05-18 LATEST] Front label simplified per Dave 'change "Next Frontier of Connection Technology" to "Next Frontier"'. -->
-              <div class="v5-front-label">Next Frontier</div>
+              <!-- [Dave 2026-05-18 LATEST v2] Front label extended per Dave 'steve jobs slide, when it first loads, change the "Next frontier" text to "Next frontier clarity"'. The flip-back side keeps the eyebrow "Clarity" with body "Next frontier: the technology that connects us"; the FRONT face now condenses both halves into a single label so the unflipped pillar reads as "next-frontier clarity" — Dave's positioning beat. -->
+              <div class="v5-front-label">Next frontier<br>clarity</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -13086,8 +13086,8 @@ window.cs1m7Reverse = function() {
                   <circle cx="73" cy="9" r="2.6" fill="#b8954a"/>
                 </svg>
               </div>
-              <!-- [Dave 2026-05-18 LATEST v2] Front label restacked into 3 lines per Dave 'change positioning of this text: Brand, Mission, Growth so it's: Brand, / Mission, / Growth'. -->
-              <div class="v5-front-label">Brand,<br>Mission,<br>Growth</div>
+              <!-- [Dave 2026-05-18 LATEST v3] Front label shortened per Dave 'steve jobs slide change "Brand, Mission, Growth" to "Mission & Growth"'. Brand stripped — the brand thesis is now carried by the brand-slot alts at slide 2, so Pillar 3 owns just mission + growth. -->
+              <div class="v5-front-label">Mission<br>&amp; Growth</div>
             </div>
             <!-- BACK — badge + full content. IDENTICAL SVG to front (v6 unified graphic). -->
             <div class="v5-flip-back">
@@ -13185,7 +13185,7 @@ window.cs1m7Reverse = function() {
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">01</div>
               <div class="v5-eye">Blaze new trail</div>
-              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand.</em></div>
+              <div class="v5-body"><em style="color:#1a1612">Proving lab: matchmaking +<br>community by hand &rarr; <strong style="font-style:normal;color:#1a1612">Product</strong>.</em></div>
               <div class="v5-meta"><strong>NEPC</strong> &middot; 500&nbsp;members &middot; 20+&nbsp;employees<br>Domain expert community building talent</div>
             </div>
           </div>
@@ -14555,11 +14555,10 @@ window.cs1m7Reverse = function() {
   <div style="text-align:center;max-width:1140px;width:100%">
 
     <!-- HEADLINE -->
-    <div style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3.4vw,2.7rem);font-weight:700;line-height:1.18;color:#1a1612;margin-bottom:14px;letter-spacing:-0.01em">
-      Building the AI layer that turns<br>
-      <em style="font-style:italic;color:#49b4a0">480K+ real-world signals</em> into scheduling decisions.
+    <!-- [Dave 2026-05-18 LATEST] Old hero line "Building the AI layer that turns 480K+ real-world signals into scheduling decisions." DELETED per Dave. The former sub-line "25 years building tech platforms at scale — now applied to human connection." promoted to the MAIN headline + scaled up (1.7→3.6rem peak, serif heavy, brand-gold italic accent) so it carries the slide on its own. -->
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(2.0rem,3.85vw,3.2rem);font-weight:800;line-height:1.12;color:#1a1612;margin-bottom:38px;letter-spacing:-0.018em;max-width:1240px;margin-left:auto;margin-right:auto">
+      <em style="font-style:italic;color:#b8954a;font-weight:850">25 years</em> building tech platforms at scale<br>&mdash; now applied to <em style="font-style:italic;color:#49b4a0;font-weight:850">human connection</em>.
     </div>
-    <div style="font-family:'Manrope',sans-serif;font-size:0.9rem;color:rgba(26,22,18,0.62);font-style:italic;margin-bottom:38px">25 years building tech platforms at scale &mdash; now applied to human connection.</div>
 
     <!-- TIMELINE — career arc, mirrors Dave's slide -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:980px;margin:0 auto 50px;position:relative">
@@ -15918,6 +15917,27 @@ window.cs1m7Reverse = function() {
 
           <!-- [Dave 2026-05-12] Sport-sibling text deleted; Padel/Tennis/Golf/Social Sports promoted to icons in the constellation (see #10-13 above, top-right cluster near City Squares & Gyms · Wellness). -->
         </svg>
+      </div>
+
+      <!-- [Dave 2026-05-18 LATEST] KRISTA → STEVE Slack proof block added per Dave 'underneath the large graphic, find the graphic which we used to have (may be appendix slide now) where krista on slack is talking about how she used the invite tool for a non-pickleball member party, and i think steve responded with something like "love it". we want that graphic on the bottom of this slide'. The block is a direct clone of the same Slack proof that lives on cs-onandoff (lines ~15119 in the appendix path); inline styles so it travels self-contained into cs-wedge1 without needing the cs-onandoff scope. It proves the coordination-stack→social-network claim with a concrete real Krista message: she used the GnR invite tool for a NON-pickleball surprise party for a member who completed cancer radiation — i.e. the off-court community use case is already happening at NEPC. -->
+      <div class="wd-slack-proof" style="max-width:880px;margin:18px auto 0;padding:18px 20px;background:#fff;border:1px solid rgba(26,22,18,0.10);border-radius:10px;box-shadow:0 4px 14px rgba(26,22,18,0.05);text-align:left">
+        <!-- Krista message -->
+        <div style="display:flex;gap:11px;align-items:flex-start;margin-bottom:10px">
+          <div style="flex-shrink:0;width:34px;height:34px;border-radius:6px;background:#7c3aed;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:700">K</div>
+          <div style="flex:1">
+            <div style="margin-bottom:3px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;font-weight:800;color:#1a1612">Krista</span> <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:rgba(26,22,18,0.5);margin-left:6px">11:29 AM</span></div>
+            <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.5">FYI I&rsquo;m using the invite for a <strong style="color:#1a1612">surprise party</strong> next Friday for one of our members that just completed <strong style="color:#c8462c">radiation for cancer</strong> &mdash; it&rsquo;s not a playing event, but I&rsquo;ve done this occasionally for members to help facilitate <em style="color:#b8954a;font-style:italic;font-weight:600">gatherings that have been born from their pickleball connections</em>.</div>
+            <div style="display:inline-flex;align-items:center;gap:4px;margin-top:7px;padding:2px 7px;background:rgba(200,70,44,0.08);border:1px solid rgba(200,70,44,0.22);border-radius:11px"><span style="font-size:0.7rem">&hearts;</span><span style="font-family:'Manrope',sans-serif;font-size:0.62rem;font-weight:700;color:#c8462c">1</span></div>
+          </div>
+        </div>
+        <!-- Steve reply -->
+        <div style="display:flex;gap:11px;align-items:flex-start;padding-top:8px;border-top:1px solid rgba(26,22,18,0.06)">
+          <div style="flex-shrink:0;width:34px;height:34px;border-radius:6px;background:#0891b2;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:700">S</div>
+          <div style="flex:1">
+            <div style="margin-bottom:3px"><span style="font-family:'Manrope',sans-serif;font-size:0.78rem;font-weight:800;color:#1a1612">Steve</span> <span style="font-family:'Manrope',sans-serif;font-size:0.62rem;color:rgba(26,22,18,0.5);margin-left:6px">12:32 PM</span></div>
+            <div style="font-family:'Manrope',sans-serif;font-size:0.74rem;color:#1a1612;line-height:1.5">Love it</div>
+          </div>
+        </div>
       </div>
 
       <!-- Category chips lifted from cs-position1 (deleted 2026-05-09 per Dave: 'figure out how to take valuable information from the attached slide, merge it into the Wedge Into Human Connection slide, and then delete the attached slide'). 3 distinct claims that complement the wedge visual. -->
@@ -17858,6 +17878,21 @@ window.cs1m7Reverse = function() {
     font-family:'Manrope',sans-serif; font-size:.7rem; font-weight:900;
     letter-spacing:.42em; text-transform:uppercase; color:#a87a35; margin:0 0 6px;
   }
+  /* [Dave 2026-05-18 LATEST] Company wordmark added per Dave 'this slide you're missing the name of the company, Give n Receive - as i'm considering this could be the title slide.' Big G·n·R brand mark sits at the top of the stage, ABOVE the brand promise — Dave's preferred title-slide hierarchy is company name first, promise second, supporting visual underneath. */
+  #cs-1m8-envelopes .ev-wordmark {
+    font-family:'Fraunces','Playfair Display',Georgia,serif;
+    font-weight:900; letter-spacing:-0.04em; line-height:0.95;
+    font-size:clamp(3.8rem, 6.2vw, 6.0rem);
+    margin:0 0 6px; display:inline-flex; align-items:baseline; justify-content:center;
+  }
+  #cs-1m8-envelopes .ev-wordmark .g { color:#5B8FD4; text-shadow:0 6px 24px rgba(91,143,212,0.20); }
+  #cs-1m8-envelopes .ev-wordmark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; text-shadow:0 6px 24px rgba(184,149,74,0.20); }
+  #cs-1m8-envelopes .ev-wordmark .r { color:#c8462c; text-shadow:0 6px 24px rgba(200,70,44,0.20); }
+  #cs-1m8-envelopes .ev-wordmark-label {
+    font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900;
+    letter-spacing:.42em; text-transform:uppercase; color:rgba(26,22,18,0.62);
+    margin:0 0 22px;
+  }
   #cs-1m8-envelopes .ev-top-head {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:clamp(1.70rem, 2.65vw, 2.40rem);
@@ -17937,6 +17972,9 @@ window.cs1m7Reverse = function() {
   </div>
 
   <section class="ev-stage">
+    <!-- [Dave 2026-05-18 LATEST] Company wordmark + label promoted to the top of the stage so the slide can serve as a title slide. -->
+    <div class="ev-wordmark" aria-label="Give n Receive"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <p class="ev-wordmark-label">Give &lsquo;n Receive</p>
     <!-- Top band (inline, no separate band container — it sits in the stage flow) -->
     <p class="ev-top-eye">Brand</p>
     <h1 class="ev-top-head">Live a life of <em>abundant, autonomous connection.</em></h1>
@@ -18511,14 +18549,15 @@ window.cs1m7Reverse = function() {
     </svg>
   </div>
   <div class="ask-bg-wash" aria-hidden="true"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Ask</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow "Ask" → "Next" per Dave 'on that slide top left change "ask" to "next"' — reframes the dinner slide as a forward-pointing "what's next" beat rather than a request. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Next</div>
   <section class="ask-stage">
 
-    <!-- [Dave 2026-05-18 LATEST v3] Trimmed per Dave — "Discuss NEPC and pickleball — the perfect outlier wedge into a new economy of human connection." → "Discuss the perfect outlier wedge into a new economy of human connection." The NEPC/pickleball detail dropped so the dinner headline reads as a clean wedge-of-an-economy ask. -->
+    <!-- [Dave 2026-05-18 LATEST v4] Reworded per Dave — "Discuss the perfect outlier wedge into a new economy of human connection." → "Discuss GnR's outlier wedge into the new economy of human connection." Adds the GnR possessive (it's OUR wedge, not just A wedge) + "the new economy" (definite article — implies the new economy is real, not hypothetical). -->
     <h1 class="ask-headline" style="font-size:clamp(1.65rem, 2.85vw, 2.65rem);max-width:920px;line-height:1.20">
       Dinner tonight:<br>
-      Discuss the perfect outlier wedge into<br>
-      <em>a new economy of human connection.</em>
+      Discuss <span class="ask-gnr"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>&rsquo;s outlier wedge into<br>
+      <em>the new economy of human connection.</em>
     </h1>
 
     <div class="ask-paths">
@@ -18631,31 +18670,26 @@ window.cs1m7Reverse = function() {
   #cs-samecourt .sc-item .dash{display:inline-block;flex-shrink:0;font-weight:300}
   #cs-samecourt .sc-item-icon{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.78}
   #cs-samecourt .sc-item-icon svg{width:24px;height:24px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  /* [Dave 2026-05-18 LATEST v2] Staged reveal of the sc-item bullet rows per Dave 'remember that when i click or mouse scroll, any not-completed animations need to animate in before going to the next slide'. Three stages instead of one:
-       data-stage="0" — both columns' bullets hidden (initial state).
-       data-stage="1" — LEFT column ("I'm a 3.9" — "The job is winning / Don't play down / Skip helping out") reveals with staggered cascade.
-       data-stage="2" — RIGHT column ("I'm part of building my community" — "The job is an open heart / Play with the new face / Take my spot") reveals.
-       Next click only advances to the next slide once stage === 2. Reverse path mirrors: undoes one column at a time.
-     Speech bubbles + identity rows + community SVGs stay visible from slide entry. */
+  /* [Dave 2026-05-18 LATEST v3] Per-line stagger WIDENED + per-item transition LENGTHENED per Dave 'these could animate in a little better (eg instead of the block all at once, one line at a time would look better)'. Old gaps were 0.05/0.20/0.35s with 0.55s transitions — that read as a fast block. New gaps are 0/0.55/1.10s with 0.85s transitions + larger 16px y-offset, so each bullet visibly arrives on its own beat. */
   #cs-samecourt[data-stage="0"] .sc-col.red  .sc-item,
-  #cs-samecourt[data-stage="0"] .sc-col.blue .sc-item { opacity:0; transform:translateY(10px); pointer-events:none; }
-  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(10px); pointer-events:none; }
-  /* Stage 1 reveals LEFT (red) column with stagger */
+  #cs-samecourt[data-stage="0"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
+  #cs-samecourt[data-stage="1"] .sc-col.blue .sc-item { opacity:0; transform:translateY(16px); pointer-events:none; }
+  /* Stage 1 reveals LEFT (red) column with WIDE stagger */
   #cs-samecourt[data-stage="1"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="2"] .sc-col.red  .sc-item,
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item {
     opacity:1; transform:none;
-    transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+    transition: opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1);
     pointer-events:auto;
   }
-  /* Stagger inside LEFT column on stage 1 */
+  /* Per-line stagger inside LEFT column on stage 1 — each bullet enters on its own beat */
   #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(1) { transition-delay:0.05s; }
-  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(2) { transition-delay:0.20s; }
-  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(3) { transition-delay:0.35s; }
-  /* Stagger inside RIGHT column on stage 2 (left stays steady — no re-trigger) */
+  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(2) { transition-delay:0.60s; }
+  #cs-samecourt[data-stage="1"] .sc-col.red .sc-item:nth-of-type(3) { transition-delay:1.15s; }
+  /* Per-line stagger inside RIGHT column on stage 2 (left stays steady) */
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(1) { transition-delay:0.05s; }
-  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(2) { transition-delay:0.20s; }
-  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(3) { transition-delay:0.35s; }
+  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(2) { transition-delay:0.60s; }
+  #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-of-type(3) { transition-delay:1.15s; }
   /* Click hint chevron — visible until BOTH columns are revealed (stage < 2). */
   #cs-samecourt .sc-click-hint { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:6; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(184,149,74,0.78); display:flex; flex-direction:column; align-items:center; gap:6px; pointer-events:none; animation: scClickHintPulse 2.4s ease-in-out infinite; }
   #cs-samecourt[data-stage="2"] .sc-click-hint { display:none; }
@@ -24694,41 +24728,42 @@ window.csA7m1Reverse = function() {
     <!-- TWIN HUBS — Human Connection (3 figures) + Unique Value (2 figures with star). [Dave 2026-05-12 LATER] '&' connector DELETED + hubs moved closer per Dave: 'get rid of the "&" and move these two closer together'. -->
     <div class="c2c-hub-row" style="display:flex;flex-direction:row;align-items:center;justify-content:center;gap:clamp(14px,2vw,28px);margin:8px auto 0;flex-wrap:wrap;">
 
-      <!-- LEFT HUB · HUMAN CONNECTION (3-people icon, existing) -->
+      <!-- [Dave 2026-05-18 LATEST] Hub colors flipped from monotone gold to brand BLUE (left = Human connection) + brand RED (right = Unique value) per Dave 'how about some color here so these really pop (maybe blue and red brand colors?)'. The G·n·R brand palette recapitulated: G=blue gives, R=red receives, and these two hubs ARE the meaning of community — what we GIVE each other (blue, left, connection) and what we RECEIVE back (red, right, unique value). -->
+      <!-- LEFT HUB · HUMAN CONNECTION (3-people icon · BLUE-tinted) -->
       <div class="c2c-hub" style="display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
-        <div class="c2c-hub-circle" style="position:relative;width:clamp(170px,15vw,210px);height:clamp(170px,15vw,210px);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(255,250,240,0.92) 0%, rgba(243,234,216,0.55) 65%, rgba(243,234,216,0) 100%);border:1.4px solid rgba(184,149,74,0.55);box-shadow:0 0 0 5px rgba(184,149,74,0.06), 0 0 32px rgba(184,149,74,0.16);">
-          <div style="position:absolute;inset:-14px;border-radius:50%;border:1.2px dashed rgba(184,149,74,0.42);pointer-events:none;"></div>
+        <div class="c2c-hub-circle" style="position:relative;width:clamp(170px,15vw,210px);height:clamp(170px,15vw,210px);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(240,247,255,0.96) 0%, rgba(216,232,250,0.55) 65%, rgba(216,232,250,0) 100%);border:1.8px solid rgba(91,143,212,0.65);box-shadow:0 0 0 5px rgba(91,143,212,0.08), 0 0 40px rgba(91,143,212,0.24);">
+          <div style="position:absolute;inset:-14px;border-radius:50%;border:1.2px dashed rgba(91,143,212,0.52);pointer-events:none;"></div>
           <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
-            <circle cx="14" cy="14" r="6" fill="none" stroke="#b8954a" stroke-width="1.8"/>
-            <path d="M 4 38 Q 4 26 14 26 Q 24 26 24 38" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
-            <circle cx="32" cy="11" r="7" fill="none" stroke="#b8954a" stroke-width="2"/>
-            <path d="M 20 40 Q 20 24 32 24 Q 44 24 44 40" fill="none" stroke="#b8954a" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="50" cy="14" r="6" fill="none" stroke="#b8954a" stroke-width="1.8"/>
-            <path d="M 40 38 Q 40 26 50 26 Q 60 26 60 38" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="14" cy="14" r="6" fill="none" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 4 38 Q 4 26 14 26 Q 24 26 24 38" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="32" cy="11" r="7" fill="none" stroke="#3a73b8" stroke-width="2"/>
+            <path d="M 20 40 Q 20 24 32 24 Q 44 24 44 40" fill="none" stroke="#3a73b8" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="50" cy="14" r="6" fill="none" stroke="#5B8FD4" stroke-width="1.8"/>
+            <path d="M 40 38 Q 40 26 50 26 Q 60 26 60 38" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;letter-spacing:-0.01em">Human<br>connection</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;color:#3a73b8;line-height:1.15;text-align:center;letter-spacing:-0.01em">Human<br>connection</div>
         </div>
       </div>
 
       <!-- [Dave 2026-05-12 LATER] '&' connector DELETED. -->
 
-      <!-- RIGHT HUB · UNIQUE VALUE TO EACH OTHER (2 figures with gold star between them) -->
+      <!-- RIGHT HUB · UNIQUE VALUE TO EACH OTHER (2 figures with star · RED-tinted) -->
       <div class="c2c-hub" style="display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
-        <div class="c2c-hub-circle" style="position:relative;width:clamp(170px,15vw,210px);height:clamp(170px,15vw,210px);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(255,250,240,0.92) 0%, rgba(243,234,216,0.55) 65%, rgba(243,234,216,0) 100%);border:1.4px solid rgba(184,149,74,0.55);box-shadow:0 0 0 5px rgba(184,149,74,0.06), 0 0 36px rgba(184,149,74,0.22);">
-          <div style="position:absolute;inset:-14px;border-radius:50%;border:1.2px dashed rgba(184,149,74,0.42);pointer-events:none;"></div>
-          <!-- 2 figures facing each other + gold 5-point star between them (the unique value being exchanged) -->
+        <div class="c2c-hub-circle" style="position:relative;width:clamp(170px,15vw,210px);height:clamp(170px,15vw,210px);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(255,242,238,0.96) 0%, rgba(250,224,216,0.55) 65%, rgba(250,224,216,0) 100%);border:1.8px solid rgba(200,70,44,0.65);box-shadow:0 0 0 5px rgba(200,70,44,0.08), 0 0 44px rgba(200,70,44,0.26);">
+          <div style="position:absolute;inset:-14px;border-radius:50%;border:1.2px dashed rgba(200,70,44,0.52);pointer-events:none;"></div>
+          <!-- 2 figures facing each other + RED 5-point star between them (the unique value being exchanged) -->
           <svg width="74" height="48" viewBox="0 0 74 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
             <!-- Left person -->
-            <circle cx="12" cy="14" r="6" fill="none" stroke="#b8954a" stroke-width="1.8"/>
-            <path d="M 2 38 Q 2 26 12 26 Q 22 26 22 38" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="12" cy="14" r="6" fill="none" stroke="#c8462c" stroke-width="1.8"/>
+            <path d="M 2 38 Q 2 26 12 26 Q 22 26 22 38" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round"/>
             <!-- Right person (mirror) -->
-            <circle cx="62" cy="14" r="6" fill="none" stroke="#b8954a" stroke-width="1.8"/>
-            <path d="M 52 38 Q 52 26 62 26 Q 72 26 72 38" fill="none" stroke="#b8954a" stroke-width="1.8" stroke-linecap="round"/>
-            <!-- Central star (gold-filled, the unique value being exchanged) with soft halo -->
-            <circle cx="37" cy="20" r="11" fill="rgba(184,149,74,0.12)"/>
-            <path d="M 37 11 L 39.2 17 L 45.4 17 L 40.3 20.7 L 42.3 26.7 L 37 23 L 31.7 26.7 L 33.7 20.7 L 28.6 17 L 34.8 17 Z" fill="#b8954a" stroke="#8a6d2e" stroke-width="0.6" stroke-linejoin="round"/>
+            <circle cx="62" cy="14" r="6" fill="none" stroke="#c8462c" stroke-width="1.8"/>
+            <path d="M 52 38 Q 52 26 62 26 Q 72 26 72 38" fill="none" stroke="#c8462c" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Central star (red-filled, the unique value being exchanged) with soft halo -->
+            <circle cx="37" cy="20" r="11" fill="rgba(200,70,44,0.14)"/>
+            <path d="M 37 11 L 39.2 17 L 45.4 17 L 40.3 20.7 L 42.3 26.7 L 37 23 L 31.7 26.7 L 33.7 20.7 L 28.6 17 L 34.8 17 Z" fill="#c8462c" stroke="#8a2f1a" stroke-width="0.6" stroke-linejoin="round"/>
           </svg>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:700;color:#1a1612;line-height:1.15;text-align:center;letter-spacing:-0.01em">Unique<br>value</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;color:#a8351f;line-height:1.15;text-align:center;letter-spacing:-0.01em">Unique<br>value</div>
         </div>
       </div>
 
@@ -24974,7 +25009,8 @@ window.csA7m1Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-1bm1" data-left="0" data-right="0" style="cursor:default">
 <section style="position:relative;min-height:100%;width:100%">
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Modern Life</div>
+<!-- [Dave 2026-05-18 LATEST] Eyebrow renamed per Dave 'top left label of the "Modern life wires us for everything except what makes life feel full." slide should be "Unfulfilled"'. -->
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Unfulfilled</div>
 <div class="inner" style="padding:48px 48px 28px;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;min-height:100%;box-sizing:border-box">
 
   <div style="text-align:center">
@@ -25666,8 +25702,7 @@ const SLIDE_ORDER = [
   'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
-  // [Dave 2026-05-10 PM] cs-a7m1 PROMOTED to slot 2 (was gold-alt at slot 4). Side-by-side OLD-vs-NEW (loneliness card LEFT + flippable Give n Receive vision card RIGHT). cs-1 (the old slot 2 title) demoted to RED-DOT alt at slot 2 — see SLIDE_ALTS below.
-  'cs-a7m1',  //  2 NEW SLOT 2 · Old vs new — 'Social media is an extremely narrow view' (left) ↔ flippable Give n Receive vision (right)
+  // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 — 4→3, 6→5, 13→12, 14→13, 15→14, 16→15, 24→23. Total main-flow slides now 23.
   // [Dave 2026-05-09] cs-a7 + cs-1bm1 SWAPPED — Dave wants 'Two imbalances rule our lives' as slot 3, then 'Social media is a very narrow view' as slot 4. The values/tech imbalance frames modern life FIRST, then social-media-as-narrow-view drops in as the consequence.
   // 2026-04-30 PM v3: cs-1b + cs-0a Values side MERGED into cs-1bm1 (and 2 alts).
   // Dave's directive: "save current two slides to appendix, then merge — try 2-3 attempts I'll pick best."
@@ -25808,22 +25843,22 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18] Brand-slide review batch — 4 PURPLE-DOT alts of cs-brand-V8 originally.
   // [Dave 2026-05-18 LATEST] Dave deleted att1 (The Question), att2 (Tech & Open Heart), att4 (Humanity/Community/Technology) via 3 separate 'delete this slide' messages. Only att3 (Four Truths) survives as the purple-dot alt. HTML for the deleted attempts retained as silent backups.
   // [Dave 2026-05-18 LATEST v4] cs-brand-V8 alts MOVED to key 18 (above). Slot 23 now = cs-27 (CTO Steve Callan) with no alts.
-  // [Dave 2026-05-18 LATEST v6] cs-fw1 was slot 25; now slot 24 after cs-brand-V8 demotion. cs-16 stays as PINK-DOT alt to its left.
-  24: ['cs-16'],
+  // [Dave 2026-05-18 LATEST v9] cs-fw1 was slot 24; now slot 23 after cs-a7m1 demotion (was 25 before cs-brand-V8 v6). cs-16 stays as PINK-DOT alt.
+  23: ['cs-16'],
   // [Dave 2026-05-17 LATEST] NEW slot 2 = cs-givefirst-slide2 (give-first duplicate). No alts. All keys past slot 1 shifted +1.
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
-  // [Dave 2026-05-18 LATEST v7] THREE NEW BLUE-DOT title-slide candidates leveraging cs-1m8-codexmerge per Dave 'i really like this and i want you to leverage to create a new blue dot slide to the left of slide 2... significantly increase the size of that content... figure out where to say "Give n Receive"... this i'm planning to make the title slide'. Three variants of where the company name lands: A = wordmark hero up top, B = brand-promise hero with "by G·n·R" attribution, C = wordmark in the eyebrow line + biggest diptych of the three. All three share .tt-slide CSS and use the codex split-watercolor as bg. Order in array maps LEFT→RIGHT (index 0 = leftmost). Title-A/B/C placed FIRST so they sit furthest left (blue dots leading the pink-dot brand alts).
-  2: ['cs-1m8-title-C', 'cs-1m8-title-B', 'cs-1m8-title-A', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
-  // [Dave 2026-05-18 LATEST v6] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 because cs-brand-V8 was removed from the main flow at old slot 3. Slot 3 (formerly cs-brand-V8) now = cs-a7m1; slot 4 = cs-1bm1; slot 5 = cs-2c; ... slot 24 = cs-fw1.
-  // Slot 3 (cs-a7m1 — was slot 4) — no alts.
+  // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
+  // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
+  2: ['cs-a7m1', 'cs-1m8-title-C', 'cs-1m8-title-B', 'cs-1m8-title-A', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
+  // Slot 3 (cs-1bm1 — was cs-a7m1) — no alts.
   3: [],
-  // Slot 5 (cs-2c — was slot 6) — no alts.
-  5: [],
-  // Slot 12 (cs-samecourt — was slot 13) — no alts.
-  // [Dave 2026-05-17 PM v2] pink3 PROMOTED INTO primary per Dave: 'i like this. use this to replace the current "Flip the incentive → Unleash connection & community" slide that's in the main deck.' The cs-samecourt primary now carries the bg-image + cream-wash treatment that pink3 had. pink1/pink2/pink3 HTML all retained as silent backups.
-  12: [],
-  // [Dave 2026-05-18 LATEST v8] cs-magnetic ↔ cs-givefirst-art swapped in SLIDE_ORDER (magnetic moved to right after Munger). cs-magnetic alts (red+pink) MOVED from key 15 → 14 to follow the slide; cs-givefirst-art alts moved from 14 → 15 below.
-  14: ['cs-magnetic-orig', 'cs-merge3'],
+  // Slot 4 (cs-2c — was slot 5 was slot 6) — no alts.
+  4: [],
+  // Slot 11 (cs-samecourt — was slot 12) — no alts.
+  11: [],
+  // [Dave 2026-05-18 LATEST v9] cs-magnetic alts decrement from 14 → 13 because cs-a7m1 demoted from main slot 3. cs-magnetic-orig (red-dot) + cs-merge3 (pink-dot) still alt cs-magnetic.
+  13: ['cs-magnetic-orig', 'cs-merge3'],
   // [Dave 2026-05-08] cs-pn1 DELETED from slot 14 alts per Dave: 'delete this'. HTML retained as silent backup, no nav dot.
   // [Dave 2026-05-09] BUG FIX: alt keys shifted +1 to match SLIDE_ORDER positions after cs-1m5 (slot 1) + cs-1 (slot 2) insertion bumped everything down.
   //   - cs-18 (Dave Velardo) was at slot 16 → now slot 17. Wheelhouse alts (cs-18-alt1, cs-18-alt3) moved from key 16 → 17.
@@ -25846,8 +25881,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 v14] cs-pbfirst added as 2nd red-dot alt at slot 15 per Dave 'move attached slide as a red dot slide to the left of the dot of the "Pickleball → fastest path..." slide'. cs-wedgefunnel stays as the rightmost red-dot alt (the funnel variant); cs-pbfirst is the further-left red-dot (the 5-card "#1 secret" variant).
   // Slot 16 (cs-wedgepb-combo — was slot 15) — cs-pbfirst red-dot alt
   // [Dave 2026-05-18 LATEST] cs-18-vd4-pink REMOVED per Dave 'delete this slide' (was the 16/25 alt — original pre-edit wheelhouse copy). HTML retained as silent backup; restore by re-adding the id to this list.
-  // [Dave 2026-05-18 LATEST v8] Slot 16 = cs-wedgepb-combo. cs-wedgepb-codex (identical content + codex watercolor bg image) added as PINK-DOT alt per Dave 'create a new pink dot slide to the left of the "Pickleball → fastest path..." slide that's identical to the ... slide except it uses the image below as background slide'.
-  16: ['cs-wedgepb-codex'],
+  // [Dave 2026-05-18 LATEST v9] Slot 15 = cs-wedgepb-combo (was 16 before cs-a7m1 demotion). cs-wedgepb-codex pink-dot alt follows.
+  15: ['cs-wedgepb-codex'],
   // [Dave 2026-05-18 LATEST v5] SLIDE_ORDER reshuffled AGAIN — cs-brand-V8 moved to slot 3 + cs-racketeer cluster (7 slides) deleted. New 24-slide mapping:
   //    1: cs-frontier-pink1  (no alts)
   //    2: cs-1m8             (no alts)
@@ -25874,12 +25909,12 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v3] cs-brand-mono added as PINK-DOT alt — brand-monument treatment.
   // [Dave 2026-05-18 LATEST v4] cs-brand-codex added as 2nd PINK-DOT alt (codex split-image watercolor).
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
-  // [Dave 2026-05-18 LATEST v6+v8] These late-file SLIDE_ALTS overrides run AFTER the earlier ones (object-literal "last key wins"). With cs-brand-V8 demoted (v6) all keys past slot 2 shift -1, AND with cs-magnetic ↔ cs-givefirst-art swap (v8) the magnetic+givefirst alts swap keys. cs-givefirst-brand (the pink-dot alt of cs-givefirst-art) now lives at slot 15 (where cs-givefirst-art now sits).
-  15: ['cs-givefirst-brand'],
+  // [Dave 2026-05-18 LATEST v9] cs-givefirst-art alts decrement 15 → 14 (cs-a7m1 demoted).
+  14: ['cs-givefirst-brand'],
+  17: [],
   18: [],
+  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   19: [],
-  // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug' — was rendering blank (bg image asset not on disk). HTML retained as silent backup. Slot 20 was 21 before.
-  20: [],
   // [Dave 2026-05-10 PM] cs-16old RESTORED as RED-DOT alt (left of cs-16 'Every touchpoint becomes training data'). Per Dave: 'we cant lose the more complicated one — bring it back as a red dot slide to the LEFT'. The complicated 'Every natural community touchpoint trains GnR' was overwritten when ChatGPT replaced cs-16's HTML; this is a fresh rebuild from the screenshot reference.
   // [Dave 2026-05-15] Key shifted 20 → 21 after cs-givefirst inserted at slot 18 (after the Wheelhouse slide). cs-16 is now at slot 21.
   // [Dave 2026-05-14 PM v4 c] cs-funnel added as second red-dot alt (further LEFT than cs-16old) per Dave: 'create a new red dot slide to the left of this one, and rethink it, reimagine it as a SALES FUNNEL — a human value sales funnel which is exactly what GnR is.'
@@ -27094,7 +27129,8 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
-    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel'); // [Dave 2026-05-18 LATEST] cs-magnetic-orig (slot 14 alt) + cs-pbfirst (slot 16 alt) MOVED from red-dot → BLACK-DOT per Dave 'turn this slide into a black dot, which will indicate that we've reviewed it and we're just keeping it where it is, and there's nothing further to do'.
+    // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
+    const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-a7m1' || altId === 'cs-magnetic-orig');
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig');
