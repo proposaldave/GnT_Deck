@@ -27,13 +27,9 @@
   }
   .casey-slide img, .casey-slide svg { -webkit-touch-callout: none; }
 
-  /* [Dave 2026-05-17 v19 â†’ 2026-05-18 LATEST] PHONE + TABLET PORTRAIT ROTATION PROMPT
-     The deck is a fixed 1920Ã—1080 canvas. On any portrait device it letterboxes hard.
-     Per Dave 'make every slide optimized for laptop and tablet view': the prompt now
-     covers PHONES (orientation:portrait, max-width 600) AND TABLETS in portrait
-     (orientation:portrait, max-width 1180 â€” covers iPad portrait 768/834/1024 and
-     iPad Pro 11" portrait at 1024). Laptops/desktops are never portrait so they
-     never see this. Hidden in export/PDF mode. */
+  /* [Dave 2026-05-18 LATEST] The old portrait rotation prompt is retained as dormant markup
+     for possible future use, but it no longer blocks phones or tablets. The deck shell now
+     fits the 1920x1080 canvas into every viewport, including smartphone portrait. */
   .gnr-rotate-prompt {
     display: none;
     position: fixed;
@@ -50,7 +46,7 @@
     font-family: 'Manrope', system-ui, sans-serif;
   }
   @media (orientation: portrait) and (max-width: 1180px) {
-    .gnr-rotate-prompt { display: flex; }
+    .gnr-rotate-prompt { display: none; }
   }
   html[data-export="1"] .gnr-rotate-prompt { display: none !important; }
   .gnr-rotate-prompt .gnr-rp-mark {
@@ -145,29 +141,21 @@
     .casey-slide { -webkit-tap-highlight-color: transparent; }
   }
 
-  /* [Dave 2026-05-17 v19 â†’ 2026-05-18 LATEST] Portrait override extended to TABLETS too.
-     Undo the body scale + hide all slides so the rotate-prompt overlay takes the full
-     viewport on any portrait device up to 1180px wide (phones AND tablets). Laptops
-     never trigger this because they're not portrait. */
+  /* [Dave 2026-05-18 LATEST] Phone/tablet portrait is now viewable instead of blocked.
+     Keep the same fixed-canvas scale system across every viewport. */
   @media (orientation: portrait) and (max-width: 1180px) {
     html.deck-responsive { background: #1a1612 !important; }
     html.deck-responsive body {
-      width: 100vw !important;
-      height: 100vh !important;
-      min-width: 0 !important; min-height: 0 !important;
-      max-width: 100vw !important; max-height: 100vh !important;
-      transform: none !important;
-      position: static !important;
-      left: auto !important; top: auto !important;
+      width: 1920px !important;
+      height: 1080px !important;
+      min-width: 1920px !important; min-height: 1080px !important;
+      max-width: none !important; max-height: none !important;
+      transform-origin: center center !important;
+      transform: translate(-50%, -50%) scale(var(--deck-scale, 1)) !important;
+      position: absolute !important;
+      left: 50% !important; top: 50% !important;
       overflow: hidden !important;
     }
-    html.deck-responsive .casey-slide,
-    html.deck-responsive .casey-nav,
-    html.deck-responsive .casey-bar,
-    html.deck-responsive .casey-count,
-    html.deck-responsive .nav-dots,
-    html.deck-responsive #appendixBtn,
-    html.deck-responsive #presenterToggle { display: none !important; }
   }
 
   /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -199,9 +187,14 @@
 </style>
 <script>
 (function(){
-  // Set --deck-scale = min(viewportW/1920, viewportH/1080). Runs SYNCHRONOUSLY in head so body has responsive styling applied BEFORE it parses (no flash of unscaled content).
+  // Set --deck-scale = min(viewportW/1920, viewportH/1080). Runs synchronously in head so
+  // body has responsive styling applied before it parses. visualViewport keeps iOS Safari
+  // honest when browser chrome expands/collapses on phones.
   function updateDeckScale() {
-    var scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    var vv = window.visualViewport;
+    var vw = vv && vv.width ? vv.width : window.innerWidth;
+    var vh = vv && vv.height ? vv.height : window.innerHeight;
+    var scale = Math.min(vw / 1920, vh / 1080);
     document.documentElement.style.setProperty('--deck-scale', scale);
   }
   // Add responsive class immediately â€” the export-detection script earlier in head has already set data-export if applicable, so the check below is reliable.
@@ -211,6 +204,10 @@
   updateDeckScale();
   window.addEventListener('resize', updateDeckScale);
   window.addEventListener('orientationchange', function(){ setTimeout(updateDeckScale, 100); });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateDeckScale);
+    window.visualViewport.addEventListener('scroll', updateDeckScale);
+  }
 })();
 </script>
 <!-- Favicon â€” inline SVG GnR wordmark [Dave 2026-05-09]: prevents browser inheriting cached 4D favicon from sibling proposaldave repos -->
@@ -6786,7 +6783,7 @@ window.cs1m5Reverse = function() {
     <!-- RIGHT: cinematic image pane -->
     <div class="i6-image-pane">
       <!-- Photo: load if file exists; onerror gracefully hides so SVG fallback renders. Save the photo as `intro-people.jpg` in the same folder as GnR_deck.html. -->
-      <img class="i6-photo" src="intro-people.jpg" alt="" onerror="this.classList.add('failed');this.onerror=null">
+      <img class="i6-photo failed" data-src="intro-people.jpg" alt="">
       <!-- SVG fallback â€” improved silhouettes with hair, varied heights, atmospheric haze, rim lighting -->
       <div class="i6-art">
         <svg viewBox="0 0 1100 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -29889,23 +29886,11 @@ window.addEventListener('resize',drawLoop);
     .casey-slide > section > .inner { padding: 3vw 4vw !important; }
   }
 
-  /* === Smartphone PORTRAIT â€” block deck, show rotate hint === */
+  /* === Smartphone PORTRAIT â€” deck is now viewable; no blocking rotate hint === */
   @media (max-width: 767px) and (orientation: portrait) {
-    .casey-deck, .casey-nav, .casey-bar, .casey-count, #appendixBtn, #speakerNotesBtn { display: none !important; }
     body::before {
-      content: 'â†»  Please rotate your phone to landscape\\A for the best experience.';
-      white-space: pre-line;
-      position: fixed; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: radial-gradient(ellipse at 50% 40%, #fbf7ef 0%, #f3ead8 70%, #e9dcc4 100%);
-      color: #1a1612;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(18px, 5vw, 26px);
-      text-align: center;
-      padding: 40px;
-      z-index: 99999;
-      line-height: 1.5;
+      content: none !important;
+      display: none !important;
     }
   }
 
