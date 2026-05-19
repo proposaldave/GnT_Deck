@@ -27893,6 +27893,92 @@ window.navigateAlt = function(direction) {
   }
   return true;
 };
+
+// [Dave 2026-05-19] Unified keyboard reveal gate. ArrowDown is Dave's live pitch key,
+// so it must consume every unfinished animation beat before moving to the next main slide.
+// Keep this aligned with wheel/touch reveal handlers, but key off the actually active slide
+// so promoted slides, retained alts, and reshuffled SLIDE_ORDER entries do not drift.
+window.caseyAdvanceActiveReveal = function() {
+  if (inAppendix) return false;
+  const active = document.querySelector('.casey-slide.active');
+  const activeId = active ? active.id : (SLIDE_ORDER[current - 1] || '');
+  const directHandlers = {
+    'cs-1m5': 'cs1m5Advance',
+    'cs-1m7': 'cs1m7Advance',
+    'cs-1m8': 'cs1m8Advance',
+    'cs-1m9': 'cs1m9Advance',
+    'cs-1m8-title-A': 'csM8TitleAAdvance',
+    'cs-1m8-title-B': 'csM8TitleBAdvance',
+    'cs-18-vd4': 'csVd4Advance',
+    'cs-1': 'cs1Advance',
+    'cs-1bm1': 'cs1bm1Advance',
+    'cs-thegap': 'csThegapAdvance',
+    'cs-once': 'csOnceAdvance',
+    'cs-frontier': 'csFrontierAdvance',
+    'cs-measure': 'csMeasureAdvance',
+    'cs-byproduct': 'csByproductAdvance',
+    'cs-onandoff': 'csOnandoffAdvance',
+    'cs-lab': 'csLabAdvance',
+    'cs-2b': 'cs2bAdvance',
+    'cs-2c': 'cs2cAdvance',
+    'cs-gnr': 'csGnrAdvance',
+    'cs-pbfirst': 'csPbfirstAdvance',
+    'cs-samecourt': 'csSamecourtAdvance',
+    'cs-4': 'cs4Advance',
+    'cs-3': 'cs3Advance',
+    'cs-11d': 'cs11dAdvance',
+    'cs-11': 'cs11Advance',
+    'cs-fw1': 'csFw1Advance',
+    'cs-12m2': 'cs12m2Advance',
+    'cs-25': 'cs25Advance',
+    'cs-mv6': 'cs_mv6_Advance',
+    'cs-a7m1': 'csA7m1Advance'
+  };
+  if (/^cs-fv6/.test(activeId || '') && window.csFv6Advance && window.csFv6Advance()) return true;
+  const fnName = directHandlers[activeId];
+  return !!(fnName && window[fnName] && window[fnName]());
+};
+
+window.caseyReverseActiveReveal = function() {
+  if (inAppendix) return false;
+  const active = document.querySelector('.casey-slide.active');
+  const activeId = active ? active.id : (SLIDE_ORDER[current - 1] || '');
+  const directHandlers = {
+    'cs-1m5': 'cs1m5Reverse',
+    'cs-1m7': 'cs1m7Reverse',
+    'cs-1m8': 'cs1m8Reverse',
+    'cs-1m9': 'cs1m9Reverse',
+    'cs-1m8-title-A': 'csM8TitleAReverse',
+    'cs-1m8-title-B': 'csM8TitleBReverse',
+    'cs-1': 'cs1Reverse',
+    'cs-1bm1': 'cs1bm1Reverse',
+    'cs-thegap': 'csThegapReverse',
+    'cs-once': 'csOnceReverse',
+    'cs-frontier': 'csFrontierReverse',
+    'cs-measure': 'csMeasureReverse',
+    'cs-byproduct': 'csByproductReverse',
+    'cs-onandoff': 'csOnandoffReverse',
+    'cs-lab': 'csLabReverse',
+    'cs-2b': 'cs2bReverse',
+    'cs-2c': 'cs2cReverse',
+    'cs-gnr': 'csGnrReverse',
+    'cs-pbfirst': 'csPbfirstReverse',
+    'cs-samecourt': 'csSamecourtReverse',
+    'cs-4': 'cs4Reverse',
+    'cs-3': 'cs3Reverse',
+    'cs-11d': 'cs11dReverse',
+    'cs-11': 'cs11Reverse',
+    'cs-fw1': 'csFw1Reverse',
+    'cs-12m2': 'cs12m2Reverse',
+    'cs-25': 'cs25Reverse',
+    'cs-mv6': 'cs_mv6_Reverse',
+    'cs-a7m1': 'csA7m1Reverse'
+  };
+  if (/^cs-fv6/.test(activeId || '') && window.csFv6Reverse && window.csFv6Reverse()) return true;
+  const fnName = directHandlers[activeId];
+  return !!(fnName && window[fnName] && window[fnName]());
+};
+
 document.addEventListener('keydown', e => {
   // [Dave 2026-05-14 PM v4] If the user is typing in the slide-search input (or any input/textarea/contenteditable), DO NOT hijack keystrokes for navigation. Otherwise typing letters into the search box would trigger D/A/S/Z handlers below.
   const t = e.target;
@@ -27927,6 +28013,7 @@ document.addEventListener('keydown', e => {
   // ArrowDown = next main slide (down the dot column)
   if (e.key === 'ArrowDown') {
     e.preventDefault();
+    if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     window.altIndex = 0;
     if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     return;
@@ -27934,6 +28021,7 @@ document.addEventListener('keydown', e => {
   // ArrowUp = previous main slide (up the dot column)
   if (e.key === 'ArrowUp') {
     e.preventDefault();
+    if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     window.altIndex = 0;
     if (inAppendix) appendixGo(appendixCurrent - 1); else caseyGo(current - 1);
     return;
@@ -27953,6 +28041,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageDown advances like Space (per-slide-aware advance, NOT bare ArrowRight which only navigates alt dots). Most Bluetooth presentation remotes (Logitech R400/R500/Spotlight, Kensington, generic Amazon clickers) send PageDown for forward and PageUp for back. PageDown / PageUp on a real keyboard also fall through here.
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
+    if (!inAppendix && window.caseyAdvanceActiveReveal && window.caseyAdvanceActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
     // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) staged reveal.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) return;
@@ -27987,6 +28076,7 @@ document.addEventListener('keydown', e => {
   // [Dave 2026-05-18 LATEST] Bluetooth-clicker support: PageUp reverses like the per-slide-aware ArrowLeft. NOTE: this handler is reached only when the EARLIER ArrowLeft handler (alt-dot navigation, ~line 26052) didn't claim the event â€” but PageUp never matches that earlier handler, so PageUp always falls through to here and triggers the proper per-slide reverse.
   if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
+    if (!inAppendix && window.caseyReverseActiveReveal && window.caseyReverseActiveReveal()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) return;
