@@ -7339,6 +7339,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial sync in case the slide is already active on load
   if (slide.classList.contains('active')) { slide.dataset.stage = '0'; window.csM8TitleASync(); }
 });
+
+// [Dave 2026-05-18 LATEST] cs-1m8-title-B staggered diptych reveal is now driven by pure CSS keyframes (see #cs-1m8-title-B .tt-cap-l/.tt-ncell/.tt-cap-r animation rules in the tt-slide style block). The previous JS-based approach (caseyGo hook + WAAPI animate) was abandoned because the inline style reset to opacity:0 was blocking the subsequent reveal — pure CSS sidesteps that. No JS handler needed.
 </script>
 
 
@@ -10732,11 +10734,11 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
-  /* [Dave 2026-05-18 LATEST v2] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'background image needs to be more visible, i can barely see it'. Opacity 0.42 → 0.78 + cream wash dialed back from heavy (.86/.72/.76/.92) to light (.55/.32/.40/.62) so the codex watercolor reads as the bg star, not as a faint ghost under a cream lid. The funnel + cards still pop because their own white card backgrounds + drop shadows do the heavy lifting; the codex now provides atmosphere. */
+  /* [Dave 2026-05-18 LATEST v3] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'this slide i'd like the background image to be a little more visible' (after promotion to main primary). Opacity 0.78 → 0.95 + cream wash thinned even further from light (.55/.32/.40/.62) to faint (.35/.18/.22/.42). The codex watercolor is now the dominant visual layer; the funnel + cards float over it with their card chrome (white fills, blue rails, drop shadows) providing legibility. */
   #cs-wedgepb-codex { background:#1a1612 !important; }
   #cs-wedgepb-codex::before { background:none !important; }
-  #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.78; }
-  #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.55) 0%, rgba(251,247,239,0.32) 28%, rgba(251,247,239,0.40) 70%, rgba(251,247,239,0.62) 100%); }
+  #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.95; }
+  #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.35) 0%, rgba(251,247,239,0.18) 28%, rgba(251,247,239,0.22) 70%, rgba(251,247,239,0.42) 100%); }
 </style>
 
 <div class="casey-slide ds-focus" id="cs-wedgepb-codex" style="display:none">
@@ -13140,8 +13142,8 @@ window.cs1m7Reverse = function() {
                   <circle cx="54" cy="72" r="2.8" fill="white"/>
                 </svg>
               </div>
-              <!-- [Dave 2026-05-18 LATEST v2] Front label extended per Dave 'steve jobs slide, when it first loads, change the "Next frontier" text to "Next frontier clarity"'. The flip-back side keeps the eyebrow "Clarity" with body "Next frontier: the technology that connects us"; the FRONT face now condenses both halves into a single label so the unflipped pillar reads as "next-frontier clarity" — Dave's positioning beat. -->
-              <div class="v5-front-label">Next frontier<br>clarity</div>
+              <!-- [Dave 2026-05-18 LATEST v3] Front label restacked per Dave 'change Next frontier / clarity → Clarity / ↓ / Next frontier'. Reads as: Clarity is the starting point, the down arrow signals the move, "Next frontier" is the destination. -->
+              <div class="v5-front-label">Clarity<br>&darr;<br>Next frontier</div>
             </div>
             <!-- BACK — badge + full content -->
             <div class="v5-flip-back">
@@ -13229,8 +13231,8 @@ window.cs1m7Reverse = function() {
               </div>
               <div class="v5-have" aria-label="Dave has this"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>
               <div class="v5-num">03</div>
-              <!-- [Dave 2026-05-17 v14] Pillar 3 retitled "Life Mission" → "GnR Growth & Mission" per Dave + body line simplified. [Dave 2026-05-17 LATEST] "GnR" now brand-colored (G=blue · n=italic gold · R=red) matching the wordmark used throughout the deck. -->
-              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Growth &amp; Mission</div>
+              <!-- [Dave 2026-05-18 LATEST v4] Re-ordered per Dave: "GnR Growth & Mission" → "GnR Mission & Growth". Mission lands first (the why), Growth second (the consequence). -->
+              <div class="v5-eye"><span style="text-transform:none;letter-spacing:-0.01em;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.20em;font-weight:850;display:inline-block;vertical-align:baseline;margin-right:.55em"><span style="color:#5B8FD4">G</span><span style="color:#b8954a;font-style:italic;font-weight:500;padding:0 .02em">n</span><span style="color:#c8462c">R</span></span>Mission &amp; Growth</div>
               <div class="v5-body"><em>We&rsquo;re wired to give &amp; receive.</em></div>
               <div class="v5-meta">Live it &middot; Face of it &middot; Club owner sales<br>Network &amp; podcasts &middot; 4D play-style</div>
             </div>
@@ -14751,7 +14753,8 @@ window.cs1m7Reverse = function() {
     <!-- Stage 1 — TODAY (manual GnR invites) -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:5px">+$210K ARR</div>
-      <div style="font-size:0.7rem;color:#2a8a4f;font-weight:700;margin-bottom:8px;letter-spacing:.18em;text-transform:uppercase">Today</div>
+      <!-- [Dave 2026-05-18 LATEST] "Today" eyebrow deleted per Dave 'on the ~3× your community's value slide, delete: Today / +100% / 3× ARR lift'. Spacer kept so the bar's vertical alignment matches Stages 2 + 3. -->
+      <div style="height:13px;margin-bottom:8px"></div>
       <div style="width:130px;height:90px;background:rgba(73,180,160,.10);border:1px solid rgba(73,180,160,.40);border-bottom:none;border-radius:8px 8px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 6px">club court fees</div>
       </div>
@@ -14765,7 +14768,8 @@ window.cs1m7Reverse = function() {
     <!-- Stage 2 — human-in-loop [Dave 2026-05-07 PM v2: re-finagled to ladder toward 3x at Stage 3; v3 scaled down] -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:800;color:var(--mint,#49b4a0);margin-bottom:5px">+$420K ARR</div>
-      <div style="font-size:0.82rem;color:#2a8a4f;font-weight:700;margin-bottom:8px">+100%</div>
+      <!-- [Dave 2026-05-18 LATEST] "+100%" callout deleted (same batch as "Today" + "3× ARR lift"). Spacer kept for bar alignment. -->
+      <div style="height:15px;margin-bottom:8px"></div>
       <div style="width:130px;height:180px;background:rgba(73,180,160,.16);border:1px solid rgba(73,180,160,.50);border-bottom:none;border-radius:8px 8px 0 0;position:relative;display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(73,180,160,.85);text-align:center;padding:0 6px">club court fees</div>
       </div>
@@ -14779,7 +14783,8 @@ window.cs1m7Reverse = function() {
     <!-- Stage 3 — autonomous [Dave 2026-05-09: ARR $910K → $630K to match the +$210K linear jump of bar 1 → bar 2. Bar height 270px = $630K / $210K × 90px scale.] -->
     <div style="text-align:center;display:flex;flex-direction:column;align-items:center">
       <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#b8954a;margin-bottom:5px">+$630K ARR</div>
-      <div style="font-size:0.88rem;color:#c8462c;font-weight:900;margin-bottom:8px">3&times; ARR lift</div>
+      <!-- [Dave 2026-05-18 LATEST] "3× ARR lift" callout deleted (same batch). Spacer kept for bar alignment. -->
+      <div style="height:16px;margin-bottom:8px"></div>
       <div style="width:130px;height:270px;background:rgba(212,168,83,.20);border:1.5px solid rgba(212,168,83,.65);border-bottom:none;border-radius:8px 8px 0 0;position:relative;box-shadow:0 0 28px rgba(212,168,83,.22);display:flex;align-items:center;justify-content:center">
         <div style="font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(184,149,74,0.95);text-align:center;padding:0 6px">club court fees</div>
       </div>
@@ -18295,7 +18300,9 @@ window.cs1m7Reverse = function() {
   #cs-1m8-title-A .tt-top-band { padding:64px 56px 56px; }
   #cs-1m8-title-A .tt-mark { font-size:clamp(4.2rem, 6.6vw, 6.4rem); margin:0 auto 14px; }
   #cs-1m8-title-A .tt-head { font-size:clamp(1.45rem, 2.25vw, 2.05rem); }
-  /* Variant B: hero brand promise, "Give 'n Receive" attribution. */
+  /* Variant B: hero brand promise, "Give 'n Receive" attribution.
+     [Dave 2026-05-18 LATEST] Top-band padding pulled UP per Dave 'move this text up slightly on slide 2 so it doesn't go over the background image which makes it slightly hard to read'. Was the shared 80px/64px (top/bottom) — text was landing where the cream-wash gradient fades into the watercolor and getting visually muddied by the busy mid-image area. New 36px-top / 96px-bottom keeps the eyebrow + headline anchored in the high-opacity wash band at the very top. */
+  #cs-1m8-title-B .tt-top-band { padding:36px 56px 96px; }
   #cs-1m8-title-B .tt-head { font-size:clamp(2.05rem, 3.20vw, 2.95rem); margin-bottom:18px; }
   #cs-1m8-title-B .tt-attr {
     font-family:'Fraunces','Playfair Display',Georgia,serif;
@@ -18303,6 +18310,19 @@ window.cs1m7Reverse = function() {
     color:rgba(26,22,18,0.62); margin:0; letter-spacing:.04em;
   }
   #cs-1m8-title-B .tt-attr .tt-mark { font-size:1.25em; vertical-align:-0.05em; padding-left:0.18em; }
+  /* [Dave 2026-05-18 LATEST] Bottom diptych — three columns. Per Dave 'i'd like these to animate in one at a time instead of all at once'. Animation is GATED behind .casey-entered so the keyframe clock starts AFTER the slide becomes visible — otherwise the animation "runs" silently while display:none, finishes during the hidden phase, and the element shows up already-faded-in (no visible stagger). Default state holds opacity:0 + translateY for hidden; .casey-entered triggers the animation which fills 'forwards' to opacity:1 final state. */
+  @keyframes m8tbFadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+  #cs-1m8-title-B .tt-cap-l, #cs-1m8-title-B .tt-ncell, #cs-1m8-title-B .tt-cap-r {
+    opacity:0; transform:translateY(8px);
+  }
+  #cs-1m8-title-B.casey-entered .tt-cap-l { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.05s forwards; }
+  #cs-1m8-title-B.casey-entered .tt-ncell { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.40s forwards; }
+  #cs-1m8-title-B.casey-entered .tt-cap-r { animation: m8tbFadeUp .8s cubic-bezier(.22,1,.36,1) 1.75s forwards; }
+  html[data-export="1"] #cs-1m8-title-B .tt-cap-l,
+  html[data-export="1"] #cs-1m8-title-B .tt-ncell,
+  html[data-export="1"] #cs-1m8-title-B .tt-cap-r {
+    opacity:1 !important; transform:none !important; animation:none !important;
+  }
   /* Variant C: eyebrow integrates the company name; medium-sized headline; HUGE diptych. */
   #cs-1m8-title-C .tt-top-band { padding:72px 56px 36px; }
   #cs-1m8-title-C .tt-head { font-size:clamp(1.75rem, 2.65vw, 2.40rem); }
@@ -18373,7 +18393,8 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-B" style="display:none">
   <img class="tt-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real human connection to our digital world</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow updated per Dave 'slide 2, change "Brings real human connection to our digital world" to "Brand: Brings real human connection to our digital world"'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brand: Brings real human connection to our digital world</div>
 
   <div class="tt-left-quote">
     <p><em>Social media</em> is a narrow view<br>of human connection technology.</p>
@@ -18386,6 +18407,7 @@ window.cs1m7Reverse = function() {
   </div>
 
   <div class="tt-bottom-band">
+    <!-- [Dave 2026-05-18 LATEST] Diptych columns now animate IN ONE AT A TIME (left → center → right) instead of fading together. Stagger lives in the .tt-slide.casey-entered .tt-bottom-band CSS rules below — kept that scoping so other tt-slide variants (C) inherit the same staged feel. -->
     <div class="tt-cap-row">
       <div class="tt-cap tt-cap-l">
         <p class="tt-cap-eye">What we give</p>
@@ -18592,7 +18614,8 @@ window.cs1m7Reverse = function() {
   /* Soft cream wash from left so type column has clean breathing room over the watercolor */
   #cs-ask .ask-bg-wash { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,0.96) 0%, rgba(251,247,239,0.78) 30%, rgba(251,247,239,0.18) 55%, rgba(251,247,239,0) 75%); }
   /* [Dave 2026-05-18 LATEST v4] Text recolored to DARK INK for light cream bg. */
-  #cs-ask .ask-stage { z-index:3; align-items:flex-start !important; justify-content:center; padding:88px 56px 56px 84px !important; text-align:left !important; }
+  /* [Dave 2026-05-18 LATEST] Stage moved down per Dave 'the content on the "Dinner tonight" slide, reposition it, moving it down at least a little bit'. justify-content was center which auto-centered the column vertically — bumped to flex-start with a deeper top padding (88px → 180px) so the headline starts lower in the visible area, giving more headroom for the watercolor + lights up top to breathe. */
+  #cs-ask .ask-stage { z-index:3; align-items:flex-start !important; justify-content:flex-start !important; padding:180px 56px 56px 84px !important; text-align:left !important; }
   #cs-ask .ask-headline { color:#1a1612 !important; max-width:780px; text-align:left; }
   #cs-ask .ask-headline em { color:#b8954a !important; }
   #cs-ask .ask-paths { max-width:720px; margin:6px 0 0 !important; }
@@ -18703,7 +18726,8 @@ window.cs1m7Reverse = function() {
   </div>
   <div class="ask-bg-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "Ask" → "Next" per Dave 'on that slide top left change "ask" to "next"' — reframes the dinner slide as a forward-pointing "what's next" beat rather than a request. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Next</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow renamed "Next" → "Outlier" per Dave 'dinner tonight slide, change top left "next" to "outlier"'. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Outlier</div>
   <section class="ask-stage">
 
     <!-- [Dave 2026-05-18 LATEST v4] Reworded per Dave — "Discuss the perfect outlier wedge into a new economy of human connection." → "Discuss GnR's outlier wedge into the new economy of human connection." Adds the GnR possessive (it's OUR wedge, not just A wedge) + "the new economy" (definite article — implies the new economy is real, not hypothetical). -->
@@ -25846,8 +25870,8 @@ const SLIDE_ORDER = [
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
-  // [Dave 2026-05-18 LATEST] Slot 2 PRIMARY swapped: cs-1m8-title-A PROMOTED from blue-dot title-candidate alt → slot 2 main per Dave 'i really like this and i want you to leverage to create a new blue dot slide to the left of slide 2... this i'm planning to make the title slide.' cs-1m8 (former primary) demoted to RED-DOT alt at slot 2 ('current slide 2 in main deck you can put as red dot slide to the left of slide 2').
-  'cs-1m8-title-A',   //  2 TITLE · GnR wordmark hero + Give 'n Receive label + Live a life headline + big 3-col diptych. Multi-stage progressive reveal (load → +headline → +tablet → +diptych).
+  // [Dave 2026-05-18 LATEST v2] Slot 2 PRIMARY swapped AGAIN: cs-1m8-title-B PROMOTED to slot 2 main per Dave 'make this the main slide 2, moving the current slide two as a red dot slide to the left of this new main slide 2'. cs-1m8-title-B carries the centered BRAND eyebrow + "Live a life of abundant, autonomous connection." headline + "by GnR · Give 'n Receive" attribution. cs-1m8-title-A demoted to RED-DOT alt.
+  'cs-1m8-title-B',   //  2 TITLE · centered BRAND eyebrow + Live a life headline + by GnR · Give 'n Receive attribution + big 3-col diptych. Staged diptych reveal (1 column at a time per Dave 2026-05-18 LATEST: 'i'd like these to animate in one at a time instead of all at once').
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 — 4→3, 6→5, 13→12, 14→13, 15→14, 16→15, 24→23. Total main-flow slides now 23.
@@ -25883,7 +25907,8 @@ const SLIDE_ORDER = [
   'cs-samecourt',  // Flip the incentive. Unleash the community. — paradigm-proof beat (Munger).
   'cs-magnetic',    // A rating can balance a match. A person can fill a room. — twin courts (rating-only vs marketplace roles). Now sits IMMEDIATELY AFTER Munger.
   'cs-givefirst-art', // 'You can't tell someone to open their heart.' — give-first follows the marketplace-role beat.
-  'cs-wedgepb-combo', // PRIMARY · Pickleball → fastest path to the first global human value exchange network.
+  // [Dave 2026-05-18 LATEST] cs-wedgepb-codex PROMOTED to main primary per Dave 'the attached slide is going to go in the main deck, replacing (and you can delete) the slide in the deck that is almost identical to this one'. cs-wedgepb-combo (former primary, gold radial bg) removed from SLIDE_ORDER. HTML for cs-wedgepb-combo retained as silent backup so its CSS/markup is still parseable.
+  'cs-wedgepb-codex', // PRIMARY · Pickleball → fastest path to the first global human value exchange network · codex watercolor bg.
   'cs-19',    // 3× court fee revenue · For Your Club ('3x your community') — follows the wedge claim
   'cs-racketeer-att-arc', // RACKETEER · 3-quote narrative arc — first prospective customer outside NEPC
   'cs-fv6-img', // Image-led "What is real human connection technology?" — question first
@@ -25997,8 +26022,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
-  // [Dave 2026-05-18 LATEST] Slot 2 alt array reshuffled: cs-1m8-title-A REMOVED (promoted to primary above), cs-1m8-title-B DELETED per Dave 'you can delete this slide' (the variant that put 'by GnR · Give n Receive' as italic attribution under the headline), cs-1m8 ADDED as RED-DOT alt at the LEFT of cs-a7m1 ('current slide 2 in main deck you can put as red dot slide to the left of slide 2'). Order LEFT→RIGHT: red dots first (cs-1m8, cs-a7m1), then blue dots (cs-1m8-title-C), then pink dots.
-  2: ['cs-1m8', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST v3] Slot 2 alt array reshuffled AGAIN: cs-1m8-title-B PROMOTED to primary (see above), cs-1m8-title-A demoted from primary back to alt position (red dot, leftmost) per Dave 'moving the current slide two as a red dot slide to the left of this new main slide 2'. Order LEFT→RIGHT (red dots first, then blue, then pink): cs-1m8-title-A · cs-1m8 · cs-a7m1 · cs-1m8-title-C · pink-dot brand alts.
+  2: ['cs-1m8-title-A', 'cs-1m8', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // Slot 3 (cs-1bm1 — was cs-a7m1) — no alts.
   3: [],
