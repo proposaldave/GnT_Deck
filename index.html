@@ -7262,6 +7262,83 @@ window.cs1m8Reverse = function() {
   s.dataset.stage = String(stage - 1);
   return true;
 };
+// [Dave 2026-05-18 LATEST] cs-1m8-title-A staged reveal handlers — 3 stages (0/1/2):
+//   stage 0 (load) = top-band visible (wordmark + Give 'n Receive + Live a life... headline)
+//   stage 1 = + left tablet ("Social media is a narrow view of human connection technology.")
+//   stage 2 = + bottom diptych (3-col What we give / n / Your People · Reciprocated back)
+// Returns true if the call advanced the reveal; false at terminal so wheel/keyboard nav advances to next slide.
+// Direct JS style manipulation — CSS-cascade-only approach didn't work reliably because the default .tt-slide opacity:0 + transition combo left stale running CSSTransition Animation objects on .tt-left-quote / .tt-bottom-band that overrode subsequent CSS+inline rule changes via Web Animations cascade order. Fix: cancel any running animations + use Web Animations API directly to drive the fade (sidesteps CSSTransition + stylesheet cascade entirely).
+window.csM8TitleASync = function() {
+  const s = document.getElementById('cs-1m8-title-A');
+  if (!s) return;
+  const stage = parseInt(s.dataset.stage) || 0;
+  const top = s.querySelector('.tt-top-band');
+  const quote = s.querySelector('.tt-left-quote');
+  const bottom = s.querySelector('.tt-bottom-band');
+  const hint = s.querySelector('.tt-stage-hint');
+  const apply = (el, on, delay) => {
+    if (!el) return;
+    if (el.getAnimations) el.getAnimations().forEach(a => { try { a.cancel(); } catch (e) {} });
+    // Set inline final state immediately so getComputedStyle matches what we expect after any concurrent transitions resolve.
+    el.style.cssText = on
+      ? 'opacity:1 !important;transform:none !important;transition:none !important;'
+      : 'opacity:0 !important;transform:translateY(10px) !important;transition:none !important;';
+    // Then run a Web-Animations-API fade as the actual visible animation. Final state (opacity:1 or 0) was already set above so once the animation ends or is cancelled, the element holds the right value.
+    try {
+      el.animate(
+        on
+          ? [{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'translateY(0)' }]
+          : [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(10px)' }],
+        { duration: 700, easing: 'cubic-bezier(.22,1,.36,1)', delay: delay || 0, fill: 'none' }
+      );
+    } catch (e) {}
+  };
+  apply(top, true, 150);
+  apply(quote, stage >= 1, 0);
+  apply(bottom, stage >= 2, 0);
+  if (hint) {
+    // CSS keyframe animation on .tt-stage-hint overrides inline opacity, so we cancel it explicitly when hiding the hint at terminal stage.
+    if (stage >= 2) {
+      if (hint.getAnimations) hint.getAnimations().forEach(a => { try { a.cancel(); } catch (e) {} });
+      hint.style.cssText = 'opacity:0 !important;animation:none !important;pointer-events:none;';
+    } else {
+      hint.style.cssText = ''; // restore default CSS pulse animation
+    }
+  }
+};
+window.csM8TitleAAdvance = function() {
+  const s = document.getElementById('cs-1m8-title-A');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage >= 2) return false;
+  s.dataset.stage = String(stage + 1);
+  window.csM8TitleASync();
+  return true;
+};
+window.csM8TitleAReverse = function() {
+  const s = document.getElementById('cs-1m8-title-A');
+  if (!s) return false;
+  const stage = parseInt(s.dataset.stage) || 0;
+  if (stage <= 0) return false;
+  s.dataset.stage = String(stage - 1);
+  window.csM8TitleASync();
+  return true;
+};
+// Run sync on load + whenever the slide becomes active (caseyGo re-adds .casey-entered).
+document.addEventListener('DOMContentLoaded', function() {
+  const slide = document.getElementById('cs-1m8-title-A');
+  if (!slide) return;
+  // Reset stage on every activation so the slide always opens at stage 0
+  const obs = new MutationObserver(() => {
+    if (slide.classList.contains('active')) {
+      slide.dataset.stage = '0';
+      window.csM8TitleASync();
+    }
+  });
+  obs.observe(slide, { attributes: true, attributeFilter: ['class'] });
+  // Initial sync in case the slide is already active on load
+  if (slide.classList.contains('active')) { slide.dataset.stage = '0'; window.csM8TitleASync(); }
+});
 </script>
 
 
@@ -10227,8 +10304,49 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
   #cs-wedgepb-combo .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-18 v6 — FINAL] Connector REMOVED per Dave 'look at how bad this looks. double check review and make sure you get this right finally'. After 5 iterations of dotted/solid/gradient lines + matched dots — every version looked like a crude flowchart on an editorial slide. The link between the Pickleball band and the cards is now carried purely by COLOR (cards' left vertical bar is Pickleball-blue, matching the Pickleball band's gradient) and SPATIAL PROXIMITY (cards sit directly to the right of the funnel). No floating arrow. No discrete connector. Cleaner reads. .wpc-pb-link rules retained as hidden no-op so the inline SVG markup below still parses without producing anything visible. */
+  /* [Dave 2026-05-18 LATEST] Connector RESTORED + UPGRADED — same design as cs-wedgepb-codex above: ::after stem on band-4 + chunky right-pointing triangle (.wpc-arrowhead) anchored to its vertical center. Directional cue is now visually obvious. */
   #cs-wedgepb-combo .wpc-pb-link { display:none !important; }
+  #cs-wedgepb-combo .wpc-band-4 { position:relative; overflow:visible; }
+  #cs-wedgepb-combo .wpc-band-4::after {
+    content:"";
+    position:absolute;
+    left:100%;
+    top:50%;
+    transform:translateY(-50%);
+    width:64px;
+    height:8px;
+    background:linear-gradient(90deg, #5B8FD4 0%, #5B8FD4 88%, transparent 100%);
+    border-radius:4px;
+    margin-left:-8px;
+    z-index:5;
+    box-shadow:0 0 0 2px rgba(91,143,212,0.10);
+  }
+  #cs-wedgepb-combo .wpc-band-4 .wpc-arrowhead {
+    position:absolute;
+    left:100%;
+    top:50%;
+    transform:translate(40px, -50%);
+    width:0;
+    height:0;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+    border-left:18px solid #5B8FD4;
+    z-index:6;
+    filter:drop-shadow(0 2px 4px rgba(91,143,212,0.30));
+  }
+  /* Faint vertical Pickleball-blue rail on the cards group so the 5 cards read as one stack the arrow lands into. */
+  #cs-wedgepb-combo .wpc-cards { position:relative; }
+  #cs-wedgepb-combo .wpc-cards::before {
+    content:"";
+    position:absolute;
+    left:-10px;
+    top:-4px;
+    bottom:-4px;
+    width:3px;
+    background:linear-gradient(180deg, rgba(91,143,212,0) 0%, #5B8FD4 25%, #5B8FD4 75%, rgba(91,143,212,0) 100%);
+    border-radius:2px;
+    z-index:0;
+  }
   #cs-wedgepb-combo .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-combo .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-combo .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10357,20 +10475,11 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-1"><span>Human Connection Technology</span></div>
         <div class="wpc-band wpc-band-2"><span>Communities</span></div>
         <div class="wpc-band wpc-band-3"><span>Social Sports</span></div>
-        <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
+        <!-- [Dave 2026-05-18 LATEST] Pickleball→cards arrowhead element same as cs-wedgepb-codex variant — ::after stem on the band + chunky right-pointing triangle, anchored to band-4's vertical center. -->
+        <div class="wpc-band wpc-band-4"><span>Pickleball</span><span class="wpc-arrowhead" aria-hidden="true"></span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
-        <!-- [Dave 2026-05-18 v5] Pickleball→cards connector — DOTTED line restored (Dave: "the dotted line that you had previously was better than this attempt"). Anchor dots at BOTH ends with thin rings so each endpoint reads as a node — origin sits on the Pickleball band, terminator sits on the cards' vertical bar. -->
-        <svg class="wpc-pb-link" viewBox="0 0 380 20" preserveAspectRatio="none" aria-hidden="true">
-          <!-- Origin port — ring + filled dot on Pickleball band's right edge -->
-          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="7"/>
-          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4.5"/>
-          <!-- Dotted line crossing the gap -->
-          <path class="wpc-pb-link-line" d="M 17 10 L 363 10"/>
-          <!-- Terminator port — ring + filled dot landing on cards' vertical bar -->
-          <circle class="wpc-pb-link-ring" cx="370" cy="10" r="7"/>
-          <circle class="wpc-pb-link-dot" cx="370" cy="10" r="4.5"/>
-        </svg>
+        <!-- [Dave 2026-05-18 LATEST] Old wpc-pb-link dotted SVG REMOVED — the new band-4::after stem + arrowhead anchors directly to the Pickleball band's vertical center, giving a clearer directional cue from band to cards. -->
       </div>
 
       <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 LATEST]
@@ -10496,8 +10605,36 @@ window.cs1m7Reverse = function() {
 
   /* LEFT — funnel [Dave 2026-05-17 LATEST: SIZED UP — max-width 620→920, band height 70→96, band-5 height 90→124, gap 7→10] */
   #cs-wedgepb-codex .wpc-funnel { display:flex; flex-direction:column; gap:10px; width:100%; max-width:920px; margin:0 auto; position:relative; overflow:visible; }
-  /* [Dave 2026-05-18 v6 — FINAL] Connector REMOVED per Dave 'look at how bad this looks. double check review and make sure you get this right finally'. After 5 iterations of dotted/solid/gradient lines + matched dots — every version looked like a crude flowchart on an editorial slide. The link between the Pickleball band and the cards is now carried purely by COLOR (cards' left vertical bar is Pickleball-blue, matching the Pickleball band's gradient) and SPATIAL PROXIMITY (cards sit directly to the right of the funnel). No floating arrow. No discrete connector. Cleaner reads. .wpc-pb-link rules retained as hidden no-op so the inline SVG markup below still parses without producing anything visible. */
+  /* [Dave 2026-05-18 LATEST] Connector RESTORED + UPGRADED per Dave 'figure out a better, clearer link between the pickleball rectangle on the left, and the five cards on the right'. New design = single bold Pickleball-blue arrow that ORIGINATES at the right edge of the Pickleball band and POINTS at the cards' midpoint. Anchored as a ::after pseudo-element on the Pickleball band itself so it tracks band geometry across viewports. Arrow uses a thick stem + chunky head so it reads as DIRECTIONAL, not as a stray line. Faint vertical card-side rail (.wpc-cards::before, defined below) gives the cards a unified blue spine. Overall reads: "Pickleball → these 5 cards." */
   #cs-wedgepb-codex .wpc-pb-link { display:none !important; }
+  #cs-wedgepb-codex .wpc-band-4 { position:relative; overflow:visible; }
+  #cs-wedgepb-codex .wpc-band-4::after {
+    content:"";
+    position:absolute;
+    left:100%;
+    top:50%;
+    transform:translateY(-50%);
+    width:64px;
+    height:8px;
+    background:linear-gradient(90deg, #5B8FD4 0%, #5B8FD4 88%, transparent 100%);
+    border-radius:4px;
+    margin-left:-8px;
+    z-index:5;
+    box-shadow:0 0 0 2px rgba(91,143,212,0.10);
+  }
+  #cs-wedgepb-codex .wpc-band-4 .wpc-arrowhead {
+    position:absolute;
+    left:100%;
+    top:50%;
+    transform:translate(40px, -50%);
+    width:0;
+    height:0;
+    border-top:14px solid transparent;
+    border-bottom:14px solid transparent;
+    border-left:18px solid #5B8FD4;
+    z-index:6;
+    filter:drop-shadow(0 2px 4px rgba(91,143,212,0.30));
+  }
   #cs-wedgepb-codex .wpc-band { position:relative; height:96px; display:flex; align-items:center; justify-content:center; gap:14px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.15rem,1.45vw,1.45rem); font-weight:850; letter-spacing:-0.012em; color:#fbf7ef; text-align:center; }
   #cs-wedgepb-codex .wpc-band-1 { width:100%;  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); background:linear-gradient(180deg, #c8b39d 0%, #a89378 100%); }
   #cs-wedgepb-codex .wpc-band-2 { width:84%;   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); background:linear-gradient(180deg, #8a7459 0%, #6e5a3f 100%); margin:0 auto; }
@@ -10518,33 +10655,19 @@ window.cs1m7Reverse = function() {
      Card 3 RED-FILLED on both faces — the "problem beat" foil. */
   #cs-wedgepb-codex .wpc-cards-wrap { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
   #cs-wedgepb-codex .wpc-cards { display:flex; flex-direction:column; gap:10px; width:100%; position:relative; }
-  /* [Dave 2026-05-18 v7] Funnel→cards CONNECTOR rebuilt as an editorial BRACKET. Previous attempts (dotted line + paired dots, gradient arrow, color-only-no-connector) all felt either crude flowchart or invisible. New design: the cards' left rail becomes a Pickleball-blue OPEN-RIGHT bracket "[" with top + bottom arms wrapping the card stack (structural — says "all five = pickleball"), plus a single horizontal STUB exiting the bracket's mid-left edge and reaching toward the Pickleball band (directional — says "this comes FROM pickleball"). Bracket weight matches the funnel band stroke; stub ends ~24px short of the funnel column so it's clearly a callout, not a flowchart wire. */
+  /* [Dave 2026-05-18 LATEST v8] Funnel→cards CONNECTOR redesigned per Dave 'figure out a better, clearer link between the pickleball rectangle on the left, and the five cards on the right'. Previous bracket+stub felt structural but didn't TRANSFER the eye from band to cards. New design: a bold Pickleball-blue arrow that physically points FROM the Pickleball band's right edge TO the cards' midpoint. The arrow lives in its own DOM element (.wpc-pb-arrow, inserted below) anchored to the funnel column's right side, so it reads as "pickleball UNLOCKS these 5 cards." Pixel weight matches the band stroke; arrowhead clearly directional. The bracket-rail is kept as a faint vertical accent on the cards so they still read as a group. */
   #cs-wedgepb-codex .wpc-cards::before {
     content:"";
     position:absolute;
-    left:-22px;
-    top:-6px;
-    bottom:-6px;
-    width:16px;
-    border:3px solid #5B8FD4;
-    border-right:0;
-    border-radius:8px 0 0 8px;
-    box-shadow:0 6px 18px rgba(91,143,212,0.18);
-    z-index:0;
-  }
-  #cs-wedgepb-codex .wpc-cards::after {
-    content:"";
-    position:absolute;
-    left:-46px;
-    top:50%;
-    transform:translateY(-50%);
-    width:28px;
-    height:3px;
-    background:#5B8FD4;
+    left:-10px;
+    top:-4px;
+    bottom:-4px;
+    width:3px;
+    background:linear-gradient(180deg, rgba(91,143,212,0) 0%, #5B8FD4 25%, #5B8FD4 75%, rgba(91,143,212,0) 100%);
     border-radius:2px;
-    box-shadow:0 0 0 4px rgba(91,143,212,0.10);
     z-index:0;
   }
+  #cs-wedgepb-codex .wpc-cards::after { display:none; }
   #cs-wedgepb-codex .wpc-card { position:relative; height:70px; width:100%; cursor:pointer; }
   /* Card 3 (red problem-beat) is taller to fit the 3 callout pills inline. */
   #cs-wedgepb-codex .wpc-card.wpc-c3 { height:142px; }
@@ -10609,11 +10732,11 @@ window.cs1m7Reverse = function() {
   #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
-  /* [Dave 2026-05-18 LATEST] cs-wedgepb-codex-specific overrides — replaces the cream/gold radial bg with a full-bleed codex watercolor + cream wash. Everything else inherits from the rules above (selectors all use #cs-wedgepb-codex). */
+  /* [Dave 2026-05-18 LATEST v2] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'background image needs to be more visible, i can barely see it'. Opacity 0.42 → 0.78 + cream wash dialed back from heavy (.86/.72/.76/.92) to light (.55/.32/.40/.62) so the codex watercolor reads as the bg star, not as a faint ghost under a cream lid. The funnel + cards still pop because their own white card backgrounds + drop shadows do the heavy lifting; the codex now provides atmosphere. */
   #cs-wedgepb-codex { background:#1a1612 !important; }
   #cs-wedgepb-codex::before { background:none !important; }
-  #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.42; }
-  #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.72) 28%, rgba(251,247,239,0.76) 70%, rgba(251,247,239,0.92) 100%); }
+  #cs-wedgepb-codex .wpc-codex-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; display:block; opacity:0.78; }
+  #cs-wedgepb-codex .wpc-codex-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg, rgba(251,247,239,0.55) 0%, rgba(251,247,239,0.32) 28%, rgba(251,247,239,0.40) 70%, rgba(251,247,239,0.62) 100%); }
 </style>
 
 <div class="casey-slide ds-focus" id="cs-wedgepb-codex" style="display:none">
@@ -10635,20 +10758,11 @@ window.cs1m7Reverse = function() {
         <div class="wpc-band wpc-band-1"><span>Human Connection Technology</span></div>
         <div class="wpc-band wpc-band-2"><span>Communities</span></div>
         <div class="wpc-band wpc-band-3"><span>Social Sports</span></div>
-        <div class="wpc-band wpc-band-4"><span>Pickleball</span></div>
+        <!-- [Dave 2026-05-18 LATEST] Arrowhead element added inside Pickleball band so it sits at the band's vertical center via ::after stem + this chunky arrowhead, pointing right toward the 5 cards. -->
+        <div class="wpc-band wpc-band-4"><span>Pickleball</span><span class="wpc-arrowhead" aria-hidden="true"></span></div>
         <!-- [Dave 2026-05-17 v18] Big NEPC logo + "NEPC" text per Dave 'NEPC logo on #1 secret slide is still too small and... you have to add NEPC there'. -->
         <div class="wpc-band wpc-band-5"><img src="nepc-logo.png" alt="NEPC logo"/><span class="wpc-band-nepc-text">NEPC</span></div>
-        <!-- [Dave 2026-05-18 v5] Pickleball→cards connector — DOTTED line restored (Dave: "the dotted line that you had previously was better than this attempt"). Anchor dots at BOTH ends with thin rings so each endpoint reads as a node — origin sits on the Pickleball band, terminator sits on the cards' vertical bar. -->
-        <svg class="wpc-pb-link" viewBox="0 0 380 20" preserveAspectRatio="none" aria-hidden="true">
-          <!-- Origin port — ring + filled dot on Pickleball band's right edge -->
-          <circle class="wpc-pb-link-ring" cx="10" cy="10" r="7"/>
-          <circle class="wpc-pb-link-dot" cx="10" cy="10" r="4.5"/>
-          <!-- Dotted line crossing the gap -->
-          <path class="wpc-pb-link-line" d="M 17 10 L 363 10"/>
-          <!-- Terminator port — ring + filled dot landing on cards' vertical bar -->
-          <circle class="wpc-pb-link-ring" cx="370" cy="10" r="7"/>
-          <circle class="wpc-pb-link-dot" cx="370" cy="10" r="4.5"/>
-        </svg>
+        <!-- [Dave 2026-05-18 LATEST] Old wpc-pb-link dotted SVG REMOVED — replaced by the new band-4::after stem + arrowhead element above, which anchors directly to the Pickleball band's vertical center. -->
       </div>
 
       <!-- RIGHT · 5 rationale cards [Dave 2026-05-17 LATEST]
@@ -12966,8 +13080,8 @@ window.cs1m7Reverse = function() {
      Adds third strength: NETWORK / face of the company.
      Vision (idea maze) + Foundation (NEPC lab) + Network (pickleball world trust + lifelong commitment). -->
 <div class="casey-slide ds-focus" id="cs-18-vd4">
-  <!-- [Dave 2026-05-18 LATEST] Eyebrow replaced with founder identity per Dave: 'replace "My wheelhouse..." with "Dave Velardo · Founder & CEO"'. The "My Wheelhouse" framing moves DOWN to the unifying label beneath the 3 pillars. The redundant vd-name line above the Steve Jobs quote is REMOVED since the founder identity now lives in the eyebrow. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Dave Velardo &middot; Founder &amp; CEO</div>
+  <!-- [Dave 2026-05-18 LATEST v3] Eyebrow ↔ wheelhouse band labels SWAPPED per Dave 'i want the text that you see in those two swapped places'. Eyebrow now reads "Wheelhouse" (the framing of the slide); the wheelhouse-band label below the pillars now reads "Dave Velardo · Founder & CEO" (the person who owns those strengths). -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Wheelhouse</div>
   <section class="vd-stage">
     <div class="vd-wrap">
       <!-- [Dave 2026-05-18 LATEST] vd-name DELETED — founder identity moved to eyebrow above. -->
@@ -13138,7 +13252,7 @@ window.cs1m7Reverse = function() {
           <circle cx="590" cy="22" r="3" fill="#b8954a"/>
           <circle cx="983" cy="22" r="3" fill="#b8954a"/>
         </svg>
-        <div class="v5-wh-label">Wheelhouse</div>
+        <div class="v5-wh-label">Dave Velardo &middot; Founder &amp; CEO</div>
       </div>
 
       <!-- Visual-designer-improved timeline: horizontal rail + dot markers + emphasized NOW state -->
@@ -14597,8 +14711,8 @@ window.cs1m7Reverse = function() {
 <!-- Club Impact / 3× Net Profit — nav pos 21 -->
 <div class="casey-slide ds-focus" id="cs-19">
 <section style="position:relative;min-height:100%;width:100%">
-<!-- [Dave 2026-05-18 LATEST] Eyebrow now carries TWO lines per Dave 'change "Transform your community" to "Transform your community / GnR handles the complexity of people"'. The new second line is serif italic (mixed-case) so it reads as a tagline beneath the small-caps section label rather than a second SHOUTED row. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:980px;line-height:1.5">Transform your community<br><span style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.5em;font-style:italic;font-weight:700;letter-spacing:-0.005em;text-transform:none;color:#1a1612">G<em style="color:#b8954a;font-style:italic">n</em>R handles the complexity of people</span></div>
+<!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'change Transform your community / GnR handles the complexity of people → GnR handles the complexity of people. And make sure that text is same exact font as the other top left text on all of the other slides.' Returns to the standard Manrope eyebrow voice used across the deck — small-caps, .22em tracking, brand red. "GnR" kept inline brand-colored so the wordmark still pops without breaking the uppercase eyebrow voice. -->
+<div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10"><span style="color:#5B8FD4">G</span><span style="color:#b8954a">n</span><span style="color:#c8462c">R</span> handles the complexity of people</div>
 <div class="inner" style="padding-top:84px;text-align:center;max-width:1180px">
   <!-- Headline simplified 2026-05-07 PM per Dave: '3× your community' is the umbrella claim. Bars below ($70K → $155K → $300K profit ladder, 33% → 40% → 48% margin) tell the financial story underneath. Honest economics retained from earlier audit. -->
   <!-- [Dave 2026-05-18 LATEST] Headline retitled per Dave 'change "3× community value" to "~3× your community's value"'. Adds the "~" hedge (honest economics signal — not a fixed multiple, an approximation) and personalizes the noun phrase ("your community's"). -->
@@ -15689,7 +15803,7 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-09] Eyebrow + hero refocused from 'human connection' to 'real-world social communities'. Sub line + Workplaces + Dating + Family icons + '★ The Network That Wins' DELETED. Pickleball court fixed to proper 44:20 (220:100) ratio with proper kitchen/net/centerline. Padel/Tennis/Golf/Social Sports added as expansion siblings beneath pickleball. -->
   <!-- [Dave 2026-05-17 v8] Eyebrow forced to single line per Dave 'the text below should fit on one line'. White-space:nowrap + slightly tighter letter-spacing so the full sentence reads on one row at 1920 width. -->
   <!-- [Dave 2026-05-18 LATEST] Eyebrow promoted to carry "The next great network..." line per Dave 'make the current top/header of the slide move that to be the top left label of the slide'. Mixed-case set instead of upper-case so the long sentence still reads as a typographic eyebrow without overwhelming the slot. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:1080px;line-height:1.5">The next great network is the one that helps us find ourselves and find each other</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10;max-width:1080px;line-height:1.5">The next great network &rarr; helps us find ourselves and find each other</div>
   <section style="position:relative;width:100%;min-height:100%">
     <div class="wd-stage">
       <!-- [Dave 2026-05-18 LATEST] Header REPLACED — the pickleball-coordination-stack line is the SOLE header above the graphic. [Dave 2026-05-18 LATEST v2] Forced into 3 lines per Dave (break after "stack," and again after "connection,"). -->
@@ -17689,7 +17803,8 @@ window.cs1m7Reverse = function() {
       <span class="seal-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span>
     </div>
     <p class="bc-env-eye">Introducing</p>
-    <div class="bc-env-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+    <!-- [Dave 2026-05-18 LATEST] Wordmark replaced with full "Give 'n Receive" type so the envelope card reads "Introducing / Give 'n Receive / Invitation-based matchmaking." Mirrors the bc-env-mark styling (Fraunces, italic n, brand color triad) so the brand still visually pops, just spelled out. -->
+    <div class="bc-env-mark"><span class="g">Give</span> <span class="n">&lsquo;n</span> <span class="r">Receive</span></div>
     <p class="bc-env-title"><em>Invitation-based</em> matchmaking.</p>
     <div class="bc-env-rule"></div>
   </div>
@@ -17944,20 +18059,23 @@ window.cs1m7Reverse = function() {
     letter-spacing:-0.012em; color:#1a1612; margin:0;
   }
   #cs-1m8-envelopes .ev-left-quote p em { font-style:italic; font-weight:850; color:#3a73b8; }
-  /* Entrance animations */
-  #cs-1m8-envelopes .ev-stage > *, #cs-1m8-envelopes .ev-left-quote {
-    opacity:0; transform:translateY(10px);
-    transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+  /* [Dave 2026-05-18 LATEST — major bug fix] Entrance rule REWRITTEN. Old rule set all ev-stage children to opacity:0 by default, then only restored visibility for nth-child 1–5 inside .casey-entered. Two bugs in that rule: (a) children 6 and 7 (.ev-hero, .ev-sub) never got an opacity:1 rule and stayed invisible forever, (b) if .casey-entered didn't apply for any reason (alt-slide nav edge case), the whole slide rendered blank — Dave's reported "2 / 24 (alt) major bug". Fix: default state is now opacity:1, and the .casey-entered class adds a brief slide-up animation via @keyframes (so the entry feel is preserved without gating visibility on a class). All 7 stage children + the left quote use the same animation with a per-child delay so the original staggered reveal is kept. */
+  #cs-1m8-envelopes .ev-stage > *,
+  #cs-1m8-envelopes .ev-left-quote {
+    opacity:1;
   }
-  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.20s; }
-  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.40s; }
-  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(3) { opacity:1; transform:none; transition-delay:1.05s; }
-  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(4) { opacity:1; transform:none; transition-delay:1.45s; }
-  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(5) { opacity:1; transform:none; transition-delay:1.65s; }
-  #cs-1m8-envelopes.casey-entered .ev-left-quote { opacity:1; transform:none; transition-delay:0.65s; }
+  @keyframes evFadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(1) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 0.20s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(2) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 0.40s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(3) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 0.60s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(4) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 0.85s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(5) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 1.10s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(6) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 1.30s both; }
+  #cs-1m8-envelopes.casey-entered .ev-stage > *:nth-child(7) { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 1.50s both; }
+  #cs-1m8-envelopes.casey-entered .ev-left-quote { animation: evFadeUp .9s cubic-bezier(.22,1,.36,1) 0.65s both; }
   html[data-export="1"] #cs-1m8-envelopes .ev-stage > *,
   html[data-export="1"] #cs-1m8-envelopes .ev-left-quote {
-    opacity:1 !important; transform:none !important; transition:none !important;
+    opacity:1 !important; transform:none !important; animation:none !important;
   }
 </style>
 <div class="casey-slide ds-focus" id="cs-1m8-envelopes" style="display:none">
@@ -18130,19 +18248,48 @@ window.cs1m7Reverse = function() {
     font-style:italic; font-weight:500; color:#b8954a; line-height:1.2;
     margin-top:4px; text-align:center;
   }
-  /* Animations — fade up everything. */
+  /* [Dave 2026-05-18 LATEST] cs-1m8-title-A is now the slot 2 PRIMARY title slide and needs MULTI-CLICK progressive reveal (Dave: 'it needs to have multiple click / mouse scroll animations so all of the elements dont show up at once'). The other tt-slide variants (cs-1m8-title-B/C) still use the simpler all-at-once entry — keep that here via .casey-entered.
+     Stage logic on cs-1m8-title-A:
+       data-stage=0 → top-band visible (brand wordmark + label + headline lands first)
+       data-stage=1 → + left tablet (the "Social media is a narrow view" problem framing)
+       data-stage=2 → + bottom diptych (the GnR answer: what we give → fuels communities · reciprocated back)
+       data-stage=3 → already at terminal, next click advances to slide 3
+     The non-title variants (#cs-1m8-title-B, #cs-1m8-title-C) still rely on .casey-entered for their staggered reveal, kept below. */
   .tt-slide .tt-top-band, .tt-slide .tt-bottom-band, .tt-slide .tt-left-quote {
     opacity:0; transform:translateY(10px);
     transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
   }
-  .tt-slide.casey-entered .tt-top-band    { opacity:1; transform:none; transition-delay:0.15s; }
-  .tt-slide.casey-entered .tt-left-quote  { opacity:1; transform:none; transition-delay:0.45s; }
-  .tt-slide.casey-entered .tt-bottom-band { opacity:1; transform:none; transition-delay:0.75s; }
+  /* Non-primary title-slide variants (B/C) — auto-reveal via casey-entered. */
+  #cs-1m8-title-B.casey-entered .tt-top-band,
+  #cs-1m8-title-C.casey-entered .tt-top-band     { opacity:1; transform:none; transition-delay:0.15s; }
+  #cs-1m8-title-B.casey-entered .tt-left-quote,
+  #cs-1m8-title-C.casey-entered .tt-left-quote   { opacity:1; transform:none; transition-delay:0.45s; }
+  #cs-1m8-title-B.casey-entered .tt-bottom-band,
+  #cs-1m8-title-C.casey-entered .tt-bottom-band  { opacity:1; transform:none; transition-delay:0.75s; }
+  /* Primary cs-1m8-title-A — gated behind data-stage. Top-band reveals on stage 0 (i.e. on slide-load, immediately) so the brand wordmark "lands" first. Left tablet appears at stage 1, bottom diptych at stage 2. !important added so these win against the default .tt-slide opacity:0 rule even when stylesheet cascade order tilts the wrong way at runtime. */
+  #cs-1m8-title-A[data-stage="0"] .tt-top-band,
+  #cs-1m8-title-A[data-stage="1"] .tt-top-band,
+  #cs-1m8-title-A[data-stage="2"] .tt-top-band,
+  #cs-1m8-title-A[data-stage="3"] .tt-top-band { opacity:1 !important; transform:none !important; transition-delay:0.15s; }
+  #cs-1m8-title-A[data-stage="1"] .tt-left-quote,
+  #cs-1m8-title-A[data-stage="2"] .tt-left-quote,
+  #cs-1m8-title-A[data-stage="3"] .tt-left-quote { opacity:1 !important; transform:none !important; transition-delay:0s; }
+  #cs-1m8-title-A[data-stage="2"] .tt-bottom-band,
+  #cs-1m8-title-A[data-stage="3"] .tt-bottom-band { opacity:1 !important; transform:none !important; transition-delay:0s; }
+  /* Pulsing arrow hint — visible while there are still stages to advance, hidden at terminal stage. */
+  #cs-1m8-title-A .tt-stage-hint { position:absolute; bottom:24px; right:32px; display:flex; flex-direction:column; align-items:center; gap:4px; z-index:9; pointer-events:none; opacity:0.7; animation: ttHintPulse 1.8s ease-in-out infinite; transition: opacity 0.3s ease; }
+  #cs-1m8-title-A[data-stage="2"] .tt-stage-hint,
+  #cs-1m8-title-A[data-stage="3"] .tt-stage-hint { opacity:0; }
+  #cs-1m8-title-A .tt-stage-hint svg { animation: ttHintBounce 1.6s ease-in-out infinite; }
+  #cs-1m8-title-A .tt-stage-hint-label { font-family:'Manrope',sans-serif; font-size:.52rem; font-weight:800; letter-spacing:.24em; text-transform:uppercase; color:rgba(184,149,74,0.85); }
+  @keyframes ttHintPulse { 0%,100% { opacity:0.55; } 50% { opacity:0.95; } }
+  @keyframes ttHintBounce { 0%,100% { transform:translateY(0); } 50% { transform:translateY(3px); } }
   html[data-export="1"] .tt-slide .tt-top-band,
   html[data-export="1"] .tt-slide .tt-bottom-band,
   html[data-export="1"] .tt-slide .tt-left-quote {
     opacity:1 !important; transform:none !important; transition:none !important;
   }
+  html[data-export="1"] #cs-1m8-title-A .tt-stage-hint { display:none !important; }
   /* Variant-specific tweaks */
   /* Variant A: hero wordmark above brand promise. */
   #cs-1m8-title-A .tt-top-band { padding:64px 56px 56px; }
@@ -18173,10 +18320,16 @@ window.cs1m7Reverse = function() {
   #cs-1m8-title-C .tt-eyebrow-mark .n { color:#b8954a; font-style:italic; font-weight:500; padding:0 0.04em; }
   #cs-1m8-title-C .tt-eyebrow-mark .r { color:#c8462c; }
 </style>
-<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-A" style="display:none">
+<div class="casey-slide ds-focus tt-slide" id="cs-1m8-title-A" data-stage="0" onclick="if(window.csM8TitleAAdvance) window.csM8TitleAAdvance(); event.stopPropagation()" style="display:none;cursor:pointer">
   <img class="tt-bg" src="assets/cs-brand-codex.png" alt="Watercolor split image — phone+isolated figures on the left, real-community gathering on the right." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
 
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Brings real human connection to our digital world</div>
+
+  <!-- [Dave 2026-05-18 LATEST] Stage-advance hint — pulses while there are reveals left. -->
+  <div class="tt-stage-hint" aria-hidden="true">
+    <span class="tt-stage-hint-label">Click to reveal</span>
+    <svg width="22" height="18" viewBox="0 0 22 18" fill="none"><path d="M3 5 L11 13 L19 5" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
 
   <!-- LEFT TABLET -->
   <div class="tt-left-quote">
@@ -21312,8 +21465,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-fv6-pink .fvi-arc, html[data-export="1"] #cs-fv6-pink .fvi-head, html[data-export="1"] #cs-fv6-pink .fvi-sub, html[data-export="1"] #cs-fv6-pink .fvi-card { opacity:1 !important;transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-img" style="display:none">
-  <!-- [Dave 2026-05-17 LATEST] Eyebrow = simple white, no text-shadow. Dave: "text needs to be very simple there, maybe try white." -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;z-index:10">The planet&rsquo;s most valuable, networkable, untapped dataset</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow text inverted per Dave's "best font color over this bg" check + reworded: "The planet's most valuable, networkable, untapped dataset" → "The most valuable, networkable, untapped dataset on the planet". Color stays WHITE — the cs-fv6-img bg is a dark twilight neighborhood watercolor (deep blues/greens in the top-left where the eyebrow sits), so white reads cleanly against it. Cream/gold would muddy against the warm golden connection threads in the same band. A subtle text-shadow added for legibility when the painting's blue tones lighten near the top corner. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">The most valuable, networkable, untapped dataset on the planet</div>
   <!-- [Dave 2026-05-17 v11] Codex watercolor background — neighborhood-as-network. Fallback chain: real_world_graph → community_builders → display none. -->
   <img class="fvi-bg" src="assets/gnr_vnext_real_world_graph.png" alt="A neighborhood seen at twilight with golden connection threads weaving between homes — watercolor depiction of community as a living network." onerror="this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'"/>
   <div class="fvi-wash"></div>
@@ -21358,7 +21511,7 @@ window.cs1m7Reverse = function() {
      Shares all fvi-* styles (selectors extended above).
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div class="casey-slide ds-focus" id="cs-fv6-pink" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;z-index:10">The planet&rsquo;s most valuable, networkable, untapped dataset</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.45);z-index:10">The most valuable, networkable, untapped dataset on the planet</div>
   <img class="fvi-bg" src="assets/cs-fv6-pink.png" alt="Two hands clasped in warm golden light — watercolor handshake depicting human connection technology." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="fvi-wash"></div>
   <section class="fvi-stage">
@@ -22166,7 +22319,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-mv6 .mv6-mission { opacity:1 !important; transform:none !important; animation:none !important; stroke-dasharray:none !important; stroke-dashoffset:0 !important; }
 </style>
 <div class="casey-slide ds-focus appendix-slide" id="cs-mv6" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;max-width:880px;line-height:1.4">The future of off-screen connection</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;max-width:880px;line-height:1.4">Mission</div>
   <section class="mv6-stage">
 
     <h1 class="mv6-head">The most incredible <em>technology revolution</em>.</h1>
@@ -22576,14 +22729,11 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-mv6-merge .mg2-end-pt { opacity:1 !important;animation:none !important;transform:none !important;stroke-dashoffset:0 !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of off-screen connection</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Mission</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
-      <div class="mg2-mission-eye-block">
-        <span class="mg2-mission-eye">Mission</span>
-        <span class="mg2-mission-rule" aria-hidden="true"></span>
-      </div>
       <h1 class="mg2-head">For all our lives to run on<span class="mg2-line2"><em>autonomous</em>, <em>abundant</em> connection.</span></h1>
     </div>
 
@@ -22811,14 +22961,11 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-mv6-pink" style="display:none">
   <img class="mgp-bg" src="assets/cs-mv6-pink.png" alt="Two hands reaching toward each other in warm golden light — watercolor Sistine-Chapel-esque depiction of connection." onerror="this.onerror=null;this.style.display='none'"/>
   <div class="mgp-wash"></div>
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">The future of off-screen connection</div>
+  <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission" + internal mg2-mission-eye-block DELETED (same pattern as cs-mv6-merge above). -->
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Mission</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
-      <div class="mg2-mission-eye-block">
-        <span class="mg2-mission-eye">Mission</span>
-        <span class="mg2-mission-rule" aria-hidden="true"></span>
-      </div>
       <h1 class="mg2-head">For all our lives to run on<span class="mg2-line2"><em>autonomous</em>, <em>abundant</em> connection.</span></h1>
     </div>
 
@@ -25019,8 +25166,8 @@ window.csA7m1Reverse = function() {
     </div>
   </div>
 
-  <!-- [Dave 2026-05-18] Bridge column narrowed 92→56px per Dave 'two cards can be slightly closer together'. Total card-to-card separation drops from ~120px to ~84px. -->
-  <div style="display:grid;grid-template-columns:1fr 56px 1fr;gap:14px;align-items:stretch;position:relative">
+  <!-- [Dave 2026-05-18 LATEST] Bridge column narrowed further 56→24px per Dave 'move these cards a little closer together'. Two narrowings now: 92 → 56 → 24px. -->
+  <div style="display:grid;grid-template-columns:1fr 24px 1fr;gap:14px;align-items:stretch;position:relative">
 
     <!-- LEFT slot (Tech card moved RIGHT per friend feedback 2026-05-04) -->
     <div class="ti-flip-wrap" onclick="cs1bm1Toggle('left');event.stopPropagation()" style="cursor:pointer">
@@ -25699,7 +25846,8 @@ const SLIDE_ORDER = [
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
-  'cs-1m8',   //  3 TITLE · 3-stage 'open heart' human-truth opener → wordmark split → captions
+  // [Dave 2026-05-18 LATEST] Slot 2 PRIMARY swapped: cs-1m8-title-A PROMOTED from blue-dot title-candidate alt → slot 2 main per Dave 'i really like this and i want you to leverage to create a new blue dot slide to the left of slide 2... this i'm planning to make the title slide.' cs-1m8 (former primary) demoted to RED-DOT alt at slot 2 ('current slide 2 in main deck you can put as red dot slide to the left of slide 2').
+  'cs-1m8-title-A',   //  2 TITLE · GnR wordmark hero + Give 'n Receive label + Live a life headline + big 3-col diptych. Multi-stage progressive reveal (load → +headline → +tablet → +diptych).
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 — 4→3, 6→5, 13→12, 14→13, 15→14, 16→15, 24→23. Total main-flow slides now 23.
@@ -25849,7 +25997,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v6] Brand pink-dot alts for cs-1m8 (slot 2). cs-brand-V8 demoted from main slot 3 → leftmost pink-dot alt here. cs-1m8-codexmerge + cs-1m8-envelopes added (codex-merge variants). cs-brand-mono REMOVED.
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 added as a RED-DOT alt at the FAR LEFT of the slot-2 dot strip (furthest from primary). It's the old "Social media is an extremely narrow view" slide that just demoted from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'.
   // Plus the existing blue-dot title candidates + pink-dot brand alts. Order in array maps LEFT→RIGHT (index 0 = leftmost). Red-dot sits leftmost, then blue-dots, then pink-dots — color groups stay contiguous.
-  2: ['cs-a7m1', 'cs-1m8-title-C', 'cs-1m8-title-B', 'cs-1m8-title-A', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
+  // [Dave 2026-05-18 LATEST] Slot 2 alt array reshuffled: cs-1m8-title-A REMOVED (promoted to primary above), cs-1m8-title-B DELETED per Dave 'you can delete this slide' (the variant that put 'by GnR · Give n Receive' as italic attribution under the headline), cs-1m8 ADDED as RED-DOT alt at the LEFT of cs-a7m1 ('current slide 2 in main deck you can put as red dot slide to the left of slide 2'). Order LEFT→RIGHT: red dots first (cs-1m8, cs-a7m1), then blue dots (cs-1m8-title-C), then pink dots.
+  2: ['cs-1m8', 'cs-a7m1', 'cs-1m8-title-C', 'cs-brand-V8', 'cs-1m8-envelopes', 'cs-1m8-codexmerge', 'cs-1m8-fuels', 'cs-brand-codex'],
   // [Dave 2026-05-18 LATEST v6+v9] All SLIDE_ALTS keys past slot 2 DECREMENTED by 1 (v6 = cs-brand-V8 demoted, v9 = cs-a7m1 demoted). Net effect: 4→3 (v6) →still 3 with v9, 5→5 still, 6→5 (v6), 14→13 (v6)→12 (v9), 15→14, 16→15, 24→23.
   // Slot 3 (cs-1bm1 — was cs-a7m1) — no alts.
   3: [],
@@ -27437,6 +27586,8 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) return;
+    // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) staged reveal.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) return;
@@ -27465,6 +27616,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
     e.preventDefault();
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Reverse && window.cs1m8Reverse()) return;
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) return;
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) return;
@@ -27523,6 +27675,11 @@ document.addEventListener('wheel', e => {
     }
     // [Dave 2026-05-11] cs-1m8 promoted to slot 1 primary (open-heart human-truth opener). Wheel advances stages 0→1→2.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) — wheel advances staged reveal.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
@@ -27652,6 +27809,11 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    // [Dave 2026-05-18 LATEST] cs-1m8-title-A (slot 2 primary) — wheel reverses staged reveal.
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // cs-1 / cs-1bm1 / cs-2b / cs-11d click-reveal: scroll-up un-flips before navigating to prev slide
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -27765,6 +27927,7 @@ document.addEventListener('touchend', e => {
     // Vertical swipe → animate-reveal aware (mirrors ArrowRight / ArrowLeft logic)
     const slideId = SLIDE_ORDER[current - 1];
     if (dy < 0) { // swipe UP → advance reveal
+      if (!inAppendix && slideId === 'cs-1m8-title-A' && window.csM8TitleAAdvance && window.csM8TitleAAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Advance    && window.cs1Advance())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Advance && window.cs1bm1Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapAdvance && window.csThegapAdvance()) { setTimeout(() => { touchLock = false; }, 400); return; }
@@ -27789,6 +27952,7 @@ document.addEventListener('touchend', e => {
       if (!inAppendix && slideId === 'cs-mv6'  && window.cs_mv6_Advance && window.cs_mv6_Advance()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (inAppendix) appendixGo(appendixCurrent + 1); else caseyGo(current + 1);
     } else {       // swipe DOWN → reverse reveal
+      if (!inAppendix && slideId === 'cs-1m8-title-A' && window.csM8TitleAReverse && window.csM8TitleAReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1'    && window.cs1Reverse   && window.cs1Reverse())    { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-1bm1' && window.cs1bm1Reverse && window.cs1bm1Reverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
       if (!inAppendix && slideId === 'cs-thegap' && window.csThegapReverse && window.csThegapReverse()) { setTimeout(() => { touchLock = false; }, 400); return; }
