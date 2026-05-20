@@ -26438,6 +26438,35 @@ window.csA7m1Reverse = function() {
   .casey-dot.concept-dot.on { height:18px; border-radius:4px; background:#ff4d8f !important; box-shadow:0 0 14px rgba(255,77,143,.95) !important; }
   body.presenter-mode .casey-concept-nav { display:none !important; }
   html[data-export="1"] .casey-concept-nav, html[data-pdf="1"] .casey-concept-nav { display:none !important; }
+
+  .concept-mini-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:850; letter-spacing:.2em; text-transform:uppercase; color:#b8954a; }
+  .concept-rating-row { display:flex; align-items:center; justify-content:center; gap:26px; width:min(1320px,88vw); margin:0 auto; position:relative; }
+  .concept-rating-node { width:150px; height:150px; border-radius:50%; border:1.6px solid rgba(251,247,239,.34); display:grid; place-items:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.15rem; font-weight:850; color:#fbf7ef; background:rgba(251,247,239,.04); box-shadow:0 18px 52px rgba(0,0,0,.25); }
+  .concept-cross { position:absolute; inset:-24px 180px; pointer-events:none; }
+  .concept-cross::before,.concept-cross::after { content:""; position:absolute; top:50%; left:0; right:0; height:13px; border-radius:999px; background:rgba(200,70,44,.88); box-shadow:0 0 24px rgba(200,70,44,.45); }
+  .concept-cross::before { transform:rotate(12deg); }
+  .concept-cross::after { transform:rotate(-12deg); }
+  .concept-people-net { position:relative; width:min(980px,76vw); height:270px; margin:0 auto; }
+  .concept-people-net::before { content:""; position:absolute; inset:34px 70px; border-top:2px solid rgba(184,149,74,.66); border-bottom:2px solid rgba(184,149,74,.28); transform:skewY(-4deg); }
+  .concept-person { position:absolute; width:78px; height:78px; border-radius:50%; display:grid; place-items:center; font-family:'Manrope',sans-serif; font-weight:900; color:#08111b; background:#fbf7ef; border:4px solid var(--ring,#b8954a); box-shadow:0 16px 42px rgba(0,0,0,.28); }
+  .concept-person::before { content:""; width:26px; height:26px; border-radius:50%; background:var(--ring,#b8954a); transform:translateY(-10px); box-shadow:0 30px 0 8px var(--ring,#b8954a); opacity:.9; }
+  .concept-sys-split { display:grid; grid-template-columns:1fr 1.08fr; gap:44px; width:min(1560px,90vw); margin:0 auto; align-items:stretch; }
+  .concept-blueprint { min-height:480px; border:1.4px solid rgba(91,143,212,.30); background:linear-gradient(135deg,rgba(91,143,212,.18),rgba(91,143,212,.04)); padding:42px; display:grid; grid-template-columns:1fr 1fr; gap:18px; color:#16314f; }
+  .concept-blueprint .rating { grid-column:1 / -1; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:5.2rem; font-weight:900; color:#173a5f; line-height:.9; }
+  .concept-blueprint .box { border:1px solid rgba(22,49,79,.28); padding:16px; font-family:'Manrope',sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; }
+  .concept-social-collage { min-height:480px; border:1.4px solid rgba(73,180,160,.34); background:linear-gradient(135deg,rgba(73,180,160,.12),rgba(251,247,239,.76)); padding:34px; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .concept-photo-card { min-height:190px; display:grid; place-items:center; text-align:center; padding:26px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.25rem; font-weight:850; line-height:1; color:#1a1612; background:radial-gradient(circle at 50% 20%, rgba(251,247,239,.94), rgba(184,149,74,.16)); border:1px solid rgba(184,149,74,.24); box-shadow:0 16px 44px rgba(26,22,18,.08); }
+  .concept-step-chain { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; width:min(1500px,90vw); margin:0 auto; align-items:stretch; }
+  .concept-step { min-height:220px; border:1.2px solid rgba(251,247,239,.20); background:rgba(251,247,239,.055); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; text-align:center; padding:22px; box-shadow:0 22px 70px rgba(0,0,0,.24); }
+  .concept-step .icon { width:72px; height:72px; border-radius:50%; display:grid; place-items:center; border:1.6px solid currentColor; font-size:2.2rem; color:var(--accent,#49b4a0); }
+  .concept-step .label { font-family:'Manrope',sans-serif; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.82rem; color:#fbf7ef; }
+  .concept-number-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; width:470px; opacity:.62; }
+  .concept-number-cell { height:62px; border:1px solid rgba(26,22,18,.12); display:grid; place-items:center; font-family:'Manrope',sans-serif; font-weight:850; color:rgba(26,22,18,.46); background:rgba(255,255,255,.46); }
+  .concept-glow-net { position:relative; width:100%; height:390px; border-radius:8px; background:radial-gradient(circle at 50% 50%, rgba(255,178,58,.24), rgba(251,247,239,.58)); border:1px solid rgba(184,149,74,.18); overflow:hidden; }
+  .concept-glow-net::before { content:""; position:absolute; inset:70px 90px; border:2px solid rgba(255,178,58,.52); border-radius:50%; box-shadow:0 0 46px rgba(255,178,58,.30); }
+  .concept-loop { display:flex; align-items:center; justify-content:center; gap:26px; width:min(1400px,88vw); margin:0 auto; }
+  .concept-loop-item { width:250px; height:250px; border-radius:50%; display:grid; place-items:center; text-align:center; padding:28px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.3rem; font-weight:850; color:#1a1612; border:1.8px solid rgba(184,149,74,.44); background:radial-gradient(circle,#fffaf0,rgba(184,149,74,.18)); box-shadow:0 20px 58px rgba(184,149,74,.14); }
+
 </style>
 
 <div class="casey-slide concept-slide" id="cs-concept-skill-wrong" style="display:none">
@@ -26598,6 +26627,136 @@ window.csA7m1Reverse = function() {
 </div>
 
 
+
+<div class="casey-slide concept-slide concept-dark" id="cs-concept-core-assumption" style="display:none;background:radial-gradient(circle at 50% 18%, rgba(200,70,44,.20), transparent 34%),linear-gradient(180deg,#050608 0%,#070b12 100%) !important;color:#fbf7ef !important;">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - core assumption</div>
+  <div class="concept-stage" style="gap:38px">
+    <h1 class="concept-title">The core assumption is <span class="red">wrong.</span></h1>
+    <p class="concept-sub" style="font-size:2rem;color:rgba(251,247,239,.82)">Social pickleball is not powered by skill ratings.</p>
+    <div class="concept-rating-row">
+      <div class="concept-rating-node">3.0</div><div class="concept-rating-node">3.5</div><div class="concept-rating-node" style="border-color:#49b4a0;color:#49b4a0">4.0</div><div class="concept-rating-node">4.5</div><div class="concept-rating-node">5.0</div>
+      <div class="concept-cross"></div>
+    </div>
+    <div class="concept-people-net">
+      <div class="concept-person" style="--ring:#f5c35e;left:8%;top:58px"></div>
+      <div class="concept-person" style="--ring:#ef6a6a;left:25%;top:150px"></div>
+      <div class="concept-person" style="--ring:#9cc878;left:40%;top:28px"></div>
+      <div class="concept-person" style="--ring:#9d72d9;left:54%;top:124px"></div>
+      <div class="concept-person" style="--ring:#49b4a0;left:69%;top:50px"></div>
+      <div class="concept-person" style="--ring:#f3834f;left:84%;top:126px"></div>
+    </div>
+    <div class="concept-foot">It is powered by <strong>people, invitations, and connection.</strong></div>
+  </div>
+</section>
+</div>
+
+<div class="casey-slide concept-slide" id="cs-concept-pickleball-social-system" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - social system</div>
+  <div class="concept-stage" style="gap:34px">
+    <h1 class="concept-title">Pickleball is a <em style="color:#6f8f2d">social system.</em></h1>
+    <p class="concept-sub" style="font-size:1.9rem">The industry treats it like a rating system. That is the mistake.</p>
+    <div class="concept-sys-split">
+      <div class="concept-blueprint">
+        <div class="concept-mini-label" style="color:#173a5f">Rating model</div>
+        <div class="rating">1568</div>
+        <div class="box">Elo logic</div><div class="box">Rating ladder</div><div class="box">Expected score</div><div class="box">Minimize gap</div>
+      </div>
+      <div class="concept-social-collage">
+        <div class="concept-photo-card">Play</div><div class="concept-photo-card">Connect</div><div class="concept-photo-card">Belong</div><div class="concept-photo-card">Repeat</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="casey-slide concept-slide concept-dark" id="cs-concept-reject-wrong-assumption" style="display:none;background:radial-gradient(circle at 58% 36%, rgba(73,180,160,.17), transparent 35%),linear-gradient(180deg,#08111b 0%,#05080d 100%) !important;color:#fbf7ef !important;">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - new paradigm</div>
+  <div class="concept-stage" style="gap:42px">
+    <h1 class="concept-title" style="font-size:6.1rem">Great social matches<br><em style="color:#9cc878">do not start with skill ratings.</em></h1>
+    <div style="display:grid;grid-template-columns:.75fr .18fr 1.35fr;gap:28px;width:min(1500px,90vw);margin:0 auto;align-items:center">
+      <div class="concept-card" style="min-height:380px;background:rgba(251,247,239,.05)!important;border-color:rgba(251,247,239,.20)!important">
+        <div class="concept-mini-label">The old assumption</div>
+        <div class="big" style="color:#fbf7ef">Skill-rating<br>matching</div>
+        <div class="small">Limited matches. Limited connections.</div>
+      </div>
+      <div class="concept-arrow" style="color:#9cc878;font-size:5.8rem">&rarr;</div>
+      <div class="concept-step-chain" style="grid-template-columns:repeat(5,1fr);width:100%">
+        <div class="concept-step" style="--accent:#49b4a0"><div class="icon">&#9679;</div><div class="label">People</div></div>
+        <div class="concept-step" style="--accent:#b9d651"><div class="icon">&#9993;</div><div class="label">Invitations</div></div>
+        <div class="concept-step" style="--accent:#9cc878"><div class="icon">&#9675;</div><div class="label">Groups</div></div>
+        <div class="concept-step" style="--accent:#5B8FD4"><div class="icon">&#9824;</div><div class="label">Social sports</div></div>
+        <div class="concept-step" style="--accent:#9d72d9"><div class="icon">&#9635;</div><div class="label">Communities</div></div>
+      </div>
+    </div>
+    <div class="concept-foot">That insight opens a new paradigm for social sports.</div>
+  </div>
+</section>
+</div>
+
+<div class="casey-slide concept-slide" id="cs-concept-assumption-vs-reality" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - assumption vs reality</div>
+  <div class="concept-stage" style="gap:34px">
+    <h1 class="concept-title" style="font-size:6.15rem">Everyone assumes social sports must match by skill.<br><span class="red">That assumption is wrong.</span></h1>
+    <div class="concept-grid-2" style="align-items:center">
+      <div class="concept-card blue" style="min-height:430px">
+        <div class="concept-mini-label">Old system</div>
+        <div class="concept-number-grid"><div class="concept-number-cell">100</div><div class="concept-number-cell">99</div><div class="concept-number-cell">98</div><div class="concept-number-cell">97</div><div class="concept-number-cell">96</div><div class="concept-number-cell">95</div><div class="concept-number-cell">94</div><div class="concept-number-cell">93</div><div class="concept-number-cell">92</div><div class="concept-number-cell">91</div><div class="concept-number-cell">90</div><div class="concept-number-cell">89</div><div class="concept-number-cell">88</div><div class="concept-number-cell">87</div><div class="concept-number-cell">86</div><div class="concept-number-cell">85</div><div class="concept-number-cell">84</div><div class="concept-number-cell">83</div><div class="concept-number-cell">82</div><div class="concept-number-cell">81</div></div>
+        <div class="small">A ranked list of players.</div>
+      </div>
+      <div class="concept-card red" style="min-height:430px">
+        <div class="concept-mini-label" style="color:#c8462c">Real system</div>
+        <div class="concept-glow-net">
+          <div class="concept-person" style="--ring:#f5c35e;left:10%;top:78px"></div>
+          <div class="concept-person" style="--ring:#ef6a6a;left:24%;top:222px"></div>
+          <div class="concept-person" style="--ring:#49b4a0;left:44%;top:132px"></div>
+          <div class="concept-person" style="--ring:#5B8FD4;left:66%;top:64px"></div>
+          <div class="concept-person" style="--ring:#c8462c;left:78%;top:220px"></div>
+        </div>
+        <div class="small">A living map of human connection.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="casey-slide concept-slide concept-dark" id="cs-concept-powered-by-people" style="display:none;background:radial-gradient(circle at 54% 36%, rgba(245,195,94,.18), transparent 35%),linear-gradient(180deg,#050608 0%,#070b12 100%) !important;color:#fbf7ef !important;">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - simplest thesis</div>
+  <div class="concept-stage" style="gap:56px">
+    <h1 class="concept-title" style="font-size:7.4rem">Social pickleball is not a rating problem.</h1>
+    <div class="concept-loop">
+      <div class="concept-loop-item" style="background:rgba(251,247,239,.06);color:#fbf7ef;border-color:#f5c35e">People</div>
+      <div class="concept-arrow">&rarr;</div>
+      <div class="concept-loop-item" style="background:rgba(251,247,239,.06);color:#fbf7ef;border-color:#49b4a0">Invites</div>
+      <div class="concept-arrow">&rarr;</div>
+      <div class="concept-loop-item" style="background:rgba(251,247,239,.06);color:#fbf7ef;border-color:#c8462c">Connection</div>
+    </div>
+    <div class="concept-foot">GnR measures the loop and reciprocates value back.</div>
+  </div>
+</section>
+</div>
+
+<div class="casey-slide concept-slide" id="cs-concept-belong-repeat" style="display:none">
+<section style="position:relative;min-height:100%;width:100%">
+  <div class="concept-eyebrow">Concept rail - repeat engine</div>
+  <div class="concept-stage" style="gap:58px">
+    <h1 class="concept-title">Play. <em style="color:#49b4a0">Connect.</em> Belong. Repeat.</h1>
+    <p class="concept-sub" style="font-size:2rem">That is the product hiding inside every real-world social community.</p>
+    <div class="concept-loop">
+      <div class="concept-loop-item">Play</div>
+      <div class="concept-arrow">&rarr;</div>
+      <div class="concept-loop-item" style="border-color:#49b4a0">Connect</div>
+      <div class="concept-arrow">&rarr;</div>
+      <div class="concept-loop-item" style="border-color:#c8462c">Belong</div>
+    </div>
+    <div class="concept-foot">Skill ratings can rank players. They cannot make people come back.</div>
+  </div>
+</section>
+</div>
 <nav class="casey-nav" id="cnav"></nav>
 <nav class="casey-concept-nav" id="conceptNav" aria-label="Concept review slides"></nav>
 
@@ -27042,6 +27201,12 @@ const CONCEPT_ORDER = [
   'cs-concept-five-exist',
   'cs-concept-invites-not-intel',
   'cs-concept-zero-category',
+  'cs-concept-core-assumption',
+  'cs-concept-pickleball-social-system',
+  'cs-concept-reject-wrong-assumption',
+  'cs-concept-assumption-vs-reality',
+  'cs-concept-powered-by-people',
+  'cs-concept-belong-repeat',
 ];
 const CONCEPT_TOTAL = CONCEPT_ORDER.length;
 let current = 1;
