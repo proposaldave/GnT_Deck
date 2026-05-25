@@ -7410,6 +7410,9 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier-iconic .fi-science-strip,
   html[data-export="1"] #cs-frontier-pink1 .fi-science-strip,
   html[data-export="1"] #cs-frontier-pink2 .fi-science-strip { opacity:1 !important; transform:none !important; animation:none !important; }
+  #cs-frontier-iconic .fi-invisible, #cs-frontier-pink1 .fi-invisible, #cs-frontier-pink2 .fi-invisible { position:absolute; top:23.5%; left:50%; z-index:4; transform:translate(-50%, 16px); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.9rem,2.8vw,3.05rem); font-style:italic; font-weight:800; line-height:1.05; color:#c8462c; text-align:center; padding:10px 18px; background:rgba(251,247,239,.62); border-radius:4px; box-shadow:0 14px 34px rgba(251,247,239,.22); text-shadow:0 1px 3px rgba(251,247,239,.82); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1), visibility 0s linear .55s; }
+  #cs-frontier-iconic[data-stage="1"] .fi-invisible, #cs-frontier-pink1[data-stage="1"] .fi-invisible, #cs-frontier-pink2[data-stage="1"] .fi-invisible { opacity:1; visibility:visible; transform:translate(-50%, 0); transition:opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1), visibility 0s linear 0s; }
+  html[data-export="1"] #cs-frontier-iconic .fi-invisible, html[data-export="1"] #cs-frontier-pink1 .fi-invisible, html[data-export="1"] #cs-frontier-pink2 .fi-invisible { opacity:1 !important; visibility:visible !important; transform:translate(-50%, 0) !important; transition:none !important; }
   #cs-frontier-iconic .fi-headline .fi-give, #cs-frontier-pink1 .fi-headline .fi-give, #cs-frontier-pink2 .fi-headline .fi-give { color:#5B8FD4; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-headline .fi-receive, #cs-frontier-pink1 .fi-headline .fi-receive, #cs-frontier-pink2 .fi-headline .fi-receive { color:#c8462c; font-weight:850; text-shadow:0 1px 2px rgba(0,0,0,0.25); }
   #cs-frontier-iconic .fi-canvas, #cs-frontier-pink1 .fi-canvas, #cs-frontier-pink2 .fi-canvas { position:absolute; inset:0; width:100%; height:100%; }
@@ -7431,12 +7434,13 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-frontier-pink2 .fi-headline,
   html[data-export="1"] #cs-frontier-pink2 .fi-hero-img { opacity:1 !important; transform:none !important; animation:none !important; }
 </style>
-<div class="casey-slide ds-focus" id="cs-frontier-iconic" style="display:none">
+<div class="casey-slide ds-focus frontier-feeling-slide" id="cs-frontier-iconic" data-stage="0" onclick="csFrontierFeelingAdvance()" style="display:none">
   <!-- [Dave 2026-05-17 LATEST] Eyebrow now carries the four science-discipline tags (Neuroscience · Longitudinal · Public Health · Epidemiology) — the standalone disciplines strip below the headline has been removed in favor of this single eyebrow line. Letter-spacing tightened .22em → .16em so the full 4-discipline string fits on one row at the standard eyebrow size. Gold middle-dot separators for rhythm against the red ink. -->
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
   <section class="fi-stage">
     <!-- [Dave 2026-05-17 LATEST] Headline merged onto one line with → arrow joining clause to predicate. Disciplines strip below the headline DELETED — its content now lives in the eyebrow above. -->
-    <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <h1 class="fi-headline"><span class="fi-line">Feeling connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <div class="fi-invisible">But it's invisible to technology.</div>
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-iconic-hero.png" alt="A warm human constellation of connection across a neighborhood">
     </div>
@@ -7452,10 +7456,11 @@ window.cs1m5Reverse = function() {
      image for assets/cs-frontier-pink1.png (sunset town/village wide-angle watercolor).
      Fallback chain → cs-frontier-iconic-hero.png so slide always renders.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus active casey-entered" id="cs-frontier-pink1">
+<div class="casey-slide ds-focus active casey-entered frontier-feeling-slide" id="cs-frontier-pink1" data-stage="0" onclick="csFrontierFeelingAdvance()">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
   <section class="fi-stage">
-    <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <h1 class="fi-headline"><span class="fi-line">Feeling connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <div class="fi-invisible">But it's invisible to technology.</div>
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-pink1.png" alt="" onerror="this.onerror=null;this.src='assets/gnr_vnext_opener_constellation.png'"/>
     </div>
@@ -7469,10 +7474,11 @@ window.cs1m5Reverse = function() {
      Bg image: assets/cs-frontier-pink2.png (golden-hour porches at sunset with people).
      Fallback chain → cs-frontier-iconic-hero.png.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus" id="cs-frontier-pink2" style="display:none">
+<div class="casey-slide ds-focus frontier-feeling-slide" id="cs-frontier-pink2" data-stage="0" onclick="csFrontierFeelingAdvance()" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Neuroscience<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Longitudinal<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Public Health<span style="color:#b8954a;padding:0 .35em;font-weight:800">&bull;</span>Epidemiology</div>
   <section class="fi-stage">
-    <h1 class="fi-headline"><span class="fi-line">Real connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <h1 class="fi-headline"><span class="fi-line">Feeling connection &rarr; <em class="fi-predictor">#1 predictor</em> of a fulfilling life.</span></h1>
+    <div class="fi-invisible">But it's invisible to technology.</div>
     <div class="fi-canvas">
       <img class="fi-hero-img" src="assets/cs-frontier-pink2.png" alt="" onerror="this.onerror=null;this.src='assets/gnr_vnext_openness_room.png'"/>
     </div>
@@ -30475,6 +30481,24 @@ window.csHctSystemReverse = function() {
   return true;
 };
 
+// cs-frontier-pink1/iconic/pink2 - one-step invisible-to-technology reveal [Codex 2026-05-25]
+window.csFrontierFeelingAdvance = function() {
+  const slide = document.querySelector('.casey-slide.active.frontier-feeling-slide');
+  if (!slide) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 1) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csFrontierFeelingReverse = function() {
+  const slide = document.querySelector('.casey-slide.active.frontier-feeling-slide');
+  if (!slide) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
+};
+
 // cs-3 (24 unique social experiences) — click-reveal: 4 .scored cards + closer text hidden until click [Dave 2026-05-01]
 window.cs3Advance = function() {
   const slide = document.getElementById('cs-3');
@@ -31812,6 +31836,7 @@ window.caseyAdvanceActiveReveal = function() {
   };
   if (/^cs-fv6/.test(activeId || '') && window.csFv6Advance && window.csFv6Advance()) return true;
   if (active && active.classList && active.classList.contains('hct-system-slide') && window.csHctSystemAdvance && window.csHctSystemAdvance()) return true;
+  if (active && active.classList && active.classList.contains('frontier-feeling-slide') && window.csFrontierFeelingAdvance && window.csFrontierFeelingAdvance()) return true;
   const fnName = directHandlers[activeId];
   return !!(fnName && window[fnName] && window[fnName]());
 };
@@ -31854,6 +31879,7 @@ window.caseyReverseActiveReveal = function() {
   };
   if (/^cs-fv6/.test(activeId || '') && window.csFv6Reverse && window.csFv6Reverse()) return true;
   if (active && active.classList && active.classList.contains('hct-system-slide') && window.csHctSystemReverse && window.csHctSystemReverse()) return true;
+  if (active && active.classList && active.classList.contains('frontier-feeling-slide') && window.csFrontierFeelingReverse && window.csFrontierFeelingReverse()) return true;
   const fnName = directHandlers[activeId];
   return !!(fnName && window[fnName] && window[fnName]());
 };
@@ -32058,6 +32084,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && document.querySelector('.casey-slide.active.frontier-feeling-slide') && window.csFrontierFeelingAdvance && window.csFrontierFeelingAdvance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-11] cs-1m8 promoted to slot 1 primary (open-heart human-truth opener). Wheel advances stages 0→1→2.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8' && window.cs1m8Advance && window.cs1m8Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -32204,6 +32234,10 @@ document.addEventListener('wheel', e => {
       }
     }
     if (!inAppendix && document.querySelector('.casey-slide.active.hct-system-slide') && window.csHctSystemReverse && window.csHctSystemReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && document.querySelector('.casey-slide.active.frontier-feeling-slide') && window.csFrontierFeelingReverse && window.csFrontierFeelingReverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
