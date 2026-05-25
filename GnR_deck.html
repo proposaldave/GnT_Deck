@@ -9127,7 +9127,8 @@ window.cs1m7Reverse = function() {
 
 </style>
 
-<div class="casey-slide ds-focus" id="cs-emotion-graph" style="display:none">
+<!-- [Dave 2026-05-25] cs-emotion-graph DELETED per Dave: "delete this slide". Removed from nav; retained only as hidden rollback HTML. -->
+<div class="casey-slide ds-focus" id="cs-emotion-graph" data-deleted="1" style="display:none!important">
   <div class="eg-eye">Connection graph</div>
   <div class="eg-brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
   <section class="eg-stage">
@@ -21269,21 +21270,64 @@ window.cs1m7Reverse = function() {
   #cs-magnetic .mgbg, #cs-magnetic .mgbg-wash { display:none !important; }
 
   /* [Dave 2026-05-18 LATEST] Centered envelope DELETED — see SVG markup below. Orphan animation rules removed. The transform-box:fill-box + animation combination caused a single-frame flash at SVG origin (top-left) on slide entry, then the transform settled at court-center. Not worth fixing per Dave 'just delete it, not worth the effort'. */
+
+
+  /* [Dave 2026-05-25] Chesky atomic-unit rebuild: two-column social-media broadcast vs real-world value graph. */
+  #cs-magnetic .mg-stage{padding:72px 74px 54px;gap:26px;justify-content:center}
+  #cs-magnetic .mg-master{font-size:clamp(2.22rem,3.65vw,4rem);line-height:1.04;font-weight:880;letter-spacing:0;max-width:1540px;margin:0 auto 8px;text-align:center}
+  #cs-magnetic .mg-master .mg-source{display:block;margin-top:.28em;font-family:'Manrope',sans-serif;font-size:.30em;line-height:1;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#c8462c}
+  #cs-magnetic .mg-compare{display:grid!important;grid-template-columns:1fr 1fr!important;gap:38px;align-items:stretch;width:100%;max-width:1560px}
+  #cs-magnetic .mg-side{border-radius:8px;min-height:448px;padding:26px 30px 24px;justify-content:flex-start;overflow:hidden}
+  #cs-magnetic .mg-side.left{background:rgba(251,247,239,.72);border:1.4px solid rgba(91,143,212,.32);box-shadow:0 16px 42px rgba(26,22,18,.08)}
+  #cs-magnetic .mg-side.right{width:auto;background:rgba(251,247,239,.78);border:1.6px solid rgba(184,149,74,.46);box-shadow:0 16px 42px rgba(184,149,74,.14)}
+  #cs-magnetic .mg-side-hero{font-size:clamp(1.38rem,2.12vw,2.05rem);line-height:1.04;letter-spacing:0;white-space:normal;min-height:70px;display:block;text-align:center;margin:0 0 6px}
+  #cs-magnetic .mg-side.right .mg-side-hero{font-size:clamp(1.18rem,1.82vw,1.72rem);line-height:1.06}
+  #cs-magnetic .mg-side.left .mg-side-hero em{color:#5B8FD4}
+  #cs-magnetic .mg-broadcast{width:100%;max-width:720px;height:auto;display:block;margin:auto 0 0}
+  #cs-magnetic .mg-side.left .mg-outcome{display:none}
 </style>
 <div class="casey-slide ds-focus" id="cs-magnetic">
   <!-- [Dave 2026-05-18 LATEST v3] Background image made more visible per Dave. Image opacity 0.55→0.68; cream wash eased from 0.92/0.88/0.84/0.88 to 0.86/0.80/0.72/0.80 so the court/community image reads without sacrificing headline contrast. -->
   <img src="assets/cs-samecourt-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;display:block;opacity:0.68" onerror="this.onerror=null;this.src='assets/cs-samecourt-pink3.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(251,247,239,0.86) 0%, rgba(251,247,239,0.80) 22%, rgba(251,247,239,0.72) 55%, rgba(251,247,239,0.80) 100%)"></div>
   <!-- [Dave 2026-05-18 LATEST] Eyebrow ↔ above-court hero SWAPPED per Dave: '"Social pull" / "People are the product and the sales engine." swap places of that text (eg so "People are the product..." will go top left label of the slide and social pull will go right above the court)'. Eyebrow now carries the marketplace claim; "Social pull" moves to the above-court hero (.mg-side-hero on .mg-side.right). -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">People are the product and the sales engine</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Social pull.</div>
   <section class="mg-stage">
 
     <!-- [Dave 2026-05-14 PM v4] Master header text SWAPPED with the eyebrow per Dave. Long category claim moved up to the eyebrow banner; this header is now the punchy 2-word slide title. -->
     <!-- [Dave 2026-05-18 LATEST] Second line wrapped in .mg-master-line2 (nowrap) so the 'Real-world social networking: everyone contributes local community value.' phrase always renders on a single row, paired with the font-size reduction in CSS above. -->
-    <h1 class="mg-master">Social media &rarr; <em>1% influencers</em>.<br><span class="mg-master-line2">Real-world social networking &rarr; <em>every human contributes local community value</em>.</span></h1>
+    <h1 class="mg-master">The bedrock for me is how do I change the atomic unit of Airbnb from a home to a person?<span class="mg-source">- Brian Chesky</span></h1>
 
     <!-- [Dave 2026-05-17 v7] LEFT rating-only court (with X-mark) + VS divider DELETED per Dave 'delete what you see attached for the social pull slide'. Slide is now single-court (right marketplace) centered. Original twin-court layout preserved as red-dot alt cs-magnetic-orig to the LEFT. -->
-    <div class="mg-compare" style="display:flex;justify-content:center;align-items:stretch">
+    <div class="mg-compare">
+
+      <div class="mg-side left">
+        <h2 class="mg-side-hero">Social media &rarr; <em>1% influencers</em>.</h2>
+        <svg class="mg-broadcast" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="Social media broadcast model: one influencer reaches many passive followers.">
+          <defs>
+            <radialGradient id="mgBroadcastGlow" cx="34%" cy="50%" r="62%">
+              <stop offset="0%" stop-color="rgba(91,143,212,0.22)"/>
+              <stop offset="58%" stop-color="rgba(91,143,212,0.08)"/>
+              <stop offset="100%" stop-color="rgba(91,143,212,0)"/>
+            </radialGradient>
+          </defs>
+          <rect x="20" y="20" width="180" height="90" rx="2" fill="rgba(91,143,212,0.045)" stroke="rgba(91,143,212,0.62)" stroke-width="1.7"/>
+          <ellipse cx="72" cy="65" rx="92" ry="58" fill="url(#mgBroadcastGlow)"/>
+          <g stroke="rgba(91,143,212,0.38)" stroke-width="1.2" stroke-linecap="round">
+            <line x1="72" y1="65" x2="152" y2="34"/><line x1="72" y1="65" x2="166" y2="50"/><line x1="72" y1="65" x2="174" y2="66"/><line x1="72" y1="65" x2="166" y2="82"/><line x1="72" y1="65" x2="152" y2="98"/>
+          </g>
+          <g>
+            <circle cx="72" cy="65" r="22" fill="rgba(91,143,212,0.12)" stroke="#5B8FD4" stroke-width="2.1"/>
+            <circle cx="72" cy="58" r="7.5" fill="#5B8FD4"/>
+            <path d="M55 84c4-11 12-17 17-17s13 6 17 17" fill="#5B8FD4" opacity=".85"/>
+            <text x="72" y="111" text-anchor="middle" font-family="Manrope,sans-serif" font-size="6.2" font-weight="900" letter-spacing="0.09em" fill="#5B8FD4">INFLUENCER</text>
+          </g>
+          <g fill="rgba(26,22,18,0.34)" stroke="rgba(26,22,18,0.22)" stroke-width=".8">
+            <circle cx="152" cy="34" r="7"/><circle cx="166" cy="50" r="7"/><circle cx="174" cy="66" r="7"/><circle cx="166" cy="82" r="7"/><circle cx="152" cy="98" r="7"/>
+          </g>
+          <text x="156" y="112" text-anchor="middle" font-family="Manrope,sans-serif" font-size="5.8" font-weight="900" letter-spacing="0.10em" fill="rgba(26,22,18,0.46)">PASSIVE FEED</text>
+        </svg>
+      </div>
 
       <!-- RIGHT · GnR MARKETPLACE (warm glow, role-coded, magnetic + balanced)
            [Dave 2026-05-17] Click-replayable staged animation: the 4 roles appear in
@@ -21294,7 +21338,7 @@ window.cs1m7Reverse = function() {
            are happening." Click the right court to replay. -->
       <div class="mg-side right" onclick="mgRightReplay();event.stopPropagation()" style="cursor:pointer">
         <!-- [Dave 2026-05-18 LATEST] Hero swapped with eyebrow per Dave. "People are the product and the sales engine." promoted to the slide eyebrow; this above-court hero now carries the short brand phrase "Social pull." -->
-        <h2 class="mg-side-hero"><em>Social pull.</em></h2>
+        <h2 class="mg-side-hero">Real-world social networking &rarr;<br><em>every human contributes local community value</em>.</h2>
         <svg class="mg-court" viewBox="0 0 220 130" fill="none" preserveAspectRatio="xMidYMid meet" aria-label="GnR marketplace court — 4 roles. Roles appear in causal sequence: anchor, then regular pulled in by anchor, then referrer pulled in by anchor, then referred brought in by referrer.">
           <defs>
             <radialGradient id="mgGlowGrad" cx="50%" cy="50%" r="55%">
@@ -26779,41 +26823,47 @@ window.csA7m1Reverse = function() {
 </div>
 
 
-<!-- ===== cs-2c-schedule-measure � PINK ALT for cs-2c [Dave 2026-05-20] ===== -->
+<!-- ===== cs-2c-schedule-measure - PINK ALT for cs-2c [Dave 2026-05-25 simplified flywheel] ===== -->
 <style>
   #cs-2c-schedule-measure { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
+  #cs-2c-schedule-measure::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 58% 50%, rgba(184,149,74,.18), transparent 36%), radial-gradient(circle at 76% 26%, rgba(91,143,212,.10), transparent 26%), radial-gradient(circle at 22% 72%, rgba(200,70,44,.07), transparent 30%); pointer-events:none; }
   #cs-2c-schedule-measure .sm-eyebrow { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; z-index:10; }
-  #cs-2c-schedule-measure .sm-stage { position:absolute; inset:0; padding:82px 82px 68px; display:grid; grid-template-rows:auto 1fr auto; gap:28px; }
-  #cs-2c-schedule-measure .sm-title { max-width:1380px; margin:0 auto; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3rem,5.2vw,5.25rem); line-height:1.0; font-weight:870; letter-spacing:-0.034em; color:#1a1612; }
+  #cs-2c-schedule-measure .sm-stage { position:absolute; inset:0; padding:92px 128px 78px 92px; display:grid; grid-template-columns:.94fr 1.06fr; gap:58px; align-items:center; }
+  #cs-2c-schedule-measure .sm-copy { max-width:760px; z-index:2; }
+  #cs-2c-schedule-measure .sm-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.85rem,6.75vw,7rem); line-height:.93; font-weight:880; letter-spacing:0; color:#1a1612; }
   #cs-2c-schedule-measure .sm-title em { color:#b8954a; font-style:italic; }
-  #cs-2c-schedule-measure .sm-flow { width:min(1600px,94vw); margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); align-items:center; gap:18px; position:relative; }
-  #cs-2c-schedule-measure .sm-card { min-height:420px; background:rgba(251,247,239,0.76); border:1.3px solid rgba(26,22,18,0.12); box-shadow:0 18px 55px rgba(26,22,18,0.08); padding:28px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; }
-  #cs-2c-schedule-measure .sm-num { position:absolute; top:18px; left:20px; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:850; letter-spacing:.18em; color:rgba(26,22,18,0.32); }
-  #cs-2c-schedule-measure .sm-icon { width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:24px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.2rem; font-weight:850; }
-  #cs-2c-schedule-measure .sm-card:nth-child(1) .sm-icon { color:#5B8FD4; background:rgba(91,143,212,0.10); border:1px solid rgba(91,143,212,0.34); }
-  #cs-2c-schedule-measure .sm-card:nth-child(2) .sm-icon { color:#b8954a; background:rgba(184,149,74,0.12); border:1px solid rgba(184,149,74,0.36); }
-  #cs-2c-schedule-measure .sm-card:nth-child(3) .sm-icon { color:#c8462c; background:rgba(200,70,44,0.10); border:1px solid rgba(200,70,44,0.34); }
-  #cs-2c-schedule-measure .sm-card:nth-child(4) .sm-icon { color:#2a8a4f; background:rgba(42,138,79,0.10); border:1px solid rgba(42,138,79,0.32); }
-  #cs-2c-schedule-measure .sm-label { font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:850; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; margin-bottom:12px; }
-  #cs-2c-schedule-measure .sm-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.45rem,2.3vw,2.3rem); line-height:1.05; font-weight:830; color:#1a1612; letter-spacing:-0.018em; }
-  #cs-2c-schedule-measure .sm-sub { margin-top:14px; font-family:'Manrope',sans-serif; font-size:.86rem; font-weight:650; line-height:1.45; color:rgba(26,22,18,0.62); }
-  #cs-2c-schedule-measure .sm-plus { position:absolute; top:50%; transform:translate(-50%,-50%); font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.6rem; color:#b8954a; z-index:3; }
-  #cs-2c-schedule-measure .sm-plus.p1 { left:25%; } #cs-2c-schedule-measure .sm-plus.p2 { left:50%; } #cs-2c-schedule-measure .sm-plus.p3 { left:75%; }
-  #cs-2c-schedule-measure .sm-footer { text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.25rem,2.1vw,2.1rem); line-height:1.2; font-style:italic; color:#1a1612; }
-  #cs-2c-schedule-measure .sm-footer strong { color:#c8462c; font-style:normal; }
+  #cs-2c-schedule-measure .sm-thesis { margin:30px 0 0; max-width:650px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.35rem,2.1vw,2.05rem); line-height:1.17; font-weight:620; letter-spacing:0; color:rgba(26,22,18,.78); }
+  #cs-2c-schedule-measure .sm-thesis strong { color:#c8462c; font-weight:850; }
+  #cs-2c-schedule-measure .sm-loop { position:relative; width:min(690px,40vw); aspect-ratio:1/1; margin:0 auto; z-index:2; }
+  #cs-2c-schedule-measure .sm-ring { position:absolute; inset:11%; border-radius:50%; border:1.6px solid rgba(184,149,74,.40); box-shadow:0 0 0 30px rgba(184,149,74,.035), inset 0 0 76px rgba(184,149,74,.12); }
+  #cs-2c-schedule-measure .sm-ring::after { content:""; position:absolute; right:7%; top:14%; width:0; height:0; border-top:13px solid transparent; border-bottom:13px solid transparent; border-left:22px solid #b8954a; transform:rotate(36deg); filter:drop-shadow(0 4px 9px rgba(184,149,74,.26)); }
+  #cs-2c-schedule-measure .sm-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:248px; height:248px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 35%, #fffaf1 0%, #f0dfb6 66%, rgba(184,149,74,.20) 100%); border:1.8px solid rgba(184,149,74,.62); box-shadow:0 0 0 14px rgba(184,149,74,.08),0 30px 90px rgba(184,149,74,.24); }
+  #cs-2c-schedule-measure .sm-core b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:4.35rem; line-height:.9; color:#1a1612; letter-spacing:0; }
+  #cs-2c-schedule-measure .sm-core span { margin-top:12px; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:850; letter-spacing:.24em; text-transform:uppercase; color:#c8462c; }
+  #cs-2c-schedule-measure .sm-node { position:absolute; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; min-width:150px; padding:14px 18px; font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:#1a1612; background:rgba(251,247,239,.84); border:1px solid rgba(184,149,74,.35); border-radius:8px; box-shadow:0 12px 30px rgba(26,22,18,.07); white-space:nowrap; }
+  #cs-2c-schedule-measure .sm-node.n1 { left:50%; top:8%; color:#5B8FD4; }
+  #cs-2c-schedule-measure .sm-node.n2 { left:92%; top:50%; color:#b8954a; }
+  #cs-2c-schedule-measure .sm-node.n3 { left:50%; top:92%; color:#c8462c; }
+  #cs-2c-schedule-measure .sm-node.n4 { left:8%; top:50%; color:#1a1612; }
+  #cs-2c-schedule-measure .sm-caption { position:absolute; left:50%; bottom:3%; transform:translateX(-50%); width:min(720px,90vw); text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.12rem,1.72vw,1.72rem); line-height:1.18; font-style:italic; letter-spacing:0; color:#1a1612; }
+  #cs-2c-schedule-measure .sm-caption strong { color:#c8462c; font-style:normal; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2c-schedule-measure" style="display:none">
   <div class="sm-eyebrow">Future of real-world social communities</div>
   <section class="sm-stage">
-    <h1 class="sm-title"><em>Schedule</em> the community. <em>Measure</em> the community.</h1>
-    <div class="sm-flow">
-      <div class="sm-card"><div class="sm-num">01</div><div class="sm-icon">AI</div><div class="sm-label">Agentic scheduling</div><div class="sm-head">Who should spend time together?</div><div class="sm-sub">GnR replaces the manual memory work of community coordination.</div></div>
-      <div class="sm-card"><div class="sm-num">02</div><div class="sm-icon">G</div><div class="sm-label">Real interaction</div><div class="sm-head">The community actually happens.</div><div class="sm-sub">People play, meet, help, host, invite, return, and contribute.</div></div>
-      <div class="sm-card"><div class="sm-num">03</div><div class="sm-icon">n</div><div class="sm-label">Measurement</div><div class="sm-head">Connection and value exchange become legible.</div><div class="sm-sub">The graph learns who creates value for whom.</div></div>
-      <div class="sm-card"><div class="sm-num">04</div><div class="sm-icon">R</div><div class="sm-label">Better next invite</div><div class="sm-head">Every signal improves the next schedule.</div><div class="sm-sub">The community coordinates itself more intelligently over time.</div></div>
-      <div class="sm-plus p1">+</div><div class="sm-plus p2">+</div><div class="sm-plus p3">=</div>
+    <div class="sm-copy">
+      <h1 class="sm-title">The community becomes <em>the product.</em></h1>
+      <p class="sm-thesis">GnR turns real-world moments into a <strong>self-improving invitation system.</strong></p>
     </div>
-    <div class="sm-footer">The future is not a social feed. It is a <strong>self-improving real-world community graph.</strong></div>
+    <div class="sm-loop" aria-label="Invite, gather, measure, invite better loop">
+      <div class="sm-ring" aria-hidden="true"></div>
+      <div class="sm-core"><b>GnR</b><span>learns the room</span></div>
+      <div class="sm-node n1">Invite</div>
+      <div class="sm-node n2">Gather</div>
+      <div class="sm-node n3">Measure</div>
+      <div class="sm-node n4">Invite better</div>
+      <div class="sm-caption">Every real-world moment teaches the <strong>next invitation.</strong></div>
+    </div>
   </section>
 </div>
 
@@ -29679,7 +29729,8 @@ const SLIDE_ALTS = {
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
   7: ['cs-2c-measure-loop', 'cs-2c-invisible-layer', 'cs-2c-schedule-measure'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
-  8: ['cs-emotion-graph', 'cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured', 'cs-thegap-old-like'],
+  // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
+  8: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured', 'cs-thegap-old-like'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -31372,7 +31423,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
-    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-graph' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
+    const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
