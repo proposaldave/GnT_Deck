@@ -48,6 +48,31 @@
   .use{display:grid;grid-template-columns:112px 1fr;gap:24px;align-items:center;border:1.5px solid rgba(184,149,74,.34);border-radius:10px;padding:26px;background:rgba(251,247,239,.60);margin-bottom:18px}
   .use .pct{font-family:'Fraunces',Georgia,serif;font-size:3rem;font-weight:850;color:var(--gold)}
   .use .txt{font-size:1.22rem;line-height:1.28;font-weight:800;color:rgba(26,22,18,.75)}
+  .mechanic{gap:22px}
+  .mechanic-title{font-size:4.65rem;line-height:.92;font-weight:850;max-width:1420px;margin:76px 0 12px}
+  .mechanic-sub{font-size:1.38rem;line-height:1.32;font-weight:800;color:rgba(26,22,18,.58);max-width:1280px}
+  .mechanic-map{display:grid;grid-template-columns:1fr 230px 1fr;gap:28px;align-items:center;margin-top:22px}
+  .mechanic-panel{border:1.5px solid rgba(184,149,74,.38);border-radius:10px;background:rgba(251,247,239,.66);padding:26px 30px;min-height:418px}
+  .mechanic-panel.gnr{border-color:rgba(200,70,44,.44);background:rgba(200,70,44,.045)}
+  .panel-head{font-family:'Fraunces',Georgia,serif;font-size:2.45rem;line-height:1;font-weight:850;color:var(--ink);margin-bottom:4px}
+  .panel-sub{font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(26,22,18,.44);margin-bottom:24px}
+  .mechanic-item{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;margin:22px 0}
+  .badge{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-weight:900;font-size:1.1rem}
+  .gnr .badge{background:var(--red)}
+  .mechanic-item h3{font-size:1.32rem;line-height:1.15;font-weight:900;color:var(--ink);margin-bottom:8px}
+  .mechanic-item p{font-size:.98rem;line-height:1.3;font-weight:750;color:rgba(26,22,18,.58)}
+  .same{display:grid;place-items:center;text-align:center;color:rgba(26,22,18,.62)}
+  .same .arrow{font-family:'Fraunces',Georgia,serif;font-size:5.8rem;line-height:.8;color:var(--gold)}
+  .same .same-label{font-size:.72rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:var(--red);margin-top:10px}
+  .same .same-note{font-size:1.05rem;line-height:1.24;font-weight:800;margin-top:18px}
+  .twist{display:grid;grid-template-columns:1fr 1.15fr;gap:34px;align-items:center;border:1.5px solid rgba(184,149,74,.38);border-radius:10px;background:rgba(251,247,239,.64);padding:24px 30px;margin-top:auto}
+  .twist-kicker{font-size:.62rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+  .twist-title{font-family:'Fraunces',Georgia,serif;font-size:2.25rem;line-height:1;font-weight:850;color:var(--ink)}
+  .twist-copy{font-size:1.2rem;line-height:1.26;font-weight:850;color:rgba(26,22,18,.72)}
+  .proof-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  .proof-pill{border:1.5px solid rgba(91,143,212,.42);border-radius:8px;background:rgba(91,143,212,.08);padding:13px 16px;text-align:center;font-size:.88rem;font-weight:900;color:rgba(26,22,18,.70)}
+  .proof-pill.red{border-color:rgba(200,70,44,.42);background:rgba(200,70,44,.06)}
+  .proof-pill.gold{border-color:rgba(184,149,74,.44);background:rgba(184,149,74,.10)}
 </style>
 </head>
 <body>
@@ -59,11 +84,35 @@
   <section class="slide active"><div class="canvas"><img class="source-img" src="assets/inkind/source_slides/01_source_title.png" alt="Copied slide from original GnR deck"></div></section>
 
   <section class="slide"><div class="canvas">
-    <div class="inkind-slide">
-      <div class="eyebrow">The inKind parallel</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
-      <h1><em>inKind</em> turns unused restaurant capacity into demand.<br>GnR does the same for courts.</h1>
-      <p class="sub">But our inventory has a second layer: the right people make the experience worth more than the time slot.</p>
-      <div class="rule"><div class="line">Empty tables expire. Empty courts expire. Social pull compounds.</div><div class="small">Operator-facing wedge</div></div>
+    <div class="inkind-slide mechanic">
+      <div class="eyebrow">Investor frame for inKind audience</div><div class="brand"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+      <h2 class="mechanic-title">The <em>inKind</em> mechanic, rebuilt for social sports.</h2>
+      <p class="mechanic-sub">Buy perishable capacity cheaply. Package it through a demand engine. Resell it as a higher-value experience.</p>
+      <div class="mechanic-map">
+        <div class="mechanic-panel">
+          <div class="panel-head">inKind</div>
+          <div class="panel-sub">Restaurant capacity engine</div>
+          <div class="mechanic-item"><div class="badge">1</div><div><h3>Buy discounted F&amp;B credit</h3><p>Restaurant gets capital. inKind gets future dining value.</p></div></div>
+          <div class="mechanic-item"><div class="badge">2</div><div><h3>Use the app as demand engine</h3><p>Diners discover, prepay, redeem, and return.</p></div></div>
+          <div class="mechanic-item"><div class="badge">3</div><div><h3>Fill seats that would expire</h3><p>Operator sees cash now and traffic later.</p></div></div>
+        </div>
+        <div class="same">
+          <div class="arrow">-&gt;</div>
+          <div class="same-label">same mechanic</div>
+          <div class="same-note">Perishable inventory becomes packaged demand.</div>
+        </div>
+        <div class="mechanic-panel gnr">
+          <div class="panel-head">Give n Receive</div>
+          <div class="panel-sub">Social sports capacity engine</div>
+          <div class="mechanic-item"><div class="badge">1</div><div><h3>Buy off-peak court hours</h3><p>Club gets guaranteed revenue from dead zones.</p></div></div>
+          <div class="mechanic-item"><div class="badge">2</div><div><h3>Use AI matchmaking as demand engine</h3><p>GnR assembles games players actually want.</p></div></div>
+          <div class="mechanic-item"><div class="badge">3</div><div><h3>Sell the match, not the slot</h3><p>Player pays for fit, confidence, and zero coordination burden.</p></div></div>
+        </div>
+      </div>
+      <div class="twist">
+        <div><div class="twist-kicker">The new twist</div><div class="twist-title">The court is cheap. The match is premium.</div></div>
+        <div><p class="twist-copy">Potential price ceiling: above a raw prime-time court booking because players are buying the right people, not just time on a court.</p><div class="proof-row"><div class="proof-pill">86.7% small-group acceptance</div><div class="proof-pill red">0.65 -> 0.90 AUC in week one</div><div class="proof-pill gold">SMS-first B2B2C</div></div></div>
+      </div>
     </div>
   </div></section>
 
