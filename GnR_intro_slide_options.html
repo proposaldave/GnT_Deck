@@ -349,6 +349,68 @@
 
     .slide-a .footer-line { bottom: 25px; }
 
+    .slide-aplus .headline {
+      top: 6.2%;
+      left: 10%;
+      right: 10%;
+      font-size: clamp(2.95rem, 4.62vw, 5.55rem);
+      line-height: 1;
+    }
+
+    .slide-aplus .proof-line {
+      position: absolute;
+      z-index: 12;
+      left: 19%;
+      right: 19%;
+      top: 25.1%;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 1.75vw, 2.05rem);
+      line-height: 1.22;
+      text-align: center;
+      color: rgba(26,22,18,.72);
+    }
+
+    .slide-aplus .panel-img,
+    .slide-aplus .panel-frame {
+      top: 33.2%;
+      height: 39.8%;
+    }
+
+    .slide-aplus .panel-img {
+      object-position: center center;
+    }
+
+    .slide-aplus .panel-label {
+      top: 36.2%;
+      font-size: clamp(.72rem, .96vw, 1.08rem);
+    }
+
+    .slide-aplus .panel-label small {
+      max-width: 340px;
+      line-height: 1.45;
+      margin-top: 9px;
+      letter-spacing: .16em;
+    }
+
+    .slide-aplus .label-left { left: 14%; }
+    .slide-aplus .label-right { right: 9.5%; }
+
+    .slide-aplus .vs {
+      top: 53.2%;
+      width: clamp(62px, 5.2vw, 94px);
+      height: clamp(62px, 5.2vw, 94px);
+      font-size: clamp(1.18rem, 1.85vw, 2rem);
+    }
+
+    .slide-aplus .subline {
+      left: 13%;
+      right: 13%;
+      bottom: 8.4%;
+      font-size: clamp(1.8rem, 2.78vw, 3.35rem);
+      line-height: 1.06;
+    }
+
     .slide-b .hero-img {
       object-position: center 47%;
       opacity: .98;
@@ -660,12 +722,34 @@
   <header class="lab-head">
     <div>
       <p class="lab-kicker">Intro slide sandbox</p>
-      <h1 class="lab-title">Six first-slide candidates</h1>
+      <h1 class="lab-title">Final opener direction</h1>
     </div>
-    <p class="lab-decision"><strong>DECISION:</strong> Option A is the recommendation because it keeps your strongest left/right contrast and says the whole company in one glance.</p>
+    <p class="lab-decision"><strong>DECISION:</strong> A+ is the slide to beat because it says the company in five seconds: technology measures digital exhaust; GnR measures human connection.</p>
   </header>
 
   <main>
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">A+</span>
+          <h2 class="option-title">Final recommendation <span class="pick">Build this</span></h2>
+        </div>
+        <p class="option-note">Investor-clear without going flat: metrics vs meaning, then GnR as coordination software.</p>
+      </div>
+      <section class="slide slide-aplus">
+        <div class="eyebrow">The missing human signal</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <h1 class="headline">Technology measures the metrics. It misses the <em>meaning.</em></h1>
+        <p class="proof-line">Feeling connected predicts health, happiness, and longevity.</p>
+        <img class="panel-img" src="assets/intro-option-a-plus-split-signal.png" alt="">
+        <div class="panel-frame"></div>
+        <div class="panel-label label-left">Technology measures<small>Likes &bull; followers &bull; screen time &bull; status</small></div>
+        <div class="panel-label label-right">Technology misses<small>Belonging &bull; being known &bull; shared experience &bull; contribution</small></div>
+        <div class="vs">vs.</div>
+        <p class="subline">GnR turns that missing signal into <em>coordination software.</em></p>
+      </section>
+    </article>
+
     <article class="option">
       <div class="option-meta">
         <div class="option-name">
@@ -727,7 +811,7 @@
       <div class="option-meta">
         <div class="option-name">
           <span class="option-letter">Option D</span>
-          <h2 class="option-title">The lonely network</h2>
+          <h2 class="option-title">The lonely network <span class="pick">Reject</span></h2>
         </div>
         <p class="option-note">Emotionally direct; use only if the deck wants to start problem-first.</p>
       </div>
@@ -806,7 +890,7 @@
       <div class="option-meta">
         <div class="option-name">
           <span class="option-letter">Option F</span>
-          <h2 class="option-title">Current opener evolved</h2>
+          <h2 class="option-title">Current opener evolved <span class="pick">Backup only</span></h2>
         </div>
         <p class="option-note">Closest to the existing deck; safest drop-in if we choose continuity over a new opener.</p>
       </div>
@@ -823,7 +907,7 @@
   <section class="copybar">
     <div>
       <h2>Recommendation</h2>
-      <p>Use Option A as the first slide. It makes the invisible-signal thesis concrete without turning the opener into a product demo.</p>
+      <p>Use A+ as the first slide. It names the category clearly without losing the emotional human contrast.</p>
     </div>
     <div>
       <h2>Backup</h2>
@@ -831,7 +915,7 @@
     </div>
     <div>
       <h2>Next build</h2>
-      <p>Refine Option A: simplify the center labels, regenerate a cleaner right-side human scene if needed, then port only that slide into `GnR_deck.html`.</p>
+      <p>Port A+ into `GnR_deck.html`, then make Option E the follow-up explainer if the deck needs the taxonomy.</p>
     </div>
   </section>
 </body>
