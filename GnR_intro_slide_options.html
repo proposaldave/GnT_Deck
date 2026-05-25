@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GnR Intro Slide Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..900,35..100,0..1&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fbf7ef;
+      --cream-deep: #f3ead8;
+      --paper-edge: #e8dcc5;
+      --ink: #1a1612;
+      --gold: #b8954a;
+      --gold-deep: #8a6420;
+      --blue: #5B8FD4;
+      --blue-deep: #123456;
+      --red: #c8462c;
+      --soft-shadow: 0 24px 80px rgba(26,22,18,.22);
+      --serif: "Fraunces", "Playfair Display", Georgia, serif;
+      --ui: "Manrope", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #17120e;
+      color: var(--cream);
+      font-family: var(--ui);
+    }
+
+    body {
+      padding: 34px 0 72px;
+    }
+
+    .lab-head {
+      width: min(1600px, calc(100vw - 44px));
+      margin: 0 auto 26px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .lab-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 850;
+      font-size: clamp(2.4rem, 4vw, 5.2rem);
+      line-height: .96;
+      letter-spacing: 0;
+      color: var(--cream);
+    }
+
+    .lab-kicker {
+      margin: 0 0 10px;
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .lab-decision {
+      max-width: 520px;
+      margin: 0 0 8px;
+      font-size: .94rem;
+      line-height: 1.45;
+      color: rgba(251,247,239,.74);
+      text-align: right;
+    }
+
+    .option {
+      width: min(1600px, calc(100vw - 44px));
+      margin: 0 auto 46px;
+    }
+
+    .option-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 0 0 10px;
+      color: rgba(251,247,239,.70);
+    }
+
+    .option-name {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .option-letter {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .option-title {
+      margin: 0;
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: rgba(251,247,239,.90);
+    }
+
+    .option-note {
+      margin: 0;
+      font-size: .86rem;
+      line-height: 1.35;
+      text-align: right;
+      color: rgba(251,247,239,.58);
+    }
+
+    .pick {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      border: 1px solid rgba(184,149,74,.42);
+      background: rgba(184,149,74,.12);
+      color: #f4dfad;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .slide {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 36%, #fffaf1 0%, var(--cream) 42%, var(--cream-deep) 100%);
+      color: var(--ink);
+      box-shadow: var(--soft-shadow);
+      isolation: isolate;
+    }
+
+    .slide:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+      background-image:
+        radial-gradient(circle at 20% 14%, rgba(184,149,74,.08), transparent 28%),
+        radial-gradient(circle at 82% 78%, rgba(91,143,212,.055), transparent 34%),
+        linear-gradient(90deg, rgba(26,22,18,.035), transparent 14%, transparent 86%, rgba(26,22,18,.035));
+      mix-blend-mode: multiply;
+    }
+
+    .eyebrow {
+      position: absolute;
+      top: 28px;
+      left: 48px;
+      z-index: 30;
+      font-family: var(--ui);
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .mark {
+      position: absolute;
+      top: 26px;
+      right: 42px;
+      z-index: 30;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 850;
+      letter-spacing: 0;
+      opacity: .86;
+    }
+
+    .mark .g { color: var(--blue); }
+    .mark .n { color: var(--gold); font-style: italic; padding: 0 .03em; }
+    .mark .r { color: var(--red); }
+
+    .headline {
+      position: absolute;
+      z-index: 12;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 5.2vw, 6.25rem);
+      line-height: .98;
+      letter-spacing: 0;
+      font-weight: 850;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .headline em,
+    .gold-word {
+      color: var(--gold-deep);
+      font-style: italic;
+      font-weight: 850;
+    }
+
+    .subline {
+      position: absolute;
+      z-index: 13;
+      margin: 0;
+      font-family: var(--serif);
+      color: var(--ink);
+      text-align: center;
+      font-size: clamp(1.72rem, 2.5vw, 3.05rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .footer-line {
+      position: absolute;
+      z-index: 14;
+      left: 50%;
+      bottom: 42px;
+      transform: translateX(-50%);
+      width: min(980px, 70%);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+      color: var(--gold);
+      font-family: var(--ui);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .footer-line:before,
+    .footer-line:after {
+      content: "";
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,149,74,.74));
+    }
+
+    .footer-line:after {
+      background: linear-gradient(90deg, rgba(184,149,74,.74), transparent);
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .panel-img {
+      position: absolute;
+      left: 4.2%;
+      right: 4.2%;
+      top: 23%;
+      height: 48.6%;
+      object-fit: cover;
+      width: 91.6%;
+      z-index: 2;
+      border-radius: 30px;
+      box-shadow: 0 22px 70px rgba(26,22,18,.16);
+    }
+
+    .panel-frame {
+      position: absolute;
+      left: 4.2%;
+      right: 4.2%;
+      top: 23%;
+      height: 48.6%;
+      z-index: 4;
+      border: 1px solid rgba(251,247,239,.32);
+      border-radius: 30px;
+      pointer-events: none;
+    }
+
+    .panel-label {
+      position: absolute;
+      z-index: 8;
+      top: 26.2%;
+      font-family: var(--ui);
+      font-size: clamp(.78rem, 1.08vw, 1.22rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .panel-label small {
+      display: block;
+      margin-top: 8px;
+      font-size: .50em;
+      letter-spacing: .26em;
+      opacity: .78;
+    }
+
+    .label-left { left: 19.4%; color: #e6eef8; text-shadow: 0 2px 12px rgba(0,0,0,.45); }
+    .label-right { right: 15.8%; color: var(--gold-deep); text-shadow: 0 1px 8px rgba(255,255,255,.65); }
+
+    .vs {
+      position: absolute;
+      z-index: 9;
+      top: 45.2%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: clamp(70px, 6.1vw, 108px);
+      height: clamp(70px, 6.1vw, 108px);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 2px solid rgba(184,149,74,.84);
+      background: rgba(251,247,239,.88);
+      color: var(--gold-deep);
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.1vw, 2.3rem);
+      font-weight: 850;
+      box-shadow: 0 12px 34px rgba(26,22,18,.18);
+    }
+
+    .slide-a .headline {
+      top: 7.1%;
+      left: 7%;
+      right: 7%;
+      font-size: clamp(2.55rem, 4.15vw, 5rem);
+      line-height: 1.02;
+    }
+
+    .slide-a .subline {
+      left: 20%;
+      right: 20%;
+      bottom: 9.7%;
+      font-size: clamp(2.15rem, 3.35vw, 4.05rem);
+      line-height: 1.03;
+    }
+
+    .slide-a .footer-line { bottom: 25px; }
+
+    .slide-b .hero-img {
+      object-position: center 47%;
+      opacity: .98;
+    }
+
+    .slide-b:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.84) 21%, rgba(251,247,239,.15) 43%, rgba(251,247,239,.06) 100%);
+    }
+
+    .slide-b .headline {
+      top: 7.1%;
+      left: 9%;
+      right: 9%;
+      font-size: clamp(3rem, 5vw, 6.15rem);
+    }
+
+    .slide-b .subline {
+      left: 18%;
+      right: 18%;
+      bottom: 8%;
+      font-size: clamp(1.9rem, 2.65vw, 3.2rem);
+    }
+
+    .slide-c .hero-img {
+      object-position: center center;
+      opacity: 1;
+    }
+
+    .slide-c:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.84) 24%, rgba(251,247,239,.10) 48%, rgba(251,247,239,.86) 86%, rgba(251,247,239,.98) 100%),
+        linear-gradient(90deg, rgba(251,247,239,.74) 0%, transparent 24%, transparent 74%, rgba(251,247,239,.55) 100%);
+    }
+
+    .slide-c .headline {
+      top: 6.2%;
+      left: 10%;
+      right: 10%;
+      font-size: clamp(3.1rem, 5.05vw, 6.15rem);
+      line-height: .99;
+    }
+
+    .slide-c .proof {
+      position: absolute;
+      z-index: 11;
+      left: 23%;
+      right: 23%;
+      bottom: 14.6%;
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 2.08vw, 2.45rem);
+      line-height: 1.16;
+      text-align: center;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .slide-c .subline {
+      left: 17%;
+      right: 17%;
+      bottom: 5.6%;
+      font-size: clamp(2.25rem, 3.7vw, 4.3rem);
+    }
+
+    .slide-d .hero-img {
+      object-position: center center;
+      opacity: 1;
+    }
+
+    .slide-d:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.80) 24%, rgba(251,247,239,.08) 58%, rgba(251,247,239,.90) 91%, rgba(251,247,239,.98) 100%),
+        linear-gradient(90deg, rgba(251,247,239,.08), rgba(251,247,239,.12) 58%, rgba(251,247,239,.52));
+    }
+
+    .slide-d .headline {
+      top: 6.2%;
+      left: 9%;
+      right: 9%;
+      font-size: clamp(3.05rem, 5.2vw, 6.25rem);
+      line-height: .99;
+    }
+
+    .slide-d .subline {
+      left: 17%;
+      right: 17%;
+      bottom: 7%;
+      font-size: clamp(1.88rem, 2.8vw, 3.35rem);
+      line-height: 1.12;
+    }
+
+    .slide-e {
+      padding: 0;
+    }
+
+    .slide-e .headline {
+      top: 6.5%;
+      left: 11%;
+      right: 11%;
+      font-size: clamp(2.65rem, 4.25vw, 5.1rem);
+      line-height: 1.02;
+    }
+
+    .diagram {
+      position: absolute;
+      z-index: 4;
+      left: 7.4%;
+      right: 7.4%;
+      top: 26.2%;
+      height: 45.5%;
+      display: grid;
+      grid-template-columns: 1fr 104px 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .diagram-side {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .diagram-head {
+      text-align: center;
+      font-family: var(--ui);
+      font-size: clamp(.8rem, 1.06vw, 1.16rem);
+      font-weight: 800;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+    }
+
+    .diagram-side.right .diagram-head { color: var(--gold-deep); }
+
+    .metrics-grid,
+    .signals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .metric-card {
+      min-height: 128px;
+      border-radius: 16px;
+      border: 1px solid rgba(18,52,86,.16);
+      background: linear-gradient(145deg, rgba(255,255,255,.70), rgba(91,143,212,.08));
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      box-shadow: 0 16px 36px rgba(18,52,86,.08);
+    }
+
+    .metric-icon,
+    .signal-icon {
+      width: 54px;
+      height: 54px;
+      display: block;
+    }
+
+    .metric-card span,
+    .signal-card span {
+      font-family: var(--ui);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+    }
+
+    .signal-card {
+      min-height: 128px;
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      color: var(--gold-deep);
+    }
+
+    .signal-card span { color: var(--gold-deep); }
+
+    .diagram .vs {
+      position: static;
+      transform: none;
+      width: 96px;
+      height: 96px;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .diagram .divider {
+      position: absolute;
+      top: -20px;
+      bottom: -20px;
+      left: 50%;
+      width: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent, rgba(184,149,74,.72), transparent);
+      z-index: -1;
+    }
+
+    .slide-e .subline {
+      left: 19%;
+      right: 19%;
+      bottom: 8%;
+      font-size: clamp(2.2rem, 3.45vw, 4.05rem);
+    }
+
+    .slide-f .hero-img {
+      object-position: center center;
+      opacity: 1;
+    }
+
+    .slide-f:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.78) 22%, rgba(251,247,239,.16) 44%, rgba(251,247,239,.00) 100%);
+    }
+
+    .slide-f .headline {
+      top: 7%;
+      left: 8%;
+      right: 8%;
+      font-size: clamp(2.85rem, 4.75vw, 5.85rem);
+      line-height: 1.02;
+    }
+
+    .slide-f .subline {
+      top: 25%;
+      left: 24%;
+      right: 24%;
+      bottom: auto;
+      padding: 10px 18px;
+      background: rgba(251,247,239,.64);
+      color: var(--red);
+      font-size: clamp(1.75rem, 2.72vw, 3.15rem);
+      font-style: italic;
+      box-shadow: 0 14px 36px rgba(251,247,239,.24);
+    }
+
+    .copybar {
+      width: min(1600px, calc(100vw - 44px));
+      margin: 10px auto 0;
+      border-top: 1px solid rgba(184,149,74,.28);
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      color: rgba(251,247,239,.68);
+    }
+
+    .copybar h2 {
+      margin: 0 0 8px;
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .copybar p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      body { padding-top: 18px; }
+      .lab-head,
+      .option { width: min(100vw - 24px, 1600px); }
+      .lab-head,
+      .option-meta,
+      .copybar { display: block; }
+      .lab-decision,
+      .option-note { text-align: left; margin-top: 8px; }
+      .copybar { width: min(100vw - 24px, 1600px); }
+      .copybar > * { margin-bottom: 16px; }
+      .eyebrow { top: 14px; left: 18px; font-size: .42rem; }
+      .mark { top: 12px; right: 16px; font-size: .78rem; }
+      .diagram { gap: 10px; grid-template-columns: 1fr 62px 1fr; left: 4%; right: 4%; top: 27%; height: 45%; }
+      .metrics-grid, .signals-grid { gap: 6px; }
+      .metric-card, .signal-card { min-height: 58px; border-radius: 8px; }
+      .metric-icon, .signal-icon { width: 26px; height: 26px; }
+      .metric-card span, .signal-card span { font-size: .38rem; letter-spacing: .12em; }
+      .diagram .vs { width: 52px; height: 52px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="lab-head">
+    <div>
+      <p class="lab-kicker">Intro slide sandbox</p>
+      <h1 class="lab-title">Six first-slide candidates</h1>
+    </div>
+    <p class="lab-decision"><strong>DECISION:</strong> Option A is the recommendation because it keeps your strongest left/right contrast and says the whole company in one glance.</p>
+  </header>
+
+  <main>
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option A</span>
+          <h2 class="option-title">Machines vs meaning <span class="pick">Recommended</span></h2>
+        </div>
+        <p class="option-note">Best investor opener: the problem, category, and product wedge are visible immediately.</p>
+      </div>
+      <section class="slide slide-a">
+        <div class="eyebrow">Neuroscience <span style="color:#b8954a">&bull;</span> Longitudinal <span style="color:#b8954a">&bull;</span> Public Health <span style="color:#b8954a">&bull;</span> Epidemiology</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <h1 class="headline">Feeling connected is one of the strongest predictors of <em>a fulfilling life.</em></h1>
+        <img class="panel-img" src="assets/intro-option-a-split-signal.png" alt="">
+        <div class="panel-frame"></div>
+        <div class="panel-label label-left">Technology can see<small>Measured by machines</small></div>
+        <div class="panel-label label-right">Technology can&rsquo;t see<small>Not measured by machines</small></div>
+        <div class="vs">vs.</div>
+        <p class="subline">The signal that matters most is still <em>invisible</em> to technology.</p>
+        <div class="footer-line"><span>GnR measures the missing signal</span></div>
+      </section>
+    </article>
+
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option B</span>
+          <h2 class="option-title">The scale</h2>
+        </div>
+        <p class="option-note">Most memorable metaphor; weaker than A on immediate product/category clarity.</p>
+      </div>
+      <section class="slide slide-b">
+        <div class="eyebrow">The missing signal</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <img class="hero-img" src="assets/intro-option-b-scale.png" alt="">
+        <h1 class="headline">The most important feeling in a fulfilling life is still <em>invisible</em> to technology.</h1>
+        <p class="subline">GnR measures the missing signal.</p>
+      </section>
+    </article>
+
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option C</span>
+          <h2 class="option-title">The dashboard void</h2>
+        </div>
+        <p class="option-note">Strong bridge into product; slightly less emotional as the first beat.</p>
+      </div>
+      <section class="slide slide-c">
+        <div class="eyebrow">Human connection technology</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <img class="hero-img" src="assets/intro-option-c-dashboard-void.png" alt="">
+        <h1 class="headline">Humans are deeply wired to feel <em>connected.</em></h1>
+        <p class="proof">Feeling connected is one of the strongest predictors of <em>a fulfilling life.</em></p>
+        <p class="subline">But technology still can&rsquo;t see it.</p>
+      </section>
+    </article>
+
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option D</span>
+          <h2 class="option-title">The lonely network</h2>
+        </div>
+        <p class="option-note">Emotionally direct; use only if the deck wants to start problem-first.</p>
+      </div>
+      <section class="slide slide-d">
+        <div class="eyebrow">The connected era</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <img class="hero-img" src="assets/intro-option-d-lonely-network.png" alt="">
+        <h1 class="headline">The most digitally connected era in history feels <em>lonelier</em> than ever.</h1>
+        <p class="subline">Technology still can&rsquo;t measure the feeling that makes life fulfilling.</p>
+      </section>
+    </article>
+
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option E</span>
+          <h2 class="option-title">Signal taxonomy split</h2>
+        </div>
+        <p class="option-note">Crisp explainer; better as slide 2 after A opens emotionally.</p>
+      </div>
+      <section class="slide slide-e">
+        <div class="eyebrow">What technology misses</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <h1 class="headline">Feeling connected is one of the strongest predictors of <em>a fulfilling life.</em></h1>
+        <div class="diagram">
+          <div class="divider"></div>
+          <div class="diagram-side">
+            <div class="diagram-head">Technology can see</div>
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <svg class="metric-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 51s-21-12.5-21-29a12 12 0 0 1 21-8 12 12 0 0 1 21 8c0 16.5-21 29-21 29Z" fill="#123456"/></svg>
+                <span>Likes</span>
+              </div>
+              <div class="metric-card">
+                <svg class="metric-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="21" r="11" stroke="#123456" stroke-width="4"/><path d="M14 52c2.5-12 10-18 18-18s15.5 6 18 18" stroke="#123456" stroke-width="4" stroke-linecap="round"/></svg>
+                <span>Followers</span>
+              </div>
+              <div class="metric-card">
+                <svg class="metric-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M15 49V30M27 49V20M39 49V13M51 49V26" stroke="#123456" stroke-width="6" stroke-linecap="round"/></svg>
+                <span>Screen time</span>
+              </div>
+              <div class="metric-card">
+                <svg class="metric-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M20 13h24v10c0 11-5 18-12 18s-12-7-12-18V13Z" stroke="#123456" stroke-width="4"/><path d="M20 19H10c1 11 5 17 12 18M44 19h10c-1 11-5 17-12 18M32 41v10M23 51h18" stroke="#123456" stroke-width="4" stroke-linecap="round"/></svg>
+                <span>Status</span>
+              </div>
+            </div>
+          </div>
+          <div class="vs">vs.</div>
+          <div class="diagram-side right">
+            <div class="diagram-head">Technology can&rsquo;t see</div>
+            <div class="signals-grid">
+              <div class="signal-card">
+                <svg class="signal-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="18" r="9" stroke="#8a6420" stroke-width="4"/><circle cx="16" cy="25" r="7" stroke="#8a6420" stroke-width="4"/><circle cx="48" cy="25" r="7" stroke="#8a6420" stroke-width="4"/><path d="M18 51c2-11 7-16 14-16s12 5 14 16M6 49c1.4-8 5-12 10-12M48 37c5 0 8.6 4 10 12" stroke="#8a6420" stroke-width="4" stroke-linecap="round"/></svg>
+                <span>Belonging</span>
+              </div>
+              <div class="signal-card">
+                <svg class="signal-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 52s-22-13-22-30a12 12 0 0 1 22-7 12 12 0 0 1 22 7c0 17-22 30-22 30Z" stroke="#8a6420" stroke-width="4" stroke-linejoin="round"/></svg>
+                <span>Being known</span>
+              </div>
+              <div class="signal-card">
+                <svg class="signal-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="21" cy="20" r="8" stroke="#8a6420" stroke-width="4"/><circle cx="43" cy="20" r="8" stroke="#8a6420" stroke-width="4"/><path d="M12 53V43c0-8 4-13 9-13s9 5 9 13v10M34 53V43c0-8 4-13 9-13s9 5 9 13v10M28 39h8" stroke="#8a6420" stroke-width="4" stroke-linecap="round"/></svg>
+                <span>Shared experience</span>
+              </div>
+              <div class="signal-card">
+                <svg class="signal-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M14 42h12l12-12c4-4 10 2 6 6L32 48H14V42Z" stroke="#8a6420" stroke-width="4" stroke-linejoin="round"/><path d="M40 13c4-5 13-2 13 6 0 9-13 16-13 16S27 28 27 19c0-8 9-11 13-6Z" stroke="#8a6420" stroke-width="4" stroke-linejoin="round"/></svg>
+                <span>Contribution</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="subline">The signal that matters most is still <em>invisible</em> to technology.</p>
+      </section>
+    </article>
+
+    <article class="option">
+      <div class="option-meta">
+        <div class="option-name">
+          <span class="option-letter">Option F</span>
+          <h2 class="option-title">Current opener evolved</h2>
+        </div>
+        <p class="option-note">Closest to the existing deck; safest drop-in if we choose continuity over a new opener.</p>
+      </div>
+      <section class="slide slide-f">
+        <div class="eyebrow">Neuroscience <span style="color:#b8954a">&bull;</span> Longitudinal <span style="color:#b8954a">&bull;</span> Public Health <span style="color:#b8954a">&bull;</span> Epidemiology</div>
+        <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <img class="hero-img" src="assets/cs-frontier-pink1.png" alt="">
+        <h1 class="headline">Feeling connection &rarr; <em>#1 predictor</em> of a fulfilling life.</h1>
+        <p class="subline">But it&rsquo;s invisible to technology.</p>
+      </section>
+    </article>
+  </main>
+
+  <section class="copybar">
+    <div>
+      <h2>Recommendation</h2>
+      <p>Use Option A as the first slide. It makes the invisible-signal thesis concrete without turning the opener into a product demo.</p>
+    </div>
+    <div>
+      <h2>Backup</h2>
+      <p>Use Option B if Dave wants one mythic image instead of the left/right explanatory panel. It is more emotional, less explicit.</p>
+    </div>
+    <div>
+      <h2>Next build</h2>
+      <p>Refine Option A: simplify the center labels, regenerate a cleaner right-side human scene if needed, then port only that slide into `GnR_deck.html`.</p>
+    </div>
+  </section>
+</body>
+</html>
