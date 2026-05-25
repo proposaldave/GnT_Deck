@@ -89,6 +89,13 @@
   .count { position:fixed; bottom:28px; right:38px; z-index:25; font-size:.65rem; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,22,18,.52); }
   .split-title { display:grid; grid-template-columns:1.08fr .92fr; gap:54px; align-items:center; }
   .visual-panel { position:relative; min-height:520px; border:1.5px solid rgba(184,149,74,.30); border-radius:10px; background:linear-gradient(180deg,rgba(251,247,239,.72),rgba(243,234,216,.64)); overflow:hidden; }
+  .photo-panel { position:relative; min-height:560px; border:1.5px solid rgba(184,149,74,.34); border-radius:10px; overflow:hidden; background:#1a1612; box-shadow:0 24px 70px rgba(26,22,18,.16); }
+  .photo-panel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .photo-panel::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(26,22,18,.56), transparent 42%), linear-gradient(180deg, transparent 58%, rgba(26,22,18,.40)); pointer-events:none; }
+  .photo-panel.soft::after { background:linear-gradient(90deg, rgba(26,22,18,.62), rgba(26,22,18,.10) 46%, rgba(26,22,18,.18)), linear-gradient(180deg, transparent 62%, rgba(26,22,18,.46)); }
+  .photo-label { position:absolute; left:24px; bottom:22px; z-index:2; display:flex; flex-direction:column; gap:6px; color:#fbf7ef; max-width:380px; }
+  .photo-label .top { font-size:.58rem; font-weight:900; letter-spacing:.22em; text-transform:uppercase; color:#f0cc86; }
+  .photo-label .main { font-family:'Fraunces',Georgia,serif; font-size:1.62rem; line-height:1.1; font-weight:800; letter-spacing:0; }
   .circle { position:absolute; border-radius:50%; border:1.6px solid rgba(184,149,74,.45); background:rgba(251,247,239,.72); display:grid; place-items:center; text-align:center; font-size:.72rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); padding:14px; }
   .line { position:absolute; height:2px; background:linear-gradient(90deg,transparent,rgba(184,149,74,.70),transparent); transform-origin:left center; }
   .table { display:grid; border:1.3px solid rgba(184,149,74,.32); border-radius:8px; overflow:hidden; background:rgba(251,247,239,.64); }
@@ -129,11 +136,12 @@
         <h1><span class="gold">inKind</span> buys empty tables.<br><span class="red">GnR</span> buys empty courts.</h1>
         <p class="sub">Then we fill them with the right people. That is the difference between discounted inventory and premium social demand.</p>
       </div>
-      <div class="visual-panel">
-        <div class="circle" style="width:184px;height:184px;left:42px;top:72px;color:var(--gold)">Empty<br>tables</div>
-        <div class="circle" style="width:184px;height:184px;right:42px;top:72px;color:var(--red)">Empty<br>courts</div>
-        <div class="line" style="left:206px;top:164px;width:270px;transform:rotate(0deg)"></div>
-        <div class="circle" style="width:220px;height:220px;left:50%;top:260px;transform:translateX(-50%);border-color:rgba(91,143,212,.66);box-shadow:0 0 44px rgba(91,143,212,.16)">Invitation<br>Graph</div>
+      <div class="photo-panel">
+        <img src="assets/inkind/empty_courts_social_demand.png" alt="Empty off-peak court beside warm dining space with invitation-light arcs">
+        <div class="photo-label">
+          <div class="top">Distressed inventory becomes social demand</div>
+          <div class="main">Empty court-hour -> curated group -> repeatable signal.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -296,14 +304,22 @@
 
   <section class="slide" data-slot="9" data-title="Vibe Anchors">
     <div class="eyebrow">What inKind people should see</div>
-    <div class="stage">
-      <h2>The future of off-peak demand is <em>vibe anchors.</em></h2>
-      <div class="grid three">
-        <div class="card"><div class="kicker">Today</div><p>Restaurants and clubs discount time slots because the room feels empty.</p></div>
-        <div class="card red"><div class="kicker">GnR signal</div><p>Some people make other people say yes. Not influencers. Anchors of trust, fun, and belonging.</p></div>
-        <div class="card blue"><div class="kicker">Tomorrow</div><p>The system knows: if Johnny is there, Lisa says yes to pickleball, and Maya says yes to lunch after.</p></div>
+    <div class="stage split-title">
+      <div>
+        <h2>The future of off-peak demand is <em>vibe anchors.</em></h2>
+        <div class="grid" style="margin-top:8px">
+          <div class="card"><div class="kicker">Today</div><p>Restaurants and clubs discount time slots because the room feels empty.</p></div>
+          <div class="card red"><div class="kicker">GnR signal</div><p>Some people make other people say yes. Not influencers. Anchors of trust, fun, and belonging.</p></div>
+          <div class="card blue"><div class="kicker">Tomorrow</div><p>The system knows: if Johnny is there, Lisa says yes to pickleball, and Maya says yes to lunch after.</p></div>
+        </div>
       </div>
-      <p class="sub">This is the bridge from empty courts to empty tables. Social pull is portable demand intelligence.</p>
+      <div class="photo-panel soft">
+        <img src="assets/inkind/vibe_anchors_after_play.png" alt="Pickleball players and a dining group connected by invitation-light arcs">
+        <div class="photo-label">
+          <div class="top">Portable demand intelligence</div>
+          <div class="main">From a court invite to the lunch table after.</div>
+        </div>
+      </div>
     </div>
   </section>
 
