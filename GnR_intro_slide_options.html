@@ -412,8 +412,9 @@
     }
 
     .slide-b .hero-img {
-      object-position: center 47%;
+      object-position: center 53%;
       opacity: .98;
+      transform: scale(1.035);
     }
 
     .slide-b:before {
@@ -423,21 +424,58 @@
       z-index: 3;
       pointer-events: none;
       background:
-        linear-gradient(180deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.84) 21%, rgba(251,247,239,.15) 43%, rgba(251,247,239,.06) 100%);
+        linear-gradient(180deg, rgba(251,247,239,.99) 0%, rgba(251,247,239,.91) 24%, rgba(251,247,239,.28) 43%, rgba(251,247,239,.00) 62%, rgba(251,247,239,.70) 86%, rgba(251,247,239,.96) 100%);
     }
 
     .slide-b .headline {
-      top: 7.1%;
-      left: 9%;
-      right: 9%;
-      font-size: clamp(3rem, 5vw, 6.15rem);
+      top: 6.4%;
+      left: 8.5%;
+      right: 8.5%;
+      font-size: clamp(2.35rem, 3.68vw, 4.45rem);
+      line-height: 1.03;
     }
 
     .slide-b .subline {
-      left: 18%;
-      right: 18%;
-      bottom: 8%;
-      font-size: clamp(1.9rem, 2.65vw, 3.2rem);
+      left: 25%;
+      right: 25%;
+      bottom: 4.7%;
+      font-size: clamp(1.25rem, 1.82vw, 2.15rem);
+      line-height: 1.05;
+      padding-top: 14px;
+      border-top: 1px solid rgba(184,149,74,.34);
+    }
+
+    .slide-b .scale-label {
+      position: absolute;
+      z-index: 8;
+      top: 49.8%;
+      transform: translateX(-50%);
+      font-family: var(--ui);
+      font-size: clamp(.58rem, .76vw, .86rem);
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      text-shadow: 0 1px 10px rgba(251,247,239,.62);
+    }
+
+    .slide-b .scale-label small {
+      display: block;
+      margin-top: 7px;
+      font-size: .62em;
+      letter-spacing: .18em;
+      opacity: .78;
+    }
+
+    .slide-b .scale-left {
+      left: 27.5%;
+      color: #123456;
+    }
+
+    .slide-b .scale-right {
+      left: 72.5%;
+      color: var(--gold-deep);
     }
 
     .slide-c .hero-img {
@@ -772,19 +810,21 @@
       </section>
     </article>
 
-    <article class="option">
+    <article class="option" id="scale-prime">
       <div class="option-meta">
         <div class="option-name">
           <span class="option-letter">Option B</span>
-          <h2 class="option-title">The scale</h2>
+          <h2 class="option-title">Scale Prime <span class="pick">Fixed</span></h2>
         </div>
-        <p class="option-note">Most memorable metaphor; weaker than A on immediate product/category clarity.</p>
+        <p class="option-note">The emotional backup: mythic, simpler, now spaced so the image and text breathe.</p>
       </div>
       <section class="slide slide-b">
         <div class="eyebrow">The missing signal</div>
         <div class="mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
         <img class="hero-img" src="assets/intro-option-b-scale.png" alt="">
         <h1 class="headline">The most important feeling in a fulfilling life is still <em>invisible</em> to technology.</h1>
+        <div class="scale-label scale-left">Technology measures<small>Metrics and status</small></div>
+        <div class="scale-label scale-right">Technology misses<small>Human connection</small></div>
         <p class="subline">GnR measures the missing signal.</p>
       </section>
     </article>
