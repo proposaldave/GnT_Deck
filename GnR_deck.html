@@ -18878,7 +18878,7 @@ window.cs1m7Reverse = function() {
   #cs-hct-system-pink1 .hcts-panel,
 </style>
 
-<div class="casey-slide ds-focus hct-system-slide" id="cs-hct-system" data-stage="0" onclick="csHctSystemAdvance()" style="display:none">
+<div class="casey-slide ds-focus hct-system-slide trash-slide" id="cs-hct-system" data-stage="0" onclick="csHctSystemAdvance()" style="display:none">
   <img class="hcts-bg" src="assets/cs-brand-codex.png" alt="" onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="hcts-wash"></div><div class="hcts-shade"></div>
   <div class="hcts-eye">Human connection technology</div>
@@ -29550,7 +29550,7 @@ const SLIDE_ORDER = [
   // [Dave 2026-05-14 MERGE] cs-intro6 + cs-frontier MERGED into a single slot-1 opener (cs-frontier carries the merged content). cs-intro6 demoted to red-dot alt at slot 1 for A/B comparison. All slots past slot 1 shift -1. Merge approach: hero now states the #1-predictor science truth, sub names the parabolic demand reality, curve carries the demand visualization, '4 sciences agree' strip grounds the claim, positioning band carves the category + wedge.
   // [Dave 2026-05-14 PM v4] cs-frontier-iconic PROMOTED to slot-1 primary per Dave 'I like this, let's make it the first slide, replacing current first slide which you can move to being a red dot slide to the left'. cs-frontier (former primary) demoted to first red-dot alt below.
   'cs-frontier-pink1', //  1 PRIMARY · [Dave 2026-05-17 LATEST] Promoted from pink-dot alt → main slot 1 ('i like this, use this as main slide one and put current main slide one as a pink dot next to it'). Sunset town/village wide-angle watercolor bg + 'Real connection → #1 predictor of a fulfilling life' headline.
-  'cs-hct-system', //  2 HUMAN CONNECTION TECHNOLOGY - animated system category bridge.
+  // [Dave 2026-05-25] cs-hct-system moved to TRASH_ORDER per screenshot request.
   // [Dave 2026-05-17 PM] cs-givefirst-slide2 REMOVED from main flow per Dave: 'major bug' — bg image asset cs-givefirst-slide2.png was never saved to disk; slide was rendering with broken image alt text. The original cs-givefirst-art at slot 18 still carries the same content cleanly. HTML retained as silent backup; restore by re-adding this line.
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   // [Dave 2026-05-18 LATEST v4] Slot 2 PRIMARY swapped back to cs-1m8-title-A per Dave screenshot: large centered GnR wordmark + Give n Receive label + Live a life headline + full diptych. Previous main cs-1m8-title-B demoted to leftmost RED-DOT alt below.
@@ -29943,6 +29943,7 @@ const APPENDIX_TOTAL = APPENDIX_ORDER.length;
 const TRASH_ORDER = [
   'cs-ask',
   'cs-ask-coasts',
+  'cs-hct-system',
   'cs-hct-system-pink1',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
@@ -35749,4 +35750,3 @@ document.addEventListener('keydown', function(e){
 
 </body>
 </html>
-
