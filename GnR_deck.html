@@ -9224,10 +9224,9 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-        <span>But what happens in our communities isn&rsquo;t digitized.</span>
-        <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:50%;background:#1877F2;box-shadow:0 8px 18px rgba(24,119,242,0.35);flex-shrink:0">
-          <svg width="52" height="52" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
-          <span aria-hidden="true" style="position:absolute;left:8px;right:8px;top:50%;height:8px;border-radius:999px;background:#c8462c;box-shadow:0 2px 8px rgba(200,70,44,0.42);transform:translateY(-50%) rotate(-18deg);transform-origin:center;z-index:2"></span>
+        <span>But real communities don&rsquo;t have a <em>like button</em><span style="color:#1877F2">.</span></span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#1877F2;box-shadow:0 3px 8px rgba(24,119,242,0.3);flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
         </span>
       </div>
       <!-- [Dave 2026-05-17 v3] tg-sub MOVED to AFTER the trapped-wrap graphic per Dave 'move the text "Our private thoughts and feelings..." underneath the attached graphic'. The line now lands as the verbal caption to the visual instead of preceding it. -->
@@ -11068,7 +11067,7 @@ window.cs1m7Reverse = function() {
   <!-- [Dave 2026-05-14 PM] 'GnR measures…' rewritten to 'We measure…' — founder-voice + single subject (same 'we' for measure + schedule). Cleaner grammar, stronger pitch voice.
        [Dave 2026-05-17] Font size bumped (clamp 1.05/1.6/1.5 → 1.3/1.95/1.85) per Dave 'slightly increase font size'. -->
   <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.3rem,1.95vw,1.85rem);color:rgba(26,22,18,0.78);line-height:1.32;margin:30px auto 0;font-weight:500;font-style:italic;letter-spacing:-0.012em;max-width:1180px;text-align:center">
-    Measures connection at the exact same time as it&rsquo;s scheduled.
+    GnR measures connection at the exact same time as it&rsquo;s scheduled.
   </div>
 
 </div>
@@ -20385,13 +20384,8 @@ window.cs1m7Reverse = function() {
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-last-of-type(2) { transition-delay:0.60s; }
   #cs-samecourt[data-stage="2"] .sc-col.blue .sc-item:nth-last-of-type(1) { transition-delay:1.15s; }
   /* Click hint chevron — visible until BOTH columns are revealed (stage < 2). */
-  #cs-samecourt .sc-click-hint { position:absolute; bottom:34px; left:50%; transform:translateX(-50%); z-index:6; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:rgba(184,149,74,0.78); display:flex; flex-direction:column; align-items:center; gap:6px; pointer-events:none; animation: scClickHintPulse 2.4s ease-in-out infinite; }
-  #cs-samecourt[data-stage="2"] .sc-click-hint { display:none; }
-  #cs-samecourt .sc-click-hint svg { width:20px; height:14px; stroke:#b8954a; }
-  @keyframes scClickHintPulse { 0%,100% { opacity:0.55; transform:translate(-50%, 0); } 50% { opacity:0.95; transform:translate(-50%, 4px); } }
   /* Export/PDF mode: skip the gating entirely so the bullets always render in static screenshots. */
   html[data-export="1"] #cs-samecourt .sc-item { opacity:1 !important; transform:none !important; transition:none !important; }
-  html[data-export="1"] #cs-samecourt .sc-click-hint { display:none !important; }
   #cs-samecourt .sc-col.red .sc-item-icon svg{stroke:rgba(200,70,44,0.72)}
   #cs-samecourt .sc-col.blue .sc-item-icon svg{stroke:rgba(91,143,212,0.85)}
   #cs-samecourt .sc-col.red .sc-item{color:rgba(26,22,18,0.82)}
@@ -20483,7 +20477,7 @@ window.cs1m7Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-samecourt" data-stage="0" onclick="if(window.csSamecourtAdvance) window.csSamecourtAdvance(); event.stopPropagation()" style="cursor:pointer">
   <!-- [Dave 2026-05-18 LATEST] Background image REMOVED per Dave 'look at the "Flip the incentives → Unleash connection & community" slide - it has a background image, but it doesn't need one. get rid of the background image'. Slide now relies on the cream radial bg + sc-col gradients only. The bg image (cs-samecourt-bg.png) was moved to cs-magnetic (next slide). The .scf-bg + .scf-wash CSS rules still exist below but no longer have matching DOM nodes — harmless no-op. -->
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Communities need the right incentive system.</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span> <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
@@ -20686,10 +20680,6 @@ window.cs1m7Reverse = function() {
 
     </div>
     <!-- [Dave 2026-05-18 LATEST] Click hint — only visible while sc-items are still hidden (data-shown="0"). Auto-hides after the first advance. -->
-    <div class="sc-click-hint">
-      <span>Click or scroll to reveal</span>
-      <svg viewBox="0 0 18 14" fill="none"><path d="M3 4 L9 10 L15 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
   </section>
 </div>
 
@@ -20749,7 +20739,7 @@ window.cs1m7Reverse = function() {
 </style>
 
 <div class="casey-slide ds-focus" id="cs-samecourt-pink1" style="display:none">
-  <div class="scp-eyebrow">Communities need the right incentive system.</div>
+  <div class="scp-eyebrow">Community incentive system</div>
   <section class="scp-stage">
     <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
     <h1 class="scp-headline"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span> <em>&mdash; Charlie Munger</em></h1>
@@ -20759,7 +20749,7 @@ window.cs1m7Reverse = function() {
 </div>
 
 <div class="casey-slide ds-focus" id="cs-samecourt-pink2" style="display:none">
-  <div class="scp-eyebrow">Communities need the right incentive system.</div>
+  <div class="scp-eyebrow">Community incentive system</div>
   <section class="scp-stage">
     <img class="scp-bg" src="assets/cs-samecourt-pink.png" alt="A pickleball court split visually — left half cool-toned with an isolated player; right half warm gold with people shaking hands and walking off court together." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
     <h1 class="scp-headline"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span> <em>&mdash; Charlie Munger</em></h1>
@@ -20913,7 +20903,7 @@ window.cs1m7Reverse = function() {
   <img class="scf3-bg" src="assets/cs-samecourt-pink3.png" alt="Warehouse-scale pickleball facility filled with players at golden hour — courts, action, community gathering." onerror="this.onerror=null;this.src='assets/gnr_vnext_real_world_graph.png';this.onerror=function(){this.onerror=null;this.src='assets/gnr_vnext_community_builders.png'}"/>
   <div class="scf3-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-18] Eyebrow ↔ headline SWAPPED. Eyebrow now carries the slide-mechanic label ("Flip the incentive → Unleash connection & community"); the Munger quote is promoted to the slide HEADER. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Communities need the right incentive system.</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">Community incentive system</div>
   <section class="sc-stage">
     <div class="sc-wrap">
       <h1 class="sc-hero"><span style="font-style:italic">&ldquo;Show me the incentive and I&rsquo;ll show you the outcome&rdquo;</span> <em style="font-style:italic;color:#b8954a;font-weight:850">&mdash; Charlie Munger</em></h1>
@@ -22815,7 +22805,7 @@ window.cs1m7Reverse = function() {
   }
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6" data-shown="0" onclick="csFv6Advance();event.stopPropagation()" style="cursor:pointer">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.86rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
   <section class="fv-stage">
     <!-- Connector arc with blue/red endpoints (mirrors brand mark) -->
     <svg class="fv-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
@@ -22895,7 +22885,7 @@ window.cs1m7Reverse = function() {
      "The merging of technology with our real, deepest human-social data".
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div class="casey-slide ds-focus" id="cs-fv6-altA" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.86rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
   <section class="fv-stage">
     <svg class="fv-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
       <path d="M 8 22 Q 40 -4 72 22" stroke="rgba(184,149,74,0.65)" stroke-width="1.3" fill="none"/>
@@ -22926,7 +22916,7 @@ window.cs1m7Reverse = function() {
 
 <!-- cs-fv6-altB · PINK-DOT ALT — gap framing -->
 <div class="casey-slide ds-focus" id="cs-fv6-altB" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.86rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
   <section class="fv-stage">
     <svg class="fv-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
       <path d="M 8 22 Q 40 -4 72 22" stroke="rgba(184,149,74,0.65)" stroke-width="1.3" fill="none"/>
@@ -22957,7 +22947,7 @@ window.cs1m7Reverse = function() {
 
 <!-- cs-fv6-altC · PINK-DOT ALT — infrastructure framing -->
 <div class="casey-slide ds-focus" id="cs-fv6-altC" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.86rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b8954a;z-index:10;">What is real human connection technology?</div>
   <section class="fv-stage">
     <svg class="fv-arc" width="80" height="32" viewBox="0 0 80 32" fill="none">
       <path d="M 8 22 Q 40 -4 72 22" stroke="rgba(184,149,74,0.65)" stroke-width="1.3" fill="none"/>
@@ -26616,7 +26606,7 @@ window.csA7m1Reverse = function() {
             <circle cx="50" cy="14" r="6" fill="none" stroke="#5B8FD4" stroke-width="1.8"/>
             <path d="M 40 38 Q 40 26 50 26 Q 60 26 60 38" fill="none" stroke="#5B8FD4" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;color:#3a73b8;line-height:1.15;text-align:center;letter-spacing:-0.01em">Human<br>connection</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;color:#3a73b8;line-height:1.15;text-align:center;letter-spacing:-0.01em">Feel<br>connected</div>
         </div>
       </div>
 
@@ -26646,13 +26636,23 @@ window.csA7m1Reverse = function() {
       <div class="c2c-hub" style="display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;">
         <div class="c2c-hub-circle" style="position:relative;width:clamp(170px,15vw,210px);height:clamp(170px,15vw,210px);display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:radial-gradient(circle at 50% 45%, rgba(255,250,237,0.96) 0%, rgba(241,224,179,0.56) 65%, rgba(241,224,179,0) 100%);border:1.8px solid rgba(184,149,74,0.70);box-shadow:0 0 0 5px rgba(184,149,74,0.09), 0 0 44px rgba(184,149,74,0.26);">
           <div style="position:absolute;inset:-14px;border-radius:50%;border:1.2px dashed rgba(184,149,74,0.55);pointer-events:none;"></div>
-          <svg width="70" height="52" viewBox="0 0 70 52" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
-            <path d="M18 31 C18 20 26 12 37 12 C45 12 51 16 55 22" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M55 22 L56 12 L64 19" stroke="#b8954a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M52 21 C52 32 44 40 33 40 C25 40 19 36 15 30" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M15 30 L14 40 L6 33" stroke="#c8462c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="35" cy="26" r="8" fill="rgba(184,149,74,0.16)" stroke="#b8954a" stroke-width="1.4"/>
-            <path d="M35 20 L37 24 L41 24.5 L38 27.4 L38.8 31.8 L35 29.7 L31.2 31.8 L32 27.4 L29 24.5 L33 24 Z" fill="#b8954a"/>
+          <svg width="78" height="54" viewBox="0 0 78 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:8px">
+            <defs>
+              <filter id="c2cRecipGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2.4" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path d="M18 28 C27 12 51 12 60 28" stroke="#5B8FD4" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M60 26 L63 20 L66 28" stroke="#5B8FD4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M60 32 C50 48 28 48 18 32" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M18 34 L15 40 L12 32" stroke="#c8462c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="30" r="8.5" fill="#fbf7ef" stroke="#5B8FD4" stroke-width="1.8"/>
+            <circle cx="60" cy="30" r="8.5" fill="#fbf7ef" stroke="#c8462c" stroke-width="1.8"/>
+            <circle cx="39" cy="27" r="11" fill="rgba(184,149,74,0.18)" stroke="#b8954a" stroke-width="1.5" filter="url(#c2cRecipGlow)"/>
+            <path d="M34 27 C34 23.5 36.4 21.6 39 24.3 C41.6 21.6 44 23.5 44 27 C44 30.2 39 33.3 39 33.3 C39 33.3 34 30.2 34 27Z" fill="#b8954a"/>
+            <path d="M26 30 H31" stroke="#b8954a" stroke-width="1.7" stroke-linecap="round"/>
+            <path d="M47 30 H52" stroke="#b8954a" stroke-width="1.7" stroke-linecap="round"/>
           </svg>
           <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;color:#9b7835;line-height:1.15;text-align:center;letter-spacing:-0.01em">Reciprocity</div>
         </div>
@@ -27085,7 +27085,7 @@ window.csA7m1Reverse = function() {
 
   <div style="text-align:center">
     <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.6rem,2.8vw,2.55rem);font-weight:750;color:#1a1612;line-height:1.14;letter-spacing:-0.018em;max-width:1280px;margin:0 auto">
-      Modern life wires us for <em style="font-style:italic;font-weight:500;color:#b8954a">everything except a fulfilling life</em>.
+      Modern life wires us for <em style="font-style:italic;font-weight:500;color:#b8954a">everything except feeling fulfilled</em>.
     </div>
   </div>
 
@@ -29556,7 +29556,7 @@ const SLIDE_ORDER = [
   'cs-1m8',   //  2 BRAND FLOW - G n R wordmark/value split: what we give fuels communities, network sees/measures, people/moments reciprocated back.
   // [Dave 2026-05-24] cs-brand-codex is MAIN slot 3 per Dave: Introducing Give 'n Receive / Invitation-based matchmaking. cs-1m8-envelopes is the pink-dot rollback to the left.
   'cs-brand-codex', //  3 BRAND FLOW - Introducing Give 'n Receive / invitation-based matchmaking.
-  'cs-mv6-merge', //  4 HUMANITY'S ENDGAME - mission/demand curve moved after measured/multiplied brand slide.
+  // [Dave 2026-05-26] cs-mv6-merge MOVED LATE. Mission was too early in the product reveal; now lands in the final-quarter vision section after cs-wedge1.
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
   // [Dave 2026-05-18 LATEST v9] cs-a7m1 REMOVED from main flow per Dave 'remove this slide from the main deck, making it a red dot slide to the left of slide 2'. Now lives as a RED-DOT alt at slot 2 (cs-1m8). All SLIDE_ALTS keys past slot 3 decrement by 1 — 4→3, 6→5, 13→12, 14→13, 15→14, 16→15, 24→23. Total main-flow slides was 23 before cs-1m8-envelopes promotion.
@@ -29586,6 +29586,7 @@ const SLIDE_ORDER = [
   'cs-19',    // 3× court fee revenue · For Your Club ('3x your community') — follows the wedge claim
   'cs-racketeer-att-arc', // RACKETEER · 3-quote narrative arc — first prospective customer outside NEPC
   'cs-wedge1',     // "The next great network is the one that helps us find ourselves and find each other."
+  'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   // [Dave 2026-05-24 LATER] Founder fit now lands after product, proof, customer, and vision context, immediately before team/CTO.
   'cs-18-vd4',    // Founder / CEO / Dave Velardo (Wheelhouse) / Three pillars + Steve Jobs hero
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN — now immediately after cs-fv6. [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
@@ -35047,7 +35048,7 @@ const SPEAKER_NOTES = {
 <p><strong>Transition:</strong> The science backs this up — every field of it.</p>`
   },
   'cs-1bm1': {
-    title: "Modern life wires us for everything except a fulfilling life",
+    title: "Modern life wires us for everything except feeling fulfilled",
     oneLine: "Eyebrow: 'We're not wired for this.' Modern life optimizes everything but the layer science says matters most — human connection.",
     body: `<p style="border-left:3px solid #b8954a;padding-left:12px;color:rgba(26,22,18,0.85);background:rgba(184,149,74,0.05);padding:10px 14px;border-radius:4px"><strong>Speaker note (Dave 2026-05-17):</strong> The slide title now reads <em>"We're not wired for this."</em> — but the long-form line behind it is the one to say out loud: <em><strong>"Modern life wired us wrong, and it's pulling us apart."</strong></em> Say that line, then let the imbalance halves do the work.</p>
 <p><strong>Open by setting the frame.</strong> Lead with <em>"Modern life wired us wrong, and it's pulling us apart."</em> Pause two beats. Let the audience sit with the imbalance.</p>
