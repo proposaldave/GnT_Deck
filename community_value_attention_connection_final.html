@@ -111,8 +111,8 @@
     position: absolute;
     inset: 0 0 0 49%;
     background:
-      radial-gradient(circle at 72% 48%, rgba(184, 149, 74, .28), transparent 32%),
-      radial-gradient(circle at 34% 46%, rgba(91, 143, 212, .16), transparent 26%),
+      radial-gradient(circle at 72% 48%, rgba(184, 149, 74, .18), transparent 32%),
+      radial-gradient(circle at 34% 46%, rgba(91, 143, 212, .10), transparent 26%),
       linear-gradient(180deg, rgba(255,255,255,.025), rgba(0,0,0,.10));
     z-index: 1;
   }
@@ -130,18 +130,22 @@
 
   .visual {
     position: absolute;
-    right: 70px;
-    top: 118px;
-    width: 875px;
-    height: 850px;
+    right: 0;
+    top: 160px;
+    width: 980px;
+    height: 680px;
     z-index: 2;
   }
 
-  .visual svg {
+  .visual img {
     width: 100%;
     height: 100%;
     display: block;
-    overflow: visible;
+    object-fit: cover;
+    object-position: center center;
+    filter: saturate(1.05) contrast(1.05);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 7%, #000 88%, transparent 100%);
   }
 
   .word {
@@ -155,7 +159,7 @@
   }
 
   .word.capture {
-    left: 1044px;
+    left: 1038px;
     color: rgba(251, 247, 239, .42);
   }
 
@@ -188,83 +192,7 @@
     <div class="dark-field" aria-hidden="true"></div>
 
     <div class="visual" aria-hidden="true">
-      <svg viewBox="0 0 875 850" role="img">
-        <defs>
-          <linearGradient id="funnel" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stop-color="#5B8FD4" stop-opacity=".9"/>
-            <stop offset=".72" stop-color="#5B8FD4" stop-opacity=".22"/>
-            <stop offset="1" stop-color="#5B8FD4" stop-opacity=".02"/>
-          </linearGradient>
-          <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#f7d786" stop-opacity=".6"/>
-            <stop offset=".34" stop-color="#b8954a" stop-opacity=".2"/>
-            <stop offset="1" stop-color="#b8954a" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
-            <feGaussianBlur stdDeviation="13" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-
-        <g transform="translate(16 80)">
-          <path d="M26 18 L324 18 L214 650 L136 650 Z" fill="url(#funnel)" stroke="#5B8FD4" stroke-opacity=".4"/>
-          <g stroke="#8bb8f0" stroke-opacity=".18" fill="none">
-            <path d="M70 98 C116 210 146 410 175 585"/>
-            <path d="M268 84 C224 228 198 404 175 585"/>
-            <path d="M164 132 C178 284 176 420 175 585"/>
-          </g>
-          <g fill="#fbf7ef" opacity=".9">
-            <circle cx="70" cy="98" r="7"/>
-            <circle cx="164" cy="132" r="7"/>
-            <circle cx="268" cy="84" r="5"/>
-            <circle cx="112" cy="255" r="6"/>
-            <circle cx="220" cy="290" r="6"/>
-            <circle cx="160" cy="448" r="6"/>
-            <circle cx="175" cy="585" r="5"/>
-          </g>
-        </g>
-
-        <g transform="translate(398 36)">
-          <circle cx="258" cy="392" r="344" fill="url(#halo)"/>
-          <g stroke="#b8954a" stroke-width="2.4" stroke-opacity=".72" fill="none">
-            <path d="M91 184 C182 112 338 112 452 210"/>
-            <path d="M91 184 C130 324 220 384 258 392"/>
-            <path d="M452 210 C376 276 324 344 258 392"/>
-            <path d="M68 524 C164 462 232 442 258 392"/>
-            <path d="M258 392 C340 436 424 484 496 570"/>
-            <path d="M154 640 C252 590 360 600 496 570"/>
-            <path d="M164 352 C254 260 372 312 514 392"/>
-            <path d="M258 392 C250 510 240 586 154 640"/>
-          </g>
-
-          <g filter="url(#glow)">
-            <circle cx="91" cy="184" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="452" cy="210" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="164" cy="352" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="380" cy="518" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="68" cy="524" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="496" cy="570" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="154" cy="640" r="47" fill="#1a1612" stroke="#b8954a" stroke-width="2.4"/>
-            <circle cx="258" cy="392" r="84" fill="#1a1612" stroke="#b8954a" stroke-width="3"/>
-          </g>
-
-          <g fill="#fbf7ef">
-            <g transform="translate(91 184)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(452 210)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(164 352)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(380 518)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(68 524)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(496 570)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-            <g transform="translate(154 640)"><circle cy="-13" r="14"/><path d="M-20 24 C-15 4 15 4 20 24" opacity=".88"/></g>
-          </g>
-
-          <text x="258" y="382" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="48" font-weight="850" fill="#fbf7ef">people</text>
-          <text x="258" y="424" text-anchor="middle" font-family="Manrope, sans-serif" font-size="17" font-weight="900" letter-spacing="3" fill="#b8954a">CREATE VALUE</text>
-        </g>
-      </svg>
+      <img src="assets/explorations/community-value-final/attention-connection-synthetic-visual.png" alt="">
     </div>
 
     <div class="word capture">Capture</div>
