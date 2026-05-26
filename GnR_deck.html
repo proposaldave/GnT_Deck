@@ -13184,8 +13184,8 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-11d .hg-flip-inner { transform: rotateY(180deg) !important; }
   #cs-11d .hg-ph .hg-env-flap { transform-origin: top; transform: rotateX(0deg); transition: transform .9s ease; }
   #cs-11d .hg-ph:hover .hg-env-flap { transform: rotateX(35deg); }
-  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:url('assets/cs-11d-cultural-shift-bg.png') center/cover no-repeat; opacity:.46; pointer-events:none; }
-  #cs-11d .c11d-bg::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 48%, rgba(243,234,216,.84) 0%, rgba(243,234,216,.70) 42%, rgba(243,234,216,.48) 100%); }
+  #cs-11d .c11d-bg { position:absolute; inset:0; z-index:0; background:url('assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png') center/cover no-repeat; opacity:.64; pointer-events:none; }
+  #cs-11d .c11d-bg::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 48%, rgba(243,234,216,.88) 0%, rgba(243,234,216,.72) 40%, rgba(243,234,216,.28) 100%); }
 </style>
 <div class="casey-slide ds-focus" id="cs-11d" data-left="0" data-right="0" style="cursor:default">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
@@ -30260,6 +30260,8 @@ const SLIDE_ALTS = {
   6: [],
   // Slot 5 (cs-2c — was slot 5 was slot 6) — no alts.
   // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
+  // [Codex 2026-05-26] cs-11d watercolor background preserved as a black-dot backup after active main moved to the implicit-signal image.
+  7: ['cs-11d-black-backup'],
   // [Dave 2026-05-26] cs-2c-schedule-measure DELETED per screenshot request. HTML retained as hidden rollback stub.
   8: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
@@ -30382,6 +30384,30 @@ CODEX_BG_REVIEW_ALTS.forEach(cfg => {
   if (!alts.includes(cfg.id)) alts.push(cfg.id);
   SLIDE_ALTS[cfg.slot] = alts;
 });
+
+(function createCs11dBlackBackup(){
+  if (!Array.isArray(SLIDE_ALTS[7]) || !SLIDE_ALTS[7].includes('cs-11d-black-backup')) return;
+  if (SLIDE_ORDER[6] !== 'cs-11d') return;
+  const source = document.getElementById('cs-11d');
+  if (!source || document.getElementById('cs-11d-black-backup')) return;
+  const clone = source.cloneNode(true);
+  clone.id = 'cs-11d-black-backup';
+  clone.classList.remove('active', 'casey-entered', 'pdf-show');
+  clone.setAttribute('data-bg-review-alt', 'black');
+  clone.style.display = 'none';
+  const inheritedCss = Array.from(document.querySelectorAll('style'))
+    .map(styleTag => styleTag.textContent || '')
+    .filter(css => css.includes('#cs-11d'))
+    .join('\n');
+  if (inheritedCss) {
+    const scopedStyle = document.createElement('style');
+    scopedStyle.textContent = inheritedCss.split('#cs-11d').join('#cs-11d-black-backup');
+    clone.insertBefore(scopedStyle, clone.firstChild);
+  }
+  const bg = clone.querySelector('.c11d-bg');
+  if (bg) bg.style.background = "url('assets/cs-11d-cultural-shift-bg.png') center/cover no-repeat";
+  source.insertAdjacentElement('afterend', clone);
+})();
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 
 // [Dave 2026-05-12] PDF MODE BOOTSTRAP — when ?pdf=1 is on, tag each main-flow slide with .pdf-show
@@ -30869,7 +30895,7 @@ window.csLabReverse = function() {
 };
 // cs-11d (Honesty Gap) — same per-card pattern as cs-1bm1 [Dave 2026-04-30 PM]
 window.cs11dAdvance = function() {
-  const slide = document.getElementById('cs-11d');
+  const slide = document.querySelector('#cs-11d.active, #cs-11d-black-backup.active') || document.getElementById('cs-11d');
   if (!slide || !slide.classList.contains('active')) return false;
   const left = slide.dataset.left === '1';
   const right = slide.dataset.right === '1';
@@ -30878,7 +30904,7 @@ window.cs11dAdvance = function() {
   return false;
 };
 window.cs11dReverse = function() {
-  const slide = document.getElementById('cs-11d');
+  const slide = document.querySelector('#cs-11d.active, #cs-11d-black-backup.active') || document.getElementById('cs-11d');
   if (!slide || !slide.classList.contains('active')) return false;
   const left = slide.dataset.left === '1';
   const right = slide.dataset.right === '1';
@@ -30887,7 +30913,7 @@ window.cs11dReverse = function() {
   return false;
 };
 window.cs11dToggle = function(side) {
-  const slide = document.getElementById('cs-11d');
+  const slide = document.querySelector('#cs-11d.active, #cs-11d-black-backup.active') || document.getElementById('cs-11d');
   if (!slide || !slide.classList.contains('active')) return;
   const key = side === 'left' ? 'left' : 'right';
   slide.dataset[key] = slide.dataset[key] === '1' ? '0' : '1';
@@ -32167,7 +32193,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     const isRedAlt = (altId === 'cs-16old' || altId === 'cs-lab' || altId === 'cs-18' || altId === 'cs-18-vd1' || altId === 'cs-18-vd5' || altId === 'cs-wedgefunnel' || altId === 'cs-1m8-title-A' || altId === 'cs-magnetic-orig');
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
-    const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup');
+    const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup' || altId === 'cs-11d-black-backup');
     altDot.className = 'casey-dot alt' + (isGreenAlt ? ' locked' : (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : '')))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
