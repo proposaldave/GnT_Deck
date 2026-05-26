@@ -12855,13 +12855,13 @@ window.cs1m7Reverse = function() {
 <section style="position:relative;min-height:100%;width:100%">
 <div class="gnr-lonely-bg" aria-hidden="true"><img src="design_refs/gnr_loneliness_deck_style.png" alt=""/></div>
 <!-- [Dave 2026-05-18 LATEST] Eyebrow trimmed per Dave 'Autonomous, abundant connection's core product → Core product'. -->
-<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">Core product</div>
+<div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10;">The core product to solve loneliness</div>
 <div class="inner gnr-reveal-on-advance" style="position:relative;z-index:1;padding-top:60px;text-align:center;max-width:1100px;margin:0 auto">
 
   <!-- Headline moved BELOW the large envelope, ABOVE the 3 small envelopes [Dave 2026-05-03 PM] -->
 
   <!-- Headline ABOVE the large envelope — Dave 2026-05-06 PM: bumped ~25% larger to command the slide -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.022em;max-width:1180px;margin:0 auto 8px;text-align:center">
+  <div class="gnr-load-hidden" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;color:#1a1612;line-height:1.12;letter-spacing:-0.022em;max-width:1180px;margin:0 auto 8px;text-align:center">
     <em style="font-style:italic;font-weight:500;color:#1a1612">The rise of the personalized invitation feed</em>
   </div>
 
@@ -12894,6 +12894,9 @@ window.cs1m7Reverse = function() {
   </div>
 
   <style>
+    #cs-gnr .gnr-load-hidden { transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); }
+    #cs-gnr:not([data-shown="1"]) .gnr-load-hidden { opacity:0 !important; transform:translateY(12px); pointer-events:none; }
+    #cs-gnr[data-shown="1"] .gnr-load-hidden { opacity:1; transform:translateY(0); }
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
     #cs-gnr.active[data-shown="1"] .gnr-env-hero { animation: gnrEnvHeroIn 1.0s cubic-bezier(.45,.05,.18,1) forwards 0.30s; }
     @keyframes gnrEnvHeroIn { to { opacity:1; transform:translateY(0) rotate(-1deg); } }
@@ -12908,8 +12911,8 @@ window.cs1m7Reverse = function() {
     html[data-export="1"] #cs-gnr .gnr-fs-strip { opacity:1 !important; transform:translate(-50%,-50%) !important; animation:none !important; }
   </style>
 
-  <!-- "GnR envelope experience" headline — always visible -->
-  <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
+  <!-- "GnR envelope experience" headline -->
+  <div class="gnr-load-hidden" style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.5rem,2.9vw,2.3rem);font-weight:700;color:#1a1612;line-height:1.2;letter-spacing:-0.016em;max-width:1080px;margin:14px auto 0;text-align:center">
     <span style="display:inline-block;padding:2px 14px 5px;border-radius:999px;background:rgba(251,247,239,0.72);box-shadow:0 8px 24px rgba(251,247,239,0.46)">
     Experience the <em style="font-style:italic;font-weight:500;color:#1a1612">envelope</em>
     </span>
