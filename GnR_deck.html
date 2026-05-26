@@ -26860,63 +26860,45 @@ window.csA7m1Reverse = function() {
 <!-- ===== cs-2c-measure-loop � PINK ALT for cs-2c [Dave 2026-05-20] ===== -->
 <style>
   #cs-2c-measure-loop { background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; }
-  #cs-2c-measure-loop .ml-stage { position:absolute; inset:0; padding:86px 92px 76px; display:grid; grid-template-rows:auto 1fr auto; gap:34px; }
+  #cs-2c-measure-loop:before { content:""; position:absolute; inset:-18%; background:radial-gradient(circle at 50% 48%,rgba(184,149,74,.24),rgba(184,149,74,.07) 35%,transparent 62%); pointer-events:none; }
+  #cs-2c-measure-loop .ml-stage { position:absolute; inset:0; padding:96px 104px 84px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:52px; }
   #cs-2c-measure-loop .ml-eyebrow { position:absolute; top:28px; left:48px; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#b8954a; z-index:10; }
-  #cs-2c-measure-loop .ml-title { margin:0 auto; max-width:1260px; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.9rem,5vw,5.1rem); line-height:1.02; font-weight:850; letter-spacing:-0.028em; color:#1a1612; }
+  #cs-2c-measure-loop .ml-title { margin:0 auto; max-width:1220px; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(4.2rem,7.3vw,7.7rem); line-height:.9; font-weight:900; letter-spacing:-0.035em; color:#1a1612; }
   #cs-2c-measure-loop .ml-title em { color:#b8954a; font-style:italic; }
-  #cs-2c-measure-loop .ml-body { display:grid; grid-template-columns:1fr 0.9fr 1fr; align-items:center; gap:34px; max-width:1600px; width:100%; margin:0 auto; }
-  #cs-2c-measure-loop .ml-panel { min-height:430px; border:1.4px solid rgba(26,22,18,0.12); background:rgba(251,247,239,0.68); box-shadow:0 18px 55px rgba(26,22,18,0.08); padding:34px; display:flex; flex-direction:column; justify-content:center; }
-  #cs-2c-measure-loop .ml-panel.red { border-left:5px solid #c8462c; }
-  #cs-2c-measure-loop .ml-panel.blue { border-left:5px solid #5B8FD4; }
-  #cs-2c-measure-loop .ml-kicker { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:850; letter-spacing:.22em; text-transform:uppercase; margin-bottom:18px; }
-  #cs-2c-measure-loop .ml-panel.red .ml-kicker { color:#c8462c; }
-  #cs-2c-measure-loop .ml-panel.blue .ml-kicker { color:#5B8FD4; }
-  #cs-2c-measure-loop .ml-line { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.35rem,2vw,2.05rem); line-height:1.15; font-weight:750; color:#1a1612; margin:12px 0; }
-  #cs-2c-measure-loop .ml-line span { font-style:italic; color:#b8954a; }
-  #cs-2c-measure-loop .ml-engine { position:relative; min-height:500px; display:flex; align-items:center; justify-content:center; }
-  #cs-2c-measure-loop .ml-orbit { position:absolute; width:min(34vw,470px); height:min(34vw,470px); border-radius:50%; border:1.4px dashed rgba(184,149,74,0.55); animation:mlSpin 32s linear infinite; }
-  #cs-2c-measure-loop .ml-orbit.o2 { width:min(25vw,350px); height:min(25vw,350px); border-color:rgba(91,143,212,0.35); animation-duration:24s; animation-direction:reverse; }
-  #cs-2c-measure-loop .ml-core { width:min(21vw,300px); height:min(21vw,300px); border-radius:50%; background:radial-gradient(circle at 50% 42%, #fffaf1 0%, #f2dfad 62%, rgba(184,149,74,0.2) 100%); border:1.8px solid rgba(184,149,74,0.7); box-shadow:0 0 0 8px rgba(184,149,74,0.08), 0 28px 80px rgba(184,149,74,0.24); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:2; }
-  #cs-2c-measure-loop .ml-core b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.55rem,2.35vw,2.35rem); line-height:1.02; color:#1a1612; }
-  #cs-2c-measure-loop .ml-core small { margin-top:12px; font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:#c8462c; }
-  #cs-2c-measure-loop .ml-chip { position:absolute; z-index:3; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; color:#1a1612; background:#fbf7ef; border:1px solid rgba(184,149,74,0.36); padding:9px 12px; box-shadow:0 10px 24px rgba(26,22,18,0.08); }
-  #cs-2c-measure-loop .ml-chip.c1 { top:22px; left:50%; transform:translateX(-50%); color:#5B8FD4; }
-  #cs-2c-measure-loop .ml-chip.c2 { right:8px; top:50%; transform:translateY(-50%); color:#c8462c; }
-  #cs-2c-measure-loop .ml-chip.c3 { bottom:22px; left:50%; transform:translateX(-50%); color:#b8954a; }
-  #cs-2c-measure-loop .ml-chip.c4 { left:8px; top:50%; transform:translateY(-50%); color:#2a8a4f; }
-  #cs-2c-measure-loop .ml-footer { text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.2rem,1.9vw,1.9rem); color:#1a1612; font-style:italic; }
-  #cs-2c-measure-loop .ml-footer strong { color:#c8462c; font-style:normal; }
-  @keyframes mlSpin { to { transform:rotate(360deg); } }
+  #cs-2c-measure-loop .ml-map { position:relative; width:min(1540px,100%); height:440px; display:grid; grid-template-columns:1fr 360px 1fr; align-items:center; gap:84px; }
+  #cs-2c-measure-loop .ml-question { position:relative; height:330px; display:flex; flex-direction:column; justify-content:center; padding:0 44px; background:rgba(251,247,239,.66); border:2px solid rgba(26,22,18,.12); box-shadow:0 24px 70px rgba(26,22,18,.08); }
+  #cs-2c-measure-loop .ml-question:before { content:""; position:absolute; top:0; bottom:0; width:8px; left:0; background:var(--rail); }
+  #cs-2c-measure-loop .ml-question.blue { --rail:#5B8FD4; }
+  #cs-2c-measure-loop .ml-question.red { --rail:#c8462c; }
+  #cs-2c-measure-loop .ml-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.26em; text-transform:uppercase; color:var(--rail); margin-bottom:22px; }
+  #cs-2c-measure-loop .ml-line { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.3rem,3.8vw,4.15rem); line-height:.96; font-weight:900; letter-spacing:-.03em; color:#1a1612; }
+  #cs-2c-measure-loop .ml-engine { position:relative; height:360px; display:flex; align-items:center; justify-content:center; }
+  #cs-2c-measure-loop .ml-engine:before { content:""; position:absolute; width:520px; height:2px; background:linear-gradient(90deg,#5B8FD4 0%,#b8954a 50%,#c8462c 100%); top:50%; left:50%; transform:translate(-50%,-50%); z-index:0; }
+  #cs-2c-measure-loop .ml-core { width:360px; height:360px; border-radius:50%; background:radial-gradient(circle at 50% 43%,#fffaf1 0%,#f3dfaa 62%,rgba(184,149,74,.26) 100%); border:3px solid rgba(184,149,74,.82); box-shadow:0 0 0 14px rgba(184,149,74,.10),0 34px 96px rgba(184,149,74,.34); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:2; }
+  #cs-2c-measure-loop .ml-core b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:4.5rem; line-height:.9; color:#1a1612; }
+  #cs-2c-measure-loop .ml-core small { margin-top:18px; font-family:'Manrope',sans-serif; font-size:.8rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#c8462c; }
+  #cs-2c-measure-loop .ml-footer { text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.1rem,3vw,3.2rem); line-height:1.05; font-weight:850; color:#1a1612; }
+  #cs-2c-measure-loop .ml-footer strong { color:#c8462c; font-style:italic; }
   html[data-export="1"] #cs-2c-measure-loop * { animation:none !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-2c-measure-loop" style="display:none">
   <div class="ml-eyebrow">Real-world community OS</div>
   <section class="ml-stage">
-    <h1 class="ml-title">Two impossible community problems. <em>One engine.</em></h1>
-    <div class="ml-body">
-      <div class="ml-panel red">
-        <div class="ml-kicker">Problem 1: invisible reality</div>
-        <div class="ml-line">No tech measures <span>who values spending time with who.</span></div>
-        <div class="ml-line">No tech measures <span>unique value exchange.</span></div>
-        <div class="ml-line">No tech understands <span>each person's role in the community.</span></div>
+    <h1 class="ml-title">Two questions.<br><em>One engine.</em></h1>
+    <div class="ml-map" aria-label="Two community questions answered by one GnR engine">
+      <div class="ml-question blue">
+        <div class="ml-kicker">Question 1</div>
+        <div class="ml-line">Who should be together?</div>
       </div>
       <div class="ml-engine" aria-hidden="true">
-        <div class="ml-orbit"></div>
-        <div class="ml-orbit o2"></div>
-        <div class="ml-chip c1">invite</div>
-        <div class="ml-chip c2">play</div>
-        <div class="ml-chip c3">measure</div>
-        <div class="ml-chip c4">learn</div>
-        <div class="ml-core"><b>GnR<br>Agentic AI</b><small>schedules + measures</small></div>
+        <div class="ml-core"><b>GnR</b><small>schedule + measure</small></div>
       </div>
-      <div class="ml-panel blue">
-        <div class="ml-kicker">Problem 2: manual coordination</div>
-        <div class="ml-line">Communities still run on <span>memory, texts, spreadsheets, and favors.</span></div>
-        <div class="ml-line">The hardest question is simple: <span>who should spend time together?</span></div>
-        <div class="ml-line">GnR answers that question <span>and records what actually happened.</span></div>
+      <div class="ml-question red">
+        <div class="ml-kicker">Question 2</div>
+        <div class="ml-line">What actually happened?</div>
       </div>
     </div>
-    <div class="ml-footer">The scheduling layer becomes the <strong>measurement layer</strong>.</div>
+    <div class="ml-footer">Every invitation becomes <strong>measured connection.</strong></div>
   </section>
 </div>
 
