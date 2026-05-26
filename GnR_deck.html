@@ -30190,6 +30190,37 @@ const SLIDE_ALTS = {
   // cs-brand-V13 ('What you give is you leaving a mark. / What you get is life sending it back.') REMOVED 2026-05-07 PM per Dave: 'delete this'. HTML retained as silent backup.
   // cs-brand-V14 ('You get back what matters most. / Like it was meant to be.') REMOVED 2026-05-07 per Dave: 'delete this'. HTML retained as silent backup.
 };
+
+// [Codex 2026-05-26] Green-dot background-image review alts.
+// Main-flow slides with an existing background image stay untouched. These
+// generated alts clone the active main slide at runtime, insert one emotional
+// image layer behind the cloned content, and register as same-slot green dots.
+const CODEX_BG_REVIEW_ALTS = [
+  { slot: 2,  sourceId: 'cs-1m8',                id: 'cs-1m8-bg-green',                image: 'assets/gnr_vnext_opener_constellation.png' },
+  { slot: 3,  sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
+  { slot: 4,  sourceId: 'cs-thegap',             id: 'cs-thegap-bg-green',             image: 'assets/explorations/cs-thegap-v4-invisible-reciprocity.png' },
+  { slot: 5,  sourceId: 'cs-community-business', id: 'cs-community-business-bg-green', image: 'assets/explorations/community-value-slide-options/bg-network-club.png' },
+  { slot: 6,  sourceId: 'cs-cultural-shift',     id: 'cs-cultural-shift-bg-green',     image: 'assets/gnr_vnext_openness_room.png' },
+  { slot: 8,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/v2/cs-11d/v1-hero-implicit-signal.-preview.png' },
+  { slot: 9,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
+  { slot: 13, sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
+  { slot: 14, sourceId: 'cs-11',                 id: 'cs-11-bg-green',                 image: 'assets/v2/cs-11/v1-hero-measurement.-preview.png' },
+  { slot: 15, sourceId: 'cs-3',                  id: 'cs-3-bg-green',                  image: 'assets/v2/cs-3/v1-hero-signal-density.-preview.png' },
+  { slot: 16, sourceId: 'cs-19',                 id: 'cs-19-bg-green',                 image: 'assets/v2/cs-19/v1-hero-revenue.-preview.png' },
+  { slot: 17, sourceId: 'cs-racketeer-att-arc',  id: 'cs-racketeer-att-arc-bg-green',  image: 'assets/inkind/visuals/inkind_social_layer.png' },
+  { slot: 18, sourceId: 'cs-wedge1',             id: 'cs-wedge1-bg-green',             image: 'assets/v2/cs-wedge1/v1-hero-expansion.-preview.png' },
+  { slot: 19, sourceId: 'cs-mv6-merge',          id: 'cs-mv6-merge-bg-green',          image: 'assets/cs-mv6-humans.png' },
+  { slot: 20, sourceId: 'cs-18-vd4',             id: 'cs-18-vd4-bg-green',             image: 'assets/v2/cs-18-vd4/v1-hero-founder.-preview.png' },
+  { slot: 21, sourceId: 'cs-27',                 id: 'cs-27-bg-green',                 image: 'assets/v2/cs-27/v1-hero-cto.-preview.png' },
+  { slot: 22, sourceId: 'cs-brand-V8',           id: 'cs-brand-V8-bg-green',           image: 'assets/cs-brand-codex.png' }
+];
+
+CODEX_BG_REVIEW_ALTS.forEach(cfg => {
+  if (SLIDE_ORDER[cfg.slot - 1] !== cfg.sourceId) return;
+  const alts = SLIDE_ALTS[cfg.slot] || [];
+  if (!alts.includes(cfg.id)) alts.push(cfg.id);
+  SLIDE_ALTS[cfg.slot] = alts;
+});
 const REVIEW_POSITION = 0; // Red no longer means "review"; red means rejected/not-main. Use ORANGE_REVIEW_* for consideration candidates.
 
 // [Dave 2026-05-12] PDF MODE BOOTSTRAP — when ?pdf=1 is on, tag each main-flow slide with .pdf-show
@@ -31844,6 +31875,42 @@ function getSlideEyebrowText(slideId) {
   return '';
 }
 
+// Materialize green-dot background review alts before nav/tooltips are built.
+// Keeps the main slide DOM untouched while giving Dave same-slot comparisons.
+(function createCodexBgReviewSlides(){
+  if (!Array.isArray(CODEX_BG_REVIEW_ALTS)) return;
+  CODEX_BG_REVIEW_ALTS.forEach(cfg => {
+    if (SLIDE_ORDER[cfg.slot - 1] !== cfg.sourceId) return;
+    const source = document.getElementById(cfg.sourceId);
+    if (!source || document.getElementById(cfg.id)) return;
+    const clone = source.cloneNode(true);
+    clone.id = cfg.id;
+    clone.classList.remove('active', 'casey-entered', 'pdf-show');
+    clone.setAttribute('data-bg-review-alt', 'green');
+    clone.setAttribute('data-bg-source', cfg.sourceId);
+    clone.style.display = 'none';
+    clone.style.overflow = 'hidden';
+
+    const layer = document.createElement('div');
+    layer.className = 'codex-bg-review-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    layer.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;';
+
+    const img = document.createElement('img');
+    img.src = cfg.image;
+    img.alt = '';
+    img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.54;filter:saturate(.92) contrast(.98);';
+
+    const wash = document.createElement('div');
+    wash.style.cssText = 'position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%);';
+
+    layer.appendChild(img);
+    layer.appendChild(wash);
+    clone.insertBefore(layer, clone.firstChild);
+    source.insertAdjacentElement('afterend', clone);
+  });
+})();
+
 function syncCaseyDotHighlightToActiveSlide() {
   const active = document.querySelector('.casey-slide.active');
   if (!active || inAppendix || inTrash || inStaff || inSeed || inConcept) return false;
@@ -31915,6 +31982,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST v7] Three title-slide candidates added as BLUE-DOT alts at slot 2.
     const isBlueAlt = (altId === 'cs-wedge1' || altId === 'cs-1m8-title-C' || altId === 'cs-hc-market-planet' || altId === 'cs-hc-market-attention' || altId === 'cs-hc-market-latent' || altId === 'cs-emotion-smile' || altId === 'cs-emotion-help' || altId === 'cs-emotion-uncaptured' || altId === 'cs-pb-silly-feature' || altId === 'cs-pb-silly-social');
     const isOrangeAlt = Array.isArray(ORANGE_REVIEW_ALTS) && ORANGE_REVIEW_ALTS.includes(altId);
+    const isGreenAlt = Array.isArray(CODEX_BG_REVIEW_ALTS) && CODEX_BG_REVIEW_ALTS.some(cfg => cfg.id === altId);
     // [Dave 2026-05-10 PM] cs-1 (former slot 2 title) demoted to RED-DOT alt at slot 2 — explicit override since slot 2 is not the REVIEW_POSITION.
     // [Dave 2026-05-10 PM] cs-16old + cs-lab also RED-DOT (cs-16old = restored complicated engine slide at slot 20; cs-lab = founder-slot alternate to cs-18 'My Wheelhouse').
     // [Dave 2026-05-18 LATEST v9] cs-a7m1 added to red-dot list (demoted from main slot 3 to red-dot alt of slot 2). [Dave 2026-05-17 v7] cs-magnetic-orig RESTORED as red-dot per Dave 'add a red dot slide to left of social pull slide' — was momentarily classified as black-dot but the explicit isPinkAlt check above for cs-merge3 doesn't affect cs-magnetic-orig, so it lands as red-dot here.
@@ -31922,7 +31990,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     // [Dave 2026-05-18 LATEST] BLACK-DOT alts — slides reviewed + decided to leave as-is.
     // [Dave 2026-05-18 LATEST] cs-pbfirst removed from black-dot list — slide DELETED per Dave 'delete this slide'.
     const isBlackAlt = (altId === 'cs-magnetic-orig' || altId === 'cs-1m8-black-backup');
-    altDot.className = 'casey-dot alt' + (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : ''))))));
+    altDot.className = 'casey-dot alt' + (isGreenAlt ? ' locked' : (isRedAlt ? ' review' : (isOrangeAlt || isReviewSlot ? ' orange-review' : (isBlackAlt ? ' black-alt' : (isPurpleAlt ? ' purple-alt' : (isPinkAlt ? ' pink-alt' : (isBlueAlt ? ' blue-alt' : '')))))));
     // Alt-dot tooltip pulls live from the alt slide's own eyebrow text [Dave 2026-05-07 sync rule]
     const altLabel = getSlideEyebrowText(altId);
     altDot.title = altLabel ? (altLabel + ' (alt for slide ' + pos + ')') : (altId + ' (alt for slide ' + pos + ')');
