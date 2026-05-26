@@ -9098,7 +9098,7 @@ window.cs1m7Reverse = function() {
   /* [Dave 2026-05-08] Compressed to match other slides' envelope per Dave: 'visual problem with this slide is the content takes up too much space compared to other slides'. Padding tightened, headline+subhead trimmed, SVG height capped, gaps reduced. */
   [id^="cs-thegap"] .tg-stage { display:flex; flex-direction:column; align-items:stretch; justify-content:center; min-height:100%; padding:32px 56px 28px; gap:4px; text-align:center; }
   [id^="cs-thegap"] .tg-head { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2rem,3.6vw,3.15rem); font-weight:700; color:#1a1612; line-height:1.05; letter-spacing:-0.02em; }
-  /* [Dave 2026-05-26] Active slide drops the literal like-button icon; the phrase stays text-only. */
+  /* [Dave 2026-05-26] Active slide restores the literal like-button icon and blue phrase. */
   [id^="cs-thegap"] .tg-head em { font-style:italic; font-weight:650; color:#c8462c; }
   [id^="cs-thegap"] .tg-sub { font-family:'Playfair Display',serif; font-size:clamp(1rem,1.5vw,1.3rem); color:rgba(26,22,18,0.75); line-height:1.4; max-width:1280px; margin:6px auto 0; }
   [id^="cs-thegap"] .tg-sub em { font-style:italic; color:#c8462c; font-weight:600; }
@@ -9107,8 +9107,8 @@ window.cs1m7Reverse = function() {
   #cs-thegap { background:#f3ead8 !important; overflow:hidden; }
   #cs-thegap .tg-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; z-index:0; opacity:1; filter:saturate(.96) contrast(.98); transition:opacity 0.95s cubic-bezier(.16,1,.30,1), filter 0.95s cubic-bezier(.16,1,.30,1); }
   #cs-thegap .tg-bg-wash { position:absolute; inset:0; z-index:1; opacity:0; pointer-events:none; background:linear-gradient(90deg, rgba(243,234,216,0.96) 0%, rgba(243,234,216,0.84) 42%, rgba(243,234,216,0.56) 100%); transition:opacity 0.95s cubic-bezier(.16,1,.30,1); }
-  #cs-thegap[data-shown="1"] .tg-bg { opacity:.42; filter:saturate(.82) contrast(.92); }
-  #cs-thegap[data-shown="1"] .tg-bg-wash { opacity:1; }
+  #cs-thegap[data-shown="1"] .tg-bg { opacity:.56; filter:saturate(.88) contrast(.94); }
+  #cs-thegap[data-shown="1"] .tg-bg-wash { opacity:.86; }
   #cs-thegap > .slide-eyebrow,
   #cs-thegap > section { position:relative; z-index:2; }
 
@@ -9915,7 +9915,10 @@ window.cs1m7Reverse = function() {
   <section style="position:relative;min-height:100%;width:100%">
     <div class="tg-stage">
       <div class="tg-head" style="opacity:1;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap">
-        <span>But real communities don&rsquo;t have a <em>like button</em>.</span>
+        <span>But real communities don&rsquo;t have a <em style="color:#5B8FD4">like button</em><span style="color:#5B8FD4">.</span></span>
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#5B8FD4;box-shadow:0 3px 8px rgba(91,143,212,0.30);flex-shrink:0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 21h4V9H2v12zM23 10c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+        </span>
       </div>
       <!-- [Dave 2026-05-17 v3] tg-sub MOVED to AFTER the trapped-wrap graphic per Dave 'move the text "Our private thoughts and feelings..." underneath the attached graphic'. The line now lands as the verbal caption to the visual instead of preceding it. -->
 
