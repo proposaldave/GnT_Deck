@@ -29833,33 +29833,34 @@ window.csA7m1Reverse = function() {
 <!-- ===== cs-community-business - Community is a different kind of business. ===== -->
 <style>
   #cs-community-business{background:#f3ead8!important;overflow:hidden;position:relative;color:#1a1612}
-  #cs-community-business:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(251,247,239,.78) 0%,rgba(251,247,239,.38) 34%,rgba(184,149,74,.08) 72%,transparent 100%);pointer-events:none}
-  #cs-community-business .cb-stage{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 84px 70px;text-align:center}
-  #cs-community-business .cb-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.2rem,6.7vw,7.15rem);font-weight:900;line-height:.94;letter-spacing:-.042em;margin:0;color:#1a1612;max-width:1340px}
+  #cs-community-business:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 24% 50%,rgba(251,247,239,.86) 0%,rgba(251,247,239,.48) 40%,transparent 74%),linear-gradient(90deg,rgba(251,247,239,.56),rgba(184,149,74,.10));pointer-events:none}
+  #cs-community-business .cb-stage{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:minmax(0,0.92fr) minmax(560px,1.08fr);gap:74px;align-items:center;padding:98px 86px 76px;text-align:left}
+  #cs-community-business .cb-copy{max-width:750px}
+  #cs-community-business .cb-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(4.45rem,6.05vw,6.9rem);font-weight:900;line-height:.94;letter-spacing:0;margin:0;color:#1a1612;max-width:760px}
   #cs-community-business .cb-title em{display:block;font-style:italic;color:#c8462c;font-weight:900}
-  #cs-community-business .cb-sub{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,2vw,2.1rem);font-style:italic;font-weight:650;line-height:1.22;color:rgba(26,22,18,.62);margin:42px 0 58px;max-width:1000px}
-  #cs-community-business .cb-map{display:grid;grid-template-columns:1fr 82px 1fr 82px 1fr;gap:18px;align-items:stretch;width:min(1400px,100%);min-height:315px}
-  #cs-community-business .cb-card{background:rgba(251,247,239,.72);border:1.5px solid rgba(184,149,74,.28);box-shadow:0 20px 56px rgba(26,22,18,.08);padding:34px 38px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0}
-  #cs-community-business .cb-card.missing{border:1.8px dashed rgba(200,70,44,.38);background:rgba(251,247,239,.45)}
-  #cs-community-business .cb-card.gnr{border-color:rgba(184,149,74,.48)}
-  #cs-community-business .cb-label{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.34em;text-transform:uppercase;color:rgba(26,22,18,.47);margin-bottom:26px}
+  #cs-community-business .cb-sub{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.44rem,1.85vw,2.05rem);font-style:italic;font-weight:650;line-height:1.24;color:rgba(26,22,18,.66);margin:34px 0 0;max-width:650px}
+  #cs-community-business .cb-map{display:grid;grid-template-columns:1fr;gap:12px;align-items:stretch;width:min(740px,100%);justify-self:end}
+  #cs-community-business .cb-card{background:rgba(251,247,239,.72);border:1.5px solid rgba(184,149,74,.30);border-left:7px solid rgba(184,149,74,.72);box-shadow:0 18px 48px rgba(26,22,18,.08);padding:24px 28px;display:grid;grid-template-columns:190px minmax(0,1fr);gap:24px;align-items:center;min-width:0}
+  #cs-community-business .cb-card.missing{border:1.8px solid rgba(200,70,44,.34);border-left:7px solid #c8462c;background:rgba(251,247,239,.58)}
+  #cs-community-business .cb-card.gnr{border-color:rgba(184,149,74,.50);border-left-color:#b8954a}
+  #cs-community-business .cb-label{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase;color:rgba(26,22,18,.50);margin:0}
   #cs-community-business .missing .cb-label{color:#c8462c}
   #cs-community-business .gnr .cb-label{color:#b8954a}
-  #cs-community-business .cb-stack{display:grid;gap:12px;width:100%;max-width:340px}
-  #cs-community-business .cb-stack div{font-family:'Manrope',sans-serif;font-size:1.42rem;font-weight:850;line-height:1;color:#1a1612;background:rgba(26,22,18,.045);border:1px solid rgba(26,22,18,.12);padding:17px 14px}
-  #cs-community-business .cb-missing-core{width:174px;height:174px;border-radius:50%;border:2px solid #c8462c;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(200,70,44,.035);font-family:'Fraunces','Playfair Display',Georgia,serif;color:#1a1612}
-  #cs-community-business .cb-missing-core strong{font-size:2.35rem;font-style:italic;color:#c8462c;line-height:.92}
-  #cs-community-business .cb-missing-core span{font-size:1.55rem;font-style:italic;line-height:1.05;margin-top:6px}
-  #cs-community-business .cb-owned{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,22,18,.46);margin-top:28px}
-  #cs-community-business .cb-graph{width:240px;height:190px}
+  #cs-community-business .cb-stack{display:flex;gap:10px;width:100%;max-width:none}
+  #cs-community-business .cb-stack div{font-family:'Manrope',sans-serif;font-size:1.05rem;font-weight:850;line-height:1;color:#1a1612;background:rgba(26,22,18,.045);border:1px solid rgba(26,22,18,.12);padding:13px 14px;flex:1;text-align:center}
+  #cs-community-business .cb-missing-core{width:100%;min-height:118px;border:2px solid rgba(200,70,44,.72);display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(200,70,44,.035);font-family:'Fraunces','Playfair Display',Georgia,serif;color:#1a1612}
+  #cs-community-business .cb-missing-core strong{font-size:2.55rem;font-style:italic;color:#c8462c;line-height:.92}
+  #cs-community-business .cb-missing-core span{font-size:1.85rem;font-style:italic;line-height:1.05}
+  #cs-community-business .cb-owned{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,.48);margin-top:12px;text-align:center}
+  #cs-community-business .cb-graph{width:210px;height:150px;justify-self:center}
   #cs-community-business .cb-graph path{fill:none;stroke:#b8954a;stroke-width:2}
   #cs-community-business .cb-node circle:first-child{fill:#fbf7ef;stroke-width:4}
   #cs-community-business .cb-node.blue circle:first-child{stroke:#5B8FD4}.cb-node.gold circle:first-child{stroke:#b8954a}.cb-node.red circle:first-child{stroke:#c8462c}.cb-node.ink circle:first-child{stroke:#1a1612}
   #cs-community-business .cb-node .head{fill:#1a1612;stroke:none}.cb-node .body{fill:none;stroke:#1a1612;stroke-width:3;stroke-linecap:round}
-  #cs-community-business .cb-graph-label{font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,.50);margin-top:2px}
-  #cs-community-business .cb-arrow{display:flex;align-items:center;justify-content:center;color:rgba(184,149,74,.54)}
-  #cs-community-business .cb-arrow svg{width:72px;height:54px}
-  #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.15rem,3.3vw,3.7rem);font-weight:900;line-height:1.06;letter-spacing:-.028em;color:#1a1612;margin:58px 0 0;max-width:1500px}
+  #cs-community-business .cb-graph-label{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.28em;text-transform:uppercase;color:rgba(26,22,18,.50);margin-top:0;text-align:center}
+  #cs-community-business .cb-arrow{display:flex;align-items:center;justify-content:center;color:rgba(184,149,74,.54);height:30px}
+  #cs-community-business .cb-arrow svg{width:42px;height:30px;transform:rotate(90deg)}
+  #cs-community-business .cb-close{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.05rem,2.8vw,3.25rem);font-weight:900;line-height:1.08;letter-spacing:0;color:#1a1612;margin:46px 0 0;max-width:690px}
   #cs-community-business .cb-close em{display:block;font-style:italic;color:#c8462c}
   #cs-community-business .cb-title,#cs-community-business .cb-sub,#cs-community-business .cb-card,#cs-community-business .cb-close{opacity:1;transform:none;transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-community-business.active{display:flex!important;opacity:1!important;visibility:visible!important}
@@ -29876,8 +29877,11 @@ window.csA7m1Reverse = function() {
 <div class="casey-slide ds-focus" id="cs-community-business" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">The missing operating system</div>
   <section class="cb-stage">
-    <h1 class="cb-title">Community is a different<em>kind of business.</em></h1>
-    <p class="cb-sub">The inputs are human: trust, timing, generosity, belonging.</p>
+    <div class="cb-copy">
+      <h1 class="cb-title">Community is a different <em>kind of business.</em></h1>
+      <p class="cb-sub">The inputs are human: trust, timing, generosity, belonging.</p>
+      <div class="cb-close">Community technology is unsolved because community is not a product problem.<em>It is a people problem.</em></div>
+    </div>
     <div class="cb-map" aria-label="Today's stack, the missing layer, and the GnR stack">
       <div class="cb-card"><div class="cb-label">Today's stack</div><div class="cb-stack"><div>Bookings</div><div>Payments</div><div>Messages</div></div></div>
       <div class="cb-arrow"><svg viewBox="0 0 72 54"><path d="M8 27H58M42 12l16 15-16 15" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -29895,7 +29899,6 @@ window.csA7m1Reverse = function() {
         <div class="cb-graph-label">Invitation graph</div>
       </div>
     </div>
-    <div class="cb-close">Community technology is unsolved because community is not a product problem.<em>It is a people problem.</em></div>
   </section>
 </div>
 
