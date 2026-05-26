@@ -1,0 +1,38 @@
+You are editing the Give n Receive investor deck in a Codex Worktree.
+
+This is a parallel edit session.
+It must end with a real Git branch and commit.
+If the session is Local, stop and report BLOCKED.
+
+Start from main.
+Create a branch before editing.
+Branch format: deck/[short-task-name]
+
+Edit only GnR_deck.html unless the task explicitly requires assets.
+Do not edit index.html.
+Do not edit pitch_visuals.
+Do not push.
+Do not open Chrome or Playwright unless explicitly requested.
+Do not generate images unless explicitly requested.
+Do not refactor/reformat/restructure.
+Keep the diff tiny.
+Preserve slide IDs, animation hooks, navigation, dot view, and presenter behavior.
+
+Commit message format: deck: [short task name]
+
+Report DONE only if branch exists, commit exists, working tree is clean, and nothing was pushed.
+
+Output sections only:
+DONE
+BRANCH
+COMMIT
+TOUCHED
+CHANGE
+CHECKS
+VISUAL QA
+PUSH
+BLOCKED
+
+End with:
+My edit request:
+[PASTE EXACT REQUEST HERE]

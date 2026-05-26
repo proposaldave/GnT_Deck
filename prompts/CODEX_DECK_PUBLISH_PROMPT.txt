@@ -1,0 +1,7 @@
+Use Local mode.
+
+Verify expected branch and status.
+Ensure GnR_deck.html and index.html are identical before publish.
+Push only when Dave explicitly requests.
+Report published URL/status.
+Do not redesign or edit content.

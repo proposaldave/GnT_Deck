@@ -1,0 +1,22 @@
+Use Local mode.
+
+Start from main.
+Run git status first.
+Stop if Local has uncommitted deck changes.
+
+Merge completed deck/[task] branches one at a time.
+Resolve conflicts conservatively.
+Verify only target edits.
+
+After all merges, copy final GnR_deck.html to index.html.
+Do not touch pitch_visuals unless explicitly requested.
+Do not push unless explicitly requested.
+
+Report:
+DONE
+MERGED
+CONFLICTS
+MIRRORED
+CHECKS
+PUSH
+BLOCKED

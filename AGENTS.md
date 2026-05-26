@@ -111,3 +111,23 @@ BLOCKED:
 
 NEXT:
 - next visible queued task, or "No visible pending deck request."
+
+## Permanent Codex Repo Rules
+
+- This repo is the working source for the Give n Receive deck.
+- Use Worktree mode for parallel Codex edits.
+- Never run multiple Local sessions editing GnR_deck.html at once.
+- New edit sessions must end with a real branch and commit.
+- Parallel edit sessions should edit GnR_deck.html only unless the task explicitly requires assets.
+- Parallel edit sessions should not edit index.html.
+- index.html should be updated only during integration/publish.
+- Do not edit the old pitch_visuals copy during parallel tasks.
+- Do not push unless Dave explicitly asks.
+- Do not open Chrome, Playwright, or screenshot QA unless Dave explicitly asks or the task requires visual QA.
+- Do not regenerate images unless Dave explicitly asks.
+- Do not refactor, reformat, lint, prettify, or restructure the deck.
+- Keep diffs tiny and localized.
+- Preserve slide IDs, animation hooks, navigation, dot view, and presenter behavior.
+- Company name is Give n Receive, abbreviated GnR.
+- Never use Give n Take, GnT, or Give ’n Take.
+- Brand palette: warm cream #fbf7ef, ink #1a1612, gold #b8954a, blue #5B8FD4, red #c8462c. Never use green.
