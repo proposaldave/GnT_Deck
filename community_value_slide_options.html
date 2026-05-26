@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GnR Community Value Slide Options</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800;900&display=swap');
+
+  :root {
+    --paper: #fbf7ef;
+    --paper-deep: #f3ead8;
+    --ink: #1a1612;
+    --blue: #5B8FD4;
+    --gold: #b8954a;
+    --red: #c8462c;
+    --soft-ink: rgba(26, 22, 18, 0.68);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #201a14;
+    color: var(--ink);
+    font-family: "Manrope", system-ui, sans-serif;
+  }
+
+  body.export {
+    background: var(--paper);
+  }
+
+  .gallery {
+    display: grid;
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+    isolation: isolate;
+    box-shadow: 0 26px 80px rgba(0, 0, 0, 0.32);
+  }
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -3;
+  }
+
+  .eyebrow {
+    position: absolute;
+    top: 28px;
+    left: 48px;
+    z-index: 4;
+    font-family: "Manrope", system-ui, sans-serif;
+    text-transform: uppercase;
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    color: var(--red);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    font-size: 118px;
+    line-height: 1.02;
+    font-weight: 850;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+
+  .sub {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.32;
+    font-weight: 650;
+    color: var(--soft-ink);
+  }
+
+  .claim {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.42;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--red);
+  }
+
+  .gold { color: var(--gold); }
+  .blue { color: var(--blue); }
+  .red { color: var(--red); }
+
+  .option-tag {
+    position: absolute;
+    right: 48px;
+    top: 30px;
+    z-index: 4;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(26, 22, 18, .42);
+  }
+
+  .one .bg {
+    background-image:
+      linear-gradient(90deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.92) 31%, rgba(251,247,239,.42) 55%, rgba(251,247,239,0) 77%),
+      url("assets/explorations/community-value-slide-options/bg-live-club.png");
+    background-position: center;
+  }
+
+  .one .copy {
+    position: absolute;
+    left: 96px;
+    top: 188px;
+    width: 760px;
+    display: grid;
+    gap: 34px;
+  }
+
+  .one .proof-line {
+    position: absolute;
+    left: 96px;
+    bottom: 94px;
+    width: 620px;
+    display: grid;
+    grid-template-columns: 62px 1fr;
+    gap: 22px;
+    align-items: center;
+    color: var(--ink);
+  }
+
+  .one .proof-mark {
+    width: 62px;
+    height: 62px;
+    border-radius: 999px;
+    border: 2px solid var(--gold);
+    display: grid;
+    place-items: center;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 42px;
+    color: var(--gold);
+  }
+
+  .one .proof-text {
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+  }
+
+  .two {
+    background: var(--paper);
+  }
+
+  .two .bg {
+    background-image:
+      linear-gradient(90deg, rgba(251,247,239,.96) 0%, rgba(251,247,239,.88) 27%, rgba(251,247,239,.16) 52%, rgba(251,247,239,0) 100%),
+      url("assets/explorations/community-value-slide-options/bg-digital-vs-real.png");
+    background-position: center;
+  }
+
+  .two .copy {
+    position: absolute;
+    left: 96px;
+    top: 176px;
+    width: 760px;
+    display: grid;
+    gap: 28px;
+  }
+
+  .two h1 {
+    font-size: 82px;
+    line-height: 1;
+  }
+
+  .contrast-stack {
+    position: absolute;
+    left: 96px;
+    bottom: 88px;
+    width: 660px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .contrast-item {
+    min-height: 138px;
+    border-top: 2px solid rgba(26, 22, 18, .18);
+    padding-top: 18px;
+  }
+
+  .contrast-item strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 900;
+  }
+
+  .contrast-item span {
+    color: var(--soft-ink);
+    font-size: 18px;
+    line-height: 1.32;
+    font-weight: 700;
+  }
+
+  .three .bg {
+    background-image:
+      linear-gradient(90deg, rgba(251,247,239,0) 0%, rgba(251,247,239,.14) 45%, rgba(251,247,239,.96) 73%, rgba(251,247,239,1) 100%),
+      url("assets/explorations/community-value-slide-options/bg-network-club.png");
+    background-position: center;
+  }
+
+  .three .copy {
+    position: absolute;
+    right: 88px;
+    top: 164px;
+    width: 690px;
+    display: grid;
+    gap: 30px;
+  }
+
+  .market-list {
+    position: absolute;
+    right: 88px;
+    bottom: 88px;
+    width: 690px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .market-row {
+    min-height: 72px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    align-items: center;
+    border-top: 1px solid rgba(184, 149, 74, .46);
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .num {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .four .bg {
+    background-image:
+      linear-gradient(90deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.9) 34%, rgba(251,247,239,.35) 62%, rgba(251,247,239,0) 88%),
+      url("assets/explorations/community-value-slide-options/bg-true-asset.png");
+    background-position: center;
+  }
+
+  .four .copy {
+    position: absolute;
+    left: 96px;
+    top: 162px;
+    width: 770px;
+    display: grid;
+    gap: 32px;
+  }
+
+  .not-this {
+    position: absolute;
+    left: 96px;
+    bottom: 88px;
+    width: 780px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .not-cell {
+    min-height: 124px;
+    border: 1px solid rgba(26, 22, 18, .14);
+    background: rgba(251, 247, 239, .72);
+    padding: 22px;
+    display: grid;
+    align-content: space-between;
+  }
+
+  .not-cell .label {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(26, 22, 18, .46);
+  }
+
+  .not-cell .value {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 850;
+    color: var(--ink);
+  }
+
+  .five {
+    background:
+      radial-gradient(circle at 70% 32%, rgba(91,143,212,.18), transparent 32%),
+      radial-gradient(circle at 24% 74%, rgba(200,70,44,.12), transparent 28%),
+      linear-gradient(180deg, #fffaf1, var(--paper-deep));
+  }
+
+  .five .copy {
+    position: absolute;
+    left: 96px;
+    top: 144px;
+    width: 770px;
+    display: grid;
+    gap: 32px;
+  }
+
+  .equation {
+    position: absolute;
+    right: 74px;
+    top: 130px;
+    width: 880px;
+    height: 820px;
+  }
+
+  .eq-circle {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 999px;
+    border: 2px solid rgba(184, 149, 74, .72);
+    background: rgba(251, 247, 239, .66);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 54px;
+    color: var(--ink);
+    box-shadow: 0 24px 70px rgba(26, 22, 18, .07);
+  }
+
+  .eq-circle strong {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 44px;
+    line-height: 1;
+    font-weight: 850;
+  }
+
+  .eq-circle span {
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: rgba(26, 22, 18, .62);
+  }
+
+  .eq-product { left: 74px; top: 40px; }
+  .eq-customer { right: 74px; top: 40px; border-color: rgba(91, 143, 212, .72); }
+  .eq-distribution { left: 274px; bottom: 40px; border-color: rgba(200, 70, 44, .66); }
+
+  .eq-center {
+    position: absolute;
+    left: 314px;
+    top: 294px;
+    width: 250px;
+    height: 250px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 28px;
+    box-shadow: 0 26px 74px rgba(26, 22, 18, .24);
+  }
+
+  .eq-center strong {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 52px;
+    line-height: .94;
+    font-weight: 850;
+  }
+
+  .eq-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(26,22,18,.24), transparent);
+    transform-origin: center;
+  }
+
+  .line-a { width: 320px; left: 258px; top: 280px; transform: rotate(28deg); }
+  .line-b { width: 320px; right: 258px; top: 280px; transform: rotate(-28deg); }
+  .line-c { width: 250px; left: 314px; top: 555px; transform: rotate(90deg); }
+
+  @media (max-width: 1950px) {
+    .gallery {
+      transform-origin: top center;
+      transform: scale(.62);
+      width: 3225px;
+      padding-bottom: 0;
+    }
+  }
+
+  body.export .gallery {
+    display: block;
+    width: 1920px;
+    padding: 0;
+    transform: none;
+  }
+
+  body.export .slide {
+    display: none;
+    box-shadow: none;
+  }
+
+  body.export .slide.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <main class="gallery">
+    <section class="slide one" data-option="1">
+      <div class="bg"></div>
+      <div class="eyebrow">Real-World Community</div>
+      <div class="option-tag">Option 01</div>
+      <div class="copy">
+        <h1>The people are the product.</h1>
+        <p class="sub">A real-world community business does not compound from content or inventory. It compounds from who shows up, who connects, and who comes back.</p>
+        <p class="claim">GnR is built for the value digital platforms cannot see.</p>
+      </div>
+      <div class="proof-line">
+        <div class="proof-mark">&amp;</div>
+        <div class="proof-text">The customer and the product are the same live human network.</div>
+      </div>
+    </section>
+
+    <section class="slide two" data-option="2">
+      <div class="bg"></div>
+      <div class="eyebrow">Category Break</div>
+      <div class="option-tag">Option 02</div>
+      <div class="copy">
+        <h1>Digital community<br>sells attention.<br><span class="gold">Real community</span><br>sells connection.</h1>
+        <p class="sub">Feeds scale by capturing more minutes. Clubs scale by creating better moments between real people in real rooms.</p>
+        <p class="claim">That is a different business model, data model, and moat.</p>
+      </div>
+      <div class="contrast-stack">
+        <div class="contrast-item">
+          <strong>Digital community</strong>
+          <span>Attention, content, impressions, algorithmic reach.</span>
+        </div>
+        <div class="contrast-item">
+          <strong>Real-world community</strong>
+          <span>Trust, belonging, introductions, repeated live rituals.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide three" data-option="3">
+      <div class="bg"></div>
+      <div class="eyebrow">Living Marketplace</div>
+      <div class="option-tag">Option 03</div>
+      <div class="copy">
+        <h1>Every gathering is a marketplace.</h1>
+        <p class="sub">A club is not just a facility. It is a live exchange of skill, trust, invitation, taste, generosity, and social energy.</p>
+        <p class="claim">GnR coordinates the exchange.</p>
+      </div>
+      <div class="market-list">
+        <div class="market-row"><div class="num">1</div><div>Who should spend time together?</div></div>
+        <div class="market-row"><div class="num">2</div><div>What made the room work?</div></div>
+        <div class="market-row"><div class="num">3</div><div>How does that improve the next gathering?</div></div>
+      </div>
+    </section>
+
+    <section class="slide four" data-option="4">
+      <div class="bg"></div>
+      <div class="eyebrow">True Asset</div>
+      <div class="option-tag">Option 04</div>
+      <div class="copy">
+        <h1>The asset is not the app.</h1>
+        <p class="sub">The app is only the coordination surface. The durable asset is the live relationship graph that forms as people choose, return, invite, and give.</p>
+        <p class="claim">The software gets smarter because the room gets smarter.</p>
+      </div>
+      <div class="not-this">
+        <div class="not-cell">
+          <div class="label">Not</div>
+          <div class="value">screens</div>
+        </div>
+        <div class="not-cell">
+          <div class="label">Not</div>
+          <div class="value">inventory</div>
+        </div>
+        <div class="not-cell">
+          <div class="label">It is</div>
+          <div class="value">people</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide five" data-option="5">
+      <div class="eyebrow">The GnR Thesis</div>
+      <div class="option-tag">Option 05</div>
+      <div class="copy">
+        <h1>The next community platform will not be a feed.</h1>
+        <p class="sub">It will be the operating system for real rooms: who belongs together, what creates energy, and how each gathering makes the next one better.</p>
+        <p class="claim">People are product, customer, and distribution.</p>
+      </div>
+      <div class="equation" aria-hidden="true">
+        <div class="eq-line line-a"></div>
+        <div class="eq-line line-b"></div>
+        <div class="eq-line line-c"></div>
+        <div class="eq-circle eq-product"><div><strong>Product</strong><span>the people in the room</span></div></div>
+        <div class="eq-circle eq-customer"><div><strong>Customer</strong><span>the people buying the room</span></div></div>
+        <div class="eq-circle eq-distribution"><div><strong>Distribution</strong><span>the people who bring others back</span></div></div>
+        <div class="eq-center"><strong>People</strong></div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const selected = Number(new URLSearchParams(window.location.search).get("slide"));
+    if (selected >= 1 && selected <= 5) {
+      document.body.classList.add("export");
+      document.querySelectorAll(".slide").forEach((slide, index) => {
+        slide.classList.toggle("active", index === selected - 1);
+      });
+    }
+  </script>
+</body>
+</html>
