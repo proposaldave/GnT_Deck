@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GnR Community Value Slide Options V2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800;9..144,900&family=Manrope:wght@500;600;700;800;900&display=swap');
+
+  :root {
+    --paper: #fbf7ef;
+    --paper-deep: #f3ead8;
+    --ink: #1a1612;
+    --blue: #5B8FD4;
+    --gold: #b8954a;
+    --red: #c8462c;
+    --line: rgba(26, 22, 18, 0.14);
+    --muted: rgba(26, 22, 18, 0.66);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #231d17;
+    color: var(--ink);
+    font-family: "Manrope", system-ui, sans-serif;
+  }
+
+  body.export {
+    background: var(--paper);
+  }
+
+  .gallery {
+    display: grid;
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    overflow: hidden;
+    background: var(--paper);
+    isolation: isolate;
+    box-shadow: 0 26px 80px rgba(0, 0, 0, 0.32);
+  }
+
+  .eyebrow {
+    position: absolute;
+    top: 28px;
+    left: 48px;
+    z-index: 5;
+    font-family: "Manrope", system-ui, sans-serif;
+    text-transform: uppercase;
+    font-size: .58rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    color: var(--red);
+  }
+
+  .option-tag {
+    position: absolute;
+    top: 30px;
+    right: 48px;
+    z-index: 5;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(26, 22, 18, .42);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+    font-size: 100px;
+    line-height: 1.02;
+    font-weight: 850;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+
+  .sub {
+    margin: 0;
+    font-size: 31px;
+    line-height: 1.32;
+    font-weight: 650;
+    color: var(--muted);
+  }
+
+  .thesis {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--red);
+  }
+
+  .gold { color: var(--gold); }
+  .blue { color: var(--blue); }
+  .red { color: var(--red); }
+
+  .copy {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    gap: 30px;
+  }
+
+  .grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 80% 12%, rgba(91, 143, 212, .14), transparent 28%),
+      radial-gradient(circle at 16% 88%, rgba(184, 149, 74, .15), transparent 30%),
+      linear-gradient(180deg, #fffaf2, var(--paper-deep));
+  }
+
+  .slide-one .copy {
+    left: 96px;
+    top: 158px;
+    width: 835px;
+  }
+
+  .category-map {
+    position: absolute;
+    right: 82px;
+    top: 150px;
+    width: 850px;
+    height: 820px;
+    z-index: 2;
+  }
+
+  .cat {
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 999px;
+    border: 2px solid rgba(26, 22, 18, .16);
+    background: rgba(251, 247, 239, .72);
+    display: grid;
+    place-items: center;
+    padding: 42px;
+    text-align: center;
+    box-shadow: 0 22px 70px rgba(26, 22, 18, .06);
+  }
+
+  .cat h2 {
+    margin: 0 0 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 850;
+  }
+
+  .cat p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: rgba(26, 22, 18, .58);
+  }
+
+  .cat.digital { left: 0; top: 42px; border-color: rgba(91, 143, 212, .58); }
+  .cat.product { right: 0; top: 42px; border-color: rgba(26, 22, 18, .22); }
+  .cat.real {
+    left: 260px;
+    bottom: 38px;
+    width: 365px;
+    height: 365px;
+    border-color: rgba(184, 149, 74, .88);
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: 0 30px 90px rgba(184, 149, 74, .22);
+  }
+
+  .cat.real p { color: rgba(251, 247, 239, .68); }
+
+  .connector {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(26, 22, 18, .22), transparent);
+    z-index: -1;
+  }
+
+  .connector.a { left: 250px; top: 318px; width: 350px; transform: rotate(36deg); }
+  .connector.b { right: 250px; top: 318px; width: 350px; transform: rotate(-36deg); }
+  .connector.c { left: 292px; top: 206px; width: 260px; }
+
+  .slide-two {
+    background:
+      linear-gradient(90deg, var(--paper) 0%, var(--paper) 48%, var(--ink) 48%, var(--ink) 100%);
+  }
+
+  .slide-two .copy {
+    left: 96px;
+    top: 154px;
+    width: 720px;
+  }
+
+  .slide-two .sub { max-width: 640px; }
+
+  .split-label {
+    position: absolute;
+    top: 146px;
+    right: 88px;
+    width: 820px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    z-index: 3;
+  }
+
+  .split-label div {
+    min-height: 96px;
+    border-bottom: 1px solid rgba(251, 247, 239, .24);
+    padding-bottom: 18px;
+    color: var(--paper);
+  }
+
+  .split-label b {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .split-label span {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 750;
+    color: rgba(251, 247, 239, .62);
+  }
+
+  .attention-vs-connection {
+    position: absolute;
+    right: 88px;
+    bottom: 82px;
+    width: 820px;
+    height: 650px;
+    z-index: 2;
+  }
+
+  .funnel {
+    position: absolute;
+    left: 40px;
+    top: 62px;
+    width: 290px;
+    height: 520px;
+    clip-path: polygon(0 0, 100% 0, 62% 100%, 38% 100%);
+    background: linear-gradient(180deg, rgba(91, 143, 212, .62), rgba(91, 143, 212, .10));
+    border: 1px solid rgba(91, 143, 212, .4);
+  }
+
+  .funnel-dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(251, 247, 239, .88);
+  }
+
+  .network {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    width: 450px;
+    height: 560px;
+  }
+
+  .net-node {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    border: 2px solid rgba(184, 149, 74, .84);
+    background: rgba(251, 247, 239, .08);
+    box-shadow: 0 0 34px rgba(184, 149, 74, .16);
+  }
+
+  .net-node::after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 18px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(251, 247, 239, .88);
+    box-shadow: 0 22px 0 -5px rgba(251, 247, 239, .88);
+  }
+
+  .net-line {
+    position: absolute;
+    height: 2px;
+    background: rgba(184, 149, 74, .5);
+    transform-origin: left center;
+  }
+
+  .slide-three .copy {
+    left: 96px;
+    top: 150px;
+    width: 760px;
+  }
+
+  .paradox {
+    position: absolute;
+    right: 88px;
+    top: 150px;
+    width: 850px;
+    height: 780px;
+    z-index: 2;
+  }
+
+  .venn {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 999px;
+    border: 2px solid rgba(26, 22, 18, .18);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 60px;
+    background: rgba(251, 247, 239, .64);
+  }
+
+  .venn.product { left: 70px; top: 76px; border-color: rgba(91, 143, 212, .7); }
+  .venn.customer { right: 70px; top: 76px; border-color: rgba(200, 70, 44, .68); }
+
+  .venn strong {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 54px;
+    line-height: .98;
+    font-weight: 850;
+  }
+
+  .venn span {
+    display: none;
+  }
+
+  .overlap {
+    position: absolute;
+    left: 300px;
+    top: 408px;
+    width: 250px;
+    height: 250px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 42px;
+    box-shadow: 0 28px 78px rgba(26, 22, 18, .18);
+  }
+
+  .overlap strong {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 54px;
+    line-height: .94;
+    font-weight: 850;
+  }
+
+  .paradox-note {
+    position: absolute;
+    left: 142px;
+    bottom: 26px;
+    width: 570px;
+    border-top: 2px solid var(--gold);
+    padding-top: 22px;
+    font-size: 26px;
+    line-height: 1.24;
+    font-weight: 850;
+    color: var(--ink);
+  }
+
+  .slide-four .copy {
+    left: 96px;
+    top: 136px;
+    width: 780px;
+  }
+
+  .builder-loop {
+    position: absolute;
+    right: 82px;
+    top: 126px;
+    width: 850px;
+    height: 840px;
+    z-index: 2;
+  }
+
+  .loop-ring {
+    position: absolute;
+    left: 112px;
+    top: 88px;
+    width: 620px;
+    height: 620px;
+    border: 2px solid rgba(184, 149, 74, .5);
+    border-radius: 999px;
+  }
+
+  .loop-center {
+    position: absolute;
+    left: 284px;
+    top: 260px;
+    width: 276px;
+    height: 276px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--paper);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 34px;
+    box-shadow: 0 28px 78px rgba(26, 22, 18, .18);
+  }
+
+  .loop-center strong {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 50px;
+    line-height: .98;
+    font-weight: 850;
+  }
+
+  .loop-step {
+    position: absolute;
+    width: 260px;
+    min-height: 112px;
+    border: 1px solid rgba(26, 22, 18, .14);
+    border-radius: 8px;
+    background: rgba(251, 247, 239, .86);
+    padding: 22px;
+    box-shadow: 0 18px 50px rgba(26, 22, 18, .06);
+  }
+
+  .loop-step b {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 21px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: var(--ink);
+  }
+
+  .loop-step span {
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 750;
+    color: rgba(26, 22, 18, .58);
+  }
+
+  .step-one { left: 294px; top: 0; }
+  .step-two { right: 0; top: 316px; }
+  .step-three { left: 294px; bottom: 0; }
+  .step-four { left: 0; top: 316px; }
+
+  .arrow {
+    position: absolute;
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 900;
+    color: rgba(184, 149, 74, .84);
+  }
+
+  .arrow.a { right: 156px; top: 176px; transform: rotate(42deg); }
+  .arrow.b { right: 156px; bottom: 174px; transform: rotate(128deg); }
+  .arrow.c { left: 156px; bottom: 174px; transform: rotate(218deg); }
+  .arrow.d { left: 156px; top: 176px; transform: rotate(312deg); }
+
+  .slide-five {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .slide-five .eyebrow { color: var(--gold); }
+  .slide-five .option-tag { color: rgba(251, 247, 239, .36); }
+
+  .slide-five .copy {
+    left: 96px;
+    top: 150px;
+    width: 860px;
+  }
+
+  .slide-five h1 { color: var(--paper); }
+  .slide-five .sub { color: rgba(251, 247, 239, .68); }
+
+  .slide-five .thesis {
+    color: var(--gold);
+    max-width: 720px;
+  }
+
+  .dark-visual {
+    position: absolute;
+    right: 82px;
+    top: 128px;
+    width: 780px;
+    height: 820px;
+    z-index: 2;
+  }
+
+  .market-stack {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 520px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .market-row {
+    min-height: 92px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(251, 247, 239, .16);
+    border-radius: 8px;
+    padding: 18px 22px;
+    background: rgba(251, 247, 239, .04);
+  }
+
+  .market-row b {
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: rgba(251, 247, 239, .5);
+  }
+
+  .market-row span {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 850;
+    color: var(--paper);
+  }
+
+  .market-row.final {
+    border-color: rgba(184, 149, 74, .74);
+    background: rgba(184, 149, 74, .10);
+  }
+
+  .market-row.final span { color: var(--gold); }
+
+  .axis {
+    position: absolute;
+    left: 0;
+    bottom: 76px;
+    width: 720px;
+    height: 270px;
+    border-left: 2px solid rgba(251, 247, 239, .28);
+    border-bottom: 2px solid rgba(251, 247, 239, .28);
+  }
+
+  .curve {
+    position: absolute;
+    left: 40px;
+    bottom: 28px;
+    width: 600px;
+    height: 190px;
+    border-bottom: 8px solid var(--gold);
+    border-right: 8px solid var(--gold);
+    border-radius: 0 0 220px 0;
+    transform: skewX(-18deg);
+    transform-origin: bottom left;
+  }
+
+  .curve-label {
+    position: absolute;
+    right: 10px;
+    bottom: 240px;
+    width: 330px;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: var(--gold);
+  }
+
+  @media (max-width: 1950px) {
+    .gallery {
+      transform-origin: top center;
+      transform: scale(.62);
+      width: 3225px;
+      padding-bottom: 0;
+    }
+  }
+
+  body.export .gallery {
+    display: block;
+    width: 1920px;
+    padding: 0;
+    transform: none;
+  }
+
+  body.export .slide {
+    display: none;
+    box-shadow: none;
+  }
+
+  body.export .slide.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <main class="gallery">
+    <section class="slide slide-one">
+      <div class="grain"></div>
+      <div class="eyebrow">Category Thesis</div>
+      <div class="option-tag">Option 01</div>
+      <div class="copy">
+        <h1>Real-world community is a third kind of business.</h1>
+        <p class="sub">Digital communities sell attention. Product companies sell objects. Real-world communities sell the live value people create for each other.</p>
+        <p class="thesis">GnR is built for the business where the people are the product.</p>
+      </div>
+      <div class="category-map" aria-hidden="true">
+        <div class="connector a"></div>
+        <div class="connector b"></div>
+        <div class="connector c"></div>
+        <div class="cat digital"><div><h2>Attention</h2><p>feeds, followers, impressions</p></div></div>
+        <div class="cat product"><div><h2>Objects</h2><p>phones, computers, things</p></div></div>
+        <div class="cat real"><div><h2>People</h2><p>live connection, belonging, return visits</p></div></div>
+      </div>
+    </section>
+
+    <section class="slide slide-two">
+      <div class="eyebrow">Attention Vs Connection</div>
+      <div class="option-tag">Option 02</div>
+      <div class="copy">
+        <h1>Digital community gets bigger by capturing attention.</h1>
+        <p class="sub">Real-world community gets more valuable when the right people spend more meaningful time together.</p>
+        <p class="thesis">This is not a content graph. It is a live relationship graph.</p>
+      </div>
+      <div class="split-label" aria-hidden="true">
+        <div><b>Attention business</b><span>One-to-many reach. More eyes. More minutes.</span></div>
+        <div><b>Connection business</b><span>Many-to-many value. Better rooms. Stronger returns.</span></div>
+      </div>
+      <div class="attention-vs-connection" aria-hidden="true">
+        <div class="funnel"></div>
+        <div class="funnel-dot" style="left:75px;top:92px"></div>
+        <div class="funnel-dot" style="left:190px;top:124px"></div>
+        <div class="funnel-dot" style="left:136px;top:196px"></div>
+        <div class="funnel-dot" style="left:151px;top:352px"></div>
+        <div class="network">
+          <div class="net-line" style="left:96px;top:88px;width:260px;transform:rotate(18deg)"></div>
+          <div class="net-line" style="left:84px;top:250px;width:290px;transform:rotate(-22deg)"></div>
+          <div class="net-line" style="left:130px;top:400px;width:230px;transform:rotate(-42deg)"></div>
+          <div class="net-line" style="left:240px;top:114px;width:220px;transform:rotate(80deg)"></div>
+          <div class="net-line" style="left:218px;top:286px;width:180px;transform:rotate(34deg)"></div>
+          <div class="net-node" style="left:28px;top:52px"></div>
+          <div class="net-node" style="right:46px;top:94px"></div>
+          <div class="net-node" style="left:118px;top:244px"></div>
+          <div class="net-node" style="right:8px;top:312px"></div>
+          <div class="net-node" style="left:64px;bottom:48px"></div>
+          <div class="net-node" style="right:142px;bottom:28px"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-three">
+      <div class="grain"></div>
+      <div class="eyebrow">The Paradox</div>
+      <div class="option-tag">Option 03</div>
+      <div class="copy">
+        <h1>The product is the customer.</h1>
+        <p class="sub">In a real-world community, the people paying to belong are also what everyone else is paying to be around.</p>
+        <p class="thesis">The value is not delivered to people. The value is created between people.</p>
+      </div>
+      <div class="paradox" aria-hidden="true">
+        <div class="venn product"><div><strong>Product</strong><span>what makes the experience worth buying</span></div></div>
+        <div class="venn customer"><div><strong>Customer</strong><span>who buys and returns to the experience</span></div></div>
+        <div class="overlap"><strong>Live people</strong></div>
+        <div class="paradox-note">Every new member can increase the product value for every other member.</div>
+      </div>
+    </section>
+
+    <section class="slide slide-four">
+      <div class="grain"></div>
+      <div class="eyebrow">How Value Gets Built</div>
+      <div class="option-tag">Option 04</div>
+      <div class="copy">
+        <h1>Community value is built by putting people together.</h1>
+        <p class="sub">The same room can be forgettable or magnetic depending on who is there, who meets, and what happens next.</p>
+        <p class="thesis">GnR turns that judgment into a repeatable coordination loop.</p>
+      </div>
+      <div class="builder-loop" aria-hidden="true">
+        <div class="loop-ring"></div>
+        <div class="arrow a">→</div>
+        <div class="arrow b">→</div>
+        <div class="arrow c">→</div>
+        <div class="arrow d">→</div>
+        <div class="loop-step step-one"><b>Invite</b><span>bring the right people into the room</span></div>
+        <div class="loop-step step-two"><b>Mix</b><span>shape the group, vibe, level, and energy</span></div>
+        <div class="loop-step step-three"><b>Remember</b><span>capture what worked and what did not</span></div>
+        <div class="loop-step step-four"><b>Improve</b><span>make the next gathering more valuable</span></div>
+        <div class="loop-center"><strong>Live connection</strong></div>
+      </div>
+    </section>
+
+    <section class="slide slide-five">
+      <div class="eyebrow">Why GnR Exists</div>
+      <div class="option-tag">Option 05</div>
+      <div class="copy">
+        <h1>The next network will not optimize for attention.</h1>
+        <p class="sub">The next network will understand who creates value for whom in the real world, then coordinate more of it.</p>
+        <p class="thesis">People are the product, the customers, and the growth engine.</p>
+      </div>
+      <div class="dark-visual" aria-hidden="true">
+        <div class="market-stack">
+          <div class="market-row"><b>Old</b><span>content graph</span></div>
+          <div class="market-row"><b>Now</b><span>intelligence graph</span></div>
+          <div class="market-row final"><b>Next</b><span>human value graph</span></div>
+        </div>
+        <div class="axis">
+          <div class="curve"></div>
+        </div>
+        <div class="curve-label">Real-world connection becomes measurable, routable, and compounding.</div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const selected = Number(new URLSearchParams(window.location.search).get("slide"));
+    if (selected >= 1 && selected <= 5) {
+      document.body.classList.add("export");
+      document.querySelectorAll(".slide").forEach((slide, index) => {
+        slide.classList.toggle("active", index === selected - 1);
+      });
+    }
+  </script>
+</body>
+</html>
