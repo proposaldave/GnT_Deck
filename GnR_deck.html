@@ -31895,6 +31895,19 @@ function getSlideEyebrowText(slideId) {
     clone.style.display = 'none';
     clone.style.overflow = 'hidden';
 
+    clone.querySelectorAll('style').forEach(styleTag => {
+      styleTag.textContent = styleTag.textContent.split('#' + cfg.sourceId).join('#' + cfg.id);
+    });
+    const inheritedCss = Array.from(document.querySelectorAll('style'))
+      .map(styleTag => styleTag.textContent || '')
+      .filter(css => css.includes('#' + cfg.sourceId))
+      .join('\n');
+    if (inheritedCss) {
+      const scopedStyle = document.createElement('style');
+      scopedStyle.textContent = inheritedCss.split('#' + cfg.sourceId).join('#' + cfg.id);
+      clone.insertBefore(scopedStyle, clone.firstChild);
+    }
+
     const layer = document.createElement('div');
     layer.className = 'codex-bg-review-layer';
     layer.setAttribute('aria-hidden', 'true');
