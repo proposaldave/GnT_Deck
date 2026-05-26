@@ -29860,8 +29860,7 @@ const SLIDE_ORDER = [
   // 'cs-givefirst-slide2', // REMOVED — was duplicate at slot 2 with broken bg image
   // [Dave 2026-05-18 LATEST v4] Slot 2 PRIMARY swapped back to cs-1m8-title-A per Dave screenshot: large centered GnR wordmark + Give n Receive label + Live a life headline + full diptych. Previous main cs-1m8-title-B demoted to leftmost RED-DOT alt below.
   'cs-1m8',   //  2 BRAND FLOW - G n R wordmark/value split: what we give fuels communities, network sees/measures, people/moments reciprocated back.
-  // [Dave 2026-05-24] cs-brand-codex is MAIN slot 3 per Dave: Introducing Give 'n Receive / Invitation-based matchmaking. cs-1m8-envelopes is the pink-dot rollback to the left.
-  'cs-brand-codex', //  3 BRAND FLOW - Introducing Give 'n Receive / invitation-based matchmaking.
+  // [Dave 2026-05-26] cs-brand-codex MOVED OUT OF MAIN FLOW per screenshot request. It now lives as a pink-dot alt to the left of slide 1 (see SLIDE_ALTS[1]).
   // [Dave 2026-05-26] cs-mv6-merge MOVED LATE. Mission was too early in the product reveal; now lands in the final-quarter vision section after cs-wedge1.
   // [Dave 2026-05-18 LATEST v6] cs-brand-V8 REMOVED from main flow per Dave 'move this as a pink dot slide to the left of slide 2'. It now lives as the LEFTMOST pink-dot alt of cs-1m8 (see SLIDE_ALTS[2] below). All slots past slot 2 shift -1 → SLIDE_ALTS keys 4..25 all decrement by 1. HTML for cs-brand-V8 retained as-is below; only its position in nav changed.
   // 'cs-1m5' / 'cs-1m9' demoted to alts (see SLIDE_ALTS[1])
@@ -29995,7 +29994,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST PINK] Two pink-dot alts added at slot 1 — duplicates of cs-frontier-iconic with different bg images (cs-frontier-pink1 + cs-frontier-pink2). Same eyebrow/headline/structure, swapped hero img only. Fallback chain → cs-frontier-iconic-hero.png so they always render.
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
-  1: [],
+  // [Dave 2026-05-26] cs-brand-codex moved out of main deck and registered here as the pink-dot slide immediately left of slide 1.
+  1: ['cs-brand-codex'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: [],
