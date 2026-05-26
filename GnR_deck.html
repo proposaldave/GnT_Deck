@@ -11981,18 +11981,19 @@ window.cs1m7Reverse = function() {
 
   /* Entry stagger */
   #cs-wedgepb-codex .wpc-head, #cs-wedgepb-codex .wpc-sub, #cs-wedgepb-codex .wpc-band, #cs-wedgepb-codex .wpc-card { opacity:0; transform:translateY(8px); transition:opacity 0.6s cubic-bezier(.22,1,.36,1), transform 0.6s cubic-bezier(.22,1,.36,1); }
-  #cs-wedgepb-codex.casey-entered .wpc-head { opacity:1; transform:none; transition-delay:0.10s; }
-  #cs-wedgepb-codex.casey-entered .wpc-sub  { opacity:1; transform:none; transition-delay:0.25s; }
-  #cs-wedgepb-codex.casey-entered .wpc-band-1 { opacity:1; transform:none; transition-delay:0.40s; }
-  #cs-wedgepb-codex.casey-entered .wpc-band-2 { opacity:1; transform:none; transition-delay:0.52s; }
-  #cs-wedgepb-codex.casey-entered .wpc-band-3 { opacity:1; transform:none; transition-delay:0.64s; }
-  #cs-wedgepb-codex.casey-entered .wpc-band-4 { opacity:1; transform:none; transition-delay:0.76s; }
-  #cs-wedgepb-codex.casey-entered .wpc-band-5 { opacity:1; transform:none; transition-delay:0.88s; }
-  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
-  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.70s; }
-  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.85s; }
-  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.00s; }
-  #cs-wedgepb-codex.casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
+  #cs-wedgepb-codex[data-stage="0"] .wpc-stage { pointer-events:none; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-head { opacity:1; transform:none; transition-delay:0.10s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-sub  { opacity:1; transform:none; transition-delay:0.25s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-1 { opacity:1; transform:none; transition-delay:0.40s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-2 { opacity:1; transform:none; transition-delay:0.52s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-3 { opacity:1; transform:none; transition-delay:0.64s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-4 { opacity:1; transform:none; transition-delay:0.76s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-band-5 { opacity:1; transform:none; transition-delay:0.88s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(1) { opacity:1; transform:none; transition-delay:0.55s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(2) { opacity:1; transform:none; transition-delay:0.70s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(3) { opacity:1; transform:none; transition-delay:0.85s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(4) { opacity:1; transform:none; transition-delay:1.00s; }
+  #cs-wedgepb-codex[data-stage="1"].casey-entered .wpc-card:nth-child(5) { opacity:1; transform:none; transition-delay:1.15s; }
   html[data-export="1"] #cs-wedgepb-codex .wpc-head, html[data-export="1"] #cs-wedgepb-codex .wpc-sub, html[data-export="1"] #cs-wedgepb-codex .wpc-band, html[data-export="1"] #cs-wedgepb-codex .wpc-card { opacity:1 !important; transform:none !important; transition:none !important; }
 
   /* [Dave 2026-05-18 LATEST v3] cs-wedgepb-codex bg image MORE VISIBLE per Dave 'this slide i'd like the background image to be a little more visible' (after promotion to main primary). Opacity 0.78 → 0.95 + cream wash thinned even further from light (.55/.32/.40/.62) to faint (.35/.18/.22/.42). The codex watercolor is now the dominant visual layer; the funnel + cards float over it with their card chrome (white fills, blue rails, drop shadows) providing legibility. */
@@ -12062,7 +12063,7 @@ window.cs1m7Reverse = function() {
 
 </style>
 
-<div class="casey-slide ds-focus" id="cs-wedgepb-codex" style="display:none">
+<div class="casey-slide ds-focus" id="cs-wedgepb-codex" data-stage="0" onclick="if(window.csWedgepbCodexAdvance && window.csWedgepbCodexAdvance()){event.stopPropagation();}" style="display:none;cursor:pointer">
   <img class="wpc-codex-bg" src="assets/cs-wedgepb-codex.png" alt="Watercolor backdrop — funnel of human-connection technology converging on the pickleball wedge." onerror="this.onerror=null;this.src='assets/cs-frontier-iconic-hero.png';this.style.display=this.naturalWidth?'block':'none'"/>
   <div class="wpc-codex-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-17 v14] Eyebrow changed to "Give n Receive's #1 secret" per Dave. -->
@@ -30641,6 +30642,23 @@ let seedCurrent = 1;
 let inStaff = false;
 let staffCurrent = 1;
 
+window.csWedgepbCodexAdvance = function() {
+  const slide = document.getElementById('cs-wedgepb-codex');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 1) return false;
+  slide.dataset.stage = '1';
+  return true;
+};
+window.csWedgepbCodexReverse = function() {
+  const slide = document.getElementById('cs-wedgepb-codex');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = '0';
+  return true;
+};
+
 function goTo(n) { caseyGo(n); }
 
 // cs-1bm1 click/right-arrow reveal handler [Dave 2026-04-30 PM]
@@ -32585,6 +32603,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-gnr': 'csGnrAdvance',
     'cs-pbfirst': 'csPbfirstAdvance',
     'cs-samecourt': 'csSamecourtAdvance',
+    'cs-wedgepb-codex': 'csWedgepbCodexAdvance',
     'cs-4': 'cs4Advance',
     'cs-3': 'cs3Advance',
     'cs-11d': 'cs11dAdvance',
@@ -32629,6 +32648,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-gnr': 'csGnrReverse',
     'cs-pbfirst': 'csPbfirstReverse',
     'cs-samecourt': 'csSamecourtReverse',
+    'cs-wedgepb-codex': 'csWedgepbCodexReverse',
     'cs-4': 'cs4Reverse',
     'cs-3': 'cs3Reverse',
     'cs-11d': 'cs11dReverse',
