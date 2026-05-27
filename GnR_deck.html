@@ -13270,12 +13270,17 @@ window.cs1m7Reverse = function() {
   #cs-11e.active .c11e-q1       { animation-delay: 1.55s; }
   #cs-11e.active .c11e-q2       { animation-delay: 1.75s; }
   #cs-11e.active .c11e-q3       { animation-delay: 1.95s; }
+  #cs-11e { overflow:hidden; }
+  #cs-11e .c11e-bg { position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden; }
+  #cs-11e .c11e-bg img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.54;filter:saturate(.92) contrast(.98); }
+  #cs-11e .c11e-bg::after { content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(251,247,239,.86) 0%,rgba(251,247,239,.66) 46%,rgba(251,247,239,.30) 100%),radial-gradient(circle at 72% 42%,rgba(26,22,18,.20),transparent 48%); }
   html[data-export="1"] #cs-11e .c11e-anim { opacity: 1 !important; animation: none !important; transform: none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-11e">
 <section style="position:relative;min-height:100%;width:100%;display:flex;align-items:center;justify-content:center">
+  <div class="c11e-bg" aria-hidden="true"><img src="assets/explorations/cs-11e-v3-faces-not-ratings.png" alt=""></div>
   <div style="position:absolute;top:28px;left:48px;font-family:var(--ui,'Manrope',sans-serif);font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4;z-index:10;">Founder-built community</div>
-  <div style="padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
+  <div style="position:relative;z-index:2;padding:32px 48px 80px;text-align:center;max-width:1180px;margin:0 auto;width:100%">
     <!-- Big NEPC logo so the audience knows we're talking about New England Pickleball Club -->
     <img class="c11e-anim c11e-logo" src="nepc-logo.png" alt="New England Pickleball Club" style="display:block;margin:0 auto 18px;width:clamp(220px,26vw,320px);height:auto;mix-blend-mode:multiply"/>
     <div class="c11e-anim c11e-headline" style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.5rem);color:#1a1612;line-height:1.18;font-weight:700;margin-bottom:32px;max-width:1080px;margin-left:auto;margin-right:auto">
