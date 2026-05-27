@@ -30389,7 +30389,9 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-27] Founder-built community now follows the uncomfortable cultural shift; wedge + measurable-connection slides moved later after proof/Racketeer validation, before the final vision bridge.
   // [Dave 2026-05-26] cs-givefirst-art MOVED to APPENDIX per screenshot request.
   'cs-11d','cs-11e','cs-magnetic','cs-11',
-  // [Codex 2026-05-27] cs-3 and cs-19 removed from active main flow per completed delete-branch requests. HTML remains as rollback source.
+  // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
+  'cs-3',
+  // [Codex 2026-05-27] cs-19 removed from active main flow per completed delete-branch request. HTML remains as rollback source.
   // [Codex 2026-05-26] cs-racketeer-att-arc RESTORED to main deck per Dave: "find the racketeer slide and put it back in the main deck."
   'cs-racketeer-att-arc',
   'cs-wedgepb-codex','cs-fv6-img',
@@ -30525,7 +30527,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-26] cs-cultural-shift moved to APPENDIX; pink candidate detached from active slide slots.
   // [Dave 2026-05-26] cs-11d black-dot backup DELETED per screenshot request: remove active slot-7 alt registration; clone stub remains inert.
   // [Dave 2026-05-26] cs-2c-schedule-measure DELETED per screenshot request. HTML retained as hidden rollback stub.
-  13: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
+  // cs-2c alts are registered at key 18 below after cs-3 was restored to the active deck.
   // Slot 6 (cs-thegap) - old like-button headline saved as pink-dot backup before 2026-05-24 rewrite.
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
@@ -30588,7 +30590,7 @@ const SLIDE_ALTS = {
   13: [],
   14: [],
   // [Dave 2026-05-26] Racketeer proof slide moved to appendix; detach same-slot Racketeer path alts from the main flow.
-  18: [],
+  18: ['cs-2c-measure-loop', 'cs-2c-invisible-layer'],
   20: [],
   // [Dave 2026-05-19] Three new pink-dot Racketeer path attempts. Main Racketeer slide stays unchanged.
   21: [],
@@ -30623,7 +30625,7 @@ const SLIDE_ALTS = {
 // generated alts clone the active main slide at runtime, insert one emotional
 // image layer behind the cloned content, and register as same-slot green dots.
 const CODEX_BG_REVIEW_ALTS = [
-  { slot: 13, sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
+  { slot: 18, sourceId: 'cs-2c',                 id: 'cs-2c-bg-green',                 image: 'assets/cs-2c-v2-community-listening.png' },
   { slot: 5,  sourceId: 'cs-samecourt',          id: 'cs-samecourt-bg-green',          image: 'assets/cs-samecourt-bg.png' },
   { slot: 7,  sourceId: 'cs-11d',                id: 'cs-11d-bg-green',                image: 'assets/cs-11d-cultural-shift-v2-bg.png' },
   { slot: 8,  sourceId: 'cs-11e',                id: 'cs-11e-bg-green',                image: 'assets/explorations/cs-11e-v3-faces-not-ratings.png' },
