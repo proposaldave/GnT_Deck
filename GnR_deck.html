@@ -7558,21 +7558,26 @@ window.cs1m5Reverse = function() {
      Bg image: assets/cs-frontier-pink2.png (golden-hour porches at sunset with people).
      Fallback chain → cs-frontier-iconic-hero.png.
      ═══════════════════════════════════════════════════════════════════════════ -->
-<div class="casey-slide ds-focus" id="cs-frontier-scale-pink" style="display:none;background:#f3ead8 !important;overflow:hidden">
+<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink" style="display:none;background:#f3ead8 !important;overflow:hidden">
   <style>
-    #cs-frontier-scale-pink .scale-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.036) 1px, transparent 0);background-size:4px 4px;opacity:.34;pointer-events:none}
-    #cs-frontier-scale-pink .scale-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
-    #cs-frontier-scale-pink .scale-mark{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
-    #cs-frontier-scale-pink .scale-mark .g{color:#5B8FD4}#cs-frontier-scale-pink .scale-mark .n{color:#b8954a;font-style:italic}#cs-frontier-scale-pink .scale-mark .r{color:#c8462c}
-    #cs-frontier-scale-pink .scale-stage{position:absolute;inset:0;color:#1a1612}
-    #cs-frontier-scale-pink .scale-head{position:absolute;left:50%;top:62px;z-index:3;transform:translateX(-50%);width:min(1410px,84vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.25vw,6rem);font-weight:850;line-height:.95;letter-spacing:0;text-align:center;color:#1a1612}
-    #cs-frontier-scale-pink .scale-head em{font-style:italic;color:#b8954a;font-weight:850}
-    #cs-frontier-scale-pink .scale-image-wrap{position:absolute;left:104px;right:104px;top:340px;height:430px;z-index:2;overflow:hidden;background:#fbf7ef;box-shadow:0 28px 78px rgba(74,53,26,.14)}
-    #cs-frontier-scale-pink .scale-image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(251,247,239,.08), rgba(251,247,239,.18) 49%, rgba(255,226,157,.08));pointer-events:none}
-    #cs-frontier-scale-pink .scale-image{position:absolute;inset:0;width:100%;height:100%;display:block}
-    #cs-frontier-scale-pink .scale-footer{position:absolute;left:50%;bottom:78px;z-index:3;transform:translateX(-50%);width:min(1420px,86vw);display:flex;align-items:center;justify-content:center;gap:30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.28vw,2.58rem);font-weight:850;line-height:1.04;color:#1a1612;text-align:center;white-space:nowrap}
-    #cs-frontier-scale-pink .scale-footer:before,#cs-frontier-scale-pink .scale-footer:after{content:"";display:block;flex:1;max-width:250px;height:1px;background:linear-gradient(90deg, transparent, rgba(184,149,74,.42))}
-    #cs-frontier-scale-pink .scale-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.42), transparent)}
+    .scale-option-slide .scale-paper{position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,.036) 1px, transparent 0);background-size:4px 4px;opacity:.34;pointer-events:none}
+    .scale-option-slide .scale-eye{position:absolute;top:28px;left:48px;z-index:5;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a}
+    .scale-option-slide .scale-mark{position:absolute;top:28px;right:44px;z-index:5;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.04rem;font-weight:850;line-height:1}
+    .scale-option-slide .scale-mark .g{color:#5B8FD4}.scale-option-slide .scale-mark .n{color:#b8954a;font-style:italic}.scale-option-slide .scale-mark .r{color:#c8462c}
+    .scale-option-slide .scale-stage{position:absolute;inset:0;color:#1a1612}
+    .scale-option-slide .scale-head{position:absolute;left:50%;top:62px;z-index:3;transform:translateX(-50%);width:min(1410px,84vw);margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.9rem,5.25vw,6rem);font-weight:850;line-height:.95;letter-spacing:0;text-align:center;color:#1a1612}
+    .scale-option-slide .scale-head em{font-style:italic;color:#b8954a;font-weight:850}
+    .scale-option-slide .scale-image-wrap{position:absolute;left:92px;right:92px;top:290px;height:520px;z-index:2;overflow:hidden;background:#fbf7ef center/cover no-repeat;box-shadow:0 28px 78px rgba(74,53,26,.14)}
+    .scale-option-slide .scale-image-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(251,247,239,.16), rgba(251,247,239,0) 28%, rgba(251,247,239,.10));pointer-events:none}
+    .scale-option-slide .scale-image{display:none}
+    .scale-option-slide .scale-footer{position:absolute;left:50%;bottom:58px;z-index:3;transform:translateX(-50%);width:min(1420px,86vw);display:flex;align-items:center;justify-content:center;gap:30px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.9rem,2.28vw,2.58rem);font-weight:850;line-height:1.04;color:#1a1612;text-align:center;white-space:nowrap}
+    .scale-option-slide .scale-footer:before,.scale-option-slide .scale-footer:after{content:"";display:block;flex:1;max-width:250px;height:1px;background:linear-gradient(90deg, transparent, rgba(184,149,74,.42))}
+    .scale-option-slide .scale-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.42), transparent)}
+    .scale-option-slide.casey-entered > section > .scale-head{animation:none !important;opacity:1 !important;transform:translateX(-50%) !important}
+    .scale-option-slide.casey-entered > section > .scale-footer{animation:none !important;opacity:1 !important;transform:translateX(-50%) !important}
+    #cs-frontier-scale-pink .scale-image-wrap{background-image:url('assets/cs-frontier-scale-premium-a.png')}
+    #cs-frontier-scale-pink-2 .scale-image-wrap{background-image:url('assets/cs-frontier-scale-premium-b.png')}
+    #cs-frontier-scale-pink-3 .scale-image-wrap{background-image:url('assets/cs-frontier-scale-premium-c.png')}
   </style>
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
@@ -7631,6 +7636,28 @@ window.cs1m5Reverse = function() {
       </svg>
     </div>
     <div class="scale-footer">What we're most wired for isn't measured</div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-2" style="display:none;background:#f3ead8 !important;overflow:hidden">
+  <div class="scale-paper"></div>
+  <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
+  <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section class="scale-stage">
+    <h1 class="scale-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <div class="scale-image-wrap" aria-label="Technology metrics balanced against real human connection"></div>
+    <div class="scale-footer">The world measures the panels. GnR measures the people.</div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus scale-option-slide" id="cs-frontier-scale-pink-3" style="display:none;background:#f3ead8 !important;overflow:hidden">
+  <div class="scale-paper"></div>
+  <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
+  <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+  <section class="scale-stage">
+    <h1 class="scale-head">The <em>#1 predictor</em> of a fulfilling life is still invisible to technology.</h1>
+    <div class="scale-image-wrap" aria-label="Technology metrics balanced against real human connection"></div>
+    <div class="scale-footer">Simple enough to understand. Big enough to own.</div>
   </section>
 </div>
 
@@ -30331,8 +30358,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-17 LATEST] cs-frontier-iconic REMOVED from slot-1 alts per Dave 'you can delete this slide'. HTML retained as silent backup.
   // [Dave 2026-05-18] cs-frontier-pink2 ALSO REMOVED per Dave 'delete the "1 / 24 (alt)" slide'. Slot 1 now has zero alts. HTML retained as silent backup.
   // [Dave 2026-05-26] cs-brand-codex moved from slot-1 pink-dot alt to TRASH_ORDER per screenshot request.
-  // [Codex 2026-05-26] cs-frontier-scale-pink added as slot-1 pink-dot alt using the active opener's #1-predictor/missing-signal purpose with a scale visual.
-  1: ['cs-frontier-scale-pink'],
+  // [Codex 2026-05-27] cs-frontier-scale-pink candidates refreshed as slot-1 pink-dot scale-visual options.
+  1: ['cs-frontier-scale-pink', 'cs-frontier-scale-pink-2', 'cs-frontier-scale-pink-3'],
   // [Codex 2026-05-24] New slide-2 HCT story variants. Pink-dot alts left of cs-hct-system.
   // [Dave 2026-05-25] cs-hct-system-pink1 moved to TRASH_ORDER per screenshot request.
   2: ['cs-fv6-information-pink'],
@@ -32303,7 +32330,7 @@ Object.keys(SLIDE_ALTS).forEach(posKey => {
     //   [Dave 2026-05-17 LATEST PINK BATCH] cs-frontier-pink1/pink2 (slot 1) · cs-samecourt-pink1/pink2 (slot 13) · cs-givefirst-pink (slot 18) · cs-fv6-pink (slot 20) · cs-mv6-pink (slot 21) — all pink-dot alts for image-led/reduced-content variants of their primaries.
     // [Dave 2026-05-18 LATEST v6] cs-brand-mono removed (slide deleted). cs-brand-V8 added (demoted from main slot 3 → pink-dot alt of slot 2). cs-1m8-codexmerge + cs-1m8-envelopes added (new pink-dot codex-merge variants of cs-1m8).
     // [Dave 2026-05-18 LATEST v8] cs-wedgepb-codex added (pink-dot alt of cs-wedgepb-combo at slot 16 — same content + codex watercolor bg).
-    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
+    const isPinkAlt = (altId === 'cs-merge3' || altId === 'cs-fv6-img' || altId === 'cs-16' || altId === 'cs-frontier-pink1' || altId === 'cs-frontier-pink2' || altId === 'cs-frontier-scale-pink' || altId === 'cs-frontier-scale-pink-2' || altId === 'cs-frontier-scale-pink-3' || altId === 'cs-samecourt-pink1' || altId === 'cs-samecourt-pink2' || altId === 'cs-samecourt-pink3' || altId === 'cs-givefirst-pink' || altId === 'cs-fv6-pink' || altId === 'cs-fv6-information-pink' || altId === 'cs-mv6-pink' || altId === 'cs-18-vd4-pink' || altId === 'cs-givefirst-brand' || altId === 'cs-1m8-envelopes' || altId === 'cs-brand-codex' || altId === 'cs-brand-V8' || altId === 'cs-wedgepb-codex' || altId === 'cs-racketeer-path1' || altId === 'cs-racketeer-path2' || altId === 'cs-racketeer-path3' || altId === 'cs-2c-measure-loop' || altId === 'cs-2c-invisible-layer' || altId === 'cs-cultural-shift-pink2' || altId === 'cs-hct-system-pink1');
     // [Dave 2026-05-18] Purple-dot alts — 4 brand-slide attempts under cs-brand-V8 + 3 cs-racketeer alts for review.
     // [Dave 2026-05-18 LATEST] cs-racketeer-att-video REPLACED by cs-racketeer-att-triptych per Dave 'I'm not going to embed a video on the racketeer slide'.
     const isPurpleAlt = (altId === 'cs-2c-purple-image-river' || altId === 'cs-2c-purple-image-constellation' || altId === 'cs-brand-att1' || altId === 'cs-brand-att2' || altId === 'cs-brand-att3' || altId === 'cs-brand-att4' || altId === 'cs-brand-att5' || altId === 'cs-brand-att6' || altId === 'cs-racketeer-att-dense' || altId === 'cs-racketeer-att-pattern' || altId === 'cs-racketeer-att-triptych' || altId === 'cs-racketeer-att-incumbent' || altId === 'cs-racketeer-att-manual' || altId === 'cs-racketeer-att-arc'); // [Dave 2026-05-17 LATEST] cs-16 added — pink-dot alt at slot 18 (left of flywheel). [Dave 2026-05-17 PINK BATCH] 7 new pink alts across slots 1/13/18/20/21. [Dave 2026-05-17 PINK3] cs-samecourt-pink3 — FULL-content variant at slot 13 with warehouse bg image.
