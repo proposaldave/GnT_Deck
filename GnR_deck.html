@@ -32637,7 +32637,7 @@ window.navigateDotHorizontal = function(direction) {
     const r = dot.getBoundingClientRect();
     return r.width > 0 && r.height > 0;
   });
-  if (!activeDot) return false;
+  if (!activeDot) return window.navigateAlt && window.navigateAlt(direction);
   const ar = activeDot.getBoundingClientRect();
   const ax = ar.left + ar.width / 2;
   const ay = ar.top + ar.height / 2;
@@ -32655,7 +32655,7 @@ window.navigateDotHorizontal = function(direction) {
   }).filter(item => direction > 0 ? item.dx > 2 : item.dx < -2);
   const sameRow = visibleDots.filter(item => item.dy <= 18);
   const candidates = sameRow.length ? sameRow : visibleDots.filter(item => item.dy <= 36);
-  if (!candidates.length) return false;
+  if (!candidates.length) return window.navigateAlt && window.navigateAlt(direction);
   candidates.sort((a, b) => (Math.abs(a.dx) - Math.abs(b.dx)) || (a.dy - b.dy));
   candidates[0].dot.click();
   return true;
