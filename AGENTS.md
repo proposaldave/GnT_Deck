@@ -144,11 +144,11 @@ NEXT:
 - If verification fails, attempt one targeted correction, verify again, then report `BLOCKED` with root cause and next step.
 - Publish sessions run in Local mode on `main`, merge only verified safe `deck/*` branches, mirror `GnR_deck.html` to `index.html`, verify hashes, then push only when Dave explicitly requested publishing.
 - A completed Codex worktree session in the app UI, shown by a solid status dot, is a publish candidate. Publish control should locate the matching `deck/*` branch and publish it automatically if it merges cleanly and passes active-source checks.
-- Do not wait for Dave to identify each completed branch manually. If a completed branch is unsafe, skip it with the exact reason and next step.
-- After every publish, audit remaining checked-out `deck/*` worktrees and recent `deck/*` branches for clean completed-session candidates before reporting done. If the branch is safe, publish it in the same pass; if not, classify it as skipped, conflict, risky, or not verified.
+- Do not wait for Dave to identify each completed branch manually. If a completed branch is stale but its intent is clear, port the intent surgically onto current `main` instead of leaving it unpublished.
+- After every publish, audit remaining checked-out `deck/*` worktrees and recent `deck/*` branches for completed-session candidates before reporting done. Each completed candidate must be merged, ported, or blocked with the exact reason and next action.
 - Publish reports must separate `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 - Dirty unrelated local work must be preserved on a `preserve/[purpose]-local-change` branch before cleaning `main`; never silently drop, stash, reset, or overwrite it.
-- Skip risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches during broad publish passes; list every skipped branch and reason.
+- Do not use `skip` as a silent final state for completed work. Risky delete/trash, inactive-variant, conflict, broken-ref, and unrelated branches must be listed as `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with evidence; if Dave clearly requested the finished branch and the intent is safe to port, apply that intent surgically.
 - If GitHub Pages looks stale, verify local HEAD, `origin/main`, raw GitHub source, and the cache-busted Pages URL before declaring publish failure.
 - Verify-live sessions must trace request -> branch -> commit -> active slide source -> index.html -> pushed main -> cache-busted URL -> rendered visible result.
 - If `.git/refs/**/desktop.ini` appears, treat it as broken Google Drive ref contamination. Report it and do not delete it unless Dave explicitly approves a ref repair.

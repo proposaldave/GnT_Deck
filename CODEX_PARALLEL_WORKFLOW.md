@@ -25,8 +25,8 @@
 1. Use Local mode on `main`.
 2. Paste `prompts/CODEX_DECK_PUBLISH_PROMPT.txt`.
 3. Preserve unrelated dirty work before publishing.
-4. Merge only verified safe `deck/*` branches.
-5. Skip conflict, delete/trash/risky, and unverified inactive-variant branches.
+4. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
+5. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
 6. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
 7. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 
@@ -43,9 +43,9 @@ Deck Ops session -> Work locally -> main -> use publish prompt.
 Publish merges only verified safe branches and reports exactly what went live.
 
 Completed-session rule:
-A solid status dot in the Codex app means the worktree session is done. Publish control should treat the matching `deck/*` branch as a publish candidate, not wait for Dave to name it again. Merge it if it is clean and active-source verified; otherwise skip it with the exact blocker.
+A solid status dot in the Codex app means the worktree session is done. Publish control should treat the matching `deck/*` branch as a publish candidate, not wait for Dave to name it again. Merge it if it is clean and active-source verified. If a direct merge would roll back newer live work, port the requested intent surgically. If neither is safe, report `BLOCKED` with the exact blocker.
 
-Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, local `deck/*` branches, merge status, branch commit messages, and current `main`. Publish every clean safe completed candidate found in that audit, and list every skipped candidate with its blocker.
+Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, local `deck/*` branches, merge status, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
 
 Never run multiple Local edit sessions against `GnR_deck.html`.
 Never edit the old `pitch_visuals` copy during parallel work.
