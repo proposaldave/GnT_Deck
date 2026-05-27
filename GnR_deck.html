@@ -6772,6 +6772,8 @@ window.cs1m5Reverse = function() {
   /* Pulsing arrow — visible at stages 0/1/2 (still more to come), hides at stage 3 (final state) */
   #cs-1m8 .m8-hint { display:flex;align-items:center;justify-content:center;margin-top:36px;opacity:1;visibility:visible;transform:translateX(-92px);transition:opacity 0.4s ease, visibility 0s linear 0s }
   #cs-1m8[data-stage="3"] .m8-hint { opacity:0;visibility:hidden;transition:opacity 0.4s ease, visibility 0s linear 0.4s }
+  #cs-1m8 .m8-autonomous { font-family:'Manrope',sans-serif;font-size:clamp(.76rem,.96vw,.98rem);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#b8954a;line-height:1.3;margin-top:-14px;margin-bottom:18px;opacity:1;visibility:visible;transform:translateY(0);transition:opacity .35s ease, transform .35s ease, visibility 0s linear 0s }
+  #cs-1m8:not([data-stage="0"]) .m8-autonomous { opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease, transform .25s ease, visibility 0s linear .25s }
   @keyframes m8HintBob { 0%,100% { transform:translateY(0);opacity:0.85 } 50% { transform:translateY(8px);opacity:0.45 } }
   #cs-1m8 .m8-hint svg { animation:m8HintBob 2.2s ease-in-out infinite }
   #cs-1m8[data-stage="3"] .m8-hint svg { animation:none }
@@ -6793,6 +6795,7 @@ window.cs1m5Reverse = function() {
   html[data-export="1"] #cs-1m8 .m8-truth { display:none !important }
   html[data-export="1"] #cs-1m8 .m8-caption, html[data-export="1"] #cs-1m8 .m8-network, html[data-export="1"] #cs-1m8 .m8-cap-right { opacity:1 !important;visibility:visible !important;transform:none !important;max-height:none !important }
   html[data-export="1"] #cs-1m8 .m8-hint { display:none !important }
+  html[data-export="1"] #cs-1m8 .m8-autonomous { display:none !important }
   /* [Dave 2026-05-15] PDF-only override: spell out full "Give n Receive" (no spread/collapse).
      Web/keynote stays in spread "G n R" mode; PDF deck gets the full wordmark so a reader who
      doesn't have voice-over context can still read the company name. Captions reset to grid
@@ -7639,32 +7642,32 @@ window.cs1m5Reverse = function() {
   <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(26,22,18,0.05) 1px, transparent 0);background-size:4px 4px;opacity:0.55;pointer-events:none;mix-blend-mode:multiply"></div>
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%, rgba(184,149,74,0.10), transparent 55%);pointer-events:none"></div>
   <!-- Eyebrow [Dave 2026-05-19]: reset to canonical top-left Manrope style. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">A new type of coordination system for our communities</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">a new type of community coordination system</div>
   <div class="s on" style="background:transparent">
     <div class="stg" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;text-align:center;color:#1a1612;padding:0 60px">
       <!-- Wordmark — same span structure as cs-1m5: G/ive/n/R/eceive renders 'Give n Receive' -->
       <div class="m8-wordmark">
         <span class="wm-letter wm-G">G</span><span class="wm-letter wm-ive">ive</span><span class="wm-n-wrap"><svg class="wm-arc" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M 4 26 Q 30 -2 56 26" stroke="#b8954a" stroke-width="2.2" fill="none" opacity="0.85" stroke-linecap="round"/><circle cx="4" cy="26" r="3.4" fill="#5B8FD4"/><circle cx="56" cy="26" r="3.4" fill="#c8462c"/></svg><span class="wm-n">n</span></span><span class="wm-letter wm-R">R</span><span class="wm-letter wm-eceive">eceive</span>
       </div>
+      <div class="m8-autonomous">autonomous social coordination</div>
       <!-- [Dave 2026-05-11 LATE] 4-stage reveal: STAGE 1 = LEFT cap only, STAGE 2 = + network line, STAGE 3 = + RIGHT cap. -->
       <!-- STAGE 1: LEFT caption (m8-cap-left auto-shows with parent at stage 1+); RIGHT (m8-cap-right) stays hidden until stage 3 -->
       <!-- [Dave 2026-05-12 LATEST v2] Caption alignment: G is at translateX 85, R is at translateX 282 (asymmetric). Captions sit in a symmetric 2-col grid, so they don't naturally match the G/R visual centers. Solution — apply the SAME translates to each caption column as the wordmark uses, so caption centers track G and R precisely. (Was previously +95 on right only — overcorrected per Dave.) -->
       <div class="m8-caption" style="display:grid;grid-template-columns:1fr 1fr;gap:140px;width:min(1300px,92%);align-items:start">
         <div class="m8-cap-left" style="text-align:center;transform:translateX(28px)">
-          <div style="font-family:'Manrope',sans-serif;font-size:clamp(.70rem,.84vw,.86rem);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">The spirit and feeling</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">we <span style="color:#5B8FD4;font-weight:700">give</span> each other.</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.35rem,1.75vw,1.75rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">What we <span style="color:#5B8FD4;font-weight:700">give</span> each other is the fuel.</div>
         </div>
         <!-- [Dave 2026-05-17] Right cap translateX history: 28 → 86 → 140 → 100 → 70 → 50 → 30. Dave: "reposition this text a little more to the left". -->
         <!-- [Dave 2026-05-26] Centered under the large red R. -->
         <div class="m8-cap-right" style="text-align:center;transform:translateX(-30px)">
           <div style="font-family:'Manrope',sans-serif;font-size:clamp(.78rem,.95vw,.95rem);font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:10px">Your People &middot; Your Moments</div>
-          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">received</em> back.</div>
+          <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.4rem,1.85vw,1.85rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3"><em style="font-style:italic;font-weight:700;color:#c8462c">Reciprocated</em> back.</div>
         </div>
       </div>
-      <!-- STAGE 2: 'The Network · The Community / Sees. Measures. Digitizes.' line -->
+      <!-- STAGE 2: 'The Network / Sees.' line -->
       <div class="m8-network" style="margin-top:24px;text-align:center;transform:translateX(10px)">
-        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#b8954a;font-weight:900">Network</strong> · The Community</div>
-        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees. Measures. Digitizes.</div>
+        <div style="font-family:'Manrope',sans-serif;font-size:clamp(.58rem,.72vw,.76rem);font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:#1a1612;line-height:1.3;margin-bottom:8px">The <strong style="color:#b8954a;font-weight:900">Network</strong></div>
+        <div style="font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.2rem,1.55vw,1.55rem);font-weight:500;font-style:italic;color:#1a1612;line-height:1.3">Sees.</div>
       </div>
       <!-- Pulsing arrow — visible at stages 0 and 1 (still more to come). Hides at stage 2. -->
       <div class="m8-hint">
