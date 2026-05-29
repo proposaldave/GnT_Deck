@@ -12,6 +12,76 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#1a1612">
 <title>Give n Receive &mdash; Pitch Deck</title>
+<!-- ===== club-community-engineering brainstorm slides [Codex 2026-05-29] ===== -->
+<style>
+  #cs-club-os, #cs-club-social-loop, #cs-club-anti-dupr {
+    background:#f3ead8 !important; overflow:hidden; position:relative; min-height:1080px; height:1080px; width:100%; color:#1a1612;
+  }
+  #cs-club-os .cco-eye, #cs-club-social-loop .cco-eye, #cs-club-anti-dupr .cco-eye {
+    position:absolute; top:28px; left:48px; z-index:10;
+    font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c;
+  }
+  .club-build-stage { position:absolute; inset:0; box-sizing:border-box; padding:90px 78px 58px; z-index:2; }
+  .club-build-kicker { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#b8954a; margin-bottom:22px; }
+  .club-build-title { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.45rem,5.4vw,6.2rem); line-height:.98; font-weight:900; letter-spacing:0; color:#1a1612; text-wrap:balance; }
+  .club-build-title em { color:#c8462c; font-style:italic; }
+  .club-build-sub { margin:24px 0 0; max-width:980px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(1.3rem,1.95vw,2.05rem); line-height:1.2; font-weight:650; color:rgba(26,22,18,.76); }
+  .club-build-chip { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:9px 16px; border:1px solid rgba(184,149,74,.38); background:rgba(251,247,239,.78); border-radius:7px; box-shadow:0 10px 24px rgba(26,22,18,.05); font-family:'Manrope',sans-serif; font-size:.74rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; color:#1a1612; }
+  .club-build-chip.hot { border-color:rgba(200,70,44,.58); background:rgba(200,70,44,.08); color:#c8462c; }
+  .club-build-chip.blue { border-color:rgba(91,143,212,.48); background:rgba(91,143,212,.08); color:#335f95; }
+  .club-build-mark { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.15rem; font-weight:900; line-height:1; letter-spacing:0; }
+  .club-build-mark .g { color:#5B8FD4; } .club-build-mark .n { color:#b8954a; font-style:italic; font-weight:650; } .club-build-mark .r { color:#c8462c; }
+  .club-build-anim { opacity:0; transform:translateY(14px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+  .casey-entered .club-build-anim { opacity:1; transform:none; }
+  .casey-entered .club-build-anim:nth-child(2) { transition-delay:.12s; }
+  .casey-entered .club-build-anim:nth-child(3) { transition-delay:.24s; }
+  .casey-entered .club-build-anim:nth-child(4) { transition-delay:.36s; }
+  html[data-export="1"] .club-build-anim { opacity:1 !important; transform:none !important; transition:none !important; }
+
+  #cs-club-os .cco-stage { display:grid; grid-template-columns:.95fr 1.05fr; gap:54px; align-items:center; }
+  #cs-club-os .cco-offer { position:relative; height:740px; }
+  #cs-club-os .cco-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:270px; height:270px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; background:#1a1612; color:#fbf7ef; box-shadow:0 24px 80px rgba(26,22,18,.18), 0 0 0 18px rgba(184,149,74,.12); }
+  #cs-club-os .cco-core small { font-family:'Manrope',sans-serif; font-size:.62rem; font-weight:900; letter-spacing:.24em; text-transform:uppercase; color:#f1d788; }
+  #cs-club-os .cco-spoke { position:absolute; width:280px; padding:22px 24px; border:1.4px solid rgba(184,149,74,.42); background:rgba(251,247,239,.88); border-radius:8px; box-shadow:0 18px 46px rgba(26,22,18,.07); }
+  #cs-club-os .cco-spoke b { display:block; font-family:'Manrope',sans-serif; font-size:.70rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#c8462c; margin-bottom:10px; }
+  #cs-club-os .cco-spoke span { display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:800; line-height:1.05; color:#1a1612; }
+  #cs-club-os .cco-s1 { left:0; top:28px; } #cs-club-os .cco-s2 { right:8px; top:92px; } #cs-club-os .cco-s3 { left:24px; bottom:92px; } #cs-club-os .cco-s4 { right:0; bottom:24px; }
+  #cs-club-os .cco-line { position:absolute; left:50%; top:50%; width:2px; height:250px; transform-origin:top center; background:linear-gradient(#b8954a,rgba(184,149,74,0)); opacity:.62; }
+  #cs-club-os .cco-l1 { transform:rotate(236deg); } #cs-club-os .cco-l2 { transform:rotate(48deg); } #cs-club-os .cco-l3 { transform:rotate(142deg); } #cs-club-os .cco-l4 { transform:rotate(-42deg); }
+  #cs-club-os .cco-close { margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; max-width:880px; }
+
+  #cs-club-social-loop .cco-stage { display:grid; grid-template-columns:1.04fr .96fr; gap:50px; align-items:center; }
+  #cs-club-social-loop .loop-board { position:relative; height:730px; border:2px solid rgba(91,143,212,.38); background:linear-gradient(90deg,rgba(91,143,212,.10) 0 49.8%,rgba(251,247,239,.74) 49.8% 50.2%,rgba(91,143,212,.10) 50.2% 100%); box-shadow:inset 0 0 0 26px rgba(251,247,239,.55),0 28px 80px rgba(26,22,18,.08); }
+  #cs-club-social-loop .loop-net { position:absolute; left:50%; top:36px; bottom:36px; width:2px; background:repeating-linear-gradient(to bottom,rgba(26,22,18,.42) 0 9px,transparent 9px 17px); }
+  #cs-club-social-loop .loop-step { position:absolute; width:270px; padding:20px 22px; border:1.4px solid rgba(26,22,18,.13); background:rgba(251,247,239,.91); border-radius:8px; box-shadow:0 16px 42px rgba(26,22,18,.08); }
+  #cs-club-social-loop .loop-step b { display:block; font-family:'Manrope',sans-serif; font-size:.66rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#5B8FD4; margin-bottom:8px; }
+  #cs-club-social-loop .loop-step span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-weight:850; line-height:1.04; }
+  #cs-club-social-loop .loop-a { left:34px; top:42px; } #cs-club-social-loop .loop-b { right:36px; top:118px; } #cs-club-social-loop .loop-c { left:58px; bottom:142px; } #cs-club-social-loop .loop-d { right:44px; bottom:48px; }
+  #cs-club-social-loop .loop-ball { position:absolute; left:49%; top:46%; width:46px; height:46px; border-radius:50%; background:#c8462c; box-shadow:0 0 0 14px rgba(200,70,44,.12),0 14px 30px rgba(200,70,44,.24); }
+  #cs-club-social-loop .loop-caption { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:245px; padding:20px; text-align:center; background:#1a1612; color:#fbf7ef; border-radius:8px; box-shadow:0 20px 54px rgba(26,22,18,.20); }
+  #cs-club-social-loop .loop-caption b { display:block; font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.20em; text-transform:uppercase; color:#f1d788; margin-bottom:10px; }
+  #cs-club-social-loop .loop-caption span { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.7rem; font-weight:850; line-height:1.02; }
+  #cs-club-social-loop .loop-foot { margin-top:30px; display:flex; flex-wrap:wrap; gap:10px; }
+
+  #cs-club-anti-dupr .cco-stage { display:flex; flex-direction:column; justify-content:center; gap:36px; }
+  #cs-club-anti-dupr .adu-head { text-align:center; max-width:1320px; margin:0 auto; }
+  #cs-club-anti-dupr .adu-compare { display:grid; grid-template-columns:1fr 128px 1fr; gap:28px; align-items:stretch; }
+  #cs-club-anti-dupr .adu-panel { min-height:470px; padding:40px 42px 36px; border:1.4px solid rgba(184,149,74,.30); background:rgba(251,247,239,.82); border-radius:8px; box-shadow:0 18px 52px rgba(26,22,18,.06); display:flex; flex-direction:column; gap:22px; }
+  #cs-club-anti-dupr .adu-panel.bad { border-left:7px solid #c8462c; }
+  #cs-club-anti-dupr .adu-panel.good { border-left:7px solid #5B8FD4; background:linear-gradient(180deg,rgba(251,247,239,.96),rgba(251,247,239,.78)); }
+  #cs-club-anti-dupr .adu-label { font-family:'Manrope',sans-serif; font-size:.72rem; font-weight:900; letter-spacing:.28em; text-transform:uppercase; }
+  #cs-club-anti-dupr .bad .adu-label { color:#c8462c; } #cs-club-anti-dupr .good .adu-label { color:#5B8FD4; }
+  #cs-club-anti-dupr .adu-panel h2 { margin:0; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:3.05rem; font-weight:900; line-height:1.02; letter-spacing:0; color:#1a1612; }
+  #cs-club-anti-dupr .adu-proof { font-family:'Manrope',sans-serif; font-size:.78rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.52); padding:15px 0; border-top:1px solid rgba(184,149,74,.28); border-bottom:1px solid rgba(184,149,74,.28); }
+  #cs-club-anti-dupr .adu-points { display:grid; gap:14px; margin-top:auto; }
+  #cs-club-anti-dupr .adu-point { position:relative; padding-left:22px; font-family:'Manrope',sans-serif; font-size:1.26rem; font-weight:780; line-height:1.18; color:#1a1612; }
+  #cs-club-anti-dupr .adu-point:before { content:''; position:absolute; left:0; top:.45em; width:8px; height:8px; border-radius:50%; background:#b8954a; }
+  #cs-club-anti-dupr .bad .adu-point:before { background:#c8462c; } #cs-club-anti-dupr .good .adu-point:before { background:#5B8FD4; }
+  #cs-club-anti-dupr .adu-mid { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; }
+  #cs-club-anti-dupr .adu-mid-line { width:1px; height:98px; background:linear-gradient(180deg,rgba(200,70,44,.55),rgba(184,149,74,.75),rgba(91,143,212,.55)); }
+  #cs-club-anti-dupr .adu-mid-copy { font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:900; letter-spacing:.18em; text-transform:uppercase; color:rgba(26,22,18,.58); line-height:1.55; }
+</style>
+
 <style>
   /* [Dave 2026-05-15] iPad / iOS Safari polish — added with the rest of the audit pass:
      • Tap-highlight: kill the gray flash on every tap (looked twitchy on cards/nav).
@@ -7635,10 +7705,17 @@ window.cs1m5Reverse = function() {
   #cs-frontier-scale-pink-2 .scale-image-wrap{inset:0;width:auto;height:auto;z-index:1;box-shadow:none;background-color:#fbf7ef;background-size:cover;background-repeat:no-repeat;background-position:center center;filter:saturate(1.06) contrast(1.03)}
   #cs-frontier-scale-pink-2 .scale-image-wrap:after{background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
   #cs-frontier-scale-pink-2 .scale-head span{display:block}
-  #cs-frontier-scale-pink-2 .scale-footer{left:65%;bottom:46px !important;width:min(980px,54vw);z-index:8 !important;opacity:1!important;visibility:visible!important;color:#c8462c;font-size:clamp(1.72rem,2.05vw,2.36rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
+  #cs-frontier-scale-pink-2 .scale-head,#cs-frontier-scale-pink-2 .scale-mark,#cs-frontier-scale-pink-2 .scale-footer{opacity:0!important;visibility:hidden!important;transition:opacity .62s cubic-bezier(.22,1,.36,1),transform .62s cubic-bezier(.22,1,.36,1),visibility 0s linear .62s}
+  #cs-frontier-scale-pink-2 .scale-head{transform:translateX(-50%) translateY(12px)}
+  #cs-frontier-scale-pink-2 .scale-mark{transform:translateY(10px)}
+  #cs-frontier-scale-pink-2 .scale-footer{left:72%;bottom:46px !important;width:min(900px,46vw);z-index:8 !important;transform:translateX(-50%) translateY(10px);color:#c8462c;font-size:clamp(1.5rem,1.78vw,2.08rem);text-shadow:0 2px 8px rgba(251,247,239,.82)}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{opacity:1!important;visibility:visible!important;transition-delay:.04s, .04s, 0s}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-head,#cs-frontier-scale-pink-2[data-stage="2"] .scale-head{transform:translateX(-50%) translateY(0)}
+  #cs-frontier-scale-pink-2[data-stage="1"] .scale-mark,#cs-frontier-scale-pink-2[data-stage="2"] .scale-mark{transform:translateY(0)}
+  #cs-frontier-scale-pink-2[data-stage="2"] .scale-footer{opacity:1!important;visibility:visible!important;transform:translateX(-50%) translateY(0);transition-delay:.1s, .1s, 0s}
 </style>
 
-<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2">
+<div class="casey-slide ds-focus scale-option-slide active casey-entered" id="cs-frontier-scale-pink-2" data-stage="0" onclick="if(window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) event.stopPropagation()" style="cursor:pointer">
   <div class="scale-paper"></div>
   <div class="scale-eye">NEUROSCIENCE &bull; LONGITUDINAL &bull; PUBLIC HEALTH &bull; EPIDEMOLOGY</div>
   <div class="scale-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
@@ -9282,6 +9359,7 @@ window.cs1m7Reverse = function() {
   #cs-thegap .tg-swap-line { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.05rem,3.8vw,3.45rem); font-weight:700; color:#1a1612; line-height:1.08; letter-spacing:-0.02em; }
   #cs-thegap .tg-swap-line em { font-style:italic; font-weight:650; }
   #cs-thegap .tg-swap-private { font-size:clamp(1.65rem,3vw,2.7rem); max-width:1808px; margin:0 auto; white-space:nowrap; }
+  #cs-thegap .tg-plain-amp { font-family:'Manrope',sans-serif; font-style:normal; font-weight:800; letter-spacing:-0.04em; }
   #cs-thegap .tg-swap-private em { color:#c8462c; }
   #cs-thegap .tg-swap-like { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; max-width:1440px; margin:6px auto 0; color:#1a1612; }
   #cs-thegap .tg-swap-like em,
@@ -10219,7 +10297,7 @@ window.cs1m7Reverse = function() {
 
       <!-- [Dave 2026-05-17 v3] tg-sub relocated here, BELOW the trapped-wrap graphic — lands as the caption to the visual story. -->
       <div class="tg-sub tg-swap-line tg-swap-private" style="opacity:1;transform:none">
-        So our private thoughts & feelings about each other stay <em>trapped in our heads</em>.
+        So our private thoughts <span class="tg-plain-amp">&amp;</span> feelings about each other stay <em>trapped in our heads</em>.
       </div>
 
       <!-- Click hint — pulses while in trapped state; fades after first advance -->
@@ -10236,6 +10314,9 @@ window.cs1m7Reverse = function() {
               <stop offset="60%" stop-color="#b8954a" stop-opacity="0.10"/>
               <stop offset="100%" stop-color="#b8954a" stop-opacity="0"/>
             </radialGradient>
+            <filter id="tgInkLiftOld" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#1a1612" flood-opacity="0.12"/>
+            </filter>
             <marker id="tgArrowRedOld" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#c8462c"/>
             </marker>
@@ -10248,7 +10329,7 @@ window.cs1m7Reverse = function() {
             <ellipse cx="160" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
             <!-- [Dave 2026-05-15] Reverted to original simple silhouettes — the "realistic" upgrade with necks/oval heads/hair variations introduced weird artifacts (the long-hair target looked horned, the bun and cap silhouettes read as awkward shapes). Clean stick-figure silhouettes work better here. -->
             <!-- Texter silhouette (centered) -->
-            <g transform="translate(60, 110)">
+            <g transform="translate(60, 110)" filter="url(#tgInkLiftOld)">
               <circle cx="0" cy="0" r="22" fill="#1a1612"/>
               <path d="M -32 70 Q -32 14 -10 6 L 10 6 Q 32 14 32 70 Z" fill="#1a1612"/>
               <!-- Arm reaching forward holding phone -->
@@ -10259,7 +10340,7 @@ window.cs1m7Reverse = function() {
               <circle cx="45" cy="51" r="1.4" fill="#1a1612"/>
             </g>
             <!-- 4 outgoing dashed red arrows (manual one-at-a-time sends) -->
-            <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 4" fill="none" stroke-linecap="round">
+            <g stroke="#c8462c" stroke-width="2.35" stroke-dasharray="8 5" fill="none" stroke-linecap="round">
               <path d="M 138 124 Q 188 100 236 86"/>
               <path d="M 138 138 Q 188 138 236 132"/>
               <path d="M 138 152 Q 188 158 236 178"/>
@@ -10281,7 +10362,7 @@ window.cs1m7Reverse = function() {
                number stays "2" since this is now the second-revealed panel. -->
           <g data-panel="2">
             <ellipse cx="513" cy="150" rx="170" ry="120" fill="url(#tgPanelGlowOld)"/>
-            <g transform="translate(513, 144)">
+            <g transform="translate(513, 144)" filter="url(#tgInkLiftOld)">
               <g fill="#1a1612">
                 <g transform="translate(-116, 8)">
                   <circle cx="0" cy="0" r="18"/>
@@ -10292,19 +10373,25 @@ window.cs1m7Reverse = function() {
                   <path d="M -28 66 Q -28 14 -9 6 L 9 6 Q 28 14 28 66 Z"/>
                 </g>
               </g>
-              <g stroke="#c8462c" stroke-width="1.7" stroke-dasharray="5 5" fill="none" stroke-linecap="round" opacity=".76">
-                <path d="M -72 30 C -30 -20 22 -42 64 -30"/>
-                <path d="M -74 50 C -20 20 22 20 70 50"/>
+              <g stroke="#c8462c" stroke-width="2.15" stroke-dasharray="8 5" fill="none" stroke-linecap="round" opacity=".82">
+                <path d="M -78 30 C -36 -28 24 -48 76 -34"/>
+                <path d="M -78 54 C -24 18 30 18 78 54"/>
+                <path d="M -48 72 C -18 42 22 40 52 70" opacity=".62"/>
               </g>
-              <g fill="#b8954a" opacity=".92">
+              <g stroke="rgba(184,149,74,0.42)" stroke-width="1.2" fill="none">
+                <line x1="-18" y1="-22" x2="14" y2="-42"/>
+                <line x1="14" y1="-42" x2="42" y2="-16"/>
+                <line x1="-28" y1="24" x2="18" y2="30"/>
+              </g>
+              <g fill="#b8954a" opacity=".96">
                 <circle cx="-18" cy="-22" r="4.6"/>
                 <circle cx="14" cy="-42" r="3.8"/>
                 <circle cx="42" cy="-16" r="3.8"/>
                 <circle cx="-28" cy="24" r="3.6"/>
                 <circle cx="18" cy="30" r="4.2"/>
               </g>
-              <g stroke="rgba(26,22,18,0.38)" stroke-width="1.6" stroke-linecap="round">
-                <g transform="translate(0, -2)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              <g stroke="rgba(26,22,18,0.48)" stroke-width="2" stroke-linecap="round">
+                <g transform="translate(0, -2)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
               </g>
             </g>
             <text x="513" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT SUPPLY</text>
@@ -10312,7 +10399,7 @@ window.cs1m7Reverse = function() {
 
           <g data-panel="3">
             <ellipse cx="867" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
-            <g transform="translate(-293, 0)">
+            <g transform="translate(-293, 0)" filter="url(#tgInkLiftOld)">
               <!-- [Dave 2026-05-15] Reverted to original silhouettes — the realism upgrade made things worse. -->
               <!-- LEFT lone figure (the giver) -->
               <g transform="translate(1050, 110)">
@@ -10347,16 +10434,16 @@ window.cs1m7Reverse = function() {
                 </g>
               </g>
               <!-- GIVE arrow (solid red, lone figure → community) — no heart icon -->
-              <path d="M 1096 122 L 1172 122" stroke="#c8462c" stroke-width="2.4" fill="none" stroke-linecap="round" marker-end="url(#tgArrowRedOld)"/>
+              <path d="M 1090 122 L 1178 122" stroke="#c8462c" stroke-width="3.1" fill="none" stroke-linecap="round" marker-end="url(#tgArrowRedOld)"/>
               <!-- RETURN arrow (broken / dashed, community → lone figure) with '?' in the middle -->
               <g>
-                <path d="M 1182 170 L 1164 170 M 1152 170 L 1132 170 M 1120 170 L 1100 170" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M 1184 170 L 1164 170 M 1150 170 L 1128 170 M 1114 170 L 1094 170" stroke="rgba(26,22,18,0.52)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
                 <!-- Broken arrowhead at left end (toward lone figure) -->
-                <path d="M 1086 170 L 1094 164 M 1086 170 L 1094 176 M 1086 170 L 1098 170" stroke="rgba(26,22,18,0.42)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                <path d="M 1086 170 L 1095 163 M 1086 170 L 1095 177 M 1086 170 L 1100 170" stroke="rgba(26,22,18,0.52)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
                 <!-- '?' midpoint -->
                 <g transform="translate(1148, 170)">
-                  <circle r="11" fill="#fbf7ee" stroke="rgba(26,22,18,0.42)" stroke-width="1.5"/>
-                  <text text-anchor="middle" y="5" font-family="Manrope,sans-serif" font-size="14" font-weight="800" fill="rgba(26,22,18,0.62)">?</text>
+                  <circle r="13" fill="#fbf7ee" stroke="rgba(26,22,18,0.52)" stroke-width="1.7"/>
+                  <text text-anchor="middle" y="6" font-family="Manrope,sans-serif" font-size="16" font-weight="900" fill="rgba(26,22,18,0.72)">?</text>
                 </g>
               </g>
             </g>
@@ -10370,10 +10457,10 @@ window.cs1m7Reverse = function() {
                number is now "3" since this is the third-revealed panel. -->
           <g data-panel="4">
             <ellipse cx="1220" cy="150" rx="200" ry="120" fill="url(#tgPanelGlowOld)"/>
-            <g transform="translate(530, 0)">
+            <g transform="translate(530, 0)" filter="url(#tgInkLiftOld)">
               <!-- Cluster A (top-left) -->
               <g>
-                <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <g stroke="rgba(200,70,44,0.66)" stroke-width="1.35" fill="none">
                   <line x1="586" y1="86" x2="612" y2="74"/>
                   <line x1="612" y1="74" x2="624" y2="100"/>
                   <line x1="624" y1="100" x2="598" y2="112"/>
@@ -10381,14 +10468,14 @@ window.cs1m7Reverse = function() {
                   <line x1="586" y1="86" x2="624" y2="100"/>
                   <line x1="612" y1="74" x2="598" y2="112"/>
                 </g>
-                <circle cx="586" cy="86" r="4.4" fill="#c8462c"/>
-                <circle cx="612" cy="74" r="4.4" fill="#c8462c"/>
-                <circle cx="624" cy="100" r="4.4" fill="#c8462c"/>
-                <circle cx="598" cy="112" r="4.4" fill="#c8462c"/>
+                <circle cx="586" cy="86" r="5.4" fill="#c8462c"/>
+                <circle cx="612" cy="74" r="5.4" fill="#c8462c"/>
+                <circle cx="624" cy="100" r="5.4" fill="#c8462c"/>
+                <circle cx="598" cy="112" r="5.4" fill="#c8462c"/>
               </g>
               <!-- Cluster B (top-right) -->
               <g>
-                <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <g stroke="rgba(200,70,44,0.66)" stroke-width="1.35" fill="none">
                   <line x1="758" y1="78" x2="788" y2="92"/>
                   <line x1="788" y1="92" x2="800" y2="120"/>
                   <line x1="800" y1="120" x2="772" y2="116"/>
@@ -10396,14 +10483,14 @@ window.cs1m7Reverse = function() {
                   <line x1="758" y1="78" x2="800" y2="120"/>
                   <line x1="788" y1="92" x2="772" y2="116"/>
                 </g>
-                <circle cx="758" cy="78" r="4.4" fill="#c8462c"/>
-                <circle cx="788" cy="92" r="4.4" fill="#c8462c"/>
-                <circle cx="800" cy="120" r="4.4" fill="#c8462c"/>
-                <circle cx="772" cy="116" r="4.4" fill="#c8462c"/>
+                <circle cx="758" cy="78" r="5.4" fill="#c8462c"/>
+                <circle cx="788" cy="92" r="5.4" fill="#c8462c"/>
+                <circle cx="800" cy="120" r="5.4" fill="#c8462c"/>
+                <circle cx="772" cy="116" r="5.4" fill="#c8462c"/>
               </g>
               <!-- Cluster C (bottom-center) -->
               <g>
-                <g stroke="rgba(200,70,44,0.55)" stroke-width="0.9" fill="none">
+                <g stroke="rgba(200,70,44,0.66)" stroke-width="1.35" fill="none">
                   <line x1="668" y1="184" x2="704" y2="176"/>
                   <line x1="704" y1="176" x2="722" y2="206"/>
                   <line x1="722" y1="206" x2="684" y2="218"/>
@@ -10411,16 +10498,21 @@ window.cs1m7Reverse = function() {
                   <line x1="668" y1="184" x2="722" y2="206"/>
                   <line x1="704" y1="176" x2="684" y2="218"/>
                 </g>
-                <circle cx="668" cy="184" r="4.4" fill="#c8462c"/>
-                <circle cx="704" cy="176" r="4.4" fill="#c8462c"/>
-                <circle cx="722" cy="206" r="4.4" fill="#c8462c"/>
-                <circle cx="684" cy="218" r="4.4" fill="#c8462c"/>
+                <circle cx="668" cy="184" r="5.4" fill="#c8462c"/>
+                <circle cx="704" cy="176" r="5.4" fill="#c8462c"/>
+                <circle cx="722" cy="206" r="5.4" fill="#c8462c"/>
+                <circle cx="684" cy="218" r="5.4" fill="#c8462c"/>
+              </g>
+              <g stroke="rgba(26,22,18,0.20)" stroke-width="1.3" stroke-dasharray="6 7" fill="none" stroke-linecap="round">
+                <path d="M 626 124 C 650 106 674 104 698 122"/>
+                <path d="M 728 136 C 746 136 764 140 780 154"/>
+                <path d="M 676 166 C 684 150 696 140 712 134"/>
               </g>
               <!-- Missing-bridge X marks in the gaps between clusters -->
-              <g stroke="rgba(26,22,18,0.32)" stroke-width="1.8" stroke-linecap="round">
-                <g transform="translate(690, 96)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
-                <g transform="translate(648, 158)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
-                <g transform="translate(744, 162)"><line x1="-7" y1="-7" x2="7" y2="7"/><line x1="7" y1="-7" x2="-7" y2="7"/></g>
+              <g stroke="rgba(26,22,18,0.48)" stroke-width="2.1" stroke-linecap="round">
+                <g transform="translate(690, 96)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
+                <g transform="translate(648, 158)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
+                <g transform="translate(744, 162)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
               </g>
             </g>
             <text x="1220" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.4" fill="#c8462c">COMMUNITIES &#8594; CLIQUES</text>
@@ -12321,7 +12413,7 @@ window.cs1m7Reverse = function() {
   <div class="wpc-codex-wash" aria-hidden="true"></div>
   <!-- [Dave 2026-05-17 v14] Eyebrow changed to "Give n Receive's #1 secret" per Dave. -->
   <!-- [Dave 2026-05-18 LATEST] Eyebrow simplified per Dave 'change "Give n Receive's #1 secret · codex bg" to "Give n Receive's #1 secret"'. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">outlier secret</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;z-index:10">secret outlier wedge to the next frontier</div>
   <section class="wpc-stage">
 
     <!-- [Dave 2026-05-17 v12] "Pickleball is the wedge. Human connection is the category." headline DELETED from visible slide + moved to speaker notes per Dave. Sub-headline ("Pickleball → fastest wedge...") remains as the lead-in. -->
@@ -12540,6 +12632,13 @@ window.cs1m7Reverse = function() {
     margin:22px 0 0; max-width:780px; font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:1.82rem; line-height:1.16; font-weight:650; color:rgba(26,22,18,.72);
   }
+  #cs-pb-silliness-feature .psj-kuhn-title {
+    font-size:clamp(2.55rem,3.95vw,4.65rem); line-height:1.04; max-width:860px;
+  }
+  #cs-pb-silliness-feature .psj-kuhn-byline {
+    font-family:'Manrope',sans-serif; font-size:.82rem; line-height:1.2; font-weight:900;
+    letter-spacing:.18em; text-transform:uppercase; color:#c8462c;
+  }
   .psj-chip {
     border:1px solid rgba(184,149,74,.36); background:rgba(251,247,239,.88);
     box-shadow:0 14px 32px rgba(26,22,18,.07);
@@ -12596,6 +12695,22 @@ window.cs1m7Reverse = function() {
   #cs-pb-silliness-feature .psj-bug span {
     display:block; font-family:'Fraunces','Playfair Display',Georgia,serif;
     font-size:1.72rem; line-height:1.02; font-weight:850;
+  }
+  #cs-pb-silliness-feature .psj-signal {
+    margin-top:32px; display:grid; gap:12px; max-width:820px;
+  }
+  #cs-pb-silliness-feature .psj-signal-row {
+    display:grid; grid-template-columns:136px 1fr; gap:16px; align-items:center;
+    padding:16px 18px; border:1px solid rgba(184,149,74,.36);
+    background:rgba(251,247,239,.88); box-shadow:0 14px 32px rgba(26,22,18,.07);
+  }
+  #cs-pb-silliness-feature .psj-signal-row b {
+    font-family:'Manrope',sans-serif; font-size:.64rem; font-weight:900; letter-spacing:.16em;
+    text-transform:uppercase; color:#c8462c;
+  }
+  #cs-pb-silliness-feature .psj-signal-row span {
+    font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.28rem;
+    line-height:1.12; font-weight:760; color:#1a1612;
   }
   #cs-pb-silliness-scroll .psj-stage { grid-template-columns:.88fr 1.12fr; }
   #cs-pb-silliness-scroll .psj-feed {
@@ -12702,16 +12817,22 @@ window.cs1m7Reverse = function() {
   <div class="psj-eye">why pickleball works</div>
   <section class="psj-stage">
     <div class="psj-copy psj-anim">
-      <h1 class="psj-title">Pickleball silliness is a <em>feature</em>, not a bug.</h1>
-      <p class="psj-sub">The joke lowers the guard. The guard is where community starts.</p>
+      <h1 class="psj-title">Pickleball is silly because it <em>lowers ego.</em></h1>
+      <p class="psj-sub">That is why it works socially: people laugh, rotate, apologize for net drips, and show who they are before they protect a rating.</p>
+      <p class="psj-sub psj-kuhn-byline">&ldquo;People were not taking pickleball seriously... it was a weird sport with a funny name. I thought that was just a vast market mistake.&rdquo; &mdash; Steve Kuhn &middot; MLP / DUPR founder</p>
+      <div class="psj-signal">
+        <div class="psj-signal-row"><b>Surface</b><span>silly name, dinks, kitchen, wiffle ball</span></div>
+        <div class="psj-signal-row"><b>Effect</b><span>guard down, belonging up, signal visible</span></div>
+        <div class="psj-signal-row"><b>Scale</b><span>24.3M players; 171.8% growth from 2022-2025</span></div>
+      </div>
     </div>
     <div class="psj-board psj-anim" aria-hidden="true">
       <div class="psj-court"><div class="psj-net"></div><div class="psj-trail"></div><div class="psj-ball"></div></div>
       <div class="psj-chip psj-feature-pill p1">silly name</div>
-      <div class="psj-chip psj-feature-pill p2">tiny paddle</div>
+      <div class="psj-chip psj-feature-pill p2">kitchen zone</div>
       <div class="psj-chip psj-feature-pill p3">lucky net drip</div>
       <div class="psj-chip psj-feature-pill p4">dinks count</div>
-      <div class="psj-bug"><b>bug report closed</b><span>The weird parts make people visible.</span></div>
+      <div class="psj-bug"><b>ego down</b><span>The weird parts make the social signal visible.</span></div>
     </div>
   </section>
 </div>
@@ -13513,8 +13634,8 @@ window.cs1m7Reverse = function() {
   </div>
 
   <style>
-    #cs-gnr .gnr-load-hidden { transition:opacity 0.7s cubic-bezier(.45,.05,.18,1), transform 0.7s cubic-bezier(.45,.05,.18,1); }
-    #cs-gnr:not([data-shown="1"]):not([data-shown="2"]) .gnr-load-hidden { opacity:0 !important; transform:translateY(12px); pointer-events:none; }
+    #cs-gnr .gnr-load-hidden { transition:opacity 0.72s cubic-bezier(.45,.05,.18,1), transform 0.92s cubic-bezier(.22,1,.36,1); }
+    #cs-gnr:not([data-shown="1"]):not([data-shown="2"]) .gnr-load-hidden { opacity:0 !important; transform:translateY(26px); pointer-events:none; }
     #cs-gnr[data-shown="1"] .gnr-load-hidden,
     #cs-gnr[data-shown="2"] .gnr-load-hidden { opacity:1; transform:translateY(0); }
     #cs-gnr .gnr-env-hero { opacity:0; transform:translateY(14px) rotate(-2deg); }
@@ -13702,6 +13823,93 @@ window.cs1m7Reverse = function() {
 </div>
 
 <!-- ===== cs-11d — card-flip on the two stat cards (envelope back-faces) [Dave 2026-04-30 PM] ===== -->
+<div class="casey-slide ds-focus" id="cs-club-os">
+  <div class="cco-eye">club owner offer</div>
+  <section class="club-build-stage cco-stage">
+    <div class="club-build-anim">
+      <div class="club-build-kicker">We are not just selling software</div>
+      <h1 class="club-build-title">We sell the club its <em>social operating system.</em></h1>
+      <p class="club-build-sub">Product, marketing, events, content, and invitation-based match picking arrive as one positive human-connection machine.</p>
+      <div class="cco-close">
+        <span class="club-build-chip hot">fun people found</span>
+        <span class="club-build-chip blue">events filled</span>
+        <span class="club-build-chip">staff energized</span>
+      </div>
+    </div>
+    <div class="cco-offer club-build-anim" aria-hidden="true">
+      <div class="cco-line cco-l1"></div><div class="cco-line cco-l2"></div><div class="cco-line cco-l3"></div><div class="cco-line cco-l4"></div>
+      <div class="cco-core"><div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div><small>human connection</small></div>
+      <div class="cco-spoke cco-s1"><b>Product</b><span>Who should play with whom.</span></div>
+      <div class="cco-spoke cco-s2"><b>Marketing</b><span>A story members want to join.</span></div>
+      <div class="cco-spoke cco-s3"><b>Social</b><span>Events people talk about after.</span></div>
+      <div class="cco-spoke cco-s4"><b>Brand</b><span>The club becomes the place that gives.</span></div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-club-social-loop">
+  <div class="cco-eye">community growth system</div>
+  <section class="club-build-stage cco-stage">
+    <div class="loop-board club-build-anim" aria-hidden="true">
+      <div class="loop-net"></div><div class="loop-ball"></div>
+      <div class="loop-step loop-a"><b>01 influx</b><span>Lower-level socials welcome the next wave.</span></div>
+      <div class="loop-step loop-b"><b>02 scouts</b><span>Find the intermediate players who love the silly human part.</span></div>
+      <div class="loop-step loop-c"><b>03 invites</b><span>Match by energy, generosity, and belonging.</span></div>
+      <div class="loop-step loop-d"><b>04 media</b><span>Turn the room into proof the club is alive.</span></div>
+      <div class="loop-caption"><b>the loop</b><span>Every event creates the next event.</span></div>
+    </div>
+    <div class="club-build-anim">
+      <div class="club-build-kicker">The tactic stack</div>
+      <h1 class="club-build-title">Engineer the room until the community starts <em>pulling itself forward.</em></h1>
+      <p class="club-build-sub">The club keeps a healthy influx of new players, identifies the members who spread fun, and gives them the right invitations to become community gravity.</p>
+      <div class="loop-foot">
+        <span class="club-build-chip blue">newcomer nights</span>
+        <span class="club-build-chip hot">silly-event heroes</span>
+        <span class="club-build-chip">social media proof</span>
+        <span class="club-build-chip">repeatable belonging</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-club-anti-dupr">
+  <div class="cco-eye">anti-DUPR position</div>
+  <section class="club-build-stage cco-stage">
+    <div class="adu-head club-build-anim">
+      <div class="club-build-kicker">The positive alternative to ratings culture</div>
+      <h1 class="club-build-title">Ratings sort people. <em>Give n Receive connects them.</em></h1>
+    </div>
+    <div class="adu-compare club-build-anim">
+      <div class="adu-panel bad">
+        <div class="adu-label">Rating-first club</div>
+        <h2>Everyone protects a number.</h2>
+        <div class="adu-proof">Skill anxiety &middot; brittle events &middot; staff drag</div>
+        <div class="adu-points">
+          <div class="adu-point">Players avoid the wrong game.</div>
+          <div class="adu-point">New people stay invisible.</div>
+          <div class="adu-point">Scheduling feels like conflict management.</div>
+        </div>
+      </div>
+      <div class="adu-mid" aria-hidden="true">
+        <div class="adu-mid-line"></div>
+        <div class="club-build-mark"><span class="g">G</span><span class="n">n</span><span class="r">R</span></div>
+        <div class="adu-mid-copy">brand<br>events<br>social<br>matches</div>
+        <div class="adu-mid-line"></div>
+      </div>
+      <div class="adu-panel good">
+        <div class="adu-label">GnR club</div>
+        <h2>Everyone wants back in.</h2>
+        <div class="adu-proof">Human connection &middot; invitation trust &middot; staff fun</div>
+        <div class="adu-points">
+          <div class="adu-point">Players are chosen for what they give.</div>
+          <div class="adu-point">Events create stories worth sharing.</div>
+          <div class="adu-point">The club becomes the positive place that spreads connection.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <style>
   #cs-11d .hg-flip-wrap { perspective: 1500px; min-height: 220px; }
   #cs-11d .hg-flip-inner { position: relative; width: 100%; min-height: 220px; transition: transform 0.85s cubic-bezier(.45,.05,.18,1); transform-style: preserve-3d; }
@@ -15932,10 +16140,9 @@ window.cs1m7Reverse = function() {
 <style>
   #cs-racketeer-att-arc { background:#fbf7ef !important; overflow:hidden; }
   #cs-racketeer-att-arc::before { content:""; position:absolute; inset:0; background:
-    linear-gradient(90deg, rgba(251,247,239,.98) 0%, rgba(251,247,239,.96) 54%, rgba(251,247,239,.90) 72%, rgba(251,247,239,.84) 100%),
-    linear-gradient(90deg, transparent 0 73%, rgba(91,143,212,.13) 73% 73.25%, transparent 73.25% 78%, rgba(184,149,74,.18) 78% 78.28%, transparent 78.28% 86%, rgba(200,70,44,.10) 86% 86.36%, transparent 86.36%),
-    linear-gradient(0deg, transparent 0 23%, rgba(184,149,74,.12) 23% 23.22%, transparent 23.22% 70%, rgba(91,143,212,.10) 70% 70.22%, transparent 70.22%),
-    radial-gradient(ellipse at 82% 45%, rgba(200,70,44,.10) 0%, rgba(200,70,44,.045) 30%, transparent 60%),
+    linear-gradient(90deg, rgba(251,247,239,.96) 0%, rgba(251,247,239,.86) 50%, rgba(251,247,239,.54) 76%, rgba(251,247,239,.32) 100%),
+    linear-gradient(180deg, rgba(251,247,239,.64) 0%, rgba(251,247,239,.12) 46%, rgba(26,22,18,.20) 100%),
+    url("assets/cs-racketeer-padel-club-indoor-bg.png") center center / cover no-repeat,
     #fbf7ef; pointer-events:none; z-index:1; }
   #cs-racketeer-att-arc::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 63% 78%, rgba(184,149,74,0.16) 0%, rgba(184,149,74,0.06) 38%, transparent 70%),linear-gradient(90deg, rgba(251,247,239,.34) 0%, transparent 38%, rgba(251,247,239,.24) 100%); pointer-events:none; z-index:2; }
   #cs-racketeer-att-arc .rka-stage { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:64px 80px 50px; z-index:3; gap:14px; }
@@ -15984,7 +16191,7 @@ window.cs1m7Reverse = function() {
   html[data-export="1"] #cs-racketeer-att-arc .rka-quote { opacity:1 !important; transform:none !important; transition:none !important; }
 </style>
 <div class="casey-slide ds-focus" id="cs-racketeer-att-arc" style="display:none">
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Racketeer.Club</div>
+  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Padel is the same problem with glass walls.</div>
   <section class="rka-stage">
     <div class="rka-head-row">
       <div class="rka-head-text">
@@ -19613,6 +19820,11 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice .vc-copy { min-width:0; display:flex; flex-direction:column; gap:3px; }
   #cs-value-choice .vc-copy b { font-size:clamp(.76rem, .98vw, .94rem); font-weight:850; letter-spacing:.05em; text-transform:uppercase; color:rgba(251,247,239,0.78); }
   #cs-value-choice .vc-copy small { font-size:.58rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(251,247,239,0.44); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #cs-value-choice .vc-gnr-line { display:flex; align-items:baseline; gap:8px; min-width:0; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(251,247,239,0.56); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #cs-value-choice .vc-gnr-mark { display:inline-flex; align-items:baseline; flex:0 0 auto; font-family:'Playfair Display',Georgia,serif; font-size:.82rem; font-weight:700; letter-spacing:-0.015em; line-height:1; text-transform:none; }
+  #cs-value-choice .vc-gnr-mark .g { color:#5B8FD4; }
+  #cs-value-choice .vc-gnr-mark .n { color:#b8954a; font-style:italic; padding:0 .04em; font-weight:500; }
+  #cs-value-choice .vc-gnr-mark .r { color:#c8462c; }
   #cs-value-choice .vc-dollars { font-size:.64rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; color:#b8954a; text-align:right; white-space:nowrap; }
   #cs-value-choice .vc-icon { width:46px; height:46px; border-radius:7px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; flex:0 0 auto; font-family:'Manrope',sans-serif; font-weight:950; letter-spacing:0; color:#fbf7ef; background:rgba(251,247,239,0.12); box-shadow:inset 0 0 0 1px rgba(251,247,239,0.14); }
   #cs-value-choice .vc-icon.netflix { background:linear-gradient(135deg,#1a1612,#711411); color:#c8462c; font-size:1.55rem; }
@@ -19682,6 +19894,18 @@ window.csBrandV8Reverse = function() {
   #cs-value-screen .room-person.p7 { left:54px; top:84px; background:#fbf7ef; }
   #cs-value-screen .screen-core { position:absolute; left:43%; top:50%; transform:translate(-50%,-50%); width:245px; min-height:122px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.18rem; font-style:italic; font-weight:850; line-height:1.03; color:#fbf7ef; text-shadow:0 2px 18px rgba(0,0,0,.46); z-index:2; }
 
+  #cs-app-store-people { background:#1a1612 !important; overflow:hidden; }
+  #cs-app-store-people .asp-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.96) contrast(1.03); z-index:0; }
+  #cs-app-store-people .asp-wash { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, rgba(251,247,239,.92) 0%, rgba(251,247,239,.80) 32%, rgba(251,247,239,.36) 61%, rgba(26,22,18,.20) 100%), linear-gradient(180deg, rgba(251,247,239,.58) 0%, rgba(251,247,239,.08) 58%, rgba(26,22,18,.34) 100%); }
+  #cs-app-store-people .asp-eye { position:absolute; top:28px; left:48px; z-index:3; font-family:'Manrope',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#c8462c; }
+  #cs-app-store-people .asp-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(560px,.72fr) minmax(620px,.88fr); align-items:center; gap:54px; padding:104px 76px 62px; }
+  #cs-app-store-people .asp-quote { margin:0; max-width:790px; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.4rem,5.5vw,6.1rem); font-weight:850; line-height:.98; letter-spacing:-.026em; color:#1a1612; text-wrap:balance; }
+  #cs-app-store-people .asp-quote em { color:#b8954a; font-style:italic; }
+  #cs-app-store-people .asp-video { width:100%; aspect-ratio:16/9; border:1px solid rgba(184,149,74,.62); background:#1a1612; box-shadow:0 24px 54px rgba(26,22,18,.28); overflow:hidden; }
+  #cs-app-store-people .asp-video iframe { display:block; width:100%; height:100%; border:0; background:#1a1612; }
+  #cs-app-store-people.casey-entered .asp-quote, #cs-app-store-people.casey-entered .asp-video { animation:vcRise .76s cubic-bezier(.22,1,.36,1) both; }
+  #cs-app-store-people.casey-entered .asp-video { animation-delay:.16s; }
+
   #cs-value-product .vb-stage { grid-template-columns:1fr; justify-items:center; text-align:center; }
   #cs-value-product .product-strip { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px; margin:34px 0 22px; max-width:1480px; }
   #cs-value-product .vb-head { max-width:1320px; }
@@ -19702,7 +19926,7 @@ window.csBrandV8Reverse = function() {
         <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon ai"></div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
         <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
-        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><small>what people actually experience</small></div><div class="vc-dollars">priceless</div></div>
+        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>the room people remember</span></div></div><div class="vc-dollars">?</div></div>
       </div>
     </div>
     <div class="vc-right">
@@ -19753,6 +19977,18 @@ window.csBrandV8Reverse = function() {
         <span class="room-person p7"></span>
       </div>
       <div class="screen-core">the product is<br>human connection</div>
+    </div>
+  </section>
+</div>
+
+<div class="casey-slide ds-focus" id="cs-app-store-people" style="display:none">
+  <img class="asp-bg" src="assets/cs-app-store-people-bg.png" alt="">
+  <div class="asp-wash" aria-hidden="true"></div>
+  <div class="asp-eye">App Store for People</div>
+  <section class="asp-stage">
+    <h1 class="asp-quote">&ldquo;I envision an app store for <em>people.</em>&rdquo;</h1>
+    <div class="asp-video">
+      <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
     </div>
   </section>
 </div>
@@ -22333,38 +22569,65 @@ window.csBrandV8Reverse = function() {
   .spwd-slide .spwd-step.blue{background:rgba(91,143,212,.11);border-color:rgba(91,143,212,.34)}
   .spwd-slide .spwd-step.red{background:rgba(200,70,44,.09);border-color:rgba(200,70,44,.30);color:#c8462c}
   #cs-magnetic-human-value-market .spwd-bg.frontier{opacity:.88}
-  #cs-magnetic-human-value-market .spwd-wash.frontier{background:linear-gradient(90deg,rgba(251,247,239,.70) 0%,rgba(251,247,239,.55) 39%,rgba(251,247,239,.18) 68%,rgba(251,247,239,.30) 100%)}
+  #cs-magnetic-human-value-market .spwd-wash.frontier{background:linear-gradient(90deg,rgba(251,247,239,.84) 0%,rgba(251,247,239,.68) 43%,rgba(251,247,239,.42) 60%,rgba(251,247,239,.22) 100%)}
   #cs-magnetic-human-value-market .spwd-eyebrow{color:#b8954a}
-  #cs-magnetic-human-value-market .spwd-market{grid-template-columns:.95fr 1.05fr;gap:70px;padding:112px 86px 76px}
-  #cs-magnetic-human-value-market .spwd-market-copy{position:relative;max-width:760px;padding:34px 38px 38px;border-radius:8px;background:rgba(251,247,239,.70);border:1.4px solid rgba(91,143,212,.32);box-shadow:0 22px 58px rgba(26,22,18,.12)}
-  #cs-magnetic-human-value-market .spwd-market-copy .spwd-era-label{color:#5B8FD4;margin-bottom:18px}
-  #cs-magnetic-human-value-market .spwd-market-title{font-size:clamp(3.15rem,5.35vw,5.95rem);line-height:.9;margin-bottom:24px}
-  #cs-magnetic-human-value-market .spwd-market-sub{font-size:clamp(1.04rem,1.24vw,1.32rem);max-width:650px;color:rgba(26,22,18,.78)}
-  #cs-magnetic-human-value-market .spwd-era-stack{gap:22px;max-width:680px;justify-self:end}
-  #cs-magnetic-human-value-market .spwd-era-card{background:rgba(251,247,239,.74);backdrop-filter:blur(5px);padding:32px 34px;border-color:rgba(26,22,18,.13)}
-  #cs-magnetic-human-value-market .spwd-era-card.next{border-color:rgba(184,149,74,.54);box-shadow:0 24px 62px rgba(184,149,74,.18)}
-  #cs-magnetic-human-value-market .spwd-era-note{font-family:'Manrope',sans-serif;font-size:clamp(.94rem,1.08vw,1.1rem);line-height:1.44;font-weight:800;color:rgba(26,22,18,.72);margin:16px 0 0}
+  #cs-magnetic-human-value-market .spwd-market{grid-template-columns:.88fr 1.12fr;gap:42px;padding:110px 86px 76px}
   #cs-magnetic-human-value-market .spwd-market-copy,
-  #cs-magnetic-human-value-market .spwd-era-card{opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
+  #cs-magnetic-human-value-market .spwd-era-stack{position:relative;border-radius:8px;background:rgba(251,247,239,.72);border:1.4px solid rgba(26,22,18,.12);box-shadow:0 22px 58px rgba(26,22,18,.10);backdrop-filter:blur(5px);overflow:hidden}
+  #cs-magnetic-human-value-market .spwd-market-copy{min-height:680px;padding:34px 38px 38px;border-color:rgba(91,143,212,.26)}
+  #cs-magnetic-human-value-market .spwd-era-stack{min-height:680px;display:grid;grid-template-rows:auto 1fr auto;gap:0;max-width:980px;justify-self:stretch;padding:34px 42px 36px;border-color:rgba(184,149,74,.48);background:rgba(251,247,239,.78)}
+  #cs-magnetic-human-value-market .spwd-market-copy .spwd-era-label{color:#5B8FD4;margin-bottom:26px}
+  #cs-magnetic-human-value-market .spwd-market-title{font-size:clamp(2.25rem,4.05vw,4.65rem);line-height:.94;margin:0 0 34px}
+  #cs-magnetic-human-value-market .spwd-market-sub{font-size:clamp(.92rem,1.02vw,1.08rem);max-width:none;color:rgba(26,22,18,.66)}
+  #cs-magnetic-human-value-market .spwd-frontier-list{display:grid;gap:16px;margin-top:28px}
+  #cs-magnetic-human-value-market .spwd-frontier-row{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:center;padding:16px 0;border-top:1px solid rgba(26,22,18,.12)}
+  #cs-magnetic-human-value-market .spwd-frontier-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(91,143,212,.12);border:1.5px solid rgba(91,143,212,.45);font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:950;letter-spacing:.08em;color:#5B8FD4}
+  #cs-magnetic-human-value-market .spwd-frontier-row:nth-child(2) .spwd-frontier-dot{background:rgba(184,149,74,.13);border-color:rgba(184,149,74,.48);color:#b8954a}
+  #cs-magnetic-human-value-market .spwd-frontier-row:nth-child(3) .spwd-frontier-dot{background:rgba(200,70,44,.10);border-color:rgba(200,70,44,.38);color:#c8462c}
+  #cs-magnetic-human-value-market .spwd-frontier-row h2{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(1.14rem,1.46vw,1.52rem);line-height:1.06;font-weight:850;color:#1a1612;margin:0}
+  #cs-magnetic-human-value-market .spwd-frontier-row p{font-family:'Manrope',sans-serif;font-size:.78rem;line-height:1.25;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:rgba(26,22,18,.54);margin:5px 0 0}
+  #cs-magnetic-human-value-market .spwd-next-title{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4.7vw,5.45rem);line-height:.9;font-weight:850;letter-spacing:0;color:#1a1612;margin:0;max-width:760px}
+  #cs-magnetic-human-value-market .spwd-next-title em{font-style:italic;color:#b8954a}
+  #cs-magnetic-human-value-market .spwd-connection-map{align-self:center;justify-self:center;width:min(820px,100%);height:auto;margin:-8px 0 -2px;display:block}
+  #cs-magnetic-human-value-market .spwd-next-line{font-family:'Manrope',sans-serif;font-size:clamp(1.02rem,1.18vw,1.22rem);line-height:1.35;font-weight:900;color:rgba(26,22,18,.74);max-width:720px;margin:0}
+  #cs-magnetic-human-value-market .spwd-next-line strong{color:#c8462c;font-weight:950}
+  #cs-magnetic-human-value-market .spwd-market-copy,
+  #cs-magnetic-human-value-market .spwd-era-stack{opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.22,1,.36,1),transform .72s cubic-bezier(.22,1,.36,1)}
   #cs-magnetic-human-value-market.casey-entered .spwd-market-copy,
   #cs-magnetic-human-value-market.casey-entered .spwd-era-stack{animation:none!important}
   #cs-magnetic-human-value-market.casey-entered .spwd-market-copy{opacity:1;transform:none;transition-delay:.18s}
-  #cs-magnetic-human-value-market.casey-entered .spwd-era-card.old{opacity:1;transform:none;transition-delay:.52s}
-  #cs-magnetic-human-value-market.casey-entered .spwd-era-card.next{opacity:1;transform:none;transition-delay:.82s}
+  #cs-magnetic-human-value-market.casey-entered .spwd-era-stack{opacity:1;transform:none;transition-delay:.52s}
   html[data-export="1"] #cs-magnetic-human-value-market .spwd-market-copy,
-  html[data-export="1"] #cs-magnetic-human-value-market .spwd-era-card{opacity:1!important;transform:none!important;animation:none!important}
+  html[data-export="1"] #cs-magnetic-human-value-market .spwd-era-stack{opacity:1!important;transform:none!important;animation:none!important}
+  #cs-magnetic-reciprocity-system .spwd-bg.soft{opacity:.82;filter:saturate(.92) contrast(.96)}
+  #cs-magnetic-reciprocity-system .spwd-wash{background:radial-gradient(circle at 50% 27%,rgba(251,247,239,.56) 0%,rgba(251,247,239,.78) 46%,rgba(251,247,239,.91) 100%),linear-gradient(180deg,rgba(251,247,239,.74) 0%,rgba(251,247,239,.58) 44%,rgba(251,247,239,.88) 100%)}
+  #cs-magnetic-reciprocity-system .spwd-stage{padding:94px 76px 60px}
+  #cs-magnetic-reciprocity-system .spwd-title{font-size:clamp(3.1rem,5.05vw,5.55rem);max-width:1200px;margin-bottom:30px}
+  #cs-magnetic-reciprocity-system .spwd-compare{width:min(1460px,86vw);gap:30px}
+  #cs-magnetic-reciprocity-system .spwd-card{min-height:450px;padding:34px 36px 30px;backdrop-filter:blur(4px);box-shadow:0 24px 64px rgba(26,22,18,.12)}
+  #cs-magnetic-reciprocity-system .spwd-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:#b8954a}
+  #cs-magnetic-reciprocity-system .spwd-card.rating::before{background:#c8462c}
+  #cs-magnetic-reciprocity-system .spwd-card::after{content:"02";position:absolute;top:22px;right:26px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:950;letter-spacing:.18em;color:rgba(184,149,74,.72)}
+  #cs-magnetic-reciprocity-system .spwd-card.rating::after{content:"01";color:rgba(200,70,44,.66)}
+  #cs-magnetic-reciprocity-system .spwd-card.rating{background:rgba(251,247,239,.70);border-color:rgba(200,70,44,.42)}
+  #cs-magnetic-reciprocity-system .spwd-card.network{background:rgba(251,247,239,.86);border-color:rgba(184,149,74,.62);box-shadow:0 28px 72px rgba(184,149,74,.20)}
+  #cs-magnetic-reciprocity-system .spwd-card h2{font-size:clamp(1.5rem,2.05vw,2.18rem);line-height:1.05;max-width:590px}
+  #cs-magnetic-reciprocity-system .spwd-card.rating h2 em{color:#c8462c}
+  #cs-magnetic-reciprocity-system .spwd-card.network h2 em{color:#b8954a}
+  #cs-magnetic-reciprocity-system .spwd-visual{height:196px;margin:2px auto 16px}
+  #cs-magnetic-reciprocity-system .spwd-foot{font-size:clamp(.88rem,1.02vw,1.04rem);max-width:560px}
 </style>
 <div class="casey-slide ds-focus spwd-slide" id="cs-magnetic-reciprocity-system" style="display:none">
   <img class="spwd-bg soft" src="assets/cs-samecourt-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-fv6-measured-connection-bg.png'"/>
   <div class="spwd-wash"></div>
   <div class="spwd-eyebrow">coordination system</div>
   <section class="spwd-stage">
-    <h1 class="spwd-title">There are two ways to run a <em>community.</em></h1>
+    <h1 class="spwd-title">Two opposite community <em>incentive systems.</em></h1>
     <div class="spwd-compare">
       <div class="spwd-card rating">
         <div>
-          <div class="spwd-card-kicker">Coordination by rating</div>
-          <h2>Sort people by one number.</h2>
+          <div class="spwd-card-kicker">Rating system</div>
+          <h2>Ratings &rarr; <em>one-dimensional sorting.</em></h2>
         </div>
         <div class="spwd-visual" aria-hidden="true">
           <svg viewBox="0 0 520 220" width="100%" height="100%" role="img">
@@ -22381,12 +22644,12 @@ window.csBrandV8Reverse = function() {
             </g>
           </svg>
         </div>
-        <p class="spwd-foot"><strong>It can balance a match.</strong><br>It cannot see who creates belonging, trust, return play, or pull.</p>
+        <p class="spwd-foot"><strong>It can balance a match.</strong><br>It cannot reward the people who create belonging, trust, return play, or pull.</p>
       </div>
       <div class="spwd-card network">
         <div>
-          <div class="spwd-card-kicker">Coordination by networked reciprocity</div>
-          <h2>Coordinate by who gives value to whom.</h2>
+          <div class="spwd-card-kicker">Networked reciprocity</div>
+          <h2>GnR &rarr; <em>every useful act becomes signal.</em></h2>
         </div>
         <div class="spwd-visual" aria-hidden="true">
           <svg viewBox="0 0 520 220" width="100%" height="100%" role="img">
@@ -22404,7 +22667,7 @@ window.csBrandV8Reverse = function() {
             </g>
           </svg>
         </div>
-        <p class="spwd-foot"><strong>It fills the community.</strong><br>Every useful act becomes coordination signal for the next invitation.</p>
+        <p class="spwd-foot"><strong>It fills the community.</strong><br>Every person can contribute community value the system sees and returns.</p>
       </div>
     </div>
   </section>
@@ -22412,23 +22675,51 @@ window.csBrandV8Reverse = function() {
 <div class="casey-slide ds-focus spwd-slide" id="cs-magnetic-human-value-market" style="display:none">
   <img class="spwd-bg frontier" src="assets/cs-magnetic-human-value-market-bg.png" alt="" onerror="this.onerror=null;this.src='assets/cs-mv6-networked-reciprocity.png'"/>
   <div class="spwd-wash frontier"></div>
-  <div class="spwd-eyebrow">last frontier</div>
+  <div class="spwd-eyebrow">market frontiers</div>
   <section class="spwd-market">
     <div class="spwd-market-copy">
-      <div class="spwd-era-label">Last frontier</div>
-      <h1 class="spwd-market-title">What we&rsquo;re most wired for is becoming <em>measurable</em></h1>
-      <p class="spwd-market-sub">Influencers were paid because attention became measurable. <strong>GnR compensates connection creation</strong>: the giving, receiving, hosting, inviting, and trust-building that make life feel full.</p>
+      <div class="spwd-era-label">Last frontiers</div>
+      <h1 class="spwd-market-title">When the invisible became <em>measurable</em>, markets appeared.</h1>
+      <div class="spwd-frontier-list" aria-label="Last frontiers became measurable markets">
+        <div class="spwd-frontier-row">
+          <div class="spwd-frontier-dot">01</div>
+          <div><h2>Attention</h2><p>became influence</p></div>
+        </div>
+        <div class="spwd-frontier-row">
+          <div class="spwd-frontier-dot">02</div>
+          <div><h2>Commerce</h2><p>became marketplaces</p></div>
+        </div>
+        <div class="spwd-frontier-row">
+          <div class="spwd-frontier-dot">03</div>
+          <div><h2>Location</h2><p>became networks</p></div>
+        </div>
+      </div>
     </div>
     <div class="spwd-era-stack">
-      <div class="spwd-era-card old">
-        <div class="spwd-era-label">Last frontier</div>
-        <h2>Attention became measurable, so influence became a market.</h2>
-      </div>
-      <div class="spwd-era-card next">
-        <div class="spwd-era-label">Next frontier</div>
-        <h2><em>Community builders</em> get paid when real-world connection becomes measurable.</h2>
-        <p class="spwd-era-note">The next market is not more attention. It is the trust, generosity, invitations, and belonging that make people come back.</p>
-      </div>
+      <div class="spwd-era-label">Next frontier</div>
+      <h2 class="spwd-next-title">Real-world <em>connection</em> becomes measurable.</h2>
+      <svg class="spwd-connection-map" viewBox="0 0 920 430" role="img" aria-label="Connection value network">
+        <defs>
+          <radialGradient id="spwdNextGlow" cx="50%" cy="50%" r="58%"><stop offset="0%" stop-color="rgba(255,238,178,.88)"/><stop offset="58%" stop-color="rgba(184,149,74,.18)"/><stop offset="100%" stop-color="rgba(184,149,74,0)"/></radialGradient>
+          <filter id="spwdSoftShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#1a1612" flood-opacity=".16"/></filter>
+        </defs>
+        <ellipse cx="460" cy="216" rx="338" ry="176" fill="url(#spwdNextGlow)"/>
+        <g fill="none" stroke-linecap="round">
+          <path d="M246 126 C342 56 578 56 674 126" stroke="rgba(91,143,212,.52)" stroke-width="4"/>
+          <path d="M246 306 C342 374 578 374 674 306" stroke="rgba(200,70,44,.50)" stroke-width="4"/>
+          <path d="M246 126 C332 220 558 226 674 306" stroke="rgba(184,149,74,.62)" stroke-width="4"/>
+          <path d="M674 126 C574 220 356 226 246 306" stroke="rgba(184,149,74,.62)" stroke-width="4"/>
+          <path d="M460 94 C512 164 512 270 460 338 C408 270 408 164 460 94" stroke="rgba(26,22,18,.22)" stroke-width="3"/>
+        </g>
+        <g filter="url(#spwdSoftShadow)" font-family="Manrope,sans-serif" font-size="18" font-weight="950" letter-spacing=".08em" text-anchor="middle">
+          <g transform="translate(246 126)"><circle r="58" fill="#5B8FD4"/><text y="7" fill="#fbf7ef">GIVE</text></g>
+          <g transform="translate(674 126)"><circle r="58" fill="#b8954a"/><text y="7" fill="#fbf7ef">HOST</text></g>
+          <g transform="translate(246 306)"><circle r="58" fill="#c8462c"/><text y="7" fill="#fbf7ef">INVITE</text></g>
+          <g transform="translate(674 306)"><circle r="58" fill="#1a1612"/><text y="7" fill="#fbf7ef">TRUST</text></g>
+          <g transform="translate(460 216)"><circle r="84" fill="#fbf7ef" stroke="#b8954a" stroke-width="6"/><text y="-5" fill="#1a1612" font-family="Fraunces,Georgia,serif" font-size="34" letter-spacing="0">value</text><text y="31" fill="#c8462c" font-size="21">MARKET</text></g>
+        </g>
+      </svg>
+      <p class="spwd-next-line"><strong>GnR measures contribution</strong>: who creates trust, belonging, invitations, and return play.</p>
     </div>
   </section>
 </div>
@@ -26814,33 +27105,27 @@ window.csBrandV8Reverse = function() {
 <style>
   #cs-gnr-business-outcomes{background:#f3ead8!important;overflow:hidden}
   #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:88px 76px 56px;display:flex;align-items:center;justify-content:center}
-  #cs-gnr-business-outcomes .gbo-shell{width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;gap:24px}
-  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1320px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.55rem;font-weight:850;line-height:.98;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-shell{width:min(1480px,100%);margin:0 auto;display:flex;flex-direction:column;gap:28px}
+  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;text-align:center;max-width:1160px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.55rem;font-weight:850;line-height:.98;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-title em{font-style:italic;color:#b8954a;font-weight:850}
   #cs-gnr-business-outcomes .gbo-sub{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.54);text-align:center}
-  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,1fr) 142px minmax(0,1fr);gap:28px;align-items:stretch}
-  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:438px;padding:38px 42px 34px;box-sizing:border-box;background:rgba(251,247,239,.82);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:flex;flex-direction:column;gap:22px;box-shadow:0 18px 50px rgba(26,22,18,.06)}
+  #cs-gnr-business-outcomes .gbo-compare{display:grid;grid-template-columns:minmax(0,1fr) 126px minmax(0,1fr);gap:30px;align-items:stretch}
+  #cs-gnr-business-outcomes .gbo-panel{position:relative;min-height:326px;padding:42px 48px;box-sizing:border-box;background:rgba(251,247,239,.82);border:1.4px solid rgba(184,149,74,.28);border-radius:8px;display:flex;flex-direction:column;justify-content:center;gap:26px;box-shadow:0 18px 50px rgba(26,22,18,.06)}
   #cs-gnr-business-outcomes .gbo-panel.low{border-left:7px solid #c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high{border-left:7px solid #5B8FD4;background:linear-gradient(180deg,rgba(251,247,239,.94),rgba(251,247,239,.78));box-shadow:0 20px 58px rgba(91,143,212,.10),0 0 0 1px rgba(184,149,74,.12) inset}
   #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.30em;text-transform:uppercase}
   #cs-gnr-business-outcomes .gbo-panel.low .gbo-label{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high .gbo-label{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.75rem;font-weight:850;line-height:1.02;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-panel h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.1rem;font-weight:850;line-height:1.02;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-panel h2 em{font-style:italic;font-weight:750}
   #cs-gnr-business-outcomes .gbo-panel.low h2 em{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-panel.high h2 em{color:#b8954a}
-  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,22,18,.50);padding:15px 0;border-top:1px solid rgba(184,149,74,.26);border-bottom:1px solid rgba(184,149,74,.26)}
-  #cs-gnr-business-outcomes .gbo-points{display:grid;grid-template-columns:1fr;gap:14px;margin-top:auto}
-  #cs-gnr-business-outcomes .gbo-point{font-family:'Manrope',sans-serif;font-size:1.32rem;font-weight:780;line-height:1.18;color:#1a1612;padding-left:22px;position:relative}
-  #cs-gnr-business-outcomes .gbo-point:before{content:'';position:absolute;left:0;top:.45em;width:8px;height:8px;border-radius:50%;background:#b8954a}
-  #cs-gnr-business-outcomes .gbo-panel.low .gbo-point:before{background:#c8462c}
-  #cs-gnr-business-outcomes .gbo-panel.high .gbo-point:before{background:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-proof{font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:850;letter-spacing:0;text-transform:none;color:rgba(26,22,18,.62);padding:18px 0 0;border-top:1px solid rgba(184,149,74,.26)}
   #cs-gnr-business-outcomes .gbo-center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;color:#1a1612}
   #cs-gnr-business-outcomes .gbo-mark{width:116px;height:116px;border-radius:50%;display:grid;place-items:center;background:#fbf7ef;border:1.8px solid rgba(184,149,74,.55);box-shadow:0 18px 44px rgba(184,149,74,.18)}
   #cs-gnr-business-outcomes .gbo-mark span{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.05rem;font-weight:900;line-height:1}
   #cs-gnr-business-outcomes .gbo-mark .g{color:#5B8FD4}.gbo-mark .n{color:#b8954a;font-style:italic;font-weight:600}.gbo-mark .r{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-center-line{width:1px;height:92px;background:linear-gradient(180deg,rgba(200,70,44,.55),rgba(184,149,74,.75),rgba(91,143,212,.55))}
-  #cs-gnr-business-outcomes .gbo-center-copy{font-family:'Manrope',sans-serif;font-size:.70rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:rgba(26,22,18,.58);line-height:1.55;max-width:140px}
   #cs-gnr-business-outcomes .gbo-footer{margin:0 auto;max-width:1180px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.72rem;font-weight:760;line-height:1.18;color:#1a1612;padding:16px 26px;border-top:1px solid rgba(184,149,74,.36);border-bottom:1px solid rgba(184,149,74,.36)}
   #cs-gnr-business-outcomes .gbo-footer strong{font-weight:850;color:#b8954a}
   html[data-export="1"] #cs-gnr-business-outcomes *{animation:none!important;transition:none!important}
@@ -26849,39 +27134,28 @@ window.csBrandV8Reverse = function() {
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community business health</div>
   <section class="gbo-stage">
     <div class="gbo-shell">
-      <h1 class="gbo-title">Low GnR makes a club substitutable.<br><em>High GnR makes it irreplaceable.</em></h1>
+      <h1 class="gbo-title"><em>GnR makes a club irreplaceable.</em></h1>
       <div class="gbo-sub">Same courts. Different social physics.</div>
       <div class="gbo-compare">
         <div class="gbo-panel low">
           <div class="gbo-label">Low GnR</div>
           <h2>A place people <em>use.</em></h2>
-          <div class="gbo-proof">Price &middot; schedule &middot; convenience</div>
-          <div class="gbo-points">
-            <div class="gbo-point">Customers compare alternatives.</div>
-            <div class="gbo-point">Staff carry the energy alone.</div>
-            <div class="gbo-point">Loyalty breaks under friction.</div>
-          </div>
+          <div class="gbo-proof">People shop on price.</div>
         </div>
 
         <div class="gbo-center" aria-hidden="true">
           <div class="gbo-center-line"></div>
           <div class="gbo-mark"><span><span class="g">G</span><span class="n">n</span><span class="r">R</span></span></div>
-          <div class="gbo-center-copy">Same courts.<br>Different social physics.</div>
           <div class="gbo-center-line"></div>
         </div>
 
         <div class="gbo-panel high">
           <div class="gbo-label">High GnR</div>
           <h2>A place people <em>belong.</em></h2>
-          <div class="gbo-proof">Identity &middot; status &middot; reciprocity</div>
-          <div class="gbo-points">
-            <div class="gbo-point">Leaving feels expensive.</div>
-            <div class="gbo-point">Members bring members.</div>
-            <div class="gbo-point">Staff get energy back.</div>
-          </div>
+          <div class="gbo-proof">Leaving feels expensive.</div>
         </div>
       </div>
-      <div class="gbo-footer"><strong>GnR turns social energy</strong> into pricing power, retention, and growth.</div>
+      <div class="gbo-footer"><strong>Social energy</strong> becomes retention, referrals, and pricing power.</div>
     </div>
   </section>
 </div>
@@ -31236,6 +31510,9 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-gnr',   //  4 Introducing GnR - invitation matchmaking
+  'cs-club-os',
+  'cs-club-social-loop',
+  'cs-club-anti-dupr',
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
@@ -31249,7 +31526,7 @@ const SLIDE_ORDER = [
   'cs-11d','cs-11e','cs-11',
   // [Codex 2026-05-27] cs-3 restored after Dave flagged the pickleball wedge slide missing from the active deck.
   'cs-3',
-  'cs-magnetic-human-value-market',
+  'cs-magnetic-reciprocity-system',
   'cs-gnr-business-outcomes', // [Codex 2026-05-29] Simplified community-business stakes slide moved next to the cs-magnetic white-dot concept cluster.
   // [Codex 2026-05-28] Active outlier slide moved into the post-24-social-experiences cluster while preserving the social-pull move.
   'cs-wedgepb-codex',
@@ -31263,6 +31540,7 @@ const SLIDE_ORDER = [
   'cs-mv6-merge', // HUMANITY'S ENDGAME - mission/demand curve moved to final-quarter vision section.
   'cs-value-choice', // [Codex 2026-05-28] New active brainstorm slide: most valuable product is abundant human connection.
   'cs-value-screen',
+  'cs-app-store-people',
   // [Codex 2026-05-29] cs-value-product removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Codex 2026-05-27] cs-18-vd4 removed from active main flow per Dave screenshot delete request. HTML remains as rollback source.
   // [Dave 2026-05-12 LATEST] cs-onandoff MOVED DOWN — now immediately after cs-fv6. [Dave 2026-05-14 PM v4] cs-onandoff DELETED per Dave 'delete this slide'. HTML retained for rollback.
@@ -31402,8 +31680,8 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-25] Disconnected-community blue alt DELETED per Dave: 'delete this slide'. Removed from this slot and blue-dot classification; HTML retained as hidden rollback stub.
   // [Dave 2026-05-25] Like-button slide promoted back to main cs-thegap; digitized rewrite thrown away.
   9: ['cs-emotion-smile', 'cs-emotion-help', 'cs-emotion-uncaptured'],
-  // [Codex 2026-05-29] Human-value market slide promoted to active slot 10; prior social-pull primary retained as same-slot alt.
-  10: ['cs-magnetic-reciprocity-system', 'cs-magnetic'],
+  // [Codex 2026-05-29] Community incentive systems promoted to active slot 10; human-value market retained as same-slot alt.
+  10: ['cs-magnetic-human-value-market', 'cs-magnetic'],
   // Slot 12 (cs-samecourt — was slot 12) — no alts.
 
   // [Dave 2026-05-19] cs-givefirst-art now owns slot 14 after Munger; cs-magnetic alts moved to slot 15 below.
@@ -32363,6 +32641,24 @@ window.csFrontierBrandBgReverse = function() {
   return true;
 };
 
+// cs-frontier-scale-pink-2 - active opener staged reveal [Codex 2026-05-29]
+window.csFrontierScalePink2Advance = function() {
+  const slide = document.getElementById('cs-frontier-scale-pink-2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage >= 2) return false;
+  slide.dataset.stage = String(stage + 1);
+  return true;
+};
+window.csFrontierScalePink2Reverse = function() {
+  const slide = document.getElementById('cs-frontier-scale-pink-2');
+  if (!slide || !slide.classList.contains('active')) return false;
+  const stage = parseInt(slide.dataset.stage || '0', 10);
+  if (stage <= 0) return false;
+  slide.dataset.stage = String(stage - 1);
+  return true;
+};
+
 // cs-3 (24 unique social experiences) — click-reveal: 4 .scored cards + closer text hidden until click [Dave 2026-05-01]
 window.cs3Advance = function() {
   const slide = document.getElementById('cs-3');
@@ -33190,6 +33486,9 @@ const slideLabels = [
   "Give n Receive = community",                     //  5 cs-2c
   // cs-once label removed from main 2026-05-07 PM — moved to LAST appendix slide per Dave: 'this slide design is terrible, has far too much content, and needs to be moved to the very end of the deck'
   'Introducing Give n Receive',                      //  7 cs-gnr
+  'Club owner offer',
+  'Community growth system',
+  'Anti-DUPR position',
   'The Secret Inside the Invitation · 70/0.6',      //  6 cs-11d
   'Scheduling is measuring',                         //  7 cs-11
   'NEPC proof · $210K court fees',                   //  9 cs-11e
@@ -33771,6 +34070,7 @@ window.caseyAdvanceActiveReveal = function() {
     'cs-once': 'csOnceAdvance',
     'cs-frontier': 'csFrontierAdvance',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgAdvance',
+    'cs-frontier-scale-pink-2': 'csFrontierScalePink2Advance',
     'cs-measure': 'csMeasureAdvance',
     'cs-byproduct': 'csByproductAdvance',
     'cs-onandoff': 'csOnandoffAdvance',
@@ -33819,6 +34119,7 @@ window.caseyReverseActiveReveal = function() {
     'cs-once': 'csOnceReverse',
     'cs-frontier': 'csFrontierReverse',
     'cs-frontier-brand-bg-pink': 'csFrontierBrandBgReverse',
+    'cs-frontier-scale-pink-2': 'csFrontierScalePink2Reverse',
     'cs-measure': 'csMeasureReverse',
     'cs-byproduct': 'csByproductReverse',
     'cs-onandoff': 'csOnandoffReverse',
@@ -34070,6 +34371,10 @@ document.addEventListener('wheel', e => {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier-scale-pink-2' && window.csFrontierScalePink2Advance && window.csFrontierScalePink2Advance()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
     // [Dave 2026-05-18 LATEST] cs-18-vd4 — wheel-block until pillars finish entering.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-18-vd4' && window.csVd4Advance && window.csVd4Advance()) {
       setTimeout(() => { wheelLock = false; }, 400);
@@ -34232,6 +34537,10 @@ document.addEventListener('wheel', e => {
     }
     // [Dave 2026-05-18 LATEST v3] cs-1m8-title-B (slot 2 primary) — 4-stage wheel-reverse.
     if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-1m8-title-B' && window.csM8TitleBReverse && window.csM8TitleBReverse()) {
+      setTimeout(() => { wheelLock = false; }, 400);
+      return;
+    }
+    if (!inAppendix && SLIDE_ORDER[current - 1] === 'cs-frontier-scale-pink-2' && window.csFrontierScalePink2Reverse && window.csFrontierScalePink2Reverse()) {
       setTimeout(() => { wheelLock = false; }, 400);
       return;
     }
