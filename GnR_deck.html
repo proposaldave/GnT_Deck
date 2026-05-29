@@ -19599,14 +19599,26 @@ window.csBrandV8Reverse = function() {
   #cs-value-choice { background:#1a1612 !important; overflow:hidden; }
   #cs-value-choice .vc-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(0.98) contrast(1.02); }
   #cs-value-choice .vc-wash { position:absolute; inset:0; background:linear-gradient(90deg, rgba(26,22,18,0.20) 0%, rgba(26,22,18,0.58) 42%, rgba(26,22,18,0.25) 70%, rgba(26,22,18,0.08) 100%); z-index:1; pointer-events:none; }
-  #cs-value-choice .vc-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(520px, 0.86fr) 1fr; align-items:center; gap:48px; padding:96px 82px 64px; }
-  #cs-value-choice .vc-question { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3.2rem, 5.2vw, 5.7rem); font-weight:850; line-height:0.98; letter-spacing:-0.026em; color:#fbf7ef; max-width:900px; margin:0 0 34px; text-shadow:0 2px 22px rgba(26,22,18,0.38); }
+  #cs-value-choice .vc-stage { position:absolute; inset:0; z-index:2; display:grid; grid-template-columns:minmax(660px, 0.92fr) 1fr; align-items:center; gap:44px; padding:92px 78px 60px; }
+  #cs-value-choice .vc-question { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(3rem, 4.55vw, 5.1rem); font-weight:850; line-height:0.98; letter-spacing:-0.026em; color:#fbf7ef; max-width:900px; margin:0 0 26px; text-shadow:0 2px 22px rgba(26,22,18,0.38); }
   #cs-value-choice .vc-question em { font-style:italic; color:#b8954a; }
-  #cs-value-choice .vc-list { display:flex; flex-direction:column; gap:11px; max-width:620px; }
-  #cs-value-choice .vc-item { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 15px; border-radius:7px; background:rgba(251,247,239,0.10); border:1px solid rgba(251,247,239,0.16); color:rgba(251,247,239,0.72); font-family:'Manrope',sans-serif; font-size:clamp(.82rem, 1.08vw, 1.02rem); font-weight:750; letter-spacing:.04em; text-transform:uppercase; }
-  #cs-value-choice .vc-item span { color:rgba(251,247,239,0.44); font-size:.78em; font-weight:800; letter-spacing:.18em; }
+  #cs-value-choice .vc-list { display:flex; flex-direction:column; gap:8px; max-width:720px; }
+  #cs-value-choice .vc-item { display:grid; grid-template-columns:48px minmax(0,1fr) auto; align-items:center; gap:14px; min-height:58px; padding:9px 13px; border-radius:7px; background:rgba(251,247,239,0.10); border:1px solid rgba(251,247,239,0.16); color:rgba(251,247,239,0.72); font-family:'Manrope',sans-serif; }
+  #cs-value-choice .vc-copy { min-width:0; display:flex; flex-direction:column; gap:3px; }
+  #cs-value-choice .vc-copy b { font-size:clamp(.76rem, .98vw, .94rem); font-weight:850; letter-spacing:.05em; text-transform:uppercase; color:rgba(251,247,239,0.78); }
+  #cs-value-choice .vc-copy small { font-size:.58rem; font-weight:850; letter-spacing:.20em; text-transform:uppercase; color:rgba(251,247,239,0.44); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #cs-value-choice .vc-dollars { font-size:.64rem; font-weight:950; letter-spacing:.16em; text-transform:uppercase; color:#b8954a; text-align:right; white-space:nowrap; }
+  #cs-value-choice .vc-icon { width:46px; height:46px; border-radius:7px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; flex:0 0 auto; font-family:'Manrope',sans-serif; font-weight:950; letter-spacing:0; color:#fbf7ef; background:rgba(251,247,239,0.12); box-shadow:inset 0 0 0 1px rgba(251,247,239,0.14); }
+  #cs-value-choice .vc-icon.netflix { background:linear-gradient(135deg,#1a1612,#711411); color:#c8462c; font-size:1.55rem; }
+  #cs-value-choice .vc-icon.iphone { background:linear-gradient(180deg,#f8f3ea,#8b908f); }
+  #cs-value-choice .vc-icon.iphone::before { content:""; width:20px; height:32px; border-radius:5px; border:2px solid #1a1612; background:linear-gradient(180deg,#2d3235,#0e1012); box-shadow:0 0 0 2px rgba(251,247,239,0.52); }
+  #cs-value-choice .vc-icon.google { background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0); color:#fbf7ef; font-size:1.2rem; }
+  #cs-value-choice .vc-icon.ai { background:radial-gradient(circle at 50% 46%, rgba(91,143,212,0.90), rgba(26,22,18,0.88) 64%); }
+  #cs-value-choice .vc-icon.ai::before, #cs-value-choice .vc-icon.room::before { content:""; width:24px; height:24px; border-radius:50%; border:1px solid rgba(251,247,239,0.62); box-shadow:0 -14px 0 -8px #fbf7ef, 13px 8px 0 -8px #fbf7ef, -13px 8px 0 -8px #fbf7ef; }
+  #cs-value-choice .vc-icon.coke { background:#c8462c; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.45rem; font-style:italic; }
+  #cs-value-choice .vc-icon.room { background:radial-gradient(circle, rgba(184,149,74,0.82), rgba(26,22,18,0.78) 68%); }
   #cs-value-choice .vc-item.answer { background:rgba(184,149,74,0.22); border-color:rgba(184,149,74,0.72); color:#fbf7ef; box-shadow:0 12px 38px rgba(184,149,74,0.18); }
-  #cs-value-choice .vc-item.answer b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.24em; font-style:italic; letter-spacing:0; text-transform:none; color:#fbf7ef; }
+  #cs-value-choice .vc-item.answer .vc-copy b { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:1.12rem; font-style:italic; letter-spacing:0; text-transform:none; color:#fbf7ef; }
   #cs-value-choice .vc-right { align-self:end; justify-self:end; max-width:640px; margin-bottom:24px; text-align:right; }
   #cs-value-choice .vc-answer { font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:clamp(2.1rem, 3.5vw, 3.7rem); font-weight:850; line-height:1.02; letter-spacing:-0.024em; color:#fbf7ef; margin:0; text-shadow:0 2px 18px rgba(26,22,18,0.36); }
   #cs-value-choice .vc-answer em { color:#c8462c; font-style:italic; }
@@ -19660,11 +19672,12 @@ window.csBrandV8Reverse = function() {
     <div>
       <h1 class="vc-question">Which product is <em>most valuable</em>?</h1>
       <div class="vc-list">
-        <div class="vc-item"><b>Netflix</b><span>watch</span></div>
-        <div class="vc-item"><b>iPhone</b><span>access</span></div>
-        <div class="vc-item"><b>All the world's information</b><span>know</span></div>
-        <div class="vc-item"><b>All the world's intelligence</b><span>think</span></div>
-        <div class="vc-item answer"><b>Abundant human connection</b><span>live</span></div>
+        <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
+        <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
+        <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Ads</b><small>the world's information</small></div><div class="vc-dollars">$3T+ sold</div></div>
+        <div class="vc-item"><div class="vc-icon ai"></div><div class="vc-copy"><b>AI</b><small>the world's intelligence</small></div><div class="vc-dollars">$2.5T spend</div></div>
+        <div class="vc-item"><div class="vc-icon coke">C</div><div class="vc-copy"><b>Coca-Cola</b><small>iconic everyday consumption</small></div><div class="vc-dollars">$1T+ sold</div></div>
+        <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><small>what people actually experience</small></div><div class="vc-dollars">priceless</div></div>
       </div>
     </div>
     <div class="vc-right">
@@ -19683,11 +19696,12 @@ window.csBrandV8Reverse = function() {
       <p class="vb-sub">The highest-value product is the one that changes what your life feels like.</p>
     </div>
     <div class="ladder">
-      <div class="ladder-row"><div class="rank">01</div><div class="vb-chip">Netflix</div></div>
-      <div class="ladder-row"><div class="rank">02</div><div class="vb-chip">iPhone</div></div>
-      <div class="ladder-row"><div class="rank">03</div><div class="vb-chip">All the world's information</div></div>
-      <div class="ladder-row"><div class="rank">04</div><div class="vb-chip">All the world's intelligence</div></div>
-      <div class="ladder-row final"><div class="rank">05</div><div class="vb-chip hero">Abundant human connection</div></div>
+      <div class="ladder-row"><div class="rank">01</div><div class="vb-chip">Netflix · $300B+ sold</div></div>
+      <div class="ladder-row"><div class="rank">02</div><div class="vb-chip">iPhone · $2T+ sold</div></div>
+      <div class="ladder-row"><div class="rank">03</div><div class="vb-chip">Google Ads · $3T+ sold</div></div>
+      <div class="ladder-row"><div class="rank">04</div><div class="vb-chip">AI · $2.5T spend</div></div>
+      <div class="ladder-row"><div class="rank">05</div><div class="vb-chip">Coca-Cola · $1T+ sold</div></div>
+      <div class="ladder-row final"><div class="rank">06</div><div class="vb-chip hero">Abundant human connection</div></div>
     </div>
   </section>
 </div>
@@ -19716,10 +19730,11 @@ window.csBrandV8Reverse = function() {
       <div class="vb-kicker">Product category</div>
       <h1 class="vb-head">The most valuable product is not content, hardware, information, or intelligence.</h1>
       <div class="product-strip">
-        <span class="vb-chip">Netflix</span>
-        <span class="vb-chip">iPhone</span>
-        <span class="vb-chip">Information</span>
-        <span class="vb-chip">Intelligence</span>
+        <span class="vb-chip">Netflix · $300B+</span>
+        <span class="vb-chip">iPhone · $2T+</span>
+        <span class="vb-chip">Google Ads · $3T+</span>
+        <span class="vb-chip">AI · $2.5T</span>
+        <span class="vb-chip">Coca-Cola · $1T+</span>
         <span class="vb-chip hero">Abundant human connection</span>
       </div>
       <div class="product-answer">If we can sell it, <em>this is the product.</em></div>
