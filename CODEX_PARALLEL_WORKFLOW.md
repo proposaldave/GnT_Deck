@@ -8,6 +8,7 @@
 4. Codex creates an acceptance contract, finds the active live slide/section, edits only that target, and self-corrects once if verification fails.
 5. The session creates `deck/[short-task-name]`, commits, and does not push.
 6. The session reports `DONE` only after active-source verification and required rendered/visual verification pass.
+7. The session leaves a publish-readable `PUBLISH TRACE`: request slug, active slide ID, changed visible text, changed selectors/properties, changed registry keys, asset paths, source verification, and visual QA result.
 
 ## Active Source Contract
 
@@ -25,10 +26,11 @@
 1. Use Local mode on `main`.
 2. Paste `prompts/CODEX_DECK_PUBLISH_PROMPT.txt`.
 3. Preserve unrelated dirty work before publishing.
-4. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
-5. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
-6. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
-7. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
+4. Build the publish universe from checked-out worktrees plus every local `refs/heads/deck/*` branch, especially branches not contained in `origin/main`.
+5. Merge verified safe `deck/*` branches; when a completed branch is stale but the intent is clear, port the intent surgically onto current `main` instead of dropping it.
+6. Do not use `skip` as a silent final state for completed work. If a completed branch cannot be merged or ported, report `BLOCKED` with the exact branch, blocker, and next action.
+7. Copy `GnR_deck.html` to `index.html`, verify hash identity, push if requested, then verify raw GitHub and Pages source.
+8. Report exactly what is `MERGED AND LIVE`, `SKIPPED / NEEDS REVIEW`, `CONFLICTS`, and `NOT VERIFIED`.
 
 ## Dave Workflow
 
@@ -45,7 +47,10 @@ Publish merges only verified safe branches and reports exactly what went live.
 Completed-session rule:
 A solid status dot in the Codex app means the worktree session is done. Publish control should treat the matching `deck/*` branch as a publish candidate, not wait for Dave to name it again. Merge it if it is clean and active-source verified. If a direct merge would roll back newer live work, port the requested intent surgically. If neither is safe, report `BLOCKED` with the exact blocker.
 
-Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, local `deck/*` branches, merge status, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
+Before declaring a publish pass done, run a completed-session audit: compare `git worktree list --porcelain`, all local `refs/heads/deck/*` branches, merge status against `origin/main`, branch commit messages, and current `main`. Every completed candidate must be merged, ported, or blocked with evidence. Do not leave completed work behind under a generic skipped label.
+
+Unpublished-local-branch rule:
+`git worktree list --porcelain` is not enough. A finished branch can exist without a checked-out worktree. Before `DONE`, prove `UNPUBLISHED_LOCAL_DECK_REFS=0` for local `deck/*` branches not contained in `origin/main`, or list every remaining branch under `BLOCKED`, `CONFLICTS`, or `NOT VERIFIED` with the next action.
 
 Branch-intent audit:
 For every completed-session branch, diff the branch against its merge-base and extract the actual intent: visible text, active slide IDs, selectors, JavaScript hooks, assets, and registry edits. Verify that intent exists in current `main` before calling it integrated. An `ours` merge is allowed only after the intent has already been ported and verified. If a branch is an ancestor of `main` but the visible result is absent, treat it as a failed publish and repair it before reporting `DONE`.

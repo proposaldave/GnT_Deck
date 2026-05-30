@@ -17,23 +17,48 @@ START CHECKS
 - If dirty work is unrelated, preserve it on preserve/[file-purpose]-local-change before cleaning main.
 - Never discard dirty work.
 
+BRANCH UNIVERSE
+- Worktree list is not enough. A completed Codex session may leave a local deck/* branch that is not currently checked out.
+- Build the publish candidate universe from the union of:
+  checked-out deck/* branches from `git worktree list --porcelain`
+  every local ref from `git for-each-ref refs/heads/deck --sort=-committerdate`
+  every local deck/* branch not contained in origin/main
+  recent deck/* branches with commit messages that look like completed deck edits
+- For every local deck/* branch, run `git merge-base --is-ancestor <branch> origin/main`.
+- If that returns false, the branch is an unpublished candidate until it is merged, ported, or explicitly blocked.
+- Do not rely on the app status dot, worktree existence, branch name, or merge status alone.
+- Before DONE, the count of clean or non-checked-out local deck/* branches not contained in origin/main must be zero unless each remaining branch is listed under BLOCKED / CONFLICTS / NOT VERIFIED with evidence.
+- Report the exact unpublished-branch audit line, for example: `UNPUBLISHED_LOCAL_DECK_REFS=0`.
+
 BRANCH INVENTORY
 - List all local deck/* branches.
 - Classify each as already merged, safe candidate, conflict, risky/delete/trash, likely inactive-variant edit, unrelated, broken ref, or unknown.
 - Treat completed Codex worktree sessions shown by a solid status dot in the app UI as publish candidates.
 - Do not make Dave identify completed branches manually. Resolve the likely matching deck/* branch from the session/task name, worktree list, branch name, and commit message.
-- Before reporting DONE, audit remaining checked-out deck/* worktrees and recent deck/* branches against main. No completed-session branch may disappear into a generic skipped bucket.
+- Before reporting DONE, audit remaining checked-out deck/* worktrees, non-checked-out local deck/* branches, and recent deck/* branches against main and origin/main. No completed-session branch may disappear into a generic skipped bucket.
 - For each completed-session branch, do one of three things: merge it cleanly, port the requested intent onto current main when a direct merge would roll back newer live work, or report BLOCKED with the exact conflict/risk and next action.
 - For every branch not published, report the branch and the blocker. Do not use "skipped" as a final state for completed work unless the blocker is explicit and actionable.
 - For every completed-session branch, inspect the branch diff from its merge-base, not just branch name or merge status. Extract the visible text, slide IDs, CSS selectors, JS functions, assets, and registry entries it intended to change.
 - Do not mark a branch integrated with an `ours` merge until the branch intent is verified in current main/source/render. If the intent is missing, port it first, verify it, then record integration.
 - If a branch is already an ancestor of main but the visible requested result is absent, treat it as a failed publish and repair/port the intent before DONE.
+- If a branch is not checked out but is a local deck/* branch not contained in origin/main, inspect it exactly like a checked-out worktree branch.
+- If a branch is stale and a direct merge would remove newer live work, do not skip it. Port only its visible intent to current main, verify the active source/render result, then mark the branch integrated with an `ours` merge.
+- If a branch intent is small and mechanical, such as CSS position, copy, order, or registry changes, do not leave it unpublished because the branch is stale. Port the tiny intent and verify it.
 - Prefer branches whose final report or commit evidence indicates active-slide verification.
 - Do not publish branches that appear to edit inactive variants without active-source/render verification; either port the intent to the active source when obvious or report BLOCKED.
 - Do not blindly merge delete/trash/risky branches; if Dave clearly requested that finished branch, apply the deletion/trash intent surgically to current main or report BLOCKED.
 - Do not manually resolve broad conflicts. For a completed branch with a small clear intent, port the intent surgically; otherwise report CONFLICTS with the exact branch.
 - Merge only verified safe completed deck/* branches Dave asked to publish or clearly approved.
 - If a branch conflicts, abort that merge and list it under CONFLICTS. Do not fix it unless Dave asked for that branch specifically.
+
+PUBLISH-READINESS EVIDENCE
+- Prefer a branch final report containing PUBLISH TRACE / INTEGRATION NOTE.
+- If the branch has no publish-readable final report, infer intent from:
+  commit message
+  `git diff $(git merge-base main <branch>) <branch> -- GnR_deck.html`
+  changed selectors, visible text, slide IDs, registry keys, JS functions, and assets
+  active-source presence in current main
+- For every published branch, verify the branch intent in current main after merge or port. For visual/layout changes, verify the exact selector/property or rendered visible result.
 
 MIRROR + VERIFY
 - After accepted merges, copy GnR_deck.html to index.html.

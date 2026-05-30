@@ -64,6 +64,21 @@ COMMIT
 - Commit message: deck: [short task name]
 - Working tree must be clean after commit.
 
+PUBLISH TRACE
+- The final response must leave publish-readable evidence so Publish Control can verify and publish the branch without Dave re-explaining the request.
+- Include:
+  request slug
+  active slide ID or registry slot
+  exact visible text markers changed
+  exact CSS selectors/properties changed for layout or positioning edits
+  exact registry keys changed for slide order, alts, trash, appendix, or staff order
+  exact asset paths added or changed
+  source verification command/result
+  visual QA method/result when required
+- For visual/layout/copy-positioning edits, do not say only "visual QA passed." Name the active slide ID and the selector/property or rendered element position that passed.
+- If the edit request changes two visible elements, list both elements in the acceptance contract and verification note. Do not report DONE after verifying only one of them.
+- Make the branch name and commit message specific enough that Publish Control can match the branch to Dave's request.
+
 HARD DONE RULE
 - Do not report DONE unless:
   work is on a deck/[short-task-name] branch
@@ -83,6 +98,7 @@ ACTIVE SOURCE
 CHANGE
 CHECKS
 VISUAL QA
+PUBLISH TRACE
 VERIFICATION NOTE
 PUSH
 BLOCKED
