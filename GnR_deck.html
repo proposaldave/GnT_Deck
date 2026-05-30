@@ -14234,7 +14234,7 @@ window.cs1m7Reverse = function() {
   </section>
 </div>
 
-<div class="casey-slide ds-focus" id="cs-club-anti-dupr">
+<div class="casey-slide ds-focus trash-slide" id="cs-club-anti-dupr" style="display:none">
   <div class="cco-eye">anti-DUPR position</div>
   <section class="club-build-stage cco-stage">
     <div class="adu-head club-build-anim">
@@ -32100,7 +32100,7 @@ const SLIDE_ORDER = [
   // [Codex 2026-05-26] cs-community-business moved to TRASH_ORDER per Dave: slide 5 / 20 and its alt were blank.
   // [Dave 2026-05-26] cs-samecourt MOVED EARLIER. The Munger/incentive-system thesis now lands before cultural/product reveal so investors understand the core behavior-change mechanism first.
   'cs-gnr',   //  4 Introducing GnR - invitation matchmaking
-  // [Codex 2026-05-30] cs-club-anti-dupr MOVED from main flow to a pink-dot alt immediately left of active Munger slide cs-samecourt.
+  // [Codex 2026-05-30] cs-club-anti-dupr moved from slot-5 pink-dot alt to TRASH_ORDER per screenshot request.
   'cs-samecourt',
   // [Dave 2026-05-24 LATER] cs-18-vd4 MOVED LATER. Founder/Steve Jobs wheelhouse beat was interrupting the product reveal here; investor needs the product before founder philosophy.
   // cs-bh2 (TOMORROW · multi-person synthesis) MOVED to APPENDIX per Dave 2026-05-03 PM — didn't land in main flow
@@ -32338,7 +32338,7 @@ const SLIDE_ALTS = {
   21: [],
   // [Dave 2026-05-17 PM] cs-mv6-pink REMOVED from nav per Dave: 'major bug'. HTML retained as silent backup. Slot 19 was 20 was 21 before.
   // [Dave 2026-05-25] cs-mv6-networked removed from live slot-5 alts after rendering as a blank cream slide. HTML retained below as hidden rollback only.
-  5: ['cs-club-anti-dupr'],
+  5: [],
   // [Dave 2026-05-20] Dinner/Torch VC alt moved to TRASH_ORDER so it stays recoverable without occupying the deck/appendix review system.
   // [Codex 2026-05-30] Pink-dot image-led silliness variants for current active cs-pb-silliness-feature slot.
   23: ['cs-pb-silliness-carnival-pink', 'cs-pb-silliness-ritual-pink', 'cs-pb-silliness-image-net-pink', 'cs-pb-silliness-image-open-pink', 'cs-pb-silliness-image-map-pink'],
@@ -32572,6 +32572,7 @@ const TRASH_ORDER = [
   'cs-value-screen',
   'cs-magnetic-reciprocity-system',
   'cs-merge3',
+  'cs-club-anti-dupr',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
