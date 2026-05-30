@@ -26262,38 +26262,44 @@ window.csBrandV8Reverse = function() {
   #cs-mv6-merge .mg2-jobs-eye { font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:#b8954a; }
   #cs-mv6-merge .mg2-job { font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(.9rem,1.12vw,1.06rem);font-style:italic;font-weight:600;color:#1a1612; }
   #cs-mv6-merge .mg2-job-sep { color:rgba(184,149,74,0.6);font-weight:500; }
+  @keyframes mg2RevealUp { from { opacity:0;transform:translateY(14px); } to { opacity:1;transform:translateY(0); } }
+  @keyframes mg2EyebrowIn { from { opacity:0;transform:translateY(6px); } to { opacity:1;transform:translateY(0); } }
+  @keyframes mg2MissionEyeIn { from { opacity:0;transform:translateY(6px);letter-spacing:0.38em; } to { opacity:1;transform:translateY(0);letter-spacing:0.26em; } }
+  #cs-mv6-merge .mg2-eyebrow { position:absolute;top:28px;left:48px;z-index:10;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;opacity:0;transform:translateY(6px); }
+  #cs-mv6-merge.casey-entered .mg2-eyebrow { animation:mg2EyebrowIn 0.55s cubic-bezier(.22,1,.36,1) 0.75s both; }
   /* Entry animations — [Dave 2026-05-17 LATEST] upgraded from plain fade to fade-UP (translateY 14→0) so the MISSION beat and headline land with deliberate movement on slide load. MISSION eyebrow span (.mg2-mission-eye) animates a beat before the rest of the head text. */
   #cs-mv6-merge .mg2-head, #cs-mv6-merge .mg2-sub, #cs-mv6-merge .mg2-chart, #cs-mv6-merge .mg2-jobs { opacity:0;transform:translateY(14px);transition:opacity 0.75s cubic-bezier(.22,1,.36,1),transform 0.75s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-head    { opacity:1;transform:translateY(0);transition-delay:0.10s; }
-  #cs-mv6-merge.casey-entered .mg2-sub     { opacity:1;transform:translateY(0);transition-delay:0.30s; }
-  #cs-mv6-merge.casey-entered .mg2-chart   { opacity:1;transform:translateY(0);transition-delay:0.45s; }
-  #cs-mv6-merge.casey-entered .mg2-jobs    { opacity:1;transform:translateY(0);transition-delay:1.10s; }
+  #cs-mv6-merge.casey-entered .mg2-head    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 0.85s both; }
+  #cs-mv6-merge.casey-entered .mg2-sub     { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.05s both; }
+  #cs-mv6-merge.casey-entered .mg2-chart   { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.20s both; }
+  #cs-mv6-merge.casey-entered .mg2-jobs    { animation:mg2RevealUp 0.75s cubic-bezier(.22,1,.36,1) 1.85s both; }
   /* MISSION eyebrow lands first — small upward drift + brief letter-spacing settle for emphasis */
   #cs-mv6-merge .mg2-mission-eye { display:inline-block;opacity:0;transform:translateY(6px);letter-spacing:0.38em;transition:opacity 0.55s cubic-bezier(.22,1,.36,1),transform 0.55s cubic-bezier(.22,1,.36,1),letter-spacing 0.65s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-mission-eye { opacity:1;transform:translateY(0);letter-spacing:0.26em;transition-delay:0.10s; }
+  #cs-mv6-merge.casey-entered .mg2-mission-eye { animation:mg2MissionEyeIn 0.55s cubic-bezier(.22,1,.36,1) 0.85s both; }
   @keyframes mg2CurveDraw { from { stroke-dashoffset: 2400; } to { stroke-dashoffset: 0; } }
   #cs-mv6-merge .mg2-curve-path { stroke-dasharray:2400;stroke-dashoffset:2400; }
   /* [Dave 2026-05-18 LATEST] Animation speed bumped per Dave 'have the animation begin and be slightly faster'. Duration 2.4s → 1.5s. Delay 0.95s → 0.30s so the curve starts drawing almost immediately on slide entry. */
-  #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 0.30s; }
+  #cs-mv6-merge.casey-entered .mg2-curve-path { animation:mg2CurveDraw 1.5s cubic-bezier(.55,0,.65,.55) forwards 1.05s; }
   @keyframes mg2EndPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.16); } }
   #cs-mv6-merge .mg2-end-pt { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 3.4s; }
+  #cs-mv6-merge.casey-entered .mg2-end-pt { animation:mg2EndPulse 2.4s ease-in-out infinite 4.15s; }
   /* [Dave 2026-05-17 LATEST jaw-drop] Outer halo behind the endpoint — slower, larger breath, suggesting the future radiating outward. */
   @keyframes mg2HaloBreath { 0%,100% { opacity:0.55; transform:scale(0.92); } 50% { opacity:1; transform:scale(1.18); } }
   #cs-mv6-merge .mg2-end-halo-outer { transform-origin:center;transform-box:fill-box;opacity:0; }
-  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.0s; }
+  #cs-mv6-merge.casey-entered .mg2-end-halo-outer { animation:mg2HaloBreath 4.4s ease-in-out infinite 3.75s; }
   /* "YOU ARE HERE · 2026" marker — sits on the curve between AI (2022) and HUMAN CONNECTION (2030). Lands LAST so the audience reads the chart fully before locating themselves on it. */
   #cs-mv6-merge .mg2-here { opacity:0;transition:opacity 0.85s cubic-bezier(.22,1,.36,1); }
-  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:3.8s; }
+  #cs-mv6-merge.casey-entered .mg2-here { opacity:1;transition-delay:4.55s; }
   @keyframes mg2HereDotPulse { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.45);opacity:0.65; } }
   #cs-mv6-merge .mg2-here-dot { transform-origin:center;transform-box:fill-box; }
-  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.2s; }
+  #cs-mv6-merge.casey-entered .mg2-here-dot { animation:mg2HereDotPulse 1.8s ease-in-out infinite 4.95s; }
   /* Cosmic gold backdrop at top-right of chart — suggests "the future is being born here" without adding clutter. */
   #cs-mv6-merge .mg2-stage::after { content:"";position:absolute;top:36px;right:28px;width:38%;height:50%;background:radial-gradient(ellipse 60% 70% at 78% 28%, rgba(255,220,140,0.18) 0%, rgba(232,180,80,0.08) 35%, rgba(184,149,74,0) 70%);pointer-events:none;z-index:0;opacity:0;transition:opacity 1.4s cubic-bezier(.22,1,.36,1) 1.0s; }
   #cs-mv6-merge.casey-entered .mg2-stage::after { opacity:1; }
   html[data-export="1"] #cs-mv6-merge .mg2-end-halo-outer,
   html[data-export="1"] #cs-mv6-merge .mg2-here,
-  html[data-export="1"] #cs-mv6-merge .mg2-here-dot { opacity:1 !important;transform:none !important;animation:none !important; }
+  html[data-export="1"] #cs-mv6-merge .mg2-here-dot,
+  html[data-export="1"] #cs-mv6-merge .mg2-eyebrow { opacity:1 !important;transform:none !important;animation:none !important; }
   html[data-export="1"] #cs-mv6-merge .mg2-stage::after { opacity:1 !important;transition:none !important; }
   html[data-export="1"] #cs-mv6-merge .mg2-head,
   html[data-export="1"] #cs-mv6-merge .mg2-sub,
@@ -26304,7 +26310,7 @@ window.csBrandV8Reverse = function() {
 </style>
 <div class="casey-slide ds-focus" id="cs-mv6-merge" style="display:none">
   <!-- [Dave 2026-05-18 LATEST] Eyebrow "The future of off-screen connection" → "Mission". Internal mg2-mission-eye-block ("Mission" + rule) DELETED — the eyebrow now carries the Mission framing, so the redundant in-slide "Mission" label and its gold rule are gone. Headline rises directly under the chart. -->
-  <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">We're wired for this</div>
+  <div class="mg2-eyebrow">We're wired for this</div>
   <section class="mg2-stage">
 
     <div class="mg2-headwrap">
