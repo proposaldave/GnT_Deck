@@ -7772,7 +7772,7 @@ window.cs1m5Reverse = function() {
   .scale-option-slide .scale-footer:after{background:linear-gradient(90deg, rgba(184,149,74,.42), transparent)}
   .scale-option-slide.casey-entered .scale-head,.scale-option-slide.casey-entered .scale-footer{animation:none !important;opacity:1 !important}
   #cs-frontier-scale-pink-2 .scale-paper{display:none}
-  #cs-frontier-scale-pink-2 .scale-head{z-index:4;text-shadow:0 2px 6px rgba(251,247,239,.72),0 12px 34px rgba(251,247,239,.54)}
+  #cs-frontier-scale-pink-2 .scale-head{top:84px;z-index:4;text-shadow:0 2px 6px rgba(251,247,239,.72),0 12px 34px rgba(251,247,239,.54)}
   #cs-frontier-scale-pink-2 .scale-image-wrap{inset:0;width:auto;height:auto;z-index:1;box-shadow:none;background-color:#fbf7ef;background-size:cover;background-repeat:no-repeat;background-position:center center;filter:saturate(1.06) contrast(1.03)}
   #cs-frontier-scale-pink-2 .scale-image-wrap:after{background:linear-gradient(180deg, rgba(251,247,239,.94) 0%, rgba(251,247,239,.88) 23%, rgba(251,247,239,.48) 37%, rgba(251,247,239,.05) 58%, rgba(251,247,239,.78) 100%)}
   #cs-frontier-scale-pink-2 .scale-head span{display:block}
@@ -10465,7 +10465,7 @@ window.cs1m7Reverse = function() {
                 <g transform="translate(0, -2)"><line x1="-9" y1="-9" x2="9" y2="9"/><line x1="9" y1="-9" x2="-9" y2="9"/></g>
               </g>
             </g>
-            <text x="513" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT SUPPLY</text>
+            <text x="513" y="354" text-anchor="middle" font-family="Manrope,sans-serif" font-size="15" font-weight="800" letter-spacing="2.2" fill="#c8462c">LATENT HUMAN VALUE</text>
           </g>
 
           <g data-panel="3">
@@ -12932,6 +12932,34 @@ window.cs1m7Reverse = function() {
   .psb-ball::after { content:""; position:absolute; width:8px; height:8px; border-radius:50%; background:#fbf7ef; top:18px; }
   .psb-ball::before { left:15px; }
   .psb-ball::after { right:15px; }
+  .psb-section-grid {
+    position:absolute; left:8.4%; right:8.2%; top:12.6%; bottom:10.4%; z-index:4;
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px;
+  }
+  .psb-section {
+    position:relative; overflow:hidden; padding:24px 26px 22px;
+    background:rgba(251,247,239,.86); border:2px solid rgba(184,149,74,.40);
+    box-shadow:0 18px 42px rgba(26,22,18,.10);
+  }
+  .psb-section::before {
+    content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--psb-accent,#5B8FD4);
+  }
+  .psb-section:nth-child(1) { --psb-accent:#5B8FD4; }
+  .psb-section:nth-child(2) { --psb-accent:#b8954a; }
+  .psb-section:nth-child(3) { --psb-accent:#c8462c; }
+  .psb-section:nth-child(4) { --psb-accent:#1a1612; }
+  .psb-section b {
+    display:block; margin-bottom:12px; font-family:'Manrope',sans-serif; font-size:.68rem; line-height:1.05;
+    font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--psb-accent,#5B8FD4);
+  }
+  .psb-section strong {
+    display:block; font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:2.2rem; line-height:.95;
+    font-weight:900; letter-spacing:0; color:#1a1612;
+  }
+  .psb-section span {
+    display:block; margin-top:12px; font-family:'Manrope',sans-serif; font-size:.72rem; line-height:1.32;
+    font-weight:850; letter-spacing:.10em; text-transform:uppercase; color:rgba(26,22,18,.62);
+  }
   .psb-label,
   .psb-chip,
   .psb-ticket {
@@ -13135,24 +13163,11 @@ window.cs1m7Reverse = function() {
     <div class="psb-court"></div>
     <div class="psb-arc"></div>
     <div class="psb-ball"></div>
-    <div class="psb-line" style="left:18%;top:27%;width:33%;transform:rotate(13deg)"></div>
-    <div class="psb-line" style="left:47%;top:61%;width:31%;transform:rotate(-18deg)"></div>
-    <div class="psb-label" style="left:10%;top:15%">absurd word<b>dink</b></div>
-    <div class="psb-label" style="right:19%;top:18%">off-limits place<b>kitchen</b></div>
-    <div class="psb-label" style="left:22%;top:43%">lucky apology<b>net drip</b></div>
-    <div class="psb-label" style="right:12%;top:52%">toy ball<b>wiffle</b></div>
-    <div class="psb-ticket" style="left:62%;bottom:23%;--r:5deg"><b>ritual</b>tap paddles with the person you just tried to beat</div>
-    <div class="psb-ticket" style="left:39%;top:18%;--r:-4deg"><b>rotation</b>strangers become partners every ten minutes</div>
-    <div class="psb-chip" style="left:13%;bottom:27%">laugh first</div>
-    <div class="psb-chip" style="left:33%;bottom:18%">say sorry</div>
-    <div class="psb-chip" style="right:29%;bottom:13%">play again</div>
-    <div class="psb-silly-stack">
-      <span>funny name</span>
-      <span>underhand serve</span>
-      <span>skinny singles</span>
-      <span>open play chaos</span>
-      <span>ratings talk</span>
-      <span>everybody rotates</span>
+    <div class="psb-section-grid">
+      <div class="psb-section"><b>language</b><strong>Dink. Kitchen.</strong><span>Ridiculous words lower status before play starts.</span></div>
+      <div class="psb-section"><b>objects</b><strong>Wiffle ball.</strong><span>The toy-like ball makes grown adults less guarded.</span></div>
+      <div class="psb-section"><b>rituals</b><strong>Tap paddles.</strong><span>You acknowledge the person you just tried to beat.</span></div>
+      <div class="psb-section"><b>rotation</b><strong>New partner.</strong><span>Strangers become safe quickly because everyone keeps moving.</span></div>
     </div>
   </div>
   <div class="psb-story">
@@ -14408,7 +14423,7 @@ window.cs1m7Reverse = function() {
         <!-- [Dave 2026-05-15] Inline SVG swapped back to PNG to match the previous cs-gnr slide's envelope sticker (Dave: 'stickers on these envelopes should match previous slide GnR stickers which are better'). PNG is back in deploy. -->
         <div class="hg-ph" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:1.5px dashed rgba(91,143,212,0.45);border-radius:14px;background:rgba(91,143,212,0.04);padding:24px 20px 28px">
           <img src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:78%;max-width:240px;height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(184,149,74,0.18))"/>
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4">What they'll say</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4">what you'll say</div>
         </div>
        </div>
       </div>
@@ -14426,7 +14441,7 @@ window.cs1m7Reverse = function() {
         <!-- [Dave 2026-05-15] Inline SVG swapped back to PNG to match the previous cs-gnr slide's envelope sticker. -->
         <div class="hg-ph" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;border:1.5px dashed rgba(200,70,44,0.45);border-radius:14px;background:rgba(200,70,44,0.04);padding:24px 20px 28px">
           <img src="design_refs/envelope_gnr.png" alt="GnR invitation envelope" style="width:78%;max-width:240px;height:auto;display:block;filter:drop-shadow(0 4px 14px rgba(184,149,74,0.18))"/>
-          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c">Who they choose</div>
+          <div style="font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c">who you choose</div>
         </div>
        </div>
       </div>
@@ -20465,19 +20480,6 @@ window.csBrandV8Reverse = function() {
         <div class="vc-item"><div class="vc-icon netflix">N</div><div class="vc-copy"><b>Netflix</b><small>streaming subscription</small></div><div class="vc-dollars">$300B+ sold</div></div>
         <div class="vc-item"><div class="vc-icon iphone"></div><div class="vc-copy"><b>iPhone</b><small>3B devices shipped</small></div><div class="vc-dollars">$2T+ sold</div></div>
         <div class="vc-item"><div class="vc-icon google">G</div><div class="vc-copy"><b>Google Search</b><small>the world's information</small></div><div class="vc-dollars">$3T+ ads sold</div></div>
-        <div class="vc-item"><div class="vc-icon ai" title="OpenAI · Anthropic" aria-label="OpenAI and Anthropic logos">
-          <svg viewBox="0 0 36 36" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(0 18 18)"/>
-              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/>
-              <ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/>
-            </g>
-          </svg>
-          <svg viewBox="0 0 64 64" width="19" height="19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M27.4 13.6h9.2L52 50.4h-9.2l-3.1-7.6H22.3l-3.1 7.6H10z" fill="#c8462c"/>
-            <path d="M32 23.2 25.4 39h13.2z" fill="#fbf7ef"/>
-          </svg>
-        </div><div class="vc-copy"><b>AI</b><small>intelligence at your fingertips</small></div><div class="vc-dollars">$2.5T spend</div></div>
         <div class="vc-item answer"><div class="vc-icon room"></div><div class="vc-copy"><b>Abundant human connection</b><div class="vc-gnr-line"><span class="vc-gnr-mark" aria-label="GnR"><span class="g">G</span><span class="n">n</span><span class="r">R</span></span><span>abundant, autonomous connection</span></div></div><div class="vc-dollars">?</div></div>
       </div>
     </div>
@@ -20494,11 +20496,11 @@ window.csBrandV8Reverse = function() {
   <img class="vcio-bg" src="assets/cs-value-choice-image-only-pink.png" alt="Human connection circle surrounded by products with value labels."/>
   <div class="vcio-scrim" aria-hidden="true"></div>
   <div class="vcio-question">Which product is most valuable to you?</div>
-  <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><b>Netflix</b><small>$300B+ sold</small></div></div>
-  <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><b>Apple iPhone</b><small>$2T+ sold</small></div></div>
-  <div class="vcio-label search"><div class="vcio-mark google">G</div><div><b>Google Search</b><small>$3T+ ads sold</small></div></div>
+  <div class="vcio-label tv"><div class="vcio-mark netflix">N</div><div><small>$300B+ sold</small></div></div>
+  <div class="vcio-label phone"><div class="vcio-mark apple"><svg viewBox="0 0 64 76" aria-hidden="true"><path d="M45.6 39.5c-.1-8 6.5-11.8 6.8-12-3.8-5.5-9.6-6.2-11.6-6.3-4.9-.5-9.5 2.9-12 2.9-2.6 0-6.4-2.8-10.5-2.7-5.4.1-10.4 3.2-13.2 8.1-5.7 9.9-1.5 24.4 4 32.4 2.7 3.9 5.9 8.2 10.1 8.1 4.1-.2 5.6-2.6 10.5-2.6 4.9 0 6.3 2.6 10.6 2.5 4.4-.1 7.2-4 9.8-7.9 3.1-4.5 4.4-8.9 4.5-9.1-.1-.1-8.9-3.4-9-13.4zM37.6 16.1c2.2-2.7 3.7-6.4 3.3-10.1-3.2.1-7.1 2.1-9.4 4.8-2.1 2.4-3.9 6.2-3.4 9.9 3.6.3 7.2-1.8 9.5-4.6z"/></svg></div><div><small>$2T+ sold</small></div></div>
+  <div class="vcio-label search"><div class="vcio-mark google">G</div><div><small>$3T+ ads sold</small></div></div>
   <div class="vcio-label speaker"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg></div><div><b>AI assistant</b><small>$2.5T spend</small></div></div>
-  <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5 14.6 9.4 22 12l-7.4 2.6L12 21.5l-2.6-6.9L2 12l7.4-2.6z" fill="#c8462c"/></svg></div><div><b>AI models</b><small>$2.5T spend</small></div></div>
+  <div class="vcio-label laptop"><div class="vcio-mark ai"><svg viewBox="0 0 36 36" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#1a1612" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="18" cy="18" rx="14" ry="5.8"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(60 18 18)"/><ellipse cx="18" cy="18" rx="14" ry="5.8" transform="rotate(120 18 18)"/></g></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5 14.6 9.4 22 12l-7.4 2.6L12 21.5l-2.6-6.9L2 12l7.4-2.6z" fill="#c8462c"/></svg></div><div><small>$2.5T spend</small></div></div>
   <div class="vcio-label cola"><div class="vcio-mark coke"></div><div><b>Coca-Cola</b><small>$1T+ sold</small></div></div>
 </div>
 
@@ -20572,7 +20574,7 @@ window.csBrandV8Reverse = function() {
       <div class="asp-byline">Brian Chesky</div>
     </div>
     <div class="asp-video">
-      <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
+      <iframe src="https://drive.google.com/file/d/1sk44-woFi5l384ue0QtzHSBXLPLhkTc3/preview?vq=hd720&amp;hd=1" allow="autoplay; fullscreen" allowfullscreen title="Brian Chesky app store for people video"></iframe>
     </div>
   </section>
 </div>
@@ -25463,38 +25465,41 @@ window.csBrandV8Reverse = function() {
 <!-- cs-fv6-information-pink · PINK-DOT ALT for active Real human connection technology slide [Codex 2026-05-30] -->
 <style>
   #cs-fv6-information-pink{background:#fbf7ef;color:#1a1612;overflow:hidden}
-  #cs-fv6-information-pink .hci-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;padding:86px 88px 62px;isolation:isolate}
-  #cs-fv6-information-pink .hci-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(251,247,239,.96) 0%,rgba(251,247,239,.88) 38%,rgba(251,247,239,.60) 66%,rgba(251,247,239,.22) 100%),radial-gradient(circle at 33% 49%,rgba(255,255,255,.78),transparent 33%),url('assets/cs-fv6-information-abundance-bg.png');background-size:cover;background-position:center;pointer-events:none;z-index:-3}
-  #cs-fv6-information-pink .hci-bg:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 52%,rgba(251,247,239,.82) 0 35%,rgba(251,247,239,.30) 58%,transparent 78%),linear-gradient(rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px);background-size:auto,26px 26px,26px 26px;mix-blend-mode:soft-light;opacity:.76}
-  #cs-fv6-information-pink .hci-bg:after{content:"";position:absolute;left:52%;top:56%;width:1430px;height:472px;transform:translate(-50%,-50%) rotate(-2deg);border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,.22),rgba(255,255,255,.86) 18%,rgba(251,247,239,.92) 50%,rgba(255,255,255,.72) 80%,rgba(255,255,255,.08));box-shadow:0 40px 140px rgba(26,22,18,.16),inset 0 1px 0 rgba(255,255,255,.70);z-index:-1}
-  #cs-fv6-information-pink .hci-head{position:relative;z-index:1;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3rem,4.65vw,5.25rem);font-weight:850;line-height:.94;letter-spacing:0;max-width:1460px;margin:0 0 32px;text-wrap:balance}
-  #cs-fv6-information-pink .hci-head span{display:block;color:rgba(26,22,18,.31);filter:drop-shadow(0 16px 30px rgba(26,22,18,.10))}
-  #cs-fv6-information-pink .hci-head em{display:block;font-style:italic;color:#c8462c;text-shadow:0 22px 48px rgba(200,70,44,.22),0 1px 0 rgba(255,255,255,.72)}
-  #cs-fv6-information-pink .hci-map{position:relative;z-index:1;display:grid;grid-template-columns:226px 1fr 236px;gap:16px;align-items:stretch;width:min(1620px,100%)}
-  #cs-fv6-information-pink .hci-map:before{content:"";position:absolute;inset:-18px;border-radius:12px;background:rgba(255,255,255,.24);border:1px solid rgba(255,255,255,.54);box-shadow:0 36px 90px rgba(26,22,18,.13);z-index:-1}
-  #cs-fv6-information-pink .hci-rail{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px;align-items:stretch;padding:11px;border-radius:8px;background:rgba(255,255,255,.58);border:1px solid rgba(184,149,74,.25);box-shadow:0 20px 60px rgba(26,22,18,.08),inset 0 1px 0 rgba(255,255,255,.72);backdrop-filter:blur(9px)}
-  #cs-fv6-information-pink .hci-rail:before{content:"";position:absolute;left:26px;right:26px;top:50%;height:2px;background:linear-gradient(90deg,rgba(91,143,212,.34),rgba(184,149,74,.48),rgba(200,70,44,.42));transform:translateY(-50%);z-index:-1;box-shadow:0 0 24px rgba(184,149,74,.30)}
+  #cs-fv6-information-pink .hci-stage{position:relative;min-height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;padding:70px 84px 58px;isolation:isolate}
+  #cs-fv6-information-pink .hci-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(251,247,239,.98) 0%,rgba(251,247,239,.93) 34%,rgba(251,247,239,.68) 60%,rgba(251,247,239,.18) 100%),radial-gradient(circle at 26% 47%,rgba(255,255,255,.92),transparent 30%),url('assets/cs-fv6-information-abundance-bg.png');background-size:cover;background-position:center;pointer-events:none;z-index:-4;filter:saturate(1.08) contrast(1.04)}
+  #cs-fv6-information-pink .hci-bg:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 48% 54%,rgba(251,247,239,.90) 0 31%,rgba(251,247,239,.34) 58%,transparent 78%),linear-gradient(rgba(184,149,74,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(184,149,74,.12) 1px,transparent 1px);background-size:auto,22px 22px,22px 22px;mix-blend-mode:soft-light;opacity:.72}
+  #cs-fv6-information-pink .hci-bg:after{content:"";position:absolute;left:51%;top:59%;width:1510px;height:520px;transform:translate(-50%,-50%) rotate(-2.8deg);border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,.12),rgba(255,255,255,.88) 16%,rgba(251,247,239,.95) 48%,rgba(255,255,255,.74) 78%,rgba(255,255,255,.06));box-shadow:0 46px 150px rgba(26,22,18,.18),inset 0 1px 0 rgba(255,255,255,.78);z-index:-2}
+  #cs-fv6-information-pink .hci-head{position:relative;z-index:1;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:clamp(3.5rem,5.15vw,6.1rem);font-weight:900;line-height:.88;letter-spacing:0;max-width:1510px;margin:0 0 12px;text-wrap:balance}
+  #cs-fv6-information-pink .hci-head span{display:block;color:rgba(26,22,18,.25);filter:drop-shadow(0 18px 36px rgba(26,22,18,.10))}
+  #cs-fv6-information-pink .hci-head em{display:block;font-style:italic;color:#c8462c;text-shadow:0 24px 54px rgba(200,70,44,.26),0 1px 0 rgba(255,255,255,.78)}
+  #cs-fv6-information-pink .hci-thesis{position:relative;z-index:1;font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#b8954a;margin:0 0 24px;max-width:1040px}
+  #cs-fv6-information-pink .hci-map{position:relative;z-index:1;display:grid;grid-template-columns:210px 1fr 256px;gap:14px;align-items:stretch;width:min(1600px,100%);margin-left:38px}
+  #cs-fv6-information-pink .hci-map:before{content:"";position:absolute;inset:-20px;border-radius:8px;background:linear-gradient(115deg,rgba(255,255,255,.38),rgba(251,247,239,.20));border:1px solid rgba(255,255,255,.62);box-shadow:0 38px 96px rgba(26,22,18,.15),inset 0 1px 0 rgba(255,255,255,.62);z-index:-1}
+  #cs-fv6-information-pink .hci-rail{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px;align-items:stretch;padding:12px;border-radius:8px;background:rgba(255,255,255,.68);border:1px solid rgba(184,149,74,.28);box-shadow:0 22px 62px rgba(26,22,18,.09),inset 0 1px 0 rgba(255,255,255,.76);backdrop-filter:blur(10px)}
+  #cs-fv6-information-pink .hci-rail:before{content:"";position:absolute;left:25px;right:25px;top:50%;height:2px;background:linear-gradient(90deg,rgba(91,143,212,.42),rgba(184,149,74,.58),rgba(200,70,44,.48));transform:translateY(-50%);z-index:-1;box-shadow:0 0 28px rgba(184,149,74,.34)}
   #cs-fv6-information-pink .hci-label-stack{display:flex;flex-direction:column;gap:14px}
-  #cs-fv6-information-pink .hci-label{flex:1;display:flex;flex-direction:column;justify-content:center;border-radius:8px;padding:20px 18px;background:rgba(255,255,255,.46);border:1px solid rgba(26,22,18,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.64),0 18px 44px rgba(26,22,18,.08);backdrop-filter:blur(8px)}
+  #cs-fv6-information-pink .hci-label{flex:1;display:flex;flex-direction:column;justify-content:center;border-radius:8px;padding:20px 17px;background:rgba(255,255,255,.54);border:1px solid rgba(26,22,18,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.70),0 18px 44px rgba(26,22,18,.08);backdrop-filter:blur(8px)}
   #cs-fv6-information-pink .hci-label b{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.48);margin-bottom:10px}
   #cs-fv6-information-pink .hci-label span{font-family:'Fraunces','Playfair Display',serif;font-size:1.28rem;font-weight:850;line-height:1.04;color:#1a1612}
   #cs-fv6-information-pink .hci-lanes{display:flex;flex-direction:column;gap:14px;min-width:0}
-  #cs-fv6-information-pink .hci-card{min-height:76px;border-radius:7px;background:rgba(251,247,239,.88);border:1.2px solid rgba(184,149,74,.32);display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 6px;font-family:'Fraunces','Playfair Display',serif;font-size:clamp(.82rem,.95vw,.98rem);font-weight:850;line-height:1.08;color:rgba(26,22,18,.82);box-shadow:0 12px 26px rgba(26,22,18,.06),inset 0 1px 0 rgba(255,255,255,.78)}
+  #cs-fv6-information-pink .hci-card{min-height:76px;border-radius:7px;background:rgba(251,247,239,.90);border:1.2px solid rgba(184,149,74,.34);display:flex;align-items:center;justify-content:center;text-align:center;padding:9px 6px;font-family:'Fraunces','Playfair Display',serif;font-size:clamp(.82rem,.95vw,.98rem);font-weight:850;line-height:1.08;color:rgba(26,22,18,.82);box-shadow:0 12px 26px rgba(26,22,18,.06),inset 0 1px 0 rgba(255,255,255,.80)}
   #cs-fv6-information-pink .hci-card.conn{color:#c8462c;border-color:rgba(200,70,44,.42);background:rgba(255,246,239,.92)}
   #cs-fv6-information-pink .hci-card.blue{color:#5B8FD4;border-color:rgba(91,143,212,.46);background:rgba(244,249,255,.92)}
   #cs-fv6-information-pink .hci-card.gold{color:#b8954a;border-color:rgba(184,149,74,.48);background:rgba(255,251,240,.92)}
-  #cs-fv6-information-pink .hci-outcome{position:relative;border-radius:8px;background:rgba(26,22,18,.94);color:#fbf7ef;border:1px solid rgba(255,255,255,.15);box-shadow:0 30px 80px rgba(26,22,18,.34),0 0 80px rgba(91,143,212,.18);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px 16px;font-family:'Fraunces','Playfair Display',serif;font-size:1.3rem;font-weight:850;line-height:1.06;overflow:hidden}
-  #cs-fv6-information-pink .hci-outcome:before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 45% 35%,rgba(91,143,212,.46),transparent 27%),radial-gradient(circle at 68% 64%,rgba(200,70,44,.36),transparent 30%),radial-gradient(circle at 38% 72%,rgba(184,149,74,.42),transparent 31%);opacity:.88}
+  #cs-fv6-information-pink .hci-outcome{position:relative;border-radius:8px;background:rgba(26,22,18,.95);color:#fbf7ef;border:1px solid rgba(255,255,255,.18);box-shadow:0 34px 88px rgba(26,22,18,.38),0 0 92px rgba(91,143,212,.20);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px 16px;font-family:'Fraunces','Playfair Display',serif;font-size:1.36rem;font-weight:850;line-height:1.05;overflow:hidden}
+  #cs-fv6-information-pink .hci-outcome:before{content:"";position:absolute;inset:-42%;background:radial-gradient(circle at 45% 35%,rgba(91,143,212,.52),transparent 27%),radial-gradient(circle at 68% 64%,rgba(200,70,44,.42),transparent 30%),radial-gradient(circle at 38% 72%,rgba(184,149,74,.48),transparent 31%);opacity:.9}
   #cs-fv6-information-pink .hci-outcome > *{position:relative}
   #cs-fv6-information-pink .hci-outcome b{font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#b8954a;margin-bottom:10px}
   #cs-fv6-information-pink .hci-outcome em{font-style:italic;color:#ffffff}
-  #cs-fv6-information-pink .hci-foot{position:relative;z-index:1;margin-top:24px;font-family:'Manrope',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.01em;color:#1a1612;max-width:1160px;padding:10px 14px;border-left:3px solid rgba(200,70,44,.58);border-radius:6px;background:rgba(251,247,239,.86);box-shadow:0 10px 30px rgba(26,22,18,.09);text-shadow:0 1px 0 rgba(255,255,255,.88)}
+  #cs-fv6-information-pink .hci-outcome .hci-outcome-proof{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:rgba(251,247,239,.72);line-height:1.32}
+  #cs-fv6-information-pink .hci-foot{position:relative;z-index:1;margin:23px 0 0 374px;font-family:'Manrope',sans-serif;font-size:1.02rem;font-weight:850;letter-spacing:.01em;color:#1a1612;max-width:1150px;padding:12px 16px;border-left:4px solid rgba(200,70,44,.70);border-radius:7px;background:rgba(251,247,239,.90);box-shadow:0 14px 34px rgba(26,22,18,.10);text-shadow:0 1px 0 rgba(255,255,255,.90)}
 </style>
 <div class="casey-slide ds-focus" id="cs-fv6-information-pink" style="display:none">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Real human connection technology</div>
   <section class="hci-stage">
     <div class="hci-bg"></div>
     <h1 class="hci-head"><span>Information became intelligence.</span><em>Connection becomes community intelligence.</em></h1>
+    <div class="hci-thesis">The next hidden asset class is what people mean to each other.</div>
     <div class="hci-map" aria-label="Information technology and human connection technology parallel workflow">
       <div class="hci-label-stack">
         <div class="hci-label"><b>Information</b><span>Digitized by computers</span></div>
@@ -25522,7 +25527,7 @@ window.csBrandV8Reverse = function() {
           <div class="hci-card blue">Automate<br>coordination</div>
         </div>
       </div>
-      <div class="hci-outcome"><b>Training loop</b><span>AI trained on<br>information</span><br><em>Communities trained<br>on connection</em></div>
+      <div class="hci-outcome"><b>Training loop</b><span>AI trained on<br>information</span><br><em>Communities trained<br>on connection</em><div class="hci-outcome-proof">Signals compound into invitations, retention, and value exchange.</div></div>
     </div>
     <div class="hci-foot">We have already seen what happens when a hidden asset becomes measurable. GnR applies the same unlock to human connection and our uniqueness to each other.</div>
   </section>
@@ -27752,150 +27757,83 @@ window.csBrandV8Reverse = function() {
 <!-- ===== cs-gnr-business-outcomes · Community-business stakes [Codex 2026-05-28] ===== -->
 <style>
   #cs-gnr-business-outcomes{background:#f3ead8!important;overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:76px 86px 54px;display:flex;align-items:center;justify-content:center}
-  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 16% 74%,rgba(200,70,44,.16),transparent 21%),radial-gradient(circle at 82% 62%,rgba(91,143,212,.18),transparent 25%),linear-gradient(90deg,rgba(184,149,74,.10) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.08) 1px,transparent 1px);background-size:auto,auto,190px 100%,100% 138px;opacity:.92;pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-stage:after{content:"";position:absolute;left:116px;right:116px;top:148px;bottom:92px;border:1px solid rgba(184,149,74,.20);border-radius:38px;background:linear-gradient(90deg,transparent 49.9%,rgba(184,149,74,.18) 50%,transparent 50.1%),linear-gradient(0deg,transparent 49.8%,rgba(184,149,74,.13) 50%,transparent 50.2%);opacity:.46;pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-map{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-route{fill:none;stroke:#b8954a;stroke-width:3;stroke-linecap:round;stroke-dasharray:12 14;opacity:.45}
-  #cs-gnr-business-outcomes .gbo-wire{fill:none;stroke:#5B8FD4;stroke-width:2.4;stroke-linecap:round;opacity:.34}
-  #cs-gnr-business-outcomes .gbo-wire.gold{stroke:#b8954a;opacity:.32}
-  #cs-gnr-business-outcomes .gbo-wire.red{stroke:#c8462c;opacity:.28}
-  #cs-gnr-business-outcomes .gbo-node{fill:#fbf7ef;stroke:#b8954a;stroke-width:3;filter:url(#gboGlow)}
-  #cs-gnr-business-outcomes .gbo-node.red{stroke:#c8462c}
-  #cs-gnr-business-outcomes .gbo-node.blue{stroke:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-orbit{fill:none;stroke:#b8954a;stroke-width:1.5;stroke-dasharray:5 8;opacity:.30}
-  #cs-gnr-business-outcomes .gbo-court-line{fill:none;stroke:#b8954a;stroke-width:2;opacity:.22}
-  #cs-gnr-business-outcomes .gbo-shell{position:relative;z-index:2;width:min(1360px,100%);margin:0 auto;display:grid;gap:24px;text-align:center}
-  #cs-gnr-business-outcomes .gbo-title{margin:0 auto;max-width:1160px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:4.9rem;font-weight:850;line-height:.96;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.8)}
-  #cs-gnr-business-outcomes .gbo-title em{font-style:italic;color:#b8954a;font-weight:850}
+  #cs-gnr-business-outcomes .gbo-stage{position:relative;min-height:100%;width:100%;box-sizing:border-box;padding:118px 116px 82px;display:grid;grid-template-columns:minmax(520px,.88fr) minmax(660px,1.12fr);gap:74px;align-items:center;isolation:isolate}
+  #cs-gnr-business-outcomes .gbo-stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(184,149,74,.09) 1px,transparent 1px),linear-gradient(0deg,rgba(184,149,74,.07) 1px,transparent 1px),linear-gradient(135deg,rgba(251,247,239,.42),rgba(184,149,74,.10));background-size:190px 100%,100% 138px,100% 100%;opacity:.72;pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-stage:after{content:"";position:absolute;right:70px;top:132px;width:900px;height:620px;border:1px solid rgba(184,149,74,.24);border-radius:18px;transform:rotate(-7deg);background:linear-gradient(90deg,transparent 49.8%,rgba(184,149,74,.20) 50%,transparent 50.2%),linear-gradient(0deg,transparent 49.8%,rgba(184,149,74,.16) 50%,transparent 50.2%);opacity:.46;pointer-events:none}
+  #cs-gnr-business-outcomes .gbo-copy{position:relative;z-index:2;max-width:680px}
+  #cs-gnr-business-outcomes .gbo-title{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:5.45rem;font-weight:850;line-height:.94;color:#1a1612;text-shadow:0 1px 0 rgba(251,247,239,.8)}
+  #cs-gnr-business-outcomes .gbo-title em{display:block;margin-top:6px;font-style:italic;color:#b8954a;font-weight:850}
   #cs-gnr-business-outcomes .gbo-title .gbo-brand-give{color:#c8462c}
   #cs-gnr-business-outcomes .gbo-title .gbo-brand-n{color:#b8954a}
   #cs-gnr-business-outcomes .gbo-title .gbo-brand-receive{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-sub{margin:0 auto;max-width:900px;font-family:'Manrope',sans-serif;font-size:1.18rem;font-weight:800;line-height:1.42;color:rgba(26,22,18,.68)}
-  #cs-gnr-business-outcomes .gbo-path{display:grid;grid-template-columns:1fr 82px 1fr 82px 1fr;align-items:stretch;gap:0;margin-top:2px}
-  #cs-gnr-business-outcomes .gbo-step{position:relative;min-height:258px;padding:25px 24px 25px;box-sizing:border-box;background:linear-gradient(155deg,rgba(251,247,239,.94),rgba(251,247,239,.74));border:1.4px solid rgba(184,149,74,.30);border-top:7px solid #b8954a;border-radius:8px;display:flex;flex-direction:column;justify-content:flex-start;gap:14px;text-align:left;box-shadow:0 20px 52px rgba(26,22,18,.08);overflow:hidden}
-  #cs-gnr-business-outcomes .gbo-step:after{content:"";position:absolute;inset:auto 14px 12px 14px;height:34px;background:linear-gradient(90deg,transparent,rgba(184,149,74,.12),transparent);opacity:.75;pointer-events:none}
-  #cs-gnr-business-outcomes .gbo-step.low{border-top-color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-step.high{border-top-color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-label{font-family:'Manrope',sans-serif;font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:rgba(26,22,18,.52)}
-  #cs-gnr-business-outcomes .gbo-step.low .gbo-label{color:#c8462c}
-  #cs-gnr-business-outcomes .gbo-step.high .gbo-label{color:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-step h2{margin:0;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.35rem;font-weight:850;line-height:1.02;color:#1a1612}
-  #cs-gnr-business-outcomes .gbo-step p{margin:0;font-family:'Manrope',sans-serif;font-size:1rem;font-weight:760;line-height:1.35;color:rgba(26,22,18,.68)}
-  #cs-gnr-business-outcomes .gbo-card-art{display:block;width:100%;height:66px;margin:0;overflow:visible}
-  #cs-gnr-business-outcomes .gbo-card-art .line{fill:none;stroke:#b8954a;stroke-width:2.2;stroke-linecap:round;opacity:.42}
-  #cs-gnr-business-outcomes .gbo-card-art .line.red{stroke:#c8462c;opacity:.34}
-  #cs-gnr-business-outcomes .gbo-card-art .line.blue{stroke:#5B8FD4;opacity:.40}
-  #cs-gnr-business-outcomes .gbo-card-art .node{fill:#fbf7ef;stroke:#b8954a;stroke-width:2.6}
-  #cs-gnr-business-outcomes .gbo-card-art .node.red{stroke:#c8462c}
-  #cs-gnr-business-outcomes .gbo-card-art .node.blue{stroke:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-card-art .soft{fill:rgba(184,149,74,.10);stroke:#b8954a;stroke-width:1.4}
-  #cs-gnr-business-outcomes .gbo-card-art .soft.blue{fill:rgba(91,143,212,.11);stroke:#5B8FD4}
-  #cs-gnr-business-outcomes .gbo-arrow{display:grid;place-items:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:3.35rem;font-weight:850;color:#b8954a}
-  #cs-gnr-business-outcomes .gbo-result{position:relative;margin:0 auto;max-width:1040px;padding:20px 34px;border-top:1px solid rgba(184,149,74,.38);border-bottom:1px solid rgba(184,149,74,.38);background:rgba(251,247,239,.48);font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.9rem;font-weight:780;line-height:1.18;color:#1a1612;box-shadow:0 18px 48px rgba(184,149,74,.10)}
-  #cs-gnr-business-outcomes .gbo-result strong{color:#b8954a;font-weight:850}
+  #cs-gnr-business-outcomes .gbo-sub{margin:28px 0 0;max-width:575px;font-family:'Manrope',sans-serif;font-size:1.18rem;font-weight:820;line-height:1.46;color:rgba(26,22,18,.70)}
+  #cs-gnr-business-outcomes .gbo-flow{margin-top:36px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:13px;align-items:center;max-width:650px}
+  #cs-gnr-business-outcomes .gbo-chip{min-height:82px;padding:16px 18px;border:1.3px solid rgba(184,149,74,.38);border-radius:8px;background:rgba(251,247,239,.70);box-shadow:0 16px 34px rgba(26,22,18,.06)}
+  #cs-gnr-business-outcomes .gbo-chip b{display:block;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:900;letter-spacing:.20em;text-transform:uppercase;color:#b8954a}
+  #cs-gnr-business-outcomes .gbo-chip span{display:block;margin-top:8px;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:1.22rem;font-weight:820;line-height:1.05;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-chip.low b{color:#c8462c}
+  #cs-gnr-business-outcomes .gbo-chip.high b{color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-flow-arrow{font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2rem;font-weight:850;color:#b8954a}
+  #cs-gnr-business-outcomes .gbo-visual{position:relative;z-index:2;height:690px}
+  #cs-gnr-business-outcomes .gbo-visual:before{content:"";position:absolute;inset:58px 18px 44px;border:1px solid rgba(184,149,74,.28);border-radius:50%;background:linear-gradient(180deg,rgba(251,247,239,.72),rgba(251,247,239,.36));box-shadow:0 30px 90px rgba(26,22,18,.09),0 0 0 58px rgba(91,143,212,.045),0 0 0 116px rgba(184,149,74,.055)}
+  #cs-gnr-business-outcomes .gbo-network{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  #cs-gnr-business-outcomes .gbo-net-line{fill:none;stroke:#b8954a;stroke-width:4;stroke-linecap:round;opacity:.43}
+  #cs-gnr-business-outcomes .gbo-net-line.blue{stroke:#5B8FD4;opacity:.45}
+  #cs-gnr-business-outcomes .gbo-net-line.red{stroke:#c8462c;opacity:.30}
+  #cs-gnr-business-outcomes .gbo-net-orbit{fill:none;stroke:#b8954a;stroke-width:2;stroke-dasharray:7 12;opacity:.42}
+  #cs-gnr-business-outcomes .gbo-net-node{fill:#fbf7ef;stroke:#b8954a;stroke-width:4;filter:url(#gboGlow)}
+  #cs-gnr-business-outcomes .gbo-net-node.red{stroke:#c8462c}
+  #cs-gnr-business-outcomes .gbo-net-node.blue{stroke:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-net-core{fill:#fbf7ef;stroke:#5B8FD4;stroke-width:5;filter:url(#gboGlow)}
+  #cs-gnr-business-outcomes .gbo-visual-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:250px;height:250px;border-radius:50%;display:grid;place-items:center;text-align:center;background:rgba(251,247,239,.82);border:2px solid rgba(91,143,212,.60);box-shadow:0 24px 70px rgba(26,22,18,.11),0 0 0 18px rgba(91,143,212,.10)}
+  #cs-gnr-business-outcomes .gbo-visual-label span{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:#5B8FD4}
+  #cs-gnr-business-outcomes .gbo-result{position:relative;z-index:3;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-28px;border-top:1px solid rgba(184,149,74,.34);border-bottom:1px solid rgba(184,149,74,.34);background:rgba(251,247,239,.54);box-shadow:0 18px 48px rgba(184,149,74,.10)}
+  #cs-gnr-business-outcomes .gbo-result span{padding:21px 24px;text-align:center;font-family:'Fraunces','Playfair Display',Georgia,serif;font-size:2.1rem;font-weight:820;line-height:1.05;color:#1a1612}
+  #cs-gnr-business-outcomes .gbo-result span:nth-child(2){color:#b8954a}
+  #cs-gnr-business-outcomes .gbo-result span:nth-child(3){color:#5B8FD4}
   html[data-export="1"] #cs-gnr-business-outcomes *{animation:none!important;transition:none!important}
 </style>
 <div class="casey-slide ds-focus" id="cs-gnr-business-outcomes">
   <div style="position:absolute;top:28px;left:48px;font-family:'Manrope',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c8462c;z-index:10">Community health</div>
   <section class="gbo-stage">
-    <svg class="gbo-map" viewBox="0 0 1920 1080" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="gboGlow" x="-80%" y="-80%" width="260%" height="260%">
-          <feGaussianBlur stdDeviation="5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-      <g transform="translate(1175 244) rotate(-7 255 205)">
-        <rect class="gbo-court-line" x="0" y="0" width="510" height="410" rx="18"/>
-        <path class="gbo-court-line" d="M255 0v410M0 205h510M78 0v410M432 0v410M78 102h354M78 308h354"/>
-      </g>
-      <path class="gbo-route" d="M285 742C480 510 695 500 850 620C1035 764 1280 800 1585 555"/>
-      <g>
-        <path class="gbo-wire red" d="M286 642L348 706M348 706L433 663M324 783L348 706"/>
-        <circle class="gbo-node red" cx="286" cy="642" r="11"/>
-        <circle class="gbo-node" cx="348" cy="706" r="10"/>
-        <circle class="gbo-node red" cx="433" cy="663" r="9"/>
-        <circle class="gbo-node" cx="324" cy="783" r="8"/>
-        <circle class="gbo-node red" cx="520" cy="760" r="7"/>
-      </g>
-      <g>
-        <path class="gbo-wire gold" d="M837 604L900 566L970 604L945 684L865 682Z"/>
-        <path class="gbo-wire gold" d="M900 566L945 684M837 604L970 604M865 682L970 604"/>
-        <circle class="gbo-orbit" cx="905" cy="625" r="102"/>
-        <circle class="gbo-node" cx="837" cy="604" r="10"/>
-        <circle class="gbo-node" cx="900" cy="566" r="13"/>
-        <circle class="gbo-node" cx="970" cy="604" r="10"/>
-        <circle class="gbo-node" cx="945" cy="684" r="11"/>
-        <circle class="gbo-node" cx="865" cy="682" r="9"/>
-      </g>
-      <g>
-        <path class="gbo-wire" d="M1390 486L1482 456L1578 504L1606 604L1532 696L1420 668L1360 576Z"/>
-        <path class="gbo-wire" d="M1390 486L1532 696M1482 456L1420 668M1578 504L1360 576M1606 604L1482 456"/>
-        <circle class="gbo-orbit" cx="1490" cy="584" r="168"/>
-        <circle class="gbo-orbit" cx="1490" cy="584" r="116"/>
-        <circle class="gbo-node blue" cx="1390" cy="486" r="10"/>
-        <circle class="gbo-node blue" cx="1482" cy="456" r="13"/>
-        <circle class="gbo-node blue" cx="1578" cy="504" r="10"/>
-        <circle class="gbo-node" cx="1606" cy="604" r="9"/>
-        <circle class="gbo-node blue" cx="1532" cy="696" r="12"/>
-        <circle class="gbo-node blue" cx="1420" cy="668" r="10"/>
-        <circle class="gbo-node" cx="1360" cy="576" r="8"/>
-      </g>
-    </svg>
-    <div class="gbo-shell">
-      <h1 class="gbo-title">Humans will go wherever they feel the most <em><span class="gbo-brand-give">Give</span> <span class="gbo-brand-n">n</span> <span class="gbo-brand-receive">Receive</span></em></h1>
-      <p class="gbo-sub">GnR gives clubs the measurable reason members stay, invite, and bring their lives back.</p>
-      <div class="gbo-path">
-        <div class="gbo-step low">
-          <div class="gbo-label">Without GnR</div>
-          <svg class="gbo-card-art" viewBox="0 0 320 76" aria-hidden="true" focusable="false">
-            <path class="line red" d="M48 52L112 28M186 48L252 34"/>
-            <rect class="soft" x="116" y="16" width="88" height="46" rx="6"/>
-            <circle class="node red" cx="48" cy="52" r="9"/>
-            <circle class="node" cx="112" cy="28" r="8"/>
-            <circle class="node red" cx="186" cy="48" r="8"/>
-            <circle class="node" cx="252" cy="34" r="9"/>
-          </svg>
-          <h2>Replaceable venue</h2>
-          <p>Members compare price, distance, open slots, ratings.</p>
-        </div>
-        <div class="gbo-arrow" aria-hidden="true">&rarr;</div>
-        <div class="gbo-step">
-          <div class="gbo-label">GnR layer</div>
-          <svg class="gbo-card-art" viewBox="0 0 320 76" aria-hidden="true" focusable="false">
-            <path class="line" d="M72 46L126 24L186 38L244 22M126 24L154 58M186 38L154 58M186 38L244 56"/>
-            <circle class="soft" cx="160" cy="39" r="42"/>
-            <circle class="node" cx="72" cy="46" r="8"/>
-            <circle class="node" cx="126" cy="24" r="10"/>
-            <circle class="node" cx="186" cy="38" r="12"/>
-            <circle class="node" cx="244" cy="22" r="8"/>
-            <circle class="node" cx="244" cy="56" r="7"/>
-            <circle class="node" cx="154" cy="58" r="9"/>
-          </svg>
-          <h2>Connection density</h2>
-          <p>Who fits. Who gives. Who is missed. Who needs the invite.</p>
-        </div>
-        <div class="gbo-arrow" aria-hidden="true">&rarr;</div>
-        <div class="gbo-step high">
-          <div class="gbo-label">With GnR</div>
-          <svg class="gbo-card-art" viewBox="0 0 320 76" aria-hidden="true" focusable="false">
-            <path class="line blue" d="M92 38H228M160 16V60M112 20L208 56M112 56L208 20"/>
-            <circle class="soft blue" cx="160" cy="38" r="48"/>
-            <circle class="node blue" cx="160" cy="38" r="13"/>
-            <circle class="node blue" cx="92" cy="38" r="9"/>
-            <circle class="node blue" cx="228" cy="38" r="9"/>
-            <circle class="node blue" cx="160" cy="16" r="8"/>
-            <circle class="node blue" cx="160" cy="60" r="8"/>
-            <circle class="node" cx="112" cy="20" r="7"/>
-            <circle class="node" cx="208" cy="56" r="7"/>
-          </svg>
-          <h2>Hard-to-leave club</h2>
-          <p>Members stay for the people and the GnR community.</p>
-        </div>
+    <div class="gbo-copy">
+      <h1 class="gbo-title">People stay where they feel the most <em><span class="gbo-brand-give">Give</span> <span class="gbo-brand-n">n</span> <span class="gbo-brand-receive">Receive</span></em></h1>
+      <p class="gbo-sub">GnR turns the invisible social graph of a club into the measurable reason members come back.</p>
+      <div class="gbo-flow">
+        <div class="gbo-chip low"><b>Without GnR</b><span>replaceable venue</span></div>
+        <div class="gbo-flow-arrow" aria-hidden="true">&rarr;</div>
+        <div class="gbo-chip"><b>GnR layer</b><span>connection density</span></div>
+        <div class="gbo-flow-arrow" aria-hidden="true">&rarr;</div>
+        <div class="gbo-chip high"><b>With GnR</b><span>hard to leave</span></div>
       </div>
-      <p class="gbo-result"><strong>Business outcome:</strong> retention, referrals, and pricing power come from the social graph.</p>
     </div>
+    <div class="gbo-visual" aria-hidden="true">
+      <svg class="gbo-network" viewBox="0 0 760 690" focusable="false">
+        <defs>
+          <filter id="gboGlow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="7" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <path class="gbo-net-orbit" d="M128 352C142 172 292 72 454 111C635 155 706 331 631 475C551 629 338 644 204 533C137 478 121 418 128 352Z"/>
+        <path class="gbo-net-orbit" d="M224 351C235 232 333 166 440 191C560 219 607 336 558 432C505 534 365 543 277 470C233 434 219 394 224 351Z"/>
+        <path class="gbo-net-line blue" d="M382 345L206 240M382 345L278 500M382 345L572 252M382 345L604 442M382 345L420 124"/>
+        <path class="gbo-net-line" d="M206 240L420 124L572 252L604 442L430 572L278 500Z"/>
+        <path class="gbo-net-line red" d="M116 438L206 240M116 438L278 500M604 442L684 318"/>
+        <circle class="gbo-net-core" cx="382" cy="345" r="70"/>
+        <circle class="gbo-net-node blue" cx="206" cy="240" r="18"/>
+        <circle class="gbo-net-node" cx="420" cy="124" r="20"/>
+        <circle class="gbo-net-node blue" cx="572" cy="252" r="17"/>
+        <circle class="gbo-net-node blue" cx="604" cy="442" r="21"/>
+        <circle class="gbo-net-node" cx="430" cy="572" r="18"/>
+        <circle class="gbo-net-node" cx="278" cy="500" r="16"/>
+        <circle class="gbo-net-node red" cx="116" cy="438" r="15"/>
+        <circle class="gbo-net-node red" cx="684" cy="318" r="14"/>
+        <circle class="gbo-net-node blue" cx="382" cy="345" r="22"/>
+      </svg>
+      <div class="gbo-visual-label"><span>connection<br>density</span></div>
+    </div>
+    <p class="gbo-result"><span>Retention</span><span>Referrals</span><span>Pricing power</span></p>
   </section>
 </div>
 
@@ -32361,9 +32299,9 @@ const SLIDE_ORDER = [
   'cs-3',
   // [Codex 2026-05-29] cs-magnetic-reciprocity-system moved to TRASH_ORDER per Dave screenshot request.
   'cs-gnr-business-outcomes', // [Codex 2026-05-29] Simplified community-business stakes slide moved next to the cs-magnetic white-dot concept cluster.
+  'cs-app-store-people', // [Codex 2026-05-30] Moved higher as the pickleball-destiny bridge before the product/system reveal.
   // [Codex 2026-05-28] Active outlier slide moved into the post-24-social-experiences cluster while preserving the social-pull move.
   'cs-wedgepb-codex',
-  'cs-app-store-people', // [Codex 2026-05-30] Moved higher as the pickleball-destiny bridge before the product/system reveal.
   // [Codex 2026-05-30] cs-merge3 moved to TRASH_ORDER per Dave screenshot request.
   'cs-fv6-img',
   // [Codex 2026-05-27] cs-19 removed from active main flow per completed delete-branch request. HTML remains as rollback source.
@@ -32572,7 +32510,7 @@ const SLIDE_ALTS = {
   // [Dave 2026-05-18 LATEST v5] All brand pink-dot alts RELOCATED from slot 3 (cs-brand-V8) → slot 2 (cs-1m8) per Dave 'move these two slides and any new brand slide you are working on as pink dot slides next to the slide with the text below: What we give fuels our communities.' That's cs-1m8 — which sits at slot 2 in SLIDE_ORDER. cs-1m8-fuels (the new particle-galaxy variant anchored to "What we give fuels our communities.") also added here. Slot 3 (cs-brand-V8) now carries no alts; if Dave wants the brand alts to live under the brand slide again later, just move them back.
   // [Dave 2026-05-19] Slot 14 = cs-fv6-img after Munger; slot 15 = cs-givefirst-art; slot 16 = cs-magnetic.
   16: [], // [Codex 2026-05-30] cs-unmeasured-value deleted per attached screenshot request; previous detached slot remains empty.
-  17: ['cs-value-choice-image-annotated-pink', 'cs-value-choice-image-receipts-pink', 'cs-value-choice-image-only-pink'], // [Codex 2026-05-30] Product-value image alts attached to current active cs-value-choice slot.
+  17: ['cs-value-choice-image-annotated-pink', 'cs-value-choice-image-only-pink'], // [Codex 2026-05-30] cs-value-choice-image-receipts-pink moved to TRASH_ORDER per screenshot delete request.
   19: ['cs-brand-bg-story-map', 'cs-brand-bg-story-product', 'cs-brand-bg-story-os'], // [Codex 2026-05-30] Brand-story image variants attached to current active cs-brand-V8 slot after founder slide restore.
   // [Codex 2026-05-27] Slot-13/14 alts detached after cs-3 and cs-19 were removed from the active flow.
   15: [], // [Codex 2026-05-30] cs-racketeer-padel-club-pink moved to TRASH_ORDER with its matching padel/glass-walls slide.
@@ -32823,6 +32761,7 @@ const TRASH_ORDER = [
   'cs-club-anti-dupr',
   'cs-racketeer-att-arc',
   'cs-racketeer-padel-club-pink',
+  'cs-value-choice-image-receipts-pink',
 ];
 const TRASH_TOTAL = TRASH_ORDER.length;
 // Concept review rail. Separate from main deck, appendix, trash, and slot alts.
